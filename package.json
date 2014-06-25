@@ -1,0 +1,10 @@
+{
+    "name": "regular-guide",
+    "version": "0.0.1",
+    "description": "regularjs's offcial guide",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/regularjs/guide.git"
+    },
+    "author": "leeluolee <oe.zheng@gmail.com>"
+}

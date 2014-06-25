@@ -1,0 +1,449 @@
+require('./helper/shim.js');
+var _  = module.exports;
+var slice = [].slice;
+var o2str = ({}).toString;
+
+
+_.noop = function(){};
+_.uid = (function(){
+  var _uid=0;
+  return function(){
+    return _uid++;
+  }
+})();
+
+_.varName = '_d_';
+_.setName = '_p_';
+_.ctxName = '_c_';
+
+var prefix =  "var " + _.ctxName + "=context.$context||context;" + "var " + _.varName + "=context.data;";
+
+
+_.host = "data";
+
+
+_.slice = function(obj, start, end){
+  var res = [];
+  for(var i = start || 0, len = end || obj.length; i < len; i++){
+    var item = obj[i];
+    res.push(item)
+  }
+  return res;
+}
+
+_.typeOf = function (o) {
+  return o == null ? String(o) : ({}).toString.call(o).slice(8, -1).toLowerCase();
+}
+
+
+_.extend = function( o1, o2, override ){
+  if(_.typeOf(override) === 'array'){
+   for(var i = 0, len = override.length; i < len; i++ ){
+    var key = override[i];
+    o1[key] = o2[key];
+   } 
+  }else{
+    for(var i in o2){
+      if( typeof o1[i] === "undefined" || override === true ){
+        o1[i] = o2[i]
+      }
+    }
+  }
+  return o1;
+}
+
+_.makePredicate = function makePredicate(words, prefix) {
+    if (typeof words === "string") {
+        words = words.split(" ");
+    }
+    var f = "",
+    cats = [];
+    out: for (var i = 0; i < words.length; ++i) {
+        for (var j = 0; j < cats.length; ++j){
+          if (cats[j][0].length === words[i].length) {
+              cats[j].push(words[i]);
+              continue out;
+          }
+        }
+        cats.push([words[i]]);
+    }
+    function compareTo(arr) {
+        if (arr.length === 1) return f += "return str === '" + arr[0] + "';";
+        f += "switch(str){";
+        for (var i = 0; i < arr.length; ++i){
+           f += "case '" + arr[i] + "':";
+        }
+        f += "return true}return false;";
+    }
+
+    // When there are more than three length categories, an outer
+    // switch first dispatches on the lengths, to save on comparisons.
+    if (cats.length > 3) {
+        cats.sort(function(a, b) {
+            return b.length - a.length;
+        });
+        f += "switch(str.length){";
+        for (var i = 0; i < cats.length; ++i) {
+            var cat = cats[i];
+            f += "case " + cat[0].length + ":";
+            compareTo(cat);
+        }
+        f += "}";
+
+        // Otherwise, simply generate a flat `switch` statement.
+    } else {
+        compareTo(words);
+    }
+    return new Function("str", f);
+}
+
+// linebreak
+var lb = /\r\n|[\n\r\u2028\u2029]/g
+_.trackErrorPos = function (input, pos){
+  lb.lastIndex = 0;
+
+  var line = 1, last = 0, nextLinePos;
+  var len = input.length;
+
+  var match;
+  while ((match = lb.exec(input))) {
+    if(match.index < pos){
+      ++line;
+      last = match.index + 1;
+    }else{
+      nextLinePos = match.index
+    }
+  }
+  if(!nextLinePos)  nextLinePos = len - 1;
+
+  var min = pos - 10;
+  if(min < last) min = last;
+
+  var max = pos + 10;
+  if(max > nextLinePos) max = nextLinePos;
+
+  var remain = input.slice(min, max+1);
+  var prefix = line + "> " + (min >= last? "..." : "")
+  var postfix = max < nextLinePos ? "...": "";
+
+  return prefix + remain + postfix + "\n" + new Array( prefix.length + pos - min + 1).join(" ") + "^";
+}
+
+
+var ignoredRef = /\(\?\!|\(\?\:|\?\=/g;
+_.findSubCapture = function (regStr) {
+  var left = 0,
+    right = 0,
+    len = regStr.length,
+    ignored = regStr.match(ignoredRef); //忽略非捕获匹配
+  if(ignored) ignored = ignored.length
+  else ignored = 0;
+  for (; len--;) {
+    var letter = regStr.charAt(len);
+    if (len === 0 || regStr.charAt(len - 1) !== "\\" || regStr.charAt(len+1) !== "?") { //不包括转义括号
+      if (letter === "(") left++;
+      if (letter === ")") right++;
+    }
+  }
+  if (left !== right) throw "RegExp: "+ regStr + "'s bracket is not marched";
+  else return left - ignored;
+};
+
+
+_.escapeRegExp = function(string){// Credit: XRegExp 0.6.1 (c) 2007-2008 Steven Levithan <http://stevenlevithan.com/regex/xregexp/> MIT License
+  return string.replace(/[-[\]{}()*+?.\\^$|,#\s]/g, function(match){
+    return '\\' + match;
+  });
+};
+
+
+
+
+// simple get accessor
+
+_.createObject = function(o, props){
+    function foo() {}
+    foo.prototype = o;
+    var res = new foo;
+    if(props) _.extend(res, props);
+    return res;
+}
+
+_.createProto = function(fn, o){
+    function foo() { this.constructor = fn;}
+    foo.prototype = o;
+    return (fn.prototype = new foo());
+}
+
+
+
+/**
+clone
+*/
+_.clone = function clone(obj){
+    var type = _.typeOf(obj);
+    if(type == 'array'){
+      var cloned = [];
+      for(var i=0,len = obj.length; i< len;i++){
+        cloned[i] = obj[i]
+      }
+      return cloned;
+    }
+    if(type == 'object'){
+      var cloned = {};
+      for(var i in obj) if(obj.hasOwnProperty(i)){
+        cloned[i] = obj[i];
+      }
+      return cloned;
+    }
+    return obj;
+  }
+
+
+_.equals = function(now, old){
+  var type = _.typeOf(now);
+  if(type === 'array'){
+    var splices = ld(now, old||[]);
+    return splices;
+  }
+  if(type === 'number' && typeof old === 'number'&& isNaN(now) && isNaN(old)) return true
+  return now === old;
+}
+
+
+//Levenshtein_distance
+//=================================================
+//1. http://en.wikipedia.org/wiki/Levenshtein_distance
+//2. github.com:polymer/observe-js
+
+var ld = (function(){
+  function equals(a,b){
+    return a === b;
+  }
+  function ld(array1, array2){
+    var n = array1.length;
+    var m = array2.length;
+    var matrix = [];
+    for(var i = 0; i <= n; i++){
+      matrix.push([i]);
+    }
+    for(var j=1;j<=m;j++){
+      matrix[0][j]=j;
+    }
+    for(var i = 1; i <= n; i++){
+      for(var j = 1; j <= m; j++){
+        if(equals(array1[i-1], array2[j-1])){
+          matrix[i][j] = matrix[i-1][j-1];
+        }else{
+          matrix[i][j] = Math.min(
+            matrix[i-1][j]+1, //delete
+            matrix[i][j-1]+1//add
+            )
+        }
+      }
+    }
+    return matrix;
+  }
+  function whole(arr2, arr1) {
+      var matrix = ld(arr1, arr2)
+      var n = arr1.length;
+      var i = n;
+      var m = arr2.length;
+      var j = m;
+      var edits = [];
+      var current = matrix[i][j];
+      while(i>0 || j>0){
+      // 最后一列
+        if (i == 0) {
+          edits.unshift(3);
+          j--;
+          continue;
+        }
+        // 最后一行
+        if (j == 0) {
+          edits.unshift(2);
+          i--;
+          continue;
+        }
+        var northWest = matrix[i - 1][j - 1];
+        var west = matrix[i - 1][j];
+        var north = matrix[i][j - 1];
+
+        var min = Math.min(north, west, northWest);
+
+        if (min == west) {
+          edits.unshift(2); //delete
+          i--;
+          current = west;
+        } else if (min == northWest ) {
+          if (northWest == current) {
+            edits.unshift(0); //no change
+          } else {
+            edits.unshift(1); //update
+            current = northWest;
+          }
+          i--;
+          j--;
+        } else {
+          edits.unshift(3); //add
+          j--;
+          current = north;
+        }
+      }
+      var LEAVE = 0;
+      var ADD = 3;
+      var DELELE = 2;
+      var UPDATE = 1;
+      var n = 0;m=0;
+      var steps = [];
+      var step = {index: null, add:0, removed:[]};
+
+      for(var i=0;i<edits.length;i++){
+        if(edits[i] > 0 ){ // NOT LEAVE
+          if(step.index == null){
+            step.index = m;
+          }
+        } else { //LEAVE
+          if(step.index != null){
+            steps.push(step)
+            step = {index: null, add:0, removed:[]};
+          }
+        }
+        switch(edits[i]){
+          case LEAVE:
+            n++;
+            m++;
+            break;
+          case ADD:
+            step.add++;
+            m++;
+            break;
+          case DELELE:
+            step.removed.push(arr1[n])
+            n++;
+            break;
+          case UPDATE:
+            step.add++;
+            step.removed.push(arr1[n])
+            n++;
+            m++;
+            break;
+        }
+      }
+      if(step.index != null){
+        steps.push(step)
+      }
+      return steps
+    }
+    return whole;
+  })();
+
+
+
+_.throttle = function throttle(func, wait){
+  var wait = wait || 100;
+  var context, args, result;
+  var timeout = null;
+  var previous = 0;
+  var later = function() {
+    previous = +new Date;
+    timeout = null;
+    result = func.apply(context, args);
+    context = args = null;
+  };
+  return function() {
+    var now = + new Date;
+    var remaining = wait - (now - previous);
+    context = this;
+    args = arguments;
+    if (remaining <= 0 || remaining > wait) {
+      clearTimeout(timeout);
+      timeout = null;
+      previous = now;
+      result = func.apply(context, args);
+      context = args = null;
+    } else if (!timeout) {
+      timeout = setTimeout(later, remaining);
+    }
+    return result;
+  };
+};
+
+// hogan escape
+// ==============
+_.escape = (function(){
+  var rAmp = /&/g,
+      rLt = /</g,
+      rGt = />/g,
+      rApos = /\'/g,
+      rQuot = /\"/g,
+      hChars = /[&<>\"\']/;
+
+  return function(str) {
+    return hChars.test(str) ?
+      str
+        .replace(rAmp, '&amp;')
+        .replace(rLt, '&lt;')
+        .replace(rGt, '&gt;')
+        .replace(rApos, '&#39;')
+        .replace(rQuot, '&quot;') :
+      str;
+  }
+})();
+
+_.cache = function(max){
+  max = max || 1000;
+  var keys = [],
+      cache = {};
+  return {
+    set: function(key, value) {
+      if (keys.length > this.max) {
+        cache[keys.shift()] = undefined;
+      }
+      // 只有非undefined才可以
+      if(cache[key] == undefined){
+        keys.push(key);
+      }
+      cache[key] = value;
+      return value;
+    },
+    get: function(key) {
+      if (key === undefined) return cache;
+      return cache[key];
+    },
+    max: max,
+    len:function(){
+      return keys.length;
+    }
+  };
+}
+
+_.touchExpression = function(expr){
+  if(expr.type === 'expression'){
+    if(!expr.get){
+      expr.get = new Function("context", prefix + "return (" + expr.body + ")");
+      expr.body = null;
+      if(expr.setbody){
+        expr.set = function(ctx, value){
+          if(expr.setbody){
+            expr.set = new Function('context', _.setName ,  prefix + expr.setbody);
+            expr.setbody = null;
+          }
+          return expr.set(ctx, value);
+        }
+      }
+    }
+  }
+  return expr;
+}
+
+
+//http://www.w3.org/html/wg/drafts/html/master/single-page.html#void-elements
+_.isVoidTag = _.makePredicate("area base br col embed hr img input keygen link menuitem meta param source track wbr");
+_.isBooleanAttr = _.makePredicate('selected checked disabled readOnly required open autofocus controls autoplay compact loop defer multiple');
+
+_.isFalse - function(){return false}
+_.isTrue - function(){return true}
+
+
+
