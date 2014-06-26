@@ -1,5 +1,5 @@
 
-#总结
+#本章小结
 
 
 在这一小节，我们利用regularjs实现了一个最简单的组件——HelloRegular.

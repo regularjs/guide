@@ -25,3 +25,8 @@ __Example__
 
 
 
+
+
+
+---------------
+在接下来的小节, 我们将学习Regular的三个扩展接口: filter, directive, event
