@@ -1,7 +1,7 @@
 
 #安装
 
->无论哪种方式都可以直接使用注册在全局变量的Regular
+>无论哪种方式都可以直接使用注册在全局变量的__Regular__
 
 ## 下载
 
@@ -17,6 +17,7 @@ __使用bower下载__
 * `bower install regularjs`
 * find script in `bower_components/regularjs/dist/regular.js`
 
+__使用component__
 
 
 ##使用

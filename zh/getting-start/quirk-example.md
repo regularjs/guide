@@ -54,7 +54,10 @@ component.inject('#app');
 
 * `inject(node[, direction])`
 
-  这是个组件的实例方法，会将组件插入到制定位置, direction可以是'top','after','before','bottom'默认为'bottom'
+  这是个组件的实例方法，会将组件插入到目标节点制定位置
+
+  direction可以是: `top`——节点内顶部,`after`——节点下一个兄弟节点),`before`——节点上一个兄弟节点,`bottom`——节点内底部,默认为`bottom`
+
 
 
 <!-- 1. 模板容器(`#hello`)  
@@ -157,6 +160,8 @@ __[|DEMO|](http://fiddle.jshell.net/leeluolee/C2Gh9/5/)__
 
 你可以利用`$update`实现常见的set操作，或类似angular的`$apply`功能. 无论何种方式调用`$update`, __都会迫使组件进入数据检查阶段__
 
+
+然而在实际使用中，`$update`不会常常用到, 因为组件本身是一个闭环,大部分类似ui事件，timeout等都会自动进入update阶段, 从而可以直接操作数据对象即可. 
 
 
 
