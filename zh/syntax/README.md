@@ -1,4 +1,4 @@
-#模板语法
+#内建模板引擎
 
 与angularjs,vuejs,knockoutjs等基于__[DOM]__的模板框架不同, regularjs的模板是基于__[字符串]__的. 这带来了几个好处:
 

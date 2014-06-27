@@ -1,6 +1,6 @@
 #regular的封装和模块化策略
 
-良好的模块化和封装性支持是可以在大型项目中使用的必然要求. regularjs中只有一个顶层对象`Regular`, 它即是命名空间又是组件的基类, 这种情况下如何实现呢？
+良好的模块化和封装性支持是可以在大型项目中使用的必然要求. regularjs中只有一个顶层对象`Regular`, 它即是命名空间又是组件的基类, 这种情况下如何实现封装呢？
 
 
 ## 扩展接口的单向影响性
@@ -178,6 +178,9 @@ var Counter = Regular.extend({
 new Counter({data: {count:0}}).inject('#app');
 
 ```
+
+
+[|DEMO|](http://fiddle.jshell.net/leeluolee/4AzR6/)
 
 
 

@@ -5,19 +5,20 @@
 __Example__
 
 
-```javascript
+```mustache
 {{#if user.age >= 80 }}
   you are too old 
-{{#elseif user.type <= 2}}
+{{#elseif user.age <= 10}}
   you are too young
 {{#else}}
-  Welcome to xx
+  Welcome, Friend
 {{/if}}
 ```
 
-{{#template content /}}
+这里的`you are too old`等都称之为block(块) 根据判断表达式是否为真, 判断是否显示某个block或让某个block回收. 
 
-> 在regular中，`{{#}}`开头的被视为模板指令的开始，就如<TagName>之于html, `{{#}}`在模板JST中被视为是开标记
+
+> 在regular中，`{{#}}`开头的被视为内建规则的开始，就如`<TagName>`之于html
 
 
 
