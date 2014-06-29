@@ -72,7 +72,7 @@ var modal = new Modal({
 modal.$on('confirm', function(data){
   console.log(data.email)
 });
-
+</script>
 ```
 
 
