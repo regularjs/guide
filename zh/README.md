@@ -14,6 +14,7 @@ regularjs的更高层次的目的是__规范有序(regular)__的去定义组件�
 
 本书是[reguarljs](https://github.com/regularjs/regular)的官方指南
 
+
 -----------
 
 >接下来的指南的命名约定

@@ -1,7 +1,7 @@
 
 #Quirk Example
 
-这一小节，我们将实现一个简单的组件—— __HelloRegular__ ,它用来显示友好的用户欢迎语，但是如果用户未登录的话需要提示进行登录信息，为了简单起见只需要输入用户名就可以进行登录
+In this section, we will create our first component based regularjs —— __HelloRegular__ . it used to show friendly infomation to people. if people is not login yet, component need to prompt people. for simplicity, only username is required for logging logic.
 
 
 ## 1. initial template
@@ -41,7 +41,7 @@ component.inject('#app');
 
 * `template`
 
-  一般来讲一个组件会需要一个模板来描述组件的结构，这里我们传入包含模板的容器节点的选择器(你也可以直接传入模板字符串)
+  a Component may need template to describe its structure.
 
 
 * `data`

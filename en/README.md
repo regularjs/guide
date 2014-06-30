@@ -19,7 +19,7 @@ This guide is regularjs 's offcial guide.
 
 
 
-__The author's native language is not English, the guide may looks   if you can help me to improve this document, please [contact me](mailto:87399126@163.com) __
+__Author's english is poor, so the guide may looks obscure. if you can help me to improve this document, please [contact us](mailto:87399126@163.com) __
 
 
 

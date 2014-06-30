@@ -15,7 +15,7 @@ There is no forever silver bullet, angular the same.
 4. FOUC(Flash of unstyled content) is the birth defects of dom-based template.
 
 
-## reactjs is shines but
+## reactjs is shines but also have some 
 
 
 

@@ -4,6 +4,7 @@ unlike dom-based template like [angular](https://angularjs.org/), [vuejs](vuejs.
 
 ### 1. more powerful logic
   
+The dom-based template always rely on 
 directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单元是节点，而无法实现以下字符串模板普遍可以实现的书写方式
 
 ```html
