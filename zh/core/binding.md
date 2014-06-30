@@ -1,12 +1,11 @@
-#数据监听和生命周期
+#数据绑定和生命周期
 
-数据驱动的思想是mvvm模式中的核心，regular也是如此.
+数据驱动的思想是mvvm模式中的核心，regular也是如此 ,数据绑定是实现数据驱动的组件开发的核心所在.
 
-regularjs的组件实例中与数据监听相关的函数有如下几个
+regularjs的组件实例中与数据绑定相关的函数有如下几个
 
 
-
-<a name="$watch"></a>
+<a name="watch"></a>
 ### 1 `component.$watch(expression, handler)`
 
 绑定一个数据监听器, 返回watchid，用于$unwatch(解绑) 
@@ -16,7 +15,7 @@ __Arguments__
 
   * expression [Expression| Array | String] - expression可以有多种参数类型
     - Expression: 每次都会检查此表达式求值是否改变
-    - String: 此字符串会先被Regular.parse处理为Expression
+    - String: 此字符串会先被`Regular.expression`处理为Expression
     - Array: 即检查多个表达式，数组中的任意一个发生改变都触发回调
   * handler(newvalue, oldvalue) [Function] - 监听器回调，传入改变前和改变后的值
 
@@ -56,8 +55,8 @@ component.$update(function(data){
 
 
 
-<a name="$unwatch"></a>
-### 2 $unwatch(watchid)
+<a name="unwatch"></a>
+### 2 `component.$unwatch(watchid)`
 
 取消一个数据监听器 
 
@@ -87,8 +86,8 @@ component.$update('b', 100); // only watcher 1 alert;
 ```
 
 
-<a name="$update"></a>
-### 3 `$update(setable, value)`
+<a name="update"></a>
+### 3 `component.$update(setable, value)`
 
 设值函数, 设值之后会进入组件的digest阶段，即脏检查
 
@@ -121,20 +120,23 @@ component.$update() // do nothing , just enter digest phase
 > <h5>Warning: </h5>
 > 无论传入什么参数，运行$update之后都会进行组件作用域内的dirty-check
 
-<a name="$bind"></a>
-### 2.5 `$bind(component, expr1[, expr2])`
+<a name="bind"></a>
+### 2.5 `component.$bind(component2, expr1[, expr2])`
 
 与另一个组件实现双向绑定
 
 __Arguments__
-  1. component<Regular>: 要绑定的组件
+  1. component2<Regular>: 要绑定的组件
   2. expr1 <Expression|String|Object|Array>: 此参数有多种参数类型
     - Expression|String: 本组件要绑定的表达式
     - Object: 同时绑定多个表达式对
     - Array: 表达式列表,同时实现多个同名表达式(即只传入expr1)
   3. expr2 <Expression|String>: 目标组件要绑定的表达式, 缺省为expr1
 
-> 注意如果两个表达式都是setable的，可实现双向绑定，否则只能实现单向绑定
+> <h5>WARN</h5>
+> 1. 如果两个表达式都是setable的，可实现双向绑定，否则只能实现单向绑定
+> 2. 如果连个组件在bind时是不同步的，component2数据会先同步到component
+
 
 __Example__: 
 
@@ -142,30 +144,46 @@ __Example__:
 
 ```javascript
 
-var pager = new Pager({data: {total: 100, current:20}}).inject('#app');
-var pager2 = new Pager({data: {total: 100, current:20}}).inject('#app');
+ // insert
+var pager = new Pager({data: {total: 100, current:20}}).inject('#bind1');
+var pager2 = new Pager({data: {total: 50, current:2}}).inject('#bind1');
 
-// create binding 
+var pager3 = new Pager({data: {total: 100, current:20}}).inject('#bind2');
+var pager4 = new Pager({data: {total: 50, current:2}}).inject('#bind2');
+
+var pager5 = new Pager({data: {total: 100, current:2}}).inject('#bind3');
+var pager6 = new Pager({data: {total: 50, current:20}}).inject('#bind3');
+
+
+// style 1
 pager.$bind(pager2, ['current', 'total']);
 
 
-// it is equal with 
-// pager.$bind(pager2, 'current')
-// pager.$bind(pager2, 'total')
+// style 2
+pager3.$bind(pager4, 'current', 'current')
+pager3.$bind(pager4, 'total')
+
+// style 3
+pager5.$bind(pager6, {current: "current", total: "total"});
+
+
+// bind chain
+var pager = new Pager({data:{total: 1000, current:1}}).inject('#bind_chain');
+for(var i = 0; i < 10; i++){
+  var pager = new Pager({data:{total: 1000, current:1}})
+    .$bind(pager, ['total', 'current'])
+    .inject('#bind_chain');
+}
 
 ```
 
-[|DEMO|]()
+[|DEMO|](http://fiddle.jshell.net/leeluolee/7wgUf/)
 
+其中pager的实现在[这里](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
 
-你也可以绑定不一致的表达式
-
-```
-```
-
+>[内嵌组件](../advanced/component.md)与外层的数据绑定就是通过`$bind`实现的
 
 
 
-> regularjs中对于一些不希望开发者覆写的方法名都做了`$`前缀标记.这些函数有`$watch`
 
 

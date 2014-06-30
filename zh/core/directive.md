@@ -13,6 +13,7 @@ __`Component.directive(<String|RegExp> name, <Object|Function> spec)`__
     - value 属性值(可能是字符串或是一个[Expression](../syntax/expression.md)对象)
     - this 这里的this指向component组件本身
 
+> 当不传入spec时, directive是一个getter方法，用于获取指令定义
 
 __Example__
 
@@ -102,9 +103,9 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
 
 ### 2. `r-style`
-  接受的Expression必须是对象想
 
-  - `Expression|String`
+`r-style`是为了解决`style`的逻辑能力上的不足, 它建立的是与elem.style的单向数据绑定关系. 每当r-style绑定的表达式数据(被解释为`Object`类型)发生更新 
+
 
 ### 3. `r-class`
 

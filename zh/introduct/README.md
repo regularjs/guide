@@ -39,7 +39,7 @@ render: function() {
 同期[ractive](http://www.ractivejs.org/)也悄然出世, 几乎就是作者需要的那个菜了. 可惜ractive的ui事件系统是通过代理事件的形式，你仍需要在init里去处理，这样一是弱化了声明式的意味，二是必然要杂糅进dom操作. 并且数据更新上是采用的提取依赖关系的方式并提供set函数, 这种方式对于习惯了angular的脏检查的人来讲无疑会带来很多不利。
 
 
-最初版本的regular是旨在替换掉react的js+jsx而是与ractive一样定义一种模板语言来描述结构, 在diff策略上沿用virtual-dom的思想.在实现的过程渐渐发现，虽然基于virtual-dom的策略无需去绑定大量的watch对象, 但仍然引入了一些实现上和使用上的难题
+由于react在使用上逻辑上可以几乎理解为'full-refresh'对使用者有巨大的吸引力，最初版本的regular也是旨在替换掉react的js+jsx而是与ractive一样定义一种模板语言来描述结构, 在diff策略上沿用virtual-dom的思想.在实现的过程渐渐发现，虽然基于virtual-dom的策略无需去绑定大量的watcher, 但仍然引入了一些实现上和使用上的难题
 
 1. 一次digest中virtual-dom的diff只需一次，但是会随着ui的复杂度，性能损耗严重，virtual-dom与原dom的对应也更难(如果angular的脏检查的性能取决与watcher的数量，那react则是取决与ui规模)
 2. virtual-dom的内部结构变化是不可预知的
@@ -63,6 +63,6 @@ render: function() {
 
 ## regular的产生和取舍
 
-regular正是在这种百花齐放的时候产生, 在实现上采取了angular的数据更新策略(但是提取了表达式的依赖关系以便在Object.observe正式到来时切换到脏检查+observe的形式)提倡极致的声明式和裸数据操作, 依赖于基于字符串的模板描述结构结合更规范性的类式继承的组件体系来定义数据层的业务逻辑.
+regular正是在这种百花齐放的时候产生, 最终在实现上采取了angular的数据更新策略(但是提取了表达式的依赖关系以便在Object.observe正式到来时切换到脏检查+observe的形式)提倡极致的声明式和裸数据操作, 依赖于基于字符串的模板描述结构结合更规范性的类式继承的组件体系来定义数据层的业务逻辑.
 
-> __这也是框架取名 regular = react + angular的由来 __
+> __这也是框架取名 regular = react(ractive) + angular的由来 __

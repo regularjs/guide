@@ -12,6 +12,8 @@ __`Component.filter(name, filterFn)`__
     - args  template里传入的其它参数
     - this 这里的this指向component组件本身
 
+> 当不传入spec时, filter是一个getter方法，用于获取过滤器定义
+
 
 
 __Example__

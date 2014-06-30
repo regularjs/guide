@@ -26,7 +26,7 @@
   [|DEMO|](http://jsfiddle.net/leeluolee/y8PHE/1/)
 
 
-## 2. 注册自定义事件 `Regular.event(event, handler)`
+## 2. 注册自定义事件 `Component.event(event, handler)`
 
 handler接受两个参数:
 
@@ -34,6 +34,9 @@ handler接受两个参数:
   -fire   一个函数，每当这个函数调用，将会触发这个自定义事件，传入fire的参数则会作为[`$event`](#$event)对象
 
 注意如果需要做 __销毁工作__ ，与指令一样，你需要返回一个销毁函数
+
+> 当不传入spec时, event是一个getter方法，用于获取事件处理定义
+
 
 __Example__ 
 
