@@ -129,13 +129,20 @@ var app = new Regular({
 与`r-style`类似，不过是为了解决`class`的不足, 每当对象某个属性值为true时，会添加对应的属性名 作为class
 
 
+__Example__
+
+```javascript
+
+
+```
+[|DEMO|](http://jsfiddle.net/leeluolee/aaWQ7/)
+
 
 > class属性如果已经有插值，将会覆盖r-class的定义
 
 ### 4. `r-hide`
 
 当表达式求值为真时，添加`display:none`到本节点
-
 
 
 
