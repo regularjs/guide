@@ -104,13 +104,42 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
 ### 2. `r-style`
 
-`r-style`是为了解决`style`的逻辑能力上的不足, 它建立的是与elem.style的单向数据绑定关系. 每当r-style绑定的表达式数据(被解释为`Object`类型)发生更新 
+`r-style`是为了解决`style`直接插值的逻辑能力上的不足, 它建立的是与elem.style的单向数据绑定关系. 每当r-style绑定的表达式数据(被解释为`Object`类型)发生更新 
 
+__Exmaple__
+
+```javascript
+var app = new Regular({
+    template: 
+      "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }}>left+10</button>\
+      left:  {{left}}",
+    data: {left:1}
+}).inject(document.body)
+
+```
+
+[|DEMO|](http://jsfiddle.net/leeluolee/aaWQ7/)
+
+
+
+> style属性如果已经有插值，将会覆盖r-style的定义
 
 ### 3. `r-class`
 
+与`r-style`类似，不过是为了解决`class`的不足, 每当对象某个属性值为true时，会添加对应的属性名 作为class
+
+
+
+> class属性如果已经有插值，将会覆盖r-class的定义
+
 ### 4. `r-hide`
 
+当表达式求值为真时，添加`display:none`到本节点
+
+
+
+
+> 所有内建的指令都同时接受Expression或者String类型的值.
 
 
 
