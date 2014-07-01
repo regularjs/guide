@@ -32,7 +32,11 @@ component.inject('#app');
 
 ```
 
-[__RESULT__](http://fiddle.jshell.net/leeluolee/C2Gh9/1/), 
+__RESULT__
+
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 
 
 * __`Regular.extend`__
@@ -59,12 +63,6 @@ component.inject('#app');
 
 
 
-<!-- 1. 模板容器(`#hello`)  
-2. script引入regular.js  
-3. `Regular.extend`派生组件
-4. 初始化节点并插入inject到指定位置(这里是插入到容器节点`#app`)
- -->
-
 
 
 
@@ -76,7 +74,11 @@ component.inject('#app');
   Hello, {{username}}
 ```
 
-[ |查看结果| ](http://fiddle.jshell.net/leeluolee/C2Gh9/2/)
+__RESULT__
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/8/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
 
 ## 3. 处理未登录的情况——if/else逻辑控制
 
@@ -93,7 +95,11 @@ component.inject('#app');
 
 就与常规的字符串模板(例如jst)类似，模板里我们添加`if/else`来区分登录用户与游客的显示效果
 
-[|查看结果|](http://fiddle.jshell.net/leeluolee/C2Gh9/3/)
+
+__RESULT__
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/9/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 
 
 
@@ -134,7 +140,10 @@ var HelloRegular = Regular.extend({
 
 ```
 
-[|查看结果|](http://fiddle.jshell.net/leeluolee/C2Gh9/4/)
+__RESULT__
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/10/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
 
 
 
