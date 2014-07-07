@@ -1,10 +1,10 @@
-## 语法元素说明
+## Syntax 
 
-从语法层面讲, regular模板的语法元素包含两种类别: `xml`与`jst`,它们在词法解析规则也是完全不同. 
+regular's template only have two types of the syntax  element,  `xml` and `jst`. they have different lexical process.
 
-### 1. simple xml
+### 1. xml
 
-xml的就如我们常用那样，无需赘言.
+just like `html` what we used everyday
 
 __Example__
 
@@ -14,14 +14,13 @@ __Example__
 </div>
 ```
 
-由于regular的内建模板是__活动的__, 所以也需要解析xml,不能和其它类似mustache的静态模板引擎一样作为普通文本处理.
-
 
 ### 2. jst
 
-jst元素是被开标签(默认为`{{`)和闭标签(默认为`}}`)包裹的部分, 包括插值`{{}}`以及内建规则`{{#}}`
+jst is the section wrapped by the opentag(default: `{{`) and close_tag (default: `}}`). it contains inteplation (`{{}}`) and rule `{{#}}`
 
-jst提供了模板里的逻辑实现的支持，与一般的基于字符串的模板功能类似, 语法设计上基本与[freemarker](http://freemarker.org/)是相近的(修改了开关符号).
+jst is similar with freemarker(http://freemarker.org/) (the opentag and closetag is changed but is configurable).
+
 
 
 __Example__
@@ -32,35 +31,27 @@ __Example__
 {{/if}}
 ```
 
-jst环境与xml的最大不同就是允许表达式的存在.
 
+## About Rule
 
-## 关于内建规则
+in regular, `{{#}}` is consider as rule.
 
-在模板中, `{{#}}`称之为内建规则,目前的内建规则有`{{#if}}` `{{#else}}` `{{#elseif}}` `{{#list}}` `{{#include}}`. 这些后续章节中会陆续介绍
+There are already some built-in rules like `{{#if}}` `{{#else}}` `{{#elseif}}` `{{#list}}` `{{#include}}`. 
 
-
-与xml一样 一个jst rule的标签的开标签与闭合标签必须匹配,比如`{{#list}}`必须匹配`{{/list}}`, 而有有些标签允许自闭合如`{{#include}}`
-
-
-
-### 为何不沿用mustache这样的简化语法?
-
-* 引入表达式支持
-  
-  动态模板与mustache此类静态的模板的不同就是，会有很多临时状态和中间状态，如果这些状态都需要重新定义成一个变量才能使用,会增加很重的使用负担, 但是如果引入了表达式的支持, 这些中间状态就可以使用表达式来表示.
+just like xml. rule's tag must be matched or self closed. 
 
 
 
-* 后续内建规则的扩展
+### Why not use mustache-syntax
 
-  假如我们需要添加`{{#switch}}` 就可以很愉快加入此功能，而无需去苦思冥想有哪个类似`#`的符号没有被使用(比如mustache).
+* including [Expression](expression.md) support.
+
+* easily syntax enhancement based rule.
 
 
+### Some Tips
 
-### 注意点
-
-1. 内建规则和xml标签不能被相互打断，如下例是不被允许会抛出异常. 这也是与常规的静态模板的最大区别
+1. Rule and Xml must dont breakup each other which is the most important difference with other string-based template
 
   ```xml
   <div>
@@ -74,9 +65,10 @@ jst环境与xml的最大不同就是允许表达式的存在.
 
   ```
 
+  the example a above is invalid.
+
 
 --------------------------
 
-下面几个章节我们会详细介绍jst语法元素
-
+-
 

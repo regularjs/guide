@@ -1,7 +1,10 @@
 # regularjs Guide
 
+---
+
 > #English version is still in progress
 
+----
 
 > __regular = react(ractive) + angular__
 
@@ -19,7 +22,7 @@ This guide is regularjs 's offcial guide.
 
 
 
-__Author's english is poor, so the guide may looks obscure. if you can help me to improve this document, please [contact us](mailto:87399126@163.com) __
+__The author's english is poor, so the guide may looks obscure. if you can help me to improve this document, please [contact me](mailto:87399126@163.com) __
 
 
 

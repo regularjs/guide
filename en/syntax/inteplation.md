@@ -1,6 +1,6 @@
-# 插值
+# Inteplation
 
-插值是regular中最常用的部分，如下例
+Inteplation is most common part of the template.
 
 ```html
 <p class="m-modal m-modal-{{klass}}" on-click={{this.remove(user)}}> 
@@ -9,12 +9,12 @@
 
 ```
 
-可以发现插值可以发生在__文本节点__，也可以在__属性节点__.
+you can find inteplation at either textNode or attributeNode.
 
 
-## 文本插值
+## Text Inteplation
 
-对于文本插值, regular仅仅只是创建一个textNode,并插入到制定位置, 并建立与插值表达式的单向数据绑定.
+when used as text-inteplation, regular will create a TextNode and set the value as the node's textContent.
 
 __Example__
 
@@ -25,40 +25,46 @@ var app = new Regular({
   data: {username: 'leeluolee'}
 });
 
-app.inject('#app')
-  .$update('username', 'regularjs') //update the data
+app.inject('#app');
+
 
 ```
 
+will outport `<div>leeluolee</div>`. and whenerver the data changes, the textNode's content is also updated. it is a __one-way__ binding.
 
 
-## 属性节点插值
+## Attribute Inteplation
 
 
-对于属性节点插值，情况就要复杂一些了. regular 目前只允许属性值可以被插值, 这里面有几个说明要点.
+When used as attribute-inteplation(only the value can be interpolated), there is some explanations.
 
-1. 具有插值的字符串如`"m-modal m-modal-{{klass}}"`会生成一个表达式，求值结果是这个字符串计算后的值
+1. if the value is a string but contains inteplation(e.g. `class='m-modal m-modal-{{klass}}'`), the string will be considered as a inteplation.
 
-2. 对于非指令类的的属性, regularjs会在绑定的值发生变化时, 修改对应属性
+2. if the attribute is not a [directive](../core/directive.md). once the value changes, the attribute's value will update directly. it is a __one-way binding__.
 
-3. 对于指令类的属性, 会将插值表达式传入[directive](../core/directive.md)的处理函数中, 具体处理交由directive指令
+3. if the attribute is a directive. regularjs will call the directive's link method but do noting else.
 
-鉴于此, 其实`style`, `class`等天生就具有插值能力
+
 
 __Example__
 
 ```javascript
 
-<input type='radio'
-  class="m-modal {{show? 'z-show': ''}}"
-  checked={{selected}}
+<input 
+  type='radio'  
+  class={{klass}}   
+  r-model={{checked}}
   style="left: {{10 + offsetX}}px; top: {{10 + offsetY}}px"
   > </input>
 
 ```
 
-这个例子处理了当show为真时自动添加`z-show`类,处理left和top的定位,以及根据`selected`字段判断radio是否被选中
+like the example above.
 
+1. `r-model`: directive
+2. `style`: string-inteplation
+3. `class`: simple attribute inteplation
+4. `type`: just normal attribute
 
 
 

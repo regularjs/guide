@@ -1,8 +1,7 @@
-# 循环控制list
+# List
 
-list指令用来遍历某个sequence来循环的处理某些重复性的结构
+You can use the list rule to process a section of template for each variable contained within a sequence. The code between the start-tag and end-tag will be processed for the 1st subvariable, then for the 2nd subvariable, then for the 3rd subvariable, etc until it passes the last one. For each such iteration the loop variable will contain the current subvariable.
 
-list内建规则
 
 __Syntax__: 
 
@@ -19,14 +18,13 @@ __where__
 * item: Name of the loop variable (not an expression)
 
 
+There are one special loop variables available inside the list loop:
 
-在每次循环都会创建一个loop临时变量
-
-* `item_index`(取决于你的item命名): 代表当前遍历到的下标(从0开始, 类似与angular中的`$index`变量) 
+item_index: This is a numerical value that contains the index of the current item being stepped over in the loop(start with 0).
 
 
 __Example__
-| 
+
 
 ```xml
 {{#list items as item}}
@@ -37,9 +35,9 @@ __Example__
 ```
 
 
-### Range支持
+### range support
 
-regular同时也支持一个特殊的表达式类型range, 用来创建一个有序的数字数组
+regular is support a special data-type —— range.
 
 __Syntax__: 
 
@@ -49,8 +47,8 @@ start..end
 
 __where__
 
-* start: 一个代表数字序列开始的表达式
-* end:  一个代表数字序列结束的表达式
+* start: A expression evaluted to number means range's start
+* end:  A expression evaluted to number means range's end
 
 
 > `1..3` === `[1,2,3]`
@@ -67,19 +65,31 @@ will output `1 2 3`
 
 
 
-###注意点
+### Warning
 
-list内部实现会在每次iterate时与angular类似会创建一个新的匿名组件(类似于ng-repeat中创建的子scope), 对外层数据的访问是通过原型继承的方式，所以修改原始类型的数据如字符，将不会对父组件产生影响，你可以通过引用类型的属性或函数调用来避免这个缺陷, 其中`this`对象仍然指向外层组件
+in every iteration, regularjs will create a new Component, then the `item`, `item_index` can be remained. the outer 
+component's data reference is based on prototypal inheritance(just like angular). so list have the same disadvantag with angular. on the other hand,  the `this` in list's section is point to outer component, so you can use `this` to refer outer component's method or data.
+
+//TODO
 
 __Example__
 
 ```xml
-<!-- every iteration , this block will create a new Component, then the `item`, `$index` can be remained -->
+<!-- every iteration , regularjs will create a new Component, then the `item`, `item_index` can be remained -->
 
+  
+<div>username: {{username}}</div>
+<div>user.name: {{user.name}}</div>
+<p>LIST</p>
 {{#list items as item}}
-{{$index}: {{item.context}}}
-<a on-click={{name = 1}}>not affect outer</a>  no affect outer;
-<a on-click={{user.name = 'haha'}}>affect outer</a> can affect outer
-<a on-click={{this.change(user)}}>call function</a> call outer component, and context also at outer component 
+
+  <p><a href='#' on-click={{name = name + '1'}}>name = name + '1': <b>not affect</b></a> </p>
+  <p><a href='#' on-click={{user.name = user.name + '2'}}>user.name = user.name + '2': affect with Referrence Data Type</a></p>
+  <p><a href='#' on-click={{this.changename()}}> this.changename(): affect by call method</a></p>
+  <p><a href='#' on-click={{this.data.username= username + "1"}}>this.data.name= name + "1": affect by `this` </a></p>
+
 {{/list}}
 ```
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/nKK8D/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+

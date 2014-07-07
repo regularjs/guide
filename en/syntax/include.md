@@ -1,4 +1,4 @@
-# 动态引入
+# Dynamic Include
 
 
 __Syntax__
@@ -11,13 +11,12 @@ __where__
 
 * template: A Expression that evaluated to String
 
+`include` watch the passed template, once the changing be detected, template will be recompile. this feature provide two basic advantage.
 
-动态引入会监听传入表达式template的数据变动, 每当变化时会重新编译template,并插入到制定位置, 它带来几个好处
+1. pass partial as param at the initialize time.
+2. modify the template structure dynamically
 
-1. 可以在初始化时再输入模板内容
-2. 可以动态修改展现
-
-其中1的意义要远大于2, 比如你实现一个modal弹窗组件，通常modal结构是固定的, 而内容区通常需后续指定, 这时候`include`就可以大展伸手了
+for example, the part of modal's content is changeable,  so we can define the structure of content by using `{{#include}}`.
 
 
 __Example__
@@ -69,13 +68,18 @@ var modal = new Modal({
     title: 'please confirm your email'
   }
 });
+
 modal.$on('confirm', function(data){
   console.log(data.email)
 });
+
 </script>
 ```
 
-
 [|DEMO|](http://fiddle.jshell.net/leeluolee/Xvp9S/)
 
-动态引入的强大之处就是由于是对content进行的重新编译所以可以进行插值以及指令绑定等等操作,与直接描述在模板中是一样的.
+
+beacuse there is a compelete compiling process on template. so you can use all feature(e.g. `inteplation`, `directive`) 
+
+
+

@@ -151,28 +151,33 @@ __RESULT__
 
 ## 5. when the component's digest phase will be triggerd
 
-just like angular. regular's data-binding is based on dirty-check. some inner logic(.e.g event, $timeout) will tirgger the component's digest phase()
-与angular一样，regular中的数据绑定也是基于数据的脏检查，ui事件触发的响应会自动进入$digest阶段并进行数据检查和ui更新, 而对于在组件lifecycle之外的数据变动，你需要进行手动的`$update` 以进入数据检查阶段
+just like angular. regular's data-binding is based on dirty-check. some inner logic(.e.g event, [timeout](../core/use.html#timeout)) will tirgger the component's digestting phase automately. you can also trigger the digest manually by the [component.$update](../core/binding.html#update)
+
 
 ```javascript
 
-component.data.username = "regularjs";
+component.data.user.name = "regularjs";
 component.$update() // enter
 
-// component.$update('username', 'update-set')
+// component.$update('user.name', 'update-set')
+
+// component.$update({
+//  'user.name':  'update-set-multi'
+// })
 
 //  component.$update(function(data){
-//     data.username='update-apply'
+//     data.user.name='update-apply'
 //  })
 ```
+
+just like the example above, the usage of `$update` is flexible.
 
 
 __[|DEMO|](http://fiddle.jshell.net/leeluolee/C2Gh9/5/)__ 
 
-你可以利用`$update`实现常见的set操作，或类似angular的`$apply`功能. 无论何种方式调用`$update`, __都会迫使组件进入数据检查阶段__
 
+> no matter how you use the `$update`. the component will always enter the 'digest' phase.
 
-然而在实际使用中，`$update`不会常常用到, 因为组件本身是一个闭环,大部分类似ui事件，timeout等都会自动进入update阶段, 从而可以直接操作数据对象即可. 
 
 
 

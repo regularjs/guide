@@ -1,17 +1,15 @@
-#类式继承与组件定义
+#Class-based Component 
 
-regularjs的类式继承简化自著名的[|ded/klass|](https://github.com/ded/klass), klass的类式继承的一个特点是，在实例函数中可以通过`this.supr()`来调用父类的同名函数，避免了记忆负担. Regular只保留了其中两个接口:
+regularjs's OO implementation is modified from famous [|ded/klass|](https://github.com/ded/klass) which have one brilliant that you can simply using `this.supr` to call the parent's method with same method name
 
-> ####tips:
->使用exend、implement之外的方式扩展的原型方法无法使用`this.supr()`
+
+there are only two klass interfaces leaving at regularjs, `extend` and `implement`. the methods defined by these two interfaces have the ability to call `this.supr()`
 
 
 <a name="extend"></a>
 ### 1. `Component.extend(Object specification)`
 
 extend用以派生一个可重用组件，specification中的内容会添加到扩展类的原型中.
-
-
 
 
 __sepecification中的关键参数__

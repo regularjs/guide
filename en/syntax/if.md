@@ -1,11 +1,29 @@
-# 逻辑控制 if/ifelse/else
+#  if/ifelse/else
 
-与其它模板引擎(如freemarker)一样, regular也提供了`if`,`elseif`,`else`等语法元素提供对逻辑控制的支持
+You can use if, elseif and else rule to conditionally skip a section of the template. The condition's value will be convert to boolean. The elseif-s and else-s must occur inside if (that is, between the if start-tag and end-tag). The if can contain any number of elseif-s (including 0) and at the end optionally one else.
 
-__Example__
+__Syntax__
 
 
 ```mustache
+{{#if condition}}
+  ...
+{{#elseif condition2}}
+  ...
+{{#else}}
+  ...
+{{/if}}
+```
+
+where: 
+- condition: Expression evaluates to a boolean value
+
+
+
+__Example__
+
+```html
+
 {{#if user.age >= 80 }}
   you are too old 
 {{#elseif user.age <= 10}}
@@ -13,12 +31,8 @@ __Example__
 {{#else}}
   Welcome, Friend
 {{/if}}
+
 ```
-
-这里的`you are too old`等都称之为block(块) 根据判断表达式是否为真, 判断是否显示某个block或让某个block回收. 
-
-
-> 在regular中，`{{#}}`开头的被视为内建规则的开始，就如`<TagName>`之于html
 
 
 

@@ -4,7 +4,7 @@ This page aim to helping you to find api that all over the guide
 
 # Static Method
 
-> Warn: Some Method only belongs to `Regular`, but some is belongs to All `Component`(Regular and its SubClass).
+> Warn: some method only belongs to `Regular`, but some is belongs to All `Component`(Regular and its SubClass).
 
 1. [Component.extend](../core/class.html#extend)
 7. [new Component](../core/class.html#instance)
@@ -19,7 +19,7 @@ This page aim to helping you to find api that all over the guide
 
 # Instance Method
 
-`$`-prefixed method means it must have no rewrite on it.
+> `$`-prefixed method means it must have no rewrite on it.
 
 1. [component.$watch](../core/binding.html#watch)
 2. [component.$unwatch](../core/binding.html#unwatch)
