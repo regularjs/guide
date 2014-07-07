@@ -1,14 +1,16 @@
-##嵌套组件
+##nested component
 
-regular中定义的组件是可以内嵌的, 但是这个组件必须是具名的，可以通过两种方式
+regular's component is __nestable__ if it has a registered name
 
-1. 模板容器的标签上添加name属性
+
+1. specify the name attribute at node that contains the template-string.
+
   ```html
   <script type='template/regular' name='pager'>
     ...template
   </script> 
   ```
-2. 在组件定义时传入name参数 
+2. pass `name` param in `Component.extend`
   ```javascript
   var Pager = Regular.extend({
     name: 'pager',
@@ -16,13 +18,14 @@ regular中定义的组件是可以内嵌的, 但是这个组件必须是具名�
   })
   ```
 
-一个典型的组件内嵌方式是
+__USAGE__
 
 ```html
 <pager current={{current}} total = {{total}} on-nav={{this.nav}}>
   
 </pager>
 ```
+
 [|DEMO|](http://jsfiddle.net/leeluolee/DCFXn/)
 
 

@@ -113,6 +113,13 @@ component.$update(function(data){ // data == component.data
   data.a.b = 2;
 });
 
+// multi $update
+component.$update({
+  "b": 1,
+  "a.b": 100
+});
+
+
 component.$update() // do nothing , just enter digest phase
 
 ```

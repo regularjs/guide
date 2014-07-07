@@ -5,7 +5,7 @@
 
 > __regular = react(ractive) + angular__
 
-regularjs is a __"string-based living template engine"__ aim to helping you to create reactive component that having independent lifecycle. which also means regularjs have the ability to integrated with whatever framework you like.
+regularjs is a __"string-based living template engine"__ aim to helping you to create interactive component that having independent lifecycle. which also means regularjs have the ability to integrated with whatever framework you like.
 
 
 This guide is regularjs 's offcial guide. 

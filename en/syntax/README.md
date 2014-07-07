@@ -1,21 +1,20 @@
 #Template Syntax
 
-unlike dom-based template like [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/). regularjs is string-based, this featrue provide some advantage.
+unlike dom-based template like [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/). regularjs is string-based (e.g. [ractive](http://www.ractivejs.org/)), this featrue provide some advantage.
 
-### 1. more powerful logic
+### 1. more powerful logic function
   
 The dom-based template always rely on 
-directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单元是节点，而无法实现以下字符串模板普遍可以实现的书写方式
-
+directive(`ng-if`,`ng-repeat`) to implement logic function. it is no possible to 
 ```html
 {{#list users as user}}
-  <b>{{user.firstName}} {{user.lastName}}</b> Good morning (<a href="#">DELELE</a>)
+  Mr <b>{{user.firstName}} {{user.lastName}}</b><a href="#">DELELE</a>
 {{/list}}
 ```
 
-### 2. 生成更纯净的节点
+### 2. only render the parts really need to
   
-  由于angularjs等框架的parse其实是留给浏览器做的，它的directive其实是对已构建出的节点做的link操作，在这种前提下，节点上往往带有很多directive的无用信息，例如
+  The dom-based template like angular dont have own parsing phase, they put the string to the document, and walker the generated dom-node to act the __LINK__ operation, so the node always have some placeholder-information. for example
 
   ```html
   <button ng-click="save()" ng-disabled="myForm.$invalid"
@@ -24,18 +23,20 @@ directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单�
           ng-show="project.$remove" class="btn btn-danger">Delete</button>
   ```
 
-  其实大部分类似ng-click的信息都无需显示在dom上
+  But string-based template have own parsing phase, they can extract the information from parsed AST, and then put the rendering part to the document. so if the dom above is rendered by regular, the result will be:
 
-
-  而regularjs的parse是框架内做的，它生成类似AST的中间数据结构(用以生成节点结构)，从而拥有独立compile过程，提取真正需要显示在页面
-
+  ```html
+  <button class="btn btn-primary">Save</button>
+  <button class="btn btn-danger">Delete</button>
+  ```
+  beacuse all process is already done in intialize phase with the parsed AST.
   
 
-### 3. 使得预解析成为可能
+### 3. making the pre-parsing possible
 
-与emberjs等基于第三方字符串模板(handlebar)实现数据绑定的框架不同，regularjs依赖的模板解析器是完全内置的，它同时完成了xml 和模板语法的解析，并输出可序列化的AST结构(其中表达式会输出function body，在compile时再进行new Function 组装成)，使得预解析成为可能.
+you can pre-parse the template-string to AST at the building time.
 
-例如
+__for example__
 
 ```html
 {{#list items as item}}
@@ -43,7 +44,7 @@ directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单�
 {{/list}}
 ```
 
-将会解析成成这段中间数据结构
+will be parsed to
 
 ```javascript
 [
@@ -103,11 +104,13 @@ directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单�
 ]
 ```
 
-在编译阶段，会层级遍历此可公用的结构并生成对应的dom结构。
+it just __valid json format__, so the parsed ast can send from server to client. 
 
 
-------------------
 
 
-接下来的几个小节将会详细阐述整个模板的语法特性
+
+
+
+
 

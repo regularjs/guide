@@ -1,7 +1,8 @@
 
 #Quirk Example
 
-In this section, we will create our first component based regularjs —— __HelloRegular__ . it used to show friendly infomation to people. if people is not login yet, component need to prompt people. for simplicity, only username is required for logging logic.
+In this section, we will create our first component based regularjs —— __HelloRegular__ . it used to show  message to people friendly. if people don't login yet, the component needs to prompt people. for simplicity, only username is required with login .
+
 
 
 ## 1. initial template
@@ -50,25 +51,26 @@ __RESULT__
 
 * `data`
   
-  组件component可能需要一些初始化状态，这些数据我们可以在实例化组件时作为`data`传入。
-
-  > 需要注意的是在实例化组件传入的参数会被作为实例属性, 所以可以在这里覆盖extend的定义(原型属性)
+  component's model, but it just a Plain Object.  the `data` passed to `new Component` will merge the `data` passed to `Component.extend`
 
 
 * `inject(node[, direction])`
 
-  这是个组件的实例方法，会将组件插入到目标节点制定位置
-
-  direction可以是: `top`——节点内顶部,`after`——节点下一个兄弟节点),`before`——节点上一个兄弟节点,`bottom`——节点内底部,默认为`bottom`
-
-
-
-
+  it is a instance method, inject the component to the position that depending on the parameter 'direction'
+    * `bottom`[default option]: injected as node's lastChild 
+    * `top`: injected as node' s firstChild,
+    * `after`: injected as node' s nextSibling,
+    * `before`: injected as node' s prevSibling,
 
 
-## 2.显示用户姓名——插值
 
-目前为止，这个组件仅仅只是显示了一个静态信息，我们在模板中简单添加一个__[插值](sytax/inteplation.md)__来显示用户信息, 需要注意的是regularjs的内建模板是__'活动'__的，如果你更新了数据状态， ui将会自动更新。
+
+
+
+## 2. Using __inteplation__ to show user's name
+
+this component only show the constant message until now, we should make it living by using __inteplation__.
+
 
 ```html
   Hello, {{username}}
@@ -79,10 +81,7 @@ __RESULT__
 <iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/8/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
-
-## 3. 处理未登录的情况——if/else逻辑控制
-
-接下来我们处理未登录的用户情况
+## 3. using `if/else` to show other message if the user is not logged in 
 
 
 ```xml
@@ -93,7 +92,7 @@ __RESULT__
 {{/if}}
 ```
 
-就与常规的字符串模板(例如jst)类似，模板里我们添加`if/else`来区分登录用户与游客的显示效果
+it just like we use the other string-based template.
 
 
 __RESULT__
@@ -103,9 +102,9 @@ __RESULT__
 
 
 
-## 4. 实现用户登录登出的功能—— `on-click`
+## 4. Implement the `Login/Logout`  by event
 
-这里同时我们添加了两个click事件来处理用户的登录与登出逻辑,
+in this step , we need to add two event to deal with the __Login__ and __Logout__ operation.
 
 ```html
 {{#if username}}
@@ -116,17 +115,20 @@ __RESULT__
 
 ```
 
+> <h5>Tips</h5>
 
-> __tips:__ 
->
-> regular中 `on-`开头的属性会被作为事件绑定处理，每当对应的ui事件触发. 会将传入的表达式运行一次(与angular的事件系统类似). 你可以通过`Regular.event`来扩展自定义ui事件,例如`on-tap`这种dom中并不原生支持的事件
+>in regular,  the `on-` prefixed attribute will be considered as [ui event](../core/event.md)， it must be followed with a Expression(string or inteplation is all valid). the expression will be evaluated everytime when the event is trigged(just like angular). 
+
+> you can also define your custom event like(e.g. `on-hold` or `on-tap`) and determine when to trigger it;
 
 
-这里我们添加了两个用户操作:
+we add two operation in the template above: 
 
-__登出__: 由于regular的表达式支持赋值操作，这里的登出我们仅仅是对username做了清空处理。
 
-__登录__: 模板中的this对象指向实例component本身，我们需要在extend时添加一个原型方法__login__来处理登录逻辑
+__Login__: the keyword `this` in the template just point to `component` self. so we need to add a method named __login__ at HelloRegular's prototype .
+
+__Logout__: the model's root in template is point to `component.data` . so in this exmaple, we just simply clear the username in `component.data`.
+
 
 
 ```javascript
@@ -147,8 +149,9 @@ __RESULT__
 
 
 
-## 5. 何时进行数据检查-UI更新的digest阶段
+## 5. when the component's digest phase will be triggerd
 
+just like angular. regular's data-binding is based on dirty-check. some inner logic(.e.g event, $timeout) will tirgger the component's digest phase()
 与angular一样，regular中的数据绑定也是基于数据的脏检查，ui事件触发的响应会自动进入$digest阶段并进行数据检查和ui更新, 而对于在组件lifecycle之外的数据变动，你需要进行手动的`$update` 以进入数据检查阶段
 
 ```javascript

@@ -1,4 +1,4 @@
-#regular的封装和模块化策略
+#regular的封装和插件化策略
 
 良好的模块化和封装性支持是可以在大型项目中使用的必然要求. regularjs中只有一个顶层对象`Regular`, 它即是命名空间又是组件的基类, 这种情况下如何实现封装呢？
 
@@ -37,7 +37,7 @@ alert(SubChild.event('tap2') === tap2)
 // filter，directive is the same
 ```
 
-即父类无法获得子类定义的扩展, 而反之可以, 这个最基本的概念是实现regular的模块化的第一步.
+即父类无法获得子类定义的扩展, 而反之可以, 这个最基本的概念是实现regular的插件化的第一步.
 
 
 > __tips__: 
@@ -79,7 +79,7 @@ angular中模块化的解决方案是`angular.module()`和依赖注入, 一个�
 - 模块插件应该是与组件无关的, 绑定只应该在被使用时发生, 这样才是可复用的模块插件.
 
 
-所以一个典型的模块插件的写法应该是这样的
+所以一个典型的插件的写法应该是这样的
 
 ```javascript
 
@@ -98,7 +98,7 @@ FooModule(Regular);         // lazy bind(global)
 ```
 
 
-为了更统一, 所有Component都有一个`use`函数来统一'使用'模块, 如上例可以写成
+为了更统一, 所有Component都有一个`use`函数来统一'使用'插件, 如上例可以写成
 
 ```javascript
 
@@ -112,15 +112,15 @@ Regular.use(FooModule);
 
 
 
-## Regular预定义的模块
+## Regular预定义的插件
 
-预定义模块都可以直接用Component.use(模块名)的方式使用
+预定义插件都可以直接用`Component.use('插件名')`的方式使用
 
 
 <a name="timeout"></a>
-### 模块名: 'timeout'
+### 插件名: 'timeout'
 
-timeout模块在组件中扩展了两个方法
+timeout插件在组件中扩展了两个方法
 
 - `Number $timeout(fn, delay)`: 
   
@@ -131,7 +131,7 @@ timeout模块在组件中扩展了两个方法
   周期定时器函数(setInterval), 在fn调用后会进入本组件的数据检查，返回计时器id
 
 
-timeout模块非常简单, 简单到可以直接列出全部源码
+timeout插件非常简单, 简单到可以直接列出全部源码
 
 ```js
 function TimeoutModule(Component){
@@ -184,7 +184,7 @@ new Counter({data: {count:0}}).inject('#app');
 
 
 
-## <del>模块名: 'request'</del>
+## <del>插件名: 'request'</del>
 
 异步请求模块
 

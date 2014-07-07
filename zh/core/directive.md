@@ -2,6 +2,7 @@
 
 定义一个指令(angular的directive的瘦身版) ,做节点的功能性增强
 
+> regular的directive之所以可以瘦身是因为组件承担了大部分职责
 
 ## API
 
