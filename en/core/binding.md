@@ -60,7 +60,7 @@ remove a watcher.
 
 __Arguments__
 
-  * watchid [Number] - `$watch`返回的watchid
+  * watchid [Number] - watchid returned by `$watch`
 
 
 __Example__
@@ -87,25 +87,35 @@ component.$update('b', 100); // only watcher 1 alert;
 <a name="update"></a>
 ### 3 `component.$update(setable, value)`
 
-设值函数, 设值之后会进入组件的digest阶段，即脏检查
+do the setter operation on the passed Expression and enter the `digest` phase.
 
 __Arguments__
 
   * setable [Expression| Function | String] - expression可以有多种参数类型
-    - String: 此字符串会先被Regular.expression处理为Expression
-    - Expression: 此expression需要有set函数, [查看Expression](../syntax/expression.md)
-    - Function: , 类似于angular的$apply,  传入setable的参数如下
-      - data: 即组件的数据模型`component.data`
+    - Expression: The Expression must be setable, see more in [Expression](../syntax/expression.md)
+    - String: String will be parsed to Expression
+    - Function: just like angular's `$apply`, you can batch update-operation in the passed handler
+      - data: === component.data
+    - Object: multiply setting operation.
 
-  * value - 设置的值，如果expression参数为Function，则被忽略
+  * value - value assigned to the field pointed by the Expression `setable`. if `setable` is a Function, it will be ignored.
 
 ```javascript
 
-var component = new Regular();
+var component = new Regular({
+  data: {
+    a: {}
+  }
+});
 
 component.$update('a.b', 2); // component.data.a.b = 2;
 
 component.$update('a + b', 1); // !! invalid expression, canot extract set function
+
+component.$update({
+  b: 1,
+  c: 2
+}) // multiply setter
 
 component.$update(function(data){ // data == component.data
   data.a.b = 2;
@@ -116,37 +126,37 @@ component.$update() // do nothing , just enter digest phase
 ```
 
 > <h5>Warning: </h5>
-> 无论传入什么参数，运行$update之后都会进行组件作用域内的dirty-check
+> whatever param you passed, the digest phase will always be triggered.
 
 <a name="bind"></a>
 ### 2.5 `component.$bind(component2, expr1[, expr2])`
 
-与另一个组件实现双向绑定
+create binding with another component. 
 
 __Arguments__
-  1. component2<Regular>: 要绑定的组件
-  2. expr1 <Expression|String|Object|Array>: 此参数有多种参数类型
-    - Expression|String: 本组件要绑定的表达式
-    - Object: 同时绑定多个表达式对
-    - Array: 表达式列表,同时实现多个同名表达式(即只传入expr1)
-  3. expr2 <Expression|String>: 目标组件要绑定的表达式, 缺省为expr1
+  1. component2<Regular>: the target component you need to bind
+  2. expr1 <Expression|String|Object|Array>: 
+    - Expression|String: the field that component need to bind
+    - Object: you can bind multiply field at the same time, the key represent component's field, the value represent target's field.
+    - Array: create multiply field between component and component2 with the same field
+  3. expr2 <Expression|String>: the target component's  filed you need to binding. the default is expr1.
 
 > <h5>WARN</h5>
-> 1. 如果两个表达式都是setable的，可实现双向绑定，否则只能实现单向绑定
-> 2. 如果连个组件在bind时是不同步的，component2数据会先同步到component
+> 1. There is at least one Expression that is setable. if all component is setable, it is two-way binding. otherwise, it will be a one-way binding.
+> 2. If target-component is not synchronous with component, it will be synchronized to called-component immediately.
 
 
 __Example__: 
 
-两个独立的分页器实现数据联动
+create binding between two independant pager components.
 
 ```javascript
 
  // insert
-var pager = new Pager({data: {total: 100, current:20}}).inject('#bind1');
-var pager2 = new Pager({data: {total: 50, current:2}}).inject('#bind1');
+var pager = new Pager( {data: {total: 100, current:20}} ).inject('#bind1');
+var pager2 = new Pager( {data: {total: 50, current:2}} ).inject('#bind1');
 
-var pager3 = new Pager({data: {total: 100, current:20}}).inject('#bind2');
+var pager3 = new Pager({data: {total: 100, current:20} }).inject('#bind2');
 var pager4 = new Pager({data: {total: 50, current:2}}).inject('#bind2');
 
 var pager5 = new Pager({data: {total: 100, current:2}}).inject('#bind3');
@@ -159,7 +169,7 @@ pager.$bind(pager2, ['current', 'total']);
 
 // style 2
 pager3.$bind(pager4, 'current', 'current')
-pager3.$bind(pager4, 'total')
+pager3.$bind(pager4, 'total') // the same as pager3.$bind(pager4, 'total', 'total')
 
 // style 3
 pager5.$bind(pager6, {current: "current", total: "total"});
@@ -175,11 +185,11 @@ for(var i = 0; i < 10; i++){
 
 ```
 
-[|DEMO|](http://fiddle.jshell.net/leeluolee/7wgUf/)
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/7wgUf/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-其中pager的实现在[这里](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
+you may need [the sourcecode of  the pager ](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
 
->[内嵌组件](../advanced/component.md)与外层的数据绑定就是通过`$bind`实现的
+>The internal implementation of the [nested component](../advanced/component.md) is also based on `$bind`
 
 
 

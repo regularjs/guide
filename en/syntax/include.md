@@ -79,7 +79,7 @@ modal.$on('confirm', function(data){
 [|DEMO|](http://fiddle.jshell.net/leeluolee/Xvp9S/)
 
 
-beacuse there is a compelete compiling process on template. so you can use all feature(e.g. `inteplation`, `directive`) 
+beacuse there is a compelete compiling process on template. so you can use all feature(e.g. `interpolation`, `directive`) 
 
 
 

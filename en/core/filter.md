@@ -1,24 +1,22 @@
-# filter——过滤器
+# filter
 
-定义一个过滤器， 可以在表达式中使用， 一般应用在插值中，行为与angular的filter一致
+Filter are generally used in the interpolation
 
-## 接口说明
+## API
 
 __`Component.filter(name, filterFn)`__
 
-  - name 过滤器名如`format`
-  - Function filterFn(value, args...) 传入参数如下<br>
-    - value 要过滤的值
-    - args  template里传入的其它参数
-    - this 这里的this指向component组件本身
+  - name : filter name
+  - Function filterFn(value, args...) 
+    - value: the value is
+    - args:  the param passed in template
 
-> 当不传入spec时, filter是一个getter方法，用于获取过滤器定义
 
 
 
 __Example__
 
-创建一个简单的日期格式化过滤器
+data-format filter
 
 ```javascript
   // simplest date format
@@ -47,7 +45,7 @@ __Example__
   })
 ```
 
-然后
+then 
 
 ```html
 <p>{{time| format: 'yyyy-MM-dd HH:mm'}}</p>
@@ -56,7 +54,6 @@ __Example__
 
 
 
-## 内建过滤器
+## Builtin  Filter
 
-format
-
+todo...

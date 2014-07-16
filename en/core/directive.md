@@ -1,6 +1,6 @@
 # Directive
 
-Directive is similar with angular's directive but more lightweight( in other words, less powerful :) ). you can consider it as the enhancement in the node.
+Directive is similar with angular's directive but more lightweight( in other words, less powerful __`:)`__ ). you can consider it as the enhancement in the node.
 
 ## API
 
@@ -24,7 +24,7 @@ Regular.directive('r-html', function(elem, value){
   })
 })
 ```
-The directive`r-html` create a unescaped inteplation with innerHTML.
+The directive`r-html` create a unescaped interpolation with innerHTML.
 
 Beacuse [`$watch`](../core/binding.md) accepts [String] and [Expression] as the first param, so you can use `r-html` in two ways. 
 
@@ -109,7 +109,7 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
 
 ### 2. `r-style`
 
-`r-style` is a enhancement for plain `style` inteplation, the value should evaluted to [Object], every key-value pair in evaluted object add to `element.style`.
+`r-style` is a enhancement for plain `style` interpolation, the value should evaluted to [Object], every key-value pair in evaluted object add to `element.style`.
 
 
 __Exmaple__
@@ -128,13 +128,13 @@ var app = new Regular({
 
 
 
-> __Warning: if there is already a inteplation on `style`, the `r-style` will be overridden__
+> __Warning: if there is already a interpolation on `style`, the `r-style` will be overridden__
 
 > for examle . `<div style='left: {{left}}px' r-style='{left: left+"px"}'></div>`
 
 ### 3. `r-class`
 
-simmilar with `r-style`. `r-class` is a enhancement for plain `class` inteplation,
+simmilar with `r-style`. `r-class` is a enhancement for plain `class` interpolation,
 
 
 __Example__
@@ -146,7 +146,7 @@ __Example__
 in this example, when `page === 'home'` , the `active` will attach to the node`div` , or vice versa.
 
 
-> __Warning: just like `r-style`, if there is already a inteplation on `class`, the `r-class` will be overridden__
+> __Warning: just like `r-style`, if there is already a interpolation on `class`, the `r-class` will be overridden__
 
 ### 4. `r-hide`
 
@@ -163,7 +163,7 @@ if the Expression `page !== 'home'` is evaluated to true, the `display:none` wil
 
 ### 5. `r-html` 
 
-unescaped inteplation use innerHTML. beware of the attack like `xss`.
+unescaped interpolation use innerHTML. beware of the attack like `xss`.
 
 __Example__
 

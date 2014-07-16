@@ -17,7 +17,7 @@ __Example__
 
 ### 2. jst
 
-jst is the section wrapped by the opentag(default: `{{`) and close_tag (default: `}}`). it contains inteplation (`{{}}`) and rule `{{#}}`
+jst is the section wrapped by the opentag(default: `{{`) and close_tag (default: `}}`). it contains interpolation (`{{}}`) and rule `{{#}}`
 
 jst is similar with freemarker(http://freemarker.org/) (the opentag and closetag is changed but is configurable).
 

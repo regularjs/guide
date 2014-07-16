@@ -23,7 +23,7 @@ __USAGE__
 <iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/DCFXn/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
-几点说明
+some tips
 
 1. the tagname `pager` is the component's name.
 2. if the attribute value is not an Expression. it will be passed as param without create the binding.
@@ -32,6 +32,6 @@ __USAGE__
   ```javascript
     this.$bind(pager, 'current', 'current')
   ```
-3. `on-*`绑定一个组件方法，当内嵌组件抛出`$emit`某个自定义事件时, 将会转移到Expression制定的方法处理(注意虽然与ui事件的绑定方式类似，但是是不同的概念)
+4. similar with [event](../core/) `on-*`绑定一个组件方法，当内嵌组件抛出`$emit`某个自定义事件时, 将会转移到Expression制定的方法处理(注意虽然与ui事件的绑定方式类似，但是是不同的概念)
 
 

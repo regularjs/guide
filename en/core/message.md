@@ -1,22 +1,21 @@
-#事件发射器
+#EventEmitter
 
-regular提供了简单的事件发射器支持，与angular类似提供了`$on` `$off` 以及`$emit`
+regularjs provide simple EventEmitter API.
 
-##接口描述
+##API
 
 <a name="message"></a>
 
-1. `component.$on(String name,Function handler)`
-  - name 事件类型
-  - handler 事件处理函数，接受的参数即传入(#emit)的参数
-2. `component.$off(String name, Function handler)`: 解绑事件监听
+1. `component.$on([String|Object] name,Function handler)`  add listener
+  - name: event name
+  - handler: the event handler
+2. `component.$off(String name, Function handler)`: remove listener 
   + name : event name, if missed, will remove all watcher in this component
   + handler : if missed, will remove all  watcher have the same event_name
-3. `component.$emit(String name, args..)`: 发射对应的事件类型
-  + name : 事件类型
-  + args : 所有传入的参数都会传入监听回调中
+3. `component.$emit(String name, args..)`: trigger event
+  + name : event name
+  + args : the args passed to the handler
 
-> 如果传入`$on`的是Object型，将视为多重绑定
 
 __Example__
 
@@ -31,7 +30,7 @@ var clickhandler3 = function(arg1){ console.log('clickhandler3:' + arg1)}
 component.$on('hello', clickhandler1);
 component.$on('hello', clickhandler2);
 component.$on({ 
-  'other': clickhandler3 
+  'other': clickhandler3  // mulitply $on
 });
 
 

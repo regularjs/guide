@@ -1,6 +1,6 @@
-# Inteplation
+# interpolation
 
-Inteplation is most common part of the template.
+interpolation is most common part of the template.
 
 ```html
 <p class="m-modal m-modal-{{klass}}" on-click={{this.remove(user)}}> 
@@ -9,12 +9,12 @@ Inteplation is most common part of the template.
 
 ```
 
-you can find inteplation at either textNode or attributeNode.
+you can find interpolation at either textNode or attributeNode.
 
 
-## Text Inteplation
+## Text interpolation
 
-when used as text-inteplation, regular will create a TextNode and set the value as the node's textContent.
+when used as text-interpolation, regular will create a TextNode and set the value as the node's textContent.
 
 __Example__
 
@@ -33,12 +33,12 @@ app.inject('#app');
 will outport `<div>leeluolee</div>`. and whenerver the data changes, the textNode's content is also updated. it is a __one-way__ binding.
 
 
-## Attribute Inteplation
+## Attribute interpolation
 
 
-When used as attribute-inteplation(only the value can be interpolated), there is some explanations.
+When used as attribute-interpolation(only the value can be interpolated), there is some explanations.
 
-1. if the value is a string but contains inteplation(e.g. `class='m-modal m-modal-{{klass}}'`), the string will be considered as a inteplation.
+1. if the value is a string but contains interpolation(e.g. `class='m-modal m-modal-{{klass}}'`), the string will be considered as a interpolation.
 
 2. if the attribute is not a [directive](../core/directive.md). once the value changes, the attribute's value will update directly. it is a __one-way binding__.
 
@@ -62,8 +62,8 @@ __Example__
 like the example above.
 
 1. `r-model`: directive
-2. `style`: string-inteplation
-3. `class`: simple attribute inteplation
+2. `style`: string-interpolation
+3. `class`: simple attribute interpolation
 4. `type`: just normal attribute
 
 

@@ -67,9 +67,9 @@ __RESULT__
 
 
 
-## 2. Using __inteplation__ to show user's name
+## 2. Using __interpolation__ to show user's name
 
-this component only show the constant message until now, we should make it living by using __inteplation__.
+this component only show the constant message until now, we should make it living by using __interpolation__.
 
 
 ```html
@@ -117,7 +117,7 @@ in this step , we need to add two event to deal with the __Login__ and __Logout_
 
 > <h5>Tips</h5>
 
->in regular,  the `on-` prefixed attribute will be considered as [ui event](../core/event.md)， it must be followed with a Expression(string or inteplation is all valid). the expression will be evaluated everytime when the event is trigged(just like angular). 
+>in regular,  the `on-` prefixed attribute will be considered as [ui event](../core/event.md)， it must be followed with a Expression(string or interpolation is all valid). the expression will be evaluated everytime when the event is trigged(just like angular). 
 
 > you can also define your custom event like(e.g. `on-hold` or `on-tap`) and determine when to trigger it;
 
