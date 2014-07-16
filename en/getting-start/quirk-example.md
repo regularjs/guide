@@ -53,7 +53,7 @@ __RESULT__
   
   component's model, but it just a Plain Object.  the `data` passed to `new Component` will merge the `data` passed to `Component.extend`
 
-
+<a name="inject"></a>
 * `inject(node[, direction])`
 
   it is a instance method, inject the component to the position that depending on the parameter 'direction'

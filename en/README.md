@@ -1,28 +1,34 @@
 # regularjs Guide
 
----
-
-> #English version is still in progress
-
-----
-
-> __regular = react(ractive) + angular__
-
-regularjs is a __"string-based living template engine"__ aim to helping you to create interactive component that having independent lifecycle. which also means regularjs have the ability to integrated with whatever framework you like.
 
 
 This guide is regularjs 's offcial guide. 
 
 
------------
+Regularjs is a __"string-based living template engine"__ aim to helping you to create interactive component. 
 
-> Naming Convention
+Regularjs provide data-binding based on dirty-check which is similar with angular. meanwhile , it has the same philosophy with react: one data need corresponding to one output. Finally, the definition of Component is similar with ractive that is also based on Class.
+
+__For those reason, although regularjs is not based on regular ,react and ractive. we also use the attractive slogan__
+
+
+> __regular = react(ractive) + angular__
+
+
+
+
+
+
+__Naming Convention__
 * __Component__: means Regular and Regular's SubClass
 * __component(lowercase)__:  means the Component's instance
 
 
 
-__The author's english is poor, so the guide may looks obscure. if you can help me to improve this document, please [contact me](mailto:87399126@163.com) __
+
+-----------------
+
+ __Author is bad at English, so the guide may reads a little  awkwardly. if you can help us to improve this document, please [contact us](mailto:87399126@163.com) __
 
 
 

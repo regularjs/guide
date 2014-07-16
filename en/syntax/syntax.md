@@ -51,7 +51,7 @@ just like xml. rule's tag must be matched or self closed.
 
 ### Some Tips
 
-1. Rule and Xml must dont breakup each other which is the most important difference with other string-based template
+1. rule and xml must dont breakup each other which is the most important difference from regularjs to other string-based template
 
   ```xml
   <div>
@@ -65,8 +65,7 @@ just like xml. rule's tag must be matched or self closed.
 
   ```
 
-  the example a above is invalid.
-
+ the example a above is invalid.
 
 --------------------------
 

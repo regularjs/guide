@@ -5,7 +5,7 @@ You can use if, elseif and else rule to conditionally skip a section of the temp
 __Syntax__
 
 
-```mustache
+```xml
 {{#if condition}}
   ...
 {{#elseif condition2}}
@@ -33,6 +33,26 @@ __Example__
 {{/if}}
 
 ```
+
+
+## use `if` with the attribute
+
+you can use `if` `else` `elseif` to controll the attribute
+
+__Example__
+
+```xml
+<!-- controll the attribute -->
+<div {{#if active == 'home'}}data-home{{/if}}>Home</div>
+<!-- controll the event -->
+<a {{#if current < last}} on-click={{this.next()}} {{/if}}>Next</a>
+
+<!-- controll the directive -->
+<input {{#if !disabled}} r-model={{username}} {{/if}}>
+```
+
+if the test is evaluated to false , the attribute, event-handler, directive will be removed or destroied; 
+
 
 
 

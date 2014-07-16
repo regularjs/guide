@@ -1,6 +1,6 @@
 #Template Syntax
 
-unlike dom-based template like [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/). regularjs is string-based (e.g. [ractive](http://www.ractivejs.org/)), this featrue provide some advantage.
+Unlike dom-based template like [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/). regularjs is string-based (e.g. [ractive](http://www.ractivejs.org/)), this featrue provide some advantage.
 
 ### 1. more powerful logic function
   
@@ -34,7 +34,7 @@ directive(`ng-if`,`ng-repeat`) to implement logic function. it is no possible to
 
 ### 3. making the pre-parsing possible
 
-you can pre-parse the template-string to AST at the building time.
+you can pre-parse the template-string to AST before creating your Component.
 
 __for example__
 

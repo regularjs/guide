@@ -1,25 +1,23 @@
-#数据绑定和生命周期
+#Data-binding and Life-cycle
 
-数据驱动的思想是mvvm模式中的核心，regular也是如此 ,数据绑定是实现数据驱动的组件开发的核心所在.
-
-regularjs的组件实例中与数据绑定相关的函数有如下几个
-
+Data-binding is the core to realize the data-driven component. in regularjs, data-binding is based on watcher system. there are some methods which is important in this system
 
 <a name="watch"></a>
 ### 1 `component.$watch(expression, handler)`
 
-绑定一个数据监听器, 返回watchid，用于$unwatch(解绑) 
+create a watcher , and return a watchid that used for `$unwatch`.
 
 
 __Arguments__
 
-  * expression [Expression| Array | String] - expression可以有多种参数类型
-    - Expression: 每次都会检查此表达式求值是否改变
-    - String: 此字符串会先被`Regular.expression`处理为Expression
-    - Array: 即检查多个表达式，数组中的任意一个发生改变都触发回调
-  * handler(newvalue, oldvalue) [Function] - 监听器回调，传入改变前和改变后的值
+  * expression [Expression| Array | String] - 
+    - Expression: 
+    - String: will be preprocessed by `Regular.expression` to become `Expression`
+    - Array: any Expression changed in Array, will trigger the watcher. the params passed to handler is the current values of all item in Array.
+  * handler(newvalue, oldvalue) [Function]
+    - newvalue:  current value of the Expression
+    - oldvalue:  previous value of the Expression
 
-    __注__: 当为多重监听时， 参数为所有表达式的新值列表
 
 
 __Example__
@@ -29,7 +27,7 @@ var component = new Regular();
 
 
 var expression = Regular.expression('c + d');
-component.$watch(expression, function(nvalue, oldvalue){alert('c + d is changed to' + nvalue );
+  component.$watch(expression, function(nvalue, oldvalue){alert('c + d is changed to' + nvalue );
 })
 
 var watchid = component.$watch('a + b', function(nvalue,oldvalue){
@@ -51,14 +49,14 @@ component.$update(function(data){
 ```
 
 
-`$update`请参考[$update](#$update);
+you can find the explanation of `$update` [at here](#update);
 
 
 
 <a name="unwatch"></a>
 ### 2 `component.$unwatch(watchid)`
 
-取消一个数据监听器 
+remove a watcher.
 
 __Arguments__
 

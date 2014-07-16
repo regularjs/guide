@@ -1,23 +1,21 @@
-# directive——指令
+# Directive
 
-定义一个指令(angular的directive的瘦身版) ,做节点的功能性增强
-
+Directive is similar with angular's directive but more lightweight( in other words, less powerful :) ). you can consider it as the enhancement in the node.
 
 ## API
 
 __`Component.directive(<String|RegExp> name, <Object|Function> spec)`__
 
-  - name 指令名如`r-model`, __name也可以是一个正则表达式,用来匹配所有符合的属性名__
-  - Function spec(elem, value) 传入参数如下<br>
-    - elem 绑定的元素节点
-    - value 属性值(可能是字符串或是一个[Expression](../syntax/expression.md)对象)
-    - this 这里的this指向component组件本身
+  - name : directive's name, also accept RegExp to matched multiply attributeName.
+  - Function spec(elem, value) : the passed params show below.
+    - elem  the owner element
+    - value the attributeValue. maybe `String`(r-test ="haha" ) or`Expression` (r-test={{haha}})
+    - this  point to component self
 
-> 当不传入spec时, directive是一个getter方法，用于获取指令定义
 
 __Example__
 
-创建一个innerHTML与数据的绑定.
+
 
 ```javascript
 Regular.directive('r-html', function(elem, value){
@@ -26,8 +24,10 @@ Regular.directive('r-html', function(elem, value){
   })
 })
 ```
+The directive`r-html` create a unescaped inteplation with innerHTML.
 
-这里由于[$watch](../core/binding.md)同时接受字符串或者Expression, 所以我们可以在模板里传字符串或插值
+Beacuse [`$watch`](../core/binding.md) accepts [String] and [Expression] as the first param, so you can use `r-html` in two ways. 
+
 
 
 ```html
@@ -36,9 +36,12 @@ Regular.directive('r-html', function(elem, value){
   <div class='preview' r-html={{content}}></div>
 ```
 
+In fact, all regularjs's builtin directive accepts [String] and [Expression]. but you can have different logic betweent them when defining you own directive
 
-如果必要你也可以在函数返回一个destroy函数做指令的销毁工作(比如绑定了节点事件). 需要注意的是, regular中watch数据是不需要进行销毁的, regular会自动清理对应的数据绑定
+If the directive need some teardown work, you can return a destroy function(e.g. dom related operation) . __but you dont need to `$unwatch` the watcher defined in directive , regularjs is record it for you and unwatch it automately__
 
+
+__Example__
 
 ```javascript
 
@@ -55,16 +58,18 @@ Regular.directive('some-directive', function(elem, value){
 
 
 
-## 内建指令
+## Builtin Directive
 
-当前版本, regularjs只内置了几个常用指令
+regularjs is providing some basic directive for you.
 
 ### 1. `r-model` 
 
-r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下几种表单元素, 具体可以查看[r-model-example](http://jsfiddle.net/leeluolee/4y25j/)
+much similar with `ng-model` in angular, `r-model` can help you to create two-way binding between data and the form element.
 
-* `input、textarea`: 与节点value实现双向绑定
+you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsfiddle
 
+* `input、textarea`: 
+  simple text binding
   ```
   <textarea  r-model='textarea'>hahah</textarea>
   <input  r-model='input' />
@@ -72,7 +77,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
 
 * `input:checkbox`: 
-  注意这个绑定的是布尔值，与节点的checked属性实现双向绑定
+  binding between the input's checked state and field with boolean type
 
   ```
   <input type="checkbox" checked  r-model={{checked}}> Check me out (value: {{checked}})
@@ -81,7 +86,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
 
 * `input:radio`:
-  与节点value实现双向绑定
+  binding to input.value
 
   ```html
   <input type="radio"value="option1" r-model={{radio}}>
@@ -89,7 +94,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
 
 * `select`: 
-  与select的选择项实现双向绑定(对应option的value值)
+  binding to select.value
 
   ```html
   <!-- city = 1 -->
@@ -104,49 +109,68 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
 ### 2. `r-style`
 
-`r-style`是为了解决`style`直接插值的逻辑能力上的不足, 它建立的是与elem.style的单向数据绑定关系. 每当r-style绑定的表达式数据(被解释为`Object`类型)发生更新 
+`r-style` is a enhancement for plain `style` inteplation, the value should evaluted to [Object], every key-value pair in evaluted object add to `element.style`.
+
 
 __Exmaple__
 
 ```javascript
 var app = new Regular({
     template: 
-      "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }}>left+10</button>\
+      "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }} >left+10</button>\
       left:  {{left}}",
     data: {left:1}
 }).inject(document.body)
 
 ```
 
-[|DEMO|](http://jsfiddle.net/leeluolee/aaWQ7/)
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/aaWQ7/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 
-> style属性如果已经有插值，将会覆盖r-style的定义
+> __Warning: if there is already a inteplation on `style`, the `r-style` will be overridden__
+
+> for examle . `<div style='left: {{left}}px' r-style='{left: left+"px"}'></div>`
 
 ### 3. `r-class`
 
-与`r-style`类似，不过是为了解决`class`的不足, 每当对象某个属性值为true时，会添加对应的属性名 作为class
+simmilar with `r-style`. `r-class` is a enhancement for plain `class` inteplation,
 
 
 __Example__
 
-```javascript
-
-
+```html
+<div r-class='{"active": page === "home"}'></div>
 ```
-[|DEMO|](http://jsfiddle.net/leeluolee/aaWQ7/)
+
+in this example, when `page === 'home'` , the `active` will attach to the node`div` , or vice versa.
 
 
-> class属性如果已经有插值，将会覆盖r-class的定义
+> __Warning: just like `r-style`, if there is already a inteplation on `class`, the `r-class` will be overridden__
 
 ### 4. `r-hide`
 
-当表达式求值为真时，添加`display:none`到本节点
+__Exmaple__
+
+```html
+<div r-hide="page !== 'home'"></div>
+```
+
+if the Expression `page !== 'home'` is evaluated to true, the `display:none` will attach to the `div`.
 
 
 
-> 所有内建的指令都同时接受Expression或者String类型的值.
+
+### 5. `r-html` 
+
+unescaped inteplation use innerHTML. beware of the attack like `xss`.
+
+__Example__
+
+```javascript
+<div class='preview' r-html={{content}}></div>
+```
+
 
 
 
