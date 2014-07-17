@@ -1,16 +1,16 @@
 # event——ui事件体系
 
-所有的`on-`开头的属性都会被作为ui事件处理
+Every attribute prefixed with `on-` will be considered as event binding.
 
 > <h5>tip</h5>
-> 由于Component.directive支持正则匹配属性名, 所以内部实现中ui事件绑定其实是一种特殊的指令
+> In fact, event is a special directive. beacuse of the 
 
 
 
-## 1. 对于未自定义过的ui事件
-  与ractive类似, 事件指令会默认在指令所在节点绑定对应事件，比如`on-click={{this.add()}}`会在节点绑定`click`事件。与ractive不同的是，每次ui事件触发时，regularjs不是以代理的形式，而是与angular一样，运行一次绑定的表达式.
-
-  即所有dom中的click、change、keydown等事件都可以直接on-xx的方式进行绑定
+## 1. Basic Event Support
+  
+  you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `on-mouseover`)
+  . everytime the event is be triggered, the value of the attribute will be evaluted.
 
   __Example__:
 
@@ -23,25 +23,30 @@
   }).inject(document.body);
   ```
 
-  [|DEMO|](http://jsfiddle.net/leeluolee/y8PHE/1/)
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/y8PHE/1/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
-## 2. 注册自定义事件 `Component.event(event, handler)`
 
-handler接受两个参数:
 
-  -elem   attached element
-  -fire   一个函数，每当这个函数调用，将会触发这个自定义事件，传入fire的参数则会作为[`$event`](#$event)对象
+## 2. Register Custom Event `Component.event(event, fn)`
 
-注意如果需要做 __销毁工作__ ，与指令一样，你需要返回一个销毁函数
+you may need to register a custom event that is not native supported by the browser(e.g. `on-tap` `on-enter`).
 
-> 当不传入spec时, event是一个getter方法，用于获取事件处理定义
+__Arguments__
+  * event: the name of custom event
+  * fn(elem, fire)   the definition of the custom event
+    -elem   attached element
+    -fire   the trigger of the custom event. when fire is called with some __param__, the passed Expreesion  will be Evaluated. and the __param__ will become the [`$event`](#$event).
+
+
+> <h5>Tips</h5>
+> * if you need some teardown job, you need return a function.
 
 
 __Example__ 
 
-Regular内置的on-enter的实现，它在敲击回车时会进行触发
 
+the source of the builtin event —— `on-enter`
 
 ```javascript
 
@@ -59,13 +64,14 @@ Regular内置的on-enter的实现，它在敲击回车时会进行触发
   });
 ```
 
-注意这里我们返回了一个destroy函数用来清理此ui事件绑定
 
 
 <a name="$event"></a>
-## 3. 事件对象`$event`
+## 3. `$event`
 
-Regular推崇的是声明式的事件处理，一般不建议操作事件对象，如果你确实需要. 那你可以使用`$event` 这个临时变量，它会在每次事件触发时注册在作用域上，对于非自定义事件，则`$event`传入fire的对象.
+In regularjs , the event is processed in declarative way. But in some cases, you may need the `Event`Object, regularjs created an temporary variable`$event` for it, you can use the variable in the Expression. 
+
+when the event is custom event, the `$event` is the param you passed in `fire`.
 
 __Example__
 
@@ -82,11 +88,10 @@ new Regular({
 }).inject(document.body);
 ```
 
-[|DEMO|](http://jsfiddle.net/leeluolee/y8PHE/3/)
-
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/y8PHE/5/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 > <h5>Tip</h5>
-> `$event`对象是被修正过的，在兼容IE6的前提下，你可以使用以下规范内的属性
+> `$event` is fixed for you already, you can use the property below. 
 > 1. target
 > 2. preventDefault()
 > 3. stopPropgation
@@ -94,4 +99,7 @@ new Regular({
 > 5. pageX
 > 6. pageY
 > 7. wheelDelta
+> 8. $event.event will get the origin event.
+
+
 

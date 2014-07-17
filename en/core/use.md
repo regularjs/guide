@@ -1,20 +1,20 @@
-#regular的封装和模块化策略
+#Encapsulation and Plugin in regularjs
 
-良好的模块化和封装性支持是可以在大型项目中使用的必然要求. regularjs中只有一个顶层对象`Regular`, 它即是命名空间又是组件的基类, 这种情况下如何实现封装呢？
+Regularjs is very efficient for developing, it is also provide basic encapsulation which is important during the deveopment in large project.
+
+## Extension in regularjs is ony-way influence
+
+in previous chapter, we learned four methods for extension.
+
+* [Component.filter](filter.md)
+* [Component.directive](directive.md)`
+* [Component.event](event.md)
+* [Component.implement](class.md)
 
 
-## 扩展接口的单向影响性
+They have a same feature: the extension is only __available to Component and its SubComponent__. which also the basic of the encapsulation
 
-之前小节已经提到了Component拥有四个扩展接口
-
-* [filter](filter.md): 定义一个过滤器, 在表达式中可以使用
-* [directive](directive.md)`: 定义一个指令扩展节点能力
-* [event](event.md): 自定义一个ui事件,例如`drag`
-* [implement](class.md): 在组件的原型添加一个函数
-
-
-这四位的共同特点就是 __[扩展只对定义它的Component及其子类可见]__ 如
-
+__Exmaple__
 
 ```javascript
 Regular.event('tap', tap)
@@ -37,22 +37,11 @@ alert(SubChild.event('tap2') === tap2)
 // filter，directive is the same
 ```
 
-即父类无法获得子类定义的扩展, 而反之可以, 这个最基本的概念是实现regular的模块化的第一步.
 
 
-> __tips__: 
->对于implement无需多做解释, 这是原型继承的基本原理, 而对于其它几个接口, regular会让父子类的容器对象(比如event都是保存在在_events私有对象中)做一次原型继承`Object.create()`
+## Create unique namespace in every project
 
-即如果需要全局可用的扩展可以直接定义在Regular中, 而私有扩展不会影响到外围的其它组件
-
-
-
-
-## 建立项目内独立的隔离空间
-
-对于建立独立的隔离空间,聪明的同学可能已经想到了
-
-> 即定义一个什么都不做的组件来替代Regular顶层空间来作为扩展的容器
+you can defined a void Component for the Container of the extension only available in this Project
 
 ```javascript
 var YourNameSpace = Regular.extend()
@@ -62,28 +51,19 @@ YourNameSpace.filter().directive().event() //....
 var Component = YourNameSpace.extend();
 ```
 
-这样, 独立项目内的扩展就不会影响到产品中的其它Regular组件了
+now, your extension will not affect other project.
 
 
-## use——regular的模块(插件)化
+## `use` — the regularjs's Plugin System
 
-angular中模块化的解决方案是`angular.module()`和依赖注入, 一个模块可以有factory可以有filter可以有directive等等.
-
-在regular中不可能照搬这种方式, 这是因为
-
-- regular中没有`$rootScope.$digest()`这种全局性的__解药__无脑的促使所有绑定进入数据检查阶段，regular组件的生命周期都是独立的, 这就决定了必须让扩展建立与组件的关系.
-
-  >比如angular的`$timeout`之类的实现只需在定时器完成后`$rootScope.$digest()`即可进入全局的数据检查, 而regular中[timeout](#timeout)之后必须调用组件的`$update()`才进入组件本身的数据检查阶段,即需建立与组件的关系.
+All methods introduced above will create connection with specified Component. __but for reusing, a plugin must Compnent-independent, the connection need creating during the using of plugin__. 
 
 
-- 模块插件应该是与组件无关的, 绑定只应该在被使用时发生, 这样才是可复用的模块插件.
-
-
-所以一个典型的模块插件的写法应该是这样的
+so, the general plugin will be written  like this
 
 ```javascript
 
-function FooModule(Componenet){
+function FooPlugin(Componenet){
   Component.implement()// implement method
     .filter()          // define filter
     .directive()       // define directive
@@ -92,46 +72,50 @@ function FooModule(Componenet){
 
 var YourComponent = Regular.extend();
 
-FooModule(YourComponent);   // lazy bind(private)
-FooModule(Regular);         // lazy bind(global)
+FooPlugin(YourComponent);   // lazy bind(private)
+FooPlugin(Regular);         // lazy bind(global)
 
 ```
 
 
-为了更统一, 所有Component都有一个`use`函数来统一'使用'模块, 如上例可以写成
+For consistency, every Component have a method named `use` to active a plugin. you can use the `FooPlugin` like this.
 
 ```javascript
 
-YourComponent.use(FooModule);
+YourComponent.use(FooPlugin);
 
 // global
-Regular.use(FooModule);
+Regular.use(FooPlugin);
 
 ```
 
 
 
 
-## Regular预定义的模块
+## Some Builtin Plugin
 
-预定义模块都可以直接用Component.use(模块名)的方式使用
+Every builtin plugin have a registered name, you can simply pass the name to `use`.
 
 
 <a name="timeout"></a>
-### 模块名: 'timeout'
+### name: 'timeout'
 
-timeout模块在组件中扩展了两个方法
+timeout
 
 - `Number $timeout(fn, delay)`: 
   
-  定时器函数(setTimeout), 在fn调用会进入本组件的数据检查，返回计时器id 
+  just a wrap for setTimeout, when time is out the digest-phase of the component will be triggered. 
+
+  return id for clearTimeout
 
 - `Number $interval(fn, delay)`: 
   
-  周期定时器函数(setInterval), 在fn调用后会进入本组件的数据检查，返回计时器id
+  just a wrap for setInterval, every step the digest-phase of the component will be triggered. 
+
+  return id for clearInterval.
 
 
-timeout模块非常简单, 简单到可以直接列出全部源码
+the source code of the TimeoutPlugin.
 
 ```js
 function TimeoutModule(Component){
@@ -158,7 +142,7 @@ function TimeoutModule(Component){
 
 __Example__
 
-一个简单的计数器
+a simple Counter
 
 ```javascript
 var Counter = Regular.extend({
@@ -180,21 +164,14 @@ new Counter({data: {count:0}}).inject('#app');
 ```
 
 
-[|DEMO|](http://fiddle.jshell.net/leeluolee/4AzR6/)
+
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/4AzR6/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 
-## <del>模块名: 'request'</del>
-
-异步请求模块
-
-__移除引入request__ 因为代码量的问题，一般其它框架也都会实现request, 改为以非内置的形式提供[regularjs/request](https://github.com/regularjs/request)
 
 
 
-## 目前可用的非内置插件列表
-
-1. [shortcut(coming soon)]()
 
 
 

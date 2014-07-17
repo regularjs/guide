@@ -22,6 +22,5 @@
   - [Event Emitter](core/message.md)
 * [Advanced Concepts](advanced/README.md)
   - [Nested Component](advanced/component.md)
-  - [Regular's Transclude](advanced/content.md)
 * [Q & A](qa/README.md)
   - [Common Question](qa/common.md)

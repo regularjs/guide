@@ -28,7 +28,7 @@ __Naming Convention__
 
 -----------------
 
- __Author is bad at English, so the guide may reads a little  awkwardly. if you can help us to improve this document, please [contact us](mailto:87399126@163.com) __
+ __Author is bad at English, so the guide may reads a little  awkwardly. we will invite people helping us to review this guide. if you can help us to improve this document soon, please [contact us](mailto:87399126@163.com) __
 
 
 
