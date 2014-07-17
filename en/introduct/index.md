@@ -4,7 +4,7 @@ This page aim to helping you to find api that all over the guide
 
 # Static Method
 
-> Warn: some method only belongs to `Regular`, but some is belongs to All `Component`(Regular and its SubClass).
+> Warn: some method only belongs to `Regular`, but some is available to All `Component`(Regular and its SubClass).
 
 1. [Component.extend](../core/class.html#extend):       creating A Component
 7. [new Component](../core/class.html#instance):        Initialize A Component
@@ -22,13 +22,13 @@ This page aim to helping you to find api that all over the guide
 > `$`-prefixed method means that you should not rewrite it.
 
 1. [component.$watch](../core/binding.html#watch)         create a watcher
-2. [component.$unwatch](../core/binding.html#unwatch):     destroy a watcher
-3. [component.$update](../core/binding.html#update): 
-4. [component.$bind](../core/binding.html#bind)
-5. [component.$on](../core/message.html#on)
-6. [component.$off](../core/message.html#off)
-7. [component.$emit](../core/message.html#emit)
-8. [component.inject](../getting-start/quirk-example.html#inject)
+2. [component.$unwatch](../core/binding.html#unwatch):    destroy a watcher
+3. [component.$update](../core/binding.html#update):      update data and enter the digest phase
+4. [component.$bind](../core/binding.html#bind)           create binding between two component
+5. [component.$on](../core/message.html#on)               Listens on events of a given type
+6. [component.$off](../core/message.html#off)             remove Listener with given type
+7. [component.$emit](../core/message.html#emit)           trigger Listener
+8. [component.inject](../getting-start/quirk-example.html#inject) inject component to the specified place
 
 
 
