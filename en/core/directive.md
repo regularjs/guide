@@ -8,9 +8,9 @@ __`Component.directive(<String|RegExp> name, <Object|Function> spec)`__
 
   - name : directive's name, also accept RegExp to matched multiply attributeName.
   - Function spec(elem, value) : the passed params show below.
-    - elem  the owner element
-    - value the attributeValue. maybe `String`(r-test ="haha" ) or`Expression` (r-test={{haha}})
-    - this  point to component self
+    - elem:  the owner element
+    - value: the attributeValue. maybe `String`(r-test ="haha" ) or`Expression` (r-test={{haha}})
+    - this:  point to component self
 
 
 __Example__
@@ -57,7 +57,7 @@ Regular.directive('some-directive', function(elem, value){
 
 
 
-
+<a name="builtin"></a>
 ## Builtin Directive
 
 regularjs is providing some basic directive for you.
@@ -107,9 +107,11 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
   ```
 
 
+
+
 ### 2. `r-style`
 
-`r-style` is a enhancement for plain `style` interpolation, the value should evaluted to [Object], every key-value pair in evaluted object add to `element.style`.
+`r-style` is a enhancement for plain `style` interpolation.
 
 
 __Exmaple__
@@ -125,6 +127,13 @@ var app = new Regular({
 ```
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/aaWQ7/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+Description
+
+|Param|Type|Details|
+|---|---|---|
+|r-style | `expression` | `Expression` which evals to an object whose keys are CSS style names and values are corresponding values for those CSS keys.|
+
 
 
 
@@ -144,6 +153,15 @@ __Example__
 ```
 
 in this example, when `page === 'home'` , the `active` will attach to the node`div` , or vice versa.
+
+Description
+
+|Param|Type|Details|
+|---|---|---|
+|r-class | `expression` | `Expression` eval to `Object`: a map of class names to boolean values. In the case of a map, the names of the properties whose values are truthy will be added as css classes to the element..|
+
+
+
 
 
 > __Warning: just like `r-style`, if there is already a interpolation on `class`, the `r-class` will be overridden__

@@ -1,6 +1,6 @@
 ##nested component
 
-regular's component is __nestable__ if it has a registered name
+regular's component is __nestable__ if it has a registered name. there is two way to register a component.
 
 
 1. specify the name attribute at node that contains the template-string.
@@ -39,8 +39,15 @@ Some Explanation
   ```javascript
     this.$bind(pager, 'current', 'current')
   ```
-4. a little similar with [event](../core/event.md), the `on-*` will delegate specified event to outer component's method， The Expression passed need evaluated to [Function]. Check the Demo above, you will find the first pager's `nav` event is delegated to outer component's `changePage` method.
+4. a little similar with [element's event](../core/event.md), the `on-*` attribute will proxy specified event in nested component to outer component. Expression and Non-Expression is all valid.
+  
+  __example__
 
+  ```html
+  <pager on-nav='nav' />
+  <pager on-nav={{this.nav($event)}} />
+
+  ```
 
 
 ## nested component with transclude

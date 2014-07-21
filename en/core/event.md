@@ -1,16 +1,15 @@
-# event——ui事件体系
+# Event System
 
 Every attribute prefixed with `on-` will be considered as event binding.
 
 > <h5>tip</h5>
-> In fact, event is a special directive. beacuse of the 
+> In fact, event is a special directive. beacuse the directive accepts RegExp as the first param.
 
 
 
 ## 1. Basic Event Support
   
-  you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `on-mouseover`)
-  . everytime the event is be triggered, the value of the attribute will be evaluted.
+you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `on-mouseover`)
 
   __Example__:
 
@@ -34,13 +33,12 @@ you may need to register a custom event that is not native supported by the brow
 
 __Arguments__
   * event: the name of custom event
-  * fn(elem, fire)   the definition of the custom event
+  * fn(elem, fire)
     -elem   attached element
-    -fire   the trigger of the custom event. when fire is called with some __param__, the passed Expreesion  will be Evaluated. and the __param__ will become the [`$event`](#$event).
-
+    -fire   the trigger of the custom event.
 
 > <h5>Tips</h5>
-> * if you need some teardown job, you need return a function.
+> * if you need some teardown work, you need return a function.
 
 
 __Example__ 
@@ -65,13 +63,56 @@ the source of the builtin event —— `on-enter`
 ```
 
 
+## 4. Proxy or Evaluate.
+
+Expreesion and Non-Expression is all valid to handle the event. but they do different this when event  be triggered.
+
+1. Expression(e.g. `on-click={{this.remove()}}`)
+  once the event fires. Expression will be evalutated, it is similar with angular.
+
+  __Example__
+  
+
+  ```html
+    <div on-click={{this.remove(index)}}>Delte</div>
+  ```
+
+
+2. Non-Expression (e.g. `on-click="remove"`)
+   event be proxied to specified event(`remove` above) upon the event fire. you can use `$on` to handle it. it is similar with ractive.
+
+  __Example__
+
+  ```html
+    <div on-click="remove">Delte</div>
+  ```
+
+  then handle the proxy event with `$on`
+
+
+  ```javascript
+  var Component = Regular.extend({
+    template:'#example',
+    init: function(){
+      this.$on("remove", function($event){
+          // your logic here
+      })
+    }
+  })
+
+  ``` 
+  
+
+once event fires, the digest phase will be triggered.__ you dont need to `$update` in your handle __.
+
+
 
 <a name="$event"></a>
-## 3. `$event`
+## 4. `$event`
 
-In regularjs , the event is processed in declarative way. But in some cases, you may need the `Event`Object, regularjs created an temporary variable`$event` for it, you can use the variable in the Expression. 
+In some cases, you may need the `Event` object, regularjs created an temporary variable`$event` for it, you can use the variable in the Expression. 
 
-when the event is custom event, the `$event` is the param you passed in `fire`.
+if the event is custom event, the `$event` is the param you passed in `fire`.
 
 __Example__
 
@@ -100,6 +141,15 @@ new Regular({
 > 6. pageY
 > 7. wheelDelta
 > 8. $event.event will get the origin event.
+
+
+-----------
+
+Description
+
+|Param|Type|Details|
+|---|---|---|
+|on-*(e.g.`on-mouseover`)|`expression` or `no-expression`| `Expression` to evaluate upon specified event be triggered,Event object is available as `$event` <br> `Non-Expression` be proxied to specified event upon the event fire.  |
 
 
 

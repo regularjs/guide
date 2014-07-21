@@ -41,7 +41,7 @@ alert(SubChild.event('tap2') === tap2)
 
 ## Create unique namespace in every project
 
-you can defined a void Component for the Container of the extension only available in this Project
+you can defined a void Component as NameSpace instead of Regular , then extension only available in this NameSpace
 
 ```javascript
 var YourNameSpace = Regular.extend()

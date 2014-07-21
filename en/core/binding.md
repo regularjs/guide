@@ -91,10 +91,10 @@ do the setter operation on the passed Expression and enter the `digest` phase.
 
 __Arguments__
 
-  * setable [Expression| Function | String] - expression可以有多种参数类型
+  * setable [Expression| Function | String] - 
     - Expression: The Expression must be setable, see more in [Expression](../syntax/expression.md)
     - String: String will be parsed to Expression
-    - Function: just like angular's `$apply`, you can batch update-operation in the passed handler
+    - Function setable(data): just like angular's `$apply`, you can batch update-operation in the passed handler
       - data: === component.data
     - Object: multiply setting operation.
 
@@ -189,7 +189,6 @@ for(var i = 0; i < 10; i++){
 
 you may need [the sourcecode of  the pager ](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
 
->The internal implementation of the [nested component](../advanced/component.md) is also based on `$bind`
 
 
 

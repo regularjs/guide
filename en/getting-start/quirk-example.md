@@ -1,7 +1,7 @@
 
 #Quirk Example
 
-In this section, we will create our first component based regularjs —— __HelloRegular__ . it used to show  message to people friendly. if people don't login yet, the component needs to prompt people. for simplicity, only username is required with login .
+In this Page, we will create our first component —— __HelloRegular__ . it used to show  message to people friendly. if people don't login yet, the component needs to prompt people. for simplicity, only username is required with login .
 
 
 
@@ -108,17 +108,16 @@ in this step , we need to add two event to deal with the __Login__ and __Logout_
 
 ```html
 {{#if username}}
-  Hello, {{username}}. <a href="javascript:;" on-click={{username = ''}}>Logout</a>
+  Hello, {{username}}. <a href="#" on-click={{username = ''}}>Logout</a>
 {{#else}}
-  Sorry, Guest. Please <a hreaf="javascript:;" on-click={{this.login()}}>Login</a>
+  Sorry, Guest. Please <a hreaf="#" on-click={{this.login()}}>Login</a>
 {{/if}}
 
 ```
 
 > <h5>Tips</h5>
 
->in regular,  the `on-` prefixed attribute will be considered as [ui event](../core/event.md)， it must be followed with a Expression(string or interpolation is all valid). the expression will be evaluated everytime when the event is trigged(just like angular). 
-
+>in regular,  the `on-` prefixed attribute will be considered as [ui event](../core/event.md)
 > you can also define your custom event like(e.g. `on-hold` or `on-tap`) and determine when to trigger it;
 
 
@@ -151,7 +150,7 @@ __RESULT__
 
 ## 5. when the component's digest phase will be triggerd
 
-just like angular. regular's data-binding is based on dirty-check. some inner logic(.e.g event, [timeout](../core/use.html#timeout)) will tirgger the component's digestting phase automately. you can also trigger the digest manually by the [component.$update](../core/binding.html#update)
+just like angular. regular's data-binding is based on dirty-check. some builtin (.e.g event, [timeout](../core/use.html#timeout)) will tirgger the component's digest phase automately. you can also trigger the digest manually by the [component.$update](../core/binding.html#update)
 
 
 ```javascript

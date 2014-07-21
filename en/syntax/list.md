@@ -67,8 +67,8 @@ will output `1 2 3`
 
 ### Warning
 
-in every iteration, regularjs will create a new Component, then the `item`, `item_index` can be remained. the outer 
-component's data reference is based on prototypal inheritance(just like angular). so list have the same disadvantag with angular. on the other hand,  the `this` in list's section is point to outer component, so you can use `this` to refer outer component's method or data.
+in every iteration, regularjs will create a proxy component, then the `item`, `item_index` can be remained on it. the outer 
+component's data reference is based on prototypal inheritance(just like angular). so list have the same disadvantag with angular. on the other hand,  the `this` in list's section is point to outer component, you can use `this` to refer outer component's method or data.
 
 //TODO
 

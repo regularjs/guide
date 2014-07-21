@@ -1,6 +1,6 @@
 #EventEmitter
 
-regularjs provide simple EventEmitter API.
+regularjs provide simple EventEmitter for Component.
 
 ##API
 

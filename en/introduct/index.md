@@ -31,6 +31,9 @@ This page aim to helping you to find api that all over the guide
 8. [component.inject](../getting-start/quirk-example.html#inject) inject component to the specified place
 
 
+# Builtin 
+
+1. [directive](../core/directive.html#builtin)
 
 # Regular's Other Usefull API
 

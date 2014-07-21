@@ -7,7 +7,6 @@
 
 __directly__
 
-
 1. [regular.js(83kb)](https://rawgit.com/regularjs/regular/master/dist/regular.js)
 2. [regular.min.js(39kb)](https://rawgit.com/regularjs/regular/master/dist/regular.min.js)
 
@@ -19,6 +18,7 @@ __use bower__
 
 __use component__
 
+  `component install regularjs/regular`
 
 ## Usage
 

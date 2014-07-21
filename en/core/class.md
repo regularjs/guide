@@ -13,7 +13,7 @@ There are only two interfaces of klass are remained at regularjs, `extend` and `
 <a name="extend"></a>
 ### 1. `Component.extend(Object specification)`
 
-`Component.extend` is used to define  SubComponent extended from Component，specification will merge to the SubComponent.
+`Component.extend` is used to define  SubComponent extended from Component，specification will merge to the SubComponent.prototype.
 
 
 __The important part of sepecification__

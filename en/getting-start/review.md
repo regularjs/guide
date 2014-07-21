@@ -1,6 +1,6 @@
 #Summary
 
-In this chapter, we create a simplest component named HelloRegular.
+In this chapter, we create a dead simple component named HelloRegular.
 
 you can consider regular's component is a small `mvvm` realization.
 
@@ -10,7 +10,7 @@ you can consider regular's component is a small `mvvm` realization.
 - the component self just like the viewmodel
 
 
-you can also check the more comprehensive example——[todomvc](http://jsfiddle.net/leeluolee/5Err9/).
+you can also check the more comprehensive example——[todomvc](http://codepen.io/leeluolee/pen/eAmnB).
 
 
 

@@ -1,6 +1,6 @@
 # Expression
 
-Expression is the heart of  template and watcher-system.
+Expression is the core of  template and watcher-system.
 
 
 <a name="expression"></a>
@@ -112,7 +112,7 @@ As shown above, binding-once __may make the data isn't synchronized with the ui_
 ###how `@()` make the Expression triggered once?
 
  1. `@()` will make the Expression with the flag __once__
- 2. when $watch find the Expression with __once__ flat. it will create a watcher with the __once__ flat.
+ 2. when $watch find the Expression with flag __once__ . it will create a watcher with the flag __once__ .
  3. in digest phase. if the once-marked watcher is be found dirty, after the watcher update, it will be auto removed.
  4. next digest phase will not check the watcher
 

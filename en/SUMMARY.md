@@ -20,7 +20,6 @@
   - [UI Event](core/event.md)
   - [Encapsulation and Plugin](core/use.md)
   - [Event Emitter](core/message.md)
-* [Advanced Concepts](advanced/README.md)
+* Advanced Concepts
   - [Nested Component](advanced/component.md)
 * [Q & A](qa/README.md)
-  - [Common Question](qa/common.md)

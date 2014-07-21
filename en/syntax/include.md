@@ -1,5 +1,6 @@
 # Dynamic Include
 
+you can use `include` to change the specified part of template after initialization.
 
 __Syntax__
 
@@ -11,7 +12,7 @@ __where__
 
 * template: A Expression that evaluated to String
 
-`include` watch the passed template, once the changing be detected, template will be recompile. this feature provide two basic advantage.
+`include` watching the 'template', once the change be detected, template will be recompile. this feature provide two basic advantage.
 
 1. pass partial as param at the initialize time.
 2. modify the template structure dynamically
@@ -47,6 +48,7 @@ __Example__
 </script>
 
 <script>
+
 var Modal = Regular.extend({
   template: '#modal',
   init: function(){
@@ -79,7 +81,7 @@ modal.$on('confirm', function(data){
 [|DEMO|](http://fiddle.jshell.net/leeluolee/Xvp9S/)
 
 
-beacuse there is a compelete compiling process on template. so you can use all feature(e.g. `interpolation`, `directive`) 
+beacuse there is a compelete compiling work on template. so you can use all feature(e.g. `interpolation`, `directive`) 
 
 
 

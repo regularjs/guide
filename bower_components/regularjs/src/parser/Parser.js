@@ -7,6 +7,7 @@ var isPath = _.makePredicate("STRING IDENT NUMBER");
 var isKeyWord = _.makePredicate("true false undefined null this Array Date JSON Math NaN RegExp decodeURI decodeURIComponent encodeURI encodeURIComponent parseFloat parseInt Object");
 
 
+
 function Parser(input, opts){
   opts = opts || {};
 
@@ -20,10 +21,12 @@ function Parser(input, opts){
 var op = Parser.prototype;
 
 
+
 op.parse = function(str){
   this.pos = 0;
   return this.program();
 }
+
 
 op.ll =  function(k){
   k = k || 1;
@@ -195,10 +198,17 @@ op.directive = function(name){
   name = name || (this.ll().value);
   if(typeof this[name] == 'function'){
     return this[name]()
+  }else if(){
+
   }else{
     this.error('Undefined directive['+ name +']');
   }
 }
+
+op.customerRule = function(){
+
+}
+
 
 // {{}}
 op.interplation = function(){
