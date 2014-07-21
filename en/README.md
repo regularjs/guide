@@ -1,6 +1,6 @@
 # Guide for regularjs
 
-Regularjs is a __"string-based living template engine"__ aim to helping you to create interactive component. it provide
+Regularjs is a __"string-based living template engine"__ aiming to helping you to create interactive component. it provide: 
 
 1. __data-binding__ based on dirty-check
 2. __string-based template__ 
@@ -12,10 +12,9 @@ Regularjs is a __"string-based living template engine"__ aim to helping you to c
 
 ### Why named regularjs
 
-Regularjs provide data-binding based on dirty-check which is similar with angular. meanwhile , it has the same philosophy with react: state-driven component. Finally, the definition of Component is similar with ractive that is also based on Class.
+Regularjs provide data-binding that based on dirty-check,  which is similar with angular. meanwhile , it has the same philosophy with react: state-driven component. Finally, the definition of Component is similar with ractive that is also based on Class.
 
-For those reason, although regularjs is __not based on regular ,react and ractive__. we also use the attractive slogan.
-
+For these reasons, although regularjs is __not based on regular , react and ractive__. we also use the attractive slogan.
 
 >### __regular = react(ractive) + angular__
 
@@ -25,15 +24,15 @@ For those reason, although regularjs is __not based on regular ,react and ractiv
 
 
 ## Naming Convention
-* __Component__: means Regular and Regular's SubClass
-* __component(lowercase)__:  means the Component's instance
+* __Component__: Regular and Regular's SubClass
+* __component(lowercase)__:  the Component's instance
 
 
 
 
 -----------------
 
- _Author's mother tongue is not english, the guide may reads a little  awkwardly. if you find something wrong, please feel free to [create a issue](https://github.com/regularjs/guide/issues). _
+ _Author's local language is not english, the guide may reads a little  awkwardly. if you find something wrong, please feel free to [create a issue](https://github.com/regularjs/guide/issues). _
 
 
 
