@@ -1,0 +1,781 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>filter——过滤器 | regularjs指南</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <meta name="author" content="regularjs">
+    
+    
+    <link rel="next" href="../core/event.html" />
+    
+    
+    <link rel="prev" href="../core/directive.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-github="regularjs/guide" data-level="4.4" data-basepath=".." data-revision="1405998910353">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="https://github.com/regularjs/guide" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >regularjs指南</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        <li>
+            <a href="https://github.com/regularjs" target="blank" class="author-link">About the author</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/regularjs/guide/edit/master/core/filter.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
+        
+
+        
+        <li class="divider"></li>
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="introduct/README.html">
+            
+                
+                    <a href="../introduct/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         前言
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="introduct/index.html">
+            
+                
+                    <a href="../introduct/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         API索引
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="getting-start/README.html">
+            
+                
+                    <a href="../getting-start/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         你好 Regular
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="getting-start/install.html">
+            
+                
+                    <a href="../getting-start/install.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         安装
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+            
+                
+                    <a href="../getting-start/quirk-example.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         快速起步
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.3" data-path="getting-start/review.html">
+            
+                
+                    <a href="../getting-start/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                         小结
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="syntax/README.html">
+            
+                
+                    <a href="../syntax/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         内建模板引擎
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="syntax/syntax.html">
+            
+                
+                    <a href="../syntax/syntax.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         语法说明
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="syntax/inteplation.html">
+            
+                
+                    <a href="../syntax/inteplation.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         插值
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.3" data-path="syntax/if.html">
+            
+                
+                    <a href="../syntax/if.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                         逻辑控制
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.4" data-path="syntax/list.html">
+            
+                
+                    <a href="../syntax/list.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                         循环控制
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.5" data-path="syntax/include.html">
+            
+                
+                    <a href="../syntax/include.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                         动态引入
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.6" data-path="syntax/expression.html">
+            
+                
+                    <a href="../syntax/expression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                         表达式
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.7" data-path="syntax/review.html">
+            
+                
+                    <a href="../syntax/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="core/README.html">
+            
+                
+                    <a href="../core/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         核心概念
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="core/class.html">
+            
+                
+                    <a href="../core/class.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         类式继承和组件定义
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="core/binding.html">
+            
+                
+                    <a href="../core/binding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         数据监听
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="core/directive.html">
+            
+                
+                    <a href="../core/directive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         directive——指令
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.4" data-path="core/filter.html">
+            
+                
+                    <a href="../core/filter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                         filter——过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.5" data-path="core/event.html">
+            
+                
+                    <a href="../core/event.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                         event——ui事件体系
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.6" data-path="core/use.html">
+            
+                
+                    <a href="../core/use.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                         regular的模块化策略
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.7" data-path="core/message.html">
+            
+                
+                    <a href="../core/message.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                         简单事件发射器emitter
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.8" data-path="core/review.html">
+            
+                
+                    <a href="../core/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="advanced/README.html">
+            
+                
+                    <a href="../advanced/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         高级特性
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="advanced/component.html">
+            
+                
+                    <a href="../advanced/component.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         内嵌组件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="advanced/content.html">
+            
+                
+                    <a href="../advanced/content.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         regular的transclude
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="advanced/review.html">
+            
+                
+                    <a href="../advanced/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 70.37037037037037%;min-width: 66.66666666666667%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../introduct/README.html" title="前言" class="chapter done new-chapter" data-progress="1" style="left: 3.7037037037037037%;"></a>
+    
+        <a href="../introduct/index.html" title="API索引" class="chapter done " data-progress="1.1" style="left: 7.407407407407407%;"></a>
+    
+        <a href="../getting-start/README.html" title="你好 Regular" class="chapter done new-chapter" data-progress="2" style="left: 11.11111111111111%;"></a>
+    
+        <a href="../getting-start/install.html" title="安装" class="chapter done " data-progress="2.1" style="left: 14.814814814814815%;"></a>
+    
+        <a href="../getting-start/quirk-example.html" title="快速起步" class="chapter done " data-progress="2.2" style="left: 18.51851851851852%;"></a>
+    
+        <a href="../getting-start/review.html" title="小结" class="chapter done " data-progress="2.3" style="left: 22.22222222222222%;"></a>
+    
+        <a href="../syntax/README.html" title="内建模板引擎" class="chapter done new-chapter" data-progress="3" style="left: 25.925925925925927%;"></a>
+    
+        <a href="../syntax/syntax.html" title="语法说明" class="chapter done " data-progress="3.1" style="left: 29.62962962962963%;"></a>
+    
+        <a href="../syntax/inteplation.html" title="插值" class="chapter done " data-progress="3.2" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../syntax/if.html" title="逻辑控制" class="chapter done " data-progress="3.3" style="left: 37.03703703703704%;"></a>
+    
+        <a href="../syntax/list.html" title="循环控制" class="chapter done " data-progress="3.4" style="left: 40.74074074074074%;"></a>
+    
+        <a href="../syntax/include.html" title="动态引入" class="chapter done " data-progress="3.5" style="left: 44.44444444444444%;"></a>
+    
+        <a href="../syntax/expression.html" title="表达式" class="chapter done " data-progress="3.6" style="left: 48.148148148148145%;"></a>
+    
+        <a href="../syntax/review.html" title="小节" class="chapter done " data-progress="3.7" style="left: 51.851851851851855%;"></a>
+    
+        <a href="../core/README.html" title="核心概念" class="chapter done new-chapter" data-progress="4" style="left: 55.55555555555556%;"></a>
+    
+        <a href="../core/class.html" title="类式继承和组件定义" class="chapter done " data-progress="4.1" style="left: 59.25925925925926%;"></a>
+    
+        <a href="../core/binding.html" title="数据监听" class="chapter done " data-progress="4.2" style="left: 62.96296296296296%;"></a>
+    
+        <a href="../core/directive.html" title="directive——指令" class="chapter done " data-progress="4.3" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../core/filter.html" title="filter——过滤器" class="chapter done " data-progress="4.4" style="left: 70.37037037037037%;"></a>
+    
+        <a href="../core/event.html" title="event——ui事件体系" class="chapter  " data-progress="4.5" style="left: 74.07407407407408%;"></a>
+    
+        <a href="../core/use.html" title="regular的模块化策略" class="chapter  " data-progress="4.6" style="left: 77.77777777777777%;"></a>
+    
+        <a href="../core/message.html" title="简单事件发射器emitter" class="chapter  " data-progress="4.7" style="left: 81.48148148148148%;"></a>
+    
+        <a href="../core/review.html" title="小节" class="chapter  " data-progress="4.8" style="left: 85.18518518518519%;"></a>
+    
+        <a href="../advanced/README.html" title="高级特性" class="chapter  new-chapter" data-progress="5" style="left: 88.88888888888889%;"></a>
+    
+        <a href="../advanced/component.html" title="内嵌组件" class="chapter  " data-progress="5.1" style="left: 92.5925925925926%;"></a>
+    
+        <a href="../advanced/content.html" title="regular的transclude" class="chapter  " data-progress="5.2" style="left: 96.29629629629629%;"></a>
+    
+        <a href="../advanced/review.html" title="小节" class="chapter  " data-progress="5.3" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_165">
+                    
+                        <h1 id="filter-">filter——过滤器</h1>
+<p>定义一个过滤器， 可以在表达式中使用， 一般应用在插值中，行为与angular的filter一致</p>
+<h2 id="-">接口说明</h2>
+<p><strong><code>Component.filter(name, filterFn)</code></strong></p>
+<ul>
+<li>name 过滤器名如<code>format</code></li>
+<li>Function filterFn(value, args...) 传入参数如下<br><ul>
+<li>value 要过滤的值</li>
+<li>args  template里传入的其它参数</li>
+<li>this 这里的this指向component组件本身</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>当不传入spec时, filter是一个getter方法，用于获取过滤器定义</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<p>创建一个简单的日期格式化过滤器</p>
+<pre><code class="lang-javascript">  <span class="hljs-comment">// simplest date format</span>
+  Regular.filter(<span class="hljs-string">"format"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, format)</span>{</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fix</span><span class="hljs-params">(str)</span>{</span>
+      str = <span class="hljs-string">""</span> + (str || <span class="hljs-string">""</span>);
+      <span class="hljs-keyword">return</span> str.length &lt;= <span class="hljs-number">1</span>? <span class="hljs-string">"0"</span> + str : str;
+    }
+    <span class="hljs-keyword">var</span> maps = {
+      <span class="hljs-string">'yyyy'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span>{</span><span class="hljs-keyword">return</span> date.getFullYear()},
+      <span class="hljs-string">'MM'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span>{</span><span class="hljs-keyword">return</span> fix(date.getMonth() + <span class="hljs-number">1</span>); },
+      <span class="hljs-string">'dd'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span>{</span> <span class="hljs-keyword">return</span> fix(date.getDate()) },
+      <span class="hljs-string">'HH'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span>{</span> <span class="hljs-keyword">return</span> fix(date.getHours()) },
+      <span class="hljs-string">'mm'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(date)</span>{</span> <span class="hljs-keyword">return</span> fix(date.getMinutes())}
+    }
+
+    <span class="hljs-keyword">var</span> trunk = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-built_in">Object</span>.keys(maps).join(<span class="hljs-string">'|'</span>),<span class="hljs-string">'g'</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, format)</span>{</span>
+      format = format || <span class="hljs-string">"yyyy-MM-dd HH:mm"</span>;
+      value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(value);
+
+      <span class="hljs-keyword">return</span> format.replace(trunk, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(capture)</span>{</span>
+        <span class="hljs-keyword">return</span> maps[capture]? maps[capture](value): <span class="hljs-string">""</span>;
+      });
+    }
+  })
+</code></pre>
+<p>然后</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{time| format: 'yyyy-MM-dd HH:mm'}}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<h2 id="-">内建过滤器</h2>
+<p>format</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../core/directive.html" class="navigation navigation-prev " aria-label="Previous page: directive——指令"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../core/event.html" class="navigation navigation-next " aria-label="Next page: event——ui事件体系"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
