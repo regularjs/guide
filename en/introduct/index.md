@@ -28,7 +28,7 @@ This page aim to helping you to find api that all over the guide
 5. [component.$on](../core/message.html#on)               Listens on events of a given type
 6. [component.$off](../core/message.html#off)             remove Listener with given type
 7. [component.$emit](../core/message.html#emit)           trigger Listener
-8. [component.inject](../getting-start/quirk-example.html#inject) inject component to the specified place
+8. [component.$inject](../getting-start/quirk-example.html#$inject) $inject component to the specified place
 
 
 # Builtin 

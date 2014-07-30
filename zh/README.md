@@ -1,5 +1,6 @@
 # regularjs指南
 
+> ## 中文指南目前未更新到最新版，请稍等几天或查看[英文版文档](http://leeluolee.gitbooks.io/regular-guide/en/index.html)
 
 regularjs是一个可以实现类似angularjs的数据绑定功能的模板引擎, 相较于其它同类的基于字符串的模板引擎比如(mustache), regularjs在compile之后数据和dom仍然保持联系, 所以也称之为'live template engine'.
 

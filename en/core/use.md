@@ -159,7 +159,7 @@ var Counter = Regular.extend({
   }
 }).use('timeout'); // <== use timeout
 
-new Counter({data: {count:0}}).inject('#app');
+new Counter({data: {count:0}}).$inject('#app');
 
 ```
 

@@ -105,7 +105,7 @@ var App = Regular.extend({
   }
 })
 
-var app = new App({data: {title: "hahaha"}}).inject('#app');
+var app = new App({data: {title: "hahaha"}}).$inject('#app');
 ```
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/4wuDZ/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>

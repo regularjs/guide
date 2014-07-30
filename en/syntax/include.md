@@ -52,7 +52,7 @@ __Example__
 var Modal = Regular.extend({
   template: '#modal',
   init: function(){
-    if(!this.parent) this.inject(document.body)
+    if(!this.parent) this.$inject(document.body)
   },
   close: function(){
     this.$emit('close');

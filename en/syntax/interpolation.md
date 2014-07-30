@@ -25,7 +25,7 @@ var app = new Regular({
   data: {username: 'leeluolee'}
 });
 
-app.inject('#app');
+app.$inject('#app');
 
 
 ```

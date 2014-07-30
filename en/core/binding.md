@@ -153,14 +153,14 @@ create binding between two independant pager components.
 ```javascript
 
  // insert
-var pager = new Pager( {data: {total: 100, current:20}} ).inject('#bind1');
-var pager2 = new Pager( {data: {total: 50, current:2}} ).inject('#bind1');
+var pager = new Pager( {data: {total: 100, current:20}} ).$inject('#bind1');
+var pager2 = new Pager( {data: {total: 50, current:2}} ).$inject('#bind1');
 
-var pager3 = new Pager({data: {total: 100, current:20} }).inject('#bind2');
-var pager4 = new Pager({data: {total: 50, current:2}}).inject('#bind2');
+var pager3 = new Pager({data: {total: 100, current:20} }).$inject('#bind2');
+var pager4 = new Pager({data: {total: 50, current:2}}).$inject('#bind2');
 
-var pager5 = new Pager({data: {total: 100, current:2}}).inject('#bind3');
-var pager6 = new Pager({data: {total: 50, current:20}}).inject('#bind3');
+var pager5 = new Pager({data: {total: 100, current:2}}).$inject('#bind3');
+var pager6 = new Pager({data: {total: 50, current:20}}).$inject('#bind3');
 
 
 // style 1
@@ -176,11 +176,11 @@ pager5.$bind(pager6, {current: "current", total: "total"});
 
 
 // bind chain
-var pager = new Pager({data:{total: 1000, current:1}}).inject('#bind_chain');
+var pager = new Pager({data:{total: 1000, current:1}}).$inject('#bind_chain');
 for(var i = 0; i < 10; i++){
   var pager = new Pager({data:{total: 1000, current:1}})
     .$bind(pager, ['total', 'current'])
-    .inject('#bind_chain');
+    .$inject('#bind_chain');
 }
 
 ```

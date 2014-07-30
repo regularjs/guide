@@ -1,6 +1,6 @@
 # Event System
 
-Every attribute prefixed with `on-` will be considered as event binding.
+Every attribute prefixed with `on-` (e.g `on-click`) will be considered as event binding. you can also use it in delegating way via `delegate-*` (e.g. `delegate-click`)
 
 > <h5>tip</h5>
 > In fact, event is a special directive. beacuse the directive accepts RegExp as the first param.
@@ -19,7 +19,7 @@ you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `
     "<button on-click={{count = count + 1}}> count+1 </button> \
       <b>{{count}}</b>",
     data: {count:1}
-  }).inject(document.body);
+  }).$inject(document.body);
   ```
 
 <iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/y8PHE/1/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
@@ -27,6 +27,7 @@ you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `
 
 
 
+<a name="custom-event"></a>
 ## 2. Register Custom Event `Component.event(event, fn)`
 
 you may need to register a custom event that is not native supported by the browser(e.g. `on-tap` `on-enter`).
@@ -63,7 +64,7 @@ the source of the builtin event —— `on-enter`
 ```
 
 
-## 4. Proxy or Evaluate.
+## 3. Proxy or Evaluate.
 
 Expreesion and Non-Expression is all valid to handle the event. but they do different this when event  be triggered.
 
@@ -106,9 +107,28 @@ Expreesion and Non-Expression is all valid to handle the event. but they do diff
 once event fires, the digest phase will be triggered.__ you dont need to `$update` in your handle __.
 
 
+## 4. Delegate Event by `delegate-*`
+
+every `on-*` will call `addEventListener` on element.  sometimes, it is not efficient. 
+
+you can use `delegate-` insteadof `on-` to avoid the potential performance issue. regularjs will attach single event on component's parentNode(when `$inject` is called), all delegating-event that defined in component will be processed collectively.
+
+From user perspective, `on-` and `delegate-` is almost the same.
+
+__Example__
+
+```html
+<div delegate-click="remove">Delte</div>   //Proxy way via delegate
+<div delegate-click={{this.remove()}}>Delte</div> // Evaluated way via delagate
+```
+
+__Warning__
+
+1. if the component is large in structure. avoid attaching too much events that is `frequencey triggered` (e.g. mouseover) to component.
+2. if the event is a [custom event](#custom-event). it need to have the ability to bubble, then the component.parentNode can capture the event. for exampel:  zepto's tap-event [source](https://github.com/madrobby/zepto/blob/master/src/event.js#L274). 
 
 <a name="$event"></a>
-## 4. `$event`
+## 5. `$event`
 
 In some cases, you may need the `Event` object, regularjs created an temporary variable`$event` for it, you can use the variable in the Expression. 
 
@@ -126,10 +146,9 @@ new Regular({
     this.data.count += count;
     alert($event.pageX)
   }
-}).inject(document.body);
+}).$inject(document.body);
 ```
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/y8PHE/5/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 > <h5>Tip</h5>
 > `$event` is fixed for you already, you can use the property below. 
@@ -143,13 +162,28 @@ new Regular({
 > 8. $event.event will get the origin event.
 
 
+//@TODO
+
+
+
+## Other Useful  Tips
+
+### 1. you can  bind multiply events with same type on single element.
+  
+  beacuse regularjs is string-based template. you can having same attributes on one element.
+
+### 2. avoid to bind  frequently triggered event(e.g. `mouseover` `scroll`)  via `delegate-*`
+  
+  just like `jQuery.delegate` . frequently triggered event is expensive when used with delegate-style. 
+
+### 3. you can use `if` to attach or dettach event on element
+
+  ```html
+  <input {{#if test===0 }} on-click={{test = 1}} {{/if}} />
+  ```
+
+
 -----------
-
-Description
-
-|Param|Type|Details|
-|---|---|---|
-|on-*(e.g.`on-mouseover`)|`expression` or `no-expression`| `Expression` to evaluate upon specified event be triggered,Event object is available as `$event` <br> `Non-Expression` be proxied to specified event upon the event fire.  |
 
 
 

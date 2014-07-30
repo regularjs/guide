@@ -18,6 +18,7 @@
   - [Directive](core/directive.md)
   - [Filter](core/filter.md)
   - [UI Event](core/event.md)
+  - [Powerful Animation](core/animation.md)
   - [Encapsulation and Plugin](core/use.md)
   - [Event Emitter](core/message.md)
 * Advanced Concepts

@@ -122,7 +122,7 @@ var app = new Regular({
       "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }} >left+10</button>\
       left:  {{left}}",
     data: {left:1}
-}).inject(document.body)
+}).$inject(document.body)
 
 ```
 
