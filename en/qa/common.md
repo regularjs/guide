@@ -1,3 +1,0 @@
-# Common Question
-
-## 1. 
