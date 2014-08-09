@@ -7,7 +7,7 @@
         <title>快速起步 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="2.2" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="2.2" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/getting-start/quirk-example.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -214,7 +212,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter active" data-level="2.2" data-path="getting-start/quirk-example.html">
             
                 
                     <a href="../getting-start/quirk-example.html">
@@ -687,9 +685,9 @@
                 
                     <section class="normal" id="section-gitbook_49">
                     
-                        <h1 id="-">快速起步</h1>
+                        <h1 id="">快速起步</h1>
 <p>这一小节，我们将实现一个简单的组件—— <strong>HelloRegular</strong> ,它用来显示友好的用户欢迎语，但是如果用户未登录的话需要提示进行登录信息，为了简单起见只需要输入用户名就可以进行登录</p>
-<h2 id="1-">1.初始结构</h2>
+<h2 id="1">1.初始结构</h2>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hello"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/regular"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"hello"</span>&gt;</span><span class="javascript">
@@ -743,16 +741,12 @@ component.inject(<span class="hljs-string">'#app'</span>);
 3. `Regular.extend`派生组件
 4. 初始化节点并插入inject到指定位置(这里是插入到容器节点`#app`)
  -->
-
-
-
-
-<h2 id="2-">2.显示用户姓名——插值</h2>
+<h2 id="2">2.显示用户姓名——插值</h2>
 <p>目前为止，这个组件仅仅只是显示了一个静态信息，我们在模板中简单添加一个<strong><a href="sytax/inteplation.html">插值</a></strong>来显示用户信息, 需要注意的是regularjs的内建模板是<strong>&#39;活动&#39;</strong>的，如果你更新了数据状态， ui将会自动更新。</p>
 <pre><code class="lang-html">  Hello, {{username}}
 </code></pre>
 <p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/2/" target="_blank"> |查看结果| </a></p>
-<h2 id="3-if-else-">3. 处理未登录的情况——if/else逻辑控制</h2>
+<h2 id="3-ifelse">3. 处理未登录的情况——if/else逻辑控制</h2>
 <p>接下来我们处理未登录的用户情况</p>
 <pre><code class="lang-xml">{{#if username}}
   Hello, {{username}}.
@@ -762,7 +756,7 @@ component.inject(<span class="hljs-string">'#app'</span>);
 </code></pre>
 <p>就与常规的字符串模板(例如jst)类似，模板里我们添加<code>if/else</code>来区分登录用户与游客的显示效果</p>
 <p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/3/" target="_blank">|查看结果|</a></p>
-<h2 id="4-on-click-">4. 实现用户登录登出的功能—— <code>on-click</code></h2>
+<h2 id="4--on-click">4. 实现用户登录登出的功能—— <code>on-click</code></h2>
 <p>这里同时我们添加了两个click事件来处理用户的登录与登出逻辑,</p>
 <pre><code class="lang-html">{{#if username}}
   Hello, {{username}}. <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{{username</span> = ''}}&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
@@ -786,8 +780,8 @@ component.inject(<span class="hljs-string">'#app'</span>);
 });
 </code></pre>
 <p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/4/" target="_blank">|查看结果|</a></p>
-<h2 id="5-ui-digest-">5. 何时进行数据检查-UI更新的digest阶段</h2>
-<p>与angular一样，regular中的数据绑定也是基于数据的脏检查，ui事件触发的响应会自动进入$digest阶段并进行数据检查和ui更新, 而对于在组件lifecycle之外的数据变动，你需要进行手动的<code>$update</code> 以进入数据检查阶段</p>
+<h2 id="5--uidigest">5. 何时进行数据检查-UI更新的digest阶段</h2>
+<p>与angular一样，regular中的数据绑定也是基于数据的脏检查，ui事件触发的响应会自动进入<script type="math/tex">digest阶段并进行数据检查和ui更新, 而对于在组件lifecycle之外的数据变动，你需要进行手动的`</script>update` 以进入数据检查阶段</p>
 <pre><code class="lang-javascript">
 component.data.username = <span class="hljs-string">"regularjs"</span>;
 component.$update() <span class="hljs-comment">// enter</span>
@@ -823,7 +817,7 @@ component.$update() <span class="hljs-comment">// enter</span>
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

@@ -7,7 +7,7 @@
         <title>循环控制 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3.4" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="3.4" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/syntax/list.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -316,7 +314,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.4" data-path="syntax/list.html">
+        <li class="chapter active" data-level="3.4" data-path="syntax/list.html">
             
                 
                     <a href="../syntax/list.html">
@@ -687,7 +685,7 @@
                 
                     <section class="normal" id="section-gitbook_60">
                     
-                        <h1 id="-list">循环控制list</h1>
+                        <h1 id="list">循环控制list</h1>
 <p>list指令用来遍历某个sequence来循环的处理某些重复性的结构</p>
 <p>list内建规则</p>
 <p><strong>Syntax</strong>: </p>
@@ -709,7 +707,7 @@
  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'index'</span>&gt;</span>{{item_index}}:<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>{{item}}
 {{/list}}
 </code></pre>
-<h3 id="range-">Range支持</h3>
+<h3 id="range">Range支持</h3>
 <p>regular同时也支持一个特殊的表达式类型range, 用来创建一个有序的数字数组</p>
 <p><strong>Syntax</strong>: </p>
 <pre><code>start..end
@@ -727,7 +725,7 @@
 {{/list}}
 </code></pre>
 <p>will output <code>1 2 3</code></p>
-<h3 id="-">注意点</h3>
+<h3 id="">注意点</h3>
 <p>list内部实现会在每次iterate时与angular类似会创建一个新的匿名组件(类似于ng-repeat中创建的子scope), 对外层数据的访问是通过原型继承的方式，所以修改原始类型的数据如字符，将不会对父组件产生影响，你可以通过引用类型的属性或函数调用来避免这个缺陷, 其中<code>this</code>对象仍然指向外层组件</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-xml"><span class="hljs-comment">&lt;!-- every iteration , this block will create a new Component, then the `item`, `$index` can be remained --&gt;</span>
@@ -761,7 +759,7 @@
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

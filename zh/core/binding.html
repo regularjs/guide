@@ -7,7 +7,7 @@
         <title>数据监听 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.2" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="4.2" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/binding.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -418,7 +416,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="core/binding.html">
+        <li class="chapter active" data-level="4.2" data-path="core/binding.html">
             
                 
                     <a href="../core/binding.html">
@@ -687,11 +685,11 @@
                 
                     <section class="normal" id="section-gitbook_38">
                     
-                        <h1 id="-">数据绑定和生命周期</h1>
+                        <h1 id="">数据绑定和生命周期</h1>
 <p>数据驱动的思想是mvvm模式中的核心，regular也是如此 ,数据绑定是实现数据驱动的组件开发的核心所在.</p>
 <p>regularjs的组件实例中与数据绑定相关的函数有如下几个</p>
 <p><a name="watch"></a></p>
-<h3 id="1-component-watch-expression-handler-">1 <code>component.$watch(expression, handler)</code></h3>
+<h3 id="1-componentwatchexpression-handler">1 <code>component.$watch(expression, handler)</code></h3>
 <p>绑定一个数据监听器, 返回watchid，用于$unwatch(解绑) </p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -731,7 +729,7 @@ component.$update(<span class="hljs-function"><span class="hljs-keyword">functio
 </code></pre>
 <p><code>$update</code>请参考<a href="#$update">$update</a>;</p>
 <p><a name="unwatch"></a></p>
-<h3 id="2-component-unwatch-watchid-">2 <code>component.$unwatch(watchid)</code></h3>
+<h3 id="2-componentunwatchwatchid">2 <code>component.$unwatch(watchid)</code></h3>
 <p>取消一个数据监听器 </p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -753,7 +751,7 @@ component.$unwatch(id);
 component.$update(<span class="hljs-string">'b'</span>, <span class="hljs-number">100</span>); <span class="hljs-comment">// only watcher 1 alert;</span>
 </code></pre>
 <p><a name="update"></a></p>
-<h3 id="3-component-update-setable-value-">3 <code>component.$update(setable, value)</code></h3>
+<h3 id="3-componentupdatesetable-value">3 <code>component.$update(setable, value)</code></h3>
 <p>设值函数, 设值之后会进入组件的digest阶段，即脏检查</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -795,7 +793,7 @@ component.$update() <span class="hljs-comment">// do nothing , just enter digest
 无论传入什么参数，运行$update之后都会进行组件作用域内的dirty-check</p>
 </blockquote>
 <p><a name="bind"></a></p>
-<h3 id="2-5-component-bind-component2-expr1-expr2-">2.5 <code>component.$bind(component2, expr1[, expr2])</code></h3>
+<h3 id="25-componentbindcomponent2-expr1-expr2">2.5 <code>component.$bind(component2, expr1[, expr2])</code></h3>
 <p>与另一个组件实现双向绑定</p>
 <p><strong>Arguments</strong></p>
 <ol>
@@ -876,7 +874,7 @@ pager5.$bind(pager6, {current: <span class="hljs-string">"current"</span>, total
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

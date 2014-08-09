@@ -4,10 +4,10 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Quirk Example | Guide for regularjs</title>
+        <title>Quick Example | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="2.2" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="2.2" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,16 +107,18 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/edit/master/getting-start/quirk-example.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/regularjs/guide/edit/master/getting-start/quick-example.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter active" data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter  " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -617,9 +615,9 @@
                 
                     <section class="normal" id="section-gitbook_18">
                     
-                        <h1 id="quirk-example">Quirk Example</h1>
-<p>In this Page, we will create our first component —— <strong>HelloRegular</strong> . it used to show  message to people friendly. if people don&#39;t login yet, the component needs to prompt people. for simplicity, only username is required with login .</p>
-<h2 id="1-initial-template">1. initial template</h2>
+                        <h1 id="quick-example">Quick Example</h1>
+<p>In this Page, we will create our first component —— <strong>HelloRegular</strong> . It is used to show an welcome message for people who login. if people aren&#39;t login yet, the component will prompt an window. For simplicity, only username is required during the login operation.</p>
+<h2 id="1-initialize-template">1. initialize template</h2>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hello"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/regular"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"hello"</span>&gt;</span><span class="javascript">
@@ -640,7 +638,7 @@
 <span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> HelloRegular({
   data: {username: <span class="hljs-string">"leeluolee"</span>}
 });
-component.$inject(<span class="hljs-string">'#app'</span>); 
+component.$inject(<span class="hljs-string">'#app'</span>);
 </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
 <p><strong>RESULT</strong></p>
@@ -650,38 +648,36 @@ component.$inject(<span class="hljs-string">'#app'</span>);
 
 <ul>
 <li><p><strong><code>Regular.extend</code></strong></p>
-<p>Regular.extend will create a Component extended form Regular. </p>
+<p>Regular.extend will create a Component extended from Regular.</p>
 </li>
 <li><p><code>template</code></p>
 <p>a Component may need template to describe its structure.</p>
 </li>
-</ul>
-<ul>
 <li><p><code>data</code></p>
-<p>component&#39;s model, but it just a Plain Object.  the <code>data</code> passed to <code>new Component</code> will merge the <code>data</code> passed to <code>Component.extend</code></p>
+<p>component&#39;s model, but it is just a Plain Object.  the <code>data</code> passed to <code>new Component</code> and the <code>data</code> passed to <code>Component.extend</code> are merged.</p>
 </li>
 </ul>
 <p><a name="$inject"></a></p>
 <ul>
 <li><p><code>$inject(node[, direction])</code></p>
-<p>it is a instance method, $inject the component to the position that depending on the parameter &#39;direction&#39;</p>
+<p>it is an instance method, $inject the component to the position indicated by the parameter &#39;direction&#39;.</p>
 <ul>
-<li><code>bottom</code>[default option]: $injected as node&#39;s lastChild </li>
+<li><code>bottom</code>[default option]: $injected as node&#39;s lastChild</li>
 <li><code>top</code>: $injected as node&#39; s firstChild,</li>
 <li><code>after</code>: $injected as node&#39; s nextSibling,</li>
 <li><code>before</code>: $injected as node&#39; s prevSibling,</li>
 </ul>
 </li>
 </ul>
-<h2 id="2-using-__interpolation__-to-show-user-s-name">2. Using <strong>interpolation</strong> to show user&#39;s name</h2>
-<p>this component only show the constant message until now, we should make it living by using <strong>interpolation</strong>.</p>
+<h2 id="2-using-__interpolation__-to-show-users-name">2. Using <strong>interpolation</strong> to show user&#39;s name</h2>
+<p>This component only shows static message until now, we should make it living by using <strong>interpolation</strong>.</p>
 <pre><code class="lang-html">  Hello, {{username}}
 </code></pre>
 <p><strong>RESULT</strong></p>
 <iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/8/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
-<h2 id="3-using-if-else-to-show-other-message-if-the-user-is-not-logged-in">3. using <code>if/else</code> to show other message if the user is not logged in</h2>
+<h2 id="3-using-ifelse-to-show-other-message-if-the-user-is-not-logged-in">3. using <code>if/else</code> to show other message if the user is not logged in</h2>
 <pre><code class="lang-xml">{{#if username}}
   Hello, {{username}}.
 {{#else}}
@@ -695,8 +691,8 @@ component.$inject(<span class="hljs-string">'#app'</span>);
 
 
 
-<h2 id="4-implement-the-login-logout-by-event">4. Implement the <code>Login/Logout</code>  by event</h2>
-<p>in this step , we need to add two event to deal with the <strong>Login</strong> and <strong>Logout</strong> operation.</p>
+<h2 id="4-implement-the-loginlogout--by-event">4. Implement the <code>Login/Logout</code>  by event</h2>
+<p>In this step , we need to add two event to deal with the <strong>Login</strong> and <strong>Logout</strong> operation.</p>
 <pre><code class="lang-html">{{#if username}}
   Hello, {{username}}. <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{{username</span> = ''}}&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 {{#else}}
@@ -709,9 +705,9 @@ component.$inject(<span class="hljs-string">'#app'</span>);
 <p>in regular,  the <code>on-</code> prefixed attribute will be considered as <a href="../core/event.html">ui event</a>
 you can also define your custom event like(e.g. <code>on-hold</code> or <code>on-tap</code>) and determine when to trigger it;</p>
 </blockquote>
-<p>we add two operation in the template above: </p>
-<p><strong>Login</strong>: the keyword <code>this</code> in the template just point to <code>component</code> self. so we need to add a method named <strong>login</strong> at HelloRegular&#39;s prototype .</p>
-<p><strong>Logout</strong>: the model&#39;s root in template is point to <code>component.data</code> . so in this exmaple, we just simply clear the username in <code>component.data</code>.</p>
+<p>we add two operation in the template above:</p>
+<p><strong>Login</strong>: the keyword <code>this</code> in the template just point to the <code>component</code> itself. so we need to add a method named <strong>login</strong> at HelloRegular&#39;s prototype .</p>
+<p><strong>Logout</strong>: the model&#39;s root in template points to <code>component.data</code> . so in this exmaple, we just simply clear the username in <code>component.data</code>.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> HelloRegular = Regular.extend({
   template: <span class="hljs-string">'#hello'</span>,
   login: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
@@ -726,8 +722,8 @@ you can also define your custom event like(e.g. <code>on-hold</code> or <code>on
 
 
 
-<h2 id="5-when-the-component-s-digest-phase-will-be-triggerd">5. when the component&#39;s digest phase will be triggerd</h2>
-<p>just like angular. regular&#39;s data-binding is based on dirty-check. some builtin (.e.g event, <a href="../core/use.html#timeout">timeout</a>) will tirgger the component&#39;s digest phase automately. you can also trigger the digest manually by the <a href="../core/binding.html#update">component.$update</a></p>
+<h2 id="5-when-the-components-digest-phase-will-be-triggered">5. when the component&#39;s digest phase will be triggered</h2>
+<p>just like angular. regular&#39;s data-binding is based on dirty-check. some builtin (.e.g event, <a href="../core/use.html#timeout">timeout</a>) will tirgger the component&#39;s digest phase automatically. you can also trigger the digest manually using <a href="../core/binding.html#update">component.$update</a></p>
 <pre><code class="lang-javascript">
 component.data.user.name = <span class="hljs-string">"regularjs"</span>;
 component.$update() <span class="hljs-comment">// enter</span>
@@ -743,9 +739,9 @@ component.$update() <span class="hljs-comment">// enter</span>
 <span class="hljs-comment">//  })</span>
 </code></pre>
 <p>just like the example above, the usage of <code>$update</code> is flexible.</p>
-<p><strong><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/5/" target="_blank">|DEMO|</a></strong> </p>
+<p><strong><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/5/" target="_blank">|DEMO|</a></strong></p>
 <blockquote>
-<p>no matter how you use the <code>$update</code>. the component will always enter the &#39;digest&#39; phase.</p>
+<p>no matter how you use the <code>$update</code>. the component will always enter into the &#39;digest&#39; phase.</p>
 </blockquote>
 
                     
@@ -769,7 +765,7 @@ component.$update() <span class="hljs-comment">// enter</span>
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

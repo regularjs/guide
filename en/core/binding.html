@@ -7,7 +7,7 @@
         <title>Watcher System | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.2" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="4.2" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/binding.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -380,7 +378,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="core/binding.html">
+        <li class="chapter active" data-level="4.2" data-path="core/binding.html">
             
                 
                     <a href="../core/binding.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -618,16 +616,16 @@
                     <section class="normal" id="section-gitbook_8">
                     
                         <h1 id="data-binding-and-life-cycle">Data-binding and Life-cycle</h1>
-<p>Data-binding is the core to realize the data-driven component. in regularjs, data-binding is based on watcher system. there are some methods which is important in this system</p>
+<p>Data-binding is the core to realize data-driven component. In regularjs, data-binding is based on watcher system. there are some methods which are important in this system:</p>
 <p><a name="watch"></a></p>
-<h3 id="1-component-watch-expression-handler-">1 <code>component.$watch(expression, handler)</code></h3>
-<p>create a watcher , and return a watchid that used for <code>$unwatch</code>.</p>
+<h3 id="1-componentwatchexpression-handler">1 <code>component.$watch(expression, handler)</code></h3>
+<p>create a watcher, return a watchid that can be used for <code>$unwatch</code>.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li>expression [Expression| Array | String] - <ul>
-<li>Expression: </li>
+<li>expression [Expression| Array | String]<ul>
+<li>Expression: real <code>Expression</code> object</li>
 <li>String: will be preprocessed by <code>Regular.expression</code> to become <code>Expression</code></li>
-<li>Array: any Expression changed in Array, will trigger the watcher. the params passed to handler is the current values of all item in Array.</li>
+<li>Array: array of Expression or String. Any Expression changed in the Array will trigger the watcher. the params passed to handler is the current value of all items in Array.</li>
 </ul>
 </li>
 <li>handler(newvalue, oldvalue) [Function]<ul>
@@ -662,7 +660,7 @@ component.$update(<span class="hljs-function"><span class="hljs-keyword">functio
 </code></pre>
 <p>you can find the explanation of <code>$update</code> <a href="#update">at here</a>;</p>
 <p><a name="unwatch"></a></p>
-<h3 id="2-component-unwatch-watchid-">2 <code>component.$unwatch(watchid)</code></h3>
+<h3 id="2-componentunwatchwatchid">2 <code>component.$unwatch(watchid)</code></h3>
 <p>remove a watcher.</p>
 <p><strong>Arguments</strong></p>
 <ul>
@@ -684,19 +682,19 @@ component.$unwatch(id);
 component.$update(<span class="hljs-string">'b'</span>, <span class="hljs-number">100</span>); <span class="hljs-comment">// only watcher 1 alert;</span>
 </code></pre>
 <p><a name="update"></a></p>
-<h3 id="3-component-update-setable-value-">3 <code>component.$update(setable, value)</code></h3>
-<p>do the setter operation on the passed Expression and enter the <code>digest</code> phase.</p>
+<h3 id="3-componentupdatesetable-value">3 <code>component.$update(setable, value)</code></h3>
+<p>do the setter operation on the passed Expression, then enter the <code>digest</code> phase.</p>
 <p><strong>Arguments</strong></p>
 <ul>
-<li><p>setable [Expression| Function | String] - </p>
+<li><p>setable [Expression| Function | String] -</p>
 <ul>
 <li>Expression: The Expression must be setable, see more in <a href="../syntax/expression.html">Expression</a></li>
-<li>String: String will be parsed to Expression</li>
-<li>Function setable(data): just like angular&#39;s <code>$apply</code>, you can batch update-operation in the passed handler<ul>
-<li>data: === component.data</li>
+<li>String: String will be passed to Expression</li>
+<li>Function setable(data): just like angular&#39;s <code>$apply</code>, you can batch update-operation in one passed handler<ul>
+<li>data: equal to component.data</li>
 </ul>
 </li>
-<li>Object: multiply setting operation.</li>
+<li>Object: multiple setting operation.</li>
 </ul>
 </li>
 <li><p>value - value assigned to the field pointed by the Expression <code>setable</code>. if <code>setable</code> is a Function, it will be ignored.</p>
@@ -729,15 +727,15 @@ component.$update() <span class="hljs-comment">// do nothing , just enter digest
 whatever param you passed, the digest phase will always be triggered.</p>
 </blockquote>
 <p><a name="bind"></a></p>
-<h3 id="2-5-component-bind-component2-expr1-expr2-">2.5 <code>component.$bind(component2, expr1[, expr2])</code></h3>
-<p>create binding with another component. </p>
+<h3 id="4-componentbindcomponent2-expr1-expr2">4 <code>component.$bind(component2, expr1[, expr2])</code></h3>
+<p>create binding with another component.</p>
 <p><strong>Arguments</strong></p>
 <ol>
 <li>component2<Regular>: the target component you need to bind</li>
-<li>expr1 <Expression|String|Object|Array>: <ul>
+<li>expr1 <Expression|String|Object|Array>:<ul>
 <li>Expression|String: the field that component need to bind</li>
-<li>Object: you can bind multiply field at the same time, the key represent component&#39;s field, the value represent target&#39;s field.</li>
-<li>Array: create multiply field between component and component2 with the same field</li>
+<li>Object: you can bind multiple fields at the same time, the key represents component&#39;s field, the value represents target&#39;s field.</li>
+<li>Array: create multiple fields between component and component2 with the same field</li>
 </ul>
 </li>
 <li>expr2 <Expression|String>: the target component&#39;s  filed you need to binding. the default is expr1.</li>
@@ -745,11 +743,11 @@ whatever param you passed, the digest phase will always be triggered.</p>
 <blockquote>
 <p><h5>WARN</h5></p>
 <ol>
-<li>There is at least one Expression that is setable. if all component is setable, it is two-way binding. otherwise, it will be a one-way binding.</li>
+<li>There is at least one Expression that is setable. If all components are setable, it is two-way binding. otherwise, it will be a one-way binding.</li>
 <li>If target-component is not synchronous with component, it will be synchronized to called-component immediately.</li>
 </ol>
 </blockquote>
-<p><strong>Example</strong>: </p>
+<p><strong>Example</strong>:</p>
 <p>create binding between two independant pager components.</p>
 <pre><code class="lang-javascript">
  <span class="hljs-comment">// insert</span>
@@ -808,7 +806,7 @@ pager5.$bind(pager6, {current: <span class="hljs-string">"current"</span>, total
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

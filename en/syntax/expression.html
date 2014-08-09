@@ -7,7 +7,7 @@
         <title>Expression | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3.6" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="3.6" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/syntax/expression.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -326,7 +324,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.6" data-path="syntax/expression.html">
+        <li class="chapter active" data-level="3.6" data-path="syntax/expression.html">
             
                 
                     <a href="../syntax/expression.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -618,14 +616,14 @@
                     <section class="normal" id="section-gitbook_24">
                     
                         <h1 id="expression">Expression</h1>
-<p>Expression is the core of  template and watcher-system.</p>
+<p>Expression is the core of template and watcher-system.</p>
 <p><a name="expression"></a>
 you can also use <code>Regular.expression</code> to create an expression at runtime.</p>
-<p>A Expression object have two important part:</p>
+<p>An Expression object have two important parts:</p>
 <ul>
 <li><p><strong>get(context)</strong></p>
-<p>the getter of the expression, you need pass a component to it as the context. </p>
-<p>it return the expression&#39;s evaluated value. in <a href="../core/binding.html">watcher-system</a>, regularjs use getter to determine whether the data is changed.</p>
+<p>the getter of the expression. You need pass a component to it as the context.</p>
+<p>it returns the expression&#39;s evaluated value. In <a href="../core/binding.html">watcher-system</a>, regularjs use getter to determine whether the data has changed.</p>
 </li>
 </ul>
 <p>  <em>example:</em></p>
@@ -638,8 +636,8 @@ you can also use <code>Regular.expression</code> to create an expression at runt
   alert(expr.get(component) === <span class="hljs-string">"leeluolee:10"</span> ) <span class="hljs-comment">//true</span>
 </code></pre>
 <ul>
-<li><p><strong>set(context, value)</strong> </p>
-<p>if the expression is a valid <a href="http://es5.github.io/#x11.2" target="_blank">LeftHandSideExpression</a>, the set method will exsit. the method is used as setter for the field the expression represents.</p>
+<li><p><strong>set(context, value)</strong></p>
+<p>the getter of the expression. If the expression is a valid <a href="http://es5.github.io/#x11.2" target="_blank">LeftHandSideExpression</a>, the set method will exist.</p>
 <blockquote>
 <p>the <code>set</code> is useful in duplex data-binding like <a href="../core/directive.html#1-r-model-">r-model</a></p>
 </blockquote>
@@ -662,16 +660,16 @@ you can also use <code>Regular.expression</code> to create an expression at runt
 </code></pre>
 <p>  <strong>Tips</strong></p>
 <ol>
-<li><code>this</code> point to the context.</li>
-<li>the root of the data is context.data. so <code>user</code> in Expression is means &#39;context.data.user&#39;</li>
-<li>regular dont supoort prefix,postfix and bitwise operation(e.g. <code>++</code>,<code>--</code>, <code>&amp;</code>)</li>
+<li><code>this</code> points to the context.</li>
+<li>the root of the data is context.data. so <code>user</code> in Expression means &#39;context.data.user&#39;</li>
+<li>regular dont support prefix, postfix and bitwise operation(e.g. <code>++</code>,<code>--</code>, <code>&amp;</code>)</li>
 <li><p>you can directly use some global Object like:</p>
 <p>true false undefined null Array Date JSON Math NaN RegExp decodeURI decodeURIComponent encodeURI encodeURIComponent parseFloat parseInt Object String</p>
 </li>
 </ol>
 <h2 id="expression-only-binding-once">Expression only binding-once</h2>
-<p>Beacuse the dirty-check&#39;s performance is tightly related to the number of the binding. so the less binding is created the better .</p>
-<p>in regularjs you can wrap your Expression with <code>@(Expression)</code> to  make the Expression only <strong>trigger once</strong>. </p>
+<p>Beacuse the dirty-check&#39;s performance is tightly related to the number of the binding, the less binding is created, the better.</p>
+<p>in regularjs you can wrap your Expression with <code>@(Expression)</code> to  make the Expression only <strong>trigger once</strong>.</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>{{ @(title) }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span> // the interpolation only work once
 
@@ -701,12 +699,12 @@ component.$update(<span class="hljs-string">"user.name"</span>, <span class="hlj
 <span class="hljs-comment">// update twice  but trigger once</span>
 alert(i === <span class="hljs-number">1</span>);
 </code></pre>
-<p>As shown above, binding-once <strong>may make the data isn&#39;t synchronized with the ui</strong>. you should use it be carefull.</p>
-<h3 id="how-make-the-expression-triggered-once-">how <code>@()</code> make the Expression triggered once?</h3>
+<p>As shown above, binding-once <strong>may make the data isn&#39;t synchronized with the ui</strong>. you should use it carefully.</p>
+<h3 id="how--make-the-expression-trigger-once">how <code>@()</code> make the Expression trigger once?</h3>
 <ol>
 <li><code>@()</code> will make the Expression with the flag <strong>once</strong></li>
 <li>when $watch find the Expression with flag <strong>once</strong> . it will create a watcher with the flag <strong>once</strong> .</li>
-<li>in digest phase. if the once-marked watcher is be found dirty, after the watcher update, it will be auto removed.</li>
+<li>in digest phase, if the once-marked watcher is found dirty, after the watcher update, it will be removed.</li>
 <li>next digest phase will not check the watcher</li>
 </ol>
 <blockquote>
@@ -734,7 +732,7 @@ alert(i === <span class="hljs-number">1</span>);
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

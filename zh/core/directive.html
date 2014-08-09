@@ -7,7 +7,7 @@
         <title>directive——指令 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/directive.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -434,7 +432,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="core/directive.html">
+        <li class="chapter active" data-level="4.3" data-path="core/directive.html">
             
                 
                     <a href="../core/directive.html">
@@ -687,7 +685,7 @@
                 
                     <section class="normal" id="section-gitbook_41">
                     
-                        <h1 id="directive-">directive——指令</h1>
+                        <h1 id="directive">directive——指令</h1>
 <p>定义一个指令(angular的directive的瘦身版) ,做节点的功能性增强</p>
 <blockquote>
 <p>regular的directive之所以可以瘦身是因为组件承担了大部分职责</p>
@@ -728,9 +726,9 @@ Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class
   }
 })
 </code></pre>
-<h2 id="-">内建指令</h2>
+<h2 id="">内建指令</h2>
 <p>当前版本, regularjs只内置了几个常用指令</p>
-<h3 id="1-r-model-">1. <code>r-model</code></h3>
+<h3 id="1-r-model">1. <code>r-model</code></h3>
 <p>r-model完成的是类似<code>ng-model</code> 的双向绑定功能, 它可以绑定以下几种表单元素, 具体可以查看<a href="http://jsfiddle.net/leeluolee/4y25j/" target="_blank">r-model-example</a></p>
 <ul>
 <li><p><code>input、textarea</code>: 与节点value实现双向绑定</p>
@@ -764,7 +762,7 @@ Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class
 </code></pre>
 </li>
 </ul>
-<h3 id="2-r-style-">2. <code>r-style</code></h3>
+<h3 id="2-r-style">2. <code>r-style</code></h3>
 <p><code>r-style</code>是为了解决<code>style</code>直接插值的逻辑能力上的不足, 它建立的是与elem.style的单向数据绑定关系. 每当r-style绑定的表达式数据(被解释为<code>Object</code>类型)发生更新 </p>
 <p><strong>Exmaple</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Regular({
@@ -778,7 +776,7 @@ Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class
 <blockquote>
 <p>style属性如果已经有插值，将会覆盖r-style的定义</p>
 </blockquote>
-<h3 id="3-r-class-">3. <code>r-class</code></h3>
+<h3 id="3-r-class">3. <code>r-class</code></h3>
 <p>与<code>r-style</code>类似，不过是为了解决<code>class</code>的不足, 每当对象某个属性值为true时，会添加对应的属性名 作为class</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript">
@@ -788,7 +786,7 @@ Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class
 <blockquote>
 <p>class属性如果已经有插值，将会覆盖r-class的定义</p>
 </blockquote>
-<h3 id="4-r-hide-">4. <code>r-hide</code></h3>
+<h3 id="4-r-hide">4. <code>r-hide</code></h3>
 <p>当表达式求值为真时，添加<code>display:none</code>到本节点</p>
 <blockquote>
 <p>所有内建的指令都同时接受Expression或者String类型的值.</p>
@@ -815,7 +813,7 @@ Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

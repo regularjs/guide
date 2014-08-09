@@ -7,7 +7,7 @@
         <title>前言 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="1" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="1" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/introduct/README.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -143,7 +141,7 @@
         </li>
     
         
-        <li class="chapter " data-level="1" data-path="introduct/README.html">
+        <li class="chapter active" data-level="1" data-path="introduct/README.html">
             
                 
                     <a href="../introduct/README.html">
@@ -687,9 +685,9 @@
                 
                     <section class="normal" id="section-gitbook_52">
                     
-                        <h1 id="-">前言</h1>
+                        <h1 id="">前言</h1>
 <p>看到regular的名字就能感受到扑面而来的山寨味，在开始前，我还是要说明下regularjs出现绝对不仅仅是作者的造轮子情绪泛滥的结果</p>
-<h2 id="angularjs-">angularjs的火爆以及它的小伙伴们</h2>
+<h2 id="angularjs">angularjs的火爆以及它的小伙伴们</h2>
 <p><a href="https://angularjs.org/" target="_blank">angularjs</a>从12年开始开始火爆起来, 数据驱动的业务实现方式也由此深入人心, 它的数据更新策略基于脏检查，在明确内部的生命周期后在数据绑定的使用上是最为灵活的(即这种方式不介意是何种方式促使数据改变，而只关心数据改变的结果),作者本人以及周围的小伙伴也开始为之着迷. 随着使用的深入, 发现angularjs的强大特性也引出了一些无法攻克的不足:</p>
 <ol>
 <li>由于本身生命周期的强约束，难以与其它框架公用</li>
@@ -699,7 +697,7 @@
 </ol>
 <p>除此之外，angularjs的核心是scope对象, 业务的实现大部分都是在scope上动态添加函数或属性. 也有人提出整个controller的写法缺乏约束性，这个时候<a href="http://davej.github.io/angular-classy/" target="_blank"><strong>angular-classy</strong></a>出现, 它将原本因挂载在scope上的业务逻辑转移到构造函数原型的形式, 减少了灵活度，但是更有约束性, 这也给了regular很大灵感.</p>
 <p>在angular大行其道的时期也激励产生了很多框架，比如<a href="http://vuejs.org/" target="_blank">vue.js</a>、<a href="https://github.com/RubyLouvre/avalon" target="_blank">avalon.js</a>、<a href="https://github.com/component/reactive" target="_blank">reactive</a>等等优秀的框架，它们解决了一些问题, 比如avalon.js利用defineProperty实现了数据get-set的代理 并利用VB实现了ie6的兼容(当然数组还是wrap), 但总体来讲基于dom实现的新秀们还是缺少足够的差异化(代码量的减少并不是最核心的部分)</p>
-<h2 id="-react-ractive">新思维的出现——react ractive</h2>
+<h2 id="react-ractive">新思维的出现——react ractive</h2>
 <p>与此同时，<a href="http://facebook.github.io/react/" target="_blank">react</a>的出现让这个百花齐放但缺少差异化的阶段注入了一些不一样的味道，它可以实现了另一种内建的生命周期(lifecycle), 在不依赖数据层面的脏检查的同时，建立了ui与数据之间的连接. 它将diff职责放到了一个dom结构的抽象<a href="http://fluentconf.com/fluent2014/public/schedule/detail/32395" target="_blank">virtual dom</a>上，通过脏检查两次render之间virtual-dom发生的变化来更新ui.不过如果移除了jsx的依赖，手动通过嵌套函数的方式创建virtual-dom(如下例)简直不可忍，并且它的组件展现中的逻辑控制完全依赖与js的语言能力, 往往不像利用模板构建那么清晰(当然react的作者有它自己的说法，仁者见仁了)。</p>
 <pre><code class="lang-js">render: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
   <span class="hljs-keyword">return</span> (
@@ -733,7 +731,7 @@
 <p>在props.first发生改变时, 发生的其实仅仅只是同一个节点的className在first和second的切换. 由于这种未知性，永远无法在react中出现类似directive的节点增强或包装器,所有事件也必须以数据代理的形式</p>
 </li>
 </ol>
-<h2 id="regular-">regular的产生和取舍</h2>
+<h2 id="regular">regular的产生和取舍</h2>
 <p>regular正是在这种百花齐放的时候产生, 最终在实现上采取了angular的数据更新策略(但是提取了表达式的依赖关系以便在Object.observe正式到来时切换到脏检查+observe的形式)提倡极致的声明式和裸数据操作, 依赖于基于字符串的模板描述结构结合更规范性的类式继承的组件体系来定义数据层的业务逻辑.</p>
 <blockquote>
 <p><strong>这也是框架取名 regular = react(ractive) + angular的由来 </strong></p>
@@ -760,7 +758,7 @@
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

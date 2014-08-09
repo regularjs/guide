@@ -7,7 +7,7 @@
         <title>Encapsulation and Plugin | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.7" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="4.7" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/use.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -460,7 +458,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.7" data-path="core/use.html">
+        <li class="chapter active" data-level="4.7" data-path="core/use.html">
             
                 
                     <a href="../core/use.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -615,19 +613,19 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_15">
+                    <section class="normal" id="section-gitbook_13">
                     
                         <h1 id="encapsulation-and-plugin-in-regularjs">Encapsulation and Plugin in regularjs</h1>
-<p>Regularjs is very efficient for developing, it is also provide basic encapsulation which is important during the deveopment in large project.</p>
-<h2 id="extension-in-regularjs-is-ony-way-influence">Extension in regularjs is ony-way influence</h2>
-<p>in previous chapter, we learned four methods for extension.</p>
+<p>Regularjs is very efficient for developing, it also provides basic encapsulation which is important during the deveopment in large project.</p>
+<h2 id="extension-in-regularjs-is-one-way-influence">Extension in regularjs is one-way influence</h2>
+<p>in previous chapter, we have learned four methods for extension:</p>
 <ul>
 <li><a href="filter.html">Component.filter</a></li>
 <li><a href="directive.html">Component.directive</a>`</li>
 <li><a href="event.html">Component.event</a></li>
 <li><a href="class.html">Component.implement</a></li>
 </ul>
-<p>They have a same feature: the extension is only <strong>available to Component and its SubComponent</strong>. which also the basic of the encapsulation</p>
+<p>They have a common feature: the extension is only <strong>available to current Component and its SubComponent</strong>, which is the basic of encapsulation.</p>
 <p><strong>Exmaple</strong></p>
 <pre><code class="lang-javascript">Regular.event(<span class="hljs-string">'tap'</span>, tap)
 
@@ -649,7 +647,7 @@ alert(SubChild.event(<span class="hljs-string">'tap2'</span>) === tap2)
 <span class="hljs-comment">// filter，directive is the same</span>
 </code></pre>
 <h2 id="create-unique-namespace-in-every-project">Create unique namespace in every project</h2>
-<p>you can defined a void Component as NameSpace instead of Regular , then extension only available in this NameSpace</p>
+<p>you can defined a void Component as NameSpace instead of Regular , then extension is only available in this NameSpace</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> YourNameSpace = Regular.extend()
 
 YourNameSpace.filter().directive().event() <span class="hljs-comment">//....</span>
@@ -657,9 +655,9 @@ YourNameSpace.filter().directive().event() <span class="hljs-comment">//....</sp
 <span class="hljs-keyword">var</span> Component = YourNameSpace.extend();
 </code></pre>
 <p>now, your extension will not affect other project.</p>
-<h2 id="-use-the-regularjs-s-plugin-system"><code>use</code> — the regularjs&#39;s Plugin System</h2>
-<p>All methods introduced above will create connection with specified Component. <strong>but for reusing, a plugin must Compnent-independent, the connection need creating during the using of plugin</strong>. </p>
-<p>so, the general plugin will be written  like this</p>
+<h2 id="use--the-regularjss-plugin-system"><code>use</code> — the regularjs&#39;s Plugin System</h2>
+<p>All methods introduced above will create connection with specified Component, <strong>but for reusing, a plugin must be Compnent-independent, the connection should be created during the using of plugin</strong>.</p>
+<p>so, the general plugin will be written like this:</p>
 <pre><code class="lang-javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FooPlugin</span><span class="hljs-params">(Componenet)</span>{</span>
   Component.implement()<span class="hljs-comment">// implement method</span>
@@ -683,15 +681,15 @@ Regular.use(FooPlugin);
 <h2 id="some-builtin-plugin">Some Builtin Plugin</h2>
 <p>Every builtin plugin have a registered name, you can simply pass the name to <code>use</code>.</p>
 <p><a name="timeout"></a></p>
-<h3 id="name-timeout-">name: &#39;timeout&#39;</h3>
+<h3 id="name-timeout">name: &#39;timeout&#39;</h3>
 <p>timeout</p>
 <ul>
-<li><p><code>Number $timeout(fn, delay)</code>: </p>
-<p>just a wrap for setTimeout, when time is out the digest-phase of the component will be triggered. </p>
+<li><p><code>Number $timeout(fn, delay)</code>:</p>
+<p>just a wrap for setTimeout, when time is up, the digest-phase of the component will be triggered.</p>
 <p>return id for clearTimeout</p>
 </li>
-<li><p><code>Number $interval(fn, delay)</code>: </p>
-<p>just a wrap for setInterval, every step the digest-phase of the component will be triggered. </p>
+<li><p><code>Number $interval(fn, delay)</code>:</p>
+<p>just a wrap for setInterval, every step the digest-phase of the component will be triggered.</p>
 <p>return id for clearInterval.</p>
 </li>
 </ul>
@@ -771,7 +769,7 @@ Regular.use(FooPlugin);
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

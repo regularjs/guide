@@ -7,7 +7,7 @@
         <title>Template Syntax | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="3" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/syntax/README.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -229,7 +227,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3" data-path="syntax/README.html">
+        <li class="chapter active" data-level="3" data-path="syntax/README.html">
             
                 
                     <a href="../syntax/README.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -618,26 +616,26 @@
                     <section class="normal" id="section-gitbook_23">
                     
                         <h1 id="template-syntax">Template Syntax</h1>
-<p>Unlike dom-based template like <a href="https://angularjs.org/" target="_blank">angular</a>, <a href="vuejs.org">vuejs</a>, <a href="http://knockoutjs.com/" target="_blank">knockoutjs</a>. regularjs is string-based (e.g. <a href="http://www.ractivejs.org/" target="_blank">ractive</a>), this featrue provide some advantage.</p>
-<h3 id="1-more-powerful-control-on-logic">1. more powerful control on logic</h3>
-<p>The dom-based template always rely on 
-directive(<code>ng-if</code>,<code>ng-repeat</code>), so the logic is element-based, they can&#39;t describe the structure like this: </p>
+<p>Unlike dom-based template such as <a href="https://angularjs.org/" target="_blank">angular</a>, <a href="vuejs.org">vuejs</a>, <a href="http://knockoutjs.com/" target="_blank">knockoutjs</a>, regularjs is string-based (e.g. <a href="http://www.ractivejs.org/" target="_blank">ractive</a>), this feature provides some advantages:</p>
+<h3 id="1-more-powerful-control-over-logic">1. more powerful control over logic</h3>
+<p>The dom-based template always rely on
+directive(<code>ng-if</code>,<code>ng-repeat</code>), so the logic is element-based, they can&#39;t describe the structure like this:</p>
 <pre><code class="lang-html">{{#list users as user}}
   Hello. <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>{{user.firstName}} {{user.lastName}}<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>DELELE<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 {{/list}}
 </code></pre>
-<h3 id="2-only-render-the-parts-really-need-to">2. only render the parts really need to</h3>
-<p>  The dom-based template like angular don&#39;t have own parsing phase, they put the string to the document, and walker the generated dom-node to act the <strong>LINK</strong> operation, so the node always have some placeholder. for example</p>
+<h3 id="2-only-render-the-parts-that-really-need-to">2. only render the parts that really need to</h3>
+<p>  The dom-based template like angular don&#39;t have its own parsing phase, they just put the string into the document, and walker the generated dom-node to call the <strong>LINK</strong> action, so the node always have some placeholder. for example:</p>
 <pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">"save()"</span> <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">"myForm.$invalid"</span>
           <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-primary"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">"destroy()"</span>
           <span class="hljs-attribute">ng-show</span>=<span class="hljs-value">"project.$remove"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-danger"</span>&gt;</span>Delete<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
 </code></pre>
-<p>  But string-based template have own pasing phase, they can extract the information from parsed AST, and then put the rendering part to the document. so if the dom above is rendered by regular, the result will be:</p>
+<p>  But string-based template have its own pasing phase, they can extract the information from parsed AST, and then put the rendered content into the document. If the dom above is rendered by regular, the result will be:</p>
 <pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-primary"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"btn btn-danger"</span>&gt;</span>Delete<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
 </code></pre>
-<p>  beacuse all process is already done in intialize phase with the parsed AST.</p>
+<p>  , beacuse all processes are already done in intialize phase with the parsed AST.</p>
 <h3 id="3-making-the-pre-parsing-possible">3. making the pre-parsing possible</h3>
 <p>you can pre-parse the template-string to AST before creating your Component.</p>
 <p><strong>for example</strong></p>
@@ -702,7 +700,7 @@ directive(<code>ng-if</code>,<code>ng-repeat</code>), so the logic is element-ba
   }
 ]
 </code></pre>
-<p>it just <strong>valid json format</strong>, so the parsed ast can send from server to client. </p>
+<p>It is just <strong>valid json format</strong>, so the parsed ast can be sent from server to client.</p>
 
                     
                     </section>
@@ -725,7 +723,7 @@ directive(<code>ng-if</code>,<code>ng-repeat</code>), so the logic is element-ba
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

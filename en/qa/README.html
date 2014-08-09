@@ -7,7 +7,7 @@
         <title>Q &amp; A | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="6" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="6" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -78,10 +78,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -109,7 +105,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -119,6 +115,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/qa/README.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -190,15 +188,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -525,7 +523,7 @@
         </li>
     
         
-        <li class="chapter " data-level="6" data-path="qa/README.html">
+        <li class="chapter active" data-level="6" data-path="qa/README.html">
             
                 
                     <a href="../qa/README.html">
@@ -568,7 +566,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -615,16 +613,16 @@
                 
                     <section class="normal" id="section-gitbook_22">
                     
-                        <h1 id="q-a">Q &amp; A</h1>
-<h4 id="1-why-expresion-and-string-is-all-valid-in-most-builtin-directive-">1. Why [Expresion] and [String] is all valid in most builtin directive?</h4>
-<p>some builtin directive like <code>r-html</code> accpets All [String] and [Expression] as its param. </p>
+                        <h1 id="q--a">Q &amp; A</h1>
+<h4 id="1-why-expresion-and-string-are-valid-in-most-builtin-directive">1. Why [Expresion] and [String] are valid in most builtin directive?</h4>
+<p>some builtin directive like <code>r-html</code> can accept both [String] and [Expression] as its param. </p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-html">
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r-html</span>=<span class="hljs-value">"content"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r-html</span>=<span class="hljs-value">{{content}}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<p>Beacuse they all use the <a href="../core/binding.html#watch"><code>$watch</code></a> to create binding between innerHTML and the data. Just like we talked before, the <code>$watch</code> will convert <strong>not-expression</strong> to [Expression] use the <code>Regular.expression(String expr)</code>. </p>
-<p>But, you can also make them do differrent things(see <a href="../core/event.html"><code>event</code></a>). for example, you need directly assign the node.innerHTML when passed param is not [Expression]</p>
+<p>Beacuse they all use the <a href="../core/binding.html#watch"><code>$watch</code></a> to create binding between innerHTML and the data. Just like we talked before, the <code>$watch</code> will convert <strong>not-expression</strong> to [Expression] by using <code>Regular.expression(String expr)</code>. </p>
+<p>However, you can also make them do differrent things(see <a href="../core/event.html"><code>event</code></a>). for example, you need directly assign the node.innerHTML when passed param is not [Expression]</p>
 <pre><code class="lang-javascript">Regular.directive(<span class="hljs-string">'r-html'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(elem, value)</span>{</span>
   <span class="hljs-keyword">if</span>(value.type !== <span class="hljs-string">'expression'</span>){ <span class="hljs-comment">// not Expression</span>
     elem.innerHTML = value;
@@ -635,10 +633,10 @@
   }
 })
 </code></pre>
-<p><strong>It is all depend on you</strong>.</p>
+<p><strong>It all depends on you</strong>.</p>
 <blockquote>
-<h4 id="the-real-difference-between-expression-and-string-">the real difference between [Expression] and [String]</h4>
-<p>Expression is parsed during the parse phase(string -&gt; ast), and the [String] need to parse in Runtime(Compile phase) . so it is a good idea use [Expression] in template if you need to create binding.</p>
+<h4 id="the-real-difference-between-expression-and-string">the real difference between [Expression] and [String]</h4>
+<p>Expression is parsed during the parse phase(string -&gt; ast), but the [String] need to parse in Runtime(Compile phase) . so it is a good idea use [Expression] in template if you need to create binding.</p>
 </blockquote>
 
                     
@@ -660,7 +658,7 @@
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

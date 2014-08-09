@@ -7,7 +7,7 @@
         <title>interpolation | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3.2" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="3.2" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/syntax/interpolation.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -262,7 +260,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="syntax/interpolation.html">
+        <li class="chapter active" data-level="3.2" data-path="syntax/interpolation.html">
             
                 
                     <a href="../syntax/interpolation.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -618,9 +616,9 @@
                     <section class="normal" id="section-gitbook_27">
                     
                         <h1 id="interpolation">interpolation</h1>
-<p>interpolation is most common part of the template.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m-modal m-modal-{{klass}}"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{{this.remove(user)}}</span>&gt;</span> 
-  {{user.name}} 
+<p>interpolation is a most common part of template.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m-modal m-modal-{{klass}}"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{{this.remove(user)}}</span>&gt;</span>
+  {{user.name}}
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 </code></pre>
 <p>you can find interpolation at either textNode or attributeNode.</p>
@@ -635,22 +633,22 @@
 
 app.$inject(<span class="hljs-string">'#app'</span>);
 </code></pre>
-<p>will outport <code>&lt;div&gt;leeluolee&lt;/div&gt;</code>. and whenerver the data changes, the textNode&#39;s content is also updated. it is a <strong>one-way</strong> binding.</p>
+<p>will output <code>&lt;div&gt;leeluolee&lt;/div&gt;</code>. Whenerver the data changes, the textNode&#39;s content is also updated. it is a <strong>one-way</strong> binding.</p>
 <h2 id="attribute-interpolation">Attribute interpolation</h2>
-<p>When used as attribute-interpolation(only the value can be interpolated), there is some explanations.</p>
+<p>When used as attribute-interpolation(only the value can be interpolated):</p>
 <ol>
 <li><p>if the value is a string but contains interpolation(e.g. <code>class=&#39;m-modal m-modal-{{klass}}&#39;</code>), the string will be considered as a interpolation.</p>
 </li>
-<li><p>if the attribute is not a <a href="../core/directive.html">directive</a>. once the value changes, the attribute&#39;s value will update directly. it is a <strong>one-way binding</strong>.</p>
+<li><p>if the attribute is not a <a href="../core/directive.html">directive</a>, once the value changes, the attribute&#39;s value will be updated immediately. it is a <strong>one-way binding</strong>.</p>
 </li>
-<li><p>if the attribute is a directive. regularjs will call the directive&#39;s link method but do noting else.</p>
+<li><p>if the attribute is a directive, regularjs will call the directive&#39;s link method but do nothing else.</p>
 </li>
 </ol>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript">
-&lt;input 
-  type=<span class="hljs-string">'radio'</span>  
-  <span class="hljs-keyword">class</span>={{klass}}   
+&lt;input
+  type=<span class="hljs-string">'radio'</span>
+  <span class="hljs-keyword">class</span>={{klass}}
   r-model={{checked}}
   style=<span class="hljs-string">"left: {{10 + offsetX}}px; top: {{10 + offsetY}}px"</span>
   &gt; <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">input</span>&gt;</span></span>
@@ -684,7 +682,7 @@ app.$inject(<span class="hljs-string">'#app'</span>);
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

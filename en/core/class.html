@@ -7,7 +7,7 @@
         <title>Class-based Component | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.1" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="4.1" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/class.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -364,7 +362,7 @@
                 
     
         
-        <li class="chapter " data-level="4.1" data-path="core/class.html">
+        <li class="chapter active" data-level="4.1" data-path="core/class.html">
             
                 
                     <a href="../core/class.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -618,57 +616,62 @@
                     <section class="normal" id="section-gitbook_9">
                     
                         <h1 id="class-based-component">Class-based Component</h1>
-<p>Regularjs&#39;s OO implementation is modified from famous <a href="https://github.com/ded/klass" target="_blank">ded:klass</a> which have one brilliant feature that you can simply using <code>this.supr</code> to call the parent&#39;s method with same name.</p>
-<p>There are only two interfaces of klass are remained at regularjs, <code>extend</code> and <code>implement</code>.only the methods defined by these two interfaces have the ability to call <code>this.supr()</code>.</p>
+<p>Regularjs&#39;s OO implementation is modified from the famous <a href="https://github.com/ded/klass" target="_blank">ded:klass</a> library, which have one brilliant feature that you can simply use <code>this.supr()</code> to call parent&#39;s method with the same name.</p>
+<p>There are only two interfaces of klass are reserved in regularjs: <code>extend</code> and <code>implement</code>. Only methods defined by these two interfaces have the ability to call <code>this.supr()</code>.</p>
 <blockquote>
-<p>In regularjs, the Base Class of All Component is <code>Regular</code>, it is also a Component.</p>
+<p>In regularjs, the Base Class of All Component is <code>Regular</code>, which is also a Component.</p>
 </blockquote>
 <p><a name="extend"></a></p>
-<h3 id="1-component-extend-object-specification-">1. <code>Component.extend(Object specification)</code></h3>
-<p><code>Component.extend</code> is used to define  SubComponent extended from Component，specification will merge to the SubComponent.prototype.</p>
-<p><strong>The important part of sepecification</strong></p>
+<h3 id="1-componentextendobject-specification">1. <code>Component.extend(Object specification)</code></h3>
+<p><code>Component.extend</code> is used to define a SubComponent extended from Component，and the specification parameter will be merged into the SubComponent.prototype.</p>
+<p><strong>Important parts of sepecification:</strong></p>
 <ul>
-<li><p><strong>[AST|String] template</strong> : you can pass</p>
+<li><p><strong>[AST|String] template</strong></p>
+<p>you can pass several types for this:</p>
 <ul>
-<li><p>a css selector point to the node contains template string</p>
-<p>if the browser doesnt support selector api. you can either rewirte the depended <code>Regular.dom.find</code> or only pass &#39;#id&#39; selector.</p>
+<li><p>a css selector, pointing to the node that will contain the template string.</p>
+<p>If the browser doesnt support selector api, you can either using <code>Regular.dom.find</code> or only pass a &#39;#id&#39; selector.</p>
 </li>
-<li>template string.</li>
-<li>preparsed AST from template(via <code>Regular.parse()</code>)</li>
+<li>the whole template string.</li>
+<li>parsed AST from template(via <code>Regular.parse()</code>)</li>
 </ul>
 </li>
-<li><p><strong>[Function]   init()</strong>: </p>
-<p>initialize function. in this function, the dom structure is generated by <code>this.$compile</code></p>
-<p>you can also bind the &#39;init&#39; event.</p>
+</ul>
+<ul>
+<li><p><strong>[Function]   init()</strong>:</p>
+<p>initialize function. In this function, the dom structure is generated by <code>this.$compile</code>.</p>
+<p>you can also bind the &#39;init&#39; event:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">this</span>.$on(<span class="hljs-string">'init'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>...})
 </code></pre>
 </li>
 </ul>
 <ul>
-<li><p>[Function]   config(data): </p>
-<p>config is called before init when dom structure is not generated already.</p>
+<li><p><strong>[Function]   config(data)</strong>:</p>
+<p>config function is called before init when dom structure has not been generated yet.</p>
 </li>
 </ul>
 <ul>
-<li><p>[Function]   destroy: </p>
-<p>custom cleaning logic goes here. make sure that you call the <code>this.supr()</code> to have the work done if you rewirte the <code>destroy()</code>.</p>
+<li><p><strong>[Function]   destroy</strong>:</p>
+<p>custom clean logic goes here. make sure that you call the <code>this.supr()</code> to have the work done if you override the <code>destroy()</code> function.</p>
 <p>you can also bind the &#39;destroy&#39; event to do the work.</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">this</span>.$on(<span class="hljs-string">'destroy'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>...})
 </code></pre>
 </li>
-<li><p>[String]     name: </p>
+</ul>
+<ul>
+<li><p><strong>[String]     name</strong>:</p>
 <p>component name. it makes the component <a href="../advanced/component.html">be nestable</a> in other component(e.g. <code>&lt;pager current={{current}}/&gt;</code>)</p>
 </li>
 </ul>
-<p><code>Component.extend</code> will also do some preprocessing work.</p>
+<p><code>Component.extend</code> will also do some preprocessing work:</p>
 <ol>
 <li>preparse the passed template.</li>
-<li>prototypal inherit the Parent&#39;s events, directives and fitlers<a href="use.html">Learn More</a></li>
-<li>if name is passed in. regular will register this Component.</li>
+<li>prototypal inherit the Parent&#39;s events、 directives and fitlers. <a href="use.html">Learn More</a></li>
+<li>if name is passed in, regular will register this Component.</li>
 </ol>
 <p><a href="http://fiddle.jshell.net/leeluolee/Xvp9S/" target="_blank">DEMO: modal</a></p>
 <p><a name="implement"></a></p>
-<h3 id="2-component-implement-object-specification-">2. <code>Component.implement(Object specification)</code></h3>
+<h3 id="2-componentimplementobject-specification">2. <code>Component.implement(Object specification)</code></h3>
 <p>Extend Component&#39;s prototype.</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend();
@@ -684,19 +687,19 @@ Component.implement({
 component.hello();
 </code></pre>
 <p><a name="instance"></a></p>
-<h3 id="3-new-component-object-specification-">3.<code>new Component(Object specification)</code></h3>
+<h3 id="3new-componentobject-specification">3.<code>new Component(Object specification)</code></h3>
 <p>Initialize a Component.</p>
-<p>Specification in initialize and <code>Component.extend</code> is almost the same. the only difference is ——  in <code>Component.extend</code> is a prototype-assignment , but in initalize it is a instance-assignment . so the initialize stage can override the specification passed in <code>Component.extend</code>. </p>
+<p>Specification parameter is almost the same as the <code>Component.extend</code>. The only difference is ——  in <code>Component.extend</code> is a prototype-assignment , but in initalize it is a instance-assignment . so the initialize stage can override the specification passed in <code>Component.extend</code>.</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> modal = <span class="hljs-keyword">new</span> Modal({
-  data: {title: <span class="hljs-string">'confirm'</span>, content: <span class="hljs-string">'please confirm your email'</span>} 
+  data: {title: <span class="hljs-string">'confirm'</span>, content: <span class="hljs-string">'please confirm your email'</span>}
 })
 
 modal.$on(<span class="hljs-string">'confirm'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
   console.log(<span class="hljs-string">'confirm!!'</span>)
 });
 </code></pre>
-<p><strong>The method defined in initalize can not call the <code>this.supr()</code></strong></p>
+<p><strong>The method defined in initalize can not call <code>this.supr()</code></strong></p>
 
                     
                     </section>
@@ -719,7 +722,7 @@ modal.$on(<span class="hljs-string">'confirm'</span>, <span class="hljs-function
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

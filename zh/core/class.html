@@ -7,7 +7,7 @@
         <title>类式继承和组件定义 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.1" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="4.1" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/class.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -402,7 +400,7 @@
                 
     
         
-        <li class="chapter " data-level="4.1" data-path="core/class.html">
+        <li class="chapter active" data-level="4.1" data-path="core/class.html">
             
                 
                     <a href="../core/class.html">
@@ -687,14 +685,14 @@
                 
                     <section class="normal" id="section-gitbook_39">
                     
-                        <h1 id="-">类式继承与组件定义</h1>
+                        <h1 id="">类式继承与组件定义</h1>
 <p>regularjs的类式继承简化自著名的<a href="https://github.com/ded/klass" target="_blank">|ded/klass|</a>, klass的类式继承的一个特点是，在实例函数中可以通过<code>this.supr()</code>来调用父类的同名函数，避免了记忆负担. Regular只保留了其中两个接口:</p>
 <blockquote>
-<h4 id="tips-">tips:</h4>
+<h4 id="tips">tips:</h4>
 <p>使用exend、implement之外的方式扩展的原型方法无法使用<code>this.supr()</code></p>
 </blockquote>
 <p><a name="extend"></a></p>
-<h3 id="1-component-extend-object-specification-">1. <code>Component.extend(Object specification)</code></h3>
+<h3 id="1-componentextendobject-specification">1. <code>Component.extend(Object specification)</code></h3>
 <p>extend用以派生一个可重用组件，specification中的内容会添加到扩展类的原型中.</p>
 <p><strong>sepecification中的关键参数</strong></p>
 <ol>
@@ -726,7 +724,7 @@
 </ol>
 <p><a href="http://fiddle.jshell.net/leeluolee/Xvp9S/" target="_blank">DEMO: modal弹窗组件</a></p>
 <p><a name="implement"></a></p>
-<h3 id="2-component-implement-object-specification-">2. <code>Component.implement(Object specification)</code></h3>
+<h3 id="2-componentimplementobject-specification">2. <code>Component.implement(Object specification)</code></h3>
 <p>扩展组件的原型对象，sepecification与extend一致，扩展的方法同样可以使用<code>this.supr</code></p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend();
@@ -742,7 +740,7 @@ Component.implement({
 component.hello();
 </code></pre>
 <p><a name="instance"></a></p>
-<h3 id="3-new-component-object-specification-">3.<code>new Component(Object specification)</code></h3>
+<h3 id="3new-componentobject-specification">3.<code>new Component(Object specification)</code></h3>
 <p>实例化组件</p>
 <p>sepecification 与 <code>Component.extend</code>的specification结构一致，区别是这里传入的是添加为实例属性而不是在prototype上(即可以覆盖extend的声明)</p>
 <p>例如, 初始化上例中的Modal组件</p>
@@ -776,7 +774,7 @@ modal.$on(<span class="hljs-string">'confirm'</span>, <span class="hljs-function
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

@@ -7,7 +7,7 @@
         <title>regular的模块化策略 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.6" data-basepath=".." data-revision="1406726909555">
+    <div class="book" data-github="regularjs/guide" data-level="4.6" data-basepath=".." data-revision="1407571599998">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/use.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -482,7 +480,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.6" data-path="core/use.html">
+        <li class="chapter active" data-level="4.6" data-path="core/use.html">
             
                 
                     <a href="../core/use.html">
@@ -687,9 +685,9 @@
                 
                     <section class="normal" id="section-gitbook_46">
                     
-                        <h1 id="regular-">regular的封装和插件化策略</h1>
+                        <h1 id="regular">regular的封装和插件化策略</h1>
 <p>良好的模块化和封装性支持是可以在大型项目中使用的必然要求. regularjs中只有一个顶层对象<code>Regular</code>, 它即是命名空间又是组件的基类, 这种情况下如何实现封装呢？</p>
-<h2 id="-">扩展接口的单向影响性</h2>
+<h2 id="">扩展接口的单向影响性</h2>
 <p>之前小节已经提到了Component拥有四个扩展接口</p>
 <ul>
 <li><a href="filter.html">filter</a>: 定义一个过滤器, 在表达式中可以使用</li>
@@ -723,7 +721,7 @@ alert(SubChild.event(<span class="hljs-string">'tap2'</span>) === tap2)
 对于implement无需多做解释, 这是原型继承的基本原理, 而对于其它几个接口, regular会让父子类的容器对象(比如event都是保存在在_events私有对象中)做一次原型继承<code>Object.create()</code></p>
 </blockquote>
 <p>即如果需要全局可用的扩展可以直接定义在Regular中, 而私有扩展不会影响到外围的其它组件</p>
-<h2 id="-">建立项目内独立的隔离空间</h2>
+<h2 id="">建立项目内独立的隔离空间</h2>
 <p>对于建立独立的隔离空间,聪明的同学可能已经想到了</p>
 <blockquote>
 <p>即定义一个什么都不做的组件来替代Regular顶层空间来作为扩展的容器</p>
@@ -735,7 +733,7 @@ YourNameSpace.filter().directive().event() <span class="hljs-comment">//....</sp
 <span class="hljs-keyword">var</span> Component = YourNameSpace.extend();
 </code></pre>
 <p>这样, 独立项目内的扩展就不会影响到产品中的其它Regular组件了</p>
-<h2 id="use-regular-">use——regular的模块(插件)化</h2>
+<h2 id="useregular">use——regular的模块(插件)化</h2>
 <p>angular中模块化的解决方案是<code>angular.module()</code>和依赖注入, 一个模块可以有factory可以有filter可以有directive等等.</p>
 <p>在regular中不可能照搬这种方式, 这是因为</p>
 <ul>
@@ -769,10 +767,10 @@ YourComponent.use(FooModule);
 <span class="hljs-comment">// global</span>
 Regular.use(FooModule);
 </code></pre>
-<h2 id="regular-">Regular预定义的插件</h2>
+<h2 id="regular">Regular预定义的插件</h2>
 <p>预定义插件都可以直接用<code>Component.use(&#39;插件名&#39;)</code>的方式使用</p>
 <p><a name="timeout"></a></p>
-<h3 id="-timeout-">插件名: &#39;timeout&#39;</h3>
+<h3 id="-timeout">插件名: &#39;timeout&#39;</h3>
 <p>timeout插件在组件中扩展了两个方法</p>
 <ul>
 <li><p><code>Number $timeout(fn, delay)</code>: </p>
@@ -822,10 +820,10 @@ Regular.use(FooModule);
 <span class="hljs-keyword">new</span> Counter({data: {count:<span class="hljs-number">0</span>}}).inject(<span class="hljs-string">'#app'</span>);
 </code></pre>
 <p><a href="http://fiddle.jshell.net/leeluolee/4AzR6/" target="_blank">|DEMO|</a></p>
-<h2 id="-del-request-del-"><del>插件名: &#39;request&#39;</del></h2>
+<h2 id="del-requestdel"><del>插件名: &#39;request&#39;</del></h2>
 <p>异步请求模块</p>
 <p><strong>移除引入request</strong> 因为代码量的问题，一般其它框架也都会实现request, 改为以非内置的形式提供<a href="https://github.com/regularjs/request" target="_blank">regularjs/request</a></p>
-<h2 id="-">目前可用的非内置插件列表</h2>
+<h2 id="">目前可用的非内置插件列表</h2>
 <ol>
 <li><a href="">shortcut(coming soon)</a></li>
 </ol>
@@ -851,7 +849,7 @@ Regular.use(FooModule);
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

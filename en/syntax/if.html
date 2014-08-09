@@ -7,7 +7,7 @@
         <title>Logic Control | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3.3" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="3.3" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/syntax/if.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -278,7 +276,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="syntax/if.html">
+        <li class="chapter active" data-level="3.3" data-path="syntax/if.html">
             
                 
                     <a href="../syntax/if.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -615,10 +613,10 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_26">
+                    <section class="normal" id="section-gitbook_25">
                     
-                        <h1 id="if-ifelse-else">if/ifelse/else</h1>
-<p>You can use if, elseif and else rule to conditionally skip a section of the template. The condition&#39;s value will be convert to boolean. The elseif-s and else-s must occur inside if (that is, between the if start-tag and end-tag). The if can contain any number of elseif-s (including 0) and at the end optionally one else.</p>
+                        <h1 id="ififelseelse">if/ifelse/else</h1>
+<p>You can use if, elseif and else rule to conditionally skip a section of the template. The condition&#39;s value will be converted to boolean type. The elseif-s and else-s must occur inside if (that is, between the if start-tag and end-tag). If can contain any number of elseif-s (including 0), and one optionally else at the end.</p>
 <p><strong>Syntax</strong></p>
 <pre><code class="lang-xml">{{#if condition}}
   ...
@@ -628,14 +626,14 @@
   ...
 {{/if}}
 </code></pre>
-<p>where: </p>
+<p>where:</p>
 <ul>
 <li>condition: Expression evaluates to a boolean value</li>
 </ul>
 <p><strong>Example</strong></p>
 <pre><code class="lang-html">
 {{#if user.age &gt;= 80 }}
-  you are too old 
+  you are too old
 {{#elseif user.age <span class="hljs-tag">&lt;<span class="hljs-title">=</span> <span class="hljs-attribute">10</span>}}
   <span class="hljs-attribute">you</span> <span class="hljs-attribute">are</span> <span class="hljs-attribute">too</span> <span class="hljs-attribute">young</span>
 {{#<span class="hljs-attribute">else</span>}}
@@ -643,17 +641,17 @@
 {{/<span class="hljs-attribute">if</span>}}</span>
 </code></pre>
 <h2 id="use-if-with-the-attribute">use <code>if</code> with the attribute</h2>
-<p>you can use <code>if</code> <code>else</code> <code>elseif</code> to controll the attribute</p>
+<p>you can use <code>if</code> <code>else</code> <code>elseif</code> to control the attribute value.</p>
 <p><strong>Example</strong></p>
-<pre><code class="lang-xml">&lt;!-- controll the attribute --&gt;
+<pre><code class="lang-xml">&lt;!-- control the attribute --&gt;
 &lt;div {{#if active == 'home'}}data-home{{/if}}&gt;Home&lt;/div&gt;
-&lt;!-- controll the event --&gt;
+&lt;!-- control the event --&gt;
 &lt;a {{#if current &lt; last}} on-click={{this.next()}} {{/if}}&gt;Next&lt;/a&gt;
 
-&lt;!-- controll the directive --&gt;
+&lt;!-- control the directive --&gt;
 &lt;input {{#if !disabled}} r-model={{username}} {{/if}}&gt;
 </code></pre>
-<p>if the test is evaluated to false , the attribute, event-handler, directive will be removed or destroied; </p>
+<p>If the test is evaluated to false, the attribute, event-handler, directive will be removed or destroyed;</p>
 
                     
                     </section>
@@ -676,7 +674,7 @@
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

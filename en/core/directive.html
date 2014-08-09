@@ -7,7 +7,7 @@
         <title>Directive | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.5.5">
+        <meta name="generator" content="GitBook 0.7.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1406726909051">
+    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1407571599396">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,10 +80,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -111,7 +107,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -121,6 +117,8 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/directive.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
+
+	
 
         
         <li class="divider"></li>
@@ -192,15 +190,15 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="getting-start/quirk-example.html">
+        <li class="chapter " data-level="2.2" data-path="getting-start/quick-example.html">
             
                 
-                    <a href="../getting-start/quirk-example.html">
+                    <a href="../getting-start/quick-example.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
                         
-                         Quirk Example
+                         Quick Example
                     </a>
                 
             
@@ -396,7 +394,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="core/directive.html">
+        <li class="chapter active" data-level="4.3" data-path="core/directive.html">
             
                 
                     <a href="../core/directive.html">
@@ -570,7 +568,7 @@
     
         <a href="../getting-start/install.html" title="Installation" class="chapter done " data-progress="2.1" style="left: 13.043478260869565%;"></a>
     
-        <a href="../getting-start/quirk-example.html" title="Quirk Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
+        <a href="../getting-start/quick-example.html" title="Quick Example" class="chapter done " data-progress="2.2" style="left: 17.391304347826086%;"></a>
     
         <a href="../getting-start/review.html" title="Summary" class="chapter done " data-progress="2.3" style="left: 21.73913043478261%;"></a>
     
@@ -618,13 +616,13 @@
                     <section class="normal" id="section-gitbook_10">
                     
                         <h1 id="directive">Directive</h1>
-<p>Directive is similar with angular&#39;s directive but more lightweight( in other words, less powerful <strong><code>:)</code></strong> ). you can consider it as the enhancement in the node.</p>
+<p>Directive is similar to angular&#39;s directive, but it is more lightweight( in other words, less powerful <strong><code>:)</code></strong> ). you can consider it as enhancement of the node.</p>
 <h2 id="api">API</h2>
 <p><strong><code>Component.directive(&lt;String|RegExp&gt; name, &lt;Object|Function&gt; spec)</code></strong></p>
 <ul>
-<li>name : directive&#39;s name, also accept RegExp to matched multiply attributeName.</li>
-<li>Function spec(elem, value) : the passed params show below.<ul>
-<li>elem:  the owner element</li>
+<li>name : directive&#39;s name, also accept RegExp to match multiple attributeName.</li>
+<li>Function spec(elem, value) :<ul>
+<li>elem:  the target element</li>
 <li>value: the attributeValue. maybe <code>String</code>(r-test =&quot;haha&quot; ) or<code>Expression</code> (r-test={{haha}})</li>
 <li>this:  point to component self</li>
 </ul>
@@ -638,13 +636,13 @@
 })
 </code></pre>
 <p>The directive<code>r-html</code> create a unescaped interpolation with innerHTML.</p>
-<p>Beacuse <a href="binding.html"><code>$watch</code></a> accepts [String] and [Expression] as the first param, so you can use <code>r-html</code> in two ways. </p>
+<p>Beacuse <a href="binding.html"><code>$watch</code></a> accepts [String] and [Expression] as the first param, you can use <code>r-html</code> in two ways:</p>
 <pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'preview'</span> <span class="hljs-attribute">r-html</span>=<span class="hljs-value">'content'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- or --&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'preview'</span> <span class="hljs-attribute">r-html</span>=<span class="hljs-value">{{content}}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<p>In fact, all regularjs&#39;s builtin directive accepts [String] and [Expression]. but you can have different logic betweent them when defining you own directive</p>
-<p>If the directive need some teardown work, you can return a destroy function(e.g. dom related operation) . <strong>but you dont need to <code>$unwatch</code> the watcher defined in directive , regularjs is record it for you and unwatch it automately</strong></p>
+<p>In fact, all regularjs&#39;s builtin directive accepts [String] and [Expression]. but you can have different logic betweenn them when defining your own directive.</p>
+<p>If the directive need some teardown work, you can return a destroy function(e.g. dom related operation) . <strong>but you dont need to <code>$unwatch</code> the watcher defined in directive , regularjs record it for you and unwatch it automatically</strong></p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript">
 Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(elem, value)</span>{</span>
@@ -656,19 +654,19 @@ Regular.directive(<span class="hljs-string">'some-directive'</span>, <span class
 </code></pre>
 <p><a name="builtin"></a></p>
 <h2 id="builtin-directive">Builtin Directive</h2>
-<p>regularjs is providing some basic directive for you.</p>
-<h3 id="1-r-model-">1. <code>r-model</code></h3>
-<p>much similar with <code>ng-model</code> in angular, <code>r-model</code> can help you to create two-way binding between data and the form element.</p>
-<p>you can check the <a href="http://jsfiddle.net/leeluolee/4y25j/" target="_blank">r-model-example</a> on jsfiddle</p>
+<p>regularjs provides some basic directives for you.</p>
+<h3 id="1-r-model">1. <code>r-model</code></h3>
+<p>very similar to <code>ng-model</code> in angular, <code>r-model</code> can help you to create two-way binding between data and the form element.</p>
+<p>you can check the <a href="http://jsfiddle.net/leeluolee/4y25j/" target="_blank">r-model-example</a> on jsfiddle.</p>
 <ul>
-<li><code>input、textarea</code>: 
+<li><code>input、textarea</code>:
 simple text binding<pre><code>&lt;textarea  r-model=&#39;textarea&#39;&gt;hahah&lt;/textarea&gt;
 &lt;input  r-model=&#39;input&#39; /&gt;
 </code></pre></li>
 </ul>
 <ul>
-<li><p><code>input:checkbox</code>: 
-binding between the input&#39;s checked state and field with boolean type</p>
+<li><p><code>input:checkbox</code>:
+binding the input&#39;s checked state to a boolean type field</p>
 <pre><code>&lt;input type=&quot;checkbox&quot; checked  r-model={{checked}}&gt; Check me out (value: {{checked}})
 // checked = true
 </code></pre></li>
@@ -681,7 +679,7 @@ binding to input.value</p>
 </li>
 </ul>
 <ul>
-<li><p><code>select</code>: 
+<li><p><code>select</code>:
 binding to select.value</p>
 <pre><code class="lang-html"><span class="hljs-comment">&lt;!-- city = 1 --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{{city}}</span>&gt;</span>
@@ -692,11 +690,11 @@ binding to select.value</p>
 </code></pre>
 </li>
 </ul>
-<h3 id="2-r-style-">2. <code>r-style</code></h3>
-<p><code>r-style</code> is a enhancement for plain <code>style</code> interpolation.</p>
+<h3 id="2-r-style">2. <code>r-style</code></h3>
+<p><code>r-style</code> is an enhancement for plain <code>style</code> interpolation.</p>
 <p><strong>Exmaple</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Regular({
-    template: 
+    template:
       <span class="hljs-string">"&lt;button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }} &gt;left+10&lt;/button&gt;\
       left:  {{left}}"</span>,
     data: {left:<span class="hljs-number">1</span>}
@@ -717,16 +715,16 @@ binding to select.value</p>
 <tr>
 <td>r-style</td>
 <td><code>expression</code></td>
-<td><code>Expression</code> which evals to an object whose keys are CSS style names and values are corresponding values for those CSS keys.</td>
+<td><code>Expression</code> will eval to an object whose keys are CSS style names and values are corresponding values for those CSS keys.</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Warning: if there is already a interpolation on <code>style</code>, the <code>r-style</code> will be overridden</strong></p>
+<p><strong>Warning: if there is already an interpolation on <code>style</code>, the <code>r-style</code> will be overridden</strong></p>
 <p>for examle . <code>&lt;div style=&#39;left: {{left}}px&#39; r-style=&#39;{left: left+&quot;px&quot;}&#39;&gt;&lt;/div&gt;</code></p>
 </blockquote>
-<h3 id="3-r-class-">3. <code>r-class</code></h3>
-<p>simmilar with <code>r-style</code>. <code>r-class</code> is a enhancement for plain <code>class</code> interpolation,</p>
+<h3 id="3-r-class">3. <code>r-class</code></h3>
+<p>simmilar to <code>r-style</code>. <code>r-class</code> is an enhancement for plain <code>class</code> interpolation,</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r-class</span>=<span class="hljs-value">'{"active": page === "home"}'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
@@ -744,20 +742,20 @@ binding to select.value</p>
 <tr>
 <td>r-class</td>
 <td><code>expression</code></td>
-<td><code>Expression</code> eval to <code>Object</code>: a map of class names to boolean values. In the case of a map, the names of the properties whose values are truthy will be added as css classes to the element..</td>
+<td><code>Expression</code> eval to <code>Object</code>: a map of class names to boolean values. In the case of a map, the names of the properties whose values are true will be added as css classes to the element.</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Warning: just like <code>r-style</code>, if there is already a interpolation on <code>class</code>, the <code>r-class</code> will be overridden</strong></p>
+<p><strong>Warning: just like <code>r-style</code>, if there is already an interpolation on <code>class</code>, the <code>r-class</code> will be overridden</strong></p>
 </blockquote>
-<h3 id="4-r-hide-">4. <code>r-hide</code></h3>
+<h3 id="4-r-hide">4. <code>r-hide</code></h3>
 <p><strong>Exmaple</strong></p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r-hide</span>=<span class="hljs-value">"page !== 'home'"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
 <p>if the Expression <code>page !== &#39;home&#39;</code> is evaluated to true, the <code>display:none</code> will attach to the <code>div</code>.</p>
-<h3 id="5-r-html-">5. <code>r-html</code></h3>
-<p>unescaped interpolation use innerHTML. beware of the attack like <code>xss</code>.</p>
+<h3 id="5-r-html">5. <code>r-html</code></h3>
+<p>unescaped interpolation use innerHTML. beware of attack like <code>xss</code>.</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">'preview'</span> r-html={{content}}&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>
 </code></pre>
@@ -783,7 +781,7 @@ binding to select.value</p>
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     
