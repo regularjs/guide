@@ -1,19 +1,19 @@
 # Expression
 
-Expression is the core of  template and watcher-system.
+Expression is the core of template and watcher-system.
 
 
 <a name="expression"></a>
 you can also use `Regular.expression` to create an expression at runtime.
 
 
-A Expression object have two important part:
+An Expression object have two important parts:
 
 * __get(context)__
 
-  the getter of the expression, you need pass a component to it as the context. 
+  the getter of the expression. You need pass a component to it as the context.
 
-  it return the expression's evaluated value. in [watcher-system](../core/binding.md), regularjs use getter to determine whether the data is changed.
+  it returns the expression's evaluated value. In [watcher-system](../core/binding.md), regularjs use getter to determine whether the data has changed.
 
 
   _example:_
@@ -29,9 +29,9 @@ A Expression object have two important part:
   ```
 
 
-* __set(context, value)__ 
+* __set(context, value)__
 
-  if the expression is a valid [LeftHandSideExpression](http://es5.github.io/#x11.2), the set method will exsit. the method is used as setter for the field the expression represents.
+  the getter of the expression. If the expression is a valid [LeftHandSideExpression](http://es5.github.io/#x11.2), the set method will exist.
 
   > the `set` is useful in duplex data-binding like [r-model](../core/directive.html#1-r-model-)
 
@@ -56,19 +56,19 @@ __example__
 
   __Tips__
 
-  1. `this` point to the context.
-  2. the root of the data is context.data. so `user` in Expression is means 'context.data.user'
-  3. regular dont supoort prefix,postfix and bitwise operation(e.g. `++`,`--`, `&`)
+  1. `this` points to the context.
+  2. the root of the data is context.data. so `user` in Expression means 'context.data.user'
+  3. regular dont support prefix, postfix and bitwise operation(e.g. `++`,`--`, `&`)
   4. you can directly use some global Object like:
-    
+
     true false undefined null Array Date JSON Math NaN RegExp decodeURI decodeURIComponent encodeURI encodeURIComponent parseFloat parseInt Object String
 
 
 ## Expression only binding-once
 
-Beacuse the dirty-check's performance is tightly related to the number of the binding. so the less binding is created the better .
+Beacuse the dirty-check's performance is tightly related to the number of the binding, the less binding is created, the better.
 
-in regularjs you can wrap your Expression with `@(Expression)` to  make the Expression only __trigger once__. 
+in regularjs you can wrap your Expression with `@(Expression)` to  make the Expression only __trigger once__.
 
 __Example__
 
@@ -106,14 +106,14 @@ component.$update("user.name", 2);
 alert(i === 1);
 ```
 
-As shown above, binding-once __may make the data isn't synchronized with the ui__. you should use it be carefull.
+As shown above, binding-once __may make the data isn't synchronized with the ui__. you should use it carefully.
 
 
-###how `@()` make the Expression triggered once?
+###how `@()` make the Expression trigger once?
 
  1. `@()` will make the Expression with the flag __once__
  2. when $watch find the Expression with flag __once__ . it will create a watcher with the flag __once__ .
- 3. in digest phase. if the once-marked watcher is be found dirty, after the watcher update, it will be auto removed.
+ 3. in digest phase, if the once-marked watcher is found dirty, after the watcher update, it will be removed.
  4. next digest phase will not check the watcher
 
 > if Expression is be determined to constant(e.g. `1+1` `10 > 1`), the watcher also will have the __once__ tag.

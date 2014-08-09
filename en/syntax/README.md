@@ -1,20 +1,20 @@
 #Template Syntax
 
-Unlike dom-based template like [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/). regularjs is string-based (e.g. [ractive](http://www.ractivejs.org/)), this featrue provide some advantage.
+Unlike dom-based template such as [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/), regularjs is string-based (e.g. [ractive](http://www.ractivejs.org/)), this feature provides some advantages:
 
-### 1. more powerful control on logic
-  
-The dom-based template always rely on 
-directive(`ng-if`,`ng-repeat`), so the logic is element-based, they can't describe the structure like this: 
+### 1. more powerful control over logic
+
+The dom-based template always rely on
+directive(`ng-if`,`ng-repeat`), so the logic is element-based, they can't describe the structure like this:
 ```html
 {{#list users as user}}
   Hello. <b>{{user.firstName}} {{user.lastName}}</b><a href="#">DELELE</a>
 {{/list}}
 ```
 
-### 2. only render the parts really need to
-  
-  The dom-based template like angular don't have own parsing phase, they put the string to the document, and walker the generated dom-node to act the __LINK__ operation, so the node always have some placeholder. for example
+### 2. only render the parts that really need to
+
+  The dom-based template like angular don't have its own parsing phase, they just put the string into the document, and walker the generated dom-node to call the __LINK__ action, so the node always have some placeholder. for example:
 
   ```html
   <button ng-click="save()" ng-disabled="myForm.$invalid"
@@ -23,14 +23,14 @@ directive(`ng-if`,`ng-repeat`), so the logic is element-based, they can't descri
           ng-show="project.$remove" class="btn btn-danger">Delete</button>
   ```
 
-  But string-based template have own pasing phase, they can extract the information from parsed AST, and then put the rendering part to the document. so if the dom above is rendered by regular, the result will be:
+  But string-based template have its own pasing phase, they can extract the information from parsed AST, and then put the rendered content into the document. If the dom above is rendered by regular, the result will be:
 
   ```html
   <button class="btn btn-primary">Save</button>
   <button class="btn btn-danger">Delete</button>
   ```
-  beacuse all process is already done in intialize phase with the parsed AST.
-  
+  , beacuse all processes are already done in intialize phase with the parsed AST.
+
 
 ### 3. making the pre-parsing possible
 
@@ -104,7 +104,7 @@ will be parsed to
 ]
 ```
 
-it just __valid json format__, so the parsed ast can send from server to client. 
+It is just __valid json format__, so the parsed ast can be sent from server to client.
 
 
 

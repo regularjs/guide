@@ -1,10 +1,10 @@
 # interpolation
 
-interpolation is most common part of the template.
+interpolation is a most common part of template.
 
 ```html
-<p class="m-modal m-modal-{{klass}}" on-click={{this.remove(user)}}> 
-  {{user.name}} 
+<p class="m-modal m-modal-{{klass}}" on-click={{this.remove(user)}}>
+  {{user.name}}
 </p>
 
 ```
@@ -30,19 +30,19 @@ app.$inject('#app');
 
 ```
 
-will outport `<div>leeluolee</div>`. and whenerver the data changes, the textNode's content is also updated. it is a __one-way__ binding.
+will output `<div>leeluolee</div>`. Whenerver the data changes, the textNode's content is also updated. it is a __one-way__ binding.
 
 
 ## Attribute interpolation
 
 
-When used as attribute-interpolation(only the value can be interpolated), there is some explanations.
+When used as attribute-interpolation(only the value can be interpolated):
 
 1. if the value is a string but contains interpolation(e.g. `class='m-modal m-modal-{{klass}}'`), the string will be considered as a interpolation.
 
-2. if the attribute is not a [directive](../core/directive.md). once the value changes, the attribute's value will update directly. it is a __one-way binding__.
+2. if the attribute is not a [directive](../core/directive.md), once the value changes, the attribute's value will be updated immediately. it is a __one-way binding__.
 
-3. if the attribute is a directive. regularjs will call the directive's link method but do noting else.
+3. if the attribute is a directive, regularjs will call the directive's link method but do nothing else.
 
 
 
@@ -50,9 +50,9 @@ __Example__
 
 ```javascript
 
-<input 
-  type='radio'  
-  class={{klass}}   
+<input
+  type='radio'
+  class={{klass}}
   r-model={{checked}}
   style="left: {{10 + offsetX}}px; top: {{10 + offsetY}}px"
   > </input>

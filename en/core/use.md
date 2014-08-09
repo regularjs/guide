@@ -1,10 +1,10 @@
 #Encapsulation and Plugin in regularjs
 
-Regularjs is very efficient for developing, it is also provide basic encapsulation which is important during the deveopment in large project.
+Regularjs is very efficient for developing, it also provides basic encapsulation which is important during the deveopment in large project.
 
-## Extension in regularjs is ony-way influence
+## Extension in regularjs is one-way influence
 
-in previous chapter, we learned four methods for extension.
+in previous chapter, we have learned four methods for extension:
 
 * [Component.filter](filter.md)
 * [Component.directive](directive.md)`
@@ -12,7 +12,7 @@ in previous chapter, we learned four methods for extension.
 * [Component.implement](class.md)
 
 
-They have a same feature: the extension is only __available to Component and its SubComponent__. which also the basic of the encapsulation
+They have a common feature: the extension is only __available to current Component and its SubComponent__, which is the basic of encapsulation.
 
 __Exmaple__
 
@@ -41,7 +41,7 @@ alert(SubChild.event('tap2') === tap2)
 
 ## Create unique namespace in every project
 
-you can defined a void Component as NameSpace instead of Regular , then extension only available in this NameSpace
+you can defined a void Component as NameSpace instead of Regular , then extension is only available in this NameSpace
 
 ```javascript
 var YourNameSpace = Regular.extend()
@@ -56,10 +56,10 @@ now, your extension will not affect other project.
 
 ## `use` — the regularjs's Plugin System
 
-All methods introduced above will create connection with specified Component. __but for reusing, a plugin must Compnent-independent, the connection need creating during the using of plugin__. 
+All methods introduced above will create connection with specified Component, __but for reusing, a plugin must be Compnent-independent, the connection should be created during the using of plugin__.
 
 
-so, the general plugin will be written  like this
+so, the general plugin will be written like this:
 
 ```javascript
 
@@ -102,15 +102,15 @@ Every builtin plugin have a registered name, you can simply pass the name to `us
 
 timeout
 
-- `Number $timeout(fn, delay)`: 
-  
-  just a wrap for setTimeout, when time is out the digest-phase of the component will be triggered. 
+- `Number $timeout(fn, delay)`:
+
+  just a wrap for setTimeout, when time is up, the digest-phase of the component will be triggered.
 
   return id for clearTimeout
 
-- `Number $interval(fn, delay)`: 
-  
-  just a wrap for setInterval, every step the digest-phase of the component will be triggered. 
+- `Number $interval(fn, delay)`:
+
+  just a wrap for setInterval, every step the digest-phase of the component will be triggered.
 
   return id for clearInterval.
 

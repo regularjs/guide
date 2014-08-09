@@ -1,19 +1,19 @@
 #Data-binding and Life-cycle
 
-Data-binding is the core to realize the data-driven component. in regularjs, data-binding is based on watcher system. there are some methods which is important in this system
+Data-binding is the core to realize data-driven component. In regularjs, data-binding is based on watcher system. there are some methods which are important in this system:
 
 <a name="watch"></a>
 ### 1 `component.$watch(expression, handler)`
 
-create a watcher , and return a watchid that used for `$unwatch`.
+create a watcher, return a watchid that can be used for `$unwatch`.
 
 
 __Arguments__
 
-  * expression [Expression| Array | String] - 
-    - Expression: 
+  * expression [Expression| Array | String]
+    - Expression: real `Expression` object
     - String: will be preprocessed by `Regular.expression` to become `Expression`
-    - Array: any Expression changed in Array, will trigger the watcher. the params passed to handler is the current values of all item in Array.
+    - Array: array of Expression or String. Any Expression changed in the Array will trigger the watcher. the params passed to handler is the current value of all items in Array.
   * handler(newvalue, oldvalue) [Function]
     - newvalue:  current value of the Expression
     - oldvalue:  previous value of the Expression
@@ -87,16 +87,16 @@ component.$update('b', 100); // only watcher 1 alert;
 <a name="update"></a>
 ### 3 `component.$update(setable, value)`
 
-do the setter operation on the passed Expression and enter the `digest` phase.
+do the setter operation on the passed Expression, then enter the `digest` phase.
 
 __Arguments__
 
-  * setable [Expression| Function | String] - 
+  * setable [Expression| Function | String] -
     - Expression: The Expression must be setable, see more in [Expression](../syntax/expression.md)
-    - String: String will be parsed to Expression
-    - Function setable(data): just like angular's `$apply`, you can batch update-operation in the passed handler
-      - data: === component.data
-    - Object: multiply setting operation.
+    - String: String will be passed to Expression
+    - Function setable(data): just like angular's `$apply`, you can batch update-operation in one passed handler
+      - data: equal to component.data
+    - Object: multiple setting operation.
 
   * value - value assigned to the field pointed by the Expression `setable`. if `setable` is a Function, it will be ignored.
 
@@ -129,24 +129,24 @@ component.$update() // do nothing , just enter digest phase
 > whatever param you passed, the digest phase will always be triggered.
 
 <a name="bind"></a>
-### 2.5 `component.$bind(component2, expr1[, expr2])`
+### 4 `component.$bind(component2, expr1[, expr2])`
 
-create binding with another component. 
+create binding with another component.
 
 __Arguments__
   1. component2<Regular>: the target component you need to bind
-  2. expr1 <Expression|String|Object|Array>: 
+  2. expr1 <Expression|String|Object|Array>:
     - Expression|String: the field that component need to bind
-    - Object: you can bind multiply field at the same time, the key represent component's field, the value represent target's field.
-    - Array: create multiply field between component and component2 with the same field
+    - Object: you can bind multiple fields at the same time, the key represents component's field, the value represents target's field.
+    - Array: create multiple fields between component and component2 with the same field
   3. expr2 <Expression|String>: the target component's  filed you need to binding. the default is expr1.
 
 > <h5>WARN</h5>
-> 1. There is at least one Expression that is setable. if all component is setable, it is two-way binding. otherwise, it will be a one-way binding.
+> 1. There is at least one Expression that is setable. If all components are setable, it is two-way binding. otherwise, it will be a one-way binding.
 > 2. If target-component is not synchronous with component, it will be synchronized to called-component immediately.
 
 
-__Example__: 
+__Example__:
 
 create binding between two independant pager components.
 

@@ -1,6 +1,6 @@
 ##nested component
 
-regular's component is __nestable__ if it has a registered name. there is two way to register a component.
+regular's component is __nestable__ if it has a registered name. there are two ways to register a component.
 
 
 1. specify the name attribute at node that contains the template-string.
@@ -33,7 +33,7 @@ __USAGE__
 Some Explanation
 
 1. the tagname `pager` represent the component's name.
-2. if the value of attribute is not an [Expression]. it will be passed as param without create the binding.
+2. if the value of attribute is not an [Expression]. it will be passed as param without creating the binding.
 3. if the value is an [Expression]. there will be an two-way binding or one-way binding([depend on Expression](binding.html#bind)) between the outer component and nested component. In fact, the `current={{current}}` equals
 
   ```javascript

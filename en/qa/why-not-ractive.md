@@ -1,17 +1,10 @@
-# Why Not React
+# Why Not ractive.md
 
-reactjs have no watch mechanism in it. it works just like full component refresh(like backbone). But meanwhile, thanks for virtual-dom, react can update partially. this feature is awesome during your development, but also bring some genetic defects.
+[Ractive](ractivejs.org) is also an awesome framework, it almost become my choice because its feature list: 
 
-1. without [jsx](). the way to create virtual dom is intolerable.
-2. the generated dom need to be stateless in every render since the [virtual-dom's diff algorithm](http://calendar.perfplanet.com/2013/diff/) is always trying minimum-steps. 
+1. string-based template
+2. data-binding support
+3. transition support
+4. ...
 
-  so the mechanism like directive to enhance node's ability is not possible, the ui-event also need based on delegation.
-
-
-
-
-## regular may to rescue. 
-
-actually. when use 
-
-
+but ractive's data-binding based on setter/getter is not    . the mustache syntax combine with expression is a litte weird. ractive also dont have innate modular support

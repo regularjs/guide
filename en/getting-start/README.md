@@ -1,6 +1,6 @@
 #Hello Regular
 
-In this chapter, you will have your first component depend on regularjs, have a good time!
+In this chapter, you will create your first component using regularjs, have a good time!
 
 
 

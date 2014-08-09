@@ -3,19 +3,19 @@
 Every attribute prefixed with `on-` (e.g `on-click`) will be considered as event binding. you can also use it in delegating way via `delegate-*` (e.g. `delegate-click`)
 
 > <h5>tip</h5>
-> In fact, event is a special directive. beacuse the directive accepts RegExp as the first param.
+> In fact, event is a special directive, for it accepts RegExp as the first param.
 
 
 
 ## 1. Basic Event Support
-  
-you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `on-mouseover`)
+
+you can bind event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `on-mouseover`)
 
   __Example__:
 
   ```javascript
   new Regular({
-    template: 
+    template:
     "<button on-click={{count = count + 1}}> count+1 </button> \
       <b>{{count}}</b>",
     data: {count:1}
@@ -30,7 +30,7 @@ you can binding event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `
 <a name="custom-event"></a>
 ## 2. Register Custom Event `Component.event(event, fn)`
 
-you may need to register a custom event that is not native supported by the browser(e.g. `on-tap` `on-enter`).
+You can register a custom event which is not native supported by the browser(e.g. `on-tap` `on-enter`).
 
 __Arguments__
   * event: the name of custom event
@@ -42,7 +42,7 @@ __Arguments__
 > * if you need some teardown work, you need return a function.
 
 
-__Example__ 
+__Example__
 
 
 the source of the builtin event —— `on-enter`
@@ -51,7 +51,7 @@ the source of the builtin event —— `on-enter`
 
   Regular.event('enter', function(elem, fire){
     function update(ev){
-      if(ev.which == 13){ 
+      if(ev.which == 13){
         ev.preventDefault();
         fire(ev); // if key is enter , we fire the event;
       }
@@ -72,7 +72,7 @@ Expreesion and Non-Expression is all valid to handle the event. but they do diff
   once the event fires. Expression will be evalutated, it is similar with angular.
 
   __Example__
-  
+
 
   ```html
     <div on-click={{this.remove(index)}}>Delte</div>
@@ -101,15 +101,15 @@ Expreesion and Non-Expression is all valid to handle the event. but they do diff
     }
   })
 
-  ``` 
-  
+  ```
+
 
 once event fires, the digest phase will be triggered.__ you dont need to `$update` in your handle __.
 
 
 ## 4. Delegate Event by `delegate-*`
 
-every `on-*` will call `addEventListener` on element.  sometimes, it is not efficient. 
+every `on-*` will call `addEventListener` on element.  sometimes, it is not efficient.
 
 you can use `delegate-` insteadof `on-` to avoid the potential performance issue. regularjs will attach single event on component's parentNode(when `$inject` is called), all delegating-event that defined in component will be processed collectively.
 
@@ -125,12 +125,12 @@ __Example__
 __Warning__
 
 1. if the component is large in structure. avoid attaching too much events that is `frequencey triggered` (e.g. mouseover) to component.
-2. if the event is a [custom event](#custom-event). it need to have the ability to bubble, then the component.parentNode can capture the event. for exampel:  zepto's tap-event [source](https://github.com/madrobby/zepto/blob/master/src/event.js#L274). 
+2. if the event is a [custom event](#custom-event). it need to have the ability to bubble, then the component.parentNode can capture the event. for exampel:  zepto's tap-event [source](https://github.com/madrobby/zepto/blob/master/src/event.js#L274).
 
 <a name="$event"></a>
 ## 5. `$event`
 
-In some cases, you may need the `Event` object, regularjs created an temporary variable`$event` for it, you can use the variable in the Expression. 
+In some cases, you may need the `Event` object, regularjs created an temporary variable`$event` for it, you can use the variable in the Expression.
 
 if the event is custom event, the `$event` is the param you passed in `fire`.
 
@@ -138,7 +138,7 @@ __Example__
 
 ```javascript
 new Regular({
-  template: 
+  template:
   "<button on-click={{this.add(1, $event)}}> count+1 </button> \
     <b>{{count}}</b>",
   data: {count:1}
@@ -151,11 +151,11 @@ new Regular({
 
 
 > <h5>Tip</h5>
-> `$event` is fixed for you already, you can use the property below. 
+> `$event` is fixed for you already, you can use the property below.
 > 1. target
 > 2. preventDefault()
 > 3. stopPropgation
-> 4. which 
+> 4. which
 > 5. pageX
 > 6. pageY
 > 7. wheelDelta
@@ -168,15 +168,15 @@ new Regular({
 
 ## Other Useful  Tips
 
-### 1. you can  bind multiply events with same type on single element.
-  
+### 1. you can  bind multiple events with same type on single element.
+
   beacuse regularjs is string-based template. you can having same attributes on one element.
 
-### 2. avoid to bind  frequently triggered event(e.g. `mouseover` `scroll`)  via `delegate-*`
-  
-  just like `jQuery.delegate` . frequently triggered event is expensive when used with delegate-style. 
+### 2. avoid to bind frequently triggered event(e.g. `mouseover` `scroll`)  via `delegate-*`
 
-### 3. you can use `if` to attach or dettach event on element
+  just like `jQuery.delegate` . frequently triggered event is expensive when used with delegate-style.
+
+### 3. you can use `if` to attach or detach event on element
 
   ```html
   <input {{#if test===0 }} on-click={{test = 1}} {{/if}} />

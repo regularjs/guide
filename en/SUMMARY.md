@@ -3,7 +3,7 @@
 * [API reference](introduct/index.md)
 * [Hello! Regular](getting-start/README.md)
   - [Installation](getting-start/install.md)
-  - [Quirk Example](getting-start/quirk-example.md)
+  - [Quick Example](getting-start/quick-example.md)
   - [Summary](getting-start/review.md)
 * [Template Syntax](syntax/README.md)
   - [Syntax Introduction](syntax/syntax.md)
