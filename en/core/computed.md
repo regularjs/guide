@@ -24,13 +24,13 @@ __Example__
 computedProperty with fully specified get/set function
 
 - get(data): the getter of the property
-  data: `data` point to component.data
-  this: `this` point to component
+  - data: `data` point to component.data
+  - this: `this` point to component
 
 - set(value, data):  the setter of the property
-  value: the value to set
-  data: `data` point to component.data
-  this: `this` point to component
+  - value: the value to set
+  - data: `data` point to component.data
+  - this: `this` point to component
 
 
 ```javascript
