@@ -1,14 +1,14 @@
 # Directive
 
-Directive is similar with angular's directive but more lightweight( in other words, less powerful __`:)`__ ). you can consider it as the enhancement in the node.
+Directive is similar to angular's directive, but it is more lightweight( in other words, less powerful __`:)`__ ). you can consider it as enhancement of the node.
 
 ## API
 
 __`Component.directive(<String|RegExp> name, <Object|Function> spec)`__
 
-  - name : directive's name, also accept RegExp to matched multiply attributeName.
-  - Function spec(elem, value) : the passed params show below.
-    - elem:  the owner element
+  - name : directive's name, also accept RegExp to match multiple attributeName.
+  - Function spec(elem, value) :
+    - elem:  the target element
     - value: the attributeValue. maybe `String`(r-test ="haha" ) or`Expression` (r-test={{haha}})
     - this:  point to component self
 
@@ -26,7 +26,7 @@ Regular.directive('r-html', function(elem, value){
 ```
 The directive`r-html` create a unescaped interpolation with innerHTML.
 
-Beacuse [`$watch`](../core/binding.md) accepts [String] and [Expression] as the first param, so you can use `r-html` in two ways. 
+Beacuse [`$watch`](../core/binding.md) accepts [String] and [Expression] as the first param, you can use `r-html` in two ways:
 
 
 
@@ -36,9 +36,9 @@ Beacuse [`$watch`](../core/binding.md) accepts [String] and [Expression] as the 
   <div class='preview' r-html={{content}}></div>
 ```
 
-In fact, all regularjs's builtin directive accepts [String] and [Expression]. but you can have different logic betweent them when defining you own directive
+In fact, all regularjs's builtin directive accepts [String] and [Expression]. but you can have different logic betweenn them when defining your own directive.
 
-If the directive need some teardown work, you can return a destroy function(e.g. dom related operation) . __but you dont need to `$unwatch` the watcher defined in directive , regularjs is record it for you and unwatch it automately__
+If the directive need some teardown work, you can return a destroy function(e.g. dom related operation) . __but you dont need to `$unwatch` the watcher defined in directive , regularjs record it for you and unwatch it automatically__
 
 
 __Example__
@@ -60,15 +60,15 @@ Regular.directive('some-directive', function(elem, value){
 <a name="builtin"></a>
 ## Builtin Directive
 
-regularjs is providing some basic directive for you.
+regularjs provides some basic directives for you.
 
-### 1. `r-model` 
+### 1. `r-model`
 
-much similar with `ng-model` in angular, `r-model` can help you to create two-way binding between data and the form element.
+very similar to `ng-model` in angular, `r-model` can help you to create two-way binding between data and the form element.
 
-you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsfiddle
+you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsfiddle.
 
-* `input、textarea`: 
+* `input、textarea`:
   simple text binding
   ```
   <textarea  r-model='textarea'>hahah</textarea>
@@ -76,8 +76,8 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
   ```
 
 
-* `input:checkbox`: 
-  binding between the input's checked state and field with boolean type
+* `input:checkbox`:
+  binding the input's checked state to a boolean type field
 
   ```
   <input type="checkbox" checked  r-model={{checked}}> Check me out (value: {{checked}})
@@ -93,7 +93,7 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
   ```
 
 
-* `select`: 
+* `select`:
   binding to select.value
 
   ```html
@@ -111,14 +111,14 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
 
 ### 2. `r-style`
 
-`r-style` is a enhancement for plain `style` interpolation.
+`r-style` is an enhancement for plain `style` interpolation.
 
 
 __Exmaple__
 
 ```javascript
 var app = new Regular({
-    template: 
+    template:
       "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }} >left+10</button>\
       left:  {{left}}",
     data: {left:1}
@@ -132,18 +132,18 @@ Description
 
 |Param|Type|Details|
 |---|---|---|
-|r-style | `expression` | `Expression` which evals to an object whose keys are CSS style names and values are corresponding values for those CSS keys.|
+|r-style | `expression` | `Expression` will eval to an object whose keys are CSS style names and values are corresponding values for those CSS keys.|
 
 
 
 
-> __Warning: if there is already a interpolation on `style`, the `r-style` will be overridden__
+> __Warning: if there is already an interpolation on `style`, the `r-style` will be overridden__
 
 > for examle . `<div style='left: {{left}}px' r-style='{left: left+"px"}'></div>`
 
 ### 3. `r-class`
 
-simmilar with `r-style`. `r-class` is a enhancement for plain `class` interpolation,
+simmilar to `r-style`. `r-class` is an enhancement for plain `class` interpolation,
 
 
 __Example__
@@ -158,13 +158,13 @@ Description
 
 |Param|Type|Details|
 |---|---|---|
-|r-class | `expression` | `Expression` eval to `Object`: a map of class names to boolean values. In the case of a map, the names of the properties whose values are truthy will be added as css classes to the element..|
+|r-class | `expression` | `Expression` eval to `Object`: a map of class names to boolean values. In the case of a map, the names of the properties whose values are true will be added as css classes to the element.|
 
 
 
 
 
-> __Warning: just like `r-style`, if there is already a interpolation on `class`, the `r-class` will be overridden__
+> __Warning: just like `r-style`, if there is already an interpolation on `class`, the `r-class` will be overridden__
 
 ### 4. `r-hide`
 
@@ -179,9 +179,9 @@ if the Expression `page !== 'home'` is evaluated to true, the `display:none` wil
 
 
 
-### 5. `r-html` 
+### 5. `r-html`
 
-unescaped interpolation use innerHTML. beware of the attack like `xss`.
+unescaped interpolation use innerHTML. beware of attack like `xss`.
 
 __Example__
 

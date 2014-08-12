@@ -1,7 +1,7 @@
 
 #Installation
 
-> The global `Regular` is always in window.
+> The global `Regular` object is always accessible within window.
 
 ## Download
 
@@ -33,7 +33,7 @@ __use AMD loader__
 
 ```javascript
 require(['path/to/regular.js'], function(Regular){
-  console.log(Regular) 
+  console.log(Regular)
 })
 ```
 

@@ -1,9 +1,10 @@
 # Summary
 
 * [API reference](introduct/index.md)
+  - [Target Browser](introduct/target.md)
 * [Hello! Regular](getting-start/README.md)
   - [Installation](getting-start/install.md)
-  - [Quirk Example](getting-start/quirk-example.md)
+  - [Quick Example](getting-start/quick-example.md)
   - [Summary](getting-start/review.md)
 * [Template Syntax](syntax/README.md)
   - [Syntax Introduction](syntax/syntax.md)
@@ -15,6 +16,7 @@
 * [Core Concepts](core/README.md)
   - [Class-based Component](core/class.md)
   - [Watcher System](core/binding.md)
+  - [Computed Property](core/computed.md)
   - [Directive](core/directive.md)
   - [Filter](core/filter.md)
   - [UI Event](core/event.md)

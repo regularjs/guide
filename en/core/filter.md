@@ -1,22 +1,22 @@
 # filter
 
-Filter are generally used in the interpolation
+Filters are generally used in interpolation
 
 ## API
 
 __`Component.filter(name, filterFn)`__
 
   - name : filter name
-  - Function filterFn(value, args...) 
-    - value: the value is
-    - args:  the param passed in template
+  - Function filterFn(value, args...)
+    - value: the value that is passed from the template
+    - args:  other params for the function
 
 
 
 
 __Example__
 
-data-format filter
+date-format filter
 
 ```javascript
   // simplest date format
@@ -45,7 +45,7 @@ data-format filter
   })
 ```
 
-then 
+then
 
 ```html
 <p>{{time| format: 'yyyy-MM-dd HH:mm'}}</p>

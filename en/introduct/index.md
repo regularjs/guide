@@ -1,10 +1,10 @@
 #API Reference
 
-This page aim to helping you to find api that all over the guide
+This page aims at helping you to find all the api in this guide
 
 # Static Method
 
-> Warn: some method only belongs to `Regular`, but some is available to All `Component`(Regular and its SubClass).
+> Warn: some methods only belong to `Regular`, but some are available to all `Component`(Regular and its SubClass).
 
 1. [Component.extend](../core/class.html#extend):       creating A Component
 7. [new Component](../core/class.html#instance):        Initialize A Component
@@ -24,6 +24,7 @@ This page aim to helping you to find api that all over the guide
 1. [component.$watch](../core/binding.html#watch)         create a watcher
 2. [component.$unwatch](../core/binding.html#unwatch):    destroy a watcher
 3. [component.$update](../core/binding.html#update):      update data and enter the digest phase
+3. [component.$get](../core/binding.html#get):            update data and enter the digest phase
 4. [component.$bind](../core/binding.html#bind)           create binding between two component
 5. [component.$on](../core/message.html#on)               Listens on events of a given type
 6. [component.$off](../core/message.html#off)             remove Listener with given type
@@ -31,11 +32,11 @@ This page aim to helping you to find api that all over the guide
 8. [component.$inject](../getting-start/quirk-example.html#$inject) $inject component to the specified place
 
 
-# Builtin 
+# Builtin
 
 1. [directive](../core/directive.html#builtin)
 
-# Regular's Other Usefull API
+# Regular's Other Useful API
 
 > comming soon
 

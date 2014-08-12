@@ -12,10 +12,10 @@ __where__
 
 * template: A Expression that evaluated to String
 
-`include` watching the 'template', once the change be detected, template will be recompile. this feature provide two basic advantage.
+`include` watching the 'template', once the change is detected, template will be recompiled. this feature provides two basic advantage:
 
-1. pass partial as param at the initialize time.
-2. modify the template structure dynamically
+1. you can pass partial template as param at the initialize time.
+2. you can modify the template structure dynamically
 
 for example, the part of modal's content is changeable,  so we can define the structure of content by using `{{#include}}`.
 
@@ -81,7 +81,7 @@ modal.$on('confirm', function(data){
 [|DEMO|](http://fiddle.jshell.net/leeluolee/Xvp9S/)
 
 
-beacuse there is a compelete compiling work on template. so you can use all feature(e.g. `interpolation`, `directive`) 
+Because there is a complete compiling work on template, you can use all features(e.g. `interpolation`, `directive`) 
 
 
 
