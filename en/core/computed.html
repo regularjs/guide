@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1407826315019">
+    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1407836779136">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -675,14 +675,18 @@
 <p><strong>Example</strong></p>
 <p>computedProperty with fully specified get/set function</p>
 <ul>
-<li><p>get(data): the getter of the property
-data: <code>data</code> point to component.data
-this: <code>this</code> point to component</p>
+<li><p>get(data): the getter of the property</p>
+<ul>
+<li>data: <code>data</code> point to component.data</li>
+<li>this: <code>this</code> point to component</li>
+</ul>
 </li>
-<li><p>set(value, data):  the setter of the property
-value: the value to set
-data: <code>data</code> point to component.data
-this: <code>this</code> point to component</p>
+<li><p>set(value, data):  the setter of the property</p>
+<ul>
+<li>value: the value to set</li>
+<li>data: <code>data</code> point to component.data</li>
+<li>this: <code>this</code> point to component</li>
+</ul>
 </li>
 </ul>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = regular.extend({
