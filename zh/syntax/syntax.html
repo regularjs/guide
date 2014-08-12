@@ -7,7 +7,7 @@
         <title>语法说明 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.7.0">
+        <meta name="generator" content="GitBook 0.5.5">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3.1" data-basepath=".." data-revision="1407571599998">
+    <div class="book" data-github="regularjs/guide" data-level="3.1" data-basepath=".." data-revision="1407826315546">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,6 +80,10 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
+
+    
+    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -107,7 +111,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -117,8 +121,6 @@
             <a href="https://github.com/regularjs/guide/edit/master/syntax/syntax.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
-
-	
 
         
         <li class="divider"></li>
@@ -266,7 +268,7 @@
                 
     
         
-        <li class="chapter active" data-level="3.1" data-path="syntax/syntax.html">
+        <li class="chapter " data-level="3.1" data-path="syntax/syntax.html">
             
                 
                     <a href="../syntax/syntax.html">
@@ -683,9 +685,9 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_63">
+                    <section class="normal" id="section-gitbook_65">
                     
-                        <h2 id="">语法元素说明</h2>
+                        <h2 id="-">语法元素说明</h2>
 <p>从语法层面讲, regular模板的语法元素包含两种类别: <code>xml</code>与<code>jst</code>,它们在词法解析规则也是完全不同. </p>
 <h3 id="1-simple-xml">1. simple xml</h3>
 <p>xml的就如我们常用那样，无需赘言.</p>
@@ -704,10 +706,10 @@
 {{/if}}
 </code></pre>
 <p>jst环境与xml的最大不同就是允许表达式的存在.</p>
-<h2 id="">关于内建规则</h2>
+<h2 id="-">关于内建规则</h2>
 <p>在模板中, <code>{{#}}</code>称之为内建规则,目前的内建规则有<code>{{#if}}</code> <code>{{#else}}</code> <code>{{#elseif}}</code> <code>{{#list}}</code> <code>{{#include}}</code>. 这些后续章节中会陆续介绍</p>
 <p>与xml一样 一个jst rule的标签的开标签与闭合标签必须匹配,比如<code>{{#list}}</code>必须匹配<code>{{/list}}</code>, 而有有些标签允许自闭合如<code>{{#include}}</code></p>
-<h3 id="mustache">为何不沿用mustache这样的简化语法?</h3>
+<h3 id="-mustache-">为何不沿用mustache这样的简化语法?</h3>
 <ul>
 <li><p>引入表达式支持</p>
 <p>动态模板与mustache此类静态的模板的不同就是，会有很多临时状态和中间状态，如果这些状态都需要重新定义成一个变量才能使用,会增加很重的使用负担, 但是如果引入了表达式的支持, 这些中间状态就可以使用表达式来表示.</p>
@@ -718,7 +720,7 @@
 <p>假如我们需要添加<code>{{#switch}}</code> 就可以很愉快加入此功能，而无需去苦思冥想有哪个类似<code>#</code>的符号没有被使用(比如mustache).</p>
 </li>
 </ul>
-<h3 id="">注意点</h3>
+<h3 id="-">注意点</h3>
 <ol>
 <li><p>内建规则和xml标签不能被相互打断，如下例是不被允许会抛出异常. 这也是与常规的静态模板的最大区别</p>
 <pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
@@ -756,7 +758,7 @@
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     

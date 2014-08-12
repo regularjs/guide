@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Syntax Introduction | Guide for regularjs</title>
+        <title>Computed Property | Guide for regularjs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.5.5">
@@ -19,10 +19,10 @@
     <meta name="author" content="regularjs">
     
     
-    <link rel="next" href="../syntax/interpolation.html" />
+    <link rel="next" href="../core/directive.html" />
     
     
-    <link rel="prev" href="../syntax/README.html" />
+    <link rel="prev" href="../core/binding.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3.1" data-basepath=".." data-revision="1407826315019">
+    <div class="book" data-github="regularjs/guide" data-level="4.3" data-basepath=".." data-revision="1407826315019">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/edit/master/syntax/syntax.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/regularjs/guide/edit/master/core/computed.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -596,7 +596,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 32%;min-width: 28%;"></div>
+        <div class="inner" style="width: 68%;min-width: 64%;"></div>
     </div>
     <div class="chapters">
     
@@ -618,23 +618,23 @@
     
         <a href="../syntax/syntax.html" title="Syntax Introduction" class="chapter done " data-progress="3.1" style="left: 32%;"></a>
     
-        <a href="../syntax/interpolation.html" title="interpolation" class="chapter  " data-progress="3.2" style="left: 36%;"></a>
+        <a href="../syntax/interpolation.html" title="interpolation" class="chapter done " data-progress="3.2" style="left: 36%;"></a>
     
-        <a href="../syntax/if.html" title="Logic Control" class="chapter  " data-progress="3.3" style="left: 40%;"></a>
+        <a href="../syntax/if.html" title="Logic Control" class="chapter done " data-progress="3.3" style="left: 40%;"></a>
     
-        <a href="../syntax/list.html" title="Loop Control" class="chapter  " data-progress="3.4" style="left: 44%;"></a>
+        <a href="../syntax/list.html" title="Loop Control" class="chapter done " data-progress="3.4" style="left: 44%;"></a>
     
-        <a href="../syntax/include.html" title="Dynamic Include" class="chapter  " data-progress="3.5" style="left: 48%;"></a>
+        <a href="../syntax/include.html" title="Dynamic Include" class="chapter done " data-progress="3.5" style="left: 48%;"></a>
     
-        <a href="../syntax/expression.html" title="Expression" class="chapter  " data-progress="3.6" style="left: 52%;"></a>
+        <a href="../syntax/expression.html" title="Expression" class="chapter done " data-progress="3.6" style="left: 52%;"></a>
     
-        <a href="../core/README.html" title="Core Concepts" class="chapter  new-chapter" data-progress="4" style="left: 56%;"></a>
+        <a href="../core/README.html" title="Core Concepts" class="chapter done new-chapter" data-progress="4" style="left: 56%;"></a>
     
-        <a href="../core/class.html" title="Class-based Component" class="chapter  " data-progress="4.1" style="left: 60%;"></a>
+        <a href="../core/class.html" title="Class-based Component" class="chapter done " data-progress="4.1" style="left: 60%;"></a>
     
-        <a href="../core/binding.html" title="Watcher System" class="chapter  " data-progress="4.2" style="left: 64%;"></a>
+        <a href="../core/binding.html" title="Watcher System" class="chapter done " data-progress="4.2" style="left: 64%;"></a>
     
-        <a href="../core/computed.html" title="Computed Property" class="chapter  " data-progress="4.3" style="left: 68%;"></a>
+        <a href="../core/computed.html" title="Computed Property" class="chapter done " data-progress="4.3" style="left: 68%;"></a>
     
         <a href="../core/directive.html" title="Directive" class="chapter  " data-progress="4.4" style="left: 72%;"></a>
     
@@ -657,53 +657,100 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_31">
+                    <section class="normal" id="section-gitbook_10">
                     
-                        <h2 id="syntax">Syntax</h2>
-<p>regular&#39;s template only have two types of syntax:  <code>xml</code> and <code>jst</code>, they have different lexical process.</p>
-<h3 id="1-xml">1. xml</h3>
-<p>just like <code>html</code> we used everyday</p>
-<p><strong>Example</strong></p>
-<pre><code class="lang-javascript">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"m-tag"</span>&gt;
- Hello, world
-&lt;<span class="hljs-regexp">/div&gt;</span>
-</code></pre>
-<h3 id="2-jst">2. jst</h3>
-<p>jst is the section wrapped by the opentag(default: <code>{{</code>) and close_tag (default: <code>}}</code>). it contains interpolation (<code>{{}}</code>) and rule <code>{{#}}</code></p>
-<p>jst is similar to freemarker(<a href="http://freemarker.org/" target="_blank">http://freemarker.org/</a>) (the opentag and closetag is changed but is configurable).</p>
-<p><strong>Example</strong></p>
-<pre><code class="lang-xml">{{#if user.type === 1}}
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{user.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-{{/if}}
-</code></pre>
-<h2 id="about-rule">About Rule</h2>
-<p>in regular, <code>{{#}}</code> is consider as rule.</p>
-<p>There are already some built-in rules like <code>{{#if}}</code> <code>{{#else}}</code> <code>{{#elseif}}</code> <code>{{#list}}</code> <code>{{#include}}</code>.</p>
-<p>just like xml, rule&#39;s tag must be matched or self closed.</p>
-<h3 id="why-not-use-mustache-syntax">Why not use mustache-syntax</h3>
+                        <h1 id="computed-property">Computed Property</h1>
+<p>since version <code>0.2.4</code>, regularjs have added <code>computed property</code> support.</p>
+<p>Although regularjs have the full support for <code>ES5 Expression</code>. in some case, the computed property may helping you to avoiding complicated wacher-binding.</p>
+<h2 id="example">Example</h2>
+<p>you can either passing <code>computed</code> property to <code>Component.extend</code> or <code>new Component</code>. </p>
+<blockquote>
+<p>just like property <code>data</code>, the <code>computed</code> on <code>Component.extend</code> will be merged by the <code>computed</code> on <code>new Component</code>. </p>
+</blockquote>
+<p><strong>Param</strong></p>
 <ul>
-<li><p>mustache doesn&#39;t support <a href="expression.html">Expression</a>.</p>
+<li>computed: An HashMap contains computeProperties</li>
+</ul>
+<p>you can define computed property via serval ways</p>
+<p><strong>Example</strong></p>
+<p>computedProperty with fully specified get/set function</p>
+<ul>
+<li><p>get(data): the getter of the property
+data: <code>data</code> point to component.data
+this: <code>this</code> point to component</p>
 </li>
-<li><p>mustache doesn&#39;t support rule, which is an important syntax enhancement.</p>
+<li><p>set(value, data):  the setter of the property
+value: the value to set
+data: <code>data</code> point to component.data
+this: <code>this</code> point to component</p>
 </li>
 </ul>
-<h3 id="some-tips">Some Tips</h3>
-<ol>
-<li><p>rule and xml must dont breakup with each other, which is the most important difference between regularjs and other string-based templates.</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-{{#if true}}
- True
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-{{#else}}
- False
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-{{/if}}
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = regular.extend({
+  computed: {
+    fullname: {
+      get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span>{</span>
+        <span class="hljs-keyword">return</span> data.first + <span class="hljs-string">"-"</span> + data.last;
+      },
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, data)</span>{</span>
+        <span class="hljs-keyword">var</span> tmp = value.split(<span class="hljs-string">"-"</span>);
+        data.first = tmp[<span class="hljs-number">0</span>];
+        data.last = tmp[<span class="hljs-number">1</span>];
+      }
+    }
+  }
+})
 </code></pre>
-<p>the example above is invalid.</p>
-</li>
-</ol>
-<hr>
-<p>-</p>
+<p>with get function only, the param and context is the some.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = regular.extend({
+  computed: {
+    fullname: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span>{</span>
+        <span class="hljs-keyword">return</span> data.first + <span class="hljs-string">"-"</span> + data.last;
+    }
+  }
+})
+</code></pre>
+<p>with a String, the String will be parsed as a Expression</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = regular.extend({
+  computed: {
+    fullname: <span class="hljs-string">"first+ '-' + last"</span>
+  }
+})
+</code></pre>
+<p>then you can use it in template</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> Component = Regular.extend({
+  template: 
+    <span class="hljs-string">"&lt;div&gt;fullname: &lt;input r-model='fullname'&gt;&lt;/div&gt;"</span>+
+    <span class="hljs-string">"&lt;div&gt;first: &lt;input r-model='first'&gt;&lt;/div&gt;"</span>+
+    <span class="hljs-string">"&lt;div&gt;last: &lt;input r-model='last'&gt;&lt;/div&gt;"</span>+
+    <span class="hljs-string">"&lt;div&gt;Wellcome! {{wellcome}}&lt;/div&gt;"</span>,
+  computed: {
+    fullname: {
+      get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span>{</span>
+        <span class="hljs-keyword">return</span> data.first + <span class="hljs-string">"-"</span> + data.last;
+      },
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(value, data)</span>{</span>
+        <span class="hljs-keyword">var</span> tmp = value.split(<span class="hljs-string">"-"</span>);
+        data.first = tmp[<span class="hljs-number">0</span>];
+        data.last = tmp[<span class="hljs-number">1</span>];
+      }
+    }
+  }
+})
+
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Component({
+  computed: {
+    wellcome: <span class="hljs-string">"'welcome' + fullname"</span>
+  },
+  data: {first: <span class="hljs-string">'1'</span>, last: <span class="hljs-string">'2'</span>}
+}).$inject(<span class="hljs-string">"#app"</span>);
+</code></pre>
+<h2 align="center"><a href="http://codepen.io/leeluolee/pen/vgqzd" target="_blank">See Demo</a></h2>
+
+
+<blockquote>
+<p>You can also check the <a href="http://codepen.io/leeluolee/pen/eAmnB" target="_blank">TODOMVC</a> to learn how computedProperty help us simplify our expression on template</p>
+</blockquote>
 
                     
                     </section>
@@ -713,10 +760,10 @@
         </div>
 
         
-        <a href="../syntax/README.html" class="navigation navigation-prev " aria-label="Previous page: Template Syntax"><i class="fa fa-angle-left"></i></a>
+        <a href="../core/binding.html" class="navigation navigation-prev " aria-label="Previous page: Watcher System"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../syntax/interpolation.html" class="navigation navigation-next " aria-label="Next page: interpolation"><i class="fa fa-angle-right"></i></a>
+        <a href="../core/directive.html" class="navigation navigation-next " aria-label="Next page: Directive"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

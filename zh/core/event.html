@@ -7,7 +7,7 @@
         <title>event——ui事件体系 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.7.0">
+        <meta name="generator" content="GitBook 0.5.5">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.5" data-basepath=".." data-revision="1407571599998">
+    <div class="book" data-github="regularjs/guide" data-level="4.5" data-basepath=".." data-revision="1407826315546">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -80,6 +80,10 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
+
+    
+    <a href="https://github.com/regularjs/guide/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/regularjs/guide/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -107,7 +111,7 @@
         
         
         <li>
-            <a href="https://github.com/regularjs/guide/issues" target="blank" class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/regularjs/guide/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -117,8 +121,6 @@
             <a href="https://github.com/regularjs/guide/edit/master/core/event.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
-
-	
 
         
         <li class="divider"></li>
@@ -464,7 +466,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4.5" data-path="core/event.html">
+        <li class="chapter " data-level="4.5" data-path="core/event.html">
             
                 
                     <a href="../core/event.html">
@@ -683,15 +685,15 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_42">
+                    <section class="normal" id="section-gitbook_44">
                     
-                        <h1 id="eventui">event——ui事件体系</h1>
+                        <h1 id="event-ui-">event——ui事件体系</h1>
 <p>所有的<code>on-</code>开头的属性都会被作为ui事件处理</p>
 <blockquote>
 <p><h5>tip</h5>
 由于Component.directive支持正则匹配属性名, 所以内部实现中ui事件绑定其实是一种特殊的指令</p>
 </blockquote>
-<h2 id="1-ui">1. 对于未自定义过的ui事件</h2>
+<h2 id="1-ui-">1. 对于未自定义过的ui事件</h2>
 <p>  与ractive类似, 事件指令会默认在指令所在节点绑定对应事件，比如<code>on-click={{this.add()}}</code>会在节点绑定<code>click</code>事件。与ractive不同的是，每次ui事件触发时，regularjs不是以代理的形式，而是与angular一样，运行一次绑定的表达式.</p>
 <p>  即所有dom中的click、change、keydown等事件都可以直接on-xx的方式进行绑定</p>
 <p>  <strong>Example</strong>:</p>
@@ -703,7 +705,7 @@
   }).inject(document.body);
 </code></pre>
 <p>  <a href="http://jsfiddle.net/leeluolee/y8PHE/1/" target="_blank">|DEMO|</a></p>
-<h2 id="2--componenteventevent-handler">2. 注册自定义事件 <code>Component.event(event, handler)</code></h2>
+<h2 id="2-component-event-event-handler-">2. 注册自定义事件 <code>Component.event(event, handler)</code></h2>
 <p>handler接受两个参数:</p>
 <p>  -elem   attached element
   -fire   一个函数，每当这个函数调用，将会触发这个自定义事件，传入fire的参数则会作为<a href="#$event"><code>$event</code></a>对象</p>
@@ -729,7 +731,7 @@
 </code></pre>
 <p>注意这里我们返回了一个destroy函数用来清理此ui事件绑定</p>
 <p><a name="$event"></a></p>
-<h2 id="3-event">3. 事件对象<code>$event</code></h2>
+<h2 id="3-event-">3. 事件对象<code>$event</code></h2>
 <p>Regular推崇的是声明式的事件处理，一般不建议操作事件对象，如果你确实需要. 那你可以使用<code>$event</code> 这个临时变量，它会在每次事件触发时注册在作用域上，对于非自定义事件，则<code>$event</code>传入fire的对象.</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">new</span> Regular({
@@ -779,7 +781,7 @@
 <script src="../gitbook/app.js"></script>
 
     
-    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     
