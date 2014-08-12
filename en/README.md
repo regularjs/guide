@@ -32,7 +32,7 @@ For these reasons, although regularjs is __not based on regular , react and ract
 
 -----------------
 
- _Author's local language is not english, the guide may reads a little  awkwardly. if you find something wrong, please feel free to [create a issue](https://github.com/regularjs/guide/issues). _
+ _if you find something wrong, please feel free to [create a issue](https://github.com/regularjs/guide/issues). _
 
 
 
