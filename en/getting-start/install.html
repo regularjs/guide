@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="2.1" data-basepath=".." data-revision="1407910080807">
+    <div class="book" data-github="regularjs/guide" data-level="2.1" data-basepath=".." data-revision="1408541955662">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -660,9 +660,6 @@
                     <section class="normal" id="section-gitbook_18">
                     
                         <h1 id="installation">Installation</h1>
-<blockquote>
-<p>The global <code>Regular</code> object is always accessible within window.</p>
-</blockquote>
 <h2 id="download">Download</h2>
 <p><strong>directly</strong></p>
 <ol>
@@ -675,11 +672,15 @@
 <li>find script in <code>bower_components/regularjs/dist/regular.js</code></li>
 </ul>
 <p><strong>use component</strong></p>
-<p>  <code>component install regularjs/regular</code></p>
+<ul>
+<li><code>component install regularjs/regular</code></li>
+<li><code>var Regular = require(&#39;regularjs&#39;)</code></li>
+</ul>
 <h2 id="usage">Usage</h2>
 <p><strong>directly insert</strong></p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"path/to/regular.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
+<p><code>Regular</code> object is now accessible in window.</p>
 <p><strong>use AMD loader</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-built_in">require</span>([<span class="hljs-string">'path/to/regular.js'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Regular)</span>{</span>
   console.log(Regular)

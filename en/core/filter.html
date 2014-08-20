@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.5" data-basepath=".." data-revision="1407910080807">
+    <div class="book" data-github="regularjs/guide" data-level="4.5" data-basepath=".." data-revision="1408541955662">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -674,7 +674,7 @@
 <p><strong>Example</strong></p>
 <p>date-format filter</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// simplest date format</span>
-Regular.filter(<span class="hljs-string">"format"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+<span class="hljs-keyword">var</span> filter = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fix</span><span class="hljs-params">(str)</span>{</span>
     str = <span class="hljs-string">""</span> + (str || <span class="hljs-string">""</span>);
     <span class="hljs-keyword">return</span> str.length &lt;= <span class="hljs-number">1</span>? <span class="hljs-string">"0"</span> + str : str;
@@ -696,7 +696,8 @@ Regular.filter(<span class="hljs-string">"format"</span>,<span class="hljs-funct
       <span class="hljs-keyword">return</span> maps[capture]? maps[capture](value): <span class="hljs-string">""</span>;
     });
   }
-}())
+}();
+Regular.filter(<span class="hljs-string">"format"</span>, filter)
 </code></pre>
 <p>then</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{{time| format: 'yyyy-MM-dd HH:mm'}}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>

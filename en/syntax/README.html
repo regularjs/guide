@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="3" data-basepath=".." data-revision="1407910080807">
+    <div class="book" data-github="regularjs/guide" data-level="3" data-basepath=".." data-revision="1408541955662">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -664,10 +664,11 @@
 <h3 id="1-more-powerful-control-over-logic">1. more powerful control over logic</h3>
 <p>The dom-based template always rely on
 directive(<code>ng-if</code>,<code>ng-repeat</code>), so the logic is element-based, they can&#39;t describe the structure like this:</p>
-<pre><code class="lang-html">{{#list users as user}}
-  Hello. <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>{{user.firstName}} {{user.lastName}}<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>DELELE<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-{{/list}}
+<pre><code class="lang-html">{{#if isLogin}}
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> {{#<span class="hljs-attribute">if</span> <span class="hljs-attribute">isNotFavor</span>}} <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{{this.favor()}}</span> {{/<span class="hljs-attribute">if</span>}}&gt;</span>Digg<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{{ignored</span> = <span class="hljs-attribute">true</span>}}&gt;</span>Ignore<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+{{/if}}
 </code></pre>
+<p>in fact, you can use use the <code>logic</code> to controll the <code>directive</code> and <code>event</code>.</p>
 <h3 id="2-only-render-the-parts-that-really-need-to">2. only render the parts that really need to</h3>
 <p>  The dom-based template like angular don&#39;t have its own parsing phase, they just put the string into the document, and walker the generated dom-node to call the <strong>LINK</strong> action, so the node always have some placeholder. for example:</p>
 <pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">"save()"</span> <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">"myForm.$invalid"</span>
