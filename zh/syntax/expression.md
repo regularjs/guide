@@ -80,5 +80,54 @@ regular支持的表达式几乎与angular相一致，与angular不同的是， r
   true false undefined null Array Date JSON Math NaN RegExp decodeURI decodeURIComponent encodeURI encodeURIComponent parseFloat parseInt Object String
 
 
+## 创建只运行一次的表达式(bind-once)
+
+由于脏检查机制的性能极大的依赖于监听器的数量，为了精确控制监听器的数量，regularjs引入了一个新的表达式语法元素`@()`提供了bind-once的表达式的支持. 这个被监听的表达式在检查到一次值变化就会被接触监听。 
 
 
+你可以使用`@()`在任何使用到Expression的地方，例如`if`, `list`, `include`, `{{}}`等 
+
+
+__Example__
+
+```html
+<div>{{ @(title) }}</div> // the interpolation only work once
+
+{{#if @(test)}}  // the if rule is evaluated once
+//...
+{{/if}}
+
+{{#list @(items) as item}}  // the list rule is evaluated once
+//...
+{{/list}}
+
+```
+
+你也可以在`$watch` 使用 `@()`(因为在regularjs中，这事实上就是个合法的语法元素，所以任何可以传入表达式的地方都可以使用它)
+
+```javascript
+
+var component = new Regular({
+  data: {
+    user: {}
+  }
+});
+
+var i = 0;
+component.$watch("@(user.name)", function(){
+    i++  // only trigger once
+});
+component.$update("user.name", 1);
+component.$update("user.name", 2);
+
+// update twice  but trigger once
+alert(i === 1);
+```
+
+
+就如上的例子所示，由于`脏了一次就被被抛弃`, 如果值后续继续变化，会导致ui与data的不同步，所以特别是处女情节的小伙伴要小心使用。 
+
+
+
+
+> ##  当表达式无法满足你时，你可能需要[计算属性](../core/computed.md)

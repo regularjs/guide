@@ -55,10 +55,10 @@ Regular.directive('some-directive', function(elem, value){
 
 
 
-
+<a name="buildin"></a>
 ## 内建指令
 
-当前版本, regularjs只内置了几个常用指令
+当前版本, regularjs只内置了一些常用指令
 
 ### 1. `r-model` 
 
@@ -115,7 +115,7 @@ var app = new Regular({
       "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }}>left+10</button>\
       left:  {{left}}",
     data: {left:1}
-}).inject(document.body)
+}).$inject(document.body)
 
 ```
 
@@ -150,5 +150,15 @@ __Example__
 > 所有内建的指令都同时接受Expression或者String类型的值.
 
 
+
+### 5. `r-html`
+
+未转义插值绑定，注意`xss`.
+
+__Example__
+
+```javascript
+<div class='preview' r-html={{content}}></div>
+```
 
 

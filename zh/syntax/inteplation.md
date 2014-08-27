@@ -25,7 +25,7 @@ var app = new Regular({
   data: {username: 'leeluolee'}
 });
 
-app.inject('#app')
+app.$inject('#app')
   .$update('username', 'regularjs') //update the data
 
 ```
@@ -35,13 +35,13 @@ app.inject('#app')
 ## 属性节点插值
 
 
-对于属性节点插值，情况就要复杂一些了. regular 目前只允许属性值可以被插值, 这里面有几个说明要点.
+对于属性节点插值，情况就要复杂一些了. regular 目前允许值被插值, 这里面有几个说明要点.
 
 1. 具有插值的字符串如`"m-modal m-modal-{{klass}}"`会生成一个表达式，求值结果是这个字符串计算后的值
 
 2. 对于非指令类的的属性, regularjs会在绑定的值发生变化时, 修改对应属性
 
-3. 对于指令类的属性, 会将插值表达式传入[directive](../core/directive.md)的处理函数中, 具体处理交由directive指令
+3. 对于指令类的属性(包括事件、动画等), 会将插值表达式传入[directive](../core/directive.md)的处理函数中, 具体处理交由directive指令
 
 鉴于此, 其实`style`, `class`等天生就具有插值能力
 
@@ -49,15 +49,22 @@ __Example__
 
 ```javascript
 
-<input type='radio'
-  class="m-modal {{show? 'z-show': ''}}"
-  checked={{selected}}
+<input
+  type='radio'
+  on-click={{disabled = true}}
+  class={{klass}}
+  r-model={{checked}}
   style="left: {{10 + offsetX}}px; top: {{10 + offsetY}}px"
-  > </input>
 
 ```
 
-这个例子处理了当show为真时自动添加`z-show`类,处理left和top的定位,以及根据`selected`字段判断radio是否被选中
+1. `r-model`: 指令
+2. `style`: 字符串插值
+3. `class`: 简单属性插值
+4. `type`:  未插值属性
+4. `on-click`: 事件指令
+
+
 
 
 

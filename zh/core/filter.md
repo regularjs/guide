@@ -21,30 +21,32 @@ __Example__
 创建一个简单的日期格式化过滤器
 
 ```javascript
-  // simplest date format
-  Regular.filter("format",function(value, format){
-    function fix(str){
-      str = "" + (str || "");
-      return str.length <= 1? "0" + str : str;
-    }
-    var maps = {
-      'yyyy': function(date){return date.getFullYear()},
-      'MM': function(date){return fix(date.getMonth() + 1); },
-      'dd': function(date){ return fix(date.getDate()) },
-      'HH': function(date){ return fix(date.getHours()) },
-      'mm': function(date){ return fix(date.getMinutes())}
-    }
+// simplest date format
+var filter = function(){
+  function fix(str){
+    str = "" + (str || "");
+    return str.length <= 1? "0" + str : str;
+  }
+  var maps = {
+    'yyyy': function(date){return date.getFullYear()},
+    'MM': function(date){return fix(date.getMonth() + 1); },
+    'dd': function(date){ return fix(date.getDate()) },
+    'HH': function(date){ return fix(date.getHours()) },
+    'mm': function(date){ return fix(date.getMinutes())}
+  }
 
-    var trunk = new RegExp(Object.keys(maps).join('|'),'g');
-    return function(value, format){
-      format = format || "yyyy-MM-dd HH:mm";
-      value = new Date(value);
+  var trunk = new RegExp(Object.keys(maps).join('|'),'g');
+  return function(value, format){
+    format = format || "yyyy-MM-dd HH:mm";
+    value = new Date(value);
 
-      return format.replace(trunk, function(capture){
-        return maps[capture]? maps[capture](value): "";
-      });
-    }
-  })
+    return format.replace(trunk, function(capture){
+      return maps[capture]? maps[capture](value): "";
+    });
+  }
+}();
+Regular.filter("format", filter)
+
 ```
 
 然后
@@ -56,7 +58,4 @@ __Example__
 
 
 
-## 内建过滤器
-
-format
 

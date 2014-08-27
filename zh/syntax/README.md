@@ -7,9 +7,9 @@
   angularjs, vuejs这类框架的逻辑控制等语法能力普遍都基于directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单元是节点，而无法实现以下字符串模板普遍可以实现的书写方式
 
   ```html
-  {{#list users as user}}
-    <b>{{user.firstName}} {{user.lastName}}</b> Good morning (<a href="#">DELELE</a>)
-  {{/list}}
+{{#if isLogin}}
+<a {{#if isNotFavor}} on-click={{this.favor()}} {{/if}}>Digg</a> <a on-click={{ignored = true}}>Ignore</a>
+{{/if}}
   ```
 
 ### 2. 生成更纯净的节点
@@ -26,8 +26,12 @@
   其实大部分类似ng-click的信息都无需显示在dom上
 
 
-  而regularjs的parse是框架内做的，它生成类似AST的中间数据结构(用以生成节点结构)，从而拥有独立compile过程，提取真正需要显示在页面
+  而regularjs的parse是框架内做的，它生成类似AST的中间数据结构(用以生成节点结构)，从而拥有独立compile过程，提取真正需要显示在页面。所以如果使用regularjs，实现类似功能的模板在进入文档时，将会变成
 
+  ```html
+  <button class="btn btn-primary">Save</button>
+  <button class="btn btn-danger">Delete</button>
+  ```
   
 
 ### 3. 使得预解析成为可能

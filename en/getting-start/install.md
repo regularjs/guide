@@ -1,7 +1,6 @@
 
 #Installation
 
-> The global `Regular` object is always accessible within window.
 
 ## Download
 
@@ -18,7 +17,8 @@ __use bower__
 
 __use component__
 
-  `component install regularjs/regular`
+* `component install regularjs/regular`
+* `var Regular = require('regularjs')`
 
 ## Usage
 
@@ -28,6 +28,7 @@ __directly insert__
 <script src="path/to/regular.js"></script>
 ```
 
+`Regular` object is now accessible in window.
 
 __use AMD loader__
 

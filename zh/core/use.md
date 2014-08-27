@@ -5,15 +5,16 @@
 
 ## 扩展接口的单向影响性
 
-之前小节已经提到了Component拥有四个扩展接口
+之前小节已经提到了Component拥有几个扩展接口
 
 * [filter](filter.md): 定义一个过滤器, 在表达式中可以使用
 * [directive](directive.md)`: 定义一个指令扩展节点能力
 * [event](event.md): 自定义一个ui事件,例如`drag`
+* [animation](animation.md): 自定义动画
 * [implement](class.md): 在组件的原型添加一个函数
 
 
-这四位的共同特点就是 __[扩展只对定义它的Component及其子类可见]__ 如
+这几位的共同特点就是 __[扩展只对定义它的Component及其子类可见]__ 如
 
 
 ```javascript
@@ -175,7 +176,7 @@ var Counter = Regular.extend({
   }
 }).use('timeout'); // <== use timeout
 
-new Counter({data: {count:0}}).inject('#app');
+new Counter({data: {count:0}}).$inject('#app');
 
 ```
 
@@ -184,17 +185,6 @@ new Counter({data: {count:0}}).inject('#app');
 
 
 
-## <del>插件名: 'request'</del>
-
-异步请求模块
-
-__移除引入request__ 因为代码量的问题，一般其它框架也都会实现request, 改为以非内置的形式提供[regularjs/request](https://github.com/regularjs/request)
-
-
-
-## 目前可用的非内置插件列表
-
-1. [shortcut(coming soon)]()
 
 
 

@@ -1,6 +1,6 @@
 #数据绑定和生命周期
 
-数据驱动的思想是mvvm模式中的核心，regular也是如此 ,数据绑定是实现数据驱动的组件开发的核心所在.
+regularjs 推崇极致的数据驱动的组件开发, 而其中数据绑定是实现数据驱动的组件开发的核心所在.
 
 regularjs的组件实例中与数据绑定相关的函数有如下几个
 
@@ -18,6 +18,9 @@ __Arguments__
     - String: 此字符串会先被`Regular.expression`处理为Expression
     - Array: 即检查多个表达式，数组中的任意一个发生改变都触发回调
   * handler(newvalue, oldvalue) [Function] - 监听器回调，传入改变前和改变后的值
+    - newvalue:  current value of the Expression
+    - oldvalue:  previous value of the Expression
+
 
     __注__: 当为多重监听时， 参数为所有表达式的新值列表
 
@@ -51,7 +54,7 @@ component.$update(function(data){
 ```
 
 
-`$update`请参考[$update](#$update);
+`$update`请参考[$update](#update);
 
 
 
@@ -152,14 +155,14 @@ __Example__:
 ```javascript
 
  // insert
-var pager = new Pager({data: {total: 100, current:20}}).inject('#bind1');
-var pager2 = new Pager({data: {total: 50, current:2}}).inject('#bind1');
+var pager = new Pager({data: {total: 100, current:20}}).$inject('#bind1');
+var pager2 = new Pager({data: {total: 50, current:2}}).$inject('#bind1');
 
-var pager3 = new Pager({data: {total: 100, current:20}}).inject('#bind2');
-var pager4 = new Pager({data: {total: 50, current:2}}).inject('#bind2');
+var pager3 = new Pager({data: {total: 100, current:20}}).$inject('#bind2');
+var pager4 = new Pager({data: {total: 50, current:2}}).$inject('#bind2');
 
-var pager5 = new Pager({data: {total: 100, current:2}}).inject('#bind3');
-var pager6 = new Pager({data: {total: 50, current:20}}).inject('#bind3');
+var pager5 = new Pager({data: {total: 100, current:2}}).$inject('#bind3');
+var pager6 = new Pager({data: {total: 50, current:20}}).$inject('#bind3');
 
 
 // style 1
@@ -175,11 +178,11 @@ pager5.$bind(pager6, {current: "current", total: "total"});
 
 
 // bind chain
-var pager = new Pager({data:{total: 1000, current:1}}).inject('#bind_chain');
+var pager = new Pager({data:{total: 1000, current:1}}).$inject('#bind_chain');
 for(var i = 0; i < 10; i++){
   var pager = new Pager({data:{total: 1000, current:1}})
     .$bind(pager, ['total', 'current'])
-    .inject('#bind_chain');
+    .$inject('#bind_chain');
 }
 
 ```
@@ -188,7 +191,6 @@ for(var i = 0; i < 10; i++){
 
 其中pager的实现在[这里](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
 
->[内嵌组件](../advanced/component.md)与外层的数据绑定就是通过`$bind`实现的
 
 
 

@@ -7,7 +7,7 @@ since version `0.2.4`, regularjs have added `computed property` support.
 Although regularjs have the full support for `ES5 Expression`. in some case, the computed property may helping you to avoiding complicated wacher-binding.
 
 
-## Example
+## Usage
 
 you can either passing `computed` property to `Component.extend` or `new Component`. 
 

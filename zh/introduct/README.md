@@ -10,7 +10,7 @@
   1. 由于本身生命周期的强约束，难以与其它框架公用
   2. 入门容易，深入难 —— 想想directive一个feature就涉及到的 postlink prelink controller compile scope等等概念.
   3. 模板的逻辑实现依赖的是directive(`ng-repeat`, `ng-if` etc..)，即最小逻辑颗粒是节点, 与常规的模板自由度上还是有较大差异.
-  4. FOUC(Flash of unstyled content), 因为angular是先通过浏览器生成了dom，再后置link来产生真正需要的元素，所以会导致内容闪动.regular也没有很好的解决问题(因为内容事实上并不是后端render的)，但是可以保证进入文档的节点就是预期的节点
+  4. FOUC(Flash of unstyled content), 因为angular是先通过浏览器(innerHTML)生成了dom，再后置link来产生真正需要的元素，所以会导致内容闪动.regular也没有完美的解决问题(因为内容仍然是前端render的)，但是可以保证进入文档的节点就是预期的节点
 
 除此之外，angularjs的核心是scope对象, 业务的实现大部分都是在scope上动态添加函数或属性. 也有人提出整个controller的写法缺乏约束性，这个时候[__angular-classy__](http://davej.github.io/angular-classy/)出现, 它将原本因挂载在scope上的业务逻辑转移到构造函数原型的形式, 减少了灵活度，但是更有约束性, 这也给了regular很大灵感.
 

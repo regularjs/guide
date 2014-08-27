@@ -1,7 +1,6 @@
 
 #安装
 
->无论哪种方式都可以直接使用注册在全局变量的__Regular__
 
 ## 下载
 
@@ -19,6 +18,11 @@ __使用bower下载__
 
 __使用component__
 
+* `component install regularjs/regular`
+* `var Regular = require('regularjs')`
+
+
+
 
 ##使用
 
@@ -28,15 +32,17 @@ __直接插入script__
 <script src="path/to/regular.js"></script>
 ```
 
+直接使用注册在全局的__Regular__命名空间
 
 __使用amd加载器(例:requirejs)__
+
 
 ```javascript
 require(['path/to/regular.js'], function(Regular){
   console.log(Regular) 
 })
 ```
-seajs也一样
+
 
 
 

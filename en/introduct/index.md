@@ -12,8 +12,9 @@ This page aims at helping you to find all the api in this guide
 2. [Component.directive](../core/directive.md):          define a directive for Component and its SubComponent
 3. [Component.filter](../core/filter.md):             define a filter for Component and its SubComponent
 4. [Component.event](../core/event.md):               define a custom event for Component and its SubComponent
-5. [Component.use](../core/use.md):                   use a plugin
-6. [Regular.expression](../syntax/expression.html#expression):  create a Expression form String at runtime
+5. [Component.animation](../core/animation.md):             define a custom animation
+6. [Component.use](../core/use.md):                   use a plugin
+7. [Regular.expression](../syntax/expression.html#expression):  create a Expression form String at runtime
 
 
 

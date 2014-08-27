@@ -24,11 +24,11 @@ var HelloRegular = Regular.extend({
   template: '#hello'
 });
 
-// initialize component then inject to #app's  bottom
+// initialize component then $inject to #app's  bottom
 var component = new HelloRegular({
   data: {username: "leeluolee"}
 });
-component.inject('#app'); 
+component.$inject('#app'); 
 </script>
 
 ```
@@ -52,18 +52,23 @@ component.inject('#app');
   > 需要注意的是在实例化组件传入的参数会被作为实例属性, 所以可以在这里覆盖extend的定义(原型属性)
 
 
-* `inject(node[, direction])`
+  <a name="$inject"></a>
+
+* `$inject(node[, direction])`
 
   这是个组件的实例方法，会将组件插入到目标节点制定位置
 
-  direction可以是: `top`——节点内顶部,`after`——节点下一个兄弟节点),`before`——节点上一个兄弟节点,`bottom`——节点内底部,默认为`bottom`
+  * `bottom`[default option]: $injected as node's lastChild
+  * `top`: $injected as node' s firstChild,
+  * `after`: $injected as node' s nextSibling,
+  * `before`: $injected as node' s prevSibling,
 
 
 
 <!-- 1. 模板容器(`#hello`)  
 2. script引入regular.js  
 3. `Regular.extend`派生组件
-4. 初始化节点并插入inject到指定位置(这里是插入到容器节点`#app`)
+4. 初始化节点并插入$inject到指定位置(这里是插入到容器节点`#app`)
  -->
 
 

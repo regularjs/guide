@@ -7,10 +7,13 @@ Unlike dom-based template such as [angular](https://angularjs.org/), [vuejs](vue
 The dom-based template always rely on
 directive(`ng-if`,`ng-repeat`), so the logic is element-based, they can't describe the structure like this:
 ```html
-{{#list users as user}}
-  Hello. <b>{{user.firstName}} {{user.lastName}}</b><a href="#">DELELE</a>
-{{/list}}
+{{#if isLogin}}
+<a {{#if isNotFavor}} on-click={{this.favor()}} {{/if}}>Digg</a> <a on-click={{ignored = true}}>Ignore</a>
+{{/if}}
 ```
+
+in fact, you can use use the `logic` to controll the `directive` and `event`.
+
 
 ### 2. only render the parts that really need to
 
