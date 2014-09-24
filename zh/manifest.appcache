@@ -1,15 +1,15 @@
 CACHE MANIFEST
-# Revision 1408541956134
+# Revision 1411550453517
 
 CACHE:
 index.html
 advanced/component.html
 advanced/content.html
 core/README.html
-core/animation.html
 core/binding.html
 core/class.html
 core/computed.html
+core/animation.html
 core/directive.html
 core/event.html
 core/filter.html
