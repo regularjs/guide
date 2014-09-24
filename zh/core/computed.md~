@@ -2,7 +2,7 @@
 
 __从版本 `0.2.4` 开始， regularjs提供了计算属性的支持__
 
-尽管regularjs的表达式支持非常完备，但是在某些情况下，创建计算属性(computed property)可以让你避免书写冗余的表达式
+尽量regularjs的表达式支持非常完备，但是在某些情况下，创建计算属性(computed property)可以让你避免书写冗余的表达式
 
 ## 使用
 

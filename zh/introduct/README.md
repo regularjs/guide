@@ -7,7 +7,7 @@
 
 [angularjs](https://angularjs.org/)从12年开始开始火爆起来, 数据驱动的业务实现方式也由此深入人心, 它的数据更新策略基于脏检查，在明确内部的生命周期后在数据绑定的使用上是最为灵活的(即这种方式不介意是何种方式促使数据改变，而只关心数据改变的结果),作者本人以及周围的小伙伴也开始为之着迷. 随着使用的深入, 发现angularjs的强大特性也引出了一些无法攻克的不足:
 
-  1. 由于本身生命周期的强约束，难以与其它框架公用
+  1. 由于本身生命周期的强约束，难以与其它框架共用
   2. 入门容易，深入难 —— 想想directive一个feature就涉及到的 postlink prelink controller compile scope等等概念.
   3. 模板的逻辑实现依赖的是directive(`ng-repeat`, `ng-if` etc..)，即最小逻辑颗粒是节点, 与常规的模板自由度上还是有较大差异.
   4. FOUC(Flash of unstyled content), 因为angular是先通过浏览器(innerHTML)生成了dom，再后置link来产生真正需要的元素，所以会导致内容闪动.regular也没有完美的解决问题(因为内容仍然是前端render的)，但是可以保证进入文档的节点就是预期的节点
@@ -19,7 +19,7 @@
 
 ## 新思维的出现——react ractive
 
-与此同时，[react](http://facebook.github.io/react/)的出现让这个百花齐放但缺少差异化的阶段注入了一些不一样的味道，它可以实现了另一种内建的生命周期(lifecycle), 在不依赖数据层面的脏检查的同时，建立了ui与数据之间的连接. 它将diff职责放到了一个dom结构的抽象[virtual dom](http://fluentconf.com/fluent2014/public/schedule/detail/32395)上，通过脏检查两次render之间virtual-dom发生的变化来更新ui.不过如果移除了jsx的依赖，手动通过嵌套函数的方式创建virtual-dom(如下例)简直不可忍，并且它的组件展现中的逻辑控制完全依赖与js的语言能力, 往往不像利用模板构建那么清晰(当然react的作者有它自己的说法，仁者见仁了)。
+与此同时，[react](http://facebook.github.io/react/)的出现让这个百花齐放但缺少差异化的阶段注入了一些不一样的味道，它可以实现了另一种内建的生命周期(lifecycle), 在不依赖数据层面的脏检查的同时，建立了ui与数据之间的连接. 它将diff职责放到了一个dom结构的抽象[virtual dom](http://fluentconf.com/fluent2014/public/schedule/detail/32395)上，通过脏检查两次render之间virtual-dom发生的变化来更新ui.不过如果移除了jsx的依赖，手动通过嵌套函数的方式创建virtual-dom(如下例)简直不可忍，并且它的组件展现中的逻辑控制完全依赖于js的语言能力, 往往不像利用模板构建那么清晰(当然react的作者有它自己的说法，仁者见仁了)。
 
 ```js
 render: function() {

@@ -111,7 +111,7 @@ component.$inject('#app');
 {{#if username}}
   Hello, {{username}}. <a href="javascript:;" on-click={{username = ''}}>Logout</a>
 {{#else}}
-  Sorry, Guest. Please <a hreaf="javascript:;" on-click={{this.login()}}>Login</a>
+  Sorry, Guest. Please <a href="javascript:;" on-click={{this.login()}}>Login</a>
 {{/if}}
 
 ```

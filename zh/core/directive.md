@@ -85,7 +85,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
   与节点value实现双向绑定
 
   ```html
-  <input type="radio"value="option1" r-model={{radio}}>
+  <input type="radio" value="option1" r-model={{radio}}>
   ```
 
 
