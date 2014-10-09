@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-github="regularjs/guide" data-level="4.2" data-basepath=".." data-revision="1411550453517">
+    <div class="book" data-github="regularjs/guide" data-level="4.2" data-basepath=".." data-revision="1412856339737">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -833,8 +833,25 @@ component.$update() <span class="hljs-comment">// do nothing , just enter digest
 <p><h5>Warning: </h5>
 无论传入什么参数，运行$update之后都会进行组件作用域内的dirty-check</p>
 </blockquote>
+<p><a name="get"></a></p>
+<h3 id="4-component-get-expr-">4 <code>component.$get(expr)</code></h3>
+<p>除了直接操作数据对象<code>data</code> 去获取值， 你也可以使用<code>$get</code>去获取表达式的值，这个相当于angular的<code>$eval</code>，<strong><code>$get</code>的出现主要是为了获取<a href="computed.html">计算属性的值</a></strong></p>
+<p><strong>Exmaple</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+   data: {items: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]},
+   computed: {
+     computedLength: <span class="hljs-string">"items.length"</span>
+   }
+});
+
+component.$get(<span class="hljs-string">"items.length"</span>); <span class="hljs-comment">//=== 3</span>
+component.$get(<span class="hljs-string">"computedLength"</span>); <span class="hljs-comment">//=== 3</span>
+</code></pre>
+<blockquote>
+<p>由于为了ie8的支持，你目前无法直接使用data.computedLength的方式来获取计算属性。（不过未来可能会发布一个更友好的版本来去掉ie8-的支持）;</p>
+</blockquote>
 <p><a name="bind"></a></p>
-<h3 id="2-5-component-bind-component2-expr1-expr2-">2.5 <code>component.$bind(component2, expr1[, expr2])</code></h3>
+<h3 id="5-component-bind-component2-expr1-expr2-">5 <code>component.$bind(component2, expr1[, expr2])</code></h3>
 <p>与另一个组件实现双向绑定</p>
 <p><strong>Arguments</strong></p>
 <ol>

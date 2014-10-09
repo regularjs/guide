@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# Revision 1411550452805
+# Revision 1412856339239
 
 CACHE:
-advanced/component.html
 index.html
+advanced/component.html
 core/README.html
 core/animation.html
 core/binding.html
