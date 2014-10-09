@@ -131,7 +131,7 @@ component.$update() // do nothing , just enter digest phase
 > 无论传入什么参数，运行$update之后都会进行组件作用域内的dirty-check
 
 <a name="get"></a>
-### 4 `component.$get(expr)`
+### 5 `component.$get(expr)`
 
 
 除了直接操作数据对象`data` 去获取值， 你也可以使用`$get`去获取表达式的值，这个相当于angular的`$eval`，__`$get`的出现主要是为了获取[计算属性的值](computed.md)__
@@ -159,7 +159,7 @@ component.$get("computedLength"); //=== 3
 
 
 <a name="bind"></a>
-### 5 `component.$bind(component2, expr1[, expr2])`
+### 6 `component.$bind(component2, expr1[, expr2])`
 
 与另一个组件实现双向绑定
 

@@ -130,7 +130,7 @@ component.$update() // do nothing , just enter digest phase
 
 
 <a name="get"></a>
-### 5 `component.$get(expr)`
+### 4 `component.$get(expr)`
 
 Instated of using `data.*` to access property directly, you can also pass a `Expression` to get the evaluated value.
 

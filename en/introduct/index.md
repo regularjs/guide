@@ -25,12 +25,12 @@ This page aims at helping you to find all the api in this guide
 1. [component.$watch](../core/binding.html#watch)         create a watcher
 2. [component.$unwatch](../core/binding.html#unwatch):    destroy a watcher
 3. [component.$update](../core/binding.html#update):      update data and enter the digest phase
-3. [component.$get](../core/binding.html#get):            update data and enter the digest phase
-4. [component.$bind](../core/binding.html#bind)           create binding between two component
-5. [component.$on](../core/message.html#on)               Listens on events of a given type
-6. [component.$off](../core/message.html#off)             remove Listener with given type
-7. [component.$emit](../core/message.html#emit)           trigger Listener
-8. [component.$inject](../getting-start/quirk-example.html#$inject) $inject component to the specified place
+4. [component.$get](../core/binding.html#get):            eval a expression and get its value.
+5. [component.$bind](../core/binding.html#bind)           create binding between two component
+6. [component.$on](../core/message.html#on)               Listens on events of a given type
+7. [component.$off](../core/message.html#off)             remove Listener with given type
+8. [component.$emit](../core/message.html#emit)           trigger Listener
+9. [component.$inject](../getting-start/quirk-example.html#$inject) $inject component to the specified place
 
 
 # Builtin
