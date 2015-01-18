@@ -36,7 +36,7 @@ component.$inject('#app');
 __RESULT__
 
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/1/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 
@@ -77,7 +77,7 @@ This component only shows static message until now, we should make it living by 
 
 __RESULT__
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/8/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/46/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 ## 3. using `if/else` to show other message if the user is not logged in
@@ -96,7 +96,7 @@ it just like we use the other string-based template.
 
 __RESULT__
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/9/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/47/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 
@@ -142,7 +142,7 @@ var HelloRegular = Regular.extend({
 
 __RESULT__
 
-<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/10/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/48/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 
 
@@ -157,21 +157,12 @@ just like angular. regular's data-binding is based on dirty-check. some builtin 
 component.data.user.name = "regularjs";
 component.$update() // enter
 
-// component.$update('user.name', 'update-set')
-
-// component.$update({
-//  'user.name':  'update-set-multi'
-// })
-
-//  component.$update(function(data){
-//     data.user.name='update-apply'
-//  })
 ```
 
 just like the example above, the usage of `$update` is flexible.
 
 
-__[|DEMO|](http://fiddle.jshell.net/leeluolee/C2Gh9/5/)__
+__[|DEMO|](http://fiddle.jshell.net/leeluolee/C2Gh9/50/)__
 
 
 > no matter how you use the `$update`. the component will always enter into the 'digest' phase.
@@ -189,7 +180,7 @@ you can consider regular's component as a small `mvvm` realization.
 - the component itself is just like the viewmodel
 
 
-you can also check the more comprehensive example——[todomvc](http://codepen.io/leeluolee/pen/eAmnB).
+you can also check the more comprehensive example——[todomvc](http://codepen.io/leeluolee/pen/dGxCb).
 
 
 
