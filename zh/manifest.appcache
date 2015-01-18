@@ -1,35 +1,9 @@
 CACHE MANIFEST
-# Revision 1412856339737
+# Revision 1421574478738
 
 CACHE:
 index.html
-advanced/component.html
-advanced/content.html
-core/README.html
-core/binding.html
-core/class.html
-core/computed.html
-core/animation.html
-core/directive.html
-core/event.html
-core/filter.html
-core/message.html
-core/use.html
 getting-start/README.html
-getting-start/install.html
-getting-start/quirk-example.html
-getting-start/review.html
-introduct/README.html
-introduct/index.html
-introduct/target.html
-syntax/README.html
-syntax/expression.html
-syntax/if.html
-syntax/include.html
-syntax/inteplation.html
-syntax/list.html
-syntax/review.html
-syntax/syntax.html
 gitbook/app.js
 gitbook/fonts/fontawesome/FontAwesome.otf
 gitbook/fonts/fontawesome/fontawesome-webfont.eot

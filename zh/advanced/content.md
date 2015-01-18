@@ -50,7 +50,7 @@ var App = Regular.extend({
   }
 })
 
-var app = new App({data: {title: "hahaha"}).$inject('#app');
+var app = new App({data: {title: "hahaha"}}).$inject('#app');
 ```
 [|DEMO|](http://jsfiddle.net/leeluolee/4wuDZ/)
 
