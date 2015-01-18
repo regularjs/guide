@@ -63,7 +63,7 @@ so, the general plugin will be written like this:
 
 ```javascript
 
-function FooPlugin(Componenet){
+function FooPlugin(Component){
   Component.implement()// implement method
     .filter()          // define filter
     .directive()       // define directive
