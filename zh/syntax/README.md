@@ -7,9 +7,9 @@
   angularjs, vuejs这类框架的逻辑控制等语法能力普遍都基于directive(`ng-if`,`ng-repeat`)的形式，这就决定了它的最小控制单元是节点，而无法实现以下字符串模板普遍可以实现的书写方式
 
   ```html
-{{#if isLogin}}
-<a {{#if isNotFavor}} on-click={{this.favor()}} {{/if}}>Digg</a> <a on-click={{ignored = true}}>Ignore</a>
-{{/if}}
+{#if isLogin}
+<a {#if isNotFavor} on-click={this.favor()} {/if}>Digg</a> <a on-click={ignored = true}>Ignore</a>
+{/if}
   ```
 
 ### 2. 生成更纯净的节点
@@ -41,9 +41,9 @@
 例如
 
 ```html
-{{#list items as item}}
-  <div class="m-item" on-click={{this.del(item)}}> {{item.name}} </div>
-{{/list}}
+{#list items as item}
+  <div class="m-item" on-click={this.del(item)}> {item.name} </div>
+{/list}
 ```
 
 将会解析成成这段中间数据结构

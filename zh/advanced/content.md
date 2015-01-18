@@ -14,20 +14,20 @@ __Exmaple__
 
 ```javascript
 <script id="modal" type="text/regular" name='modal'>
-  <div class="modal show {{clazz}}">
+  <div class="modal show {clazz}">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" on-click={{this.close()}} data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">{{title}}</h4>
+          <button type="button" class="close" on-click={this.close()} data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">{title}</h4>
         </div>
         <div class="modal-body">
          <!-- use r:content as placeholder for passin body -->
           <r-content />
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" on-click={{this.close()}} >Close</button>
-          <button type="button" class="btn btn-primary" on-click={{this.confirm()}}>Confirm</button>
+          <button type="button" class="btn btn-default" on-click={this.close()} >Close</button>
+          <button type="button" class="btn btn-primary" on-click={this.confirm()}>Confirm</button>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@ __Exmaple__
 var App = Regular.extend({
   template:
     '<modal title="title">\
-        <a href="#" on-click={{this.click()}}>hello</a>\
+        <a href="#" on-click={this.click()}>hello</a>\
     </modal>',
   click: function(){
     alert('passin-body"s context is outer component ')
@@ -54,7 +54,7 @@ var app = new App({data: {title: "hahaha"}}).$inject('#app');
 ```
 [|DEMO|](http://jsfiddle.net/leeluolee/4wuDZ/)
 
-此时，传入modal的`<a href="#" on-click={{this.click()}}>hello</a>`作用于在定义的component(即app实例)中，所以可以调用它原型上的click函数
+此时，传入modal的`<a href="#" on-click={this.click()}>hello</a>`作用于在定义的component(即app实例)中，所以可以调用它原型上的click函数
 
 ---------------------------------------
 

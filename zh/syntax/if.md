@@ -6,13 +6,13 @@ __Syntax__
 
 
 ```xml
-{{#if condition}}
+{#if condition}
   ...
-{{#elseif condition2}}
+{#elseif condition2}
   ...
-{{#else}}
+{#else}
   ...
-{{/if}}
+{/if}
 ```
 
 where:
@@ -23,19 +23,19 @@ __Example__
 
 
 ```mustache
-{{#if user.age >= 80 }}
+{#if user.age >= 80 }
   you are too old 
-{{#elseif user.age <= 10}}
+{#elseif user.age <= 10}
   you are too young
-{{#else}}
+{#else}
   Welcome, Friend
-{{/if}}
+{/if}
 ```
 
 这里的`you are too old`等都称之为block(块) 根据判断表达式是否为真, 判断是否显示某个block或让某个block回收. 
 
 
-> 在regular中，`{{#}}`开头的被视为内建规则的开始，就如`<TagName>`之于html
+> 在regular中，`{#NAME }{/NAME}`开头的被视为内建规则的开始，就如`<NAME>`之于html
 
 
 ## 用 `if` 控制属性(包括指令、事件、常规属性)
@@ -44,12 +44,12 @@ __Example__
 
 ```html
 <!-- control the attribute -->
-<div {{#if active == 'home'}}data-home{{/if}}>Home</div>
+<div {#if active == 'home'}data-home{/if}>Home</div>
 <!-- control the event -->
-<a {{#if current < last}} on-click={{this.next()}} {{/if}}>Next</a>
+<a {#if current < last} on-click={this.next()} {/if}>Next</a>
 
 <!-- control the directive -->
-<input {{#if !disabled}} r-model={{username}} {{/if}}>
+<input {#if !disabled} r-model={username} {/if}>
 ```
 
 如果表达式为真，属性指令等会被添加到节点，反之会被回收，这个如果是dom-based 模板，你显然无法简便的实现。

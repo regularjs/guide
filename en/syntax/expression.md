@@ -73,15 +73,15 @@ in regularjs you can wrap your Expression with `@(Expression)` to  make the Expr
 __Example__
 
 ```html
-<div>{{ @(title) }}</div> // the interpolation only work once
+<div>{ @(title) }</div> // the interpolation only work once
 
-{{#if @(test)}}  // the if rule is evaluated once
+{#if @(test)}  // the if rule is evaluated once
 //...
-{{/if}}
+{/if}
 
-{{#list @(items) as item}}  // the list rule is evaluated once
+{#list @(items) as item}  // the list rule is evaluated once
 //...
-{{/list}}
+{/list}
 
 ```
 

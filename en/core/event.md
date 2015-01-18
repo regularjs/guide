@@ -16,8 +16,8 @@ you can bind event-handler with `on-xxx` attribute on tag (e.g.  `on-click` `on-
   ```javascript
   new Regular({
     template:
-    "<button on-click={{count = count + 1}}> count+1 </button> \
-      <b>{{count}}</b>",
+    "<button on-click={count = count + 1}> count+1 </button> \
+      <b>{count}</b>",
     data: {count:1}
   }).$inject(document.body);
   ```
@@ -68,14 +68,14 @@ the source of the builtin event —— `on-enter`
 
 Expreesion and Non-Expression is all valid to handle the event. but they do different this when event  be triggered.
 
-1. Expression(e.g. `on-click={{this.remove()}}`)
+1. Expression(e.g. `on-click={this.remove()}`)
   once the event fires. Expression will be evalutated, it is similar with angular.
 
   __Example__
 
 
   ```html
-    <div on-click={{this.remove(index)}}>Delte</div>
+    <div on-click={this.remove(index)}>Delte</div>
   ```
 
 
@@ -119,7 +119,7 @@ __Example__
 
 ```html
 <div delegate-click="remove">Delte</div>   //Proxy way via delegate
-<div delegate-click={{this.remove()}}>Delte</div> // Evaluated way via delagate
+<div delegate-click={this.remove()}>Delte</div> // Evaluated way via delagate
 ```
 
 __Warning__
@@ -139,8 +139,8 @@ __Example__
 ```javascript
 new Regular({
   template:
-  "<button on-click={{this.add(1, $event)}}> count+1 </button> \
-    <b>{{count}}</b>",
+  "<button on-click={this.add(1, $event)}> count+1 </button> \
+    <b>{count}</b>",
   data: {count:1}
   add: function(count, $event){
     this.data.count += count;
@@ -179,7 +179,7 @@ new Regular({
 ### 3. you can use `if` to attach or detach event on element
 
   ```html
-  <input {{#if test===0 }} on-click={{test = 1}} {{/if}} />
+  <input {#if test===0 } on-click={test = 1} {/if} />
   ```
 
 

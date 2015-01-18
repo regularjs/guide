@@ -17,8 +17,8 @@
   ```javascript
   new Regular({
     template: 
-    "<button on-click={{count = count + 1}}> count+1 </button> \
-      <b>{{count}}</b>",
+    "<button on-click={count = count + 1}> count+1 </button> \
+      <b>{count}</b>",
     data: {count:1}
   }).$inject(document.body);
   ```
@@ -65,7 +65,7 @@ Regular内置的on-enter的实现，它在敲击回车时会进行触发
 
 取决于你传入的值是表达式插值还是普通属性，regularjs会做不同的响应处理，例如
 
-1. 表达式(e.g. `on-click={{this.remove()}}`)
+1. 表达式(e.g. `on-click={this.remove()}`)
   
   如果传入的是表达式，与angular类似，一旦事件触发，此表达式会被运行一次。
 
@@ -73,7 +73,7 @@ Regular内置的on-enter的实现，它在敲击回车时会进行触发
 
 
   ```html
-    <div on-click={{this.remove(index)}}>Delte</div>
+    <div on-click={this.remove(index)}>Delte</div>
   ```
 
   调用组件的remove函数
@@ -116,7 +116,7 @@ __Example__
 
 ```html
 <div delegate-click="remove">Delte</div>   //Proxy way via delegate
-<div delegate-click={{this.remove()}}>Delte</div> // Evaluated way via delagate
+<div delegate-click={this.remove()}>Delte</div> // Evaluated way via delagate
 ```
 
 
@@ -138,8 +138,8 @@ __Example__
 ```javascript
 new Regular({
   template: 
-  "<button on-click={{this.add(1, $event)}}> count+1 </button> \
-    <b>{{count}}</b>",
+  "<button on-click={this.add(1, $event)}> count+1 </button> \
+    <b>{count}</b>",
   data: {count:1}
   add: function(count, $event){
     this.data.count += count;
@@ -175,6 +175,6 @@ new Regular({
 ### 2. 你可以使用 `if` 在模板上实现绑定和解绑事件
 
   ```html
-  <input {{#if test===0 }} on-click={{test = 1}} {{/if}} />
+  <input {#if test===0 } on-click={{test = 1}} {{/if}} />
   ```
 

@@ -3,8 +3,8 @@
 插值是regular中最常用的部分，如下例
 
 ```html
-<p class="m-modal m-modal-{{klass}}" on-click={{this.remove(user)}}> 
-  {{user.name}} 
+<p class="m-modal m-modal-{klass}" on-click={this.remove(user)}> 
+  {user.name} 
 </p>
 
 ```
@@ -21,7 +21,7 @@ __Example__
 ```js
 // you can just use Regular to create non-reusable component
 var app = new Regular({
-  template: "<div>{{username}}</div>",
+  template: "<div>{username}</div>",
   data: {username: 'leeluolee'}
 });
 
@@ -37,7 +37,7 @@ app.$inject('#app')
 
 对于属性节点插值，情况就要复杂一些了. regular 目前允许值被插值, 这里面有几个说明要点.
 
-1. 具有插值的字符串如`"m-modal m-modal-{{klass}}"`会生成一个表达式，求值结果是这个字符串计算后的值
+1. 具有插值的字符串如`"m-modal m-modal-{klass}"`会生成一个表达式，求值结果是这个字符串计算后的值
 
 2. 对于非指令类的的属性, regularjs会在绑定的值发生变化时, 修改对应属性
 
@@ -51,10 +51,10 @@ __Example__
 
 <input
   type='radio'
-  on-click={{disabled = true}}
-  class={{klass}}
-  r-model={{checked}}
-  style="left: {{10 + offsetX}}px; top: {{10 + offsetY}}px"
+  on-click={disabled = true}
+  class={klass}
+  r-model={checked}
+  style="left: {10 + offsetX}px; top: {10 + offsetY}px"
 
 ```
 

@@ -146,7 +146,7 @@ a simple Counter
 
 ```javascript
 var Counter = Regular.extend({
-  template: '<h2>{{count}}</h2><a href="#" on-click={{this.start()}}>start</a> <a href="#" on-click={{this.stop()}}>stop</a>',
+  template: '<h2>{count}</h2><a href="#" on-click={this.start()}>start</a> <a href="#" on-click={this.stop()}>stop</a>',
   start: function(){
     if(this.tid) return;
     this.tid = this.$interval(function(){

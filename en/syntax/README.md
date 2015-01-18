@@ -1,3 +1,5 @@
+> <b>After version 0.3.0: regularjs change the default TAG from `{{}}` to `{}`</b>, please use `Regular.config({BEGIN:'{{', END: '}}'})` if you need the old syntax`
+
 #Template Syntax
 
 Unlike dom-based template such as [angular](https://angularjs.org/), [vuejs](vuejs.org), [knockoutjs](http://knockoutjs.com/), regularjs is string-based (e.g. [ractive](http://www.ractivejs.org/)), this feature provides some advantages:
@@ -7,9 +9,9 @@ Unlike dom-based template such as [angular](https://angularjs.org/), [vuejs](vue
 The dom-based template always rely on
 directive(`ng-if`,`ng-repeat`), so the logic is element-based, they can't describe the structure like this:
 ```html
-{{#if isLogin}}
-<a {{#if isNotFavor}} on-click={{this.favor()}} {{/if}}>Digg</a> <a on-click={{ignored = true}}>Ignore</a>
-{{/if}}
+{#if isLogin}
+<a {#if isNotFavor} on-click={this.favor()} {/if}>Digg</a> <a on-click={ignored = true}>Ignore</a>
+{/if}
 ```
 
 in fact, you can use use the `logic` to controll the `directive` and `event`.
@@ -42,9 +44,9 @@ you can pre-parse the template-string to AST before creating your Component.
 __for example__
 
 ```html
-{{#list items as item}}
-  <div class="m-item" on-click={{this.del(item)}}> {{item.name}} </div>
-{{/list}}
+{#list items as item}
+  <div class="m-item" on-click={this.del(item)}> {item.name} </div>
+{/list}
 ```
 
 will be parsed to

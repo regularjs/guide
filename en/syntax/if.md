@@ -6,13 +6,13 @@ __Syntax__
 
 
 ```xml
-{{#if condition}}
+{#if condition}
   ...
-{{#elseif condition2}}
+{#elseif condition2}
   ...
-{{#else}}
+{#else}
   ...
-{{/if}}
+{/if}
 ```
 
 where:
@@ -24,13 +24,13 @@ __Example__
 
 ```html
 
-{{#if user.age >= 80 }}
+{#if user.age >= 80 }
   you are too old
-{{#elseif user.age <= 10}}
+{#elseif user.age <= 10}
   you are too young
-{{#else}}
+{#else}
   Welcome, Friend
-{{/if}}
+{/if}
 
 ```
 
@@ -43,12 +43,12 @@ __Example__
 
 ```xml
 <!-- control the attribute -->
-<div {{#if active == 'home'}}data-home{{/if}}>Home</div>
+<div {#if active == 'home'}data-home{/if}>Home</div>
 <!-- control the event -->
-<a {{#if current < last}} on-click={{this.next()}} {{/if}}>Next</a>
+<a {#if current < last} on-click={this.next()} {/if}>Next</a>
 
 <!-- control the directive -->
-<input {{#if !disabled}} r-model={{username}} {{/if}}>
+<input {#if !disabled} r-model={username} {/if}>
 ```
 
 If the test is evaluated to false, the attribute, event-handler, directive will be removed or destroyed;

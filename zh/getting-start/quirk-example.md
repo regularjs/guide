@@ -79,7 +79,7 @@ component.$inject('#app');
 目前为止，这个组件仅仅只是显示了一个静态信息，我们在模板中简单添加一个__[插值](sytax/inteplation.md)__来显示用户信息, 需要注意的是regularjs的内建模板是__'活动'__的，如果你更新了数据状态， ui将会自动更新。
 
 ```html
-  Hello, {{username}}
+  Hello, {username}
 ```
 
 [ |查看结果| ](http://fiddle.jshell.net/leeluolee/C2Gh9/2/)
@@ -90,11 +90,11 @@ component.$inject('#app');
 
 
 ```xml
-{{#if username}}
-  Hello, {{username}}.
-{{#else}}
+{#if username}
+  Hello, {username}.
+{#else}
   Sorry, Guest.
-{{/if}}
+{/if}
 ```
 
 就与常规的字符串模板(例如jst)类似，模板里我们添加`if/else`来区分登录用户与游客的显示效果
@@ -108,11 +108,11 @@ component.$inject('#app');
 这里同时我们添加了两个click事件来处理用户的登录与登出逻辑,
 
 ```html
-{{#if username}}
-  Hello, {{username}}. <a href="javascript:;" on-click={{username = ''}}>Logout</a>
-{{#else}}
-  Sorry, Guest. Please <a href="javascript:;" on-click={{this.login()}}>Login</a>
-{{/if}}
+{#if username}
+  Hello, {username}. <a href="javascript:;" on-click={username = ''}>Logout</a>
+{#else}
+  Sorry, Guest. Please <a href="javascript:;" on-click={this.login()}>Login</a>
+{/if}
 
 ```
 

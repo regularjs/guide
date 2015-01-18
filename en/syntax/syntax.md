@@ -17,7 +17,7 @@ __Example__
 
 ### 2. jst
 
-jst is the section wrapped by the opentag(default: `{{`) and close_tag (default: `}}`). it contains interpolation (`{{}}`) and rule `{{#}}`
+jst is the section wrapped by the opentag(default: `{`) and close_tag (default: `}`). it contains interpolation (`{}`) and rule `{#}`
 
 jst is similar to freemarker(http://freemarker.org/) (the opentag and closetag is changed but is configurable).
 
@@ -26,17 +26,17 @@ jst is similar to freemarker(http://freemarker.org/) (the opentag and closetag i
 __Example__
 
 ```xml
-{{#if user.type === 1}}
-  <p>{{user.name}}</p>
-{{/if}}
+{#if user.type === 1}
+  <p>{user.name}</p>
+{/if}
 ```
 
 
 ## About Rule
 
-in regular, `{{#}}` is consider as rule.
+in regular, `{#}` is consider as rule.
 
-There are already some built-in rules like `{{#if}}` `{{#else}}` `{{#elseif}}` `{{#list}}` `{{#include}}`.
+There are already some built-in rules like `{#if}` `{#else}` `{#elseif}` `{#list}` `{#include}`.
 
 just like xml, rule's tag must be matched or self closed.
 
@@ -55,13 +55,13 @@ just like xml, rule's tag must be matched or self closed.
 
   ```xml
   <div>
-  {{#if true}}
+  {#if true}
     True
   </div>
-  {{#else}}
+  {#else}
     False
   </div>
-  {{/if}}
+  {/if}
 
   ```
 

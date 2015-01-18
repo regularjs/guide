@@ -72,7 +72,7 @@ This component only shows static message until now, we should make it living by 
 
 
 ```html
-  Hello, {{username}}
+  Hello, {username}
 ```
 
 __RESULT__
@@ -84,11 +84,11 @@ __RESULT__
 
 
 ```xml
-{{#if username}}
-  Hello, {{username}}.
-{{#else}}
+{#if username}
+  Hello, {username}.
+{#else}
   Sorry, Guest.
-{{/if}}
+{/if}
 ```
 
 it just like we use the other string-based template.
@@ -106,11 +106,11 @@ __RESULT__
 In this step , we need to add two event to deal with the __Login__ and __Logout__ operation.
 
 ```html
-{{#if username}}
-  Hello, {{username}}. <a href="#" on-click={{username = ''}}>Logout</a>
-{{#else}}
-  Sorry, Guest. Please <a hreaf="#" on-click={{this.login()}}>Login</a>
-{{/if}}
+{#if username}
+  Hello, {username}. <a href="#" on-click={username = ''}>Logout</a>
+{#else}
+  Sorry, Guest. Please <a hreaf="#" on-click={this.login()}>Login</a>
+{/if}
 
 ```
 

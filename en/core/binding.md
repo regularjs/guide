@@ -128,6 +128,22 @@ component.$update() // do nothing , just enter digest phase
 > <h5>Warning: </h5>
 > whatever param you passed, the digest phase will always be triggered.
 
+<a name="$mute"></a>
+### 4. `component.$mute(disable)`
+
+you can disable a component to forbid it doing dirty-check. in most case, you will combine it with [`$inject(false)`](../getting-start/quirk-example.html#$inject) to remove it from document and make it disable 
+
+__Arguments__
+
+- disable[Boolean] : if true, the component will stop dirty-check (even if you call $update). if disable is false, component will return dirty-check.
+
+
+```js
+// remove component from document, and disable it.
+
+component.$mute(true).$inject(false);
+
+```
 
 <a name="get"></a>
 ### 4 `component.$get(expr)`
@@ -156,6 +172,7 @@ it is beacuse that `DefineProperty` is not available at `ie9-` which is also reg
 create binding with another component.
 
 __Arguments__
+
   1. component2<Regular>: the target component you need to bind
   2. expr1 <Expression|String|Object|Array>:
     - Expression|String: the field that component need to bind

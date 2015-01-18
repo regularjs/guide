@@ -3,8 +3,8 @@
 interpolation is a most common part of template.
 
 ```html
-<p class="m-modal m-modal-{{klass}}" on-click={{this.remove(user)}}>
-  {{user.name}}
+<p class="m-modal m-modal-{klass}" on-click={this.remove(user)}>
+  {user.name}
 </p>
 
 ```
@@ -21,7 +21,7 @@ __Example__
 ```js
 // you can just use Regular to create non-reusable component
 var app = new Regular({
-  template: "<div>{{username}}</div>",
+  template: "<div>{username}</div>",
   data: {username: 'leeluolee'}
 });
 
@@ -38,7 +38,7 @@ will output `<div>leeluolee</div>`. Whenerver the data changes, the textNode's c
 
 When used as attribute-interpolation(only the value can be interpolated):
 
-1. if the value is a string but contains interpolation(e.g. `class='m-modal m-modal-{{klass}}'`), the string will be considered as a interpolation.
+1. if the value is a string but contains interpolation(e.g. `class='m-modal m-modal-{klass}'`), the string will be considered as a interpolation.
 
 2. if the attribute is not a [directive](../core/directive.md), once the value changes, the attribute's value will be updated immediately. it is a __one-way binding__.
 
@@ -52,10 +52,10 @@ __Example__
 
 <input
   type='radio'
-  class={{klass}}
-  r-model={{checked}}
-  style="left: {{10 + offsetX}}px; top: {{10 + offsetY}}px"
-  > </input>
+  class={klass}
+  r-model={checked}
+  style="left: {10 + offsetX}px; top: {10 + offsetY}px"
+  > 
 
 ```
 
@@ -65,15 +65,6 @@ like the example above.
 2. `style`: string-interpolation
 3. `class`: simple attribute interpolation
 4. `type`: just normal attribute
-
-
-
-
-
-
-
-
-
 
 
 

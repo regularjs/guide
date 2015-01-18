@@ -4,7 +4,7 @@
 __Syntax__
 
 ```xml
-{{#include template}}
+{#include template}
 ```
 
 __where__
@@ -28,19 +28,19 @@ __Example__
 
 <!-- Templates -->
 <script id="modal" type="text/regular" name='modal'>
-  <div class="modal show {{clazz}}">
+  <div class="modal show {clazz}">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" on-click={{this.close()}} data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">{{title}}</h4>
+          <button type="button" class="close" on-click={this.close()} data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">{title}</h4>
         </div>
         <div class="modal-body">
-          {{#include this.content || content }}
+          {#include this.content || content }
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" on-click={{this.close()}} >Close</button>
-          <button type="button" class="btn btn-primary" on-click={{this.confirm()}}>Confirm</button>
+          <button type="button" class="btn btn-default" on-click={this.close()} >Close</button>
+          <button type="button" class="btn btn-primary" on-click={this.confirm()}>Confirm</button>
         </div>
       </div>
     </div>
@@ -65,7 +65,7 @@ var Modal = Regular.extend({
 
 var modal = new Modal({
   data: {
-    content: '<input type="email" class="form-control" r-model={{email}} on-enter={{this.confirm()}}>',
+    content: '<input type="email" class="form-control" r-model={email} on-enter={this.confirm()}>',
     title: 'please confirm your email'
   }
 });

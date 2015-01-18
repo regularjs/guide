@@ -35,7 +35,9 @@ __sepecification中的关键参数__
 
 5. [String]     name: 
 
-  组件名， 使得此组件可以以这个节点名内嵌到其它组件内如 `<pager current={{current}}/>`, pager就是定义的name, __注意__ 如果template是传入的script节点，会获取节点的name属性作为组件名
+  组件名， 使得此组件可以以这个节点名内嵌到其它组件内如 `<pager current={current}/>`, pager就是定义的name, __注意__ 如果template是传入的script节点，会获取节点的name属性作为组件名
+  
+  传入这个属性相当于, Regular.component(name, Component), 即将这个组件注册到全局Regular中，使得所有组件都可以内联使用它.
 
 
 

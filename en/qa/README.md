@@ -11,7 +11,7 @@ __Example__
 ```html
 
 <div r-html="content"></div>
-<div r-html={{content}}></div>
+<div r-html={content}></div>
 
 ```
 

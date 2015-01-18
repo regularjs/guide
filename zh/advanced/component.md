@@ -19,7 +19,7 @@ regular中定义的组件是可以内嵌的, 但是这个组件必须是具名�
 一个典型的组件内嵌方式是
 
 ```html
-<pager current={{current}} total = {{total}} on-nav={{this.nav}}>
+<pager current={current} total = {total} on-nav={this.nav}>
   
 </pager>
 ```

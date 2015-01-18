@@ -9,7 +9,7 @@ __`Component.directive(<String|RegExp> name, <Object|Function> spec)`__
   - name : directive's name, also accept RegExp to match multiple attributeName.
   - Function spec(elem, value) :
     - elem:  the target element
-    - value: the attributeValue. maybe `String`(r-test ="haha" ) or`Expression` (r-test={{haha}})
+    - value: the attributeValue. maybe `String`(r-test ="haha" ) or`Expression` (r-test={haha})
     - this:  point to component self
 
 
@@ -33,7 +33,7 @@ Beacuse [`$watch`](../core/binding.md) accepts [String] and [Expression] as the 
 ```html
   <div class='preview' r-html='content'></div>
   <!-- or -->
-  <div class='preview' r-html={{content}}></div>
+  <div class='preview' r-html={content}></div>
 ```
 
 In fact, all regularjs's builtin directive accepts [String] and [Expression]. but you can have different logic betweenn them when defining your own directive.
@@ -80,7 +80,7 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
   binding the input's checked state to a boolean type field
 
   ```
-  <input type="checkbox" checked  r-model={{checked}}> Check me out (value: {{checked}})
+  <input type="checkbox" checked  r-model={checked}> Check me out (value: {checked})
   // checked = true
   ```
 
@@ -89,7 +89,7 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
   binding to input.value
 
   ```html
-  <input type="radio"value="option1" r-model={{radio}}>
+  <input type="radio"value="option1" r-model={radio}>
   ```
 
 
@@ -98,7 +98,7 @@ you can check the [r-model-example](http://jsfiddle.net/leeluolee/4y25j/) on jsf
 
   ```html
   <!-- city = 1 -->
-  <select r-model={{city}}>
+  <select r-model={city}>
     <option value="1" selected>Hangzhou</option>
     <option value="2">Ningbo</option>
     <option value="3">Guangzhou</option>
@@ -119,8 +119,8 @@ __Exmaple__
 ```javascript
 var app = new Regular({
     template:
-      "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }} >left+10</button>\
-      left:  {{left}}",
+      "<button class='btn' on-click={left=left+10} r-style={ {left: left+'px'} } >left+10</button>\
+      left:  {left}",
     data: {left:1}
 }).$inject(document.body)
 
@@ -139,7 +139,7 @@ Description
 
 > __Warning: if there is already an interpolation on `style`, the `r-style` will be overridden__
 
-> for examle . `<div style='left: {{left}}px' r-style='{left: left+"px"}'></div>`
+> for examle . `<div style='left: {left}px' r-style='{left: left+"px"}'></div>`
 
 ### 3. `r-class`
 
@@ -186,7 +186,7 @@ unescaped interpolation use innerHTML. beware of attack like `xss`.
 __Example__
 
 ```javascript
-<div class='preview' r-html={{content}}></div>
+<div class='preview' r-html={content}></div>
 ```
 
 

@@ -49,7 +49,7 @@ Regular.filter("format", filter)
 then
 
 ```html
-<p>{{time| format: 'yyyy-MM-dd HH:mm'}}</p>
+<p>{time| format: 'yyyy-MM-dd HH:mm'}</p>
 
 ```
 

@@ -34,7 +34,7 @@ Regular.directive('r-html', function(elem, value){
 ```html
   <div class='preview' r-html='content'></div>
   <!-- or -->
-  <div class='preview' r-html={{content}}></div>
+  <div class='preview' r-html={content}></div>
 ```
 
 
@@ -76,7 +76,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
   注意这个绑定的是布尔值，与节点的checked属性实现双向绑定
 
   ```
-  <input type="checkbox" checked  r-model={{checked}}> Check me out (value: {{checked}})
+  <input type="checkbox" checked  r-model={checked}> Check me out (value: {checked})
   // checked = true
   ```
 
@@ -85,7 +85,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
   与节点value实现双向绑定
 
   ```html
-  <input type="radio" value="option1" r-model={{radio}}>
+  <input type="radio" value="option1" r-model={radio}>
   ```
 
 
@@ -94,7 +94,7 @@ r-model完成的是类似`ng-model` 的双向绑定功能, 它可以绑定以下
 
   ```html
   <!-- city = 1 -->
-  <select r-model={{city}}>
+  <select r-model={city}>
     <option value="1" selected>Hangzhou</option>
     <option value="2">Ningbo</option>
     <option value="3">Guangzhou</option>
@@ -112,8 +112,8 @@ __Exmaple__
 ```javascript
 var app = new Regular({
     template: 
-      "<button class='btn' on-click={{left=left+10}} r-style={{ {left: left+'px'} }}>left+10</button>\
-      left:  {{left}}",
+      "<button class='btn' on-click={left=left+10} r-style={ {left: left+'px'} }>left+10</button>\
+      left:  {left}",
     data: {left:1}
 }).$inject(document.body)
 
@@ -158,7 +158,7 @@ __Example__
 __Example__
 
 ```javascript
-<div class='preview' r-html={{content}}></div>
+<div class='preview' r-html={content}></div>
 ```
 
 

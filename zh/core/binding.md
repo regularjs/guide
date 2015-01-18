@@ -180,13 +180,7 @@ __Example__:
 
 两个独立的分页器实现数据联动
 
-```javascript
-
- // insert
-var pager = new Pager({data: {total: 100, current:20}}).$inject('#bind1');
-var pager2 = new Pager({data: {total: 50, current:2}}).$inject('#bind1');
-
-var pager3 = new Pager({data: {total: 100, current:20}}).$inject('#bind2');
+```javascript // insert var pager = new Pager({data: {total: 100, current:20}}).$inject('#bind1'); var pager2 = new Pager({data: {total: 50, current:2}}).$inject('#bind1'); var pager3 = new Pager({data: {total: 100, current:20}}).$inject('#bind2');
 var pager4 = new Pager({data: {total: 50, current:2}}).$inject('#bind2');
 
 var pager5 = new Pager({data: {total: 100, current:2}}).$inject('#bind3');
@@ -216,11 +210,4 @@ for(var i = 0; i < 10; i++){
 ```
 
 [|DEMO|](http://fiddle.jshell.net/leeluolee/7wgUf/)
-
-其中pager的实现在[这里](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
-
-
-
-
-
 

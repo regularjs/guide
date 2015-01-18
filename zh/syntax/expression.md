@@ -5,7 +5,7 @@
 
 regular支持的表达式几乎与angular相一致，与angular不同的是， regular最终parse后的结果是一个function body，而不是angular中嵌套的闭包，这样可以使得解析结果可以被序列化和传递.
 
-比如`{{user.id|lowercase}}`在parse后获得的数据结构是
+比如`{user.id|lowercase}`在parse后获得的数据结构是
 
 
 ```js
@@ -58,11 +58,12 @@ regular支持的表达式几乎与angular相一致，与angular不同的是， r
 
   // component as context
   var component = new Regular({
-  data: {
-    user:{
-      name: 'leeluolee'
+    data: {
+      user:{
+        name: 'leeluolee'
+      }
     }
-  }});
+  });
 
   expr.set(component, 'daluobo');
 
@@ -86,21 +87,21 @@ regular支持的表达式几乎与angular相一致，与angular不同的是， r
 由于脏检查机制的性能极大的依赖于监听器的数量，为了精确控制监听器的数量，regularjs引入了一个新的表达式语法元素`@()`提供了bind-once的表达式的支持. 这个被监听的表达式在检查到一次值变化就会被接触监听。 
 
 
-你可以使用`@()`在任何使用到Expression的地方，例如`if`, `list`, `include`, `{{}}`等 
+你可以使用`@()`在任何使用到Expression的地方，例如`if`, `list`, `include`, `{}`等 
 
 
 __Example__
 
 ```html
-<div>{{ @(title) }}</div> // the interpolation only work once
+<div>{ @(title) }</div> // the interpolation only work once
 
-{{#if @(test)}}  // the if rule is evaluated once
+{#if @(test)}  // the if rule is evaluated once
 //...
-{{/if}}
+{/if}
 
-{{#list @(items) as item}}  // the list rule is evaluated once
+{#list @(items) as item}  // the list rule is evaluated once
 //...
-{{/list}}
+{/list}}
 
 ```
 

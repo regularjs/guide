@@ -80,10 +80,10 @@ var component = regular.extend({
 
 var Component = Regular.extend({
   template: 
-    "<div>fullname: <input r-model='fullname'></div>"+
-    "<div>first: <input r-model='first'></div>"+
-    "<div>last: <input r-model='last'></div>"+
-    "<div>Wellcome! {{wellcome}}</div>",
+    "<div>fullname: <input r-model={fullname}></div>"+
+    "<div>first: <input r-model={first}></div>"+
+    "<div>last: <input r-model={last}></div>"+
+    "<div>Wellcome! {wellcome}</div>",
   computed: {
     fullname: {
       get: function(data){

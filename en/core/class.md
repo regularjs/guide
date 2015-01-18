@@ -52,7 +52,7 @@ __Important parts of sepecification:__
   you can also bind the 'destroy' event to do the work.
 
   ```javascript
-  this.$on('destroy', function(){...})
+  this.$on('$destroy', function(){...})
   ```
 
 

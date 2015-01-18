@@ -7,9 +7,9 @@ list内建规则
 __Syntax__: 
 
 ```
-{{#list sequence as item}}
+{#list sequence as item}
   ...block...
-{{/list}}
+{/list}
 
 ```
 
@@ -29,9 +29,9 @@ __Example__
 | 
 
 ```xml
-{{#list items as item}}
- <span class='index'>{{item_index}}:</span>{{item}}
-{{/list}}
+{#list items as item}
+ <span class='index'>{item_index}:</span>{item}
+{/list}
 
 
 ```
@@ -58,9 +58,9 @@ __where__
 __Example__
 
 ```xml
-{{#list 1..3 as item}}
-  <p>{{item}}</p>
-{{/list}}
+{#list 1..3 as item}
+  <p>{item}</p>
+{/list}
 ```
 
 will output `1 2 3`
@@ -69,17 +69,17 @@ will output `1 2 3`
 
 ###注意点
 
-list内部实现会在每次iterate时与angular类似会创建一个新的匿名组件(类似于ng-repeat中创建的子scope), 对外层数据的访问是通过原型继承的方式，所以修改原始类型的数据如字符，将不会对父组件产生影响，你可以通过引用类型的属性或函数调用来避免这个缺陷, 其中`this`对象仍然指向外层组件
+list内部实现会在每次iterate时与angular类似会创建一个新的匿名组件(类似于ng-repeat中创建的子scope), 对外层数据的访问是通过原型继承的方式，所以修改原始类型的数据如字符，将不会对父组件产生影响，你可以通过引用类型的属性或函数调用来避免这个缺陷,　不过幸运的是， `this`仍然指向的是正确的组件.
 
 __Example__
 
 ```xml
 <!-- every iteration , this block will create a new Component, then the `item`, `$index` can be remained -->
 
-{{#list items as item}}
-{{$index}: {{item.context}}}
-<a on-click={{name = 1}}>not affect outer</a>  no affect outer;
-<a on-click={{user.name = 'haha'}}>affect outer</a> can affect outer
-<a on-click={{this.change(user)}}>call function</a> call outer component, and context also at outer component 
-{{/list}}
+{#list items as item}
+{item_index}: {item.context}
+<a on-click={name = 1}}>not affect outer</a>  no affect outer;
+<a on-click={user.name = 'haha'}}>affect outer</a> can affect outer
+<a on-click={this.change(user)}}>call function</a> call outer component, and context also at outer component 
+{/list}}
 ```
