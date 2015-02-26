@@ -1,10 +1,5 @@
 # event——ui事件体系
 
-所有的`on-`开头的属性都会被作为ui事件处理
-
-> <h5>tip</h5>
-> 由于Component.directive支持正则匹配属性名, 所以内部实现中ui事件绑定其实是一种特殊的指令
-
 
 
 ## 1. 对于未自定义过的ui事件
@@ -30,8 +25,8 @@
 
 handler接受两个参数:
 
-  -elem   attached element
-  -fire   一个函数，每当这个函数调用，将会触发这个自定义事件，传入fire的参数则会作为[`$event`](#$event)对象
+-elem   attached element
+-fire   一个函数，每当这个函数调用，将会触发这个自定义事件，传入fire的参数则会作为[`$event`](#$event)对象
 
 注意如果需要做 __销毁工作__ ，与指令一样，你需要返回一个销毁函数
 

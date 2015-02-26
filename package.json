@@ -8,7 +8,8 @@
   },
   "author": "leeluolee <oe.zheng@gmail.com>",
   "dependencies": {
-    "gulp-gh-pages": "^0.3.3",
-    "gulp": "3.6.x"
+    "gitbook-plugin-reveal": "0.0.3",
+    "gulp": "3.6.x",
+    "gulp-gh-pages": "^0.3.3"
   }
 }

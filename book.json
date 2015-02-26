@@ -1,2 +1,7 @@
 {
+    "plugins": [ "-mathjax"],
+    "variables": {
+        "reference": "https://regularjs.github.io/reference",
+        "ref": "https://regularjs.github.io/reference"
+    }
 }
