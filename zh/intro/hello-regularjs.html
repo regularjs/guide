@@ -1,0 +1,746 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>◉ DEMO: HelloRegular | regularjs指南</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.5.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../basic/README.html" />
+    
+    
+    <link rel="prev" href="../intro/what.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="1424935817695">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	    
+            <li>
+                <a href="http://github.com/regularjs/regular" target="blank" class="custom-link">➭ Github</a>
+            </li>
+    	
+    	    
+            <li>
+                <a href="http://regularjs.github.io/reference" target="blank" class="custom-link">➭ API and Syntax</a>
+            </li>
+    	
+    	
+
+        
+        <li class="divider"></li>
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="intro/README.html">
+            
+                
+                    <a href="../intro/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         你好， Regularjs
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="intro/what.html">
+            
+                
+                    <a href="../intro/what.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         Regularjs是什么
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="1.2" data-path="intro/hello-regularjs.html">
+            
+                
+                    <a href="../intro/hello-regularjs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         ◉ DEMO: HelloRegular
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="basic/README.html">
+            
+                
+                    <a href="../basic/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         指令与过滤器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="basic/directive.html">
+            
+                
+                    <a href="../basic/directive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         指令
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="basic/filter.html">
+            
+                
+                    <a href="../basic/filter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="events/README.html">
+            
+                
+                    <a href="../events/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         事件系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="events/dom.html">
+            
+                
+                    <a href="../events/dom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Dom事件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="events/component.html">
+            
+                
+                    <a href="../events/component.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         组件事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="component/README.html">
+            
+                
+                    <a href="../component/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         组件系统(文档未完成)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="animation/README.html">
+            
+                
+                    <a href="../animation/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         动画系统(文档未完成)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="animation/syntax.html">
+            
+                
+                    <a href="../animation/syntax.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         完整动画指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="animation/squence.html">
+            
+                
+                    <a href="../animation/squence.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         不同节点间的动画序列
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="template/README.html">
+            
+                
+                    <a href="../template/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         如何优雅的管理你的模板
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="modular/README.html">
+            
+                
+                    <a href="../modular/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         轻量级的模块化
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="modular/class.html">
+            
+                
+                    <a href="../modular/class.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         基于类的组件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="modular/extension.html">
+            
+                
+                    <a href="../modular/extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         扩展/可见性
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="modular/plugin.html">
+            
+                
+                    <a href="../modular/plugin.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         如何定义插件？
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="modular/review.html">
+            
+                
+                    <a href="../modular/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="concept/README.html">
+            
+                
+                    <a href="../concept/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         重要概念(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="concept/dirty.html">
+            
+                
+                    <a href="../concept/dirty.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         脏检查: 数据绑定的秘密
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="concept/lifecycle.html">
+            
+                
+                    <a href="../concept/lifecycle.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         组件生命周期
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="#">
+            
+                
+                    <a href="../#">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         一大波DEMO(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="demo/todomvc.html">
+            
+                
+                    <a href="../demo/todomvc.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         ◉ 50行代码实现的todomvc
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >regularjs指南</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_451">
+                    
+                        <h1 id="">快速起步</h1>
+<p>这一小节，我们将实现一个简单的组件—— <strong>HelloRegular</strong> ,它用来显示友好的用户欢迎语，但是如果用户未登录的话需要提示进行登录信息，为了简单起见只需要输入用户名就可以进行登录. </p>
+<p>经过本节学习， 你将会了解: </p>
+<ol>
+<li>如何初始化regularjs页面</li>
+<li>使用<a href="https://regularjs.github.io/reference?syntax-zh#interpolation" target="_blank">插值</a></li>
+<li>使用<a href="https://regularjs.github.io/reference?syntax-zh#if" target="_blank">逻辑(if/else)</a>来切换显示</li>
+<li>使用on-xx事件绑定.</li>
+</ol>
+<h2 id="1">1.初始结构</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"hello"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/regular"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"hello"</span>&gt;</span><span class="javascript">
+  Hello, Guest
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- 引入regular.js --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://rawgit.com/regularjs/regular/master/dist/regular.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-comment">//利用Regular构建你的app吧</span>
+<span class="hljs-keyword">var</span> HelloRegular = Regular.extend({
+  template: <span class="hljs-string">'#hello'</span>
+});
+
+<span class="hljs-comment">// initialize component then $inject to #app's  bottom</span>
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> HelloRegular({
+  data: {username: <span class="hljs-string">"leeluolee"</span>}
+});
+component.$inject(<span class="hljs-string">'#app'</span>); 
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/1/" target="_blank"><strong>&#x261E; 查看结果</strong></a></p>
+<ul>
+<li><p><strong><code>Regular.extend</code></strong></p>
+<p>Regular.extend用来创建一个继承自Regular的组件类，所有传入extend的属性都会成为此组件类的原型属性</p>
+</li>
+</ul>
+<ul>
+<li><p><code>template</code></p>
+<p>一般来讲一个组件会需要一个模板来描述组件的结构，这里我们传入包含模板的容器节点的选择器(你也可以直接传入模板字符串)</p>
+</li>
+</ul>
+<ul>
+<li><p><code>data</code></p>
+<p>组件component可能需要一些初始化状态，这些数据我们可以在实例化组件时作为<code>data</code>传入。</p>
+<blockquote>
+<p>需要注意的是在实例化组件传入的参数会被作为实例属性, 所以可以在这里覆盖extend的定义(原型属性)</p>
+</blockquote>
+</li>
+</ul>
+<p>  <a name="$inject"></a></p>
+<ul>
+<li><p><code>$inject(node[, direction])</code></p>
+<p>这是个组件的实例方法，会将组件插入到目标节点制定位置</p>
+<ul>
+<li><code>bottom</code>[默认参数]: 作为node的 lastChild插入</li>
+<li><code>top</code>: 作为node的firstChild 插入</li>
+<li><code>after</code>: 作为node的nextSibling插入</li>
+<li><code>before</code>: 作为previousSibling插入</li>
+</ul>
+</li>
+</ul>
+<h2 id="2">2.显示用户姓名——插值</h2>
+<p>目前为止，这个组件仅仅只是显示了一个静态信息，我们在模板中简单添加一个<strong><a href="sytax/inteplation.html">插值</a></strong>来显示用户信息, 需要注意的是regularjs的内建模板是<strong>&#39;活动&#39;</strong>的，如果你更新了数据状态， ui将会自动更新。</p>
+<pre><code class="lang-html">  Hello, {username}
+</code></pre>
+<p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/2/" target="_blank"><strong>&#x261E; 查看结果</strong></a></p>
+<h2 id="3-ifelse">3. 处理未登录的情况——if/else逻辑控制</h2>
+<p>接下来我们处理未登录的用户情况</p>
+<pre><code class="lang-xml">{#if username}
+  Hello, {username}.
+{#else}
+  Sorry, Guest.
+{/if}
+</code></pre>
+<p>就与常规的字符串模板(例如jst)类似，模板里我们添加<code>if/else</code>来区分登录用户与游客的显示效果</p>
+<p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/3/" target="_blank"><strong>&#x261E; 查看结果</strong></a></p>
+<h2 id="4--on-click">4. 实现用户登录登出的功能—— <code>on-click</code></h2>
+<p>这里同时我们添加了两个click事件来处理用户的登录与登出逻辑,</p>
+<pre><code class="lang-html">{#if username}
+  Hello, {username}. <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{username</span> = ''}&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+{#else}
+  Sorry, Guest. Please <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.login()}</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+{/if}
+</code></pre>
+<blockquote>
+<p><strong>tips:</strong> </p>
+<p>regular中 <code>on-</code>开头的属性会被作为事件绑定处理，每当对应的ui事件触发. 会将传入的表达式运行一次(与angular的事件系统类似). 你可以通过<code>Regular.event</code>来扩展自定义ui事件,例如<code>on-tap</code>这种dom中并不原生支持的事件</p>
+</blockquote>
+<p>这里我们添加了两个用户操作:</p>
+<p><strong>登出</strong>: 由于regular的表达式支持赋值操作，这里的登出我们仅仅是对username做了清空处理。</p>
+<p><strong>登录</strong>: 模板中的this对象指向实例component本身，我们需要在extend时添加一个原型方法<strong>login</strong>来处理登录逻辑</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> HelloRegular = Regular.extend({
+  template: <span class="hljs-string">'#hello'</span>,
+  login: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.data; <span class="hljs-comment">// get data</span>
+    data.username = prompt(<span class="hljs-string">"please enter your username"</span>, <span class="hljs-string">""</span>)
+  }
+});
+</code></pre>
+<p><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/4/" target="_blank"><strong>&#x261E; 查看结果</strong></a></p>
+<h2 id="">小节</h2>
+<p>虽然这个例子非常简单， 但是基本上实现一个组件的思路大同小异</p>
+<ol>
+<li>根据需求得到静态html结构， 并将其模板化, 并结合Regular.extend将其封装成一个组件.</li>
+<li>根据业务需求添加dom事件并添加对应的组件原型方法(如上例的login)</li>
+<li>如果需要你还可能将部分可重用功能拆分为<a href="../component/README.html">子组件</a></li>
+</ol>
+<h2 id="">下一步阅读</h2>
+<ol>
+<li>或许你对为什么数据变化会反应到视图差生疑惑, 推荐你阅读<strong><a href="concept/dirty.html">脏检查： 数据绑定的秘密</a></strong></li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../intro/what.html" class="navigation navigation-prev " aria-label="Previous page: Regularjs是什么"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../basic/README.html" class="navigation navigation-next " aria-label="Next page: 指令与过滤器"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

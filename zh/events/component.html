@@ -1,0 +1,705 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>组件事件 | regularjs指南</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.5.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../component/README.html" />
+    
+    
+    <link rel="prev" href="../events/dom.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1424935817695">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	    
+            <li>
+                <a href="http://github.com/regularjs/regular" target="blank" class="custom-link">➭ Github</a>
+            </li>
+    	
+    	    
+            <li>
+                <a href="http://regularjs.github.io/reference" target="blank" class="custom-link">➭ API and Syntax</a>
+            </li>
+    	
+    	
+
+        
+        <li class="divider"></li>
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="intro/README.html">
+            
+                
+                    <a href="../intro/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         你好， Regularjs
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="intro/what.html">
+            
+                
+                    <a href="../intro/what.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         Regularjs是什么
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="intro/hello-regularjs.html">
+            
+                
+                    <a href="../intro/hello-regularjs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         ◉ DEMO: HelloRegular
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="basic/README.html">
+            
+                
+                    <a href="../basic/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         指令与过滤器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="basic/directive.html">
+            
+                
+                    <a href="../basic/directive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         指令
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="basic/filter.html">
+            
+                
+                    <a href="../basic/filter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="events/README.html">
+            
+                
+                    <a href="../events/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         事件系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="events/dom.html">
+            
+                
+                    <a href="../events/dom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Dom事件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.2" data-path="events/component.html">
+            
+                
+                    <a href="../events/component.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         组件事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="component/README.html">
+            
+                
+                    <a href="../component/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         组件系统(文档未完成)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="animation/README.html">
+            
+                
+                    <a href="../animation/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         动画系统(文档未完成)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="animation/syntax.html">
+            
+                
+                    <a href="../animation/syntax.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         完整动画指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="animation/squence.html">
+            
+                
+                    <a href="../animation/squence.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         不同节点间的动画序列
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="template/README.html">
+            
+                
+                    <a href="../template/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         如何优雅的管理你的模板
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="modular/README.html">
+            
+                
+                    <a href="../modular/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         轻量级的模块化
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="modular/class.html">
+            
+                
+                    <a href="../modular/class.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         基于类的组件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="modular/extension.html">
+            
+                
+                    <a href="../modular/extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         扩展/可见性
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="modular/plugin.html">
+            
+                
+                    <a href="../modular/plugin.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         如何定义插件？
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="modular/review.html">
+            
+                
+                    <a href="../modular/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="concept/README.html">
+            
+                
+                    <a href="../concept/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         重要概念(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="concept/dirty.html">
+            
+                
+                    <a href="../concept/dirty.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         脏检查: 数据绑定的秘密
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="concept/lifecycle.html">
+            
+                
+                    <a href="../concept/lifecycle.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         组件生命周期
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="#">
+            
+                
+                    <a href="../#">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         一大波DEMO(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="demo/todomvc.html">
+            
+                
+                    <a href="../demo/todomvc.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         ◉ 50行代码实现的todomvc
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >regularjs指南</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_449">
+                    
+                        <h1 id="">组件事件</h1>
+<p>Regularjs集成了一个轻量级的Emitter, 使得所有组件都可以使用以下接口来实现事件驱动的开发</p>
+<ul>
+<li><a href="https://regularjs.github.io/reference?api-zh#on" target="_blank">component.$on</a>: 用于添加事件监听器</li>
+<li><a href="https://regularjs.github.io/reference?api-zh#off" target="_blank">component.$off</a>: 用于解绑事件监听器</li>
+<li><a href="https://regularjs.github.io/reference?api-zh#emit" target="_blank">component.$emit</a>: 用于触发某个事件</li>
+</ul>
+<h2 id="">模板里声明组件事件绑定</h2>
+<p>当组件以内嵌组件的方式初始化时， 它的事件的绑定方式与DOM事件非常类似, 即</p>
+<p><strong>所有</strong>组件上<strong>的<code>on-</code>开头的属性都会被作为组件事件绑定处理</strong>(其它属性会作为data的属性传入)</p>
+<p>假设已经注册了一个名为<code>pager</code>的翻页器组件</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">this.refresh</span>() }&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>这个例子的意思是， 每当作为内嵌组件的modal抛出<code>confirm</code>事件(通过<a href="https://regularjs.github.io/reference?api-zh#emit" target="_blank">$emit(&#39;confirm&#39;)</a>), 外层组件会运行refresh方法. </p>
+<p>既然我们已经学习了<a href="dom.html">Dom 事件</a> , 相信对这种处理方式无需赘言. </p>
+<p><a href="http://jsfiddle.net/leeluolee/y8PHE/3/" target="_blank"><strong>&#x261E; DEMO</strong></a></p>
+<p>你可能需要了解<a href="component/README.html">内嵌组件</a>的相关概念.</p>
+<h2 id="">内建生命周期内的组件事件</h2>
+<p>regularjs会在初始化时的关键阶段抛出事件</p>
+<ol>
+<li>$config: 会在compile之前触发， 你可以在此时预处理组件数据</li>
+<li>$init : 会在compile之后触发， 此时， dom结构已经生成， 你可以通过ref来获取了</li>
+<li>$destroy: 会在组件被destroy时， 触发</li>
+<li>$update: 在一次digest阶段， 如果数据有更新(无论是什么数据), 会触发一次<code>$update</code>事件</li>
+</ol>
+<p><code>$</code>前缀是为了区分这个是个内建的事件. </p>
+<p>下一节，我们会学习下DOM事件与组件事件的相同点与不同点.</p>
+<h2 id="dom">与dom事件的异同</h2>
+<h3 id="">相同点</h3>
+<p>取决于你传入的值是表达式插值还是普通属性，regularjs会做不同的响应处理，例如</p>
+<ul>
+<li><p>表达式(e.g. <code>on-click={this.remove()}</code>)</p>
+<p>如果传入的是表达式，与angular类似，一旦事件触发，此表达式会被运行一次。</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.remove(index)}</span>&gt;</span>Delte<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p> 在你的组件中定义remove逻辑</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend({
+  template:<span class="hljs-string">'example'</span>,
+  remove: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index)</span></span>{
+    <span class="hljs-keyword">this</span>.data.list.splice(index ,<span class="hljs-number">1</span>);
+    <span class="hljs-comment">// other logic</span>
+  }
+})
+</code></pre>
+</li>
+</ul>
+<p>  一般来讲推荐这种方式来处理事件. </p>
+<ul>
+<li><p>非表达式(e.g. <code>on-click=&quot;remove&quot;</code>)</p>
+<p>当传入的不是表达式，事件会被代理到组件的事件系统中，你可以使用<code>$on</code>去处理此事件</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-html"> <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">"remove"</span>&gt;</span>Delte<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>然后利用<code>$on</code>方法来处理事件</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend({
+ template:<span class="hljs-string">'example'</span>,
+ init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+   <span class="hljs-keyword">this</span>.$on(<span class="hljs-string">"remove"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($event)</span></span>{
+       <span class="hljs-comment">// your logic here</span>
+   })
+ }
+})
+</code></pre>
+</li>
+</ul>
+<h3 id="">当然它们也有所不同</h3>
+<ol>
+<li>组件事件是由<code>$emit</code>方法抛出, 而DOM由用户触发， 由浏览器抛出(除了自定义事件)</li>
+<li>dom事件由于DOM本身的特点是可以冒泡的， 但是组件事件没有冒泡这一机制。</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../events/dom.html" class="navigation navigation-prev " aria-label="Previous page: Dom事件"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../component/README.html" class="navigation navigation-next " aria-label="Next page: 组件系统(文档未完成)"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

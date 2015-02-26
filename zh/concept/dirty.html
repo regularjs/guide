@@ -1,0 +1,712 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>脏检查: 数据绑定的秘密 | regularjs指南</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.5.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="../concept/lifecycle.html" />
+    
+    
+    <link rel="prev" href="../concept/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="8.1" data-basepath=".." data-revision="1424935817695">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	    
+            <li>
+                <a href="http://github.com/regularjs/regular" target="blank" class="custom-link">➭ Github</a>
+            </li>
+    	
+    	    
+            <li>
+                <a href="http://regularjs.github.io/reference" target="blank" class="custom-link">➭ API and Syntax</a>
+            </li>
+    	
+    	
+
+        
+        <li class="divider"></li>
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="intro/README.html">
+            
+                
+                    <a href="../intro/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         你好， Regularjs
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="intro/what.html">
+            
+                
+                    <a href="../intro/what.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         Regularjs是什么
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="intro/hello-regularjs.html">
+            
+                
+                    <a href="../intro/hello-regularjs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         ◉ DEMO: HelloRegular
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="basic/README.html">
+            
+                
+                    <a href="../basic/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         指令与过滤器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="basic/directive.html">
+            
+                
+                    <a href="../basic/directive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         指令
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="basic/filter.html">
+            
+                
+                    <a href="../basic/filter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="events/README.html">
+            
+                
+                    <a href="../events/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         事件系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="events/dom.html">
+            
+                
+                    <a href="../events/dom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Dom事件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="events/component.html">
+            
+                
+                    <a href="../events/component.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         组件事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="component/README.html">
+            
+                
+                    <a href="../component/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         组件系统(文档未完成)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="animation/README.html">
+            
+                
+                    <a href="../animation/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         动画系统(文档未完成)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="animation/syntax.html">
+            
+                
+                    <a href="../animation/syntax.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         完整动画指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="animation/squence.html">
+            
+                
+                    <a href="../animation/squence.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         不同节点间的动画序列
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="template/README.html">
+            
+                
+                    <a href="../template/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         如何优雅的管理你的模板
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="modular/README.html">
+            
+                
+                    <a href="../modular/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         轻量级的模块化
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="modular/class.html">
+            
+                
+                    <a href="../modular/class.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         基于类的组件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="modular/extension.html">
+            
+                
+                    <a href="../modular/extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         扩展/可见性
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="modular/plugin.html">
+            
+                
+                    <a href="../modular/plugin.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         如何定义插件？
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="modular/review.html">
+            
+                
+                    <a href="../modular/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="concept/README.html">
+            
+                
+                    <a href="../concept/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         重要概念(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="8.1" data-path="concept/dirty.html">
+            
+                
+                    <a href="../concept/dirty.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         脏检查: 数据绑定的秘密
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="concept/lifecycle.html">
+            
+                
+                    <a href="../concept/lifecycle.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         组件生命周期
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="#">
+            
+                
+                    <a href="../#">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         一大波DEMO(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="demo/todomvc.html">
+            
+                
+                    <a href="../demo/todomvc.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         ◉ 50行代码实现的todomvc
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >regularjs指南</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_444">
+                    
+                        <h1 id="-">脏检查: 数据绑定的秘密</h1>
+<p>事实上，regularjs的数据绑定实现基于基于脏检查. 它非常接近于angularjs</p>
+<blockquote>
+<p>脏检查即一种不关心你如何以及何时改变的数据， 只关心在<strong>特定的检查阶段</strong>数据是否改变的数据监听技术.</p>
+</blockquote>
+<p>本节包含内容</p>
+<ul>
+<li>什么是脏检查</li>
+<li>脏检查是如何进行的</li>
+<li>何时进行脏检查</li>
+<li>regularjs为何选择脏检查</li>
+</ul>
+<p>这里会统一使用angularjs生态圈的术语，方便开发者理解</p>
+<h2 id="">什么是脏检查</h2>
+<p>相信对于熟悉angularjs的开发者而言， 脏检查这个概念不会太陌生. </p>
+<p>以插值<code>{post.title}</code>为例， 当regularjs在compile阶段遇到这个语法数元素时， 内部的处理逻辑如下.</p>
+<pre><code class="lang-javascript">
+walkers.expression = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( ast )</span></span>{
+  <span class="hljs-keyword">var</span> node = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">""</span>);
+  <span class="hljs-keyword">this</span>.$watch(ast, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(newval)</span></span>{
+    dom.text(node, <span class="hljs-string">""</span> + (newval == <span class="hljs-literal">null</span>? <span class="hljs-string">""</span>: <span class="hljs-string">""</span> + newval) );
+  })
+  <span class="hljs-keyword">return</span> node;
+}
+</code></pre>
+<p>这段代码很好理解，即遇到插值时，我会创建一个textNode， 每当数据变化时，修改textNode的textContent值.</p>
+<p>其中</p>
+<ul>
+<li>ast: 表达式: 即<code>post.title</code>, 反映在组件就是component.data.post.title.</li>
+<li><a href="https://regularjs.github.io/reference?api-zh#watch" target="_blank">$watch</a>: 添加一个数据监听器(watcher对象)</li>
+</ul>
+<p>那么问题来了, 怎么判断值发生改变了？ </p>
+<h2 id="-digest">脏检查如何进行？ 不提不提的Digest阶段</h2>
+<p>首先, 上例通过<code>$watch</code>接口产生的watcher对象看起来是这样的</p>
+<pre><code class="lang-js">
+{
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(context)</span></span>{...}  <span class="hljs-comment">//获得表达式当前求值, 此函数在解析时，已经生成</span>
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{} <span class="hljs-comment">// 有些表达式可以生成set函数， 用于处理赋值, 这个一般用于双向绑定的场景</span>
+  once: <span class="hljs-literal">false</span> <span class="hljs-comment">// 此监听器是否只生效一次</span>
+  last: <span class="hljs-literal">undefined</span><span class="hljs-comment">// 上一次表达式的求值结果</span>
+  fn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(newvalue, oldvalue)</span></span>{} <span class="hljs-comment">// 即你传入$watch的第二个参数, 当值改变时， 会调用此函数</span>
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>然后我们要提到内部的一个非常重要的阶段——digest阶段, 当系统进入此阶段时，将会进行数据检查, 它的处理流程如下: </p>
+<ol>
+<li>标记<code>dirty = false</code></li>
+<li>遍历所有通过<code>component.$watch</code>绑定的数据观察者watcher, 对比当前值<code>watcher.get(component)</code>与老值<code>watcher.last</code><ul>
+<li>如果值发生改变, 运行绑定的监听器 - <code>watcher.fn(newvalue, oldvalue)</code>, 并导致<code>__dirty__=true</code>. 设置<code>watcher.last=newvalue</code></li>
+<li>进入下一个watcher的检查</li>
+</ul>
+</li>
+<li>遍历检查一轮后， 如果<code>dirty===true</code>, 我们重新进入步骤1. 否则进入步骤4.</li>
+<li>完成脏检查</li>
+</ol>
+<p>好， 现在我们了解数据检查的内部流程了， 但是<strong>何时进入digest阶段</strong></p>
+<h2 id="">何时进行脏检查</h2>
+<p>有基本的javascript基础的同学都知道， 在姗姗不来的ES7<code>Object.observe</code>方法没有到来时(但是别对<code>Object.observe</code>抱太大得期望， 它不会改变目前类mvvm框架的格局， 我后续会写一篇文章说明)， 当我们对对象属性进行赋值时， 我们是无法知道数据发生改变了的， 所以digest阶段必然是 <strong>主动进入的</strong> .</p>
+<p>在regularjs中， digest阶段是由<a href="https://regularjs.github.io/reference?api-zh#update" target="_blank"><code>$update</code></a>方法触发的.</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular();
+
+component.data.name = <span class="hljs-string">'leeluolee'</span>
+
+<span class="hljs-comment">// you need call $update to Synchronize data and view </span>
+component.$update();
+</code></pre>
+<p>值得庆幸的是，大部分情况下都会自动进入digest阶段.比如事件、timeout模块等等. </p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{blog.title='Hello'}</span>&gt;</span>{blog.title}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>当点击节点后， 内容区会变成Hello.</p>
+<h2 id="-">题外话： 为什么使用脏检查</h2>
+<ol>
+<li>脏检查完全不关心你改变数据的方式, 而常规的set, get的方式则会强加许多限制</li>
+<li>脏检查可以实现批处理完数据之后，再去统一更新view.</li>
+<li>脏检查其实比 GET/SET 更容易实现. 脏检查是个单向的检查流程(请不要和双向绑定发生混淆), 可以实现<strong>任意复杂度的表达式支持</strong>. 而get/set的方式则需要处理复杂依赖链 , 基本上表达式支持都是阉割的(使用时就像踩雷).</li>
+</ol>
+<p>但是很显然， 脏检查是低效的, 它的效率基本上取决于你绑定的观察者数量, 在regularjs中， 你可以通过<a href="https://regularjs.github.io/reference?syntax-zh#bind-once" target="_blank"><code>@(Expression)</code></a>元素来控制你的观察者数量.</p>
+<p>然而结合这种类mvvm系统中， 他又是高效的. 因为监听模式带来了dom的局部更新， 而dom操作恰恰又是隐藏的性能瓶颈所在.</p>
+<p><strong>regularjs实际上在解析时，已经提取了表达式的依赖关系， 在未来Observe到来时， 可以调整为脏检查 + 依赖计算的方式</strong></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../concept/README.html" class="navigation navigation-prev " aria-label="Previous page: 重要概念(陆续更新)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../concept/lifecycle.html" class="navigation navigation-next " aria-label="Next page: 组件生命周期"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

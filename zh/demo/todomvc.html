@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>◉ 50行代码实现的todomvc | regularjs指南</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.5.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    
+    <link rel="prev" href="../#" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-level="9.1" data-basepath=".." data-revision="1424935817695">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	    
+            <li>
+                <a href="http://github.com/regularjs/regular" target="blank" class="custom-link">➭ Github</a>
+            </li>
+    	
+    	    
+            <li>
+                <a href="http://regularjs.github.io/reference" target="blank" class="custom-link">➭ API and Syntax</a>
+            </li>
+    	
+    	
+
+        
+        <li class="divider"></li>
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="intro/README.html">
+            
+                
+                    <a href="../intro/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         你好， Regularjs
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="intro/what.html">
+            
+                
+                    <a href="../intro/what.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         Regularjs是什么
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="intro/hello-regularjs.html">
+            
+                
+                    <a href="../intro/hello-regularjs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         ◉ DEMO: HelloRegular
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="basic/README.html">
+            
+                
+                    <a href="../basic/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         指令与过滤器
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="basic/directive.html">
+            
+                
+                    <a href="../basic/directive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         指令
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="basic/filter.html">
+            
+                
+                    <a href="../basic/filter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="events/README.html">
+            
+                
+                    <a href="../events/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         事件系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="3.1" data-path="events/dom.html">
+            
+                
+                    <a href="../events/dom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         Dom事件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="events/component.html">
+            
+                
+                    <a href="../events/component.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                         组件事件
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="component/README.html">
+            
+                
+                    <a href="../component/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         组件系统(文档未完成)
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="animation/README.html">
+            
+                
+                    <a href="../animation/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         动画系统(文档未完成)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="animation/syntax.html">
+            
+                
+                    <a href="../animation/syntax.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         完整动画指南
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="animation/squence.html">
+            
+                
+                    <a href="../animation/squence.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         不同节点间的动画序列
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="template/README.html">
+            
+                
+                    <a href="../template/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         如何优雅的管理你的模板
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="modular/README.html">
+            
+                
+                    <a href="../modular/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         轻量级的模块化
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="modular/class.html">
+            
+                
+                    <a href="../modular/class.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         基于类的组件
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="modular/extension.html">
+            
+                
+                    <a href="../modular/extension.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         扩展/可见性
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="modular/plugin.html">
+            
+                
+                    <a href="../modular/plugin.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         如何定义插件？
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="modular/review.html">
+            
+                
+                    <a href="../modular/review.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         小节
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="concept/README.html">
+            
+                
+                    <a href="../concept/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         重要概念(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="concept/dirty.html">
+            
+                
+                    <a href="../concept/dirty.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         脏检查: 数据绑定的秘密
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8.2" data-path="concept/lifecycle.html">
+            
+                
+                    <a href="../concept/lifecycle.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                         组件生命周期
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="#">
+            
+                
+                    <a href="../#">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         一大波DEMO(陆续更新)
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="9.1" data-path="demo/todomvc.html">
+            
+                
+                    <a href="../demo/todomvc.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         ◉ 50行代码实现的todomvc
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >regularjs指南</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_434">
+                    
+                        <h2 id="">前言</h2>
+<p>现在市面上充斥了越来越多的javascript框架，给开发者的技术选型带来极大的选择成本，<a href="http://todomvc.com/" target="_blank">todomvc</a>在这个环境下应运而生. </p>
+<p>由于todomvc有一个完整的实现定义，它复杂度适中，大概就是平时开发的一个组件的功能复杂度，开发者可以轻松对各个框架的代码做对比，同时由于功能一致，也可以进行各框架之间的<a href="http://regularjs.github.io/perf/todomvc-benchmark/index.html" target="_blank">性能对比(当然这个测试案例其实并没有很大的实际意义)</a>. </p>
+<p><img src="http://todomvc.com/site-assets/screenshot.png" alt="todomvc"></p>
+<!-- more-->
+<p>接下来这篇指南会一步步的带大家使用<a href="http://regularjs.github.io/" target="_blank">Regularjs</a>按照规范实现一个完整的todomvc的app.</p>
+<h2 id="-">第一步: 静态页面</h2>
+<p>第一步，我们需要一个完整的静态页面作为后续逻辑的基础，这里我们不再详细介绍如何实现这个页面，直接从todomvc的官网copy一份静态页面下来.</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--引入todomvc.css--&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"https://rawgit.com/tastejs/todomvc-app-css/master/index.css"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todoapp"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>TODOMVC<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"new-todo"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"What needs to be done?"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"toggle-all"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"toggle-all"</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-list"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"completed"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>sleep<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>work<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"footer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-count"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      item left
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"filters"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"selected"</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"clear-completed"</span>&gt;</span>Clear completed (1)<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"info"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Double-click to edit a todo<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Created by @leeluolee<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+    Part of
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://todomvc.com"</span>&gt;</span>TodoMVC<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- 引入regularjs --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"https://rawgit.com/regularjs/regular/master/dist/regular.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>你可以直接保存成index.html来查看效果,也直接在<a href="http://codepen.io/leeluolee/pen/EuHcd" target="_blank">codepen中查看</a></p>
+<h2 id="-model">第二步: 视图(模板)与数据model分离</h2>
+<p>按以往的经验，我们应该使用jQuery等框架来一个个绑定节点处理业务逻辑了.这样会带来很多的问题，一旦你去绑定了大量的dom事件和进行了过多的dom操作，往往会带你进入难以维护的深渊，我们可以使用模板来强制将model(模型)与视图(view)分开。</p>
+<p>所以这一步，我们什么都不做，仅仅只是将上面的静态页面转由regularjs模板生成.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todoapp"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'template/regular'</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">'todomvc'</span>&gt;</span><span class="javascript">
+  &lt;div&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>TODOMVC<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"new-todo"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"What needs to be done?"</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"toggle-all"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"toggle-all"</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-list"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"completed"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>sleep<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span>work<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"footer"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-count"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+      item left
+    <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"filters"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"selected"</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">""</span>&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"clear-completed"</span>&gt;</span>Clear completed (1)<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>然后我们利用regularjs来compile这个模板</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> TodoMVC = Regular.extend({
+    template: <span class="hljs-string">"#todomvc"</span>
+})
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> TodoMVC({
+  data: {}
+}).$inject(<span class="hljs-string">'#todoapp'</span>);
+</code></pre>
+<p>在codepen中查看结果</p>
+<p>其中<code>Regular.extend</code>用于定义一个组件，最基本的情况就是指定一个模板(template字段)，而<code>new TodoMVC</code>相当于是compile这个组件，一般我们会在这里传入<code>data</code>模型，我们同时将compile后的组件插入到节点<code>#todoapp</code>中.</p>
+<p>事实上大家都发现了，这里我们完全没有做额外的逻辑，但是这是将view与model分开的关键一步.</p>
+<p><a href="http://codepen.io/leeluolee/pen/xvCjm" target="_blank">DEMO2</a></p>
+<h2 id="-list">第三步: 使用#list指令来处理列表</h2>
+<p>我们发现，很明显的model可以抽象成一份todos的数组，所以我们的第一步是使用list来处理列表逻辑(这里我们省略了其余部分的模板，只列出了li部分的逻辑)</p>
+<pre><code class="lang-html">....
+{#list todos as todo}
+<span class="hljs-tag">&lt;<span class="hljs-title">li</span>  <span class="hljs-attribute">r-class</span>=<span class="hljs-value">{</span> {'<span class="hljs-attribute">completed</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.completed</span>, '<span class="hljs-attribute">editing</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.editing</span>} }&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todo.completed</span> }&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">on-dblclick</span>=<span class="hljs-value">{todo.editing</span> = <span class="hljs-attribute">true</span>}&gt;</span>{ todo.description }<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todos.splice</span>(<span class="hljs-attribute">todo_index</span>,<span class="hljs-attribute">1</span>) } <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">on-enter</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todo.editing</span> = <span class="hljs-attribute">false</span> } <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{todo.description}</span> <span class="hljs-attribute">autofocus</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+{/list}
+
+.....
+</code></pre>
+<p>list规则用于处理循环逻辑，完整描述可以查看<a href="http://regularjs.github.io/guide/zh/syntax/list.html" target="_blank">Regularjs指南的list部分</a>。 这里我们也应用到了最基础的<a href="http://regularjs.github.io/guide/zh/syntax/inteplation.html" target="_blank">插值</a>(<code>{}</code>)</p>
+<p>我们传入一个todos的假数据</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> todos = [
+    {completed: <span class="hljs-literal">true</span>, description: <span class="hljs-string">"sleep"</span> },
+    {completed: <span class="hljs-literal">false</span>, description: <span class="hljs-string">"work"</span> }
+]
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> TodoMVC({
+    data: {todos: todos}
+}).$inject(<span class="hljs-string">"#todoapp"</span>)
+</code></pre>
+<p><a href="http://codepen.io/leeluolee/pen/krzjc" target="_blank">DEMO3</a></p>
+<p>可以看到我们同时利用directive处理了一些业务逻辑</p>
+<ol>
+<li><code>r-class</code>： 属于对象表达式，每当值为真，添加对应的键作为class</li>
+<li><code>r-model</code>: 使表单项与某字段形成双向绑定</li>
+<li><code>on-xx</code>: 绑定事件</li>
+</ol>
+<p>regularjs的parse是基于字符串的，它输出包含完整信息的ast给基于dom的compiler使用，这样其实输出的内容是不会包含一些常规dom-based模板的placeholder信息的(比如angular的<code>ng-xx</code>).</p>
+<p>到这一步，其实可以发现，我们可以处理一部分业务逻辑了，比如</p>
+<ol>
+<li>双击编辑</li>
+<li>回车完成编辑</li>
+<li>标记完成</li>
+<li>删除指定的todo项(利用todo_index下标，它的命名取决于你定义的列表项的名称加<code>_index</code>)</li>
+</ol>
+<p>regularjs的数据驱动是基于代码脏检查的(与angular一致)，所以你可以直接操作裸数据来完成状态变更.</p>
+<h2 id="-">第四步： 完善我们的组件业务逻辑</h2>
+<p>目前，除了中间列表部分的view，其它部分的数据都没有完成数据联动. 我们遗留的业务逻辑有:</p>
+<ol>
+<li>点击下方的<code>All Active Completed</code>面板要完成todos面板的切换来分别显示所有、未完成、完成的todo列表</li>
+<li>上面的input可以进行新建todo</li>
+<li>切换左上角的checkbox可以进行标记全部和取消编辑全部的操作</li>
+<li>点击右下角的clearComplete 应该可以删除所有完成的列表项</li>
+</ol>
+<p>一个组件的业务逻辑(对于一个mvvm模式的组件来讲，业务逻辑应该是纯数据操作)应该是在定义时就进行确定. 我们在extend时定义这些业务.</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> TodoMVC = Regular.extend({
+    template: <span class="hljs-string">'#todomvc'</span>,
+    <span class="hljs-comment">// get the list;</span>
+    getList: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(filter)</span></span>{
+      <span class="hljs-keyword">if</span>(!filter || filter === <span class="hljs-string">'all'</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.data.todos;
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.data.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span></span>{
+        <span class="hljs-keyword">return</span> filter === <span class="hljs-string">'completed'</span>? item.completed : !item.completed;
+      });
+    },
+    <span class="hljs-comment">// toggle all todo's completed state</span>
+    toggleAll: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(sign)</span></span>{
+      <span class="hljs-keyword">this</span>.data.todos.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span></span>{
+        <span class="hljs-keyword">return</span> item.completed = !sign;
+      });
+    },
+    <span class="hljs-comment">// clear all compleled</span>
+    clearCompleted: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+      <span class="hljs-keyword">this</span>.data.todos = <span class="hljs-keyword">this</span>.data.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span></span>{
+        <span class="hljs-keyword">return</span> !item.completed
+      });
+    },
+    <span class="hljs-comment">// create a new todo</span>
+    newTodo: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(editTodo)</span></span>{
+      <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.data;
+      data.todos.unshift({description: editTodo});
+      data.editTodo = <span class="hljs-string">""</span>;
+    }
+})
+</code></pre>
+<p>至此，TodoMVC实现了以下4个对应逻辑</p>
+<ol>
+<li>getList(sign): 用于获得不同的列表</li>
+<li>newTodo(editTodo): 用于创建新的todo</li>
+<li>toggleAll(sign): 用于全部标注完成，和全部取消</li>
+<li>clearCompleted(): 用于删除所有完成的todo</li>
+</ol>
+<p>大家可以发现，所有的操作都是基于裸数据的业务逻辑，没有添加任何dom操作。</p>
+<p>但是如何使用这些函数定义呢？</p>
+<p>很简单，首先extend的函数是定义在组件原型上的，其次模板中的this是指向组件实例，即：</p>
+<p>我们可以通过this.xx()等方式在模板中调用这些逻辑定义。完整模板我们修改为</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>regular-todo<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"new-todo"</span> 
+    <span class="hljs-attribute">on-enter</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">this.newTodo</span>(<span class="hljs-attribute">editTodo</span>) } 
+    <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"What needs to be done?"</span> 
+    <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">editTodo</span> }&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"toggle-all"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> 
+    <span class="hljs-attribute">on-change</span>=<span class="hljs-value">{this.toggleAll(items.length</span> =<span class="hljs-value">==</span> <span class="hljs-attribute">this.getList</span>('<span class="hljs-attribute">completed</span>')<span class="hljs-attribute">.length</span>)} 
+    <span class="hljs-attribute">checked</span>=<span class="hljs-value">{items.length</span> =<span class="hljs-value">==</span> <span class="hljs-attribute">this.getList</span>('<span class="hljs-attribute">completed</span>')<span class="hljs-attribute">.length</span> }&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"toggle-all"</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-list"</span>&gt;</span>
+    {#list this.getList(filter) as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>  <span class="hljs-attribute">r-class</span>=<span class="hljs-value">{</span> {'<span class="hljs-attribute">completed</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.completed</span>, '<span class="hljs-attribute">editing</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.editing</span>} }&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todo.completed</span> }&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">on-dblclick</span>=<span class="hljs-value">{todo.editing</span> = <span class="hljs-attribute">true</span>}&gt;</span>
+            { todo.description }
+        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> 
+            <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todos.splice</span>(<span class="hljs-attribute">todo_index</span>,<span class="hljs-attribute">1</span>) } <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span> 
+        <span class="hljs-attribute">on-enter</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todo.editing</span> = <span class="hljs-attribute">false</span> } 
+        <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{todo.description}</span> <span class="hljs-attribute">autofocus</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    {/list}
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"footer"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-count"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{ this.getList('active').length }<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+    { this.getList('active').length === 1 ? 'item' : 'items' } left
+  <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"filters"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"{ filter === 'all'? 'selected' : '' }"</span>  <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{filter='all'}</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"{ filter === 'active'? 'selected' : '' }"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">'javascript:;'</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{filter</span> = '<span class="hljs-attribute">active</span>'}&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"{ filter === 'completed'? 'selected' : '' }"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{filter</span> = '<span class="hljs-attribute">completed</span>'}&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"clear-completed"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.clearCompleted()}</span>&gt;</span>Clear completed ({ this.getList('completed').length })<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+</code></pre>
+<p><a href="http://codepen.io/leeluolee/pen/mcHxw" target="_blank">DEMO4</a></p>
+<h2 id="-">第五步： 使用计算属性来简化我们的表达式</h2>
+<p>这里我们发现，使用了大量的相似的表达式在我们的模板里，比如为了处理全选与反选，我们引入有如此肮脏的模板代码</p>
+<pre><code class="lang-html"> <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"toggle-all"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> 
+    <span class="hljs-attribute">on-change</span>=<span class="hljs-value">{this.toggleAll(items.length</span> =<span class="hljs-value">==</span> <span class="hljs-attribute">this.getList</span>('<span class="hljs-attribute">completed</span>')<span class="hljs-attribute">.length</span>)} 
+    <span class="hljs-attribute">checked</span>=<span class="hljs-value">{items.length</span> =<span class="hljs-value">==</span> <span class="hljs-attribute">this.getList</span>('<span class="hljs-attribute">completed</span>')<span class="hljs-attribute">.length</span> }&gt;</span>
+</code></pre>
+<p>如果我们引入计算属性(computed-property)就可以简化此表达式</p>
+<p>我们可以extend时进行计算属性的定义</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> TodoMVC = Regular.extend({
+    template: <span class="hljs-string">"#todomvc"</span>,
+    computed: {
+      completedLength: <span class="hljs-string">"this.getList('completed').length"</span>,
+      activeLength: <span class="hljs-string">"this.getList('active').length"</span>,
+      allCompleted: {
+        get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span></span>{
+          <span class="hljs-keyword">return</span> data.todos.length === <span class="hljs-keyword">this</span>.getList(<span class="hljs-string">'completed'</span>).length
+        },
+        set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(sign,data)</span></span>{
+          data.todos.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span></span>{
+            item.completed = sign;
+          })
+        }
+      }
+    }
+    <span class="hljs-comment">//....other methods...</span>
+})
+</code></pre>
+<p>在这里我们定义三个计算属性</p>
+<ol>
+<li>completedLength: 代表完成的todo的length</li>
+<li>activeLength： 代表未完成的Length，这里可以看到1和2属性，我们都直接传入了一个字符串表达式，因为这里只需要处理读操作，即只是表达式的一种简写替代</li>
+<li>allCompleted: 标记是否全部完成，为真则将左上的checkbox打钩。需要注意的是这里还设置了setter函数，用于处理allCompelted的写操作，这里我们做的是，将所有todo标记完成或未完成</li>
+</ol>
+<p>修改后的模板如下</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>regular-todo<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"new-todo"</span> <span class="hljs-attribute">on-enter</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">this.newTodo</span>(<span class="hljs-attribute">editTodo</span>) } <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"What needs to be done?"</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">editTodo</span> }&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main"</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"toggle-all"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'toggle'</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">'allCompleted'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">"toggle-all"</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-list"</span>&gt;</span>
+    {#list this.getList(filter) as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>  <span class="hljs-attribute">r-class</span>=<span class="hljs-value">{</span> {'<span class="hljs-attribute">completed</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.completed</span>, '<span class="hljs-attribute">editing</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.editing</span>} }&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todo.completed</span> }&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">on-dblclick</span>=<span class="hljs-value">{todo.editing</span> = <span class="hljs-attribute">true</span>}&gt;</span>{ todo.description }<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todos.splice</span>(<span class="hljs-attribute">todo_index</span>,<span class="hljs-attribute">1</span>) } <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span><span class="hljs-value">on-enter={</span> <span class="hljs-attribute">todo.editing</span> = <span class="hljs-attribute">false</span> } <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{todo.description}</span> <span class="hljs-attribute">autofocus</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    {/list}
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"footer"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"todo-count"</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{ activeLength }<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
+    { activeLength === 1 ? 'item' : 'items' } left
+  <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"filters"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"{ filter === 'all'? 'selected' : '' }"</span>  <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{filter='all'}</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"{ filter === 'active'? 'selected' : '' }"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">'javascript:;'</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{filter</span> = '<span class="hljs-attribute">active</span>'}&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"{ filter === 'completed'? 'selected' : '' }"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{filter</span> = '<span class="hljs-attribute">completed</span>'}&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"clear-completed"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.clearCompleted()}</span> &gt;</span>Clear completed ({ completedLength })<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+</code></pre>
+<p>至此，我们利用大约40行模板+50行代码实现了todomvc. 并且完全没有掺入dom操作，完全是按照以前使用模板的思维。</p>
+<h2 id="-ifelse">第六步: 使用if/else来控制区域的创建与回收</h2>
+<p>按照todomvc的规范定义，我们遗漏了以下两个逻辑</p>
+<ol>
+<li>需要在没有todos的情况隐藏显示部分，</li>
+<li>并且在没有可清楚todo的情况下，隐藏</li>
+</ol>
+<p>我们可以利用两种方式来实现</p>
+<ol>
+<li><a href="http://regularjs.github.io/guide/zh/syntax/if.html" target="_blank">{#if}</a>: 这种情况会将区域完全回收，并移除所有绑定，这是一种语法元素。</li>
+<li><a href="http://regularjs.github.io/guide/zh/core/directive.html#4-r-hide-" target="_blank">r-hide</a>: 你也可以使用指令来切换节点的可见性，这只是一种指令增强。</li>
+</ol>
+<p>1相较于2，最大的不同是完整回收，并且可以作用于任意的块: 比如多个并列节点。而2只能以节点为单位(即类似与angular的ng-show)</p>
+<p>这里我们采用if来完成我们的需求.修改后的模板如下</p>
+<pre><code class="lang-html">
+{#if !!todos.length}
+<span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main"</span>&gt;</span>
+...ignored for short...
+<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">footer</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"footer"</span>&gt;</span>
+  ...ignored for short...
+  {#if completedLength}
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"clear-completed"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.clearCompleted()}</span> &gt;</span>Clear completed ({ completedLength })<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  {/if}
+<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+{/if}
+</code></pre>
+<p><a href="http://codepen.io/leeluolee/pen/mcHxw" target="_blank">DEMO5</a></p>
+<h2 id="-">第七步: 抽离子组件</h2>
+<p>到目前为止，除了路由部分，我们已经完整实现了整个组件(由于regularjs定义为一个类库，所以不提供框架级的路由服务，大家可以通过类似<a href="http://github.com/leeluolee/stateman" target="_blank">stateman</a>等第三方库来实现路由).</p>
+<p>但是所有的view都写在了一个模板中，这个不利用后续的重构。我们可以通过子组件来提取一些独立的逻辑，在这个例子里，一个todo项目显然可以独立出来成为一个组件</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">li</span>  <span class="hljs-attribute">r-class</span>=<span class="hljs-value">{</span> {'<span class="hljs-attribute">completed</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.completed</span>, '<span class="hljs-attribute">editing</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">todo.editing</span>}}&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"view"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"toggle"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">todo.completed</span> }&gt;</span>  
+    <span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">on-dblclick</span>=<span class="hljs-value">{todo.editing</span> = <span class="hljs-attribute">true</span>}&gt;</span>{ todo.description }<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">"remove"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"destroy"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"edit"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"edit"</span><span class="hljs-value">on-enter={</span> <span class="hljs-attribute">todo.editing</span> = <span class="hljs-attribute">false</span> } <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{todo.description}</span> <span class="hljs-attribute">autofocus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+</code></pre>
+<p>注意这里的<code>on-click=&#39;remove&#39;</code> 代表点击后抛出自定义事件<code>remove</code>, 你可以捕获这个事件来处理删除操作(因为我们无法获得todos数据了)</p>
+<p>对应的组件定义</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Todo = Regular.extend({
+  data: {todo: {}},
+  name: <span class="hljs-string">"todo"</span>,
+  template: <span class="hljs-string">"#todo"</span>
+});
+</code></pre>
+<p>注意<code>name</code>参数代表，这个组件可以通过<code>&lt;todo &gt;&lt;/todo&gt;</code>的方式插入其它模板中。</p>
+<p>重构之前的list部分</p>
+<pre><code class="lang-html">{#list this.getList(filter) as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-title">todo</span> <span class="hljs-attribute">todo</span>=<span class="hljs-value">{todo}</span> <span class="hljs-attribute">on-remove</span>=<span class="hljs-value">{todos.splice(todo_index,1)}</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">todo</span>&gt;</span>
+{/list}
+</code></pre>
+<p>这里我们直接通过on-remove来捕获子组件抛出的<code>remove</code>事件.</p>
+<p>很明显的看到，利用子组件和持续重构可以帮助我们维护越来越复杂的组件关系. </p>
+<p><a href="http://codepen.io/leeluolee/pen/dGxCb" target="_blank">DEMO6</a></p>
+<h2 id="">结尾</h2>
+<p>至此，我们在仅40行模板+50行js代码(纯数据的业务操作)实现了一个功能基本完整的组件，并且没有引入任何dom操作。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../#" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 一大波DEMO(陆续更新)"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

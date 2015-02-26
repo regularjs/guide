@@ -58,18 +58,12 @@ component.$inject('#app');
 
   这是个组件的实例方法，会将组件插入到目标节点制定位置
 
-  * `bottom`[default option]: $injected as node's lastChild
-  * `top`: $injected as node' s firstChild,
-  * `after`: $injected as node' s nextSibling,
-  * `before`: $injected as node' s prevSibling,
+  * `bottom`[default]: 作为node的 lastChild插入
+  * `top`: 作为node的firstChild 插入
+  * `after`: 作为node的nextSibling插入
+  * `before`: 作为previousSibling插入
 
 
-
-<!-- 1. 模板容器(`#hello`)  
-2. script引入regular.js  
-3. `Regular.extend`派生组件
-4. 初始化节点并插入$inject到指定位置(这里是插入到容器节点`#app`)
- -->
 
 
 
