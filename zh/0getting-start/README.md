@@ -1,13 +1,7 @@
+
 #快速起步
 
-这一小节，我们将实现一个简单的组件—— __HelloRegular__ ,它用来显示友好的用户欢迎语，但是如果用户未登录的话需要提示进行登录信息，为了简单起见只需要输入用户名就可以进行登录. 
-
-经过本节学习， 你将会了解: 
-
-1. 如何初始化regularjs页面
-2. 使用[插值]({{ref}}?syntax-zh#interpolation)
-3. 使用[逻辑(if/else)]({{ref}}?syntax-zh#if)来切换显示
-4. 使用on-xx事件绑定.
+这一小节，我们将实现一个简单的组件—— __HelloRegular__ ,它用来显示友好的用户欢迎语，但是如果用户未登录的话需要提示进行登录信息，为了简单起见只需要输入用户名就可以进行登录
 
 
 ## 1.初始结构
@@ -39,7 +33,7 @@ component.$inject('#app');
 
 ```
 
-[__&#x261E; 查看结果__](http://fiddle.jshell.net/leeluolee/C2Gh9/1/)
+[__点击查看结果__](http://fiddle.jshell.net/leeluolee/C2Gh9/1/), 这里有几个要点：
 
 * __`Regular.extend`__
 
@@ -64,12 +58,18 @@ component.$inject('#app');
 
   这是个组件的实例方法，会将组件插入到目标节点制定位置
 
-  * `bottom`[默认参数]: 作为node的 lastChild插入
-  * `top`: 作为node的firstChild 插入
-  * `after`: 作为node的nextSibling插入
-  * `before`: 作为previousSibling插入
+  * `bottom`[default option]: $injected as node's lastChild
+  * `top`: $injected as node' s firstChild,
+  * `after`: $injected as node' s nextSibling,
+  * `before`: $injected as node' s prevSibling,
 
 
+
+<!-- 1. 模板容器(`#hello`)
+2. script引入regular.js
+3. `Regular.extend`派生组件
+4. 初始化节点并插入$inject到指定位置(这里是插入到容器节点`#app`)
+ -->
 
 
 
@@ -82,7 +82,7 @@ component.$inject('#app');
   Hello, {username}
 ```
 
-[__&#x261E; 查看结果__](http://fiddle.jshell.net/leeluolee/C2Gh9/2/)
+[ |查看结果| ](http://fiddle.jshell.net/leeluolee/C2Gh9/46/)
 
 ## 3. 处理未登录的情况——if/else逻辑控制
 
@@ -99,8 +99,8 @@ component.$inject('#app');
 
 就与常规的字符串模板(例如jst)类似，模板里我们添加`if/else`来区分登录用户与游客的显示效果
 
+[|查看结果|](http://fiddle.jshell.net/leeluolee/C2Gh9/47/)
 
-[__&#x261E; 查看结果__](http://fiddle.jshell.net/leeluolee/C2Gh9/3/)
 
 
 ## 4. 实现用户登录登出的功能—— `on-click`
@@ -140,24 +140,49 @@ var HelloRegular = Regular.extend({
 
 ```
 
-[__&#x261E; 查看结果__](http://fiddle.jshell.net/leeluolee/C2Gh9/4/)
-
-
-## 小节
-
-虽然这个例子非常简单， 但是基本上实现一个组件的思路大同小异
-
-1. 根据需求得到静态html结构， 并将其模板化, 并结合Regular.extend将其封装成一个组件.
-2. 根据业务需求添加dom事件并添加对应的组件原型方法(如上例的login)
-3. 如果需要你还可能将部分可重用功能拆分为[子组件](../component/README.md)
-
-
-## 下一步阅读
-
-1. 或许你对为什么数据变化会反应到视图差生疑惑, 推荐你阅读__[脏检查： 数据绑定的秘密](concept/dirty.md)__
+[|查看结果|](http://fiddle.jshell.net/leeluolee/C2Gh9/48/)
 
 
 
+## 5. 何时进行数据检查-UI更新的digest阶段
+
+与angular一样，regular中的数据绑定也是基于数据的脏检查，ui事件触发的响应会自动进入$digest阶段并进行数据检查和ui更新, 而对于在组件lifecycle之外的数据变动，你需要进行手动的`$update` 以进入数据检查阶段
+
+```javascript
+
+component.data.username = "regularjs";
+component.$update() // enter
+
+```
 
 
+__[|DEMO|](http://fiddle.jshell.net/leeluolee/C2Gh9/50/)__ 
+
+ 无论何种方式调用`$update`, __都会迫使组件进入数据检查阶段__
+
+
+然而在实际使用中，`$update`不会常常用到, 因为组件本身是一个闭环,大部分类似ui事件，timeout等都会自动进入update阶段, 从而可以直接操作数据对象即可. 
+
+
+
+
+##本章小结
+
+
+在这一小节，我们利用regularjs实现了一个最简单的组件——HelloRegular.
+
+你可以将regular创建的组件想象成一个小型的`mvvm`模式的闭环.它
+
+- 独立的生命周期
+- 模板`template`
+- 数据模型`data`,不过它是完全无逻辑的,操作依赖于component实例
+- 而组件本身即相当于一个`viewmodel`, 原型上定义了组件的所有业务逻辑
+
+
+
+如果你仍意犹未尽，可以查看这个[todomvc的例子](http://jsfiddle.net/leeluolee/5Err9/)来熟悉下更完整些的regular组件实现方式。
+
+
+
+--------------------
 

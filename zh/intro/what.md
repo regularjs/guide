@@ -1,6 +1,8 @@
 
 # Regularjs是什么
 
+似乎到现在， 都没有对Regularjs有个官方的介绍， 其实可以用一句话来说明regularjs是什么: 
+
 __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新一代类库__
 
 ## 关键词
@@ -20,9 +22,9 @@ __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新
     <div class="glyphicon glyphicon-{iconMap[msg.type]}"></div>
     <span class="notify_close" on-click={this.clear(msg)}>×</span>
     {#if needTitle}
-    <h4 class="notify_title">{msg.title}</h4>
+      <h4 class="notify_title">{msg.title}</h4>
+      <p class="notify_message">{msg.message}</p>
     {/if}
-    <p class="notify_message">{msg.message}</p>
   </div>
   {/list}
 </div>
@@ -138,7 +140,7 @@ __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新
 
 现在声称的下一代(Next-generation)框架越来越多了， 但是本质永远不会变(从根本和可能性讨论问题， 程序员之间的扯皮其实是可以避免的 :) ， 即
 
-> 下一代框架应该顺序前端开发的趋势和潮流
+> 下一代框架应该顺应前端开发的趋势和潮流
 
 我们目前就可以看得到得趋势有: 
 

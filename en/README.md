@@ -1,6 +1,5 @@
 # Guide for regularjs
 
-> <b>After version 0.3.0: regularjs change the default TAG from `{{}}` to `{}`</b>, please use `Regular.config({BEGIN:'{{', END: '}}'})` if you need the old syntax`
 
 
 

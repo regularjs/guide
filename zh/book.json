@@ -1,9 +1,15 @@
 {
     "links": {
         "sidebar": {
-            "\u27AD Github": "http://github.com/regularjs/regular",
+            "\u27AD Github": "https://github.com/regularjs/guide/issues",
             "\u27AD API and Syntax": "http://regularjs.github.io/reference"
         }
 
+    },
+    "variables": {
+        "reference": "https://regularjs.github.io/reference",
+        "ref": "https://regularjs.github.io/reference",
+        "api": "https://regularjs.github.io/reference?api-zh",
+        "syntax": "https://regularjs.github.io/reference?syntax-zh"
     }
 }
