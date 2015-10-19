@@ -18,6 +18,7 @@
 - [最佳实践](practicle/README.md)
     - [请优雅的管理模板](practicle/template.md)
     - [性能优化指引](practicle/perf.md)
+    - [单向数据流: Redux为例](practicle/redux.md)
     - [一些模式的建议](practicle/pattern.md)
 - [写个单页系统吧](spa/README.md)
     - [好基友:stateman + regularjs](spa/gay.md)

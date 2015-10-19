@@ -22,7 +22,6 @@ API接口说明已经移到统一的[Reference页面]({{api}}), 对应的模板�
 * __component(小写)__  指代所有__Component__的实例
 
 
-
 > 指南是让你成为regularjs精通者的有效途径
 
 
