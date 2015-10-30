@@ -163,17 +163,17 @@ Component.extend({
 - 查找是否可以找到注册为对应名字的组件(通过`Component.component`)
 - 如果找到,　则视其为内嵌组件(如`custom-pager`),　会执行流程1
   1. 创建一个空对象`data`.
-  2. 如果有[内嵌内容](component/composite.md), 它会被解析并作为实例的`$body`属性, 你可以配合 `{#include this.$body}` 来使用它, 也可以将其结合include使用(注意，两种方式的作用域指向是不同的)
+  2. 如果有[内嵌内容](./composite.md), 它会被解析并作为实例的`$body`属性, 你可以配合 `{#include this.$body}` 来使用它, 也可以将其结合include使用(注意，两种方式的作用域指向是不同的)
   3. 遍历每个属性，
     - 如果不是事件则作为`data`的一个属性值,　如果为插值则建立父组件与子组件的__双向绑定__
-    - 如果是[`ref`](component/ref.md)则标记它
+    - 如果是[`ref`](./ref.md)则标记它
     - 如果是事件名`on-xx`,则注册为Emitter事件,相当于`this.$on(xx, ...)`
   4. 初始化组件(通过new Component), `data`会作为参数传入
   5. 插入到父组件的内容中
 - 如果没有找对应组件名 ,则执行流程2
   1. 创建一个节点`document.createElement(tagName)`
   2. 编译它的子元素(如果有的话)，并塞入节点.
-  3. 遍历属性值, 分别根据指令,事件和普通属性值处理, 与组件一样， 如果是[`ref`](component/ref.md),则会标记这个节点.
+  3. 遍历属性值, 分别根据指令,事件和普通属性值处理, 与组件一样， 如果是[`ref`](./ref.md),则会标记这个节点.
   4. 将节点插入到父组件的内容中
 
 流程1即我们所说的内嵌组件. 注意内嵌组件无法使用指令, 因为它并不是一个真实节点，而是一种抽象.
@@ -217,8 +217,6 @@ Component.extend({
   其中extenal代表嵌入它的外层组件. 
   
 
-
-[【DEMO】](http://jsfiddle.net/leeluolee/DCFXn/)
 
 
 where

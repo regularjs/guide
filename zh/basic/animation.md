@@ -263,14 +263,10 @@ __param__
 __参数__
 
 - name (String): 命令名
-- handle(element, param): 序列命令定义, 你需要在handle中返回一个函数
-  - element[Node]: 指令所在节点
-  - param[String]: 参数
-  - 返回值[Function]: handle函数必须返回一个动画处理函数, 它接受一个参数`done`用来结束当前动画. 
-
-> 版本0.4.1之前, 传入handle的为一个step对象，其中
+- handle(step): 序列命令定义, 你需要在handle中返回一个函数
   - step.element: 即上述element对象
   - step.param: 即上述param
+  - 返回值[Function]: handle函数必须返回一个动画处理函数, 它接受一个参数`done`用来结束当前动画. 
 
 > 0.4.1将参数展开是为了与event和directive接口参数做统一.
 
@@ -344,7 +340,7 @@ Regular.animation("fade", function(step){
 
 不过由于声明式动画的天然限制， 永远不要奢求其对动画的控制力可以达到手动js编码的自由度(比如使用velocity.js).
 
-你可以通过在组件init后， 手动通过[`$refs`](component/ref.md)获取节点并结合velocity.js等更专业的动画框架来实现你需要的动画效果. 
+你可以通过在组件init后， 手动通过[`$refs`](../component/ref.md)获取节点并结合velocity.js等更专业的动画框架来实现你需要的动画效果. 
 
 注意动画使用不当是可能与组件本身的数据-UI状态产生冲突,
 所以一般来讲， 应该尽量使用on/emit的组合， 而少使用when/call的组合来实现动画序列 

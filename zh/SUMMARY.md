@@ -12,7 +12,7 @@
     - [动画指令](basic/animation.md)
 - [深入组件](component/README.md)
     - [获取子节点与子组件](component/ref.md)
-    - [组合 —— `this.$body`](component/composite.md)
+    - [✨组合 — `this.$body`](component/composite.md)
     - [组件隔离](component/isolate.md)
     - [生命周期](component/lifecycle.md)
 - [最佳实践](practicle/README.md)
@@ -21,9 +21,9 @@
     - [单向数据流: Redux为例](practicle/redux.md)
     - [一些模式的建议](practicle/pattern.md)
 - [写个单页系统吧](spa/README.md)
-    - [好基友:stateman + regularjs](spa/gay.md)
+    - 好基友:stateman + regularjs
     - 单页设计准则
-    - [例子: 简单博客](spa/example.md)
+    - 例子: 简单博客
     - 与NEJ module结合
 - [深入RegularJS](advanced/README.md)
     - [脏检查—数据绑定的秘密](advanced/dirty.md)

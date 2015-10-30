@@ -4,6 +4,8 @@
 
 > 也就是说, 所有可以加载纯文本的方式都可以用来加载Regular的模板.
 
+Regularjs本身已经提供了尽可能多的方式来方便你在不同的场景下都能管理你的模板.
+
 方案清单:
 
 - 简单方案
@@ -11,10 +13,10 @@
     2. [在容器节点中保存模板](#script)
     3. [依托ES6或Coffeescript的多行字符串](#mult)
 - 与模块化工具结合的方法
-    1. [requirejs](#requirejs)
-    2. [webpack](#webpack)
-    3. [browserify](#browserify)
-    4. [NEJ](#nej)
+    1. [webpack](#webpack)
+    2. [browserify](#browserify)
+    3. [NEJ](#nej)
+    4. [requirejs](#requirejs)
 - 使用Regular.parse实现解析插件
 
 
@@ -111,83 +113,14 @@
 
 下面会介绍Regular与市面上常见模块系统的结合方案, 它们分别是
 
-- [requirejs](http://requirejs.org): AMD
 - [webpack](): ES6 或 Commonjs 或 AMD (一统浆糊)
 - [broswerify](): Commonjs
 - [NEJ](http://nej.netease.com): 类AMD规范( 网易杭州的前端模块规范 )
+- [requirejs](http://requirejs.org): AMD
 
 > 本文只是介绍如何将Regular集成进这些系统中，而不是普及这些模块系统的使用方法，请大家自行学习.
 
-<a name="requirejs"></a>
-### Requirejs
 
-AMD(requirejs)作为一个有着多年积累的模块标准，在新工具层出不穷的当今(2015年), 我仍认为它是较为稳妥的一种解决方案.
-
-开发者可以有两种选择.
-
-#### [`requirejs-text`]()直接加载模板字符串
-
-__配置__
-
-```js
-requirejs.config({
-  //@TODO  
-})
-```
-
-__使用__
-
-```js
-
-require(['text!foo.html', 'regularjs'], function(tpl, Regular){
-
-    var Foo = Regular.extend({
-      name: 'foo',
-      template: tpl
-    })
-
-    return Foo;
-
-});
-
-```
-
-
-
-
-#### [`requirejs-regular`]()加载和预处理模板
-
-与`requirejs-text`插件的`text!`不同， 这个插件配置的前缀是`rgl!`.
-
-__配置__
-
-```js
-
-requirejs.config({
-  //@TODO  
-})
-
-```
-
-__使用__
-
-```js
-
-require(['rgl!foo.html', 'regularjs'], function( tpl, Regular){
-
-    var Foo = Regular.extend({
-      name: 'foo',
-      template: tpl
-    })
-
-    return Foo;
-
-});
-```
-
-
-
-点[https://github.com/regularjs/requirejs-regular](https://github.com/regularjs/requirejs-regular) 查看详细说明
 
 
 <a name="webpack"></a>
@@ -195,14 +128,63 @@ require(['rgl!foo.html', 'regularjs'], function( tpl, Regular){
 
 webpack是近年来兴起的当红炸子鸡，支持多种模块规范共存，支持增量编译, 社区强大. __作者非常推荐直接使用ES6 + webpack的方式__来开发你的项目.
 
-webpack对于非内建模块支持，是通过[自定义loader]()的方式. 本文列举了两种方式
+webpack对于非内建模块支持，是通过[自定义loader](https://webpack.github.io/docs/loaders.html)的方式. 
 
-#### [raw-loader]() 加载纯文本模板
+__✨所有DEMO可以在[regularjs/example](https://github.com/regularjs/example#webpack)__ 找到范例
+
+__配置__
+
+```js
+var path = require('path');
+
+module.exports = {
+    entry: "./src/index.js",
+    output: {
+        path: __dirname ,
+        filename: "bundle.js"
+    },
+    module: {
+        loaders: [
+            { test: /\.html$/, loader: "raw" },
+            { test: /\.rgl$/, loader: 'rgl' },
+            // In fact, we can use template string for keep regularjs template.
+            { test: /\.js$/, loader: 'babel?cacheDirectory'}
+        ]
+
+    }
+};
+```
+
+__使用__
+
+```js
 
 
-> __小贴士__: 事实上如果你使用了babel-loader + ES6. 就可以直接使用多行字符串来管理你的模板， 无需配置raw-loader
+import tpl from './login.html';
+import Regular from 'regularjs';
 
-#### [regular-loader]() 加载并与解析模板
+const LoginBabel = Regular.extend({
+
+  name: 'login-babel',
+
+  template: tpl
+})
+
+export { LoginBabel }
+
+```
+
+上述代码列举了两种方式
+
+#### [raw-loader](https://github.com/webpack/raw-loader) 加载纯文本模板
+
+
+> __小贴士__: 事实上如果你使用了[babel-loader](https://github.com/babel/babel-loader) 就可以直接使用多行字符串来管理你的模板， 无需配置raw-loader
+
+
+
+#### [rgl-loader](https://github.com/regularjs/rgl-loader) 加载并与解析模板
+
 
 
 
@@ -318,6 +300,97 @@ define(['regular!path/to/foo.html', 'path/to/regularjs'], function(tpl, _p){
 
 _网易的同事在使用中有疑问可以私泡我(杭州研究院|前端技术部|郑海波)_
 
+
+
+
+<a name="requirejs"></a>
+### Requirejs
+
+AMD(requirejs)作为一个有着多年积累的模块标准，在新工具层出不穷的当今(2015年), 我仍认为它是一种较为稳妥的解决方案，并不会立刻被淘汰.
+
+基于requirejs来管理模板，开发者可以有两种选择.
+
+#### [`requirejs-text`](https://github.com/requirejs/text)直接加载模板字符串
+
+__安装__: 
+
+```
+bower install requirejs-text
+```
+
+__配置__
+
+```js
+
+require.config({
+  paths : {
+      "text": '../bower_components/requirejs-regular/rgl',
+      "regularjs": '../bower_components/regularjs/dist/regular',
+      "restate": '../restate',
+      "stateman": '../bower_components/stateman/stateman'
+  }
+});
+
+```
+
+__使用__
+
+```js
+
+require(['text!foo.html', 'regularjs'], function(tpl, Regular){
+
+    var Foo = Regular.extend({
+      name: 'foo',
+      template: tpl
+    })
+
+    return Foo;
+
+});
+
+```
+
+
+
+
+
+#### [`requirejs-regular`](https://github.com/regularjs/requirejs-regular)加载和预处理模板
+
+与`requirejs-text`插件的`text!`不同， 这个插件配置的前缀是`rgl!`.
+
+__配置__
+
+```js
+require.config({
+   ...
+    paths : {
+        "rgl": 'path/to/requirejs-regular/rgl',
+        //...
+    }
+    ...
+});
+
+```
+
+__使用__
+
+```js
+
+require(['rgl!foo.html', 'regularjs'], function( tpl, Regular){
+
+    var Foo = Regular.extend({
+      name: 'foo',
+      template: tpl
+    })
+
+    return Foo;
+
+});
+```
+
+
+
+点[https://github.com/regularjs/requirejs-regular](https://github.com/regularjs/requirejs-regular) 查看详细说明
 
 
 ## 你不用上述模块方案？

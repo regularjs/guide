@@ -1,8 +1,7 @@
 {
     "links": {
         "sidebar": {
-            "\u27AD Github": "http://github.com/regularjs/regular",
-            "\u27AD API and Syntax": "http://regularjs.github.io/reference"
+            "\u27AD Github": "http://github.com/regularjs/regular"
         }
 
     }
