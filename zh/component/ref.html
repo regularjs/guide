@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速入门 | regularjs指南</title>
+        <title>获取子节点与子组件 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../basic/template.html" />
+    <link rel="next" href="../component/composite.html" />
     
     
-    <link rel="prev" href="../intro/hello-regularjs.html" />
+    <link rel="prev" href="../component/README.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="basic/README.html">
+        <li class="chapter " data-level="2" data-path="basic/README.html">
             
                 
                     <a href="../basic/README.html">
@@ -267,7 +267,7 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="component/ref.html">
+        <li class="chapter active" data-level="3.1" data-path="component/ref.html">
             
                 
                     <a href="../component/ref.html">
@@ -656,17 +656,68 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_938">
+                    <section class="normal" id="section-gitbook_949">
                     
-                        <h1 id="">基础概念</h1>
-<p>这是一个『必知必会』的章节，可以帮助大家进行快速的入门。同时对于有其它MVVM框架经验(例如AngularJS)的朋友来说，这一部分也能找到你所需要的功能对应. </p>
-<p>@TODO</p>
-<ul>
-<li>list by xxx 的文档</li>
-<li>动画的DEMO检查 和 文档补全</li>
-<li>dom.element接口</li>
-<li>模板方案: 假如requirejs-text 等介绍. 大量的链接 加入webpack的介绍</li>
-</ul>
+                        <h1 id="">获取子节点和子组件</h1>
+<p>其实，使用Regular的开发者(包括作者本人)经常碰到的问题是:「如何获取到内部定义的子节点?」. 虽然『组件本身应该是完全数据驱动，dom操作应该交由指令处理』在理念上并没有弱点，但在有些情况下确实是舍近求远,所以会经常有人会写出了这样的代码.</p>
+<pre><code class="lang-js">Regular.extend({
+  template: <span class="hljs-string">'&lt;div id='</span>xxx<span class="hljs-string">'&gt;&lt;/div&gt;'</span>,
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">var</span> elem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'xxx'</span>); 返回<span class="hljs-literal">null</span>
+  }
+})
+</code></pre>
+<p>这种做法不仅不会凑效, 因为init时此组件并没有插入到文档中，自然无法用<code>document.getElementById</code>获取到它. 更重要的是, 它碰坏了组件应该是是个『闭环』的基本点.</p>
+<p>为了避免这种错误，Regular后续就引入了<a href="https://regularjs.github.io/reference?api-zh#ref" target="_blank"><strong>『ref属性』</strong></a>. </p>
+<h2 id="ref-">ref 属性</h2>
+<p>ref 是个特殊的属性值, 在模板中, 你可以使用它来标记一个<strong>节点或组件</strong>.</p>
+<p>在模板中</p>
+<pre><code class="lang-html">
+var component = new Regular({
+  template: "<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">input</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">pager</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>"
+  init: function(){
+    console.log(this.$refs.input)  // input element
+    console.log(this.$refs.pager)  // pager component
+  }
+})
+</code></pre>
+<p>如上例所示，只要组件内的结构生成<a href="component/lifecycle.html">(compile)</a>，就可以使用this.$refs来获取标记的节点或组件.</p>
+<h2 id="regulardomelement-">Regular.dom.element 获取组件的子节点.</h2>
+<p><code>ref</code>可以解决大部分的问题，但是它有个不足就是这些标记(ref)需要手动写.</p>
+<p>Regular提供了封装了<a href="https://regularjs.github.io/reference?api-zh#dom" target="_blank">dom相关方法的简单封装</a>, 你可以通过<code>Regular.dom</code>获得这个方法集合, 其中有个特殊的方法<a href=""><code>dom.element(component, needAll)</code></a> 可用于获取组件内部的节点.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> dom = Regular.dom;
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">'&lt;div id='</span>first<span class="hljs-string">'&gt;&lt;/div&gt;&lt;p id='</span>last<span class="hljs-string">'&gt;&lt;/p&gt;'</span>
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-built_in">console</span>.log(dom.element(<span class="hljs-keyword">this</span>)) <span class="hljs-comment">// =&gt; div#first  </span>
+    <span class="hljs-built_in">console</span>.log(dom.element(<span class="hljs-keyword">this</span>, <span class="hljs-literal">true</span>)) <span class="hljs-comment">// =&gt; [div#first, p#last]</span>
+  }
+})
+</code></pre>
+<p>如果needAll为<code>true</code>, 返回子节点数组. </p>
+<h2 id="domelement--ref">何时使用<code>dom.element</code> 何时使用 <code>ref</code>?</h2>
+<p><code>ref</code>的优点是简单直观，并且除了节点还可以<strong>获取组件</strong>, 而且<code>ref</code>引用是动态的, 比如<code>&lt;div ref={name}&gt;&lt;/div&gt;</code>, 如果模板中节点被回收，引用也会自动去除.</p>
+<p>而<code>dom.element</code>的优势是不需要做主动的标记, 这在有些情况, <code>ref</code>是完全做不到的, 比如:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Component = Regular.extend({
+  template: <span class="hljs-string">'&lt;div ref="container"&gt;&lt;/div&gt;'</span>
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">this</span>.$refs.container <span class="hljs-comment">// ...</span>
+  }
+})
+
+<span class="hljs-keyword">var</span> SubComponent = Component.extend({
+  <span class="hljs-string">'template'</span>: <span class="hljs-string">'&lt;div&gt;&lt;/div&gt;'</span>
+})
+</code></pre>
+<p>这就会出现问题，因为<code>SubComponent</code>覆盖的模板并没有标记container节点. 这种情况其实是因为<strong>模板的控制权不在当前组件</strong>. </p>
+<p>同样的问题还会出现在内嵌组件在组合使用时, 因为<a href="component/composite.html">内嵌内容</a>是不属于当前组件控制的, 就如下例的<code>&lt;li&gt;&lt;/li&gt;</code>, 你无法在<code>Dragable</code>组件内部标记到它.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">dragable</span> <span class="hljs-attribute">on-dragstart</span>=<span class="hljs-value">'start'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>This is a dragable area<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dragable</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p><em>上面的例子你可能需要理解<a href="component/composite.html">组件组合</a></em></p>
+</blockquote>
 
                     
                     </section>
@@ -677,10 +728,10 @@
         </div>
 
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-prev " aria-label="Previous page: 第一个组件:HelloRegular"><i class="fa fa-angle-left"></i></a>
+        <a href="../component/README.html" class="navigation navigation-prev " aria-label="Previous page: 深入组件"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic/template.html" class="navigation navigation-next " aria-label="Next page: 模板语法"><i class="fa fa-angle-right"></i></a>
+        <a href="../component/composite.html" class="navigation navigation-next " aria-label="Next page: ✨组合 — `this.$body`"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

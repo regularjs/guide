@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速入门 | regularjs指南</title>
+        <title>✨组合 — `this.$body` | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../basic/template.html" />
+    <link rel="next" href="../component/isolate.html" />
     
     
-    <link rel="prev" href="../intro/hello-regularjs.html" />
+    <link rel="prev" href="../component/ref.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="basic/README.html">
+        <li class="chapter " data-level="2" data-path="basic/README.html">
             
                 
                     <a href="../basic/README.html">
@@ -283,7 +283,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="component/composite.html">
+        <li class="chapter active" data-level="3.2" data-path="component/composite.html">
             
                 
                     <a href="../component/composite.html">
@@ -656,17 +656,204 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_938">
+                    <section class="normal" id="section-gitbook_945">
                     
-                        <h1 id="">基础概念</h1>
-<p>这是一个『必知必会』的章节，可以帮助大家进行快速的入门。同时对于有其它MVVM框架经验(例如AngularJS)的朋友来说，这一部分也能找到你所需要的功能对应. </p>
-<p>@TODO</p>
+                        <h1 id="">组合</h1>
+<p><em>请升级到版本<code>0.4.0</code>以上, 这个版本已将<code>&lt;r-content/&gt;</code>统一到了 <code>{#include}</code>中.</em> </p>
+<p>组合(Composite)是组件的一种设计思路.</p>
+<p>在《前端圈-走进网易》的分享会中， 我在<a href="http://leeluolee.github.io/fequan-netease/#/63" target="_blank">漫谈前端组件</a> 这个Topic中介绍到了组件的组合概念， 如果一个组件型框架不支持『组合』，那我们可以称这个组件框架是功能不完整的. </p>
+<p>本章内容会涉及三部分内容</p>
 <ul>
-<li>list by xxx 的文档</li>
-<li>动画的DEMO检查 和 文档补全</li>
-<li>dom.element接口</li>
-<li>模板方案: 假如requirejs-text 等介绍. 大量的链接 加入webpack的介绍</li>
+<li><a href="#body">内嵌内容</a>, 即<code>this.$body</code></li>
+<li><a href="#include">引入声明</a>, 即<code>{#include}</code></li>
+<li><a href="#outer">视觉父节点(Visual Parent)</a>, 即<code>this.$outer</code></li>
 </ul>
+<blockquote>
+<p>如果说「组件」是Regular的核心， 那「组合」就是Regular核心中的核心</p>
+</blockquote>
+<p><a name="body"></a></p>
+<h2 id="transcluded-content">内嵌内容(transcluded content)</h2>
+<h3 id="">『什么是内嵌内容?』</h3>
+<p>内嵌内容即被当前节点包裹的内容， 例如我们日常书写的html</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p><code>&lt;ul&gt;</code>的内嵌内容就是它的childNodes，即</p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>One<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+</code></pre>
+<p>在上面的例子中，我们很容易的可以理解到<code>&lt;li&gt;</code>和<code>&lt;ul&gt;</code>是有<strong>『结构上』</strong>明显的父子关系的，这是一种最常见的组合关系. </p>
+<p>我们可以再来看看另一个例子<code>video</code>标签. </p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"dest/a.mp4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<p>其实还有另外一种定义方式</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">""</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">source</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">source</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<p>这种其实更接近一种<strong>『内容上』</strong>的组合关系， <code>video</code>会使用到<code>source</code>节点的信息. 事实上audio标签也可以直接嵌套<code>source</code>, 所以它们就是一种组合关系.</p>
+<p>对于组件而言, 内嵌内容也是类似，即<strong>被组件标签所包裹的内容</strong>. </p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">modal</span> <span class="hljs-attribute">on-confirm</span>=<span class="hljs-value">{this.ok()}</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Please input your password!!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">modal</span>&gt;</span>
+</code></pre>
+<p>其中<code>&lt;p&gt;Please input your password!!&lt;/p&gt;</code>即为组件modal的内嵌内容, </p>
+<p>在Regular中，内嵌内容会成为组件的<code>$body</code>属性, 你可以通过<code>this.$body</code> 来得到它. </p>
+<p>但问题问题来了, <strong>『如何使用内嵌内容this.$body? 』</strong></p>
+<p><a name="include"></a></p>
+<h2 id="">使用内嵌内容.</h2>
+<p>现在我们基于一个小例子来看下在Regularjs中，怎么使用组合来设计组件</p>
+<p>例如Bootstrap的alert组件.</p>
+<p>代码如下</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-warning alert-dismissible fade in"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"alert"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"close"</span> <span class="hljs-attribute">data-dismiss</span>=<span class="hljs-value">"alert"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Close"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span>&gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sr-only"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+  Holy guacamole! You should check in on some of those fields below.
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>我们会发现, 所以很自然的, 我们会将组件封装成这个样子</p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">alert</span> 
+  <span class="hljs-attribute">type</span>=<span class="hljs-value">'warn'</span> 
+  <span class="hljs-attribute">content</span>=<span class="hljs-value">{message}</span> 
+  <span class="hljs-attribute">on-close</span>=<span class="hljs-value">{this.closeAlert($event)}</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">alert</span>&gt;</span>
+</code></pre>
+<p><code>content</code> 即我们要传入的提示信息， 组件也暴露了一个close事件用来告诉组件调用者. </p>
+<p>对应组件的模板如下</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"alert alert-warning alert-dismissible fade {show? 'in':''}"</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"alert"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"close"</span> <span class="hljs-attribute">data-dismiss</span>=<span class="hljs-value">"alert"</span> <span class="hljs-attribute">aria-label</span>=<span class="hljs-value">"Close"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.close()}</span> &gt;</span>&amp;times;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"sr-only"</span>&gt;</span>Close<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span> 
+  {content}
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>通过<code>content</code> 我们可以自定义要显示的alert信息. 但这时是没法传入html结构的， 所以我们修改为通过<code>{#include}</code>来传入模板片段, 插值部分修改如下</p>
+<pre><code class="lang-html">{#include content}
+</code></pre>
+<p>然而include模板字符串仍然有不足之处，即传入的content模板其实context是指向Alert组件的, 比如</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> App = Regular.extend({
+  template: <span class="hljs-string">"&lt;alert content={content}&gt;&lt;/alert&gt;"</span>
+  data: {
+    content: <span class="hljs-string">'Holy guacamole! You should check in on some of those fields below.&lt;button on-click={this.close}&gt;close&lt;/button&gt;'</span>
+  },
+  closeAlert: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+  }
+})
+</code></pre>
+<p>此时，你会有受挫感，因为其实content对应这段模板的context是属于Alert组件的, 而不是我们的APP，进而也就没法调用到APP实例上的closeAlert了.</p>
+<p><strong>最终解决方案: 通过<code>{#include this.$body}</code>使用内嵌内容</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> Alert = Regular.extend({ 
+  name: <span class="hljs-string">'alert'</span>,
+  <span class="hljs-comment">// ignore other </span>
+})
+
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Regular({
+  template: 
+    <span class="hljs-string">'&lt;alert show={showAlert}&gt;\
+       &lt;strong&gt;Holy guacamole!&lt;/strong&gt; You should check in on some of those fields below.\
+      &lt;button class="btn btn-default" on-click={showAlert=false}&gt;close&lt;/button&gt;\
+    &lt;/alert&gt;'</span>,
+  data: {
+   showAlert: <span class="hljs-literal">true</span>
+  }
+}).$inject(<span class="hljs-string">'#app'</span>);
+</code></pre>
+<p>这里<code>alert</code>包裹的部分就是<code>this.$body</code>所代表的区域.</p>
+<p>对于上层组件app而言， alert节点本省就像个容器，它内部的<code>this.$body</code> 的内嵌内容的Context仍然属于App本身, 所以我们可以通过showAlert来直接控制app的showAlert.</p>
+<p><a href="http://codepen.io/leeluolee/pen/ojdegY" target="_blank">|DEMO|</a></p>
+<h2 id="thisbody">关于<code>this.$body</code></h2>
+<h3 id="body">神秘的<code>$body</code>到底是什么</h3>
+<p>好奇性强的同学可能已经发现了，当存在内嵌内容时， <code>this.$body</code>实际上是一个函数. 运行它相当于对『内嵌的模板』进行了一次编译动作并返回一个『块(Group)』, 「块」类似于一个阉割版的组件，也可以被插入到某个位置, 比如<code>this.$body().$inject(element)</code> , <code>#include 声明</code>事实上也是这么使用它的.</p>
+<p><strong>当然永远不要这样去使用<code>this.$body</code></strong>, 这相当于一个课外知识 ,你只需要配合<code>#include</code>使用即可.</p>
+<h3 id="body">手动传入<code>$body</code>属性</h3>
+<p>在上面的例子中， 我们可以很方便的通过在组件节点之间插入内容来自定义组件需要的某些模板片断, 但这会引入一个问题，</p>
+<p><strong>『当我们使用JS初始化组件时，如何定义内嵌内容？』</strong> . 你可以采用手动传入的方式</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> alert = <span class="hljs-keyword">new</span> Alert({
+  $body: <span class="hljs-string">"&lt;a href='#' on-click={this.click()}&gt;hello&lt;/a&gt;"</span>
+})
+</code></pre>
+<p>此时<code>this.$body</code>是一个字符串. 运行之后你会发现也可以凑效, 这个是由于<a href="https://regularjs.github.io/reference?syntax-zh#include" target="_blank">{#include}</a>的特性决定的:</p>
+<p><strong>『include同时也接受字符串作为参数』</strong></p>
+<p>但是此时<code>$body</code>内容的this对象指向<code>alert</code>组件本身，因为它现在只是一次常规的include引入.</p>
+<p><a name="outer"></a></p>
+<h2 id="visual-parent-thisouter">视觉父节点(Visual Parent): <code>this.$outer</code></h2>
+<p>为了完善组合这个功能, Regular同时引入 <strong>视觉父节点</strong> 这个概念. 首先我们以一个简单的tab组件的使用为例来说明: </p>
+<pre><code class="lang-js"> &lt;tab&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">tab.pane</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">'tab1'</span>&gt;</span>
+    USER: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'form-control'</span>  <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{user}</span> &gt;</span>
+
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tab.pane</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tab.pane</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">'tab2'</span> <span class="hljs-attribute">selected</span> <span class="hljs-attribute">on-active</span>=<span class="hljs-value">{this.select()}</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Hi, {user}<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">i</span>&gt;</span>You can pass any html in here<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tab.pane</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">tab</span>&gt;</span></span>
+</code></pre>
+<p>对应的<code>tab</code>以及<code>tab.pane</code>的实现如下(方便起见, 使用了<a href="../practicle/template.html">ES6的语法来帮助我们管理模板字符串</a>)</p>
+<pre><code class="lang-html">// Tab组件
+const Tab = Regular.extend({
+  name: 'tab',
+  template: `
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"nav nav-tabs"</span>&gt;</span>
+       {#inc this.$body}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'tab-content'</span> <span class="hljs-attribute">r-anim</span>=<span class="hljs-value">'on:switch;class:fade in'</span>&gt;</span>
+      {#inc selected.$body}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+  `
+})
+
+// Tab的Pane配套子组件
+Tab.Pane = Regular.extend({
+  name: 'tab.pane',
+  template: `
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">"presentation"</span> 
+    <span class="hljs-attribute">class</span>=<span class="hljs-value">{this.$outer.data.selected==this?</span> '<span class="hljs-attribute">active</span>'<span class="hljs-attribute">:</span>''} 
+    <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.pick()}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">{href</span> || '<span class="hljs-attribute">javascript:</span>;'}&gt;</span>{#inc title}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  `,
+  config: function(data){
+
+    if(data.selected) this.pick();
+
+  },
+  pick: function(){
+
+    if(!this.$outer) return;
+    this.$outer.$update('selected', this);
+    this.$emit('active', this);
+
+  }
+})
+
+return Tab;
+</code></pre>
+<blockquote>
+<p><em>关于tab.pane的命名只是为了表明这个组件仅仅只是tab的配套组件，并无其他限制,你也可以使用别的命名方式</em></p>
+</blockquote>
+<p>我们发现在<code>tab.pane</code>组件内， 我们可以通过<code>this.$outer</code>这个特殊属性来获得包裹它的组件<code>tab</code>. 我们称『<code>&lt;tab&gt;&lt;/tab&gt;</code>是<code>&lt;tab.pane&gt;&lt;/tab.pane&gt;</code>的视觉父节点』. 而本质上，它们同属于<code>application</code>这个组件的内嵌组件. </p>
+<p><a href="http://codepen.io/leeluolee/pen/EVLvRN" target="_blank"><strong>DEMO</strong></a></p>
+<p>利用<code>this.$outer</code>这个属性, 我们可以实现视觉父子组件之间的逻辑信息传递，它与<code>this.$body</code>可以创造出很多组件组合的实现方式.</p>
+<h2 id="">组合本身带来的意义</h2>
+<p>事实上继承(extend)或是混入(implement), 已经可以解决Regular组件的成员属性和方法的复用问题，但是对于UI组件本身的模板却无法做到复用， 通常如果组件结构变化了， 那整个组件的模板都将重写. 所以组合其实是一种组件设计思想: </p>
+<blockquote>
+<p>『组合会强迫你将组件变化的部分提取出来通过#include引入， 从而不变的部分可以得以复用』</p>
+</blockquote>
+<p>就比如我们上例的Alert的内容部分.</p>
+<h2 id="">小节</h2>
+<p>组合(composite)是个非常强大的功能, 而且在Regular中，内嵌内容的概念已经整合得足够简单和灵活， <code>{#include}</code>这也是Regular与其它许许多多的<code>web component</code>变体解决方案的本质差别. </p>
+<p>并且这种方式定义，我们从直觉上很容易将内嵌内容和『其视觉父节点』进行关联，并且也符合我们对于html的原本理解. </p>
 
                     
                     </section>
@@ -677,10 +864,10 @@
         </div>
 
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-prev " aria-label="Previous page: 第一个组件:HelloRegular"><i class="fa fa-angle-left"></i></a>
+        <a href="../component/ref.html" class="navigation navigation-prev " aria-label="Previous page: 获取子节点与子组件"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic/template.html" class="navigation navigation-next " aria-label="Next page: 模板语法"><i class="fa fa-angle-right"></i></a>
+        <a href="../component/isolate.html" class="navigation navigation-next " aria-label="Next page: 组件隔离"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

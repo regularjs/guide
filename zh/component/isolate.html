@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速入门 | regularjs指南</title>
+        <title>组件隔离 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../basic/template.html" />
+    <link rel="next" href="../component/lifecycle.html" />
     
     
-    <link rel="prev" href="../intro/hello-regularjs.html" />
+    <link rel="prev" href="../component/composite.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="3.3" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="basic/README.html">
+        <li class="chapter " data-level="2" data-path="basic/README.html">
             
                 
                     <a href="../basic/README.html">
@@ -299,7 +299,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="component/isolate.html">
+        <li class="chapter active" data-level="3.3" data-path="component/isolate.html">
             
                 
                     <a href="../component/isolate.html">
@@ -656,17 +656,21 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_938">
+                    <section class="normal" id="section-gitbook_946">
                     
-                        <h1 id="">基础概念</h1>
-<p>这是一个『必知必会』的章节，可以帮助大家进行快速的入门。同时对于有其它MVVM框架经验(例如AngularJS)的朋友来说，这一部分也能找到你所需要的功能对应. </p>
-<p>@TODO</p>
-<ul>
-<li>list by xxx 的文档</li>
-<li>动画的DEMO检查 和 文档补全</li>
-<li>dom.element接口</li>
-<li>模板方案: 假如requirejs-text 等介绍. 大量的链接 加入webpack的介绍</li>
-</ul>
+                        <h1 id="">组件隔离</h1>
+<p>其实之前在对比<a href="basic/compoennt.html">组件基础篇</a>介绍的两种初始化方式， 我隐瞒了它们的一个巨大区别.</p>
+<p><strong>内嵌组件</strong> 会默认形成『它与上层组件之间的数据绑定关系』, 比如</p>
+<pre><code class="lang-js">&lt;input r-model={total} type=number/&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{total}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span></span>
+</code></pre>
+<p>即我在上层组件修改一份数据会导致pager也进行了脏检查，而pager发生数据变化也会引起上层组件发生脏检查， 这在有些时候不是我们想看到的， 也会影响到组件的整体性能. 我们或许希望pager与上层组件完全隔离， 而完全通过事件来通信.</p>
+<h2 id="isolate">组件的isolate属性</h2>
+<p><code>isolate</code>可以实现上述要求，例如上例如果修改为:</p>
+<pre><code class="lang-js">&lt;input r-model={total} type=number/&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{total}</span> <span class="hljs-attribute">isolate</span> <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">'nav'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span></span>
+</code></pre>
+<p>那内嵌组件pager与实际就是完全隔离了， 完全等同于JS初始化<code>new Pager().$inject(&#39;input&#39;, &#39;after&#39;)</code>. </p>
 
                     
                     </section>
@@ -677,10 +681,10 @@
         </div>
 
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-prev " aria-label="Previous page: 第一个组件:HelloRegular"><i class="fa fa-angle-left"></i></a>
+        <a href="../component/composite.html" class="navigation navigation-prev " aria-label="Previous page: ✨组合 — `this.$body`"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic/template.html" class="navigation navigation-next " aria-label="Next page: 模板语法"><i class="fa fa-angle-right"></i></a>
+        <a href="../component/lifecycle.html" class="navigation navigation-next " aria-label="Next page: 生命周期"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

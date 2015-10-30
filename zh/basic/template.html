@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速入门 | regularjs指南</title>
+        <title>模板语法 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../basic/template.html" />
+    <link rel="next" href="../basic/directive.html" />
     
     
-    <link rel="prev" href="../intro/hello-regularjs.html" />
+    <link rel="prev" href="../basic/README.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="basic/README.html">
+        <li class="chapter " data-level="2" data-path="basic/README.html">
             
                 
                     <a href="../basic/README.html">
@@ -149,7 +149,7 @@
                 
     
         
-        <li class="chapter " data-level="2.1" data-path="basic/template.html">
+        <li class="chapter active" data-level="2.1" data-path="basic/template.html">
             
                 
                     <a href="../basic/template.html">
@@ -656,17 +656,86 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_938">
+                    <section class="normal" id="section-gitbook_944">
                     
-                        <h1 id="">基础概念</h1>
-<p>这是一个『必知必会』的章节，可以帮助大家进行快速的入门。同时对于有其它MVVM框架经验(例如AngularJS)的朋友来说，这一部分也能找到你所需要的功能对应. </p>
-<p>@TODO</p>
+                        <h1 id="">模板</h1>
+<h3 id="__x27adhttpregularjsgithubioreferencesyntax-zh__"><strong><a href="http://regularjs.github.io/reference/?syntax-zh" target="_blank">&#x27AD;阅读模板文档</a></strong></h3>
+<p>Regularjs内建了一个蝇量级的模板解析(称之为rgl), 从字符串解析到中间AST再进行Living Dom的创建，也就是所谓的『Living Templating』的技术。 技术方案总归是优劣并存, 之所以选择这个市面上接受度不高的方案, 除了是为了方便推广给我司熟悉JST的同学外，主要还有以下几点原因</p>
 <ul>
-<li>list by xxx 的文档</li>
-<li>动画的DEMO检查 和 文档补全</li>
-<li>dom.element接口</li>
-<li>模板方案: 假如requirejs-text 等介绍. 大量的链接 加入webpack的介绍</li>
+<li>更安全: 全程无innerHTML</li>
+<li>更灵活: 不用再被ng-if ng-repeat等限制在单节点上</li>
+<li>可重用+序列化: 信息都在AST上, 和cloneNode + link说再见 </li>
+<li>更高效: 最终生成Living DOM与Angular等Dom-based的框架是一致的，即也可以实现局部更新.</li>
 </ul>
+<p>更多理解可以参考我的这篇博文<a href="http://leeluolee.github.io/2014/10/10/template-engine/" target="_blank">『前端模板技术面面观』</a></p>
+<h2 id="">语法设计</h2>
+<p>从语法角度讲，rgl很接近网易杭州大部分使用的后端模板ftl和前端模板jst的结合, 只有两个类型.</p>
+<ul>
+<li>功能语句: 如<code>{#list Expression as Var } ...  {/list}</code> </li>
+<li>插值语句: 即<code>{ Expression }</code></li>
+</ul>
+<p>它们都由『开符号』和『闭符号』包裹，这样做的目的是方便只修改开闭符号就进行语法的替换， 目前你可以通过下述代码修改开闭符号.</p>
+<pre><code class="lang-js">Regular.config({
+  <span class="hljs-string">'BEGIN'</span>: <span class="hljs-string">'{{'</span>,
+  <span class="hljs-string">'END'</span>: <span class="hljs-string">'}}'</span>
+})
+</code></pre>
+<h2 id="">表达式</h2>
+<p>在模板语法中最重要的就是表达式(如<code>user.age + 12</code>). 动态模板中，一个富表达式的支持几乎是必须的. 因为与一次性的字符串模板不同， 动态模板产生的中间状态非常多，如果每种中间状态都必须和mustache这种弱逻辑模板一样, 需定义成静态字段(例如<code>blog.title</code>)，那限制就太强了. </p>
+<p>Regular的表达式支持</p>
+<ul>
+<li>ES5除了位操作符(考虑要支持)的一元、二元和三元操作符的支持</li>
+<li>undefined错误抑制(相信你快被JS中的<code>Cannot read property &#39;xx&#39; of undefined</code>搞昏了)</li>
+<li>一次性绑定<code>@(Expression)</code>表达式</li>
+<li><code>Expression|fitlerName: arg1, arg2</code>表达式</li>
+</ul>
+<h3 id="">表达式对象</h3>
+<p>所有的表达式在编译后会成为一个『表达式对象』，通过对于开发者而言，只会在<a href="basic/directive.html">指令定义</a>中会接触到它. 它包含两个个部分</p>
+<ul>
+<li><p><strong>get(context)</strong></p>
+<p>即这个表达式的求值函数, 函数需要传入一个context即Component实例 它返回求值结果 </p>
+<p>在内部regularjs通过比较get函数两次返回结果的不同判断数据是否变动.</p>
+</li>
+</ul>
+<p>  <em>example:</em></p>
+<pre><code class="lang-js">  <span class="hljs-comment">// create expression</span>
+  <span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+    data: {
+      user: <span class="hljs-string">'leeluolee'</span>,
+      age: <span class="hljs-number">20</span> 
+    }
+  });
+
+  <span class="hljs-keyword">var</span> expr = component.$expression(<span class="hljs-string">"user + ':' + (age - 10)"</span>)
+
+  alert(expr.get(component) === <span class="hljs-string">"leeluolee:10"</span> ) <span class="hljs-comment">//true</span>
+</code></pre>
+<ul>
+<li><p><strong>set(context, value)</strong>  *此函数不一定存在</p>
+<p>如果表达式是一个合法的<a href="http://es5.github.io/#x11.2" target="_blank">LeftHandSideExpression</a>, regular会提取出set函数, 用来对表达式代表的字段进行赋值, set函数通常用于实现双向绑定(比如内置的指令r-model就利用了set函数)</p>
+</li>
+</ul>
+<p>  <em>example</em></p>
+<pre><code class="lang-javascript">
+  <span class="hljs-comment">// component as context</span>
+  <span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+    data: {
+      users: [
+        {name: <span class="hljs-string">'leeluolee'</span>},
+        {name: <span class="hljs-string">'luobo'</span>}
+      ],
+      index:<span class="hljs-number">0</span>
+    }
+  });
+
+  <span class="hljs-keyword">var</span> expr = component.$expression(<span class="hljs-string">'users[index].name'</span>)
+
+  expr.set(component, <span class="hljs-string">'daluobo'</span>);
+
+  alert(component.data.users[<span class="hljs-number">0</span>].name === <span class="hljs-string">'daluobo'</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+<p>  并不是所有表达式都可以提取出set, 即代表了不是所有表达式都能完成双向绑定，比如表达式<code>「a+b」</code>, 显然虽然我们可以获取它的值，但是我们无从知晓如何去设置a, b的值. </p>
+<h3 id="__x27adhttpregularjsgithubioreferencesyntax-zh__"><strong><a href="http://regularjs.github.io/reference/?syntax-zh" target="_blank">&#x27AD;阅读模板文档</a></strong>了解插值语句和功能语句</h3>
 
                     
                     </section>
@@ -677,10 +746,10 @@
         </div>
 
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-prev " aria-label="Previous page: 第一个组件:HelloRegular"><i class="fa fa-angle-left"></i></a>
+        <a href="../basic/README.html" class="navigation navigation-prev " aria-label="Previous page: 快速入门"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic/template.html" class="navigation navigation-next " aria-label="Next page: 模板语法"><i class="fa fa-angle-right"></i></a>
+        <a href="../basic/directive.html" class="navigation navigation-next " aria-label="Next page: 指令"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速入门 | regularjs指南</title>
+        <title>性能优化指引 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../basic/template.html" />
+    <link rel="next" href="../practicle/redux.html" />
     
     
-    <link rel="prev" href="../intro/hello-regularjs.html" />
+    <link rel="prev" href="../practicle/template.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="4.2" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="basic/README.html">
+        <li class="chapter " data-level="2" data-path="basic/README.html">
             
                 
                     <a href="../basic/README.html">
@@ -369,7 +369,7 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="practicle/perf.html">
+        <li class="chapter active" data-level="4.2" data-path="practicle/perf.html">
             
                 
                     <a href="../practicle/perf.html">
@@ -656,17 +656,18 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_938">
+                    <section class="normal" id="section-gitbook_957">
                     
-                        <h1 id="">基础概念</h1>
-<p>这是一个『必知必会』的章节，可以帮助大家进行快速的入门。同时对于有其它MVVM框架经验(例如AngularJS)的朋友来说，这一部分也能找到你所需要的功能对应. </p>
-<p>@TODO</p>
-<ul>
-<li>list by xxx 的文档</li>
-<li>动画的DEMO检查 和 文档补全</li>
-<li>dom.element接口</li>
-<li>模板方案: 假如requirejs-text 等介绍. 大量的链接 加入webpack的介绍</li>
-</ul>
+                        <h1 id="">性能优化指引</h1>
+<p>Regular使用了被诟病无数次的<a href="advanced/dirty.html"><code>脏检查机制</code></a>, 但是它提供了非常多的方案来帮助我们解决性能问题, 这个章节将会不断更新.</p>
+<h3 id="">请尽量使用一次绑定</h3>
+<pre><code class="lang-js">
+&lt;nest-component r-model={} &gt; <span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">nest-component</span>&gt;</span></span>
+</code></pre>
+<h3 id="listtrack-by-">使用list的track by 功能</h3>
+<h3 id="isolate">使用isolate</h3>
+<h3 id="if-else---displaynone">使用if else 代替  <code>display:none</code></h3>
+<h3 id="throttle--untiltid--settimeout-">使用throttle 或 until(tid = setTImeout) 的方式来避免频繁更新</h3>
 
                     
                     </section>
@@ -677,10 +678,10 @@
         </div>
 
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-prev " aria-label="Previous page: 第一个组件:HelloRegular"><i class="fa fa-angle-left"></i></a>
+        <a href="../practicle/template.html" class="navigation navigation-prev " aria-label="Previous page: 请优雅的管理模板"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic/template.html" class="navigation navigation-next " aria-label="Next page: 模板语法"><i class="fa fa-angle-right"></i></a>
+        <a href="../practicle/redux.html" class="navigation navigation-next " aria-label="Next page: 单向数据流: Redux为例"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

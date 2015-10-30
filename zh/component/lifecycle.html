@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速入门 | regularjs指南</title>
+        <title>生命周期 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../basic/template.html" />
+    <link rel="next" href="../practicle/README.html" />
     
     
-    <link rel="prev" href="../intro/hello-regularjs.html" />
+    <link rel="prev" href="../component/isolate.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="3.4" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -132,7 +132,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="basic/README.html">
+        <li class="chapter " data-level="2" data-path="basic/README.html">
             
                 
                     <a href="../basic/README.html">
@@ -315,7 +315,7 @@
         </li>
     
         
-        <li class="chapter " data-level="3.4" data-path="component/lifecycle.html">
+        <li class="chapter active" data-level="3.4" data-path="component/lifecycle.html">
             
                 
                     <a href="../component/lifecycle.html">
@@ -656,18 +656,244 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_938">
+                    <section class="normal" id="section-gitbook_947">
                     
-                        <h1 id="">基础概念</h1>
-<p>这是一个『必知必会』的章节，可以帮助大家进行快速的入门。同时对于有其它MVVM框架经验(例如AngularJS)的朋友来说，这一部分也能找到你所需要的功能对应. </p>
-<p>@TODO</p>
-<ul>
-<li>list by xxx 的文档</li>
-<li>动画的DEMO检查 和 文档补全</li>
-<li>dom.element接口</li>
-<li>模板方案: 假如requirejs-text 等介绍. 大量的链接 加入webpack的介绍</li>
-</ul>
+                        <h1 id="">组件生命周期</h1>
+<p>这一章节， 我们来看下在组件的生命周期来帮助我们理解 Regular内部的运行机制. </p>
+<p><a name="new"></a></p>
+<h2 id="new-componentoptions-">当<code>new Component(options)</code> ...</h2>
+<blockquote>
+<p>注意使用内嵌的方式初始化， 仍然是一样的初始化流程</p>
+</blockquote>
+<p>当你实例化组件时，将会发生以下剧情</p>
+<p><em>对应的源码来源于<a href="https://github.com/regularjs/regular/blob/master/src/Regular.jsL31" target="_blank">src/Regular.js</a></em></p>
+<h4 id="1-optionshttpsregularjsgithubioreferenceapi-zhapi-reference--optionseventsevents-data">1 <a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-options" target="_blank">options</a>将合并原型中的<a href="events">events</a>, data</h4>
+<pre><code class="lang-js">options = options || {};
+options.data = options.data || {};
+options.events = options.events || {};
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.data) _.extend(options.data, <span class="hljs-keyword">this</span>.data);
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.events) _.extend(options.events, <span class="hljs-keyword">this</span>.events);
+</code></pre>
+<h4 id="2-optionsthis">2 将options合并到this中</h4>
+<pre><code class="lang-js">_.extend(<span class="hljs-keyword">this</span>, options, <span class="hljs-literal">true</span>);
+</code></pre>
+<p><b>&#x26A0;</b> <strong>实例化中传入的属性会覆盖原型属性</strong></p>
+<h4 id="3--">3  解析模板</h4>
+<p>如果模板本身已经被解析过了(AST)，这步跳过.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> template === <span class="hljs-string">'string'</span>) <span class="hljs-keyword">this</span>.template = <span class="hljs-keyword">new</span> Parser(template).parse();
+</code></pre>
+<h4 id="4-optionsevents-">4. 根据传入的options.events 注册事件</h4>
+<p>传入预定义的事件, 通过<code>events</code>属性进行注册与config中注册带来的效果是一致的.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.events){
+  <span class="hljs-keyword">this</span>.$on(<span class="hljs-keyword">this</span>.events);
+}
+</code></pre>
+<p>注意: 一般很少会使用events对象来配置事件绑定，而更偏向在<code>init</code>或<code>config</code>阶段配置, 不过当你使用implement时，可以通过这种方式在组件生命周期里切入你的业务逻辑， 例如:</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> EmitterMixin = {
+  events: {
+    $config: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{  <span class="hljs-comment">// 切入config阶段</span>
+      <span class="hljs-keyword">this</span>.__listeners = {};
+    }
+  },
+  on: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(event, listener)</span></span>{
+    <span class="hljs-keyword">var</span> listeners = <span class="hljs-keyword">this</span>._listenters;
+    <span class="hljs-comment">// add listener to listeners</span>
+  },
+  off: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ },
+  emit: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{ }
+}
 
+Component.implement(EmitterMixin)
+</code></pre>
+<p>可以达到和继承一样的效果， 但是少了一次继承关系. 对于Emitter这样独立的功能， 显然Mixin更加合理.</p>
+<blockquote>
+<p>Regular已经内置了一个Emitter，这里仅作为例子</p>
+</blockquote>
+<h4 id="5-__config-config__">5* <strong>触发<code>$config</code>事件, 调用config函数.</strong></h4>
+<p>config意为配置, 一般此函数用于预先处理组件状态，以得到预期的首次compile结果</p>
+<pre><code class="lang-js"><span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'config'</span>);
+<span class="hljs-keyword">this</span>.config &amp;&amp; <span class="hljs-keyword">this</span>.config(<span class="hljs-keyword">this</span>.data);
+</code></pre>
+<blockquote>
+<p>请铭记: 与<strong>init</strong>的区别是, 此阶段在compile之前.</p>
+</blockquote>
+<h4 id="6-____-">6* <strong>编译模板</strong>, 触发一次组件脏检查</h4>
+<p>这里的脏检查是为了确保组件视图正确,　<strong>到这里我们已经拥有初始化的dom元素</strong>, 你可以通过$refs来获取你标记的.</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">if</span>(template){
+  <span class="hljs-keyword">this</span>.group = <span class="hljs-keyword">this</span>.$compile(<span class="hljs-keyword">this</span>.template, {namespace: options.namespace});
+}
+</code></pre>
+<blockquote>
+<p>请知晓: compile 之后， 标志着组件有了初始结构</p>
+</blockquote>
+<h4 id="7-__initthisinit-__">7* <strong>触发<code>$init</code>事件，并调用this.init方法. </strong></h4>
+<p>调用init之后我们不会进行自动的脏检查.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">"$init"</span>);
+<span class="hljs-keyword">if</span>( <span class="hljs-keyword">this</span>.init ) <span class="hljs-keyword">this</span>.init(<span class="hljs-keyword">this</span>.data);
+</code></pre>
+<blockquote>
+<p>请铭记， 与<strong>config</strong>的区别是， 此阶段在compile之后, 意味着你可以通过<a href="https://regularjs.github.io/reference?api-zh#refs}" target="_blank">$refs</a>获取到你标记的dom结构.</p>
+</blockquote>
+<hr>
+<p><a name="destroy"></a></p>
+<h2 id="-componentdestory-">当 <code>component.destory()</code> ...</h2>
+<p>当销毁组件时，剧情就要简单的多了.</p>
+<ol>
+<li><p>触发<code>$destroy</code>事件</p>
+</li>
+<li><p>销毁所有模板的dom节点,并且解除所有数据绑定、指令等</p>
+</li>
+</ol>
+<p>需要注意的是，是Regular.prototype.destory完成了这些处理,　所以永远记得在你定义的destory函数中使用<code>this.supr()</code>. 一个更稳妥的方案是: 永远不重写destroy, 而是注册<code>$destory</code>事件来完成你的回收工作.</p>
+<pre><code class="lang-js">Component.extend({
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">this</span>.$on(<span class="hljs-string">'$destory'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+      <span class="hljs-comment">// destroy logic</span>
+
+    })
+  } 
+})
+</code></pre>
+<p><a href="#" id="composite"></a></p>
+<h2 id="customer-pager">当遇到<code>&lt;customer-pager/&gt;</code>这样的标签时...</h2>
+<p>在编译阶段(AST -&gt; DOM)，每当Regular碰到一个节点标签例如
+(其中，我们假定<strong><code>custom-pager</code></strong>是一个已注册的组件)</p>
+<ul>
+<li><code>&lt;custom-pager attr1={user} attr2=user on-nav={this.nav()}&gt;&lt;/custom-pager&gt;</code> </li>
+<li><code>&lt;div class=&quot;text&quot; r-hide={!text}&gt;&lt;/div&gt;</code></li>
+</ul>
+<p>将会发生以下过程</p>
+<ul>
+<li>查找是否可以找到注册为对应名字的组件(通过<code>Component.component</code>)</li>
+<li>如果找到,　则视其为内嵌组件(如<code>custom-pager</code>),　会执行流程1<ol>
+<li>创建一个空对象<code>data</code>.</li>
+<li>如果有<a href="composite.html">内嵌内容</a>, 它会被解析并作为实例的<code>$body</code>属性, 你可以配合 <code>{#include this.$body}</code> 来使用它, 也可以将其结合include使用(注意，两种方式的作用域指向是不同的)</li>
+<li>遍历每个属性，<ul>
+<li>如果不是事件则作为<code>data</code>的一个属性值,　如果为插值则建立父组件与子组件的<strong>双向绑定</strong></li>
+<li>如果是<a href="ref.html"><code>ref</code></a>则标记它</li>
+<li>如果是事件名<code>on-xx</code>,则注册为Emitter事件,相当于<code>this.$on(xx, ...)</code></li>
+</ul>
+</li>
+<li>初始化组件(通过new Component), <code>data</code>会作为参数传入</li>
+<li>插入到父组件的内容中</li>
+</ol>
+</li>
+<li>如果没有找对应组件名 ,则执行流程2<ol>
+<li>创建一个节点<code>document.createElement(tagName)</code></li>
+<li>编译它的子元素(如果有的话)，并塞入节点.</li>
+<li>遍历属性值, 分别根据指令,事件和普通属性值处理, 与组件一样， 如果是<a href="ref.html"><code>ref</code></a>,则会标记这个节点.</li>
+<li>将节点插入到父组件的内容中</li>
+</ol>
+</li>
+</ul>
+<p>流程1即我们所说的内嵌组件. 注意内嵌组件无法使用指令, 因为它并不是一个真实节点，而是一种抽象.</p>
+<ul>
+<li><strong>Example</strong></li>
+</ul>
+<p>  <strong>external</strong>组件的模板中声明</p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{current}</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">100</span> 
+    <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">{this.hello()}</span> 
+    <span class="hljs-attribute">on-end</span>=<span class="hljs-value">'end'</span> /&gt;</span>
+</code></pre>
+<p>  就相当于是手动调用组件(参数请查看<a href="?api-zh#options">API:options</a>)</p>
+<pre><code class="lang-js">
+  <span class="hljs-keyword">var</span> pager = <span class="hljs-keyword">new</span> Pager({
+    events: {
+      nav : <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        extenal.hello();
+      },
+      end: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        extenal.$emit(<span class="hljs-string">'end'</span>);
+      }
+    },
+    data:{
+      total: <span class="hljs-string">"100"</span>
+    }
+  })
+  pager.$bind(extenal, <span class="hljs-string">'current'</span>);
+</code></pre>
+<p>  其中extenal代表嵌入它的外层组件. </p>
+<p>where</p>
+<ul>
+<li>template in <code>#external</code></li>
+</ul>
+<pre><code class="lang-html">{list.length}:{current}
+ <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{Math.floor(list.length</span>/<span class="hljs-attribute">20</span>)} 
+        <span class="hljs-attribute">current</span>=<span class="hljs-value">{current}</span> 
+        <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">{this.changePage($event)}</span>/&gt;</span>
+
+ <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{Math.floor(list.length</span>/<span class="hljs-attribute">20</span>)} 
+        <span class="hljs-attribute">current</span>=<span class="hljs-value">{current}</span> 
+        <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">'nav'</span> /&gt;</span>
+</code></pre>
+<!--
+
+## 当内嵌组件之间有组合关系时.
+
+在上面[组件组合章节](composite.md)的介绍中， 我们了解到了，在内层组件中，我们可以通过`this.$outer`获得它「视觉上」上的父节点. 例如
+
+```html
+
+// ... 略...
+
+var App = Regular.extend({
+  template: `
+    <tab>
+      <tab.pane></tab.pane>
+      <tab.pane></tab.pane>
+      <tab.pane></tab.pane>
+    </tab>
+  `
+})
+
+var app = new App().$inject('body');
+
+```
+
+_标签名无须care, 这只是个人的一种命名习惯_
+
+
+```js
+
+var TabPane = Regular.extend({
+  name:'tab.pane',
+  config: function(data){
+    if(this.data.selected) {
+      this.$outer.pick(this);
+    } 
+  }
+})
+
+
+
+```
+
+所以，我们可以得知，在`TabPane`的config时，我们已经可以获得`Visual Parent`(视觉父节点`tab`)的实例. 现在我们比[『小节: 当 new Component 发生时...』](#new)更进一步来分析下， 组合发生时的完整流程， 我们还是以上面的`tab`和`tab.pane`为例.
+
+
+```shell
+
+app config -> app compile 
+                  \
+                  tab config -> tab compile(由于内部的 #include this.data.selected.$body)
+                                      \ 
+                                      tab.pane config -> tab.pane compile -> tab.pane init
+                                      /
+                                tab init
+                                  /
+
+
+
+
+```
+
+
+
+
+-->
                     
                     </section>
                 
@@ -677,10 +903,10 @@
         </div>
 
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-prev " aria-label="Previous page: 第一个组件:HelloRegular"><i class="fa fa-angle-left"></i></a>
+        <a href="../component/isolate.html" class="navigation navigation-prev " aria-label="Previous page: 组件隔离"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basic/template.html" class="navigation navigation-next " aria-label="Next page: 模板语法"><i class="fa fa-angle-right"></i></a>
+        <a href="../practicle/README.html" class="navigation navigation-next " aria-label="Next page: 最佳实践"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

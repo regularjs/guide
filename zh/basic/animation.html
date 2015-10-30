@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Regularjs是什么 | regularjs指南</title>
+        <title>动画指令 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../intro/hello-regularjs.html" />
+    <link rel="next" href="../component/README.html" />
     
     
-    <link rel="prev" href="../intro/README.html" />
+    <link rel="prev" href="../basic/filter.html" />
     
 
         
@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="1446207689931">
+    <div class="book" data-level="2.6" data-basepath=".." data-revision="1446207689931">
     
 
 <div class="book-summary">
@@ -95,7 +95,7 @@
                 
     
         
-        <li class="chapter active" data-level="1.1" data-path="intro/what.html">
+        <li class="chapter " data-level="1.1" data-path="intro/what.html">
             
                 
                     <a href="../intro/what.html">
@@ -229,7 +229,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.6" data-path="basic/animation.html">
+        <li class="chapter active" data-level="2.6" data-path="basic/animation.html">
             
                 
                     <a href="../basic/animation.html">
@@ -656,156 +656,257 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_953">
+                    <section class="normal" id="section-gitbook_937">
                     
-                        <h1 id="regularjs">Regularjs是什么</h1>
-<p>似乎到现在， 都没有对Regularjs有个官方的介绍， 其实可以用一句话来说明regularjs是什么: </p>
-<p><strong>Regularjs是基于动态模板实现的用于构建数据驱动型组件的新一代类库</strong></p>
-<h2 id="">关键词</h2>
-<h3 id="1-">1. 动态模板引擎</h3>
-<p>关于前端的模板技术， 我在前端乱炖有一篇反响还算不错的综合性文章——<a href="http://www.html-js.com/article/2313" target="_blank">一个对前端模板技术的全面总结</a>， 总体来讲动态模板引擎是一种介于常规字符串模板(jade, ejs)和Dom模板(angulrjs, vuejs)之间的模板技术, 它保证了regularjs的: </p>
+                        <h1 id="">动画系统</h1>
+<p>声明式的动画绝对是所有MVVM框架都面临的难点, 90%的框架都只处理了 节点进入退出的动画操作. Regular的动画系统非常轻量级(代码量上),但是毫无疑问的是很强大的实现，眼见为实，看看它的过人之处吧.</p>
+<h2 id="">动画简介</h2>
+<p>你可以通过<code>r-animation</code>(版本0.4.0+增加了一个别名<code>r-anim</code>)指令来实现动画. </p>
+<p><strong>Syntax</strong></p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"Sequence"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+Sequence:
+  Command (";"" Command)*
+
+Command:
+  CommandName ":"" Param;
+
+CommandName: [-\w]+
+
+Param: [^;]+
+</code></pre>
+<p><strong>Exmaple</strong></p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r</span>=<span class="hljs-value">animation="on:</span> <span class="hljs-attribute">click</span>; <span class="hljs-attribute">class:</span> <span class="hljs-attribute">animated</span> <span class="hljs-attribute">fadeIn</span>; <span class="hljs-attribute">wait:</span> <span class="hljs-attribute">1000</span>; <span class="hljs-attribute">class:</span> <span class="hljs-attribute">animated</span> <span class="hljs-attribute">fadeOut</span>; "&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>上例的意思是: </p>
 <ol>
-<li>数据驱动的开发模式</li>
-<li>100%的独立性</li>
+<li>当 <code>click</code> 触发时</li>
+<li>为元素添加类名 <code>animated fadeIn</code>, 当 <code>transitionend</code> (或 <code>animationend</code>)时， 移除它们</li>
+<li>等待 1000ms.</li>
+<li>与第二步类似</li>
+<li>动画结束 done.</li>
 </ol>
-<p>一个regularjs组件的模板写法类似这样</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m-notify m-notify-{position}"</span>&gt;</span>
-  {#list messages as msg}
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"notify notify-{msg.type||'info'}"</span> &gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"glyphicon glyphicon-{iconMap[msg.type]}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"notify_close"</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.clear(msg)}</span>&gt;</span>×<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-    {#if needTitle}
-      <span class="hljs-tag">&lt;<span class="hljs-title">h4</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"notify_title"</span>&gt;</span>{msg.title}<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"notify_message"</span>&gt;</span>{msg.message}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    {/if}
-  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-  {/list}
+<h2 id="command">内建Command</h2>
+<p>动画系统中内建了多个Command, 其中比较特殊的是 <code>on</code> 和 <code>when</code> ， 它们是唯二的两个用于激活动画开始的Command</p>
+<h3 id="1-on-event">1. on: event</h3>
+<p>当特定的event 触发时, 开始动画, event可以是当前节点的DOM事件，也可以是所在组件的事件.</p>
+<p><em>注意: Regular会先去检查event是否是个DOM事件，如果不是， 则会转而监听组件事件</em></p>
+<p>Regular提供了两个模拟事件来模拟节点的进入退出效果.</p>
+<ul>
+<li>enter: 在节点进入时触发</li>
+<li>leave: 在节点退出时触发 (动画结束后， 节点才会被真正移除)</li>
+</ul>
+<p>目前<code>r-hide</code>指令, <code>{#if}</code> 和 <code>{#list}</code> 以及 <code>{#include}</code> 或是<code>component.$inject</code>等导致的节点变化，都会触发 &#39;enter&#39; 和 &#39;leave&#39; 效果.</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+{#list items as item}
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'animated'</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">'on:enter;class: fadeIn;on:leave;class: fadeOut'</span>&gt;</span>{item.content}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+{/list}
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<h3 id="2-when-expression">2. when: Expression</h3>
+<p>当表达式为真触发动画</p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'animated'</span> <span class="hljs-attribute">r-anim</span>=<span class="hljs-value">'when: status===1; class: swing;'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>当<code>component.data.status</code>为1时， 会触发此动画效果.</p>
+<h3 id="3-class-classes-mode">3. class: classes, mode</h3>
+<p>class是基于CSS3的动画Command, 它会等待动画结束之后(transitionend 或 animationend)，再执行后续效果.</p>
+<p><strong>参数</strong></p>
+<ul>
+<li>classes: 空格分割的className</li>
+<li><p>mode (Number): 添加class的模式</p>
+<p> <code>Command: class</code>的形为取决于 <code>mode</code>参数,一共有三种mode.</p>
+<ul>
+<li>1: 默认mode, 首先加指定类名到节点，当动画结束移除它</li>
+<li>2: 首先添加class到节点，然后在nextTick添加class-active到节点用以触发动画，当动画结束移除所有类名, 这个模式与angular类似.  </li>
+<li>3: 与mode1类似, 但是动画结束后，我们不移除类名</li>
+<li>4: 移除指定类名， 并等待动画结束.</li>
+</ul>
+</li>
+</ul>
+<p><strong>example</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"box1"</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"on:click;class: animated fadeIn, 1"</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"box2"</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"on:click;class: animated fadeIn, 2"</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"box3"</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"on:click;class: animated fadeIn, 3"</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>每当点击box1, box2 或box3. 它们分别会产生不同的效果</p>
+<p><strong>box1</strong>:</p>
+<ol>
+<li>添加 <code>animated fadeIn</code></li>
+<li>等待 <code>animationend</code> 移除它们</li>
+</ol>
+<p><strong>box2</strong>:</p>
+<ol>
+<li>添加 <code>animated fadeIn</code></li>
+<li>添加 <code>animated-active fadeIn-active</code> at next-tick(to trigger the animation)</li>
+<li>等待 <code>animationend</code> 然后移除所有 <code>animated fadeIn animated-active fadeIn-active</code></li>
+</ol>
+<p><strong>box3</strong>:</p>
+<ol>
+<li>添加 <code>animated fadeIn</code></li>
+<li>等待 <code>animationend</code> , 动画结束</li>
+</ol>
+<h3 id="4-emit-event">4. emit: event</h3>
+<p>抛出某个事件，<strong>注意这可能会触发另一个动画序列</strong>( 被命令<code>on</code> 捕获)</p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+     "<span class="hljs-attribute">on:</span> <span class="hljs-attribute">click</span>; 
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
+        <span class="hljs-attribute">emit:</span> <span class="hljs-attribute">swing-over</span> ;
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>;
+        <span class="hljs-attribute">emit:</span> <span class="hljs-attribute">shake-over</span>"
+        &gt;</span>
+  box1: trigger by click
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+     "<span class="hljs-attribute">on:</span> <span class="hljs-attribute">swing-over</span>; 
+        <span class="hljs-attribute">class:</span>  <span class="hljs-attribute">swing</span>; 
+      <span class="hljs-attribute">on:</span>  <span class="hljs-attribute">shake-over</span>; 
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>;
+      "&gt;</span>box2: after box1 swing<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>box1 通过抛出swing-over等事件触发了box2得动画.</p>
+<p><a href="http://codepen.io/leeluolee/pen/jEzPgd" target="_blank">DEMO on codepen</a></p>
+<h3 id="5-call-expression">5. call: expression</h3>
+<p>运行一个表达式并进入脏检查, <strong>注意, 与emit类似，这里可能会触发另外一个动画序列</strong>(被命令<code>when</code>捕获)</p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+     "<span class="hljs-attribute">when:test</span>; 
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
+        <span class="hljs-attribute">call:</span> <span class="hljs-attribute">otherSwing</span>=<span class="hljs-value">true</span> ;
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>"&gt;</span>
+  box1: trigger by checkbox
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+     "<span class="hljs-attribute">when:</span> <span class="hljs-attribute">otherSwing</span>; 
+        <span class="hljs-attribute">class:</span>  <span class="hljs-attribute">swing</span>; 
+      "&gt;</span>box2: after box1 swing<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>流程如下:</p>
+<ol>
+<li>当 <code>test == true</code> 激活box1的动画</li>
+<li>swing动画结束之后, 设置<code>otherSwing=true</code></li>
+<li>这个导致box2的动画序列开始</li>
+<li>box2 swing box1也在进行shake</li>
+</ol>
+<blockquote>
+<p><a href="http://codepen.io/leeluolee/pen/aHwoh/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a></p>
+</blockquote>
+<h3 id="6-style-propertyname1-value1-propertyname1-value1-">6. style: propertyName1 value1, propertyName1 value1 ...</h3>
+<p>设置样式并且等待 <code>transitionend</code>(如果可以触发的话)</p>
+<p><strong>example</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+     "<span class="hljs-attribute">on:</span> <span class="hljs-attribute">click</span>; 
+        <span class="hljs-attribute">class:</span>  <span class="hljs-attribute">swing</span>; 
+        <span class="hljs-attribute">style:</span> <span class="hljs-attribute">color</span> #<span class="hljs-attribute">333</span>;
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">bounceOut</span>;
+        <span class="hljs-attribute">style:</span> <span class="hljs-attribute">display</span> <span class="hljs-attribute">none</span>;
+      "&gt;</span>style: click me <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>你需要添加transition样式来触发style的动画</p>
+<pre><code class="lang-css"><span class="hljs-class">.box</span><span class="hljs-class">.animated</span><span class="hljs-rules">{
+   <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value">  color <span class="hljs-number">1s</span> linear</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>这个例子的意思是: </p>
+<ul>
+<li>一旦点击, swing动画.  </li>
+<li>结束后设置<code>style.color=#333</code>(激活另外transition)... </li>
+<li>步骤结束后，进行bounceOut动画.</li>
+<li>动画序列结束</li>
+</ul>
+<h3 id="7-wait-duration">7. wait: duration</h3>
+<p>等待数秒再进入下一个步骤</p>
+<p><strong>param</strong></p>
+<ul>
+<li>duration: an integer indicating the number of milliseconds to delay execution of the next animation in the queue. </li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+     "<span class="hljs-attribute">on:click</span>; 
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
+        <span class="hljs-attribute">wait:</span> <span class="hljs-attribute">2000</span> ;
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>"&gt;</span>
+  wait: click me
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<p>非常接近于我们使用字符串模板的体验. 但是不同的时， 它编译生成的不是字符串而是<strong>Living dom</strong>, 使得view是会随着数据变化的， 相信你也看到了模板中有类似<code>on-click</code>的属性， 因为其实compile结束之后， regularjs与angularjs产生的<strong>Living Dom</strong>已经没有本质区别，由于也是基于脏检查的设定， 事实上后续使用会非常接近angularjs.</p>
-<h3 id="2-">2. 数据驱动</h3>
 <blockquote>
-<ul>
-<li>强制数据模型抽象是<strong>因</strong></li>
-<li>数据驱动的开发模式是<strong>果</strong></li>
-</ul>
+<p><a href="http://codepen.io/leeluolee/pen/FhwGC/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a></p>
 </blockquote>
-<p>数据驱动即强制将你的业务逻辑抽象为数据（状态）的变化， 这样原本琐碎的前端开发会更加贴近与编程本质（算法 + 数据结构）, 带来的开发体验上的进步事实上早已被angularjs或更骨灰的knockout框架所验证.</p>
-<p>当然数据驱动的开发模式同时也带来一些不便， 比如: </p>
-<ol>
-<li>无法处理复杂的动画</li>
-<li>可控性不如直接的dom操作</li>
-</ol>
-<p>数据模型抽象的方式有很多种， 但是目前不外乎以下几种:</p>
+<p><a name="animation"></a></p>
+<h2 id="-animation">扩展 Animation</h2>
+<p>上面的所有例子，其实都是基于CSS3的动画， 如果你需要更精细的动画控制，或是需要兼容不支持CSS3的浏览器，那可能需要通过<code>Component.animation接口</code>扩展你的动画Command(内部Command也是通过此接口扩展)</p>
+<p><strong>参数</strong></p>
 <ul>
-<li>脏检查<ul>
-<li>数据模型的脏检查(angularjs / regularjs) </li>
-<li>view抽象的脏检查(react以及雨后春笋般的基于virtual dom的库或框架)</li>
-</ul>
-</li>
-<li>存取器<ul>
-<li>计算属性: defineProperty(vuejs, 黑科技avalonjs)</li>
-<li>常规的setter/getter函数(Backbone, knockoutjs, ractivejs)</li>
+<li>name (String): 命令名</li>
+<li>handle(step): 序列命令定义, 你需要在handle中返回一个函数<ul>
+<li>step.element: 即上述element对象</li>
+<li>step.param: 即上述param</li>
+<li>返回值[Function]: handle函数必须返回一个动画处理函数, 它接受一个参数<code>done</code>用来结束当前动画. </li>
 </ul>
 </li>
 </ul>
-<p>对于这个点， 本来也有一篇长文正在撰写， 但是这篇<a href="http://www.cnblogs.com/sskyy/p/4264371.html" target="_blank">2015前端框架何去何从</a>差不多说出了我的心声， 推荐大家阅读.</p>
-<h3 id="3-">3. 组件</h3>
-<p>随着angularjs等框架的大行其道， bootstrap等ui框架也提供了很多标签上直接可配的使用方式. 大部分的人脑中对<strong>组件化</strong>的理解似乎开始停留在了<strong>【标签化】</strong>这个层级上, 事实上组件的定义从来不曾改变过: </p>
 <blockquote>
-<p>在前端开发领域， 组件应该是一种独立的、可复用的交互元素的封装</p>
+<p>0.4.1将参数展开是为了与event和directive接口参数做统一.</p>
 </blockquote>
-<p>而在基于特定框架/类库之下， 组件会被强加一种特定的构建方式. 就如:</p>
-<ul>
-<li>regularjs中， 组件被拆分为了: 模板template + 数据data + 业务逻辑(实例函数)的组合, 每一份组件可以视为一个小型的mvvm系统. </li>
-<li>react中， 组件被拆分为了: state + virtual-dom声明(render函数) + 业务逻辑的组合</li>
-<li>angularjs1.x版本中， 事实上它的组件化是不纯粹的， 推荐大家看下2.0的设计</li>
-</ul>
-<p>一个典型的例子就是regularjs中组件的两种使用方式: </p>
-<ul>
-<li><p>js中实例化</p>
-<pre><code class="lang-js"><span class="hljs-keyword">var</span> pager = <span class="hljs-keyword">new</span> Pager({
-  data: {
-    current: <span class="hljs-number">1</span>,
-    total: <span class="hljs-number">10</span>
+<p><strong>Example</strong></p>
+<p>实现一个渐入渐出的效果</p>
+<pre><code class="lang-javascript">Regular.animation(<span class="hljs-string">"fade"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(step)</span></span>{
+  <span class="hljs-keyword">var</span> param = step.param, <span class="hljs-comment">// 传入fade的参数</span>
+    element = step.element, <span class="hljs-comment">//触发节点</span>
+    fadein = param === <span class="hljs-string">"in"</span>,
+    ratio = fadein?  <span class="hljs-number">1.05</span>: <span class="hljs-number">0.9</span>;
+
+  <span class="hljs-comment">// 这个函数会在每次本步骤被触发时被调用，</span>
+  <span class="hljs-comment">// 它只接受一个done函数作为参数，标志着本步骤的结束</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(done)</span></span>{ 
+    <span class="hljs-keyword">var</span> start = fadein?  <span class="hljs-number">0.01</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> tid = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+      start *= ratio 
+      <span class="hljs-keyword">if</span>(fadein &amp;&amp; <span class="hljs-number">1</span>- start &lt; <span class="hljs-number">1e-3</span>){
+        start = <span class="hljs-number">1</span>; 
+        clearInterval(tid);
+        done()
+      }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!fadein &amp;&amp; start &lt; <span class="hljs-number">1e-3</span>){
+        start = <span class="hljs-number">0</span>;
+        clearInterval(tid);
+        done()
+      }
+      element.style.opacity = start;
+    }, <span class="hljs-number">1000</span> / <span class="hljs-number">60</span>) 
   }
 })
 </code></pre>
-</li>
-<li><p>模板中实例化</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">1</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">100</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>
-</code></pre>
-</li>
-</ul>
-<p>它们带来的结果是一致的， 我们可以看到标签化只是组件的一种使用方式, 或是一种在模板中的接口形式， 关键是组件内部的业务(领域)模型, 并且由于数据驱动的特性， 在mvvm模式下， <strong>并不是所有可复用的交互元素都适合封装成组件</strong>. 关于这点<a href="https://github.com/xufei/ng-control/issues/2" target="_blank">@民工精髓的这篇文章差不多说到了点子上</a>.</p>
-<p>组件与事件系统没有直接关系, 但是一般而言，一个功能良好的组件会通过抛出事件来与外部系统进行沟通.</p>
-<p>这里，是一个比较典型的基于regularjs构建的<a href="http://plnkr.co/edit/yzmkZhHZGiCwV3yBwcwb?p=preview" target="_blank">Tabs组件</a>. </p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"tabs"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"&lt;strong&gt;Inbox&lt;/strong&gt; &lt;span class='badge'&gt;{user.unread_messages_count}&lt;/span&gt;"</span> <span class="hljs-attribute">on-active</span>=<span class="hljs-value">{user.unread_messages_count+=2}</span> &gt;</span>
-    Your username is: <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{user.username}<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{user.username}</span>  &gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
-  {#list todos as item}
-    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Tab {item_index+1} "</span> &gt;</span>
-      Content of the first tab + {item} + {user.username}
-    <span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
-  {/list}
-<span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">hr</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.$refs.tabs.selectTab(0)}</span>&gt;</span>Select first tab<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.$refs.tabs.selectTab(1)}</span>&gt;</span>Select second tab<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.$refs.tabs.selectTab(2)}</span>&gt;</span>Select third tab<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<p>使用</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
+       "<span class="hljs-attribute">on:click</span>; 
+        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
+        <span class="hljs-attribute">fade:</span> <span class="hljs-attribute">out</span> ;
+        <span class="hljs-attribute">fade:</span> <span class="hljs-attribute">in</span>;
+         "&gt;</span>
+    fade: click me
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<p>大家可以与其他比如angularjs或react做下对比.</p>
-<h3 id="4-">4. 类库</h3>
-<p>类库代表regularjs具有100%的独立性.</p>
-<ol>
-<li>无依赖</li>
-<li>每个组件生命周期完全自治， 只有一个独立的model, 不会像angular一样创建出深度的原型继承，使用上让人困惑的scope.</li>
-<li>不会引入框架级的设施: 模块系统 + 模板加载 + 路由. 但是不证明它不能支持， 目前regularjs支持browserify, requirejs的插件预解析模板文件. 打包后的文件为一个标准的UMD模块， 可以在commonjs, AMD, Globals下使用. 路由的话可以使用regular-state来创建深层次的单页应用, 这个已经在实际产品中被实践过， 。 </li>
-<li>大小
-对比后其实你会发现， regularjs的大小始终维持在50kb, 对于同类的ractivejs, reactjs, angularjs动辄200kb+的大小， 它称为类库可谓<strong>非常厚道</strong></li>
-</ol>
-<p>相对精简的内核是regularjs成为一个能屈能伸的, 并对其他框架或类库友好的关键所在.</p>
-<h3 id="5-________">5. <strong>新</strong>一代<strong>类库</strong></h3>
-<p>现在声称的下一代(Next-generation)框架越来越多了， 但是本质永远不会变(从根本和可能性讨论问题， 程序员之间的扯皮其实是可以避免的 :) ， 即</p>
+<p>你必须记住的是，当你定义的动画结束时，调用这个done函数.</p>
 <blockquote>
-<p>下一代框架应该顺应前端开发的趋势和潮流</p>
+<p><a href="http://codepen.io/leeluolee/pen/qJvry/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a></p>
 </blockquote>
-<p>我们目前就可以看得到得趋势有: </p>
-<ol>
-<li>web component: polymer x-tags</li>
-<li>动画: material design等设计趋势, 硬件和浏览器的更新</li>
-<li>同构的javascript: 这一般会包含两个组成方面: <strong>单页应用</strong>与 <strong>路由系统</strong>. 我可以负责任的说， 目前的基于框架的同构app实现基本还处于玩具级别, DEMO和产品的性质是不同的</li>
-<li>ES6/7: Object.observe / class/ imports等</li>
-<li>....</li>
-</ol>
-<p>在这些部分， regularjs有些完成了一些工作， 而有些还正在进行(但是已经确保可能性).</p>
-<h2 id="regularjs">regularjs有哪些特性</h2>
-<p>在实际使用中， 你会发现， regularjs就如我发布初期的slogan: </p>
+<p>你也可以查看内建命令的实现<a href="https://github.com/regularjs/regular/blob/master/src/directive/animation.js#L71" target="_blank">(github链接)</a>来理解这个用法</p>
 <blockquote>
-<p>regularjs = reactjs(ractivejs) + angularjs</p>
+<p>小贴士: 其实<code>r-animation</code> 不仅仅限于应用动画， 它其实是个支持声明式表述的状态机, 你可以利用它来实现一些异步序列.</p>
 </blockquote>
-<p>在regularjs仅仅50kb的身材之下, 你能看到一些react, angularjs以及ractive的影子， <strong>后来者往往有社区上的劣势， 但换句话说它没有任何历史包袱, 在设计中去糟存精使得regularjs更加易用</strong>. 当然它绝对不是特性整合这么简单, 
-它同时也提供了独一无二的特性来帮助我们实现卓有成效的组件级开发. </p>
-<p>我们先简单看下regularjs的特性支持: </p>
-<ol>
-<li>几乎完备ES5表达式支持</li>
-<li>指令/过滤器(双向)</li>
-<li>一致的事件系统</li>
-<li>动画系统</li>
-<li>单页面支持: 需配合regular-state模块</li>
-<li>内嵌组件 + 内嵌内容(transclued content)</li>
-<li>良好的封装性和扩展性</li>
-<li>....</li>
-</ol>
-<p><strong>哦， 对了， 目前regularjs仍然支持IE6</strong></p>
-<p>这是一个令人羞愧的设定， 与作者所在的环境也有直接关系， 但是对于那些可能也需要支持IE6的朋友们， regularjs可能是一个比较安全的选择. </p>
-<p>regularjs未来会拉出一个支持度接近vuejs的版本， 但是特性不会发生改变， 大家可以放心使用。 regularjs目前已经在大大小小多个线上产品中使用了， 也收集了一些有效的建议.</p>
-<hr>
-<p>好了， 该看下一个最简单的regularjs组件长什么样吧..</p>
+<h2 id="">再来一个不被推荐的例子</h2>
+<p>可能相对于其他声明式的框架， regularjs的动画声明的写法上会繁琐一些， 但是带来了无限的可能性， 结合数据监听体系和事件系统， 事实上你可以在regularjs中实现任意复杂度，跨越任意节点的动画序列!</p>
+<p><a href="http://codepen.io/leeluolee/pen/vrgqu" target="_blank">【DEMO: 实现一个无限循环的animation】</a> </p>
+<h2 id="">小节</h2>
+<p>不过由于声明式动画的天然限制， 永远不要奢求其对动画的控制力可以达到手动js编码的自由度(比如使用velocity.js).</p>
+<p>你可以通过在组件init后， 手动通过<a href="../component/ref.html"><code>$refs</code></a>获取节点并结合velocity.js等更专业的动画框架来实现你需要的动画效果. </p>
+<p>注意动画使用不当是可能与组件本身的数据-UI状态产生冲突,
+所以一般来讲， 应该尽量使用on/emit的组合， 而少使用when/call的组合来实现动画序列 </p>
 
                     
                     </section>
@@ -816,10 +917,10 @@
         </div>
 
         
-        <a href="../intro/README.html" class="navigation navigation-prev " aria-label="Previous page: 你好，Regularjs"><i class="fa fa-angle-left"></i></a>
+        <a href="../basic/filter.html" class="navigation navigation-prev " aria-label="Previous page: 过滤器和计算属性"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../intro/hello-regularjs.html" class="navigation navigation-next " aria-label="Next page: 第一个组件:HelloRegular"><i class="fa fa-angle-right"></i></a>
+        <a href="../component/README.html" class="navigation navigation-next " aria-label="Next page: 深入组件"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
