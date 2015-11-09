@@ -13,9 +13,9 @@ Regular只保留了其中两个接口(细节请看API):
 
 ### regularjs中的'类'沿承自klass的特点
 
-`Component.extend`返回的就是一个普通的构造函数， 不过与原始[ded/klass]一样, 此构造函数拥有以下特点
+`Component.extend`返回的就是一个普通的构造函数，不过与原始[ded/klass]一样，此构造函数拥有以下特点
 
-- 子类构造函数同时也拥有`extend`, `implement`方法.
+- 子类构造函数同时也拥有`extend`, `implement`方法。
 
 ```javascript
 var Component = Regular.extend({
@@ -29,7 +29,7 @@ SubComponent.implement({
 })
 ```
 
-- 在方法中可以通过`this.supr()`来调用父类的同名函数，避免了使用负担.继续上例.
+- 在方法中可以通过`this.supr()`来调用父类的同名函数，避免了使用负担。继续上例。
 
 ```js
 
@@ -63,11 +63,11 @@ component.run（);
 由于extend同时又是组件定义的接口，所以在extend时，regularjs同时会做一些预处理操作:
 
 
-- 预解析传入的template参数. 保证由这个类的模板只会被解析一次.
+- 预解析传入的template参数。保证由这个类的模板只会被解析一次。
 
-- 子类同时拥有component, directive, filter, event函数， 用来[扩展组件功能](#extension)
+- 子类同时拥有component, directive, filter, event函数，用来[扩展组件功能](#extension)
 
-- 如果定义时传入了name, 则为此组件注册组件名，使得可以以 [内嵌组件](../basic/component.md) 的形式使用此组件
+- 如果定义时传入了name，则为此组件注册组件名，使得可以以 [内嵌组件](../basic/component.md) 的形式使用此组件
 
 ```js
 var Modal = Regular.extend({
@@ -81,7 +81,7 @@ var Modal = Regular.extend({
 
 -----
 
-下一个小节， 我们来看看我们如何来扩展组件的能力: 
+下一个小节，我们来看看我们如何来扩展组件的能力: 
 
 - 指令directive
 - 过滤器filter
@@ -94,13 +94,13 @@ var Modal = Regular.extend({
 
 ## 组件的功能扩展以及命名空间
 
-根据[API文档]({{api}})的介绍， 我们知道了所有regularjs组件都支持这几种扩展.
+根据[API文档]({{api}})的介绍，我们知道了所有regularjs组件都支持这几种扩展。
 
 1. filter: 过滤器扩展
 2. directive: 指令扩展
 3. event: 扩展一个自定义事件
 4. animation: 扩展一个新的[动画command](../animation/command.md)
-5. component: 注册一个组件, 使其在当前组件的模板中可用.
+5. component: 注册一个组件，使其在当前组件的模板中可用。
 6. implement: 扩展组件的原型方法
 
 
@@ -132,17 +132,17 @@ alert(SubChild.event('tap2') === tap2)
 // filter，directive is the same
 ```
 
-即父类无法获得子类定义的扩展, 而反之可以, 这个最基本的概念是实现regular的插件化的第一步.
+即父类无法获得子类定义的扩展，而反之可以，这个最基本的概念是实现regular的插件化的第一步。
 
-对于implement无需多做解释, 这是原型继承的基本原理, 而对于其它几个接口, 是通过定义的原型继承`Object.create()`来实现的
+对于implement无需多做解释，这是原型继承的基本原理，而对于其它几个接口，是通过定义的原型继承`Object.create()`来实现的
 
-__单向影响性__ 是实现regularjs封装性的第一步.
+__单向影响性__ 是实现regularjs封装性的第一步。
 
 ## 建立项目内独立的隔离空间
 
-对于建立独立的隔离空间,聪明的同学可能已经想到了: 
+对于建立独立的隔离空间，聪明的同学可能已经想到了: 
 
-> 即定义一个不会被实例化的组件来替代Regular顶层空间.
+> 即定义一个不会被实例化的组件来替代Regular顶层空间。
 
 ```javascript
 var YourNameSpace = Regular.extend()
@@ -152,14 +152,14 @@ YourNameSpace.filter().directive().event() //....
 var Component = YourNameSpace.extend();
 ```
 
-这样, 独立项目内的扩展就不会影响到产品中的其它Regular组件了, 而扩展自NameSpace的组件可以拥有所有组件内的功能扩展.
+这样，独立项目内的扩展就不会影响到产品中的其它Regular组件了，而扩展自NameSpace的组件可以拥有所有组件内的功能扩展。
 
 
 
 
 ## Regular插件
 
-本小节会说明, 一种推荐的定义插件的方式， 它包括
+本小节会说明，一种推荐的定义插件的方式，它包括
 
 - regularjs推荐的插件定义
 - reuglarjs中已经内置的插件
@@ -167,16 +167,16 @@ var Component = YourNameSpace.extend();
 
 ### 简介
 
-angular中模块化的解决方案是`angular.module()`和依赖注入, 一个模块可以有factory可以有filter可以有directive等等.
+angular中模块化的解决方案是`angular.module()`和依赖注入，一个模块可以有factory可以有filter可以有directive等等。
 
-在regularjs中不可能照搬这种方式, 这是因为
+在regularjs中不可能照搬这种方式，这是因为
 
-- regularjs中没有`$rootScope.$digest()`这种全局性的__解药__无脑的促使所有绑定进入数据检查阶段，regularjs组件的生命周期都是独立的, 这就决定了必须让扩展建立与组件的关系.
+- regularjs中没有`$rootScope.$digest()`这种全局性的__解药__无脑的促使所有绑定进入数据检查阶段，regularjs组件的生命周期都是独立的，这就决定了必须让扩展建立与组件的关系。
 
-  比如angular的`$timeout`之类的实现只需在定时器完成后`$rootScope.$digest()`即可进入全局的数据检查, 而regular中[timeout](#timeout)之后必须调用组件的`$update()`才进入组件本身的数据检查阶段,即需建立与组件的关系.
+  比如angular的`$timeout`之类的实现只需在定时器完成后`$rootScope.$digest()`即可进入全局的数据检查，而regular中[timeout](#timeout)之后必须调用组件的`$update()`才进入组件本身的数据检查阶段，即需建立与组件的关系。
 
 
-- 模块插件应该是与组件无关的, 绑定只应该在被使用时发生, 这样才是可复用的模块插件.
+- 模块插件应该是与组件无关的，绑定只应该在被使用时发生，这样才是可复用的模块插件。
 
 
 所以一个典型的插件的写法应该是这样的
@@ -198,7 +198,7 @@ FooModule(Regular);         // lazy bind(global)
 ```
 
 
-为了更统一, 所有Component都有一个`use`函数来统一'使用'插件, 如上例可以写成
+为了更统一，所有Component都有一个`use`函数来统一'使用'插件，如上例可以写成
 
 ```javascript
 
@@ -224,14 +224,14 @@ timeout插件在组件中扩展了两个方法
 
 - `Number $timeout(fn, delay)`: 
   
-  定时器函数(setTimeout), 在fn调用会进入本组件的数据检查，返回计时器id 
+  定时器函数(setTimeout)，在fn调用会进入本组件的数据检查，返回计时器id 
 
 - `Number $interval(fn, delay)`: 
   
-  周期定时器函数(setInterval), 在fn调用后会进入本组件的数据检查，返回计时器id
+  周期定时器函数(setInterval)，在fn调用后会进入本组件的数据检查，返回计时器id
 
 
-timeout插件非常简单, 简单到可以直接列出全部源码
+timeout插件非常简单，简单到可以直接列出全部源码
 
 ```js
 function TimeoutModule(Component){
@@ -287,7 +287,7 @@ new Counter({data: {count:0}}).$inject('#app');
 
 ## 小节
 
-经过本章的学习， 我们理解了
+经过本章的学习，我们理解了
 
 - 每一个Regular组件类都拥有以下类方法用来定义或扩展组件能力
     1. extend
@@ -299,10 +299,10 @@ new Counter({data: {count:0}}).$inject('#app');
     7. component
     8. use
 
-- 扩展都具有单向性， 使得 implement/directive/filter/event/animation/component 都只会作用于本组件或子类组件
+- 扩展都具有单向性，使得 implement/directive/filter/event/animation/component 都只会作用于本组件或子类组件
 
-- 鉴于这个单向性， 我们可以在每个工程中定义一个“命名空间”来实现本工程对外的隔离性
+- 鉴于这个单向性，我们可以在每个工程中定义一个“命名空间”来实现本工程对外的隔离性
 
-- 我们可以定义一个插件， 并使用use来使用这个插件
+- 我们可以定义一个插件，并使用use来使用这个插件
 
 

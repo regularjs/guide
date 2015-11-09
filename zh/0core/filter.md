@@ -1,6 +1,6 @@
 # filter——过滤器
 
-定义一个过滤器， 可以在表达式中使用， 一般应用在插值中，行为与angular的filter一致
+定义一个过滤器，可以在表达式中使用，一般应用在插值中，行为与angular的filter一致
 
 ## 接口说明
 
@@ -12,7 +12,7 @@ __`Component.filter(name, filterFn)`__
     - args  template里传入的其它参数
     - this 这里的this指向component组件本身
 
-> 当不传入spec时, filter是一个getter方法，用于获取过滤器定义
+> 当不传入spec时，filter是一个getter方法，用于获取过滤器定义
 
 
 

@@ -1,7 +1,7 @@
 
 ## 前言
 
-现在市面上充斥了越来越多的javascript框架，给开发者的技术选型带来极大的选择成本，[todomvc](http://todomvc.com/)在这个环境下应运而生. 
+现在市面上充斥了越来越多的javascript框架，给开发者的技术选型带来极大的选择成本，[todomvc](http://todomvc.com/)在这个环境下应运而生。
 
 由于todomvc有一个完整的实现定义，它复杂度适中，大概就是平时开发的一个组件的功能复杂度，开发者可以轻松对各个框架的代码做对比，同时由于功能一致，也可以进行各框架之间的[性能对比(当然这个测试案例其实并没有很大的实际意义)](http://regularjs.github.io/perf/todomvc-benchmark/index.html). 
 
@@ -16,7 +16,7 @@
 
 ## 第一步: 静态页面
 
-第一步，我们需要一个完整的静态页面作为后续逻辑的基础，这里我们不再详细介绍如何实现这个页面，直接从todomvc的官网copy一份静态页面下来.
+第一步，我们需要一个完整的静态页面作为后续逻辑的基础，这里我们不再详细介绍如何实现这个页面，直接从todomvc的官网copy一份静态页面下来。
 
 ```html
 <!--引入todomvc.css-->
@@ -72,15 +72,15 @@
 <script src="https://rawgit.com/regularjs/regular/master/dist/regular.js"></script>
 ```
 
-你可以直接保存成index.html来查看效果,也直接在[codepen中查看](http://codepen.io/leeluolee/pen/EuHcd)
+你可以直接保存成index.html来查看效果，也直接在[codepen中查看](http://codepen.io/leeluolee/pen/EuHcd)
 
 
 
 ##第二步: 视图(模板)与数据model分离
 
-按以往的经验，我们应该使用jQuery等框架来一个个绑定节点处理业务逻辑了.这样会带来很多的问题，一旦你去绑定了大量的dom事件和进行了过多的dom操作，往往会带你进入难以维护的深渊，我们可以使用模板来强制将model(模型)与视图(view)分开。
+按以往的经验，我们应该使用jQuery等框架来一个个绑定节点处理业务逻辑了。这样会带来很多的问题，一旦你去绑定了大量的dom事件和进行了过多的dom操作，往往会带你进入难以维护的深渊，我们可以使用模板来强制将model(模型)与视图(view)分开。
 
-所以这一步，我们什么都不做，仅仅只是将上面的静态页面转由regularjs模板生成.
+所以这一步，我们什么都不做，仅仅只是将上面的静态页面转由regularjs模板生成。
 
 ```html
 <div id="todoapp"></div>
@@ -139,9 +139,9 @@ var app = new TodoMVC({
 
 在codepen中查看结果
 
-其中`Regular.extend`用于定义一个组件，最基本的情况就是指定一个模板(template字段)，而`new TodoMVC`相当于是compile这个组件，一般我们会在这里传入`data`模型，我们同时将compile后的组件插入到节点`#todoapp`中.
+其中`Regular.extend`用于定义一个组件，最基本的情况就是指定一个模板(template字段)，而`new TodoMVC`相当于是compile这个组件，一般我们会在这里传入`data`模型，我们同时将compile后的组件插入到节点`#todoapp`中。
 
-事实上大家都发现了，这里我们完全没有做额外的逻辑，但是这是将view与model分开的关键一步.
+事实上大家都发现了，这里我们完全没有做额外的逻辑，但是这是将view与model分开的关键一步。
 
 [DEMO2](http://codepen.io/leeluolee/pen/xvCjm)
 
@@ -165,7 +165,7 @@ var app = new TodoMVC({
 .....
 
 ```
-list规则用于处理循环逻辑，完整描述可以查看[Regularjs指南的list部分](http://regularjs.github.io/guide/zh/syntax/list.html)。 这里我们也应用到了最基础的[插值](http://regularjs.github.io/guide/zh/syntax/inteplation.html)(`{}`)
+list规则用于处理循环逻辑，完整描述可以查看[Regularjs指南的list部分](http://regularjs.github.io/guide/zh/syntax/list.html)。这里我们也应用到了最基础的[插值](http://regularjs.github.io/guide/zh/syntax/inteplation.html)(`{}`)
 
 我们传入一个todos的假数据
 ```javascript
@@ -196,20 +196,20 @@ regularjs的parse是基于字符串的，它输出包含完整信息的ast给基
 3. 标记完成
 4. 删除指定的todo项(利用todo_index下标，它的命名取决于你定义的列表项的名称加`_index`)
 
-regularjs的数据驱动是基于代码脏检查的(与angular一致)，所以你可以直接操作裸数据来完成状态变更.
+regularjs的数据驱动是基于代码脏检查的(与angular一致)，所以你可以直接操作裸数据来完成状态变更。
 
 
 
 ## 第四步： 完善我们的组件业务逻辑
 
-目前，除了中间列表部分的view，其它部分的数据都没有完成数据联动. 我们遗留的业务逻辑有:
+目前，除了中间列表部分的view，其它部分的数据都没有完成数据联动。我们遗留的业务逻辑有:
 
 1. 点击下方的`All Active Completed`面板要完成todos面板的切换来分别显示所有、未完成、完成的todo列表
 2. 上面的input可以进行新建todo
 3. 切换左上角的checkbox可以进行标记全部和取消编辑全部的操作
 4. 点击右下角的clearComplete 应该可以删除所有完成的列表项
 
-一个组件的业务逻辑(对于一个mvvm模式的组件来讲，业务逻辑应该是纯数据操作)应该是在定义时就进行确定. 我们在extend时定义这些业务.
+一个组件的业务逻辑(对于一个mvvm模式的组件来讲，业务逻辑应该是纯数据操作)应该是在定义时就进行确定。我们在extend时定义这些业务。
 
 ```javascript
 
@@ -399,7 +399,7 @@ var TodoMVC = Regular.extend({
 ```
 
 
-至此，我们利用大约40行模板+50行代码实现了todomvc. 并且完全没有掺入dom操作，完全是按照以前使用模板的思维。
+至此，我们利用大约40行模板+50行代码实现了todomv。并且完全没有掺入dom操作，完全是按照以前使用模板的思维。
 
 ## 第六步: 使用if/else来控制区域的创建与回收
 
@@ -415,7 +415,7 @@ var TodoMVC = Regular.extend({
 
 1相较于2，最大的不同是完整回收，并且可以作用于任意的块: 比如多个并列节点。而2只能以节点为单位(即类似与angular的ng-show)
 
-这里我们采用if来完成我们的需求.修改后的模板如下
+这里我们采用if来完成我们的需求。修改后的模板如下
 
 ```html
 
@@ -453,7 +453,7 @@ var TodoMVC = Regular.extend({
 </li>
 ```
 
-注意这里的`on-click='remove'` 代表点击后抛出自定义事件`remove`, 你可以捕获这个事件来处理删除操作(因为我们无法获得todos数据了)
+注意这里的`on-click='remove'` 代表点击后抛出自定义事件`remove`，你可以捕获这个事件来处理删除操作(因为我们无法获得todos数据了)
 
 对应的组件定义
 
@@ -478,9 +478,9 @@ var Todo = Regular.extend({
 {/list}
 ```
 
-这里我们直接通过on-remove来捕获子组件抛出的`remove`事件.
+这里我们直接通过on-remove来捕获子组件抛出的`remove`事件。
 
-很明显的看到，利用子组件和持续重构可以帮助我们维护越来越复杂的组件关系. 
+很明显的看到，利用子组件和持续重构可以帮助我们维护越来越复杂的组件关系。
 
 [DEMO6](http://codepen.io/leeluolee/pen/dGxCb)
 

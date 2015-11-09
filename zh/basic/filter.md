@@ -1,13 +1,13 @@
 
 # 过滤器Filter
 
-regularjs通过[filter函数]({{syntax}}#filter)来定义一个过滤器.
+regularjs通过[filter函数]({{syntax}}#filter)来定义一个过滤器。
 
 
 ## 使用过滤器
 
 
-过滤器 是一种 表达式 在regularjs中使用, 与其它表达式并无不同:
+过滤器 是一种 表达式 在regularjs中使用，与其它表达式并无不同:
 
 ```html
 <p>{ [1,2,3] |join: "+" } = 6</p>
@@ -29,9 +29,9 @@ __output__
 
 ## 双向过滤器
 
-regularjs支持一个简单的概念: 双向过滤器.它 主要是帮助我们实现数据的对流, 对任意数据读或写操作时可以进行过滤操作
+regularjs支持一个简单的概念: 双向过滤器。它 主要是帮助我们实现数据的对流，对任意数据读或写操作时可以进行过滤操作
 
-细节我不再描述， 它在[API文档中]({{ref}}?api-zh#two-way-filter)有详细说明. 
+细节我不再描述，它在[API文档中]({{ref}}?api-zh#two-way-filter)有详细说明。
 
 
 ## 简单例子: format
@@ -87,7 +87,7 @@ Regular.filter("format", function(value, format){
 
 你可以在`Component.extend`或`new Component`时传入`computed`参数
 
-> 与参数`data`类似，`Component.extend`中传入的`computed`会被`new Component`的`computed`合并.
+> 与参数`data`类似，`Component.extend`中传入的`computed`会被`new Component`的`computed`合并。
 
 
 ### 你可以传入多种类型的计算属性
@@ -138,7 +138,7 @@ var component = regular.extend({
 ```
 
 
-__传入一个字符串表达式, 它会被处理成Expression对象__
+__传入一个字符串表达式，它会被处理成Expression对象__
 
 
 ```javascript
@@ -191,7 +191,7 @@ var component = new Component({
 
 ## 利用计算属性 处理 「全选/反选」
 
-比如我们在处理列表时的全选反选逻辑， 就可以用计算属性来简单处理
+比如我们在处理列表时的全选反选逻辑，就可以用计算属性来简单处理
 
 ```js
 
@@ -240,7 +240,7 @@ var ListComponent = Regular.extend({
 
 ```
 
-__从数据出发去考虑业务逻辑__， 会让你节省大量的时间
+__从数据出发去考虑业务逻辑__，会让你节省大量的时间
 
 
 
