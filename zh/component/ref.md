@@ -80,7 +80,7 @@ var SubComponent = Component.extend({
 
 ```
 
-这就会出现问题，因为`SubComponent`覆盖的模板并没有标记container节点。这种情况其实是因为__模板的控制权不在当前组件__. 
+这就会出现问题，因为`SubComponent`覆盖的模板并没有标记container节点。这种情况其实是因为 __模板的控制权不在当前组件__ 。
 
 同样的问题还会出现在内嵌组件在组合使用时，因为[内嵌内容](component/composite.md)是不属于当前组件控制的，就如下例的`<li></li>`，你无法在`Dragable`组件内部标记到它。
 

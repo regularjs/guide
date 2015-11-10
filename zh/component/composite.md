@@ -19,7 +19,7 @@ _请升级到版本`0.4.0`以上，这个版本已将`<r-content/>`统一到了 
 <a name="body"></a>
 
 
-## 内嵌内容(transcluded content)
+## 内嵌内容（transcluded content）
 
 ### 『什么是内嵌内容?』
 
@@ -61,7 +61,7 @@ _请升级到版本`0.4.0`以上，这个版本已将`<r-content/>`统一到了 
 
 这种其实更接近一种__『内容上』__的组合关系，`video`会使用到`source`节点的信息。事实上audio标签也可以直接嵌套`source`，所以它们就是一种组合关系。
 
-对于组件而言，内嵌内容也是类似，即__被组件标签所包裹的内容__. 
+对于组件而言，内嵌内容也是类似，即__被组件标签所包裹的内容__。
 
 ```html
 <modal on-confirm={this.ok()}>
@@ -144,7 +144,7 @@ var App = Regular.extend({
 
 此时，你会有受挫感，因为其实content对应这段模板的context是属于Alert组件的，而不是我们的APP，进而也就没法调用到APP实例上的closeAlert了。
 
-__最终解决方案: 通过`{#include this.$body}`使用内嵌内容__
+__最终解决方案：通过`{#include this.$body}`使用内嵌内容__
 
 ```js
 var Alert = Regular.extend({ 
@@ -166,7 +166,7 @@ var app = new Regular({
 
 这里`alert`包裹的部分就是`this.$body`所代表的区域。
 
-对于上层组件app而言，alert节点本省就像个容器，它内部的`this.$body` 的内嵌内容的Context仍然属于App本身，所以我们可以通过showAlert来直接控制app的showAlert.
+对于上层组件app而言，alert节点本省就像个容器，它内部的`this.$body` 的内嵌内容的Context仍然属于App本身，所以我们可以通过showAlert来直接控制app的showAlert。
 
 [|DEMO|](http://codepen.io/leeluolee/pen/ojdegY)
 
@@ -193,7 +193,7 @@ var alert = new Alert({
 
 ```
 
-此时`this.$body`是一个字符串。运行之后你会发现也可以凑效，这个是由于[{#include}]({{syntax}}#include)的特性决定的:
+此时`this.$body`是一个字符串。运行之后你会发现也可以凑效，这个是由于[{#include}]({{syntax}}#include)的特性决定的：
 
 __『include同时也接受字符串作为参数』__
 
@@ -204,7 +204,7 @@ __『include同时也接受字符串作为参数』__
 ## 视觉父节点(Visual Parent): `this.$outer` 
 
 
-为了完善组合这个功能，Regular同时引入 __视觉父节点__ 这个概念。首先我们以一个简单的tab组件的使用为例来说明: 
+为了完善组合这个功能，Regular同时引入 __视觉父节点__ 这个概念。首先我们以一个简单的tab组件的使用为例来说明：
 
 ```js
  <tab>
@@ -274,7 +274,7 @@ return Tab;
 
 ## 组合本身带来的意义
 
-事实上继承(extend)或是混入(implement)，已经可以解决Regular组件的成员属性和方法的复用问题，但是对于UI组件本身的模板却无法做到复用，通常如果组件结构变化了，那整个组件的模板都将重写。所以组合其实是一种组件设计思想: 
+事实上继承(extend)或是混入(implement)，已经可以解决Regular组件的成员属性和方法的复用问题，但是对于UI组件本身的模板却无法做到复用，通常如果组件结构变化了，那整个组件的模板都将重写。所以组合其实是一种组件设计思想：
 
 > 『组合会强迫你将组件变化的部分提取出来通过#include引入，从而不变的部分可以得以复用』
 

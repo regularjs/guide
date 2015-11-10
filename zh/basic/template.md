@@ -3,7 +3,7 @@
 
 ### __[&#x27AD;阅读模板文档](http://regularjs.github.io/reference/?syntax-zh)__
 
-Regularjs内建了一个蝇量级的模板解析(称之为rgl)，从字符串解析到中间AST再进行Living Dom的创建，也就是所谓的『Living Templating』的技术。技术方案总归是优劣并存，之所以选择这个市面上接受度不高的方案，除了是为了方便推广给我司熟悉JST的同学外，主要还有以下几点原因
+Regularjs内建了一个蝇量级的模板解析(称之为rgl)，从字符串解析到中间AST再进行Living DOM的创建，也就是所谓的『Living Templating』的技术。技术方案总归是优劣并存，之所以选择这个市面上接受度不高的方案，除了是为了方便推广给我司熟悉JST的同学外，主要还有以下几点原因
 
 - 更安全: 全程无innerHTML
 - 更灵活: 不用再被ng-if ng-repeat等限制在单节点上
@@ -49,7 +49,7 @@ Regular的表达式支持
 
 * __get(context)__
 
-  即这个表达式的求值函数，函数需要传入一个context即Component实例 它返回求值结果 
+  即这个表达式的求值函数，函数需要传入一个context即Component实例，它返回求值结果 
 
   在内部regularjs通过比较get函数两次返回结果的不同判断数据是否变动。
 
@@ -74,7 +74,7 @@ Regular的表达式支持
 
 * __set(context, value)__  *此函数不一定存在
 
-  如果表达式是一个合法的[LeftHandSideExpression](http://es5.github.io/#x11.2), regular会提取出set函数，用来对表达式代表的字段进行赋值，set函数通常用于实现双向绑定(比如内置的指令r-model就利用了set函数)
+  如果表达式是一个合法的[LeftHandSideExpression](http://es5.github.io/#x11.2)，regular会提取出set函数，用来对表达式代表的字段进行赋值，set函数通常用于实现双向绑定(比如内置的指令r-model就利用了set函数)
 
 
   _example_
@@ -100,7 +100,7 @@ Regular的表达式支持
 
   ```
 
-  并不是所有表达式都可以提取出set，即代表了不是所有表达式都能完成双向绑定，比如表达式`「a+b」`，显然虽然我们可以获取它的值，但是我们无从知晓如何去设置a, b的值。
+  并不是所有表达式都可以提取出set，即代表了不是所有表达式都能完成双向绑定，比如表达式`「a+b」`，显然虽然我们可以获取它的值，但是我们无从知晓如何去设置a和b的值。
 
 
 

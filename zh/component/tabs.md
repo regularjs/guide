@@ -8,7 +8,7 @@ Tabs是最常见的一种组件，虽然它比todomvc更加简单，但是却 �
 1. regularjs中的"transcluded content"(内嵌内容)，并且结合占位`<r-content>`引入这段内容。
 2. regularjs组件之间的自由组合
 
-本文的例子修改自于一个一位网友的Issue，所以组件的命名会贴近其原始的驼峰方式(有点类似React).
+本文的例子修改自于一个一位网友的Issue，所以组件的命名会贴近其原始的驼峰方式（有点类似React）。
 
 __DEMO结构__
 
@@ -221,7 +221,7 @@ __如果组件是其它组件的内嵌内容，那你可以通过`$outer`来获�
 
 _结合[组件生命周期](../concept/lifecyle.md)来加深理解_
 
-借由这个原理，我们可以在TabPane的config时，通过this.$outer获得它外层的组件(即Tabs).
+借由这个原理，我们可以在TabPane的config时，通过this.$outer获得它外层的组件（即Tabs）。
 
 ```
 var TabPane = Regular.extend({
@@ -232,7 +232,7 @@ var TabPane = Regular.extend({
     // ... 
 })
 ```
-这样，每个pane组件就作为一份数据放入了外层容器`Tabs`的`data.tabs`数组中了，这样在外层的tabs组件中，我们就可以通过遍历来先输出tabs的title.
+这样，每个pane组件就作为一份数据放入了外层容器`Tabs`的`data.tabs`数组中了，这样在外层的tabs组件中，我们就可以通过遍历来先输出tabs的title。
 
 ```
 
@@ -324,7 +324,7 @@ regularjs的主题是使用动态模板来书写数据驱动的组件，而组�
 ```
 ## 最后一步
 
-我们甚至可以将我们之前的TODOMVC + HelloWorld 放置到Content.
+我们甚至可以将我们之前的TODOMVC + HelloWorld放置到Content。
 一切都是可组合的，就如同你使用html标签一样，不过regularjs的组件化与web component 完全不冲突，它基于自建的解析器，所以regularjs不仅仅可以无缝集成与目前的任何框架，同时也顺应未来趋势，你目前所做的基于regularjs的封装，在未来也足够，至少规范内的webcomponent的数据驱动模板的能力是非常弱的，而regularjs正好可以弥补这一点。
 
-下一节，我们将会来学习，如何使用regular-register 来一键转化regularjs组件为规范的custom-element.
+下一节，我们将会来学习，如何使用regular-register 来一键转化regularjs组件为规范的custom-element。

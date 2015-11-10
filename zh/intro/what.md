@@ -48,11 +48,11 @@ __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新
 数据模型抽象的方式有很多种，但是目前不外乎以下几种：
 
 - 脏检查
-  - 数据模型的脏检查(angularjs / regularjs) 
-  - view抽象的脏检查(react以及雨后春笋般的基于virtual dom的库或框架)
+  - 数据模型的脏检查（angularjs / regularjs）
+  - view抽象的脏检查（react以及雨后春笋般的基于virtual dom的库或框架）
 - 存取器
-  - 计算属性: defineProperty(vuejs，黑科技avalonjs)
-  - 常规的setter/getter函数(Backbone, knockoutjs, ractivejs)
+  - 计算属性: defineProperty（vuejs，黑科技avalonjs）
+  - 常规的setter/getter函数（Backbone, knockoutjs, ractivejs）
 
 
 
@@ -62,7 +62,7 @@ __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新
 
 ### 3. 组件
 
-随着angularjs等框架的大行其道，bootstrap等ui框架也提供了很多标签上直接可配的使用方式。大部分的人脑中对 __组件化__ 的理解似乎开始停留在了 __【标签化】__ 这个层级上，事实上组件的定义从来不曾改变过：
+随着angularjs等框架的大行其道，bootstrap等ui框架也提供了很多标签上直接可配的使用方式。大部分的人脑中对 __组件化__ 的理解似乎开始停留在了__【标签化】__ 这个层级上，事实上组件的定义从来不曾改变过：
 
 > 在前端开发领域，组件应该是一种独立的、可复用的交互元素的封装
 
@@ -147,10 +147,10 @@ __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新
 1. web component：polymer x-tags
 2. 动画：material design等设计趋势，硬件和浏览器的更新
 3. 同构的javascript：这一般会包含两个组成方面： __单页应用__ 与 __路由系统__ 。我可以负责任的说，目前的基于框架的同构app实现基本还处于玩具级别，DEMO和产品的性质是不同的
-4. ES6/7：Object.observe / class/ imports等
+4. ES6/7：Object.observe / class / imports等
 5. ....
 
-在这些部分，regularjs有些完成了一些工作，而有些还正在进行(但是已经确保可能性).
+在这些部分，regularjs有些完成了一些工作，而有些还正在进行（已经确保了实现的可能性）。
 
 
 ## regularjs有哪些特性
@@ -164,11 +164,11 @@ __Regularjs是基于动态模板实现的用于构建数据驱动型组件的新
 我们先简单看下regularjs的特性支持： 
 
 0. 几乎完备ES5表达式支持
-1. 指令/过滤器(双向)
+1. 指令/过滤器（双向）
 2. 一致的事件系统
 3. 动画系统
 4. 单页面支持: 需配合regular-state模块
-5. 内嵌组件 + 内嵌内容(transclued content)
+5. 内嵌组件 + 内嵌内容（transcluded content）
 6. 良好的封装性和扩展性
 7. ....
 

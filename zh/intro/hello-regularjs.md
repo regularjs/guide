@@ -2,7 +2,7 @@
 
 这一小节，我们将实现一个简单的组件—— __HelloRegular__ ，它用来显示友好的用户欢迎语，但是如果用户未登录的话需要提示进行登录信息，为了简单起见只需要输入用户名就可以进行登录。
 
-经过本节学习，你将会了解: 
+经过本节学习，你将会了解：
 
 1. 如何初始化regularjs页面
 2. 使用[插值]({{ref}}?syntax-zh#interpolation)
@@ -43,19 +43,19 @@ component.$inject('#app');
 
 * __`Regular.extend`__
 
-  Regular.extend用来创建一个继承自Regular的组件类，所有传入extend的属性都会成为此组件类的原型属性
+  Regular.extend用来创建一个继承自Regular的组件类，所有传入extend的属性都会成为此组件类的原型属性。
 
 
 * `template`
 
-  一般来讲一个组件会需要一个模板来描述组件的结构，这里我们传入包含模板的容器节点的选择器(你也可以直接传入模板字符串)
+  一般来讲一个组件会需要一个模板来描述组件的结构，这里我们传入包含模板的容器节点的选择器（你也可以直接传入模板字符串）。
 
 
 * `data`
   
   组件component可能需要一些初始化状态，这些数据我们可以在实例化组件时作为`data`传入。
 
-  > 需要注意的是在实例化组件传入的参数会被作为实例属性，所以可以在这里覆盖extend的定义(原型属性)
+  > 需要注意的是在实例化组件传入的参数会被作为实例属性，所以可以在这里覆盖extend的定义（原型属性）。
 
 
   <a name="$inject"></a>
@@ -64,10 +64,10 @@ component.$inject('#app');
 
   这是个组件的实例方法，会将组件插入到目标节点制定位置
 
-  * `bottom`[默认参数]: 作为node的 lastChild插入
-  * `top`: 作为node的firstChild 插入
-  * `after`: 作为node的nextSibling插入
-  * `before`: 作为previousSibling插入
+  * `bottom`[默认参数]：作为node的lastChild插入
+  * `top`：作为node的firstChild插入
+  * `after`：作为node的nextSibling插入
+  * `before`：作为previousSibling插入
 
 
 
@@ -86,8 +86,7 @@ component.$inject('#app');
 
 ## 3. 处理未登录的情况——if/else逻辑控制
 
-接下来我们处理未登录的用户情况
-
+接下来我们处理未登录的用户情况：
 
 ```xml
 {#if username}
@@ -97,7 +96,7 @@ component.$inject('#app');
 {/if}
 ```
 
-就与常规的字符串模板(例如jst)类似，模板里我们添加`if/else`来区分登录用户与游客的显示效果
+就与常规的字符串模板（例如jst）类似，模板里我们添加`if/else`来区分登录用户与游客的显示效果。
 
 
 [__&#x261E; 查看结果__](http://fiddle.jshell.net/leeluolee/C2Gh9/3/)
@@ -105,7 +104,7 @@ component.$inject('#app');
 
 ## 4. 实现用户登录登出的功能—— `on-click`
 
-这里同时我们添加了两个click事件来处理用户的登录与登出逻辑，
+这里同时我们添加了两个click事件来处理用户的登录与登出逻辑：
 
 ```html
 {#if username}
@@ -148,7 +147,7 @@ var HelloRegular = Regular.extend({
 虽然这个例子非常简单，但是基本上实现一个组件的思路大同小异
 
 1. 根据需求得到静态html结构，并将其模板化，并结合Regular.extend将其封装成一个组件。
-2. 根据业务需求添加dom事件并添加对应的组件原型方法(如上例的login)
+2. 根据业务需求添加dom事件并添加对应的组件原型方法（如上例的login）
 3. 如果需要你还可能将部分可重用功能拆分为[子组件](../component/README.md)
 
 

@@ -93,7 +93,7 @@ this.config && this.config(this.data);
 
 #### 6* __编译模板__，触发一次组件脏检查
 
-这里的脏检查是为了确保组件视图正确，　__到这里我们已经拥有初始化的dom元素__，你可以通过$refs来获取你标记的。
+这里的脏检查是为了确保组件视图正确，__到这里我们已经拥有初始化的dom元素__，你可以通过$refs来获取你标记的。
 
 ```js
 
@@ -127,7 +127,7 @@ if( this.init ) this.init(this.data);
 
 2. 销毁所有模板的dom节点，并且解除所有数据绑定、指令等
 
-需要注意的是，是Regular.prototype.destory完成了这些处理，　所以永远记得在你定义的destory函数中使用`this.supr()。一个更稳妥的方案是: 永远不重写destroy，而是注册`$destory`事件来完成你的回收工作。
+需要注意的是，是Regular.prototype.destory完成了这些处理，所以永远记得在你定义的destory函数中使用`this.supr()。一个更稳妥的方案是: 永远不重写destroy，而是注册`$destory`事件来完成你的回收工作。
 
 ```js
 Component.extend({
@@ -150,7 +150,7 @@ Component.extend({
 
 
 在编译阶段(AST -> DOM)，每当Regular碰到一个节点标签例如
-(其中，我们假定__`custom-pager`__是一个已注册的组件)
+（其中，我们假定__`custom-pager`__是一个已注册的组件）
 
 
 - `<custom-pager attr1={user} attr2=user on-nav={this.nav()}></custom-pager>` 
@@ -160,19 +160,19 @@ Component.extend({
 
 将会发生以下过程
 
-- 查找是否可以找到注册为对应名字的组件(通过`Component.component`)
-- 如果找到，　则视其为内嵌组件(如`custom-pager`)，　会执行流程1
+- 查找是否可以找到注册为对应名字的组件（通过`Component.component`）
+- 如果找到，　则视其为内嵌组件（如`custom-pager`），　会执行流程1
   1. 创建一个空对象`data`.
-  2. 如果有[内嵌内容](./composite.md)，它会被解析并作为实例的`$body`属性，你可以配合 `{#include this.$body}` 来使用它，也可以将其结合include使用(注意，两种方式的作用域指向是不同的)
+  2. 如果有[内嵌内容](./composite.md)，它会被解析并作为实例的`$body`属性，你可以配合 `{#include this.$body}` 来使用它，也可以将其结合include使用（注意，两种方式的作用域指向是不同的）
   3. 遍历每个属性，
-    - 如果不是事件则作为`data`的一个属性值，　如果为插值则建立父组件与子组件的__双向绑定__
+    - 如果不是事件则作为`data`的一个属性值，如果为插值则建立父组件与子组件的 __双向绑定__
     - 如果是[`ref`](./ref.md)则标记它
     - 如果是事件名`on-xx`，则注册为Emitter事件，相当于`this.$on(xx, ...)`
-  4. 初始化组件(通过new Component), `data`会作为参数传入
+  4. 初始化组件（通过new Component），`data`会作为参数传入
   5. 插入到父组件的内容中
 - 如果没有找对应组件名，则执行流程2
   1. 创建一个节点`document.createElement(tagName)`
-  2. 编译它的子元素(如果有的话)，并塞入节点。
+  2. 编译它的子元素（如果有的话），并塞入节点。
   3. 遍历属性值，分别根据指令，事件和普通属性值处理，与组件一样，如果是[`ref`](./ref.md)，则会标记这个节点。
   4. 将节点插入到父组件的内容中
 
@@ -192,7 +192,7 @@ Component.extend({
   ```
 
   
-  就相当于是手动调用组件(参数请查看[API:options](?api-zh#options))
+  就相当于是手动调用组件（参数请查看[API:options](?api-zh#options)）
   
 
   ```js

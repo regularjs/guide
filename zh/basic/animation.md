@@ -1,6 +1,6 @@
 # 动画系统
 
-声明式的动画绝对是所有MVVM框架都面临的难点，90%的框架都只处理了 节点进入退出的动画操作。Regular的动画系统非常轻量级(代码量上)，但是毫无疑问的是很强大的实现，眼见为实，看看它的过人之处吧。
+声明式的动画绝对是所有MVVM框架都面临的难点，90%的框架都只处理了 节点进入退出的动画操作。Regular的动画系统非常轻量级（代码量上），但是毫无疑问的是很强大的实现，眼见为实，看看它的过人之处吧。
 
 
 ## 动画简介
@@ -134,7 +134,7 @@ __box3__:
 
 ### 4. emit: event
 
-抛出某个事件，__注意这可能会触发另一个动画序列__( 被命令`on` 捕获)
+抛出某个事件，__注意这可能会触发另一个动画序列__（被命令`on` 捕获）
 
 ```html
 
@@ -194,7 +194,7 @@ box1 通过抛出swing-over等事件触发了box2得动画。
 
 ### 6. style: propertyName1 value1, propertyName1 value1 ...
 
-设置样式并且等待 `transitionend`(如果可以触发的话)
+设置样式并且等待 `transitionend`（如果可以触发的话）
   
 __example__
 
@@ -257,12 +257,12 @@ __param__
 
 ## 扩展 Animation
 
-上面的所有例子，其实都是基于CSS3的动画，如果你需要更精细的动画控制，或是需要兼容不支持CSS3的浏览器，那可能需要通过`Component.animation接口`扩展你的动画Command(内部Command也是通过此接口扩展)
+上面的所有例子，其实都是基于CSS3的动画，如果你需要更精细的动画控制，或是需要兼容不支持CSS3的浏览器，那可能需要通过`Component.animation接口`扩展你的动画Command（内部Command也是通过此接口扩展）
 
 
 __参数__
 
-- name (String): 命令名
+- name(String): 命令名
 - handle(step): 序列命令定义，你需要在handle中返回一个函数
   - step.element: 即上述element对象
   - step.param: 即上述param
@@ -331,14 +331,14 @@ Regular.animation("fade", function(step){
 
 ## 再来一个不被推荐的例子
 
-可能相对于其他声明式的框架，regularjs的动画声明的写法上会繁琐一些，但是带来了无限的可能性，结合数据监听体系和事件系统，事实上你可以在regularjs中实现任意复杂度，跨越任意节点的动画序列!
+可能相对于其他声明式的框架，regularjs的动画声明的写法上会繁琐一些，但是带来了无限的可能性，结合数据监听体系和事件系统，事实上你可以在regularjs中实现任意复杂度，跨越任意节点的动画序列！
 
 [【DEMO: 实现一个无限循环的animation】](http://codepen.io/leeluolee/pen/vrgqu) 
 
 
 ## 小节
 
-不过由于声明式动画的天然限制，永远不要奢求其对动画的控制力可以达到手动js编码的自由度(比如使用velocity.js).
+不过由于声明式动画的天然限制，永远不要奢求其对动画的控制力可以达到手动js编码的自由度(比如使用velocity.js)。
 
 你可以通过在组件init后，手动通过[`$refs`](../component/ref.md)获取节点并结合velocity.js等更专业的动画框架来实现你需要的动画效果。
 

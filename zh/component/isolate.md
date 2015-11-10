@@ -23,6 +23,6 @@ __内嵌组件__ 会默认形成『它与上层组件之间的数据绑定关系
 <pager total={total} isolate on-nav='nav'></pager>
 ```
 
-那内嵌组件pager与实际就是完全隔离了，完全等同于JS初始化`new Pager().$inject('input', 'after')`. 
+那内嵌组件pager与实际就是完全隔离了，完全等同于JS初始化`new Pager().$inject('input', 'after')`。
 
 
