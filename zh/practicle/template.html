@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="4.1" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="4.1" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -393,7 +393,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -441,7 +441,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -457,7 +457,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -656,14 +656,14 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_31">
+                    <section class="normal" id="section-gitbook_831">
                     
                         <h1 id="">如何优雅的管理你的模板</h1>
-<p>作为一个『库』, Regular肯定不会涉及到模板的加载， 你只需保证传给<code>template</code>的值是个<strong>字符串</strong>或是<strong>预解析AST</strong>即可. </p>
+<p>作为一个『库』，Regular肯定不会涉及到模板的加载，你只需保证传给<code>template</code>的值是个<strong>字符串</strong>或是<strong>预解析AST</strong>即可。</p>
 <blockquote>
-<p>也就是说, 所有可以加载纯文本的方式都可以用来加载Regular的模板.</p>
+<p>也就是说，所有可以加载纯文本的方式都可以用来加载Regular的模板。</p>
 </blockquote>
-<p>Regularjs本身已经提供了尽可能多的方式来方便你在不同的场景下都能管理你的模板.</p>
+<p>Regularjs本身已经提供了尽可能多的方式来方便你在不同的场景下都能管理你的模板。</p>
 <p>方案清单:</p>
 <ul>
 <li>简单方案<ol>
@@ -682,7 +682,7 @@
 <li>使用Regular.parse实现解析插件</li>
 </ul>
 <h2 id="">简单管理方案</h2>
-<p>在regularjs提供的所有例子中，为了方便起见, 基本都使用了以下两种方式来管理你的模板:</p>
+<p>在regularjs提供的所有例子中，为了方便起见，基本都使用了以下两种方式来管理你的模板:</p>
 <p><a name="raw"></a></p>
 <ol>
 <li><p>直接在js中声明模板字符串</p>
@@ -691,14 +691,14 @@
 })
 </code></pre>
 <p>当模板非常简单时，这样做确实非常方便，</p>
-<p>当模板结构稍微复杂点时, 一般也可以使用页面的模板容器节点</p>
+<p>当模板结构稍微复杂点时，一般也可以使用页面的模板容器节点</p>
 </li>
 <li><p>引用实现写在页面标签中的内容，如 <a name="script"></a></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend({
  tempalte: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"app"</span>)
 })
 </code></pre>
-<p>在<code>#app</code>节点(一般是修改了type的script标签， 即不会render其中内容的容器):</p>
+<p>在<code>#app</code>节点(一般是修改了type的script标签，即不会render其中内容的容器):</p>
 <pre><code class="lang-html">
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">'app'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/rgl'</span>&gt;</span><span class="javascript">
 &lt;nav <span class="hljs-keyword">class</span>=<span class="hljs-string">"navbar navbar-inverse navbar-fixed-top"</span>&gt;
@@ -717,7 +717,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </span></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
-<p>这种方式相较于方式1其实有利有弊. 例在于它解决了在js中拼接字符串模板的肮脏行为, 弊则在于模板本身变成了一个「全局」的东西，组件这个统一的整体也被打碎了, 从项目规模庞大后，维护这些散落在页面中的容器节点也会成为随时引爆的导火索</p>
+<p>这种方式相较于方式1其实有利有弊。例在于它解决了在js中拼接字符串模板的肮脏行为，弊则在于模板本身变成了一个「全局」的东西，组件这个统一的整体也被打碎了，从项目规模庞大后，维护这些散落在页面中的容器节点也会成为随时引爆的导火索</p>
 </li>
 <li><p>使用多行字符串 <a name="mult"></a></p>
 <p> 大家都知道ES6和coffee都可以直接使用多行字符串，免去了字符串拼接的开销</p>
@@ -728,7 +728,7 @@
    `</span>
 </code></pre>
 <blockquote>
-<p>鉴于现在ES6的打包工具普及度非常高， <strong>非常推荐开发者直接使用ES6进行开发</strong></p>
+<p>鉴于现在ES6的打包工具普及度非常高，<strong>非常推荐开发者直接使用ES6进行开发</strong></p>
 </blockquote>
 <p> 对于ES5或ES3，其实也有一种小技巧来帮助我们书写多行字符串——<a href="https://github.com/sindresorhus/multiline" target="_blank">sindresorhus/multiline</a></p>
 <p> 你可以这样来声明一个多行字符串 </p>
@@ -738,16 +738,16 @@
    &lt;/div&gt;
  */</span>});
 </code></pre>
-<p> <strong>但是！！，不建议大家在实际项目中使用这种提取注释的方式来书写</strong>，因为注释是可能会被压缩工具移除的.</p>
+<p> <strong>但是！！，不建议大家在实际项目中使用这种提取注释的方式来书写</strong>，因为注释是可能会被压缩工具移除的。</p>
 </li>
 </ol>
-<p>上述简单管理方案都有自己的痛点, 并且都有通病: 无法对模板做预解析.</p>
+<p>上述简单管理方案都有自己的痛点，并且都有通病: 无法对模板做预解析。</p>
 <blockquote>
 <p>『 是否有解决上述问题的方案呢？』</p>
 </blockquote>
-<p>答案是肯定的, 即将模板作为一种资源集成到模块系统中</p>
+<p>答案是肯定的，即将模板作为一种资源集成到模块系统中</p>
 <h2 id="regular">Regular模板与模块系统结合</h2>
-<p>下面会介绍Regular与市面上常见模块系统的结合方案, 它们分别是</p>
+<p>下面会介绍Regular与市面上常见模块系统的结合方案，它们分别是</p>
 <ul>
 <li><a href="">webpack</a>: ES6 或 Commonjs 或 AMD (一统浆糊)</li>
 <li><a href="">broswerify</a>: Commonjs</li>
@@ -755,12 +755,12 @@
 <li><a href="http://requirejs.org" target="_blank">requirejs</a>: AMD</li>
 </ul>
 <blockquote>
-<p>本文只是介绍如何将Regular集成进这些系统中，而不是普及这些模块系统的使用方法，请大家自行学习.</p>
+<p>本文只是介绍如何将Regular集成进这些系统中，而不是普及这些模块系统的使用方法，请大家自行学习。</p>
 </blockquote>
 <p><a name="webpack"></a></p>
 <h3 id="webpack">webpack</h3>
-<p>webpack是近年来兴起的当红炸子鸡，支持多种模块规范共存，支持增量编译, 社区强大. <strong>作者非常推荐直接使用ES6 + webpack的方式</strong>来开发你的项目.</p>
-<p>webpack对于非内建模块支持，是通过<a href="https://webpack.github.io/docs/loaders.html" target="_blank">自定义loader</a>的方式. </p>
+<p>webpack是近年来兴起的当红炸子鸡，支持多种模块规范共存，支持增量编译，社区强大。<strong>作者非常推荐直接使用ES6 + webpack的方式</strong>来开发你的项目。</p>
+<p>webpack对于非内建模块支持，是通过<a href="https://webpack.github.io/docs/loaders.html" target="_blank">自定义loader</a>的方式。</p>
 <p><strong>✨所有DEMO可以在<a href="https://github.com/regularjs/example#webpack" target="_blank">regularjs/example</a></strong> 找到范例</p>
 <p><strong>配置</strong></p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
@@ -800,13 +800,13 @@ export { LoginBabel }
 <p>上述代码列举了两种方式</p>
 <h4 id="raw-loaderhttpsgithubcomwebpackraw-loader-"><a href="https://github.com/webpack/raw-loader" target="_blank">raw-loader</a> 加载纯文本模板</h4>
 <blockquote>
-<p><strong>小贴士</strong>: 事实上如果你使用了<a href="https://github.com/babel/babel-loader" target="_blank">babel-loader</a> 就可以直接使用多行字符串来管理你的模板， 无需配置raw-loader</p>
+<p><strong>小贴士</strong>: 事实上如果你使用了<a href="https://github.com/babel/babel-loader" target="_blank">babel-loader</a> 就可以直接使用多行字符串来管理你的模板，无需配置raw-loader</p>
 </blockquote>
 <h4 id="rgl-loaderhttpsgithubcomregularjsrgl-loader-"><a href="https://github.com/regularjs/rgl-loader" target="_blank">rgl-loader</a> 加载并与解析模板</h4>
 <p><a name="browserify"></a></p>
 <h3 id="browserify">browserify</h3>
-<p>browserify在前些年几乎是唯一的『bundle-all-in-one』同步模块打包方案(即使这种方案算是不温不火), 它依托了NPM以及Commonjs(你仍然可以通过书写transform来支持其他模块标准)来构建自己的生态圈.</p>
-<p>同样的，你可以通过两种transform来实现对Regular模板的加载.</p>
+<p>browserify在前些年几乎是唯一的『bundle-all-in-one』同步模块打包方案(即使这种方案算是不温不火)，它依托了NPM以及Commonjs(你仍然可以通过书写transform来支持其他模块标准)来构建自己的生态圈。</p>
+<p>同样的，你可以通过两种transform来实现对Regular模板的加载。</p>
 <p>var html2string = require(&#39;browserify-html2string&#39;);</p>
 <h4 id="browserify-html2string"><a href="">browserify-html2string</a></h4>
 <p><strong>配置</strong></p>
@@ -826,7 +826,7 @@ browserify([<span class="hljs-string">'./src/index.js'</span>], {})
 })
 </code></pre>
 <h4 id="regularifyhttpsgithubcomregularjsregularify"><a href="https://github.com/regularjs/regularify" target="_blank">regularify</a></h4>
-<p>Regular提供一个browserify的transform:regularify, 它可以用来处理两种格式<code>rglc</code>和<code>rgl</code>(后缀都是可配置的).</p>
+<p>Regular提供一个browserify的transform:regularify，它可以用来处理两种格式<code>rglc</code>和<code>rgl</code>(后缀都是可配置的).</p>
 <p><strong>配置</strong></p>
 <pre><code class="lang-js">browserify([<span class="hljs-string">'./src/index.js'</span>], {})
   .transform(html2string) <span class="hljs-comment">// you can have multiply transform in one building</span>
@@ -845,7 +845,7 @@ var Component = Regular.extend({
 <p>点击<a href="https://github.com/regularjs/regularify" target="_blank">regularify主页</a>了解更多</p>
 <p><a name="nej"></a></p>
 <h3 id="nej">NEJ</h3>
-<p>对于网易的同事(特别是杭研)，由于是近水楼台的原因，regularjs已<strong>直接集成进了NEJ框架及其配套打包工具之中</strong>. 与上述任意工具一样， 你可以通过两种方式</p>
+<p>对于网易的同事(特别是杭研)，由于是近水楼台的原因，regularjs已<em>_直接集成进了NEJ框架及其配套打包工具之中</em>。与上述任意工具一样，你可以通过两种方式</p>
 <h4 id="text"><code>text!</code>：纯文本加载</h4>
 <pre><code class="lang-js">define([<span class="hljs-string">'text!path/to/foo.html'</span>, <span class="hljs-string">'path/to/regularjs'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(tpl, _p)</span></span>{
 
@@ -874,8 +874,8 @@ var Component = Regular.extend({
 <p><em>网易的同事在使用中有疑问可以私泡我(杭州研究院|前端技术部|郑海波)</em></p>
 <p><a name="requirejs"></a></p>
 <h3 id="requirejs">Requirejs</h3>
-<p>AMD(requirejs)作为一个有着多年积累的模块标准，在新工具层出不穷的当今(2015年), 我仍认为它是一种较为稳妥的解决方案，并不会立刻被淘汰.</p>
-<p>基于requirejs来管理模板，开发者可以有两种选择.</p>
+<p>AMD(requirejs)作为一个有着多年积累的模块标准，在新工具层出不穷的当今(2015年)，我仍认为它是一种较为稳妥的解决方案，并不会立刻被淘汰。</p>
+<p>基于requirejs来管理模板，开发者可以有两种选择。</p>
 <h4 id="requirejs-texthttpsgithubcomrequirejstext"><a href="https://github.com/requirejs/text" target="_blank"><code>requirejs-text</code></a>直接加载模板字符串</h4>
 <p><strong>安装</strong>: </p>
 <pre><code>bower install requirejs-text
@@ -904,7 +904,7 @@ var Component = Regular.extend({
 });
 </code></pre>
 <h4 id="requirejs-regularhttpsgithubcomregularjsrequirejs-regular"><a href="https://github.com/regularjs/requirejs-regular" target="_blank"><code>requirejs-regular</code></a>加载和预处理模板</h4>
-<p>与<code>requirejs-text</code>插件的<code>text!</code>不同， 这个插件配置的前缀是<code>rgl!</code>.</p>
+<p>与<code>requirejs-text</code>插件的<code>text!</code>不同，这个插件配置的前缀是<code>rgl!</code>.</p>
 <p><strong>配置</strong></p>
 <pre><code class="lang-js"><span class="hljs-built_in">require</span>.config({
    ...
@@ -930,8 +930,8 @@ var Component = Regular.extend({
 </code></pre>
 <p>点<a href="https://github.com/regularjs/requirejs-regular" target="_blank">https://github.com/regularjs/requirejs-regular</a> 查看详细说明</p>
 <h2 id="">你不用上述模块方案？</h2>
-<p>如果以上几种模块体系都是不是你的选择，也许你需要自己实现一个处理插件了， regularjs本身以打包了umd模块，可以同时在node和browser环境被使用,
-使用 <a href="https://regularjs.github.io/reference?api-zh#parse" target="_blank">Regular.parse</a>来处理你的模板字符串吧， </p>
+<p>如果以上几种模块体系都是不是你的选择，也许你需要自己实现一个处理插件了，regularjs本身以打包了umd模块，可以同时在node和browser环境被使用，
+使用 <a href="https://regularjs.github.io/reference?api-zh#parse" target="_blank">Regular.parse</a>来处理你的模板字符串吧，</p>
 <pre><code class="lang-html">var Regular = require(&quot;regularjs&quot;);
 
 var AST = Regular.parse(&quot;{title}&quot;, {
@@ -939,15 +939,15 @@ var AST = Regular.parse(&quot;{title}&quot;, {
   END: &#39;}&#39;
 })
 </code></pre>
-<p>具体可以参考基于webpack的<a href="">rgl-loader</a>的实现方案, 寥寥几行代码.</p>
+<p>具体可以参考基于webpack的<a href="">rgl-loader</a>的实现方案，寥寥几行代码。</p>
 <blockquote>
-<p>当然如果你不需要预解析，直接传入字符串给Regular即可.</p>
+<p>当然如果你不需要预解析，直接传入字符串给Regular即可。</p>
 </blockquote>
 <h2 id="">总结</h2>
-<p>上面的解决方案真是让人眼花缭乱, 但共性也很明显: </p>
+<p>上面的解决方案真是让人眼花缭乱，但共性也很明显: </p>
 <ul>
-<li>所有可以加载纯文本的方式都可以用来加载Regular的模板. 比如<code>requirejs-text</code>等插件, 而加载文本几乎是模块化工具的标配了</li>
-<li>如果你需要预先解析，可以使用<code>Regular.parse</code>封装出对应的工具. 已经预先提供了<code>requirejs</code>, <code>webpack</code>, <code>browserify</code> 和 <code>NEJ</code>的相关工具. 工具量也就是几行代码的关系, 你完全可以直接在你的构建脚本里手动书写.</li>
+<li>所有可以加载纯文本的方式都可以用来加载Regular的模板。比如<code>requirejs-text</code>等插件，而加载文本几乎是模块化工具的标配了</li>
+<li>如果你需要预先解析，可以使用<code>Regular.parse</code>封装出对应的工具。已经预先提供了<code>requirejs</code>, <code>webpack</code>, <code>browserify</code> 和 <code>NEJ</code>的相关工具。工具量也就是几行代码的关系，你完全可以直接在你的构建脚本里手动书写。</li>
 </ul>
 
                     
@@ -976,6 +976,10 @@ var AST = Regular.parse(&quot;{title}&quot;, {
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

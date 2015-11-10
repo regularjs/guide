@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2.5" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="2.5" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -393,7 +393,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -441,7 +441,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -457,7 +457,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -656,12 +656,12 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_809">
                     
                         <h1 id="filter">过滤器Filter</h1>
-<p>regularjs通过<a href="https://regularjs.github.io/reference?syntax-zh#filter" target="_blank">filter函数</a>来定义一个过滤器.</p>
+<p>regularjs通过<a href="https://regularjs.github.io/reference?syntax-zh#filter" target="_blank">filter函数</a>来定义一个过滤器。</p>
 <h2 id="">使用过滤器</h2>
-<p>过滤器 是一种 表达式 在regularjs中使用, 与其它表达式并无不同:</p>
+<p>过滤器 是一种 表达式 在regularjs中使用，与其它表达式并无不同:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{ [1,2,3] |join: "+" } = 6<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 </code></pre>
 <p><strong>output</strong></p>
@@ -670,8 +670,8 @@
 <p>需要注意的是过滤器的优先级比三元操作符(<code>a? b: c</code>)更低，你可以使用括号提高它的优先级</p>
 <pre><code>&lt;p&gt;{ &#39;add: &#39; + ([1,2,3]|join: &#39;+&#39;)  } = 6&lt;/p&gt;
 </code></pre><h2 id="">双向过滤器</h2>
-<p>regularjs支持一个简单的概念: 双向过滤器.它 主要是帮助我们实现数据的对流, 对任意数据读或写操作时可以进行过滤操作</p>
-<p>细节我不再描述， 它在<a href="https://regularjs.github.io/reference?api-zh#two-way-filter" target="_blank">API文档中</a>有详细说明. </p>
+<p>regularjs支持一个简单的概念: 双向过滤器。它主要是帮助我们实现数据的对流，对任意数据读或写操作时可以进行过滤操作。</p>
+<p>细节我不再描述，它在<a href="https://regularjs.github.io/reference?api-zh#two-way-filter" target="_blank">API文档中</a>有详细说明。</p>
 <h2 id="-format">简单例子: format</h2>
 <p><strong>Example</strong></p>
 <p>创建一个简单的日期格式化过滤器</p>
@@ -710,7 +710,7 @@ Regular.filter(<span class="hljs-string">"format"</span>, <span class="hljs-func
 <h2 id="">使用</h2>
 <p>你可以在<code>Component.extend</code>或<code>new Component</code>时传入<code>computed</code>参数</p>
 <blockquote>
-<p>与参数<code>data</code>类似，<code>Component.extend</code>中传入的<code>computed</code>会被<code>new Component</code>的<code>computed</code>合并.</p>
+<p>与参数<code>data</code>类似，<code>Component.extend</code>中传入的<code>computed</code>会被<code>new Component</code>的<code>computed</code>合并。</p>
 </blockquote>
 <h3 id="">你可以传入多种类型的计算属性</h3>
 <p><strong>包含 <code>get/set</code>的对象</strong></p>
@@ -754,7 +754,7 @@ Regular.filter(<span class="hljs-string">"format"</span>, <span class="hljs-func
   }
 })
 </code></pre>
-<p><strong>传入一个字符串表达式, 它会被处理成Expression对象</strong></p>
+<p><strong>传入一个字符串表达式，它会被处理成Expression对象</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = regular.extend({
   computed: {
     fullname: <span class="hljs-string">"first+ '-' + last"</span>
@@ -795,7 +795,7 @@ Regular.filter(<span class="hljs-string">"format"</span>, <span class="hljs-func
 
 
 <h2 id="--">利用计算属性 处理 「全选/反选」</h2>
-<p>比如我们在处理列表时的全选反选逻辑， 就可以用计算属性来简单处理</p>
+<p>比如我们在处理列表时的全选反选逻辑，就可以用计算属性来简单处理</p>
 <pre><code class="lang-js">
 <span class="hljs-keyword">var</span> ListComponent = Regular.extend({
   computed: {
@@ -836,7 +836,7 @@ Regular.filter(<span class="hljs-string">"format"</span>, <span class="hljs-func
 
 <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">r-model</span>=<span class="hljs-value">{selectAll}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Select All<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
 </code></pre>
-<p><strong>从数据出发去考虑业务逻辑</strong>， 会让你节省大量的时间</p>
+<p><strong>从数据出发去考虑业务逻辑</strong>，会让你节省大量的时间</p>
 
                     
                     </section>
@@ -864,6 +864,10 @@ Regular.filter(<span class="hljs-string">"format"</span>, <span class="hljs-func
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

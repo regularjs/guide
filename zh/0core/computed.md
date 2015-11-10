@@ -1,6 +1,6 @@
 # 计算属性
 
-__从版本 `0.2.4` 开始， regularjs提供了计算属性的支持__
+__从版本 `0.2.4` 开始，regularjs提供了计算属性的支持__
 
 尽管regularjs的表达式支持非常完备，但是在某些情况下，创建计算属性(computed property)可以让你避免书写冗余的表达式
 
@@ -8,7 +8,7 @@ __从版本 `0.2.4` 开始， regularjs提供了计算属性的支持__
 
 你可以在`Component.extend`或`new Component`时传入`computed`参数
 
-> 与参数`data`类似，`Component.extend`中传入的`computed`会被`new Component`的`computed`合并.
+> 与参数`data`类似，`Component.extend`中传入的`computed`会被`new Component`的`computed`合并。
 
 
 ### 你可以传入多种类型的计算属性
@@ -61,7 +61,7 @@ var component = regular.extend({
 ```
 
 
-__传入一个字符串表达式, 它会被处理成Expression对象__
+__传入一个字符串表达式，它会被处理成Expression对象__
 
 
 

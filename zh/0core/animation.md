@@ -48,7 +48,7 @@ __Exmaple__
 
 ### 1. on: event
 
-当特定的event is trigger(ui事件) , 开始动画
+当特定的event is trigger(ui事件)，开始动画
 
 ### 2. when: Expression
 
@@ -67,10 +67,10 @@ __参数__
 * classes: 空格分割的className
 * mode (Number): 添加class的模式
 
-   `Command: class`的形为取决于 `mode`参数,一共有三种mode.
-  - 1: 默认mode, 首先加指定类名到节点，当动画结束移除它
-  - 2: 首先添加class到节点，然后在nextTick添加class-active到节点用以触发动画，当动画结束移除所有类名, 这个模式与angular类似.  
-  - 3: 与mode1类似, 但是动画结束后，我们不移除类名
+   `Command: class`的形为取决于 `mode`参数，一共有三种mode.
+  - 1: 默认mode，首先加指定类名到节点，当动画结束移除它
+  - 2: 首先添加class到节点，然后在nextTick添加class-active到节点用以触发动画，当动画结束移除所有类名，这个模式与angular类似。
+  - 3: 与mode1类似，但是动画结束后，我们不移除类名
 
 __example__
 
@@ -97,7 +97,7 @@ __box2__:
 
 ### 4. call: Expression
   
-运行一个表达式并进入digest phase, 注意这里由于可能会触发本节点或其它节点的`when`条件，所以可以用来控制动画序列.
+运行一个表达式并进入digest phase，注意这里由于可能会触发本节点或其它节点的`when`条件，所以可以用来控制动画序列。
 
 ```html
 
@@ -203,7 +203,7 @@ __param__
 __参数__
 
 - name (String): 命令名
-- handle(step): 序列命令定义, 你需要在handle中返回一个函数
+- handle(step): 序列命令定义，你需要在handle中返回一个函数
     - step: step携带着你用来定义动画的信息
 
 
@@ -251,7 +251,7 @@ Regular.animation("fade", function(step){
 
 ```
 
-所有你需要做的是，当动画结束时， 调用这个done函数.
+所有你需要做的是，当动画结束时，调用这个done函数。
 
 
 > <a href="http://codepen.io/leeluolee/pen/qJvry/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a>
@@ -259,7 +259,7 @@ Regular.animation("fade", function(step){
 
 
 
-你也可以查看其它内建命令的实现[github](https://github.com/regularjs/regular/blob/master/src/directive/animation.js#L71). 真的很简单.
+你也可以查看其它内建命令的实现[github](https://github.com/regularjs/regular/blob/master/src/directive/animation.js#L71。真的很简单。
 
 ----------------------
 

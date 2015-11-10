@@ -32,7 +32,7 @@
 
 
         
-    <div class="book" data-level="6.2" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="6.2" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -117,7 +117,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -391,7 +391,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -439,7 +439,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -455,7 +455,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -654,7 +654,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_14">
+                    <section class="normal" id="section-gitbook_814">
                     
                         <h1 id="">轻量级的模块化</h1>
 <h2 id="">基于类的组件体系</h2>
@@ -665,9 +665,9 @@
 <li><a href="https://regularjs.github.io/reference?api-zh#implement" target="_blank">implement</a>:  扩展当前组件的原型对象</li>
 </ul>
 <h3 id="regularjsklass">regularjs中的&#39;类&#39;沿承自klass的特点</h3>
-<p><code>Component.extend</code>返回的就是一个普通的构造函数， 不过与原始[ded/klass]一样, 此构造函数拥有以下特点</p>
+<p><code>Component.extend</code>返回的就是一个普通的构造函数，不过与原始[ded/klass]一样，此构造函数拥有以下特点</p>
 <ul>
-<li>子类构造函数同时也拥有<code>extend</code>, <code>implement</code>方法.</li>
+<li>子类构造函数同时也拥有<code>extend</code>, <code>implement</code>方法。</li>
 </ul>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend({
     say: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{},
@@ -680,7 +680,7 @@ SubComponent.implement({
 })
 </code></pre>
 <ul>
-<li>在方法中可以通过<code>this.supr()</code>来调用父类的同名函数，避免了使用负担.继续上例.</li>
+<li>在方法中可以通过<code>this.supr()</code>来调用父类的同名函数，避免了使用负担。继续上例。</li>
 </ul>
 <pre><code class="lang-js">
 <span class="hljs-keyword">var</span> ChildComponent = Component.extend({
@@ -705,11 +705,11 @@ component.run（);
 <h3 id="">不同点</h3>
 <p>由于extend同时又是组件定义的接口，所以在extend时，regularjs同时会做一些预处理操作:</p>
 <ul>
-<li><p>预解析传入的template参数. 保证由这个类的模板只会被解析一次.</p>
+<li><p>预解析传入的template参数。保证由这个类的模板只会被解析一次。</p>
 </li>
-<li><p>子类同时拥有component, directive, filter, event函数， 用来<a href="#extension">扩展组件功能</a></p>
+<li><p>子类同时拥有component, directive, filter, event函数，用来<a href="#extension">扩展组件功能</a></p>
 </li>
-<li><p>如果定义时传入了name, 则为此组件注册组件名，使得可以以 <a href="../basic/component.html">内嵌组件</a> 的形式使用此组件</p>
+<li><p>如果定义时传入了name，则为此组件注册组件名，使得可以以 <a href="../basic/component.html">内嵌组件</a> 的形式使用此组件</p>
 </li>
 </ul>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> Modal = Regular.extend({
@@ -717,7 +717,7 @@ component.run（);
 })
 </code></pre>
 <hr>
-<p>下一个小节， 我们来看看我们如何来扩展组件的能力: </p>
+<p>下一个小节，我们来看看我们如何来扩展组件的能力: </p>
 <ul>
 <li>指令directive</li>
 <li>过滤器filter</li>
@@ -726,13 +726,13 @@ component.run（);
 </ul>
 <p><a name="extension"></a></p>
 <h2 id="">组件的功能扩展以及命名空间</h2>
-<p>根据<a href="https://regularjs.github.io/reference?api-zh" target="_blank">API文档</a>的介绍， 我们知道了所有regularjs组件都支持这几种扩展.</p>
+<p>根据<a href="https://regularjs.github.io/reference?api-zh" target="_blank">API文档</a>的介绍，我们知道了所有regularjs组件都支持这几种扩展。</p>
 <ol>
 <li>filter: 过滤器扩展</li>
 <li>directive: 指令扩展</li>
 <li>event: 扩展一个自定义事件</li>
 <li>animation: 扩展一个新的<a href="../animation/command.html">动画command</a></li>
-<li>component: 注册一个组件, 使其在当前组件的模板中可用.</li>
+<li>component: 注册一个组件，使其在当前组件的模板中可用。</li>
 <li>implement: 扩展组件的原型方法</li>
 </ol>
 <p>这些扩展拥有一些共性</p>
@@ -757,13 +757,13 @@ alert(SubChild.event(<span class="hljs-string">'tap2'</span>) === tap2)
 
 <span class="hljs-comment">// filter，directive is the same</span>
 </code></pre>
-<p>即父类无法获得子类定义的扩展, 而反之可以, 这个最基本的概念是实现regular的插件化的第一步.</p>
-<p>对于implement无需多做解释, 这是原型继承的基本原理, 而对于其它几个接口, 是通过定义的原型继承<code>Object.create()</code>来实现的</p>
-<p><strong>单向影响性</strong> 是实现regularjs封装性的第一步.</p>
+<p>即父类无法获得子类定义的扩展，而反之可以，这个最基本的概念是实现regular的插件化的第一步。</p>
+<p>对于implement无需多做解释，这是原型继承的基本原理，而对于其它几个接口，是通过定义的原型继承<code>Object.create()</code>来实现的</p>
+<p><strong>单向影响性</strong> 是实现regularjs封装性的第一步。</p>
 <h2 id="">建立项目内独立的隔离空间</h2>
-<p>对于建立独立的隔离空间,聪明的同学可能已经想到了: </p>
+<p>对于建立独立的隔离空间，聪明的同学可能已经想到了: </p>
 <blockquote>
-<p>即定义一个不会被实例化的组件来替代Regular顶层空间.</p>
+<p>即定义一个不会被实例化的组件来替代Regular顶层空间。</p>
 </blockquote>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> YourNameSpace = Regular.extend()
 
@@ -771,23 +771,23 @@ YourNameSpace.filter().directive().event() <span class="hljs-comment">//....</sp
 
 <span class="hljs-keyword">var</span> Component = YourNameSpace.extend();
 </code></pre>
-<p>这样, 独立项目内的扩展就不会影响到产品中的其它Regular组件了, 而扩展自NameSpace的组件可以拥有所有组件内的功能扩展.</p>
+<p>这样，独立项目内的扩展就不会影响到产品中的其它Regular组件了，而扩展自NameSpace的组件可以拥有所有组件内的功能扩展。</p>
 <h2 id="regular">Regular插件</h2>
-<p>本小节会说明, 一种推荐的定义插件的方式， 它包括</p>
+<p>本小节会说明，一种推荐的定义插件的方式，它包括</p>
 <ul>
 <li>regularjs推荐的插件定义</li>
 <li>reuglarjs中已经内置的插件</li>
 </ul>
 <h3 id="">简介</h3>
-<p>angular中模块化的解决方案是<code>angular.module()</code>和依赖注入, 一个模块可以有factory可以有filter可以有directive等等.</p>
-<p>在regularjs中不可能照搬这种方式, 这是因为</p>
+<p>angular中模块化的解决方案是<code>angular.module()</code>和依赖注入，一个模块可以有factory可以有filter可以有directive等等。</p>
+<p>在regularjs中不可能照搬这种方式，这是因为</p>
 <ul>
-<li><p>regularjs中没有<code>$rootScope.$digest()</code>这种全局性的<strong>解药</strong>无脑的促使所有绑定进入数据检查阶段，regularjs组件的生命周期都是独立的, 这就决定了必须让扩展建立与组件的关系.</p>
-<p>比如angular的<code>$timeout</code>之类的实现只需在定时器完成后<code>$rootScope.$digest()</code>即可进入全局的数据检查, 而regular中<a href="#timeout">timeout</a>之后必须调用组件的<code>$update()</code>才进入组件本身的数据检查阶段,即需建立与组件的关系.</p>
+<li><p>regularjs中没有<code>$rootScope.$digest()</code>这种全局性的<strong>解药</strong>无脑的促使所有绑定进入数据检查阶段，regularjs组件的生命周期都是独立的，这就决定了必须让扩展建立与组件的关系。</p>
+<p>比如angular的<code>$timeout</code>之类的实现只需在定时器完成后<code>$rootScope.$digest()</code>即可进入全局的数据检查，而regular中<a href="#timeout">timeout</a>之后必须调用组件的<code>$update()</code>才进入组件本身的数据检查阶段，即需建立与组件的关系。</p>
 </li>
 </ul>
 <ul>
-<li>模块插件应该是与组件无关的, 绑定只应该在被使用时发生, 这样才是可复用的模块插件.</li>
+<li>模块插件应该是与组件无关的，绑定只应该在被使用时发生，这样才是可复用的模块插件。</li>
 </ul>
 <p>所以一个典型的插件的写法应该是这样的</p>
 <pre><code class="lang-javascript">
@@ -803,7 +803,7 @@ YourNameSpace.filter().directive().event() <span class="hljs-comment">//....</sp
 FooModule(YourComponent);   <span class="hljs-comment">// lazy bind(private)</span>
 FooModule(Regular);         <span class="hljs-comment">// lazy bind(global)</span>
 </code></pre>
-<p>为了更统一, 所有Component都有一个<code>use</code>函数来统一&#39;使用&#39;插件, 如上例可以写成</p>
+<p>为了更统一，所有Component都有一个<code>use</code>函数来统一&#39;使用&#39;插件，如上例可以写成</p>
 <pre><code class="lang-javascript">
 YourComponent.use(FooModule);
 
@@ -817,13 +817,13 @@ Regular.use(FooModule);
 <p>timeout插件在组件中扩展了两个方法</p>
 <ul>
 <li><p><code>Number $timeout(fn, delay)</code>: </p>
-<p>定时器函数(setTimeout), 在fn调用会进入本组件的数据检查，返回计时器id </p>
+<p>定时器函数(setTimeout)，在fn调用会进入本组件的数据检查，返回计时器id </p>
 </li>
 <li><p><code>Number $interval(fn, delay)</code>: </p>
-<p>周期定时器函数(setInterval), 在fn调用后会进入本组件的数据检查，返回计时器id</p>
+<p>周期定时器函数(setInterval)，在fn调用后会进入本组件的数据检查，返回计时器id</p>
 </li>
 </ul>
-<p>timeout插件非常简单, 简单到可以直接列出全部源码</p>
+<p>timeout插件非常简单，简单到可以直接列出全部源码</p>
 <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">TimeoutModule</span><span class="hljs-params">(Component)</span></span>{
 
   Component.implement({
@@ -864,7 +864,7 @@ Regular.use(FooModule);
 </code></pre>
 <p><a href="http://fiddle.jshell.net/leeluolee/4AzR6/" target="_blank">|DEMO|</a></p>
 <h2 id="">小节</h2>
-<p>经过本章的学习， 我们理解了</p>
+<p>经过本章的学习，我们理解了</p>
 <ul>
 <li><p>每一个Regular组件类都拥有以下类方法用来定义或扩展组件能力</p>
 <ol>
@@ -878,11 +878,11 @@ Regular.use(FooModule);
 <li>use</li>
 </ol>
 </li>
-<li><p>扩展都具有单向性， 使得 implement/directive/filter/event/animation/component 都只会作用于本组件或子类组件</p>
+<li><p>扩展都具有单向性，使得 implement/directive/filter/event/animation/component 都只会作用于本组件或子类组件</p>
 </li>
-<li><p>鉴于这个单向性， 我们可以在每个工程中定义一个“命名空间”来实现本工程对外的隔离性</p>
+<li><p>鉴于这个单向性，我们可以在每个工程中定义一个“命名空间”来实现本工程对外的隔离性</p>
 </li>
-<li><p>我们可以定义一个插件， 并使用use来使用这个插件</p>
+<li><p>我们可以定义一个插件，并使用use来使用这个插件</p>
 </li>
 </ul>
 
@@ -910,6 +910,10 @@ Regular.use(FooModule);
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

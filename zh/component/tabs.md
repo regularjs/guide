@@ -1,14 +1,14 @@
 
 # 使用regularjs实现Tabs组件
 
-Tabs是最常见的一种组件, 虽然它比todomvc更加简单， 但是却 非常适合用来说明内嵌组件.
+Tabs是最常见的一种组件，虽然它比todomvc更加简单，但是却 非常适合用来说明内嵌组件。
 
-经过这个例子， 你将会对regularjs中的组件化印象深刻. 目的不是为了去实现Tabs, 而是以开发者的角度去思考如何有效的利用regularjs的特性结合一步步的重构 得到最终我们需要的结果
+经过这个例子，你将会对regularjs中的组件化印象深刻。目的不是为了去实现Tabs，而是以开发者的角度去思考如何有效的利用regularjs的特性结合一步步的重构 得到最终我们需要的结果
 
-1. regularjs中的"transcluded content"(内嵌内容) ，并且结合占位`<r-content>`引入这段内容.
+1. regularjs中的"transcluded content"(内嵌内容)，并且结合占位`<r-content>`引入这段内容。
 2. regularjs组件之间的自由组合
 
-本文的例子修改自于一个一位网友的Issue， 所以组件的命名会贴近其原始的驼峰方式(有点类似React).
+本文的例子修改自于一个一位网友的Issue，所以组件的命名会贴近其原始的驼峰方式（有点类似React）。
 
 __DEMO结构__
 
@@ -38,9 +38,9 @@ __DEMO结构__
 
 ## Step 1： 快刀斩乱麻
 
-第一个版本， 我们会按最原始的方式去实现这个Tabs, 然后在后续版本中慢慢修改成满意的版本.
+第一个版本，我们会按最原始的方式去实现这个Tabs，然后在后续版本中慢慢修改成满意的版本。
 
-> 永远不要急于优化.
+> 永远不要急于优化。
 
 ```html
 var Tabs = Regular.extend({
@@ -67,11 +67,11 @@ var Tabs = Regular.extend({
 
 我们做的工作可谓非常原生态
 
-事实上， 在一个CMS系统中， Tabs会极端的常用， 如果每次实现一个tabs我们都需要写上面那段, 你是不是会开始抓狂了呢？ 
+事实上，在一个CMS系统中，Tabs会极端的常用，如果每次实现一个tabs我们都需要写上面那段，你是不是会开始抓狂了呢？
 
 ## Step 2: 使用list
 
-可能直觉上我们第一个会想到的就是__使用list__， 摒除冗余逻辑, tab列表应该在实例化时传入
+可能直觉上我们第一个会想到的就是__使用list__，摒除冗余逻辑，tab列表应该在实例化时传入
 
 ```js
 var Tabs = Regular.extend({
@@ -101,7 +101,7 @@ var Tabs = Regular.extend({
 
 ```
 
-然后我们可以直接初始化 或以内嵌组件调用的方式使用这个Tab组件.
+然后我们可以直接初始化 或以内嵌组件调用的方式使用这个Tab组件。
 
 ```js
 // initialize 
@@ -130,13 +130,13 @@ new Regular({
 
 其中 
 
-- [list语句](http://regularjs.github.io/reference/index.html?syntax-zh#list)帮助我们遍历显示我们的tab名称.
-- [include](http://regularjs.github.io/reference/index.html?syntax-zh#include) 用来动态的显示某个片段, 这里每当active.content变化， include所在的内容就会进行一次局部渲染. __include与插值完全不同, include接受一个完整的模板片段__
-- isolate组件属性: 注意， 我们发现在内嵌组件， `tabs={tabs}` 会导致内层数据与外层形成双向绑定， 在这个例子里， tabs是仅仅只是需要tabs这个初始值而已， 我们不需要数据的同步.
+- [list语句](http://regularjs.github.io/reference/index.html?syntax-zh#list)帮助我们遍历显示我们的tab名称。
+- [include](http://regularjs.github.io/reference/index.html?syntax-zh#include) 用来动态的显示某个片段，这里每当active.content变化，include所在的内容就会进行一次局部渲染。__include与插值完全不同，include接受一个完整的模板片段__
+- isolate组件属性: 注意，我们发现在内嵌组件，`tabs={tabs}` 会导致内层数据与外层形成双向绑定，在这个例子里，tabs是仅仅只是需要tabs这个初始值而已，我们不需要数据的同步。
 
-这个版本似乎好了点, tab变得可配置了， 我们点击按钮还可以进行tab的动态添加， 一切似乎变得可用了.
+这个版本似乎好了点，tab变得可配置了，我们点击按钮还可以进行tab的动态添加，一切似乎变得可用了。
 
-但是我们想想看还有什么不完美的地方.
+但是我们想想看还有什么不完美的地方。
 
 1. on-click的绑定
 2. 切换按钮的类名插值
@@ -145,7 +145,7 @@ new Regular({
 
 ## Step 3: 理想的使用
 
-继续我们步骤1的思考， 反过来想想， 怎么样的Tabs组件是我们期望的？ 
+继续我们步骤1的思考，反过来想想，怎么样的Tabs组件是我们期望的？
 
 ```html
 <Tabs>
@@ -161,13 +161,13 @@ new Regular({
 </Tabs>
 ```
 
-Tabs组件有个特点， 就是它的面板和按钮在逻辑上应该是属于一个整体， 但是在结构上却分属与两个不同的容器.
+Tabs组件有个特点，就是它的面板和按钮在逻辑上应该是属于一个整体，但是在结构上却分属与两个不同的容器。
 
 
 
 ## 最终Tabs的使用效果
 
-在开始之前， 我们先直接展示我们最终达到的效果.
+在开始之前，我们先直接展示我们最终达到的效果。
 
 __简单版__
 
@@ -188,13 +188,13 @@ http://plnkr.co/edit/1W8y0z27Irw4hyfz5WCT?p=preview
 
 [【DEMO】](http://plnkr.co/edit/1W8y0z27Irw4hyfz5WCT)
 
-跟react, angular之类的版本非常接近. Tabs即我们要创造的切换组件， 它的内嵌内容是若干个TabPane组件. 
+跟react, angular之类的版本非常接近。Tabs即我们要创造的切换组件，它的内嵌内容是若干个TabPane组件。
 
 
-这个例子很简单， 但是它有两层的内嵌内容， 所以很适合作为例子来帮助我们例子内嵌内容. 
+这个例子很简单，但是它有两层的内嵌内容，所以很适合作为例子来帮助我们例子内嵌内容。
 
 
-不要急着看看代码， 让我们先一步步分解需求来实现效果.
+不要急着看看代码，让我们先一步步分解需求来实现效果。
 
 
 ## 需求分析
@@ -204,7 +204,7 @@ http://plnkr.co/edit/1W8y0z27Irw4hyfz5WCT?p=preview
 
 __App组件的创建时发生的那些事儿__
 
-当我们调用new App()时， 期间的各组件生命周期中的关键顺序如下: 
+当我们调用new App()时，期间的各组件生命周期中的关键顺序如下: 
 
 ```coffeescript
 App config => App compile(which will initialize the Tabs)
@@ -215,13 +215,13 @@ App config => App compile(which will initialize the Tabs)
 App init;
 ```
 
-即在TabPane创建时， 其实Tabs的应用已经存在了， regularjs中， 
+即在TabPane创建时，其实Tabs的应用已经存在了，regularjs中，
 
-__如果组件是其它组件的内嵌内容, 那你可以通过`$outer`来获取这个外部引用__
+__如果组件是其它组件的内嵌内容，那你可以通过`$outer`来获取这个外部引用__
 
 _结合[组件生命周期](../concept/lifecyle.md)来加深理解_
 
-借由这个原理， 我们可以在TabPane的config时， 通过this.$outer获得它外层的组件(即Tabs).
+借由这个原理，我们可以在TabPane的config时，通过this.$outer获得它外层的组件（即Tabs）。
 
 ```
 var TabPane = Regular.extend({
@@ -232,7 +232,7 @@ var TabPane = Regular.extend({
     // ... 
 })
 ```
-这样， 每个pane组件就作为一份数据放入了外层容器`Tabs`的`data.tabs`数组中了， 这样在外层的tabs组件中， 我们就可以通过遍历来先输出tabs的title.
+这样，每个pane组件就作为一份数据放入了外层容器`Tabs`的`data.tabs`数组中了，这样在外层的tabs组件中，我们就可以通过遍历来先输出tabs的title。
 
 ```
 
@@ -242,9 +242,9 @@ var TabPane = Regular.extend({
 
 
 
-## 为何不使用传参， 而使用内嵌内容来实现
+## 为何不使用传参，而使用内嵌内容来实现
 
-其实， 我们可以以一种更简单的方式来实现Tabs组件
+其实，我们可以以一种更简单的方式来实现Tabs组件
 
 ```html
 
@@ -291,25 +291,25 @@ var app = new Regular({
 
 ```
 
-其实作者也经常在实际产品开发阶段使用上面这种直接传参的 快刀斩乱麻的方式. 
+其实作者也经常在实际产品开发阶段使用上面这种直接传参的 快刀斩乱麻的方式。
 
-因为很明显，这种方式的实现更加简单， 但是在使用Tabs组件时， 内嵌内容的版本显然可以带来带来最佳的可读性。
+因为很明显，这种方式的实现更加简单，但是在使用Tabs组件时，内嵌内容的版本显然可以带来带来最佳的可读性。
 
-关于MVVM时代的控件封装的取舍， 可以参考下[民工精髓的这篇文章](https://github.com/xufei/ng-control/issues/2)。
+关于MVVM时代的控件封装的取舍，可以参考下[民工精髓的这篇文章](https://github.com/xufei/ng-control/issues/2)。
 
-还有一个无法取代内嵌内容的原因是， __通过include引入的话， 模板的context是指向tabs组件的， 但是`<r-content>`的话， 内嵌内容的context是指向声明它的组件的， 即上例的App__, 所以我们发现{user.name}等插值都没有显示， 因为在tabs中并没有定义user对象， 这又是一个使用性上的天然优势. 否则你需要再传入user对象给tab组件.
+还有一个无法取代内嵌内容的原因是，__通过include引入的话，模板的context是指向tabs组件的，但是`<r-content>`的话，内嵌内容的context是指向声明它的组件的，即上例的App__，所以我们发现{user.name}等插值都没有显示，因为在tabs中并没有定义user对象，这又是一个使用性上的天然优势。否则你需要再传入user对象给tab组件。
 
 ```
 <tabs user={user}></tabs>
 ```
 
-这显然无形中让这个tabs变得不那么通用了.
+这显然无形中让这个tabs变得不那么通用了。
 
-## 废物利用下， 我们之前写完的TODOMVC组件和HelloRegular组件...
+## 废物利用下，我们之前写完的TODOMVC组件和HelloRegular组件。..
 
-regularjs的主题是使用动态模板来书写数据驱动的组件， 而组件的特点就是可以通过声明来组合使用
+regularjs的主题是使用动态模板来书写数据驱动的组件，而组件的特点就是可以通过声明来组合使用
 
-还记得大明湖畔的HelloRegular与TodoMVC吗？ 我们会
+还记得大明湖畔的HelloRegular与TodoMVC吗？我们会
 
 
 ```html
@@ -324,7 +324,7 @@ regularjs的主题是使用动态模板来书写数据驱动的组件， 而组�
 ```
 ## 最后一步
 
-我们甚至可以将我们之前的TODOMVC + HelloWorld 放置到Content.
-一切都是可组合的， 就如同你使用html标签一样， 不过regularjs的组件化与web component 完全不冲突， 它基于自建的解析器， 所以regularjs不仅仅可以无缝集成与目前的任何框架， 同时也顺应未来趋势， 你目前所做的基于regularjs的封装， 在未来也足够， 至少规范内的webcomponent的数据驱动模板的能力是非常弱的，而regularjs正好可以弥补这一点。
+我们甚至可以将我们之前的TODOMVC + HelloWorld放置到Content。
+一切都是可组合的，就如同你使用html标签一样，不过regularjs的组件化与web component 完全不冲突，它基于自建的解析器，所以regularjs不仅仅可以无缝集成与目前的任何框架，同时也顺应未来趋势，你目前所做的基于regularjs的封装，在未来也足够，至少规范内的webcomponent的数据驱动模板的能力是非常弱的，而regularjs正好可以弥补这一点。
 
-下一节， 我们将会来学习， 如何使用regular-register 来一键转化regularjs组件为规范的custom-element.
+下一节，我们将会来学习，如何使用regular-register 来一键转化regularjs组件为规范的custom-element。

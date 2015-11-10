@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -393,7 +393,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -441,7 +441,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -457,7 +457,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -656,19 +656,19 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_806">
                     
                         <h1 id="">组件化</h1>
-<p>大部分的人脑中对<strong>组件化</strong>的理解似乎开始停留在了<strong>【标签化】</strong>这个层级上, 事实上组件的定义从来不曾改变过: </p>
+<p>大部分的人脑中对 <strong>组件化</strong> 的理解似乎开始停留在了<strong>【标签化】</strong>这个层级上，事实上组件的定义从来不曾改变过：</p>
 <blockquote>
-<p>在用户端开发领域， 组件应该是一种独立的、可复用的交互元素的封装</p>
+<p>在用户端开发领域，组件应该是一种独立的、可复用的交互元素的封装</p>
 </blockquote>
 <p>一个Regularjs的组件满足以下等式</p>
 <blockquote>
 <p>组件 = 模板 + 数据 + 业务逻辑</p>
 </blockquote>
 <h2 id="">定义组件</h2>
-<p>定义一个组件通过<a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-componentextend" target="_blank">Component.extend</a>.</p>
+<p>定义一个组件通过<a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-componentextend" target="_blank">Component.extend</a>。</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> Component = Regular.extend( options );
 <span class="hljs-keyword">var</span> SubComponent = Component.extend( options );
 
@@ -679,10 +679,10 @@
 <span class="hljs-built_in">console</span>.log(sub <span class="hljs-keyword">instanceof</span> Component) <span class="hljs-comment">// true</span>
 <span class="hljs-built_in">console</span>.log(sub <span class="hljs-keyword">instanceof</span> SubComponent) <span class="hljs-comment">// true</span>
 </code></pre>
-<p>查看<a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-options" target="_blank">接口文档:options</a>了解Options的细节.</p>
+<p>查看<a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-options" target="_blank">接口文档:options</a>了解Options的细节。</p>
 <h4 id="componentimplementmixin">使用Component.implement(mixin)避免深层的继承</h4>
-<p>继承是一个很好的组件复用方式， 但是深层的继承在大部分情况下是不可取的,利用mixin抽象出一些与具体组件无关的逻辑，我们可以发现有些重构是可以避免 .  </p>
-<p>例如，我们在业务中引入了<a href="https://github.com/rackt/redux" target="_blank">Redux</a>这样的流程，自然的我们需要提取一个ReduxMixin用来处理组件与Redux的数据对应. </p>
+<p>继承是一个很好的组件复用方式，但是深层的继承在大部分情况下是不可取的，利用mixin抽象出一些与具体组件无关的逻辑，我们可以发现有些重构是可以避免。</p>
+<p>例如，我们在业务中引入了<a href="https://github.com/rackt/redux" target="_blank">Redux</a>这样的流程，自然的我们需要提取一个ReduxMixin用来处理组件与Redux的数据对应。</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> ReduxMixin = {
   mapStateToData: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(state)</span></span>{
     <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.data;
@@ -690,11 +690,11 @@
   } 
 }
 </code></pre>
-<p>但问题在于『ReduxMixin』在业务中的引入要晚于之前存在组件(甚至还会有第三方组件). 重构+理清继承关系是一个可选的措施， 但是有一个更好的方式就是使用<code>Component.implement</code>.</p>
+<p>但问题在于『ReduxMixin』在业务中的引入要晚于之前存在组件(甚至还会有第三方组件。重构+理清继承关系是一个可选的措施，但是有一个更好的方式就是使用<code>Component.implement</code>。</p>
 <pre><code class="lang-js">Component.implement(ReduxMixin);
 </code></pre>
 <h4 id="">调用父类同名函数</h4>
-<p>通过<a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-componentextend" target="_blank">Component.extend</a>和<a href="http://regularjs.github.io/reference/?api-zh#api-reference-静态接口-componentimplement" target="_blank">Component.implement</a> 扩展的方法内部可以通过<strong><code>this.supr</code></strong>调用父类同名函数.</p>
+<p>通过<a href="https://regularjs.github.io/reference?api-zh#api-reference-静态接口-componentextend" target="_blank">Component.extend</a>和<a href="http://regularjs.github.io/reference/?api-zh#api-reference-静态接口-componentimplement" target="_blank">Component.implement</a> 扩展的方法内部可以通过<strong><code>this.supr</code></strong>调用父类同名函数。</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> Component = Regular.extend( {
   config: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( data )</span></span>{
     <span class="hljs-keyword">this</span>.supr(data);
@@ -704,14 +704,14 @@
 </code></pre>
 <p><a name="init"></a></p>
 <h2 id="">初始化组件</h2>
-<p>Regular组件的初始化与Web Component非常类似, 可以以两种方式初始化.</p>
+<p>Regular组件的初始化与Web Component非常类似，可以以两种方式初始化。</p>
 <p>以组件Pager为例:</p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> Pager = Regular.extend({
   name: <span class="hljs-string">'pager'</span>
   <span class="hljs-comment">// other options</span>
 })
 </code></pre>
-<p>下面两种初始化方式是等价的.</p>
+<p>下面两种初始化方式是等价的。</p>
 <h4 id="1-js">1. 通过js直接初始化</h4>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> pager = <span class="hljs-keyword">new</span> Pager({
     data: {
@@ -723,30 +723,30 @@ pager.$on(<span class="hljs-string">'nav'</span>, someCallback)
 <h4 id="2-">2. 模板中初始化</h4>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">1</span> <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">{someCallback($event)}</span> /&gt;</span>
 </code></pre>
-<p>第二种方式就是常说的<strong>内嵌组件</strong>. 我们可以在模板中利用<code>&lt;pager/&gt;</code> 来初始化的秘诀是<code>name</code>属性. <code>name</code>是一个全局配置, 如果你需要在某个组件下用自定义的名字，可以使用<a href="https://regularjs.github.io/reference?api-zh#component" target="_blank">Component.component</a>接口</p>
+<p>第二种方式就是常说的 <strong>内嵌组件</strong> 。我们可以在模板中利用<code>&lt;pager/&gt;</code> 来初始化的秘诀是<code>name</code>属性。<code>name</code>是一个全局配置，如果你需要在某个组件下用自定义的名字，可以使用<a href="https://regularjs.github.io/reference?api-zh#component" target="_blank">Component.component</a>接口。</p>
 <pre><code class="lang-js">Component.component(<span class="hljs-string">'custom-pager'</span>, Pager);
 </code></pre>
-<p>component接口和directive等一样,都有<a href="../advanced/modular.html">单向影响性</a>,只影响Component及其子类.</p>
+<p>component接口和directive等一样，都有<a href="../advanced/modular.html">单向影响性</a>，只影响Component及其子类。</p>
 <h2 id="">关于内嵌组件</h2>
 <h3 id="">一些内嵌组件的属性声明细节</h3>
 <ul>
-<li><p>默认传入属性都会成为data的成员, 例如</p>
+<li><p>默认传入属性都会成为data的成员，例如</p>
 <pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">100</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{1}</span> <span class="hljs-attribute">show</span>=<span class="hljs-value">{show}</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>
 </code></pre>
-<p>相当于<code>data.total=&#39;100&#39;</code>, <code>data.current=1</code> 和 <code>pager.data.show=this.data.show</code>(this指向模板所在组件).</p>
+<p>相当于<code>data.total=&#39;100&#39;</code>, <code>data.current=1</code> 和 <code>pager.data.show=this.data.show</code>（this指向模板所在组件）。</p>
 </li>
-<li><p><strong>value缺省为boolean值<code>true</code></strong>, 如</p>
+<li><p><strong>value缺省为boolean值<code>true</code></strong>，如</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">show</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>
 </code></pre>
-<p>如上例的property show没有设置值, 则默认<code>data.show</code> 为 <code>true</code></p>
+<p>如上例的property show没有设置值，则默认<code>data.show</code> 为 <code>true</code></p>
 </li>
-<li>连缀格式转驼峰, 如：<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">show-modal</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">isHide</span>=<span class="hljs-value">{hide}</span>/&gt;</span>
+<li>连缀格式转驼峰，如：<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">show-modal</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">isHide</span>=<span class="hljs-value">{hide}</span>/&gt;</span>
 </code></pre>
-则<code>show-modal</code>会转换为<code>showModal</code>. 但是<code>isHide</code>这种驼峰式的写法仍然支持，并不做变换</li>
+则<code>show-modal</code>会转换为<code>showModal。但是</code>isHide`这种驼峰式的写法仍然支持，并不做变换</li>
 <li><code>on-[eventName]</code>自动转换为<a href="basic/event.html">组件事件绑定</a><pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">{this.nav($event)}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>
 </code></pre>
 相当于<code>pager.$on(&#39;nav&#39;, this.nav.bind(this))</code></li>
-<li>特殊属性<code>ref</code>和<code>isolate</code>, 请参考『<a href="component/ref.html">获取内部节点和组件</a>』 和 『<a href="component/isolate.html">组件隔离</a>』</li>
+<li>特殊属性<code>ref</code>和<code>isolate</code>，请参考『<a href="component/ref.html">获取内部节点和组件</a>』 和 『<a href="component/isolate.html">组件隔离</a>』</li>
 </ul>
 
                     
@@ -775,6 +775,10 @@ pager.$on(<span class="hljs-string">'nav'</span>, someCallback)
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

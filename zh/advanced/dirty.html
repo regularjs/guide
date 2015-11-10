@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="6.1" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="6.1" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -393,7 +393,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -441,7 +441,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -457,7 +457,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -656,12 +656,12 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_813">
                     
                         <h1 id="-">脏检查: 数据绑定的秘密</h1>
-<p>事实上，regularjs的数据绑定实现基于基于脏检查. 它非常接近于angularjs</p>
+<p>事实上，regularjs的数据绑定实现基于基于脏检查。它非常接近于angularjs</p>
 <blockquote>
-<p>脏检查即一种不关心你如何以及何时改变的数据， 只关心在<strong>特定的检查阶段</strong>数据是否改变的数据监听技术.</p>
+<p>脏检查即一种不关心你如何以及何时改变的数据，只关心在<strong>特定的检查阶段</strong>数据是否改变的数据监听技术。</p>
 </blockquote>
 <p>本节包含内容</p>
 <ul>
@@ -672,7 +672,7 @@
 </ul>
 <p>这里会统一使用angularjs生态圈的术语，方便开发者理解</p>
 <h2 id="">什么是脏检查</h2>
-<p>以插值<code>{post.title}</code>为例， 当Regular在compile阶段遇到这个语法数元素时， 内部的处理逻辑如下.</p>
+<p>以插值<code>{post.title}</code>为例，当Regular在compile阶段遇到这个语法数元素时，内部的处理逻辑如下。</p>
 <pre><code class="lang-javascript">
 walkers.expression = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( ast )</span></span>{
   <span class="hljs-keyword">var</span> node = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">""</span>);
@@ -682,40 +682,40 @@ walkers.expression = <span class="hljs-function"><span class="hljs-keyword">func
   <span class="hljs-keyword">return</span> node;
 }
 </code></pre>
-<p>这段代码很好理解，即遇到插值时，我会创建一个textNode， 每当数据变化时，修改textNode的textContent值.</p>
+<p>这段代码很好理解，即遇到插值时，我会创建一个textNode，每当数据变化时，修改textNode的textContent值。</p>
 <p>其中</p>
 <ul>
-<li>ast: 表达式: 即<code>post.title</code>, 反映在组件就是component.data.post.title.</li>
+<li>ast: 表达式: 即<code>post.title</code>，反映在组件就是component.data.post.title.</li>
 <li><a href="https://regularjs.github.io/reference?api-zh#watch" target="_blank">$watch</a>: 添加一个数据监听器(watcher对象)</li>
 </ul>
-<p>那么问题来了, 怎么判断值发生改变了？ </p>
-<h2 id="-digest">脏检查如何进行？ 不提不提的Digest阶段</h2>
-<p>首先, 上例通过<code>$watch</code>接口产生的watcher对象看起来是这样的</p>
+<p>那么问题来了，怎么判断值发生改变了？</p>
+<h2 id="digest">脏检查如何进行？不提不提的Digest阶段</h2>
+<p>首先，上例通过<code>$watch</code>接口产生的watcher对象看起来是这样的</p>
 <pre><code class="lang-js">
 {
-  get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(context)</span></span>{...}  <span class="hljs-comment">//获得表达式当前求值, 此函数在解析时，已经生成</span>
-  set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{} <span class="hljs-comment">// 有些表达式可以生成set函数， 用于处理赋值, 这个一般用于双向绑定的场景</span>
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(context)</span></span>{...}  <span class="hljs-comment">//获得表达式当前求值，此函数在解析时，已经生成</span>
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{} <span class="hljs-comment">// 有些表达式可以生成set函数，用于处理赋值，这个一般用于双向绑定的场景</span>
   once: <span class="hljs-literal">false</span> <span class="hljs-comment">// 此监听器是否只生效一次</span>
   last: <span class="hljs-literal">undefined</span><span class="hljs-comment">// 上一次表达式的求值结果</span>
-  fn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(newvalue, oldvalue)</span></span>{} <span class="hljs-comment">// 即你传入$watch的第二个参数, 当值改变时， 会调用此函数</span>
+  fn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(newvalue, oldvalue)</span></span>{} <span class="hljs-comment">// 即你传入$watch的第二个参数，当值改变时，会调用此函数</span>
   <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>然后我们要提到内部的一个非常重要的阶段——digest阶段, 当系统进入此阶段时，将会进行数据检查, 它的处理流程如下: </p>
+<p>然后我们要提到内部的一个非常重要的阶段——digest阶段，当系统进入此阶段时，将会进行数据检查，它的处理流程如下: </p>
 <ol>
 <li>标记<code>dirty = false</code></li>
-<li>遍历所有通过<code>component.$watch</code>绑定的数据观察者watcher, 对比当前值<code>watcher.get(component)</code>与老值<code>watcher.last</code><ul>
-<li>如果值发生改变, 运行绑定的监听器 - <code>watcher.fn(newvalue, oldvalue)</code>, 并导致<code>__dirty__=true</code>. 设置<code>watcher.last=newvalue</code></li>
+<li>遍历所有通过<code>component.$watch</code>绑定的数据观察者watcher，对比当前值<code>watcher.get(component)</code>与老值<code>watcher.last</code><ul>
+<li>如果值发生改变，运行绑定的监听器 - <code>watcher.fn(newvalue, oldvalue)</code>，并导致<code>__dirty__=true。设置</code>watcher.last=newvalue`</li>
 <li>进入下一个watcher的检查</li>
 </ul>
 </li>
-<li>遍历检查一轮后， 如果<code>dirty===true</code>, 我们重新进入步骤1. 否则进入步骤4.</li>
+<li>遍历检查一轮后，如果<code>dirty===true</code>，我们重新进入步骤1. 否则进入步骤4.</li>
 <li>完成脏检查</li>
 </ol>
-<p>好， 现在我们了解数据检查的内部流程了， 但是<strong>何时进入digest阶段</strong></p>
+<p>好，现在我们了解数据检查的内部流程了，但是<strong>何时进入digest阶段</strong></p>
 <h2 id="">何时进行脏检查</h2>
-<p>有基本的javascript基础的同学都知道， 在姗姗不来的ES7<code>Object.observe</code>方法没有到来时(但是别对<code>Object.observe</code>抱太大得期望， 它不会改变目前类MVVM框架的格局， 我后续会写一篇文章说明)， 当我们对对象属性进行赋值时， 我们是无法知道数据发生改变了的， 所以digest阶段必然是 <strong>主动进入的</strong> .</p>
-<p>在Regular中，digest阶段是由<a href="https://regularjs.github.io/reference?api-zh#update" target="_blank"><code>$update</code></a>方法触发的.</p>
+<p>有基本的javascript基础的同学都知道，在姗姗不来的ES7<code>Object.observe</code>方法没有到来时(但是别对<code>Object.observe</code>抱太大得期望，它不会改变目前类MVVM框架的格局，我后续会写一篇文章说明)，当我们对对象属性进行赋值时，我们是无法知道数据发生改变了的，所以digest阶段必然是 <strong>主动进入的</strong> .</p>
+<p>在Regular中，digest阶段是由<a href="https://regularjs.github.io/reference?api-zh#update" target="_blank"><code>$update</code></a>方法触发的。</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular();
 
@@ -724,20 +724,20 @@ component.data.name = <span class="hljs-string">'leeluolee'</span>
 <span class="hljs-comment">// you need call $update to Synchronize data and view </span>
 component.$update();
 </code></pre>
-<p>值得庆幸的是，大部分情况下都会自动进入digest阶段.比如事件、timeout模块等等. </p>
+<p>值得庆幸的是，大部分情况下都会自动进入digest阶段。比如事件、timeout模块等等。</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{blog.title='Hello'}</span>&gt;</span>{blog.title}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<p>当点击节点后， 内容区会变成Hello.</p>
+<p>当点击节点后，内容区会变成Hello.</p>
 <h2 id="-">题外话： 为什么使用脏检查</h2>
 <ol>
-<li>脏检查完全不关心你改变数据的方式, 而常规的set, get的方式则会强加许多限制</li>
+<li>脏检查完全不关心你改变数据的方式，而常规的set, get的方式则会强加许多限制</li>
 <li>脏检查可以实现批处理完数据之后，再去统一更新view.</li>
-<li>脏检查其实比 GET/SET 更容易实现. 脏检查是个单向的检查流程(请不要和双向绑定发生混淆), 可以实现<strong>任意复杂度的表达式支持</strong>. 而get/set的方式则需要处理复杂依赖链 , 基本上表达式支持都是阉割的(使用时就像踩雷).</li>
+<li>脏检查其实比 GET/SET 更容易实现。脏检查是个单向的检查流程(请不要和双向绑定发生混淆)，可以实现<em>_任意复杂度的表达式支持</em>。而get/set的方式则需要处理复杂依赖链，基本上表达式支持都是阉割的(使用时就像踩雷).</li>
 </ol>
-<p>但是很显然， 脏检查是低效的, 它的效率基本上取决于你绑定的观察者数量, 在Regular中， 你可以通过<a href="https://regularjs.github.io/reference?syntax-zh#bind-once" target="_blank"><code>@(Expression)</code></a>元素来控制你的观察者数量.</p>
-<p>然而结合这种类mvvm系统中， 他又是高效的. 因为监听模式带来了dom的局部更新， 而dom操作恰恰又是隐藏的性能瓶颈所在.</p>
+<p>但是很显然，脏检查是低效的，它的效率基本上取决于你绑定的观察者数量，在Regular中，你可以通过<a href="https://regularjs.github.io/reference?syntax-zh#bind-once" target="_blank"><code>@(Expression)</code></a>元素来控制你的观察者数量。</p>
+<p>然而结合这种类mvvm系统中，他又是高效的。因为监听模式带来了dom的局部更新，而dom操作恰恰又是隐藏的性能瓶颈所在。</p>
 <blockquote>
-<p><strong>Regular实际上在解析时，已经提取了表达式的依赖关系， 在未来Observe到来时， 可以调整为脏检查 + 依赖计算的方式</strong></p>
+<p><strong>Regular实际上在解析时，已经提取了表达式的依赖关系，在未来Observe到来时，可以调整为脏检查 + 依赖计算的方式</strong></p>
 </blockquote>
 
                     
@@ -766,6 +766,10 @@ component.$update();
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

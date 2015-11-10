@@ -1,12 +1,12 @@
 #API索引
 
-由于API介绍分散在了本书各个章节, 为了方便对照, 本小节做了所有API的索引
+由于API介绍分散在了本书各个章节，为了方便对照，本小节做了所有API的索引
 
 
 
 # 静态接口
 
-静态接口有些是只属于`Regular` 而有些是属于`Component`(即Regular及其子类)通用, 如下所示.
+静态接口有些是只属于`Regular` 而有些是属于`Component`(即Regular及其子类)通用，如下所示。
 
 
 1. [Component.extend](../core/class.html#extend): 定义Regular组件
@@ -23,7 +23,7 @@
 
 # 实例接口
 
-component即代表组件实例, 注意这些公有都有`$`前缀 意味不建议进行重写
+component即代表组件实例，注意这些公有都有`$`前缀 意味不建议进行重写
 
 1. [component.$watch](../core/binding.html#watch):     创建一个数据监听
 2. [component.$unwatch](../core/binding.html#unwatch)  解绑一个数据监听
@@ -49,7 +49,7 @@ xian
 
 ## Regular.dom
 
-提供基本的操作dom帮助，注意Regularjs并没有封装成类似jqLite的对象，而是纯粹的静态方法.
+提供基本的操作dom帮助，注意Regularjs并没有封装成类似jqLite的对象，而是纯粹的静态方法。
 
 
 ## Regular.util

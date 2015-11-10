@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="3.3" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="3.3" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -393,7 +393,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -441,7 +441,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -457,7 +457,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -656,21 +656,21 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_818">
                     
                         <h1 id="">组件隔离</h1>
-<p>其实之前在对比<a href="basic/compoennt.html">组件基础篇</a>介绍的两种初始化方式， 我隐瞒了它们的一个巨大区别.</p>
-<p><strong>内嵌组件</strong> 会默认形成『它与上层组件之间的数据绑定关系』, 比如</p>
+<p>其实之前在对比<a href="basic/compoennt.html">组件基础篇</a>介绍的两种初始化方式，我隐瞒了它们的一个巨大区别。</p>
+<p><strong>内嵌组件</strong> 会默认形成『它与上层组件之间的数据绑定关系』，比如</p>
 <pre><code class="lang-js">&lt;input r-model={total} type=number/&gt;
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{total}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span></span>
 </code></pre>
-<p>即我在上层组件修改一份数据会导致pager也进行了脏检查，而pager发生数据变化也会引起上层组件发生脏检查， 这在有些时候不是我们想看到的， 也会影响到组件的整体性能. 我们或许希望pager与上层组件完全隔离， 而完全通过事件来通信.</p>
+<p>即我在上层组件修改一份数据会导致pager也进行了脏检查，而pager发生数据变化也会引起上层组件发生脏检查，这在有些时候不是我们想看到的，也会影响到组件的整体性能。我们或许希望pager与上层组件完全隔离，而完全通过事件来通信。</p>
 <h2 id="isolate">组件的isolate属性</h2>
 <p><code>isolate</code>可以实现上述要求，例如上例如果修改为:</p>
 <pre><code class="lang-js">&lt;input r-model={total} type=number/&gt;
 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{total}</span> <span class="hljs-attribute">isolate</span> <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">'nav'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span></span>
 </code></pre>
-<p>那内嵌组件pager与实际就是完全隔离了， 完全等同于JS初始化<code>new Pager().$inject(&#39;input&#39;, &#39;after&#39;)</code>. </p>
+<p>那内嵌组件pager与实际就是完全隔离了，完全等同于JS初始化<code>new Pager().$inject(&#39;input&#39;, &#39;after&#39;)</code>。</p>
 
                     
                     </section>
@@ -698,6 +698,10 @@
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

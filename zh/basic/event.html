@@ -34,7 +34,7 @@
 
 
         
-    <div class="book" data-level="2.4" data-basepath=".." data-revision="1446209560568">
+    <div class="book" data-level="2.4" data-basepath=".." data-revision="1447131475786">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
                         
                             <b>1.2.</b>
                         
-                         第一个组件:HelloRegular
+                         第一个组件：HelloRegular
                     </a>
                 
             
@@ -393,7 +393,7 @@
                         
                             <b>4.3.</b>
                         
-                         单向数据流: Redux为例
+                         单向数据流：Redux为例
                     </a>
                 
             
@@ -441,7 +441,7 @@
         
         <li class="chapter " data-level="5.1" >
             
-            <span><b>5.1.</b> 好基友:stateman + regularjs</span>
+            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
             
             
         </li>
@@ -457,7 +457,7 @@
         
         <li class="chapter " data-level="5.3" >
             
-            <span><b>5.3.</b> 例子: 简单博客</span>
+            <span><b>5.3.</b> 例子：简单博客</span>
             
             
         </li>
@@ -656,18 +656,18 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_8">
+                    <section class="normal" id="section-gitbook_808">
                     
                         <h1 id="">事件</h1>
-<p>在Web开发领域，行为通常由事件发起，它的重要性不言而喻. Regular中，事件分为两类</p>
+<p>在Web开发领域，行为通常由事件发起，它的重要性不言而喻。Regular中，事件分为两类</p>
 <ul>
 <li>DOM事件</li>
 <li>组件事件 </li>
 </ul>
-<p>在模板中, 它们使用方式相似，表现也一致. 但在某些方面, 也有些微妙区别, 让我们深入的了解下它们吧</p>
+<p>在模板中，它们使用方式相似，表现也一致。但在某些方面，也有些微妙区别，让我们深入的了解下它们吧</p>
 <h2 id="dom-">DOM 事件</h2>
 <p>所有<strong>节点上</strong>的<code>on-</code>开头的属性都会被作为DOM事件处理 </p>
-<p>tip: 由于<code>Component.directive</code>支持正则匹配属性名, 所以内部实现中DOM事件其实是一种特殊的指令, 它以<code>/on-\w+/</code>作为指令名，从而匹配出以on-开头的作为事件处理. </p>
+<p>tip: 由于<code>Component.directive</code>支持正则匹配属性名，所以内部实现中DOM事件其实是一种特殊的指令，它以<code>/on-\w+/</code>作为指令名，从而匹配出以on-开头的作为事件处理。</p>
 <p>这小节的内容主要包括</p>
 <ul>
 <li>基本DOM事件</li>
@@ -678,21 +678,21 @@
 <h4 id="dom">基本DOM事件</h4>
 <p><strong>Syntax</strong></p>
 <p><code>on-click={Expression}</code></p>
-<p>每当事件触发时， 绑定的表达式Expression将会被运行一次， </p>
+<p>每当事件触发时，绑定的表达式Expression将会被运行一次，</p>
 <p><strong>Example</strong>:</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{count</span> = <span class="hljs-attribute">count</span> + <span class="hljs-attribute">1</span>}&gt;</span> count+1 <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>{count}<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>,
 </code></pre>
-<p>每次你点击按钮， count都会增加1</p>
+<p>每次你点击按钮，count都会增加1</p>
 <p><a href="http://jsfiddle.net/leeluolee/y8PHE" target="_blank"><strong>&#x261E; DEMO</strong></a></p>
 <blockquote>
-<p><strong>表达式的值如果===false, 事件将会被阻止</strong>, 当然你也可以通过<a href="#$event">$event.preventDefault()</a>来阻止事件.</p>
+<p><strong>表达式的值如果===false，事件将会被阻止</strong>，当然你也可以通过<a href="#$event">$event.preventDefault()</a>来阻止事件。</p>
 </blockquote>
 <p><a name="custom-event"></a></p>
 <h4 id="dom">自定义DOM事件</h4>
 <p><strong>Usage</strong></p>
 <p><code>Component.event(event, fn)</code> </p>
 <p>你可以注册一些dom原生并不支持的事件，比如<code>on-tap</code>, <code>on-hold</code></p>
-<p><strong>注意regularjs遇到on-xx属性时， 会首先去检查是否注册了xx这个自定义事件</strong>, 如果没有， 无论这个事件浏览器是否支持， 都会走简单DOM事件的流/程 (即都会通过addEventListener来绑定事件) </p>
+<p><strong>注意regularjs遇到on-xx属性时，会首先去检查是否注册了xx这个自定义事件</strong>，如果没有，无论这个事件浏览器是否支持，都会走简单DOM事件的流/程（即都会通过addEventListener来绑定事件）</p>
 <p><strong>Arguments</strong></p>
 <ul>
 <li>event:  自定义事件名 (没有<code>on-</code>前缀) </li>
@@ -723,11 +723,11 @@ Regular.event(<span class="hljs-string">'enter'</span>, <span class="hljs-functi
 <span class="hljs-comment">// use in template</span>
 &lt;textarea on-enter={<span class="hljs-keyword">this</span>.submit($event)}&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>`</span>
 </code></pre>
-<p>由于模板的this指向组件本身， 所以这里相当于是当按了Enter后， 会运行组件submit方法.</p>
+<p>由于模板的this指向组件本身，所以这里相当于是当按了Enter后，会运行组件submit方法。</p>
 <p>查看 <a href="#$event">$event</a>了解更多</p>
 <h4 id="">事件代理支持</h4>
-<p>所有的<code>on-*</code>都会在节点上绑定对应事件，在某种情况下(比如大列表)，这种方式不是很高效.</p>
-<p>你可以使用<code>delegate-</code>来代理<code>on-</code> 来避免可能的性能问题. regularjs只会绑定唯一的事件到组件的第一父元素(无论你是如何$inject的)来处理组件内的所有代理事件</p>
+<p>所有的<code>on-*</code>都会在节点上绑定对应事件，在某种情况下(比如大列表)，这种方式不是很高效。</p>
+<p>你可以使用<code>delegate-</code>来代理<code>on-</code> 来避免可能的性能问题。regularjs只会绑定唯一的事件到组件的第一父元素(无论你是如何$inject的)来处理组件内的所有代理事件</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">delegate-click</span>=<span class="hljs-value">"remove"</span>&gt;</span>Delte<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>   //Proxy way via delegate
 <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">delegate-click</span>=<span class="hljs-value">{this.remove()}</span>&gt;</span>Delte<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span> // Evaluated way via delagate
@@ -735,13 +735,13 @@ Regular.event(<span class="hljs-string">'enter'</span>, <span class="hljs-functi
 <p>从用户使用角度讲，<code>on-</code>和<code>delegate-</code> 完全等价，但是各有利弊</p>
 <ol>
 <li>正如你在<code>jQuery.fn.delegate</code>中学到的，如果组件结构复杂，避免在那些高频触发的事件中使用事件代理(mouseover等)</li>
-<li>如果事件是<a href="custom-event">自定义事件</a>. 事件对象必须是可冒泡的，这样事件代理才能生效 ，你可以参考zepto&#39;s tap-event的<a href="https://github.com/madrobby/zepto/blob/master/src/event.jsL274" target="_blank">实现</a>.</li>
-<li>某些事件天生没法冒泡，比如ie低版下的chang。select等. 所以也就无法使用<code>delegate-</code></li>
+<li>如果事件是<a href="custom-event。事件对象必须是可冒泡的，这样事件代理才能生效，你可以参考zepto&#39;s tap-event的[实现](https://github.com/madrobby/zepto/blob/master/src/event.jsL274">自定义事件</a>.</li>
+<li>某些事件天生没法冒泡，比如ie低版下的chang。select等。所以也就无法使用<code>delegate-</code></li>
 </ol>
-<p>总体来讲， 在动态模板里， 事件代理的唯一作用就是在超大列表里避免绑定过多的事件， 因为在常规的Web开发中，使用事件代理的最大优势其实是无需去关心事件的销毁和注册. 而在regularjs这种动态的模板框架中， <code>on-xx</code> 其实就已经具备这种能力, 监听和销毁都是自动完成的。</p>
+<p>总体来讲，在动态模板里，事件代理的唯一作用就是在超大列表里避免绑定过多的事件，因为在常规的Web开发中，使用事件代理的最大优势其实是无需去关心事件的销毁和注册。而在regularjs这种动态的模板框架中，<code>on-xx</code> 其实就已经具备这种能力，监听和销毁都是自动完成的。</p>
 <p><a name="$event"></a></p>
 <h3 id="event-">$event 对象</h3>
-<p> 那你可以使用<code>$event</code>来获取事件对象，这个变量会再每次事件触发时临时的定义在data.$event中， 即你可以在模板里直接使用它, 对于非自定义事件，则<code>$event</code>传入fire的对象.</p>
+<p> 那你可以使用<code>$event</code>来获取事件对象，这个变量会再每次事件触发时临时的定义在data.$event中，即你可以在模板里直接使用它，对于非自定义事件，则<code>$event</code>传入fire的对象。</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">new</span> Regular({
   template:
@@ -768,34 +768,34 @@ Regular.event(<span class="hljs-string">'enter'</span>, <span class="hljs-functi
 <li>event: 原始事件对象</li>
 </ol>
 <h2 id="">组件事件</h2>
-<p>Regularjs集成了一个轻量级的Emitter, 使得所有组件都可以使用以下接口来实现事件驱动的开发</p>
+<p>Regularjs集成了一个轻量级的Emitter，使得所有组件都可以使用以下接口来实现事件驱动的开发</p>
 <ul>
 <li><a href="https://regularjs.github.io/reference?api-zh#on" target="_blank">component.$on</a>: 用于添加事件监听器</li>
 <li><a href="https://regularjs.github.io/reference?api-zh#off" target="_blank">component.$off</a>: 用于解绑事件监听器</li>
 <li><a href="https://regularjs.github.io/reference?api-zh#emit" target="_blank">component.$emit</a>: 用于触发某个事件</li>
 </ul>
 <h3 id="">模板里声明组件事件绑定</h3>
-<p>当组件以内嵌组件的方式初始化时， 它的事件的绑定方式与DOM事件非常类似, 即</p>
-<p><strong>所有</strong>组件上<strong>的<code>on-</code>开头的属性都会被作为组件事件绑定处理</strong>(其它属性会作为data的属性传入)</p>
+<p>当组件以内嵌组件的方式初始化时，它的事件的绑定方式与DOM事件非常类似，即</p>
+<p><strong>所有</strong> 组件上 <strong>的<code>on-</code>开头的属性都会被作为组件事件绑定处理</strong>(其它属性会作为data的属性传入)</p>
 <p>假设已经注册了一个名为<code>pager</code>的翻页器组件</p>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">pager</span> <span class="hljs-attribute">on-nav</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">this.refresh</span>($<span class="hljs-attribute">event</span>) }&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pager</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-<p>这个例子的意思是， 每当作为内嵌组件的modal抛出<code>confirm</code>事件(通过<a href="https://regularjs.github.io/reference?api-zh#emit" target="_blank">$emit(&#39;confirm&#39;)</a>), 外层组件会运行refresh方法. </p>
-<p>是的，和DOM事件并无二样. 但其中<code>$event</code>代表$emit传入的<strong>第一个</strong>参数</p>
+<p>这个例子的意思是，每当作为内嵌组件的modal抛出<code>confirm</code>事件(通过<a href="https://regularjs.github.io/reference?api-zh#emit" target="_blank">$emit(&#39;confirm&#39;)</a>)，外层组件会运行refresh方法。</p>
+<p>是的，和DOM事件并无二样。但其中<code>$event</code>代表$emit传入的<strong>第一个</strong>参数</p>
 <p><a href="http://jsfiddle.net/leeluolee/y8PHE/3/" target="_blank"><strong>&#x261E; DEMO</strong></a></p>
 <h3 id="">内建生命周期内的组件事件</h3>
 <p>regularjs会在初始化时的关键阶段抛出事件</p>
 <ol>
-<li>$config: 会在compile之前触发， 你可以在此时预处理组件数据</li>
-<li>$init : 会在compile之后触发， 此时， dom结构已经生成， 你可以通过ref来获取了</li>
-<li>$destroy: 会在组件被destroy时， 触发</li>
+<li>$config: 会在compile之前触发，你可以在此时预处理组件数据</li>
+<li>$init : 会在compile之后触发，此时，dom结构已经生成，你可以通过ref来获取了</li>
+<li>$destroy: 会在组件被destroy时，触发</li>
 </ol>
-<p><code>$</code>前缀是为了区分这个是个内建的事件. </p>
-<p>下一节，我们会学习下DOM事件与组件事件的相同点与不同点.</p>
+<p><code>$</code>前缀是为了区分这个是个内建的事件。</p>
+<p>下一节，我们会学习下DOM事件与组件事件的相同点与不同点。</p>
 <h2 id="">事件的共性</h2>
-<p>无论是组件事件还是DOM事件， 它们都具有一些共性</p>
+<p>无论是组件事件还是DOM事件，它们都具有一些共性</p>
 <h3 id="">回调方式取决于你传入的属性值</h3>
 <p>取决于你传入的值是表达式插值还是普通属性，regularjs会做不同的响应处理，例如</p>
 <ul>
@@ -815,9 +815,9 @@ Regular.event(<span class="hljs-string">'enter'</span>, <span class="hljs-functi
 </code></pre>
 </li>
 </ul>
-<p>  一般来讲推荐这种方式来处理事件. </p>
+<p>  一般来讲推荐这种方式来处理事件。</p>
 <ul>
-<li><p>非表达式(e.g. <code>on-click=&quot;remove&quot;</code>)</p>
+<li><p>非表达式（e.g. <code>on-click=&quot;remove&quot;</code>）</p>
 <p>当传入的不是表达式，事件会被代理到组件的事件系统中，你可以使用<code>$on</code>去处理此事件</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-html"> <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">"remove"</span>&gt;</span>Delte<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -836,12 +836,12 @@ Regular.event(<span class="hljs-string">'enter'</span>, <span class="hljs-functi
 </ul>
 <h3 id="">当然它们也有所不同</h3>
 <ol>
-<li>组件事件是由<code>$emit</code>方法抛出, 而DOM由用户触发， 由浏览器抛出(除了自定义事件)</li>
-<li>dom事件由于DOM本身的特点是可以冒泡的， 但是组件事件没有冒泡这一机制。</li>
-<li><code>$event</code>在组件事件中是$emit传入的第一个参数, 而DOM事件中是封装过的事件对象</li>
+<li>组件事件是由<code>$emit</code>方法抛出，而DOM由用户触发，由浏览器抛出（除了自定义事件）</li>
+<li>dom事件由于DOM本身的特点是可以冒泡的，但是组件事件没有冒泡这一机制。</li>
+<li><code>$event</code>在组件事件中是$emit传入的第一个参数，而DOM事件中是封装过的事件对象</li>
 </ol>
 <h2 id="">结尾</h2>
-<p>我们看到，DOM事件和组件事件非常相似， 事实上它们在内部也是公用一套流程， 有兴趣的可以去看看源码.</p>
+<p>我们看到，DOM事件和组件事件非常相似，事实上它们在内部也是公用一套流程，有兴趣的可以去看看源码。</p>
 
                     
                     </section>
@@ -869,6 +869,10 @@ Regular.event(<span class="hljs-string">'enter'</span>, <span class="hljs-functi
 
     
     <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>

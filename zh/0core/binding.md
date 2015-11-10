@@ -1,6 +1,6 @@
 #数据绑定和生命周期
 
-regularjs 推崇极致的数据驱动的组件开发, 而其中数据绑定是实现数据驱动的组件开发的核心所在.
+regularjs 推崇极致的数据驱动的组件开发，而其中数据绑定是实现数据驱动的组件开发的核心所在。
 
 regularjs的组件实例中与数据绑定相关的函数有如下几个
 
@@ -8,7 +8,7 @@ regularjs的组件实例中与数据绑定相关的函数有如下几个
 <a name="watch"></a>
 ### 1 `component.$watch(expression, handler)`
 
-绑定一个数据监听器, 返回watchid，用于$unwatch(解绑) 
+绑定一个数据监听器，返回watchid，用于$unwatch(解绑) 
 
 
 __Arguments__
@@ -22,7 +22,7 @@ __Arguments__
     - oldvalue:  previous value of the Expression
 
 
-    __注__: 当为多重监听时， 参数为所有表达式的新值列表
+    __注__: 当为多重监听时，参数为所有表达式的新值列表
 
 
 __Example__
@@ -92,14 +92,14 @@ component.$update('b', 100); // only watcher 1 alert;
 <a name="update"></a>
 ### 3 `component.$update(setable, value)`
 
-设值函数, 设值之后会进入组件的digest阶段，即脏检查
+设值函数，设值之后会进入组件的digest阶段，即脏检查
 
 __Arguments__
 
   * setable [Expression| Function | String] - expression可以有多种参数类型
     - String: 此字符串会先被Regular.expression处理为Expression
-    - Expression: 此expression需要有set函数, [查看Expression](../syntax/expression.md)
-    - Function: , 类似于angular的$apply,  传入setable的参数如下
+    - Expression: 此expression需要有set函数，[查看Expression](../syntax/expression.md)
+    - Function:，类似于angular的$apply，传入setable的参数如下
       - data: 即组件的数据模型`component.data`
 
   * value - 设置的值，如果expression参数为Function，则被忽略
@@ -134,7 +134,7 @@ component.$update() // do nothing , just enter digest phase
 ### 4 `component.$get(expr)`
 
 
-除了直接操作数据对象`data` 去获取值， 你也可以使用`$get`去获取表达式的值，这个相当于angular的`$eval`，__`$get`的出现主要是为了获取[计算属性的值](computed.md)__
+除了直接操作数据对象`data` 去获取值，你也可以使用`$get`去获取表达式的值，这个相当于angular的`$eval`，__`$get`的出现主要是为了获取[计算属性的值](computed.md)__
 
 
 __Exmaple__
@@ -168,8 +168,8 @@ __Arguments__
   2. expr1 <Expression|String|Object|Array>: 此参数有多种参数类型
     - Expression|String: 本组件要绑定的表达式
     - Object: 同时绑定多个表达式对
-    - Array: 表达式列表,同时实现多个同名表达式(即只传入expr1)
-  3. expr2 <Expression|String>: 目标组件要绑定的表达式, 缺省为expr1
+    - Array: 表达式列表，同时实现多个同名表达式(即只传入expr1)
+  3. expr2 <Expression|String>: 目标组件要绑定的表达式，缺省为expr1
 
 > <h5>WARN</h5>
 > 1. 如果两个表达式都是setable的，可实现双向绑定，否则只能实现单向绑定
