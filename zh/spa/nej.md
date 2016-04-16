@@ -54,7 +54,7 @@ _pro.__onShow = function(_options) {
 
 其实我们想要的功能很简单——用NEJ的umi调度系统直接路由Regular组件。
 
-对此，@赵雨森同学 在NEJ里封装了一个RegularModule的util（在NEJ目录下`util/dispatcher/regularModule`）。
+对此，@赵雨森同学 在NEJ里封装了一个叫[RegularModule](https://github.com/NetEaseWD/NEJ/blob/master/src/util/dispatcher/regularModule.js)的util（在NEJ目录下的`util/dispatcher/regularModule`中）。
 
 ## RegularModule使用指南
 
