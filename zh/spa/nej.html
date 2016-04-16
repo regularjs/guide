@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>单向数据流：Redux为例 | regularjs指南</title>
+        <title>与NEJ module结合 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,8 @@
         
     
     
-    <link rel="next" href="../practicle/pattern.html" />
+    <link rel="next" href="../advanced/README.html" />
     
-    
-    <link rel="prev" href="../practicle/perf.html" />
     
 
         
@@ -34,7 +32,7 @@
 
 
         
-    <div class="book" data-level="4.3" data-basepath=".." data-revision="1460793576901">
+    <div class="book" data-level="5.4" data-basepath=".." data-revision="1460793576901">
     
 
 <div class="book-summary">
@@ -385,7 +383,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="4.3" data-path="practicle/redux.html">
+        <li class="chapter " data-level="4.3" data-path="practicle/redux.html">
             
                 
                     <a href="../practicle/redux.html">
@@ -463,7 +461,7 @@
         </li>
     
         
-        <li class="chapter " data-level="5.4" data-path="spa/nej.html">
+        <li class="chapter active" data-level="5.4" data-path="spa/nej.html">
             
                 
                     <a href="../spa/nej.html">
@@ -664,19 +662,178 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_30">
+                    <section class="normal" id="section-gitbook_33">
                     
-                        <h1 id="">单向数据流</h1>
-<p>在开发</p>
-<motion style={name} end={name} step={x|normalize}>
+                        <h1 id="nej-module">与NEJ Module结合</h1>
+<p>网易内部有大量的用户，使用的单页方案都是『NEJ的umi调度系统』，由于单页系统中单个模块逻辑较小，很多时候只需要一个Regular组件即可。</p>
+<p>所以经常会有同事写出这种重复的代码，把一个大的Regular组件插入到空空的NEJ模块中：</p>
+<p>NEJ模块的html文件（<code>module/test/index.html</code>）：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"ntp"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"module-test"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"j-flag"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- @TEMPLATE --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"js"</span> <span class="hljs-attribute">data-src</span>=<span class="hljs-value">"./index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- /@TEMPLATE --&gt;</span>
+</code></pre>
+<p>NEJ模块的js文件（<code>module/test/index.js</code>）：</p>
+<pre><code class="lang-javascript">_pro.__onShow = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_options)</span> </span>{
+    <span class="hljs-keyword">new</span> TestComponent({
+        data: {...}
+    }).$inject(<span class="hljs-keyword">this</span>.__eFlag);
+    ...
+}
+</code></pre>
+<p>或者是这样，把大模块的功能拆成几个小组件分别插入到空空的NEJ模块中：</p>
+<p>NEJ模块的html文件（<code>module/test/index.html</code>）：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"ntp"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"module-test"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"j-flag"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"j-flag"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"j-flag"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- @TEMPLATE --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"js"</span> <span class="hljs-attribute">data-src</span>=<span class="hljs-value">"./index.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- /@TEMPLATE --&gt;</span>
+</code></pre>
+<p>NEJ模块的js文件（<code>module/test/index.js</code>）：</p>
+<pre><code class="lang-javascript">_pro.__onShow = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_options)</span> </span>{
+    <span class="hljs-keyword">new</span> TestTab(...).$inject(<span class="hljs-keyword">this</span>.__eFlags[<span class="hljs-number">0</span>]);
+    <span class="hljs-keyword">new</span> TestSummary(...).$inject(<span class="hljs-keyword">this</span>.__eFlags[<span class="hljs-number">1</span>]);
+    <span class="hljs-keyword">new</span> TestDetail(...).$inject(<span class="hljs-keyword">this</span>.__eFlags[<span class="hljs-number">2</span>]);
+    ...
+}
+</code></pre>
+<p>在一个项目中，如果一两个模块这样做可以容忍，但是多了就会有点小抓狂。</p>
+<p>其实我们想要的功能很简单——用NEJ的umi调度系统直接路由Regular组件。</p>
+<p>对此，@赵雨森同学 在NEJ里封装了一个RegularModule的util（在NEJ目录下<code>util/dispatcher/regularModule</code>）。</p>
+<h2 id="regularmodule">RegularModule使用指南</h2>
+<h3 id="1-regular">1. 直接在模块中上Regular</h3>
+<p>直接在NEJ的<code>module</code>目录下写Regular代码，方式和写Regular的其他组件一样。</p>
+<p>Regular模块的js文件（<code>module/test/index.js</code>）：</p>
+<pre><code class="lang-javascript">define([
+    <span class="hljs-string">'regular!./index.html'</span>
+    ...
+], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(template, ...)</span> </span>{
+    <span class="hljs-keyword">var</span> TestModule = Component.extend({
+        template: template,
+        config: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            ...
+        }
+    });
+    <span class="hljs-keyword">return</span> TestModule;
+});
+</code></pre>
+<p>Regular模块的html文件（<code>module/test/index.html</code>）：</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{this.soEasy()}</span>&gt;</span>{'按Regular模板写就行'}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h3 id="2-js">2. 在模块的js文件中注册模块</h3>
+<p>对于上面的Regular模块组件，NEJ肯定调度不了的。接下来就要引入RegularModule，并注册umi：</p>
+<pre><code class="lang-javascript">define([
+    <span class="hljs-string">'util/dispatcher/regularModule'</span>,
+    <span class="hljs-string">'regular!./index.html'</span>
+    ...
+], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_m, template, ...)</span> </span>{
+    <span class="hljs-keyword">var</span> TestModule = Component.extend({
+        template: template,
+        config: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            ...
+        }
+    });
+    <span class="hljs-keyword">return</span> _m._$regist(<span class="hljs-string">'test'</span>, TestModule);    <span class="hljs-comment">// 注册umi</span>
+});
+</code></pre>
+<h3 id="3-">3. 添加模块配置</h3>
+<p>最后一步，也是最关键的一步，在模块配置文件中添加配置。</p>
+<p>这与以往的NEJ模块不同，要用js的方式把该模块引入，然后添加到相应的位置：</p>
+<pre><code class="lang-javascript">NEJ.define([
+    <span class="hljs-string">'base/klass'</span>,
+    <span class="hljs-string">'base/util'</span>,
+    <span class="hljs-string">'util/dispatcher/dispatcher'</span>,
+    <span class="hljs-string">'pro/widget/module'</span>,
+    <span class="hljs-string">'{pro}../html/module/test/index.js'</span>
+], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_k, _u, _s, _m, _$$TestModule, _p)</span></span>{
+    <span class="hljs-comment">/**
+     * 启动模块配置
+     */</span>
+    _pro.__startup = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        _t._$startup({
+            <span class="hljs-comment">// 规则配置</span>
+            rules: {
+                title: {
+                    <span class="hljs-string">'/m/test/'</span>: <span class="hljs-string">'Test模块'</span>,
+                    ...
+                },
+                alias: {
+                    <span class="hljs-string">'test'</span>: <span class="hljs-string">'/m/test/'</span>,
+                    ...
+                }
+            },
+            <span class="hljs-comment">// 模块配置</span>
+            modules: {
+                <span class="hljs-string">'/m/test/'</span>: _$$TestModule,
+                <span class="hljs-comment">// '/m/test/': 'module/test/index.html',    // 原来的配置</span>
+                ...
+            }
+        });
+    }
+});
+</code></pre>
+<p>这样就大功告成了。</p>
+<h3 id="1nej">补充1：NEJ的模块方法</h3>
+<p>NEJ的模块方法在RegularModule中可以继续用，例如：</p>
+<pre><code class="lang-javascript">define([
+    <span class="hljs-string">'util/dispatcher/regularModule'</span>,
+    <span class="hljs-string">'regular!./index.html'</span>
+    ...
+], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_m, template, ...)</span> </span>{
+    <span class="hljs-keyword">var</span> TestModule = Component.extend({
+        template: template,
+        config: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            ...
+        },
+        __onShow: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_options)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'show'</span>, _options);
+        },
+        __onRefresh: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_options)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'refresh'</span>, _options);
+        },
+        __onMessage: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_options)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'message'</span>, _options);
+        },
+        __onBeforeHide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_options)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'beforeHide'</span>, _options);
+        },
+        __onHide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hide'</span>);
+        }
+    });
+    <span class="hljs-keyword">return</span> _m._$regist(<span class="hljs-string">'test'</span>, TestModule);
+});
+</code></pre>
+<h3 id="2">补充2：模块组件切换时的重置问题</h3>
+<p>默认情况下，当模块切换出去再切换进来，即<code>__onHide</code>再<code>__onShow</code>时，Regular组件是<strong>不会销毁</strong>的。</p>
+<p>但有些情况下，比如一些表单模块或者要刷新的列表模块，我们希望模块切换后整个组件的内容重置。</p>
+<p>可以自己实现<code>reset</code>方法，在<code>__onHide</code>时把组件中的<code>data</code>清理一次，但这样有些麻烦。</p>
+<p>在RegularModule中有另一种方法，在<code>__onHide</code>时把这个组件destroy掉，在<code>__onShow</code>时RegularModule会重新构建这个组件。示例如下：</p>
+<pre><code class="lang-javascript">define([
+    <span class="hljs-string">'util/dispatcher/regularModule'</span>,
+    <span class="hljs-string">'regular!./index.html'</span>
+    ...
+], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(_m, template, ...)</span> </span>{
+    <span class="hljs-keyword">var</span> TestModule = Component.extend({
+        template: template,
+        config: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            ...
+        },
+        __onHide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">this</span>.destroy();    <span class="hljs-comment">// 起到reset的作用</span>
+        }
+    });
+    <span class="hljs-keyword">return</span> _m._$regist(<span class="hljs-string">'test'</span>, TestModule);
+});
+</code></pre>
 
-
-
-  <div style={x}>{step.x}</div>
-
-
-
-</motion>
                     
                     </section>
                 
@@ -686,10 +843,8 @@
         </div>
 
         
-        <a href="../practicle/perf.html" class="navigation navigation-prev " aria-label="Previous page: 性能优化指引"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../practicle/pattern.html" class="navigation navigation-next " aria-label="Next page: 一些模式的建议"><i class="fa fa-angle-right"></i></a>
+        <a href="../advanced/README.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 深入RegularJS"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
