@@ -24,7 +24,7 @@
     - 好基友：stateman + regularjs
     - 单页设计准则
     - 例子：简单博客
-    - 与NEJ module结合
+    - [与NEJ module结合](spa/nej.md)
 - [深入RegularJS](advanced/README.md)
     - [脏检查—数据绑定的秘密](advanced/dirty.md)
     - [轻量级的模块化](advanced/modular.md)
