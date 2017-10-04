@@ -285,7 +285,7 @@ new Counter({data: {count:0}}).$inject('#app');
 
 
 
-## 小节
+## 小结
 
 经过本章的学习，我们理解了
 
