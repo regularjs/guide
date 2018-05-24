@@ -119,7 +119,7 @@ if( this.init ) this.init(this.data);
 ------
 
 <a name="destroy"></a>
-## 当 `component.destory()` ...
+## 当 `component.destroy()` ...
 
 当销毁组件时，剧情就要简单的多了。
 
@@ -127,12 +127,12 @@ if( this.init ) this.init(this.data);
 
 2. 销毁所有模板的dom节点，并且解除所有数据绑定、指令等
 
-需要注意的是，是Regular.prototype.destory完成了这些处理，所以永远记得在你定义的destory函数中使用`this.supr()。一个更稳妥的方案是: 永远不重写destroy，而是注册`$destory`事件来完成你的回收工作。
+需要注意的是，是Regular.prototype.destory完成了这些处理，所以永远记得在你定义的destory函数中使用`this.supr()。一个更稳妥的方案是: 永远不重写destroy，而是注册`$destroy`事件来完成你的回收工作。
 
 ```js
 Component.extend({
   init: function(){
-    this.$on('$destory', function(){
+    this.$on('$destroy', function(){
 
       // destroy logic
 
@@ -163,7 +163,7 @@ Component.extend({
 - 查找是否可以找到注册为对应名字的组件（通过`Component.component`）
 - 如果找到，　则视其为内嵌组件（如`custom-pager`），　会执行流程1
   1. 创建一个空对象`data`.
-  2. 如果有[内嵌内容](./composite.md)，它会被解析并作为实例的`$body`属性，你可以配合 `{#include this.$body}` 来使用它，也可以将其结合include使用（注意，两种方式的作用域指向是不同的）
+  2. 如果有[内嵌内容](./composite.md)，它会被解析并作为实例的`$body`属性，你可以配合 `{#include this.$body}` 来使用它
   3. 遍历每个属性，
     - 如果不是事件则作为`data`的一个属性值，如果为插值则建立父组件与子组件的 __双向绑定__
     - 如果是[`ref`](./ref.md)则标记它
@@ -171,7 +171,7 @@ Component.extend({
   4. 初始化组件（通过new Component），`data`会作为参数传入
   5. 插入到父组件的内容中
 - 如果没有找对应组件名，则执行流程2
-  1. 创建一个节点`document.createElement(tagName)`
+  1. 创建一个节点`document.createElement( tagName )`
   2. 编译它的子元素（如果有的话），并塞入节点。
   3. 遍历属性值，分别根据指令，事件和普通属性值处理，与组件一样，如果是[`ref`](./ref.md)，则会标记这个节点。
   4. 将节点插入到父组件的内容中

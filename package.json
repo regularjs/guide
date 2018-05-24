@@ -6,6 +6,10 @@
     "type": "git",
     "url": "https://github.com/regularjs/guide.git"
   },
+  "scripts": {
+    "serve": "gitbook serve .",
+    "build": "gitbook build ."
+  },
   "author": "leeluolee <oe.zheng@gmail.com>",
   "dependencies": {
     "gulp": "3.6.x",
