@@ -1,684 +1,624 @@
+
 <!DOCTYPE HTML>
-<html lang="en-US" >
-    
+<html lang="zh" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>动画指令 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>动画指令 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 1.5.0">
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        <meta name="generator" content="GitBook 3.2.3">
+        
         
         
     
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
     
-    <link rel="next" href="../component/README.html" />
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
     
+
     
-    <link rel="prev" href="../basic/filter.html" />
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
 
         
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../component/" />
+    
+    
+    <link rel="prev" href="filter.html" />
+    
+
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-<link rel="stylesheet" href="../gitbook/style.css">
-
-
-        
-    <div class="book" data-level="2.6" data-basepath=".." data-revision="1460794625700">
-    
-
-<div class="book-summary">
-    <div class="book-search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
-    <ul class="summary">
-        
-    	
-    	
-    	    
-            <li>
-                <a href="https://github.com/regularjs/guide/issues" target="blank" class="custom-link">➭ Github</a>
-            </li>
-    	
-    	    
-            <li>
-                <a href="http://regularjs.github.io/reference" target="blank" class="custom-link">➭ API &amp; Syntax(详细文档)</a>
-            </li>
-    	
-    	
-
-        
-        <li class="divider"></li>
-        
-
-        
-    
-        
-        <li class="chapter " data-level="0" data-path="index.html">
             
-                
-                    <a href="../index.html">
-                        <i class="fa fa-check"></i>
-                        
-                         Introduction
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="1" data-path="intro/README.html">
-            
-                
-                    <a href="../intro/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                         你好，Regularjs
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="1.1" data-path="intro/what.html">
-            
-                
-                    <a href="../intro/what.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.1.</b>
-                        
-                         Regularjs是什么
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="1.2" data-path="intro/hello-regularjs.html">
-            
-                
-                    <a href="../intro/hello-regularjs.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.2.</b>
-                        
-                         第一个组件：HelloRegular
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2" data-path="basic/README.html">
-            
-                
-                    <a href="../basic/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                         快速入门
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="2.1" data-path="basic/template.html">
-            
-                
-                    <a href="../basic/template.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.1.</b>
-                        
-                         模板语法
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.2" data-path="basic/directive.html">
-            
-                
-                    <a href="../basic/directive.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                         指令
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.3" data-path="basic/component.html">
-            
-                
-                    <a href="../basic/component.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.3.</b>
-                        
-                         组件
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.4" data-path="basic/event.html">
-            
-                
-                    <a href="../basic/event.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.</b>
-                        
-                         事件
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.5" data-path="basic/filter.html">
-            
-                
-                    <a href="../basic/filter.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.</b>
-                        
-                         过滤器和计算属性
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter active" data-level="2.6" data-path="basic/animation.html">
-            
-                
-                    <a href="../basic/animation.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.6.</b>
-                        
-                         动画指令
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3" data-path="component/README.html">
-            
-                
-                    <a href="../component/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                         深入组件
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="3.1" data-path="component/ref.html">
-            
-                
-                    <a href="../component/ref.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                         获取子节点与子组件
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.2" data-path="component/composite.html">
-            
-                
-                    <a href="../component/composite.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                         ✨组合 — `this.$body`
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.3" data-path="component/isolate.html">
-            
-                
-                    <a href="../component/isolate.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.</b>
-                        
-                         组件隔离
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.4" data-path="component/lifecycle.html">
-            
-                
-                    <a href="../component/lifecycle.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                         生命周期
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4" data-path="practicle/README.html">
-            
-                
-                    <a href="../practicle/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                         最佳实践
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="4.1" data-path="practicle/template.html">
-            
-                
-                    <a href="../practicle/template.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.1.</b>
-                        
-                         请优雅的管理模板
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4.2" data-path="practicle/perf.html">
-            
-                
-                    <a href="../practicle/perf.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.2.</b>
-                        
-                         性能优化指引
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4.3" data-path="practicle/redux.html">
-            
-                
-                    <a href="../practicle/redux.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.3.</b>
-                        
-                         单向数据流：Redux为例
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4.4" data-path="practicle/pattern.html">
-            
-                
-                    <a href="../practicle/pattern.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.4.</b>
-                        
-                         一些模式的建议
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5" data-path="spa/README.html">
-            
-                
-                    <a href="../spa/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                         写个单页系统吧
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="5.1" >
-            
-            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5.2" >
-            
-            <span><b>5.2.</b> 单页设计准则</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5.3" >
-            
-            <span><b>5.3.</b> 例子：简单博客</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5.4" data-path="spa/nej.html">
-            
-                
-                    <a href="../spa/nej.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.4.</b>
-                        
-                         与NEJ module结合
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="6" data-path="advanced/README.html">
-            
-                
-                    <a href="../advanced/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                         深入RegularJS
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="6.1" data-path="advanced/dirty.html">
-            
-                
-                    <a href="../advanced/dirty.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.1.</b>
-                        
-                         脏检查—数据绑定的秘密
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="6.2" data-path="advanced/modular.html">
-            
-                
-                    <a href="../advanced/modular.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.2.</b>
-                        
-                         轻量级的模块化
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="7" >
-            
-            <span><b>7.</b> 常见问题QA</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="8" >
-            
-            <span><b>8.</b> 范例指南</span>
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="8.1" data-path="demo/todomvc.html">
-            
-                
-                    <a href="../demo/todomvc.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.1.</b>
-                        
-                         ◉ 50行代码实现的todomvc
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-
-        
-        <li class="divider"></li>
-        <li>
-            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
-        </li>
-        
-    </ul>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/guide/issues" target="_blank" class="custom-link">➭ Github</a>
+        </li>
+    
+        
+        <li>
+            <a href="http://regularjs.github.io/reference" target="_blank" class="custom-link">➭ API & Syntax(详细文档)</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    你好，Regularjs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regularjs是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/hello-regularjs.html">
+            
+                <a href="../intro/hello-regularjs.html">
+            
+                    
+                    第一个组件：HelloRegular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="template.html">
+            
+                <a href="template.html">
+            
+                    
+                    模板语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="component.html">
+            
+                <a href="component.html">
+            
+                    
+                    组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="event.html">
+            
+                <a href="event.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="filter.html">
+            
+                <a href="filter.html">
+            
+                    
+                    过滤器和计算属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.6" data-path="animation.html">
+            
+                <a href="animation.html">
+            
+                    
+                    动画指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../component/">
+            
+                <a href="../component/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../component/ref.html">
+            
+                <a href="../component/ref.html">
+            
+                    
+                    获取子节点与子组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../component/composite.html">
+            
+                <a href="../component/composite.html">
+            
+                    
+                    ✨组合 — this.$body
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../component/isolate.html">
+            
+                <a href="../component/isolate.html">
+            
+                    
+                    组件隔离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../component/lifecycle.html">
+            
+                <a href="../component/lifecycle.html">
+            
+                    
+                    生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../practicle/">
+            
+                <a href="../practicle/">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../practicle/template.html">
+            
+                <a href="../practicle/template.html">
+            
+                    
+                    请优雅的管理模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../practicle/perf.html">
+            
+                <a href="../practicle/perf.html">
+            
+                    
+                    性能优化指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../practicle/redux.html">
+            
+                <a href="../practicle/redux.html">
+            
+                    
+                    单向数据流：Redux为例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../practicle/pattern.html">
+            
+                <a href="../practicle/pattern.html">
+            
+                    
+                    一些模式的建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../spa/">
+            
+                <a href="../spa/">
+            
+                    
+                    写个单页系统吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    好基友：stateman + regularjs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    单页设计准则
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    例子：简单博客
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../spa/nej.html">
+            
+                <a href="../spa/nej.html">
+            
+                    
+                    与NEJ module结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入RegularJS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../advanced/dirty.html">
+            
+                <a href="../advanced/dirty.html">
+            
+                    
+                    脏检查—数据绑定的秘密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    轻量级的模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    常见问题QA
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    范例指南
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../demo/todomvc.html">
+            
+                <a href="../demo/todomvc.html">
+            
+                    
+                    ◉ 50行代码实现的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
 
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header">
-    <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
-    
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
+        
+            <div class="body-inner">
+                
+                    
 
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">Twitter</button>
-                <button type="button" data-sharing="google-plus" class="button">Google</button>
-                <button type="button" data-sharing="facebook" class="button">Facebook</button>
-                <button type="button" data-sharing="weibo" class="button">Weibo</button>
-                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
-    
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >regularjs指南</a>
+        <a href=".." >动画指令</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-gitbook_5">
-                    
-                        <h1 id="">动画系统</h1>
-<p>声明式的动画绝对是所有MVVM框架都面临的难点，90%的框架都只处理了 节点进入退出的动画操作。Regular的动画系统非常轻量级（代码量上），但是毫无疑问的是很强大的实现，眼见为实，看看它的过人之处吧。</p>
-<h2 id="">动画简介</h2>
-<p>你可以通过<code>r-animation</code>指令来实现动画。</p>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x52A8;&#x753B;&#x7CFB;&#x7EDF;">&#x52A8;&#x753B;&#x7CFB;&#x7EDF;</h1>
+<p>&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x52A8;&#x753B;&#x7EDD;&#x5BF9;&#x662F;&#x6240;&#x6709;MVVM&#x6846;&#x67B6;&#x90FD;&#x9762;&#x4E34;&#x7684;&#x96BE;&#x70B9;&#xFF0C;90%&#x7684;&#x6846;&#x67B6;&#x90FD;&#x53EA;&#x5904;&#x7406;&#x4E86; &#x8282;&#x70B9;&#x8FDB;&#x5165;&#x9000;&#x51FA;&#x7684;&#x52A8;&#x753B;&#x64CD;&#x4F5C;&#x3002;Regular&#x7684;&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x975E;&#x5E38;&#x8F7B;&#x91CF;&#x7EA7;&#xFF08;&#x4EE3;&#x7801;&#x91CF;&#x4E0A;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x6BEB;&#x65E0;&#x7591;&#x95EE;&#x7684;&#x662F;&#x5F88;&#x5F3A;&#x5927;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x773C;&#x89C1;&#x4E3A;&#x5B9E;&#xFF0C;&#x770B;&#x770B;&#x5B83;&#x7684;&#x8FC7;&#x4EBA;&#x4E4B;&#x5904;&#x5427;&#x3002;</p>
+<h2 id="&#x52A8;&#x753B;&#x7B80;&#x4ECB;">&#x52A8;&#x753B;&#x7B80;&#x4ECB;</h2>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>r-animation</code>&#x6307;&#x4EE4;&#x6765;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x3002;</p>
 <p><strong>Syntax</strong></p>
 <pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"Sequence"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">r-animation</span>=<span class="hljs-string">&quot;Sequence&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
 Sequence:
-  Command (";"" Command)*
+  Command (&quot;;&quot;&quot; Command)*
 
 Command:
-  CommandName ":"" Param;
+  CommandName &quot;:&quot;&quot; Param;
 
 CommandName: [-\w]+
 
@@ -686,194 +626,194 @@ Param: [^;]+
 </code></pre>
 <p><strong>Exmaple</strong></p>
 <pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">r</span>=<span class="hljs-value">animation="on:</span> <span class="hljs-attribute">click</span>; <span class="hljs-attribute">class:</span> <span class="hljs-attribute">animated</span> <span class="hljs-attribute">fadeIn</span>; <span class="hljs-attribute">wait:</span> <span class="hljs-attribute">1000</span>; <span class="hljs-attribute">class:</span> <span class="hljs-attribute">animated</span> <span class="hljs-attribute">fadeOut</span>; "&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">r</span>=<span class="hljs-string">animation=&quot;on:</span> <span class="hljs-attr">click</span>; <span class="hljs-attr">class:</span> <span class="hljs-attr">animated</span> <span class="hljs-attr">fadeIn</span>; <span class="hljs-attr">wait:</span> <span class="hljs-attr">1000</span>; <span class="hljs-attr">class:</span> <span class="hljs-attr">animated</span> <span class="hljs-attr">fadeOut</span>; &quot;&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>上例的意思是: </p>
+<p>&#x4E0A;&#x4F8B;&#x7684;&#x610F;&#x601D;&#x662F;: </p>
 <ol>
-<li>当 <code>click</code> 触发时</li>
-<li>为元素添加类名 <code>animated fadeIn</code>，当 <code>transitionend</code> (或 <code>animationend</code>)时，移除它们</li>
-<li>等待 1000ms.</li>
-<li>与第二步类似</li>
-<li>动画结束 done.</li>
+<li>&#x5F53; <code>click</code> &#x89E6;&#x53D1;&#x65F6;</li>
+<li>&#x4E3A;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x7C7B;&#x540D; <code>animated fadeIn</code>&#xFF0C;&#x5F53; <code>transitionend</code> (&#x6216; <code>animationend</code>)&#x65F6;&#xFF0C;&#x79FB;&#x9664;&#x5B83;&#x4EEC;</li>
+<li>&#x7B49;&#x5F85; 1000ms.</li>
+<li>&#x4E0E;&#x7B2C;&#x4E8C;&#x6B65;&#x7C7B;&#x4F3C;</li>
+<li>&#x52A8;&#x753B;&#x7ED3;&#x675F; done.</li>
 </ol>
-<h2 id="command">内建Command</h2>
-<p>动画系统中内建了多个Command，其中比较特殊的是 <code>on</code> 和 <code>when</code>，它们是唯二的两个用于激活动画开始的Command</p>
+<h2 id="&#x5185;&#x5EFA;command">&#x5185;&#x5EFA;Command</h2>
+<p>&#x52A8;&#x753B;&#x7CFB;&#x7EDF;&#x4E2D;&#x5185;&#x5EFA;&#x4E86;&#x591A;&#x4E2A;Command&#xFF0C;&#x5176;&#x4E2D;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x7684;&#x662F; <code>on</code> &#x548C; <code>when</code>&#xFF0C;&#x5B83;&#x4EEC;&#x662F;&#x552F;&#x4E8C;&#x7684;&#x4E24;&#x4E2A;&#x7528;&#x4E8E;&#x6FC0;&#x6D3B;&#x52A8;&#x753B;&#x5F00;&#x59CB;&#x7684;Command</p>
 <h3 id="1-on-event">1. on: event</h3>
-<p>当特定的event 触发时，开始动画，event可以是当前节点的DOM事件，也可以是所在组件的事件。</p>
-<p><em>注意: Regular会先去检查event是否是个DOM事件，如果不是，则会转而监听组件事件</em></p>
-<p>Regular提供了两个模拟事件来模拟节点的进入退出效果。</p>
+<p>&#x5F53;&#x7279;&#x5B9A;&#x7684;event &#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x5F00;&#x59CB;&#x52A8;&#x753B;&#xFF0C;event&#x53EF;&#x4EE5;&#x662F;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;DOM&#x4E8B;&#x4EF6;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6240;&#x5728;&#x7EC4;&#x4EF6;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p><em>&#x6CE8;&#x610F;: Regular&#x4F1A;&#x5148;&#x53BB;&#x68C0;&#x67E5;event&#x662F;&#x5426;&#x662F;&#x4E2A;DOM&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x5219;&#x4F1A;&#x8F6C;&#x800C;&#x76D1;&#x542C;&#x7EC4;&#x4EF6;&#x4E8B;&#x4EF6;</em></p>
+<p>Regular&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x6A21;&#x62DF;&#x4E8B;&#x4EF6;&#x6765;&#x6A21;&#x62DF;&#x8282;&#x70B9;&#x7684;&#x8FDB;&#x5165;&#x9000;&#x51FA;&#x6548;&#x679C;&#x3002;</p>
 <ul>
-<li>enter: 在节点进入时触发</li>
-<li>leave: 在节点退出时触发 (动画结束后，节点才会被真正移除)</li>
+<li>enter: &#x5728;&#x8282;&#x70B9;&#x8FDB;&#x5165;&#x65F6;&#x89E6;&#x53D1;</li>
+<li>leave: &#x5728;&#x8282;&#x70B9;&#x9000;&#x51FA;&#x65F6;&#x89E6;&#x53D1; (&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x8282;&#x70B9;&#x624D;&#x4F1A;&#x88AB;&#x771F;&#x6B63;&#x79FB;&#x9664;)</li>
 </ul>
-<p>目前<code>r-hide</code>指令，<code>{#if}</code> 和 <code>{#list}</code> 以及 <code>{#include}</code> 或是<code>component.$inject</code>等导致的节点变化，都会触发 &#39;enter&#39; 和 &#39;leave&#39; 效果。</p>
+<p>&#x76EE;&#x524D;<code>r-hide</code>&#x6307;&#x4EE4;&#xFF0C;<code>{#if}</code> &#x548C; <code>{#list}</code> &#x4EE5;&#x53CA; <code>{#include}</code> &#x6216;&#x662F;<code>component.$inject</code>&#x7B49;&#x5BFC;&#x81F4;&#x7684;&#x8282;&#x70B9;&#x53D8;&#x5316;&#xFF0C;&#x90FD;&#x4F1A;&#x89E6;&#x53D1; &apos;enter&apos; &#x548C; &apos;leave&apos; &#x6548;&#x679C;&#x3002;</p>
 <p><strong>Example</strong></p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
 {#list items as item}
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'animated'</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">'on:enter;class: fadeIn;on:leave;class: fadeOut'</span>&gt;</span>{item.content}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;animated&apos;</span> <span class="hljs-attr">r-animation</span>=<span class="hljs-string">&apos;on:enter;class: fadeIn;on:leave;class: fadeOut&apos;</span>&gt;</span>{item.content}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 {/list}
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
 <h3 id="2-when-expression">2. when: Expression</h3>
-<p>当表达式为真触发动画</p>
+<p>&#x5F53;&#x8868;&#x8FBE;&#x5F0F;&#x4E3A;&#x771F;&#x89E6;&#x53D1;&#x52A8;&#x753B;</p>
 <pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'animated'</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">'when: status===1; class: swing;'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;animated&apos;</span> <span class="hljs-attr">r-animation</span>=<span class="hljs-string">&apos;when: status===1; class: swing;&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>当<code>component.data.status</code>为1时，会触发此动画效果。</p>
+<p>&#x5F53;<code>component.data.status</code>&#x4E3A;1&#x65F6;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;&#x6B64;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;</p>
 <h3 id="3-class-classes-mode">3. class: classes, mode</h3>
-<p>class是基于CSS3的动画Command，它会等待动画结束之后(transitionend 或 animationend)，再执行后续效果。</p>
-<p><strong>参数</strong></p>
+<p>class&#x662F;&#x57FA;&#x4E8E;CSS3&#x7684;&#x52A8;&#x753B;Command&#xFF0C;&#x5B83;&#x4F1A;&#x7B49;&#x5F85;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x4E4B;&#x540E;(transitionend &#x6216; animationend)&#xFF0C;&#x518D;&#x6267;&#x884C;&#x540E;&#x7EED;&#x6548;&#x679C;&#x3002;</p>
+<p><strong>&#x53C2;&#x6570;</strong></p>
 <ul>
-<li>classes: 空格分割的className</li>
-<li><p>mode (Number): 添加class的模式</p>
-<p> <code>Command: class</code>的形为取决于 <code>mode</code>参数，一共有三种mode.</p>
+<li>classes: &#x7A7A;&#x683C;&#x5206;&#x5272;&#x7684;className</li>
+<li><p>mode (Number): &#x6DFB;&#x52A0;class&#x7684;&#x6A21;&#x5F0F;</p>
+<p> <code>Command: class</code>&#x7684;&#x5F62;&#x4E3A;&#x53D6;&#x51B3;&#x4E8E; <code>mode</code>&#x53C2;&#x6570;&#xFF0C;&#x4E00;&#x5171;&#x6709;&#x4E09;&#x79CD;mode.</p>
 <ul>
-<li>1: 默认mode，首先加指定类名到节点，当动画结束移除它</li>
-<li>2: 首先添加class到节点，然后在nextTick添加class-active到节点用以触发动画，当动画结束移除所有类名，这个模式与angular类似。</li>
-<li>3: 与mode1类似，但是动画结束后，我们不移除类名</li>
-<li>4: 移除指定类名，并等待动画结束。</li>
+<li>1: &#x9ED8;&#x8BA4;mode&#xFF0C;&#x9996;&#x5148;&#x52A0;&#x6307;&#x5B9A;&#x7C7B;&#x540D;&#x5230;&#x8282;&#x70B9;&#xFF0C;&#x5F53;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x79FB;&#x9664;&#x5B83;</li>
+<li>2: &#x9996;&#x5148;&#x6DFB;&#x52A0;class&#x5230;&#x8282;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x5728;nextTick&#x6DFB;&#x52A0;class-active&#x5230;&#x8282;&#x70B9;&#x7528;&#x4EE5;&#x89E6;&#x53D1;&#x52A8;&#x753B;&#xFF0C;&#x5F53;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x79FB;&#x9664;&#x6240;&#x6709;&#x7C7B;&#x540D;&#xFF0C;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x4E0E;angular&#x7C7B;&#x4F3C;&#x3002;</li>
+<li>3: &#x4E0E;mode1&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x79FB;&#x9664;&#x7C7B;&#x540D;</li>
+<li>4: &#x79FB;&#x9664;&#x6307;&#x5B9A;&#x7C7B;&#x540D;&#xFF0C;&#x5E76;&#x7B49;&#x5F85;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x3002;</li>
 </ul>
 </li>
 </ul>
 <p><strong>example</strong></p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"box1"</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"on:click;class: animated fadeIn, 1"</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"box2"</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"on:click;class: animated fadeIn, 2"</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"box3"</span> <span class="hljs-attribute">r-animation</span>=<span class="hljs-value">"on:click;class: animated fadeIn, 3"</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;box1&quot;</span> <span class="hljs-attr">r-animation</span>=<span class="hljs-string">&quot;on:click;class: animated fadeIn, 1&quot;</span>&gt;</span>box1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;box2&quot;</span> <span class="hljs-attr">r-animation</span>=<span class="hljs-string">&quot;on:click;class: animated fadeIn, 2&quot;</span>&gt;</span>box2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;box3&quot;</span> <span class="hljs-attr">r-animation</span>=<span class="hljs-string">&quot;on:click;class: animated fadeIn, 3&quot;</span>&gt;</span>box3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>每当点击box1, box2 或box3. 它们分别会产生不同的效果</p>
+<p>&#x6BCF;&#x5F53;&#x70B9;&#x51FB;box1, box2 &#x6216;box3. &#x5B83;&#x4EEC;&#x5206;&#x522B;&#x4F1A;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684;&#x6548;&#x679C;</p>
 <p><strong>box1</strong>:</p>
 <ol>
-<li>添加 <code>animated fadeIn</code></li>
-<li>等待 <code>animationend</code> 移除它们</li>
+<li>&#x6DFB;&#x52A0; <code>animated fadeIn</code></li>
+<li>&#x7B49;&#x5F85; <code>animationend</code> &#x79FB;&#x9664;&#x5B83;&#x4EEC;</li>
 </ol>
 <p><strong>box2</strong>:</p>
 <ol>
-<li>添加 <code>animated fadeIn</code></li>
-<li>添加 <code>animated-active fadeIn-active</code> at next-tick(to trigger the animation)</li>
-<li>等待 <code>animationend</code> 然后移除所有 <code>animated fadeIn animated-active fadeIn-active</code></li>
+<li>&#x6DFB;&#x52A0; <code>animated fadeIn</code></li>
+<li>&#x6DFB;&#x52A0; <code>animated-active fadeIn-active</code> at next-tick(to trigger the animation)</li>
+<li>&#x7B49;&#x5F85; <code>animationend</code> &#x7136;&#x540E;&#x79FB;&#x9664;&#x6240;&#x6709; <code>animated fadeIn animated-active fadeIn-active</code></li>
 </ol>
 <p><strong>box3</strong>:</p>
 <ol>
-<li>添加 <code>animated fadeIn</code></li>
-<li>等待 <code>animationend</code>，动画结束</li>
+<li>&#x6DFB;&#x52A0; <code>animated fadeIn</code></li>
+<li>&#x7B49;&#x5F85; <code>animationend</code>&#xFF0C;&#x52A8;&#x753B;&#x7ED3;&#x675F;</li>
 </ol>
 <h3 id="4-emit-event">4. emit: event</h3>
-<p>抛出某个事件，<strong>注意这可能会触发另一个动画序列</strong>（被命令<code>on</code> 捕获）</p>
+<p>&#x629B;&#x51FA;&#x67D0;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;<strong>&#x6CE8;&#x610F;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x89E6;&#x53D1;&#x53E6;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x5E8F;&#x5217;</strong>&#xFF08;&#x88AB;&#x547D;&#x4EE4;<code>on</code> &#x6355;&#x83B7;&#xFF09;</p>
 <pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-     "<span class="hljs-attribute">on:</span> <span class="hljs-attribute">click</span>; 
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
-        <span class="hljs-attribute">emit:</span> <span class="hljs-attribute">swing-over</span> ;
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>;
-        <span class="hljs-attribute">emit:</span> <span class="hljs-attribute">shake-over</span>"
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+     &quot;<span class="hljs-attr">on:</span> <span class="hljs-attr">click</span>; 
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">swing</span> ;
+        <span class="hljs-attr">emit:</span> <span class="hljs-attr">swing-over</span> ;
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">shake</span>;
+        <span class="hljs-attr">emit:</span> <span class="hljs-attr">shake-over</span>&quot;
         &gt;</span>
   box1: trigger by click
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-     "<span class="hljs-attribute">on:</span> <span class="hljs-attribute">swing-over</span>; 
-        <span class="hljs-attribute">class:</span>  <span class="hljs-attribute">swing</span>; 
-      <span class="hljs-attribute">on:</span>  <span class="hljs-attribute">shake-over</span>; 
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>;
-      "&gt;</span>box2: after box1 swing<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+     &quot;<span class="hljs-attr">on:</span> <span class="hljs-attr">swing-over</span>; 
+        <span class="hljs-attr">class:</span>  <span class="hljs-attr">swing</span>; 
+      <span class="hljs-attr">on:</span>  <span class="hljs-attr">shake-over</span>; 
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">shake</span>;
+      &quot;&gt;</span>box2: after box1 swing<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>box1 通过抛出swing-over等事件触发了box2得动画。</p>
+<p>box1 &#x901A;&#x8FC7;&#x629B;&#x51FA;swing-over&#x7B49;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x4E86;box2&#x5F97;&#x52A8;&#x753B;&#x3002;</p>
 <p><a href="http://codepen.io/leeluolee/pen/jEzPgd" target="_blank">DEMO on codepen</a></p>
 <h3 id="5-call-expression">5. call: expression</h3>
-<p>运行一个表达式并进入脏检查，<strong>注意，与emit类似，这里可能会触发另外一个动画序列</strong>(被命令<code>when</code>捕获)</p>
+<p>&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x5E76;&#x8FDB;&#x5165;&#x810F;&#x68C0;&#x67E5;&#xFF0C;<strong>&#x6CE8;&#x610F;&#xFF0C;&#x4E0E;emit&#x7C7B;&#x4F3C;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x80FD;&#x4F1A;&#x89E6;&#x53D1;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x5E8F;&#x5217;</strong>(&#x88AB;&#x547D;&#x4EE4;<code>when</code>&#x6355;&#x83B7;)</p>
 <pre><code class="lang-html">
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-     "<span class="hljs-attribute">when:test</span>; 
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
-        <span class="hljs-attribute">call:</span> <span class="hljs-attribute">otherSwing</span>=<span class="hljs-value">true</span> ;
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>"&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+     &quot;<span class="hljs-attr">when:test</span>; 
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">swing</span> ;
+        <span class="hljs-attr">call:</span> <span class="hljs-attr">otherSwing</span>=<span class="hljs-string">true</span> ;
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">shake</span>&quot;&gt;</span>
   box1: trigger by checkbox
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-     "<span class="hljs-attribute">when:</span> <span class="hljs-attribute">otherSwing</span>; 
-        <span class="hljs-attribute">class:</span>  <span class="hljs-attribute">swing</span>; 
-      "&gt;</span>box2: after box1 swing<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+     &quot;<span class="hljs-attr">when:</span> <span class="hljs-attr">otherSwing</span>; 
+        <span class="hljs-attr">class:</span>  <span class="hljs-attr">swing</span>; 
+      &quot;&gt;</span>box2: after box1 swing<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>流程如下:</p>
+<p>&#x6D41;&#x7A0B;&#x5982;&#x4E0B;:</p>
 <ol>
-<li>当 <code>test == true</code> 激活box1的动画</li>
-<li>swing动画结束之后，设置<code>otherSwing=true</code></li>
-<li>这个导致box2的动画序列开始</li>
-<li>box2 swing box1也在进行shake</li>
+<li>&#x5F53; <code>test == true</code> &#x6FC0;&#x6D3B;box1&#x7684;&#x52A8;&#x753B;</li>
+<li>swing&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#xFF0C;&#x8BBE;&#x7F6E;<code>otherSwing=true</code></li>
+<li>&#x8FD9;&#x4E2A;&#x5BFC;&#x81F4;box2&#x7684;&#x52A8;&#x753B;&#x5E8F;&#x5217;&#x5F00;&#x59CB;</li>
+<li>box2 swing box1&#x4E5F;&#x5728;&#x8FDB;&#x884C;shake</li>
 </ol>
 <blockquote>
-<p><a href="http://codepen.io/leeluolee/pen/aHwoh/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a></p>
+<p><a href="http://codepen.io/leeluolee/pen/aHwoh/" target="_blank"><span class="icon-arrow-right"> <strong>Result on Codepen</strong></span>&lt;/strong&gt;</a></p>
 </blockquote>
 <h3 id="6-style-propertyname1-value1-propertyname1-value1-">6. style: propertyName1 value1, propertyName1 value1 ...</h3>
-<p>设置样式并且等待 <code>transitionend</code>（如果可以触发的话）</p>
+<p>&#x8BBE;&#x7F6E;&#x6837;&#x5F0F;&#x5E76;&#x4E14;&#x7B49;&#x5F85; <code>transitionend</code>&#xFF08;&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x89E6;&#x53D1;&#x7684;&#x8BDD;&#xFF09;</p>
 <p><strong>example</strong></p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-     "<span class="hljs-attribute">on:</span> <span class="hljs-attribute">click</span>; 
-        <span class="hljs-attribute">class:</span>  <span class="hljs-attribute">swing</span>; 
-        <span class="hljs-attribute">style:</span> <span class="hljs-attribute">color</span> #<span class="hljs-attribute">333</span>;
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">bounceOut</span>;
-        <span class="hljs-attribute">style:</span> <span class="hljs-attribute">display</span> <span class="hljs-attribute">none</span>;
-      "&gt;</span>style: click me <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+     &quot;<span class="hljs-attr">on:</span> <span class="hljs-attr">click</span>; 
+        <span class="hljs-attr">class:</span>  <span class="hljs-attr">swing</span>; 
+        <span class="hljs-attr">style:</span> <span class="hljs-attr">color</span> #<span class="hljs-attr">333</span>;
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">bounceOut</span>;
+        <span class="hljs-attr">style:</span> <span class="hljs-attr">display</span> <span class="hljs-attr">none</span>;
+      &quot;&gt;</span>style: click me <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>你需要添加transition样式来触发style的动画</p>
-<pre><code class="lang-css"><span class="hljs-class">.box</span><span class="hljs-class">.animated</span><span class="hljs-rules">{
-   <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value">  color <span class="hljs-number">1s</span> linear</span></span>;
-<span class="hljs-rule">}</span></span>
+<p>&#x4F60;&#x9700;&#x8981;&#x6DFB;&#x52A0;transition&#x6837;&#x5F0F;&#x6765;&#x89E6;&#x53D1;style&#x7684;&#x52A8;&#x753B;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.box</span><span class="hljs-selector-class">.animated</span>{
+   <span class="hljs-attribute">transition</span>:  color <span class="hljs-number">1s</span> linear;
+}
 </code></pre>
-<p>这个例子的意思是: </p>
+<p>&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x610F;&#x601D;&#x662F;: </p>
 <ul>
-<li>一旦点击，swing动画。</li>
-<li>结束后设置<code>style.color=#333</code>(激活另外transition)... </li>
-<li>步骤结束后，进行bounceOut动画。</li>
-<li>动画序列结束</li>
+<li>&#x4E00;&#x65E6;&#x70B9;&#x51FB;&#xFF0C;swing&#x52A8;&#x753B;&#x3002;</li>
+<li>&#x7ED3;&#x675F;&#x540E;&#x8BBE;&#x7F6E;<code>style.color=#333</code>(&#x6FC0;&#x6D3B;&#x53E6;&#x5916;transition)... </li>
+<li>&#x6B65;&#x9AA4;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x8FDB;&#x884C;bounceOut&#x52A8;&#x753B;&#x3002;</li>
+<li>&#x52A8;&#x753B;&#x5E8F;&#x5217;&#x7ED3;&#x675F;</li>
 </ul>
 <h3 id="7-wait-duration">7. wait: duration</h3>
-<p>等待数秒再进入下一个步骤</p>
+<p>&#x7B49;&#x5F85;&#x6570;&#x79D2;&#x518D;&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x4E2A;&#x6B65;&#x9AA4;</p>
 <p><strong>param</strong></p>
 <ul>
 <li>duration: an integer indicating the number of milliseconds to delay execution of the next animation in the queue. </li>
 </ul>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-     "<span class="hljs-attribute">on:click</span>; 
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
-        <span class="hljs-attribute">wait:</span> <span class="hljs-attribute">2000</span> ;
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">shake</span>"&gt;</span>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+     &quot;<span class="hljs-attr">on:click</span>; 
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">swing</span> ;
+        <span class="hljs-attr">wait:</span> <span class="hljs-attr">2000</span> ;
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">shake</span>&quot;&gt;</span>
   wait: click me
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <blockquote>
-<p><a href="http://codepen.io/leeluolee/pen/FhwGC/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a></p>
+<p><a href="http://codepen.io/leeluolee/pen/FhwGC/" target="_blank"><span class="icon-arrow-right"> <strong>Result on Codepen</strong></span>&lt;/strong&gt;</a></p>
 </blockquote>
 <p><a name="animation"></a></p>
-<h2 id="-animation">扩展 Animation</h2>
-<p>上面的所有例子，其实都是基于CSS3的动画，如果你需要更精细的动画控制，或是需要兼容不支持CSS3的浏览器，那可能需要通过<code>Component.animation接口</code>扩展你的动画Command（内部Command也是通过此接口扩展）</p>
-<p><strong>参数</strong></p>
+<h2 id="&#x6269;&#x5C55;-animation">&#x6269;&#x5C55; Animation</h2>
+<p>&#x4E0A;&#x9762;&#x7684;&#x6240;&#x6709;&#x4F8B;&#x5B50;&#xFF0C;&#x5176;&#x5B9E;&#x90FD;&#x662F;&#x57FA;&#x4E8E;CSS3&#x7684;&#x52A8;&#x753B;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x66F4;&#x7CBE;&#x7EC6;&#x7684;&#x52A8;&#x753B;&#x63A7;&#x5236;&#xFF0C;&#x6216;&#x662F;&#x9700;&#x8981;&#x517C;&#x5BB9;&#x4E0D;&#x652F;&#x6301;CSS3&#x7684;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x90A3;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x901A;&#x8FC7;<code>Component.animation&#x63A5;&#x53E3;</code>&#x6269;&#x5C55;&#x4F60;&#x7684;&#x52A8;&#x753B;Command&#xFF08;&#x5185;&#x90E8;Command&#x4E5F;&#x662F;&#x901A;&#x8FC7;&#x6B64;&#x63A5;&#x53E3;&#x6269;&#x5C55;&#xFF09;</p>
+<p><strong>&#x53C2;&#x6570;</strong></p>
 <ul>
-<li>name(String): 命令名</li>
-<li>handle(step): 序列命令定义，你需要在handle中返回一个函数<ul>
-<li>step.element: 即上述element对象</li>
-<li>step.param: 即上述param</li>
-<li>返回值[Function]: handle函数必须返回一个动画处理函数，它接受一个参数<code>done</code>用来结束当前动画。</li>
+<li>name(String): &#x547D;&#x4EE4;&#x540D;</li>
+<li>handle(step): &#x5E8F;&#x5217;&#x547D;&#x4EE4;&#x5B9A;&#x4E49;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5728;handle&#x4E2D;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x51FD;&#x6570;<ul>
+<li>step.element: &#x5373;&#x4E0A;&#x8FF0;element&#x5BF9;&#x8C61;</li>
+<li>step.param: &#x5373;&#x4E0A;&#x8FF0;param</li>
+<li>&#x8FD4;&#x56DE;&#x503C;[Function]: handle&#x51FD;&#x6570;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x52A8;&#x753B;&#x5904;&#x7406;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x53C2;&#x6570;<code>done</code>&#x7528;&#x6765;&#x7ED3;&#x675F;&#x5F53;&#x524D;&#x52A8;&#x753B;&#x3002;</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>0.4.1将参数展开是为了与event和directive接口参数做统一。</p>
+<p>0.4.1&#x5C06;&#x53C2;&#x6570;&#x5C55;&#x5F00;&#x662F;&#x4E3A;&#x4E86;&#x4E0E;event&#x548C;directive&#x63A5;&#x53E3;&#x53C2;&#x6570;&#x505A;&#x7EDF;&#x4E00;&#x3002;</p>
 </blockquote>
 <p><strong>Example</strong></p>
-<p>实现一个渐入渐出的效果</p>
-<pre><code class="lang-javascript">Regular.animation(<span class="hljs-string">"fade"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(step)</span></span>{
-  <span class="hljs-keyword">var</span> param = step.param, <span class="hljs-comment">// 传入fade的参数</span>
-    element = step.element, <span class="hljs-comment">//触发节点</span>
-    fadein = param === <span class="hljs-string">"in"</span>,
+<p>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6E10;&#x5165;&#x6E10;&#x51FA;&#x7684;&#x6548;&#x679C;</p>
+<pre><code class="lang-javascript">Regular.animation(<span class="hljs-string">&quot;fade&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">step</span>)</span>{
+  <span class="hljs-keyword">var</span> param = step.param, <span class="hljs-comment">// &#x4F20;&#x5165;fade&#x7684;&#x53C2;&#x6570;</span>
+    element = step.element, <span class="hljs-comment">//&#x89E6;&#x53D1;&#x8282;&#x70B9;</span>
+    fadein = param === <span class="hljs-string">&quot;in&quot;</span>,
     ratio = fadein?  <span class="hljs-number">1.05</span>: <span class="hljs-number">0.9</span>;
 
-  <span class="hljs-comment">// 这个函数会在每次本步骤被触发时被调用，</span>
-  <span class="hljs-comment">// 它只接受一个done函数作为参数，标志着本步骤的结束</span>
-  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(done)</span></span>{ 
+  <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x672C;&#x6B65;&#x9AA4;&#x88AB;&#x89E6;&#x53D1;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF0C;</span>
+  <span class="hljs-comment">// &#x5B83;&#x53EA;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;done&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x6807;&#x5FD7;&#x7740;&#x672C;&#x6B65;&#x9AA4;&#x7684;&#x7ED3;&#x675F;</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">done</span>)</span>{ 
     <span class="hljs-keyword">var</span> start = fadein?  <span class="hljs-number">0.01</span>: <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">var</span> tid = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">var</span> tid = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
       start *= ratio 
       <span class="hljs-keyword">if</span>(fadein &amp;&amp; <span class="hljs-number">1</span>- start &lt; <span class="hljs-number">1e-3</span>){
         start = <span class="hljs-number">1</span>; 
@@ -889,69 +829,109 @@ Param: [^;]+
   }
 })
 </code></pre>
-<p>使用</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'box animated'</span> <span class="hljs-attribute">r-animation</span>=
-       "<span class="hljs-attribute">on:click</span>; 
-        <span class="hljs-attribute">class:</span> <span class="hljs-attribute">swing</span> ;
-        <span class="hljs-attribute">fade:</span> <span class="hljs-attribute">out</span> ;
-        <span class="hljs-attribute">fade:</span> <span class="hljs-attribute">in</span>;
-         "&gt;</span>
+<p>&#x4F7F;&#x7528;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;box animated&apos;</span> <span class="hljs-attr">r-animation</span>=
+       &quot;<span class="hljs-attr">on:click</span>; 
+        <span class="hljs-attr">class:</span> <span class="hljs-attr">swing</span> ;
+        <span class="hljs-attr">fade:</span> <span class="hljs-attr">out</span> ;
+        <span class="hljs-attr">fade:</span> <span class="hljs-attr">in</span>;
+         &quot;&gt;</span>
     fade: click me
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>你必须记住的是，当你定义的动画结束时，调用这个done函数。</p>
+<p>&#x4F60;&#x5FC5;&#x987B;&#x8BB0;&#x4F4F;&#x7684;&#x662F;&#xFF0C;&#x5F53;&#x4F60;&#x5B9A;&#x4E49;&#x7684;&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;done&#x51FD;&#x6570;&#x3002;</p>
 <blockquote>
-<p><a href="http://codepen.io/leeluolee/pen/qJvry/"><span class="icon-arrow-right"> <strong>Result on Codepen</span></strong></a></p>
+<p><a href="http://codepen.io/leeluolee/pen/qJvry/" target="_blank"><span class="icon-arrow-right"> <strong>Result on Codepen</strong></span>&lt;/strong&gt;</a></p>
 </blockquote>
-<p>你也可以查看内建命令的实现<a href="https://github.com/regularjs/regular/blob/master/src/directive/animation.js#L71" target="_blank">(github链接)</a>来理解这个用法</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5185;&#x5EFA;&#x547D;&#x4EE4;&#x7684;&#x5B9E;&#x73B0;<a href="https://github.com/regularjs/regular/blob/master/src/directive/animation.js#L71" target="_blank">(github&#x94FE;&#x63A5;)</a>&#x6765;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x7528;&#x6CD5;</p>
 <blockquote>
-<p>小贴士: 其实<code>r-animation</code> 不仅仅限于应用动画，它其实是个支持声明式表述的状态机，你可以利用它来实现一些异步序列。</p>
+<p>&#x5C0F;&#x8D34;&#x58EB;: &#x5176;&#x5B9E;<code>r-animation</code> &#x4E0D;&#x4EC5;&#x4EC5;&#x9650;&#x4E8E;&#x5E94;&#x7528;&#x52A8;&#x753B;&#xFF0C;&#x5B83;&#x5176;&#x5B9E;&#x662F;&#x4E2A;&#x652F;&#x6301;&#x58F0;&#x660E;&#x5F0F;&#x8868;&#x8FF0;&#x7684;&#x72B6;&#x6001;&#x673A;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5B83;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x5F02;&#x6B65;&#x5E8F;&#x5217;&#x3002;</p>
 </blockquote>
-<h2 id="">再来一个不被推荐的例子</h2>
-<p>可能相对于其他声明式的框架，regularjs的动画声明的写法上会繁琐一些，但是带来了无限的可能性，结合数据监听体系和事件系统，事实上你可以在regularjs中实现任意复杂度，跨越任意节点的动画序列！</p>
-<p><a href="http://codepen.io/leeluolee/pen/vrgqu" target="_blank">【DEMO: 实现一个无限循环的animation】</a> </p>
-<h2 id="">小节</h2>
-<p>不过由于声明式动画的天然限制，永远不要奢求其对动画的控制力可以达到手动js编码的自由度(比如使用velocity.js)。</p>
-<p>你可以通过在组件init后，手动通过<a href="../component/ref.html"><code>$refs</code></a>获取节点并结合velocity.js等更专业的动画框架来实现你需要的动画效果。</p>
-<p>注意动画使用不当是可能与组件本身的数据-UI状态产生冲突，
-所以一般来讲，应该尽量使用on/emit的组合，而少使用when/call的组合来实现动画序列 </p>
+<h2 id="&#x518D;&#x6765;&#x4E00;&#x4E2A;&#x4E0D;&#x88AB;&#x63A8;&#x8350;&#x7684;&#x4F8B;&#x5B50;">&#x518D;&#x6765;&#x4E00;&#x4E2A;&#x4E0D;&#x88AB;&#x63A8;&#x8350;&#x7684;&#x4F8B;&#x5B50;</h2>
+<p>&#x53EF;&#x80FD;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x6846;&#x67B6;&#xFF0C;regularjs&#x7684;&#x52A8;&#x753B;&#x58F0;&#x660E;&#x7684;&#x5199;&#x6CD5;&#x4E0A;&#x4F1A;&#x7E41;&#x7410;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x662F;&#x5E26;&#x6765;&#x4E86;&#x65E0;&#x9650;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF0C;&#x7ED3;&#x5408;&#x6570;&#x636E;&#x76D1;&#x542C;&#x4F53;&#x7CFB;&#x548C;&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x4E8B;&#x5B9E;&#x4E0A;&#x4F60;&#x53EF;&#x4EE5;&#x5728;regularjs&#x4E2D;&#x5B9E;&#x73B0;&#x4EFB;&#x610F;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x8DE8;&#x8D8A;&#x4EFB;&#x610F;&#x8282;&#x70B9;&#x7684;&#x52A8;&#x753B;&#x5E8F;&#x5217;&#xFF01;</p>
+<p><a href="http://codepen.io/leeluolee/pen/vrgqu" target="_blank">&#x3010;DEMO: &#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x65E0;&#x9650;&#x5FAA;&#x73AF;&#x7684;animation&#x3011;</a> </p>
+<h2 id="&#x5C0F;&#x8282;">&#x5C0F;&#x8282;</h2>
+<p>&#x4E0D;&#x8FC7;&#x7531;&#x4E8E;&#x58F0;&#x660E;&#x5F0F;&#x52A8;&#x753B;&#x7684;&#x5929;&#x7136;&#x9650;&#x5236;&#xFF0C;&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x5962;&#x6C42;&#x5176;&#x5BF9;&#x52A8;&#x753B;&#x7684;&#x63A7;&#x5236;&#x529B;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x624B;&#x52A8;js&#x7F16;&#x7801;&#x7684;&#x81EA;&#x7531;&#x5EA6;(&#x6BD4;&#x5982;&#x4F7F;&#x7528;velocity.js)&#x3002;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;&#x7EC4;&#x4EF6;init&#x540E;&#xFF0C;&#x624B;&#x52A8;&#x901A;&#x8FC7;<a href="../component/ref.html"><code>$refs</code></a>&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x5E76;&#x7ED3;&#x5408;velocity.js&#x7B49;&#x66F4;&#x4E13;&#x4E1A;&#x7684;&#x52A8;&#x753B;&#x6846;&#x67B6;&#x6765;&#x5B9E;&#x73B0;&#x4F60;&#x9700;&#x8981;&#x7684;&#x52A8;&#x753B;&#x6548;&#x679C;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x52A8;&#x753B;&#x4F7F;&#x7528;&#x4E0D;&#x5F53;&#x662F;&#x53EF;&#x80FD;&#x4E0E;&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x7684;&#x6570;&#x636E;-UI&#x72B6;&#x6001;&#x4EA7;&#x751F;&#x51B2;&#x7A81;&#xFF0C;
+&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x6765;&#x8BB2;&#xFF0C;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;on/emit&#x7684;&#x7EC4;&#x5408;&#xFF0C;&#x800C;&#x5C11;&#x4F7F;&#x7528;when/call&#x7684;&#x7EC4;&#x5408;&#x6765;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x5E8F;&#x5217; </p>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../basic/filter.html" class="navigation navigation-prev " aria-label="Previous page: 过滤器和计算属性"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../component/README.html" class="navigation navigation-next " aria-label="Next page: 深入组件"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="filter.html" class="navigation navigation-prev " aria-label="Previous page: 过滤器和计算属性">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../component/" class="navigation navigation-next " aria-label="Next page: 深入组件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"动画指令","level":"1.3.6","depth":2,"next":{"title":"深入组件","level":"1.4","depth":1,"path":"component/README.md","ref":"component/README.md","articles":[{"title":"获取子节点与子组件","level":"1.4.1","depth":2,"path":"component/ref.md","ref":"component/ref.md","articles":[]},{"title":"✨组合 — this.$body","level":"1.4.2","depth":2,"path":"component/composite.md","ref":"component/composite.md","articles":[]},{"title":"组件隔离","level":"1.4.3","depth":2,"path":"component/isolate.md","ref":"component/isolate.md","articles":[]},{"title":"生命周期","level":"1.4.4","depth":2,"path":"component/lifecycle.md","ref":"component/lifecycle.md","articles":[]}]},"previous":{"title":"过滤器和计算属性","level":"1.3.5","depth":2,"path":"basic/filter.md","ref":"basic/filter.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"reference":"https://regularjs.github.io/reference","ref":"https://regularjs.github.io/reference","api":"https://regularjs.github.io/reference?api-zh","syntax":"https://regularjs.github.io/reference?syntax-zh"},"language":"zh","links":{"sidebar":{"➭ Github":"https://github.com/regularjs/guide/issues","➭ API & Syntax(详细文档)":"http://regularjs.github.io/reference"}},"gitbook":"*"},"file":{"path":"basic/animation.md","mtime":"2018-02-07T02:47:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-24T01:41:36.018Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
 
         
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+

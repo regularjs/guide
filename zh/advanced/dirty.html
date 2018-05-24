@@ -1,789 +1,769 @@
+
 <!DOCTYPE HTML>
-<html lang="en-US" >
-    
+<html lang="zh" >
     <head>
-        
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>脏检查—数据绑定的秘密 | regularjs指南</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>脏检查—数据绑定的秘密 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 1.5.0">
-        <meta name="HandheldFriendly" content="true"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        <meta name="generator" content="GitBook 3.2.3">
+        
         
         
     
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
     
-    <link rel="next" href="../advanced/modular.html" />
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
     
+
     
-    <link rel="prev" href="../advanced/README.html" />
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
     
 
         
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="modular.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
     </head>
     <body>
         
+<div class="book">
+    <div class="book-summary">
         
-<link rel="stylesheet" href="../gitbook/style.css">
-
-
-        
-    <div class="book" data-level="6.1" data-basepath=".." data-revision="1460794625700">
-    
-
-<div class="book-summary">
-    <div class="book-search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
-    <ul class="summary">
-        
-    	
-    	
-    	    
-            <li>
-                <a href="https://github.com/regularjs/guide/issues" target="blank" class="custom-link">➭ Github</a>
-            </li>
-    	
-    	    
-            <li>
-                <a href="http://regularjs.github.io/reference" target="blank" class="custom-link">➭ API &amp; Syntax(详细文档)</a>
-            </li>
-    	
-    	
-
-        
-        <li class="divider"></li>
-        
-
-        
-    
-        
-        <li class="chapter " data-level="0" data-path="index.html">
             
-                
-                    <a href="../index.html">
-                        <i class="fa fa-check"></i>
-                        
-                         Introduction
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="1" data-path="intro/README.html">
-            
-                
-                    <a href="../intro/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.</b>
-                        
-                         你好，Regularjs
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="1.1" data-path="intro/what.html">
-            
-                
-                    <a href="../intro/what.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.1.</b>
-                        
-                         Regularjs是什么
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="1.2" data-path="intro/hello-regularjs.html">
-            
-                
-                    <a href="../intro/hello-regularjs.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>1.2.</b>
-                        
-                         第一个组件：HelloRegular
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2" data-path="basic/README.html">
-            
-                
-                    <a href="../basic/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.</b>
-                        
-                         快速入门
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="2.1" data-path="basic/template.html">
-            
-                
-                    <a href="../basic/template.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.1.</b>
-                        
-                         模板语法
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.2" data-path="basic/directive.html">
-            
-                
-                    <a href="../basic/directive.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                         指令
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.3" data-path="basic/component.html">
-            
-                
-                    <a href="../basic/component.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.3.</b>
-                        
-                         组件
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.4" data-path="basic/event.html">
-            
-                
-                    <a href="../basic/event.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.4.</b>
-                        
-                         事件
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.5" data-path="basic/filter.html">
-            
-                
-                    <a href="../basic/filter.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.5.</b>
-                        
-                         过滤器和计算属性
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.6" data-path="basic/animation.html">
-            
-                
-                    <a href="../basic/animation.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.6.</b>
-                        
-                         动画指令
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3" data-path="component/README.html">
-            
-                
-                    <a href="../component/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.</b>
-                        
-                         深入组件
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="3.1" data-path="component/ref.html">
-            
-                
-                    <a href="../component/ref.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.</b>
-                        
-                         获取子节点与子组件
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.2" data-path="component/composite.html">
-            
-                
-                    <a href="../component/composite.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.2.</b>
-                        
-                         ✨组合 — `this.$body`
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.3" data-path="component/isolate.html">
-            
-                
-                    <a href="../component/isolate.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.3.</b>
-                        
-                         组件隔离
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="3.4" data-path="component/lifecycle.html">
-            
-                
-                    <a href="../component/lifecycle.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.4.</b>
-                        
-                         生命周期
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4" data-path="practicle/README.html">
-            
-                
-                    <a href="../practicle/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.</b>
-                        
-                         最佳实践
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="4.1" data-path="practicle/template.html">
-            
-                
-                    <a href="../practicle/template.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.1.</b>
-                        
-                         请优雅的管理模板
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4.2" data-path="practicle/perf.html">
-            
-                
-                    <a href="../practicle/perf.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.2.</b>
-                        
-                         性能优化指引
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4.3" data-path="practicle/redux.html">
-            
-                
-                    <a href="../practicle/redux.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.3.</b>
-                        
-                         单向数据流：Redux为例
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="4.4" data-path="practicle/pattern.html">
-            
-                
-                    <a href="../practicle/pattern.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>4.4.</b>
-                        
-                         一些模式的建议
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5" data-path="spa/README.html">
-            
-                
-                    <a href="../spa/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.</b>
-                        
-                         写个单页系统吧
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="5.1" >
-            
-            <span><b>5.1.</b> 好基友：stateman + regularjs</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5.2" >
-            
-            <span><b>5.2.</b> 单页设计准则</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5.3" >
-            
-            <span><b>5.3.</b> 例子：简单博客</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="5.4" data-path="spa/nej.html">
-            
-                
-                    <a href="../spa/nej.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>5.4.</b>
-                        
-                         与NEJ module结合
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="6" data-path="advanced/README.html">
-            
-                
-                    <a href="../advanced/README.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.</b>
-                        
-                         深入RegularJS
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter active" data-level="6.1" data-path="advanced/dirty.html">
-            
-                
-                    <a href="../advanced/dirty.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.1.</b>
-                        
-                         脏检查—数据绑定的秘密
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="6.2" data-path="advanced/modular.html">
-            
-                
-                    <a href="../advanced/modular.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>6.2.</b>
-                        
-                         轻量级的模块化
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="7" >
-            
-            <span><b>7.</b> 常见问题QA</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="8" >
-            
-            <span><b>8.</b> 范例指南</span>
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="8.1" data-path="demo/todomvc.html">
-            
-                
-                    <a href="../demo/todomvc.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>8.1.</b>
-                        
-                         ◉ 50行代码实现的todomvc
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-
-        
-        <li class="divider"></li>
-        <li>
-            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
-        </li>
-        
-    </ul>
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
 </div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/guide/issues" target="_blank" class="custom-link">➭ Github</a>
+        </li>
+    
+        
+        <li>
+            <a href="http://regularjs.github.io/reference" target="_blank" class="custom-link">➭ API & Syntax(详细文档)</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/">
+            
+                <a href="../intro/">
+            
+                    
+                    你好，Regularjs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regularjs是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/hello-regularjs.html">
+            
+                <a href="../intro/hello-regularjs.html">
+            
+                    
+                    第一个组件：HelloRegular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    快速入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basic/template.html">
+            
+                <a href="../basic/template.html">
+            
+                    
+                    模板语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basic/component.html">
+            
+                <a href="../basic/component.html">
+            
+                    
+                    组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    过滤器和计算属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    动画指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../component/">
+            
+                <a href="../component/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../component/ref.html">
+            
+                <a href="../component/ref.html">
+            
+                    
+                    获取子节点与子组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../component/composite.html">
+            
+                <a href="../component/composite.html">
+            
+                    
+                    ✨组合 — this.$body
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../component/isolate.html">
+            
+                <a href="../component/isolate.html">
+            
+                    
+                    组件隔离
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../component/lifecycle.html">
+            
+                <a href="../component/lifecycle.html">
+            
+                    
+                    生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../practicle/">
+            
+                <a href="../practicle/">
+            
+                    
+                    最佳实践
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../practicle/template.html">
+            
+                <a href="../practicle/template.html">
+            
+                    
+                    请优雅的管理模板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../practicle/perf.html">
+            
+                <a href="../practicle/perf.html">
+            
+                    
+                    性能优化指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../practicle/redux.html">
+            
+                <a href="../practicle/redux.html">
+            
+                    
+                    单向数据流：Redux为例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../practicle/pattern.html">
+            
+                <a href="../practicle/pattern.html">
+            
+                    
+                    一些模式的建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../spa/">
+            
+                <a href="../spa/">
+            
+                    
+                    写个单页系统吧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    好基友：stateman + regularjs
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    单页设计准则
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    例子：简单博客
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../spa/nej.html">
+            
+                <a href="../spa/nej.html">
+            
+                    
+                    与NEJ module结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    深入RegularJS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="dirty.html">
+            
+                <a href="dirty.html">
+            
+                    
+                    脏检查—数据绑定的秘密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="modular.html">
+            
+                <a href="modular.html">
+            
+                    
+                    轻量级的模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    常见问题QA
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    范例指南
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../demo/todomvc.html">
+            
+                <a href="../demo/todomvc.html">
+            
+                    
+                    ◉ 50行代码实现的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
 
     <div class="book-body">
-        <div class="body-inner">
-            <div class="book-header">
-    <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
-    
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
+        
+            <div class="body-inner">
+                
+                    
 
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">Twitter</button>
-                <button type="button" data-sharing="google-plus" class="button">Google</button>
-                <button type="button" data-sharing="facebook" class="button">Facebook</button>
-                <button type="button" data-sharing="weibo" class="button">Weibo</button>
-                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
-    
+<div class="book-header" role="navigation">
     
 
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >regularjs指南</a>
+        <a href=".." >脏检查—数据绑定的秘密</a>
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
-                <div class="page-inner">
-                
-                
-                    <section class="normal" id="section-gitbook_13">
-                    
-                        <h1 id="-">脏检查: 数据绑定的秘密</h1>
-<p>事实上，regularjs的数据绑定实现基于基于脏检查。它非常接近于angularjs</p>
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x810F;&#x68C0;&#x67E5;-&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#x79D8;&#x5BC6;">&#x810F;&#x68C0;&#x67E5;: &#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#x79D8;&#x5BC6;</h1>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;regularjs&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x5B9E;&#x73B0;&#x57FA;&#x4E8E;&#x57FA;&#x4E8E;&#x810F;&#x68C0;&#x67E5;&#x3002;&#x5B83;&#x975E;&#x5E38;&#x63A5;&#x8FD1;&#x4E8E;angularjs</p>
 <blockquote>
-<p>脏检查即一种不关心你如何以及何时改变的数据，只关心在<strong>特定的检查阶段</strong>数据是否改变的数据监听技术。</p>
+<p>&#x810F;&#x68C0;&#x67E5;&#x5373;&#x4E00;&#x79CD;&#x4E0D;&#x5173;&#x5FC3;&#x4F60;&#x5982;&#x4F55;&#x4EE5;&#x53CA;&#x4F55;&#x65F6;&#x6539;&#x53D8;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x5173;&#x5FC3;&#x5728;<strong>&#x7279;&#x5B9A;&#x7684;&#x68C0;&#x67E5;&#x9636;&#x6BB5;</strong>&#x6570;&#x636E;&#x662F;&#x5426;&#x6539;&#x53D8;&#x7684;&#x6570;&#x636E;&#x76D1;&#x542C;&#x6280;&#x672F;&#x3002;</p>
 </blockquote>
-<p>本节包含内容</p>
+<p>&#x672C;&#x8282;&#x5305;&#x542B;&#x5185;&#x5BB9;</p>
 <ul>
-<li>什么是脏检查</li>
-<li>脏检查是如何进行的</li>
-<li>何时进行脏检查</li>
-<li>regularjs为何选择脏检查</li>
+<li>&#x4EC0;&#x4E48;&#x662F;&#x810F;&#x68C0;&#x67E5;</li>
+<li>&#x810F;&#x68C0;&#x67E5;&#x662F;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x7684;</li>
+<li>&#x4F55;&#x65F6;&#x8FDB;&#x884C;&#x810F;&#x68C0;&#x67E5;</li>
+<li>regularjs&#x4E3A;&#x4F55;&#x9009;&#x62E9;&#x810F;&#x68C0;&#x67E5;</li>
 </ul>
-<p>这里会统一使用angularjs生态圈的术语，方便开发者理解</p>
-<h2 id="">什么是脏检查</h2>
-<p>以插值<code>{post.title}</code>为例，当Regular在compile阶段遇到这个语法数元素时，内部的处理逻辑如下。</p>
+<p>&#x8FD9;&#x91CC;&#x4F1A;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;angularjs&#x751F;&#x6001;&#x5708;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;&#x8005;&#x7406;&#x89E3;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;&#x810F;&#x68C0;&#x67E5;">&#x4EC0;&#x4E48;&#x662F;&#x810F;&#x68C0;&#x67E5;</h2>
+<p>&#x4EE5;&#x63D2;&#x503C;<code>{post.title}</code>&#x4E3A;&#x4F8B;&#xFF0C;&#x5F53;Regular&#x5728;compile&#x9636;&#x6BB5;&#x9047;&#x5230;&#x8FD9;&#x4E2A;&#x8BED;&#x6CD5;&#x6570;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5185;&#x90E8;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x5982;&#x4E0B;&#x3002;</p>
 <pre><code class="lang-javascript">
-walkers.expression = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( ast )</span></span>{
-  <span class="hljs-keyword">var</span> node = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">""</span>);
-  <span class="hljs-keyword">this</span>.$watch(ast, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(newval)</span></span>{
-    dom.text(node, <span class="hljs-string">""</span> + (newval == <span class="hljs-literal">null</span>? <span class="hljs-string">""</span>: <span class="hljs-string">""</span> + newval) );
+walkers.expression = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> ast </span>)</span>{
+  <span class="hljs-keyword">var</span> node = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">this</span>.$watch(ast, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newval</span>)</span>{
+    dom.text(node, <span class="hljs-string">&quot;&quot;</span> + (newval == <span class="hljs-literal">null</span>? <span class="hljs-string">&quot;&quot;</span>: <span class="hljs-string">&quot;&quot;</span> + newval) );
   })
   <span class="hljs-keyword">return</span> node;
 }
 </code></pre>
-<p>这段代码很好理解，即遇到插值时，我会创建一个textNode，每当数据变化时，修改textNode的textContent值。</p>
-<p>其中</p>
+<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5F88;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x5373;&#x9047;&#x5230;&#x63D2;&#x503C;&#x65F6;&#xFF0C;&#x6211;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;textNode&#xFF0C;&#x6BCF;&#x5F53;&#x6570;&#x636E;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x4FEE;&#x6539;textNode&#x7684;textContent&#x503C;&#x3002;</p>
+<p>&#x5176;&#x4E2D;</p>
 <ul>
-<li>ast: 表达式: 即<code>post.title</code>，反映在组件就是component.data.post.title.</li>
-<li><a href="https://regularjs.github.io/reference?api-zh#watch" target="_blank">$watch</a>: 添加一个数据监听器(watcher对象)</li>
+<li>ast: &#x8868;&#x8FBE;&#x5F0F;: &#x5373;<code>post.title</code>&#xFF0C;&#x53CD;&#x6620;&#x5728;&#x7EC4;&#x4EF6;&#x5C31;&#x662F;component.data.post.title.</li>
+<li><a href="#watch">$watch</a>: &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x76D1;&#x542C;&#x5668;(watcher&#x5BF9;&#x8C61;)</li>
 </ul>
-<p>那么问题来了，怎么判断值发生改变了？</p>
-<h2 id="digest">脏检查如何进行？不提不提的Digest阶段</h2>
-<p>首先，上例通过<code>$watch</code>接口产生的watcher对象看起来是这样的</p>
+<p>&#x90A3;&#x4E48;&#x95EE;&#x9898;&#x6765;&#x4E86;&#xFF0C;&#x600E;&#x4E48;&#x5224;&#x65AD;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x4E86;&#xFF1F;</p>
+<h2 id="&#x810F;&#x68C0;&#x67E5;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#xFF1F;&#x4E0D;&#x63D0;&#x4E0D;&#x63D0;&#x7684;digest&#x9636;&#x6BB5;">&#x810F;&#x68C0;&#x67E5;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#xFF1F;&#x4E0D;&#x63D0;&#x4E0D;&#x63D0;&#x7684;Digest&#x9636;&#x6BB5;</h2>
+<p>&#x9996;&#x5148;&#xFF0C;&#x4E0A;&#x4F8B;&#x901A;&#x8FC7;<code>$watch</code>&#x63A5;&#x53E3;&#x4EA7;&#x751F;&#x7684;watcher&#x5BF9;&#x8C61;&#x770B;&#x8D77;&#x6765;&#x662F;&#x8FD9;&#x6837;&#x7684;</p>
 <pre><code class="lang-js">
 {
-  get: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(context)</span></span>{...}  <span class="hljs-comment">//获得表达式当前求值，此函数在解析时，已经生成</span>
-  set: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{} <span class="hljs-comment">// 有些表达式可以生成set函数，用于处理赋值，这个一般用于双向绑定的场景</span>
-  once: <span class="hljs-literal">false</span> <span class="hljs-comment">// 此监听器是否只生效一次</span>
-  last: <span class="hljs-literal">undefined</span><span class="hljs-comment">// 上一次表达式的求值结果</span>
-  fn: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(newvalue, oldvalue)</span></span>{} <span class="hljs-comment">// 即你传入$watch的第二个参数，当值改变时，会调用此函数</span>
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>)</span>{...}  <span class="hljs-comment">//&#x83B7;&#x5F97;&#x8868;&#x8FBE;&#x5F0F;&#x5F53;&#x524D;&#x6C42;&#x503C;&#xFF0C;&#x6B64;&#x51FD;&#x6570;&#x5728;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x5DF2;&#x7ECF;&#x751F;&#x6210;</span>
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{} <span class="hljs-comment">// &#x6709;&#x4E9B;&#x8868;&#x8FBE;&#x5F0F;&#x53EF;&#x4EE5;&#x751F;&#x6210;set&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x8D4B;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x7684;&#x573A;&#x666F;</span>
+  once: <span class="hljs-literal">false</span> <span class="hljs-comment">// &#x6B64;&#x76D1;&#x542C;&#x5668;&#x662F;&#x5426;&#x53EA;&#x751F;&#x6548;&#x4E00;&#x6B21;</span>
+  last: <span class="hljs-literal">undefined</span><span class="hljs-comment">// &#x4E0A;&#x4E00;&#x6B21;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6C42;&#x503C;&#x7ED3;&#x679C;</span>
+  fn: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newvalue, oldvalue</span>)</span>{} <span class="hljs-comment">// &#x5373;&#x4F60;&#x4F20;&#x5165;$watch&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5F53;&#x503C;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;</span>
   <span class="hljs-comment">// ...</span>
 }
 </code></pre>
-<p>然后我们要提到内部的一个非常重要的阶段——digest阶段，当系统进入此阶段时，将会进行数据检查，它的处理流程如下: </p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x8981;&#x63D0;&#x5230;&#x5185;&#x90E8;&#x7684;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x9636;&#x6BB5;&#x2014;&#x2014;digest&#x9636;&#x6BB5;&#xFF0C;&#x5F53;&#x7CFB;&#x7EDF;&#x8FDB;&#x5165;&#x6B64;&#x9636;&#x6BB5;&#x65F6;&#xFF0C;&#x5C06;&#x4F1A;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x68C0;&#x67E5;&#xFF0C;&#x5B83;&#x7684;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;: </p>
 <ol>
-<li>标记<code>dirty = false</code></li>
-<li>遍历所有通过<code>component.$watch</code>绑定的数据观察者watcher，对比当前值<code>watcher.get(component)</code>与老值<code>watcher.last</code><ul>
-<li>如果值发生改变，运行绑定的监听器 - <code>watcher.fn(newvalue, oldvalue)</code>，并导致<code>__dirty__=true。设置</code>watcher.last=newvalue`</li>
-<li>进入下一个watcher的检查</li>
+<li>&#x6807;&#x8BB0;<code>dirty = false</code></li>
+<li>&#x904D;&#x5386;&#x6240;&#x6709;&#x901A;&#x8FC7;<code>component.$watch</code>&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x89C2;&#x5BDF;&#x8005;watcher&#xFF0C;&#x5BF9;&#x6BD4;&#x5F53;&#x524D;&#x503C;<code>watcher.get(component)</code>&#x4E0E;&#x8001;&#x503C;<code>watcher.last</code><ul>
+<li>&#x5982;&#x679C;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x8FD0;&#x884C;&#x7ED1;&#x5B9A;&#x7684;&#x76D1;&#x542C;&#x5668; - <code>watcher.fn(newvalue, oldvalue)</code>&#xFF0C;&#x5E76;&#x5BFC;&#x81F4;<code>__dirty__=true&#x3002;&#x8BBE;&#x7F6E;</code>watcher.last=newvalue`</li>
+<li>&#x8FDB;&#x5165;&#x4E0B;&#x4E00;&#x4E2A;watcher&#x7684;&#x68C0;&#x67E5;</li>
 </ul>
 </li>
-<li>遍历检查一轮后，如果<code>dirty===true</code>，我们重新进入步骤1. 否则进入步骤4.</li>
-<li>完成脏检查</li>
+<li>&#x904D;&#x5386;&#x68C0;&#x67E5;&#x4E00;&#x8F6E;&#x540E;&#xFF0C;&#x5982;&#x679C;<code>dirty===true</code>&#xFF0C;&#x6211;&#x4EEC;&#x91CD;&#x65B0;&#x8FDB;&#x5165;&#x6B65;&#x9AA4;1. &#x5426;&#x5219;&#x8FDB;&#x5165;&#x6B65;&#x9AA4;4.</li>
+<li>&#x5B8C;&#x6210;&#x810F;&#x68C0;&#x67E5;</li>
 </ol>
-<p>好，现在我们了解数据检查的内部流程了，但是<strong>何时进入digest阶段</strong></p>
-<h2 id="">何时进行脏检查</h2>
-<p>有基本的javascript基础的同学都知道，在姗姗不来的ES7<code>Object.observe</code>方法没有到来时(但是别对<code>Object.observe</code>抱太大得期望，它不会改变目前类MVVM框架的格局，我后续会写一篇文章说明)，当我们对对象属性进行赋值时，我们是无法知道数据发生改变了的，所以digest阶段必然是 <strong>主动进入的</strong> .</p>
-<p>在Regular中，digest阶段是由<a href="https://regularjs.github.io/reference?api-zh#update" target="_blank"><code>$update</code></a>方法触发的。</p>
+<p>&#x597D;&#xFF0C;&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x6570;&#x636E;&#x68C0;&#x67E5;&#x7684;&#x5185;&#x90E8;&#x6D41;&#x7A0B;&#x4E86;&#xFF0C;&#x4F46;&#x662F;<strong>&#x4F55;&#x65F6;&#x8FDB;&#x5165;digest&#x9636;&#x6BB5;</strong></p>
+<h2 id="&#x4F55;&#x65F6;&#x8FDB;&#x884C;&#x810F;&#x68C0;&#x67E5;">&#x4F55;&#x65F6;&#x8FDB;&#x884C;&#x810F;&#x68C0;&#x67E5;</h2>
+<p>&#x6709;&#x57FA;&#x672C;&#x7684;javascript&#x57FA;&#x7840;&#x7684;&#x540C;&#x5B66;&#x90FD;&#x77E5;&#x9053;&#xFF0C;&#x5728;&#x59D7;&#x59D7;&#x4E0D;&#x6765;&#x7684;ES7<code>Object.observe</code>&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x5230;&#x6765;&#x65F6;(&#x4F46;&#x662F;&#x522B;&#x5BF9;<code>Object.observe</code>&#x62B1;&#x592A;&#x5927;&#x5F97;&#x671F;&#x671B;&#xFF0C;&#x5B83;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x76EE;&#x524D;&#x7C7B;MVVM&#x6846;&#x67B6;&#x7684;&#x683C;&#x5C40;&#xFF0C;&#x6211;&#x540E;&#x7EED;&#x4F1A;&#x5199;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x8BF4;&#x660E;)&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5BF9;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x662F;&#x65E0;&#x6CD5;&#x77E5;&#x9053;&#x6570;&#x636E;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x4E86;&#x7684;&#xFF0C;&#x6240;&#x4EE5;digest&#x9636;&#x6BB5;&#x5FC5;&#x7136;&#x662F; <strong>&#x4E3B;&#x52A8;&#x8FDB;&#x5165;&#x7684;</strong> .</p>
+<p>&#x5728;Regular&#x4E2D;&#xFF0C;digest&#x9636;&#x6BB5;&#x662F;&#x7531;<a href="#update"><code>$update</code></a>&#x65B9;&#x6CD5;&#x89E6;&#x53D1;&#x7684;&#x3002;</p>
 <p><strong>Example</strong></p>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular();
 
-component.data.name = <span class="hljs-string">'leeluolee'</span>
+component.data.name = <span class="hljs-string">&apos;leeluolee&apos;</span>
 
 <span class="hljs-comment">// you need call $update to Synchronize data and view </span>
 component.$update();
 </code></pre>
-<p>值得庆幸的是，大部分情况下都会自动进入digest阶段。比如事件、timeout模块等等。</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">on-click</span>=<span class="hljs-value">{blog.title='Hello'}</span>&gt;</span>{blog.title}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<p>&#x503C;&#x5F97;&#x5E86;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x5165;digest&#x9636;&#x6BB5;&#x3002;&#x6BD4;&#x5982;&#x4E8B;&#x4EF6;&#x3001;timeout&#x6A21;&#x5757;&#x7B49;&#x7B49;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{blog.title=&apos;Hello&apos;}</span>&gt;</span>{blog.title}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-<p>当点击节点后，内容区会变成Hello.</p>
-<h2 id="-">题外话： 为什么使用脏检查</h2>
+<p>&#x5F53;&#x70B9;&#x51FB;&#x8282;&#x70B9;&#x540E;&#xFF0C;&#x5185;&#x5BB9;&#x533A;&#x4F1A;&#x53D8;&#x6210;Hello.</p>
+<h2 id="&#x9898;&#x5916;&#x8BDD;&#xFF1A;-&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x810F;&#x68C0;&#x67E5;">&#x9898;&#x5916;&#x8BDD;&#xFF1A; &#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x810F;&#x68C0;&#x67E5;</h2>
 <ol>
-<li>脏检查完全不关心你改变数据的方式，而常规的set, get的方式则会强加许多限制</li>
-<li>脏检查可以实现批处理完数据之后，再去统一更新view.</li>
-<li>脏检查其实比 GET/SET 更容易实现。脏检查是个单向的检查流程(请不要和双向绑定发生混淆)，可以实现<em>_任意复杂度的表达式支持</em>。而get/set的方式则需要处理复杂依赖链，基本上表达式支持都是阉割的(使用时就像踩雷).</li>
+<li>&#x810F;&#x68C0;&#x67E5;&#x5B8C;&#x5168;&#x4E0D;&#x5173;&#x5FC3;&#x4F60;&#x6539;&#x53D8;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x800C;&#x5E38;&#x89C4;&#x7684;set, get&#x7684;&#x65B9;&#x5F0F;&#x5219;&#x4F1A;&#x5F3A;&#x52A0;&#x8BB8;&#x591A;&#x9650;&#x5236;</li>
+<li>&#x810F;&#x68C0;&#x67E5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6279;&#x5904;&#x7406;&#x5B8C;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x53BB;&#x7EDF;&#x4E00;&#x66F4;&#x65B0;view.</li>
+<li>&#x810F;&#x68C0;&#x67E5;&#x5176;&#x5B9E;&#x6BD4; GET/SET &#x66F4;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#x3002;&#x810F;&#x68C0;&#x67E5;&#x662F;&#x4E2A;&#x5355;&#x5411;&#x7684;&#x68C0;&#x67E5;&#x6D41;&#x7A0B;(&#x8BF7;&#x4E0D;&#x8981;&#x548C;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x53D1;&#x751F;&#x6DF7;&#x6DC6;)&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;<em>_&#x4EFB;&#x610F;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x652F;&#x6301;</em>&#x3002;&#x800C;get/set&#x7684;&#x65B9;&#x5F0F;&#x5219;&#x9700;&#x8981;&#x5904;&#x7406;&#x590D;&#x6742;&#x4F9D;&#x8D56;&#x94FE;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x8868;&#x8FBE;&#x5F0F;&#x652F;&#x6301;&#x90FD;&#x662F;&#x9609;&#x5272;&#x7684;(&#x4F7F;&#x7528;&#x65F6;&#x5C31;&#x50CF;&#x8E29;&#x96F7;).</li>
 </ol>
-<p>但是很显然，脏检查是低效的，它的效率基本上取决于你绑定的观察者数量，在Regular中，你可以通过<a href="https://regularjs.github.io/reference?syntax-zh#bind-once" target="_blank"><code>@(Expression)</code></a>元素来控制你的观察者数量。</p>
-<p>然而结合这种类mvvm系统中，他又是高效的。因为监听模式带来了dom的局部更新，而dom操作恰恰又是隐藏的性能瓶颈所在。</p>
+<p>&#x4F46;&#x662F;&#x5F88;&#x663E;&#x7136;&#xFF0C;&#x810F;&#x68C0;&#x67E5;&#x662F;&#x4F4E;&#x6548;&#x7684;&#xFF0C;&#x5B83;&#x7684;&#x6548;&#x7387;&#x57FA;&#x672C;&#x4E0A;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x7ED1;&#x5B9A;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x6570;&#x91CF;&#xFF0C;&#x5728;Regular&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<a href="#bind-once"><code>@(Expression)</code></a>&#x5143;&#x7D20;&#x6765;&#x63A7;&#x5236;&#x4F60;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x6570;&#x91CF;&#x3002;</p>
+<p>&#x7136;&#x800C;&#x7ED3;&#x5408;&#x8FD9;&#x79CD;&#x7C7B;mvvm&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x4ED6;&#x53C8;&#x662F;&#x9AD8;&#x6548;&#x7684;&#x3002;&#x56E0;&#x4E3A;&#x76D1;&#x542C;&#x6A21;&#x5F0F;&#x5E26;&#x6765;&#x4E86;dom&#x7684;&#x5C40;&#x90E8;&#x66F4;&#x65B0;&#xFF0C;&#x800C;dom&#x64CD;&#x4F5C;&#x6070;&#x6070;&#x53C8;&#x662F;&#x9690;&#x85CF;&#x7684;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x6240;&#x5728;&#x3002;</p>
 <blockquote>
-<p><strong>Regular实际上在解析时，已经提取了表达式的依赖关系，在未来Observe到来时，可以调整为脏检查 + 依赖计算的方式</strong></p>
+<p><strong>Regular&#x5B9E;&#x9645;&#x4E0A;&#x5728;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x5DF2;&#x7ECF;&#x63D0;&#x53D6;&#x4E86;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x5728;&#x672A;&#x6765;Observe&#x5230;&#x6765;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x6574;&#x4E3A;&#x810F;&#x68C0;&#x67E5; + &#x4F9D;&#x8D56;&#x8BA1;&#x7B97;&#x7684;&#x65B9;&#x5F0F;</strong></p>
 </blockquote>
 
-                    
-                    </section>
-                
-                
-                </div>
-            </div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
         </div>
-
-        
-        <a href="../advanced/README.html" class="navigation navigation-prev " aria-label="Previous page: 深入RegularJS"><i class="fa fa-angle-left"></i></a>
-        
-        
-        <a href="../advanced/modular.html" class="navigation navigation-next " aria-label="Next page: 轻量级的模块化"><i class="fa fa-angle-right"></i></a>
-        
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
     </div>
 </div>
 
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 深入RegularJS">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="modular.html" class="navigation navigation-next " aria-label="Next page: 轻量级的模块化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
         
-<script src="../gitbook/app.js"></script>
+    </div>
 
-    
-    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
-    
-
-<script>
-require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
-    gitbook.start(config);
-});
-</script>
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"脏检查—数据绑定的秘密","level":"1.7.1","depth":2,"next":{"title":"轻量级的模块化","level":"1.7.2","depth":2,"path":"advanced/modular.md","ref":"advanced/modular.md","articles":[]},"previous":{"title":"深入RegularJS","level":"1.7","depth":1,"path":"advanced/README.md","ref":"advanced/README.md","articles":[{"title":"脏检查—数据绑定的秘密","level":"1.7.1","depth":2,"path":"advanced/dirty.md","ref":"advanced/dirty.md","articles":[]},{"title":"轻量级的模块化","level":"1.7.2","depth":2,"path":"advanced/modular.md","ref":"advanced/modular.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"reference":"https://regularjs.github.io/reference","ref":"https://regularjs.github.io/reference","api":"https://regularjs.github.io/reference?api-zh","syntax":"https://regularjs.github.io/reference?syntax-zh"},"language":"zh","links":{"sidebar":{"➭ Github":"https://github.com/regularjs/guide/issues","➭ API & Syntax(详细文档)":"http://regularjs.github.io/reference"}},"gitbook":"*"},"file":{"path":"advanced/dirty.md","mtime":"2018-02-07T02:47:53.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-24T01:41:36.018Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
 
         
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
     </body>
-    
 </html>
+

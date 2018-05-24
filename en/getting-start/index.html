@@ -1,0 +1,373 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Hello! Regular · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://github.com/regularjs/regular" target="_blank" class="custom-link">➭ Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Hello! Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Hello! Regular</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="quick-example">Quick Example</h1>
+<p>In this Page, we will create our first component &#x2014;&#x2014; <strong>HelloRegular</strong> . It is used to show an welcome message for people who login. if people aren&apos;t login yet, the component will prompt an window. For simplicity, only username is required during the login operation.</p>
+<h2 id="1-initialize-template">1. initialize template</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hello&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/regular&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hello&quot;</span>&gt;</span><span class="undefined">
+  Hello, Guest
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- include regular.js --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://rawgit.com/regularjs/regular/master/dist/regular.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+<span class="hljs-comment">// Create Your First Component</span>
+<span class="hljs-keyword">var</span> HelloRegular = Regular.extend({
+  template: <span class="hljs-string">&apos;#hello&apos;</span>
+});
+
+<span class="hljs-comment">// initialize component then $inject to #app&apos;s  bottom</span>
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> HelloRegular({
+  data: {username: <span class="hljs-string">&quot;leeluolee&quot;</span>}
+});
+component.$inject(<span class="hljs-string">&apos;#app&apos;</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p><strong>RESULT</strong></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/1/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<ul>
+<li><p><strong><code>Regular.extend</code></strong></p>
+<p>Regular.extend will create a Component extended from Regular.</p>
+</li>
+<li><p><code>template</code></p>
+<p>a Component may need template to describe its structure.</p>
+</li>
+<li><p><code>data</code></p>
+<p>component&apos;s model, but it is just a Plain Object.  the <code>data</code> passed to <code>new Component</code> and the <code>data</code> passed to <code>Component.extend</code> are merged.</p>
+</li>
+</ul>
+<p><a name="$inject"></a></p>
+<ul>
+<li><p><code>$inject(node[, direction])</code></p>
+<p>it is an instance method, $inject the component to the position indicated by the parameter &apos;direction&apos;.</p>
+<ul>
+<li><code>bottom</code>[default option]: $injected as node&apos;s lastChild</li>
+<li><code>top</code>: $injected as node&apos; s firstChild,</li>
+<li><code>after</code>: $injected as node&apos; s nextSibling,</li>
+<li><code>before</code>: $injected as node&apos; s prevSibling,</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-using-interpolation-to-show-users-name">2. Using <strong>interpolation</strong> to show user&apos;s name</h2>
+<p>This component only shows static message until now, we should make it living by using <strong>interpolation</strong>.</p>
+<pre><code class="lang-html">  Hello, {username}
+</code></pre>
+<p><strong>RESULT</strong></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/46/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+<h2 id="3-using-ifelse-to-show-other-message-if-the-user-is-not-logged-in">3. using <code>if/else</code> to show other message if the user is not logged in</h2>
+<pre><code class="lang-xml">{#if username}
+  Hello, {username}.
+{#else}
+  Sorry, Guest.
+{/if}
+</code></pre>
+<p>it just like we use the other string-based template.</p>
+<p><strong>RESULT</strong></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/47/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+
+<h2 id="4-implement-the-loginlogout--by-event">4. Implement the <code>Login/Logout</code>  by event</h2>
+<p>In this step , we need to add two event to deal with the <strong>Login</strong> and <strong>Logout</strong> operation.</p>
+<pre><code class="lang-html">{#if username}
+  Hello, {username}. <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{username</span> = &apos;&apos;}&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+{#else}
+  Sorry, Guest. Please <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">hreaf</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{this.login()}</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+{/if}
+</code></pre>
+<blockquote>
+<h5 id="tips">Tips</h5>
+
+<p>in regular,  the <code>on-</code> prefixed attribute will be considered as <a href="../core/event.md">ui event</a>
+you can also define your custom event like(e.g. <code>on-hold</code> or <code>on-tap</code>) and determine when to trigger it;</p>
+</blockquote>
+<p>we add two operation in the template above:</p>
+<p><strong>Login</strong>: the keyword <code>this</code> in the template just point to the <code>component</code> itself. so we need to add a method named <strong>login</strong> at HelloRegular&apos;s prototype .</p>
+<p><strong>Logout</strong>: the model&apos;s root in template points to <code>component.data</code> . so in this exmaple, we just simply clear the username in <code>component.data</code>.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> HelloRegular = Regular.extend({
+  template: <span class="hljs-string">&apos;#hello&apos;</span>,
+  login: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.data; <span class="hljs-comment">// get data</span>
+    data.username = prompt(<span class="hljs-string">&quot;please enter your username&quot;</span>, <span class="hljs-string">&quot;&quot;</span>)
+  }
+});
+</code></pre>
+<p><strong>RESULT</strong></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/leeluolee/C2Gh9/48/embedded/result,js,html,resources" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+
+<h2 id="5-when-the-components-digest-phase-will-be-triggered">5. when the component&apos;s digest phase will be triggered</h2>
+<p>just like angular. regular&apos;s data-binding is based on dirty-check. some builtin (.e.g event, <a href="../core/use.html#timeout">timeout</a>) will tirgger the component&apos;s digest phase automatically. you can also trigger the digest manually using <a href="../core/binding.html#update">component.$update</a></p>
+<pre><code class="lang-javascript">
+component.data.user.name = <span class="hljs-string">&quot;regularjs&quot;</span>;
+component.$update() <span class="hljs-comment">// enter</span>
+</code></pre>
+<p>just like the example above, the usage of <code>$update</code> is flexible.</p>
+<p><strong><a href="http://fiddle.jshell.net/leeluolee/C2Gh9/50/" target="_blank">|DEMO|</a></strong></p>
+<blockquote>
+<p>no matter how you use the <code>$update</code>. the component will always enter into the &apos;digest&apos; phase.</p>
+</blockquote>
+<h2 id="summary">Summary</h2>
+<p>In this chapter, we create a super simple component named HelloRegular.</p>
+<p>you can consider regular&apos;s component as a small <code>mvvm</code> realization.</p>
+<ul>
+<li>independent lifecycle</li>
+<li>the view based on template</li>
+<li>the model is <strong>Plain Object</strong></li>
+<li>the component itself is just like the viewmodel</li>
+</ul>
+<p>you can also check the more comprehensive example&#x2014;&#x2014;<a href="http://codepen.io/leeluolee/pen/dGxCb" target="_blank">todomvc</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Hello! Regular","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"reference":"https://regularjs.github.io/reference","ref":"https://regularjs.github.io/reference"},"language":"en","links":{"sidebar":{"➭ Github":"http://github.com/regularjs/regular"}},"gitbook":"*"},"file":{"path":"getting-start/README.md","mtime":"2015-02-12T16:46:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-24T01:41:36.018Z"},"basePath":"..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
