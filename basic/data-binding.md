@@ -1,15 +1,13 @@
 
 # 数据监听和计算属性
 
-大部分情况，通过在模板中声明表达式，Regular 会通过 vm 自动完成 view 与 model 的绑定，对于自定义的监听需求，你可以通过 [数据监听](#watch) 和 [计算属性](#computed) 实现。
+大部分情况，通过在模板中声明表达式，Regular 会通过 vm 自动完成 view 与 model 的绑定，对于自定义的监听需求，你可以通过 [数据监听](#watch)实现
 
-在本文的末尾，也有对[内部监听模型 - 脏检查](#dirty-check)的介绍。
-
-## 数据监听 - $watch {#watch} 
+在本文的末尾，也有对[数据绑定原理：脏检查](#dirty-check)的介绍。
 
 Regular 内部的所有监听都是通过 [$watch API](../reference/api.md#watch)， 你也可以使用这个 API 来实现自定义数据监听
 
-### 基本用法
+## 基本用法
 
 ```js
 
@@ -31,7 +29,7 @@ new Regular({
 这个例子实现了 最多只能输入5个字符 的效果。
 
 
-### 深度监听对象一级属性 {#deep}
+## 深度监听对象一级属性 {#deep}
 
 通过传入`deep: true` 可以做到对象的深层监听
 
@@ -67,7 +65,7 @@ this.$watch('JSON.stringify(blog)', (blogStr)=>{
 ```
 
 
-### 直接触发本监听的脏检查 {#init}
+## 直接触发本监听的脏检查 {#init}
 
 你可以直接通过`init:true`参数，强制触发当前监听器的脏检查，而不用等待下一轮 [$digest](#digest) 流程
 
@@ -87,9 +85,7 @@ Regular.extend({
 ```
 
 
-### 不变的监听器{#stable}
 
-@TODO
 
 
 
@@ -111,7 +107,7 @@ Regular.extend({
 > 统一使用 Angular 生态圈的术语，方便开发者理解
 
 
-### 什么是脏检查 {#what}
+## 什么是脏检查 {#what}
 
 以[文本插值](./interpolation.html#text) `{post.title}`为例，在compile阶段，Regular 内部的处理逻辑如下。
 
@@ -138,7 +134,7 @@ __说明__
 __那么问题来了，怎么判断值发生改变了？__
 
 
-### 脏检查如何进行 - digest流程 {#digest}
+## 脏检查如何进行 - digest流程 {#digest}
 
 首先，上例通过`$watch`接口产生的watcher对象看起来是这样的
 
@@ -165,7 +161,7 @@ __那么问题来了，怎么判断值发生改变了？__
 4. 完成脏检查
 
 
-#### checkSingleWatcher
+### checkSingleWatcher
 
 先来看下简化后的检查单个监听器逻辑 `checkSingleWatcher`
 
@@ -185,7 +181,7 @@ function checkSingleWatcher( watcher ){
 }
 ```
 
-#### checkWatchers
+### checkWatchers
 
 下例是简化后的检查所有监听器的逻辑
 
@@ -221,7 +217,7 @@ function checkWatchers( isStable ){
 好，现在我们了解数据检查的内部流程了，但是__何时进入digest阶段__
 
 
-### 何时进行脏检查 {#when}
+## 何时进行脏检查 {#when}
 
 由于脏检查没有任何数据劫持逻辑(比如Vue)，数据模型本身是无状态的，所以是无法得知数据的变更时机的，可以猜测 digest 阶段必然是 __主动进入的__ 。
 
@@ -251,7 +247,7 @@ component.$update();
 
 
 
-###  为什么使用脏检查 {#why}
+##  为什么使用脏检查 {#why}
 
 1. 脏检查完全不关心你改变数据的方式，而常规的set, get的方式则会强加许多限制
 2. 脏检查可以实现批处理完数据之后，再去统一更新view.
@@ -262,3 +258,43 @@ component.$update();
 但与MVVM结合时，他又是高效的。因为数据监听模式带来了DOM的局部更新(而且是准确更新，而不是Virtual DOM那样需要做 `diff-patch` 操作)，而DOM操作恰恰又是隐藏的性能瓶颈所在。
 
 
+
+
+## 稳定的监听器{#stable} 
+
+Regular 的数据监听器分为两类
+
+- __不稳定的监听器__: 即监听器回调运行可能导致别的数据变动，此时我们应该再进行`$digest`流程，才能判断值是否真的稳定
+  ```js
+  this.$watch('title', (title)=>{
+    this.data.summary = title.slice(0, 10);
+  })
+  ```
+  这个监听器触发变更时，会导致`summary`的字段的变更。
+
+
+- __稳定的监听器__: 即回调运行不会导致别的数据变动，比如大部分内部实现的指令和插值等监听器
+  ```js
+  this.$watch('title', (title)=>{
+    this.$ref.container.setAttribute('data-title', title );
+  })
+  ```
+  这个监听器触发变更时，只是修改了DOM，但并不影响别的字段
+
+所以实际的digest流程是
+
+- 检查所有不稳定监听器
+- 检查 **一次** 稳定的监听器
+
+
+你也可以通过传入`stable:true`来标记这个监听器是稳定的，来得到更好的性能表现
+
+__Example__
+
+```js
+
+  this.$watch('title', (title)=>{
+    this.$ref.container.setAttribute('data-title', title );
+  }, {stable: true})
+
+```

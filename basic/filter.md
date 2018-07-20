@@ -1,24 +1,26 @@
 # 计算字段与过滤器
 
-## 计算属性 {#computed}
+Regular 提供了两种自定义[表达式](../reference/expression.md#setable)读写的方式 —— __计算字段__ 和 __过滤器__
 
-计算属性在 [options](../reference/api.md#options) 通过 `computed` 字段注册，可以避免书写冗余的[表达式](../reference/expression.md) 
+## 计算字段 {#computed}
+
+计算字段在 [options](../reference/api.md#options) 通过 `computed` 字段注册，可以避免书写冗余的[表达式](../reference/expression.md) 
 
 
-### 计算属性 - 手动构造表达式对象
+### 计算字段的定义
 
-使用计算字段相当于手动构造[表达式对象](../reference/expression.md#setable)
+使用计算字段相当于手动构造 __[表达式对象](../reference/expression.md#setable)__
 
 __对象包含`get`和`set`(可选)方法__，
 
 - `get(data)`: 属性的 getter 函数，定义 __读__ 逻辑
   - data: `data` 指向 component.data
-  - this: `this` 指向组件component
+  - this: `this` 指向组件 component
 
 - `set(value, data)`:  属性的 setter 函数，定义 __写__ 逻辑
   - value: the value to set
   - data: `data` 指向 component.data
-  - this: `this` 指向组件component
+  - this: `this` 指向组件 component
 
 _其中set是可选的_
 
@@ -54,9 +56,7 @@ const Component = Regular.extend({
 
 ```
 
-
 上例你也可以简写成一个表达式
-
 
 ```javascript
 const Component = Regular.extend({
@@ -100,7 +100,6 @@ const component = new Component({
 }).$inject(document.body);
 
 ```
-
 
 <script async src="//jsfiddle.net/leeluolee/hjkcu9z6/embed/result,js/"></script>
 
@@ -151,11 +150,11 @@ __参考__
 ```java
 
 
-var ListComponent = Regular.extend({
+const ListComponent = Regular.extend({
   computed: {
     selectAll: {
       // only every item is selected, we return true
-      get: function(data){
+      get: function( data ){
 
         if(!data.list) return false;
 
@@ -165,7 +164,7 @@ var ListComponent = Regular.extend({
 
           ).length === data.list.length;
       },
-      set: function(value, data){
+      set: function( value, data ){
         if(!data.list) return
         // set every item.selected with passed value
         data.list.forEach(function(item){
@@ -198,7 +197,6 @@ __template__
 
 <script async src="//jsfiddle.net/leeluolee/739w65xa/embed/result,js/"></script>
 
-> __从数据出发去考虑业务逻辑__，会让你节省大量的时间
 
 ## 过滤器 - filter
 
@@ -241,16 +239,23 @@ new Regular({
 
 ### 过滤器参数
 
-### 过滤器的优先级
+过滤器参数可以传入任意个，他们会依次传入到过滤器定义的get和 [set](#two-way) 函数中，过滤器参数可以是任意表达式
 
-过滤器是一个优先级小于三元表达式(如 `a?b:c` )的表达式
+```js
+Reuglar.extend({
+  template:`
+    <div>{list|join:'+'}</div>
+  `
+})
 
-```html
-<div>{['Add', 'Update']|last}</div>
 ```
 
 
-与标准表达式一样，你可以使用`()`来提升它的优先级
+
+
+### 过滤器的优先级
+
+过滤器是一个优先级小于三元表达式(如 `a?b:c` )的表达式，与标准表达式一样，你可以使用`()`来提升它的优先级
 
 ```html
 <div>{ 'add: ' + ([1,2,3]|join: '+')  } = 6</div>
@@ -263,10 +268,9 @@ __输出__
 ```
 
 
+### 日期格式化过滤器: format
 
-### 简单例子: format
-
-Regular 没有内置的format过滤器， 因为这个过滤器全功能实现，你可以通过以下代码实现一个简单的日期过滤器
+以下实现了一个简化的 Regular 日期过滤器
 
 __Example__
 
@@ -316,23 +320,18 @@ Regular.filter("format", function(value, format) {
 ```html
 <p>{time| format: 'yyyy-MM'}</p>
 
-<script async src="//jsfiddle.net/leeluolee/q0s1mbvg/embed/"></script>
-
 ```
+<script async src="//jsfiddle.net/leeluolee/q0s1mbvg/embed/result,js/"></script>
 
 
+### 双向过滤器 {#two-way}
 
-### 双向过滤器
+Regular 支持一个简单的概念: 双向过滤器，使得过滤器可以代理写操作，与[计算字段类似](#computed)，你需要理解一个[表达式对象](../reference/expression.md#setable)实际是由 __get__(读操作) 和 __set__ (写操作) 构成
 
-Regular 支持一个简单的概念: 双向过滤器，使得过滤器可以代理写操作，与[计算字段类似]()，你需要理解一个[表达式对象](../reference/expression.md#setable)实际是由 __get__(读操作) 和 __set__ (写操作) 构成
-
-双向过滤器如其名，经常会用在双向绑定上， 由于这个特性， r-model 得以与一个数组类型实现双向绑定。 当然你也可以使用它在其它可能有“数据回流”场合，比如[内嵌组件](?syntax-zh#composite)
-
+双向过滤器如其名，经常会用在双向绑定上，由于这个特性，`r-model`可以变相与一个数组类型实现双向绑定。
 
 
-
-
-take `{[1,2,3]|join: '-'}` for example
+以 `{[1,2,3]|join: '-'}` 为例
 
  过滤器定义
 
@@ -350,24 +349,43 @@ Regular.filter('join', {
 })
 ```
 
-```html
+> 说明: 过滤器定义传入函数，则自动成为 `get` 读函数
 
-{array|json}
+```html
+{JSON.stringify(array)}
 <input r-model={array|join:'-'} >
 
 ```
 
-[【 DEMO : two-way filter】](http://codepen.io/leeluolee/pen/jEGJmy)
+__说明__
+
+过滤器劫持了读写，使得字符串类型和数组变相实现了双向绑定。
+
+- __写过程__: 从表单元素的`input.value` 到数据 `array`，先经过 __set__ 函数，从 __字符串 > 数组__
+- __读过程__: 从数据`array`到表单元素的`input.value` ，先经过 __get__ 函数，从 __数组 > 字符串__
+
+
+
+<script async src="//jsfiddle.net/leeluolee/0oh8e6dj/1/embed/result,js/"></script>
+
+> 如[表达式章节](../reference/expression.md)所述, 部分全局变量如`JSON`在模板中可用
+
 
 ### 过滤器与计算字段的对比
 
+- 过滤器是一个可复用的抽象，而计算字段是一个写死的字段定义
+- 计算字段使用更简洁
 
 ### 内置过滤器
 
 
 为了控制框架体积，Regular 只有少量内置过滤器，其中 __不包含format!__ ，你参考上例实现，或直接使用更详细的包，例如 [moment.js](http://momentjs.com/)
 
-- `json`: 
+- `json`: _这是一个双向过滤器_
+  - get: `JSON.parse`
+  - set: `JSON.stringify`
 
 - `last`
+  - get: `list[list.length-1]`
+
 
