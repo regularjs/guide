@@ -156,5 +156,5 @@ __Example__
 ## 要点提示
 
 
-- 与其它语句一样，list语句包裹的结构[不受单节点限制](./README.html#wrap-limit)
+- 与其它语句一样，list语句包裹的结构[不受单节点限制](./#wrap-limit)
 

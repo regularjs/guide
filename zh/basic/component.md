@@ -55,12 +55,14 @@ Component.implement(ReduxMixin);
 通过[Component.extend]({{api}}#api-reference-静态接口-componentextend)和[Component.implement](http://regularjs.github.io/reference/?api-zh#api-reference-静态接口-componentimplement) 扩展的方法内部可以通过__`this.supr`__调用父类同名函数。
 
 ```js
-var Component = Regular.extend( {
+
+var Component = Regular.extend({
   config: function( data ){
     this.supr(data);
     //other logic
   }
-} );
+});
+
 ```
 
 

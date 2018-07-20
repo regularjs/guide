@@ -12,21 +12,23 @@
 <!-- 容器节点 -->
 <div id="app"></div>
 
-<!-- 引入regular.js (生产环境请使用安装版本) -->
+<!-- 引入Regular (生产环境请使用安装版本) -->
 <script src="https://cdn.jsdelivr.net/npm/regularjs"></script>
 
 
 <script>
 //利用Regular构建你的app吧
-var HelloRegular = Regular.extend({
+const HelloRegular = Regular.extend({
   template: `
     Hello, {username}
   `
 });
 
 // initialize component then $inject to #app's  bottom
-var component = new HelloRegular({
-  data: {username: "leeluolee"}
+const component = new HelloRegular({
+  data: {
+    username: 'leeluolee'
+  }
 });
 
 component.$inject('#app'); 
@@ -65,7 +67,6 @@ __说明__
   * `top`：作为 node 的 firstChild 插入
   * `after`：作为 node 的 nextSibling 插入
   * `before`：作为 previousSibling 插入
-
 
 
 ## 使用条件展示
@@ -107,7 +108,7 @@ __说明__
 
 __登出__ ：Regular 的表达式支持赋值操作，这里的登出我们仅仅是对 `username` 做了清空处理。
 
-__登录__ ：模板中的`this`对象指向实例component本身，我们需要在extend时添加一个原型方法`login()`来处理登录逻辑。
+__登录__ ：模板中的 `this`对象指向实例component本身，我们需要在extend时添加一个原型方法`login()`来处理登录逻辑。
 
 
 ```javascript
@@ -127,7 +128,8 @@ login: function(){
 
 ## 下一步阅读
 
-1. 或许你对为什么数据变化会反应到视图差生疑惑，推荐你阅读 __[脏检查： 数据绑定的秘密](concept/dirty.md)__
+1. 我们直接从 Regular 中最重要的概念 - [组件](../basic/component)开始吧
+2. 如果你对数据如何驱动视图变更的，也可以查看[数据监听](../basic/data-binding.md)章节
 
 
 

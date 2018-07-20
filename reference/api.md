@@ -548,6 +548,95 @@ Regular.use(FooPlugin);
 
 > 你可以选择在构建时通过 `Regular.parse` 将模板先处理成 `AST` 。
 
+
+
+### name
+
+注册组件到父组件的命名空间内，使其可以被声明式调用。
+
+> 注意通过name注册，是全局的
+
+
+```js
+const Component = SuperComponent.extend({
+  //other options
+  name: 'foo1'
+})
+
+const Component2 = SuperComponent.extend({
+  template: "<foo1></foo1>"
+})
+
+```
+
+ 
+也可使用[Component.component](#component) 注册,　上例实际上等同于
+
+
+```js
+
+const Component = SuperComponent.extend({});
+
+Regular.component('foo1', Component)
+```
+
+  
+
+### events
+
+- type: Object
+
+批量定义绑定事件，__这个在需要绑定一些[内置事件](../basic/event.html)时格外有用。
+
+```javascript
+
+Regular.extend({
+  events: {
+    "$init": function(){
+      // same in component.init
+    },
+    "$destroy": function(){
+      // same in component.destroy
+    }
+  }
+})
+
+```
+
+
+### data
+
+- type: Object
+
+__⚠️不要在 extend 或 implement 时定义data属性 !!!__ ，这会导致所有实例共享数据。
+
+> 永远只在 `new Component` 或  `config` 中定义初始化函数
+
+
+### computed
+
+- Type: Object
+
+计算属性定义为键值对
+
+- key: 表达式名
+- value: 表达式定义
+
+__Example__
+
+```js
+comuted: {
+  title: 
+}
+```
+
+表达式定义支持几种类型
+
+
+## 生命周期钩子
+
+[options](#options) 中还可以定义如下生命周期钩子
+
 ### config( data )
 
 
@@ -586,99 +675,9 @@ var component = new Component();
 component.destory();
 ```
 
+### modifyBodyComponent( component, next ) {#modify}
 
-
-### name
-
-注册组件到父组件的命名空间内，使其可以被声明式调用。
-
-> 注意通过name注册，是全局的
-
-
-```js
-const Component = SuperComponent.extend({
-  //other options
-  name: 'foo1'
-})
-
-const Component2 = SuperComponent.extend({
-  template: "<foo1></foo1>"
-})
-
-```
-
- 
-也可使用[Component.component](#component) 注册,　上例实际上等同于
-
-
-```js
-
-const Component = SuperComponent.extend({});
-
-Regular.component('foo1', Component)
-```
-
-  
-
-###events
-
-- type: Object
-
-批量定义绑定事件，__这个在需要绑定一些[内置事件](../basic/event.html)时格外有用。
-
-```javascript
-
-Regular.extend({
-  events: {
-    "$init": function(){
-      // same in component.init
-    },
-    "$destroy": function(){
-      // same in component.destroy
-    }
-  }
-})
-
-```
-
-
-###data
-
-- type: Object
-
-__⚠️不要在 extend 或 implement 时定义data属性 !!!__ ，这会导致所有实例共享数据。
-
-> 永远只在 new Component 或  config 中定义初始化函数
-
-```javascript
-var Component = Regular.extend({
-  data: {
-    arr: [1,2,3]
-  }
-})
-
-var component = new Component({
-  data: {
-    arr2: []
-  }
-})
-var component2 = new Component({ 
-  data: {
-    arr2: []
-  }
-})
-
-// BAD CASE !!
-console.log(component.data.arr === component2.data.arr) //true
-// GOOD CASE !!
-console.log(component.data.arr2 === component2.data.arr2) //false
-
-```
-
-<script async src="//jsfiddle.net/leeluolee/3qt2g0mo/embed/js,result/"></script>
-
-<a id="instance"></a>
-##实例接口
+##实例接口 {#instance}
 
 
 
@@ -687,7 +686,7 @@ component即代表组件实例, 注意这些公有都有`$`前缀 意味不建�
 
 
 
-###component.$inject
+###component.$inject {#inject}
 
  
 插入组件到指定位置

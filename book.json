@@ -1,6 +1,31 @@
 {
-    "variables": {
-        "reference": "https://regularjs.github.io/reference",
-        "ref": "https://regularjs.github.io/reference"
+    "title": "Regular官方指南",
+    "gitbook": "3.2.3",
+    "language": "zh-hans",
+    "description": "Regular官方指南",
+    "author": "leeluolee",
+    "plugins": [
+        "edit-link", "splitter", "-lunr", "-search", "-sharing",
+        "search-plus", "expandable-chapters-small",
+        "anchor-navigation-ex"
+    ],
+    "structure": {
+          "readme": "README.md"
+    },
+
+
+    "links": {
+        "sidebar": {
+            "Github": "https://github.com/regularjs/regular"
+        }
+    },
+    "pluginsConfig": {
+        "edit-link": {
+            "base": "https://github.com/regularjs/guide/edit/master/",
+            "label": "编辑当前页"
+        },
+        "anchor-navigation-ex":{
+            "multipleH1": false
+        }
     }
 }

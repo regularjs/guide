@@ -7,7 +7,7 @@ Regular 中事件分为两类
 
 大部分情况下，它们使用和表现都一致。
 
-##  DOM 事件
+##  DOM 事件 {#dom}
 
 > 所有 __DOM节点上__ 的`on-`开头的属性都会被作为DOM事件处理 
 
@@ -108,7 +108,7 @@ __Example__
 1. 避免使用在高频触发的事件( `mouseover` )，这样反而会产生性能问题
 2. 事件必须可冒泡
   - [自定义事件](#custom-event)请参考zepto's tap-event的[实现](https://github.com/madrobby/zepto/blob/master/src/event.jsL274).
-  - 部分事件天生没法冒泡，比如IE低版下的chang，select等
+  - 部分事件天生没法冒泡，比如IE低版下的`change`，`select`等
 
 ### $event 对象 {#event}
 
