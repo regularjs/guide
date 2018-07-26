@@ -29,7 +29,7 @@ new Regular({
 这个例子实现了 最多只能输入5个字符 的效果。
 
 
-## 深度监听对象一级属性 {#deep}
+## 深度监听 {#deep}
 
 通过传入`deep: true` 可以做到对象的深层监听
 
@@ -95,7 +95,7 @@ Regular.extend({
 
 类似Angular ，Regular 的数据绑定基于脏检查实现。
 
-> 脏检查即一种不关心你如何以及何时改变的数据，只关心在__特定的检查阶段__数据是否改变的数据监听技术。
+> 脏检查即一种不关心你如何以及何时改变的数据，只关心在**特定的检查阶段**数据是否改变的数据监听技术。
 
 本节包含内容
 
@@ -103,6 +103,7 @@ Regular.extend({
 - [脏检查是如何进行的](#digest)
 - [何时进行脏检查](#when)
 - [为什么选脏检查](#why)
+- [监听器的稳定性](#stable)
 
 > 统一使用 Angular 生态圈的术语，方便开发者理解
 
@@ -260,7 +261,7 @@ component.$update();
 
 
 
-## 稳定的监听器{#stable} 
+## 监听器的稳定性{#stable} 
 
 Regular 的数据监听器分为两类
 
@@ -276,14 +277,14 @@ Regular 的数据监听器分为两类
 - __稳定的监听器__: 即回调运行不会导致别的数据变动，比如大部分内部实现的指令和插值等监听器
   ```js
   this.$watch('title', (title)=>{
-    this.$ref.container.setAttribute('data-title', title );
+    this.$ref.container.setAttribute('data-title', title);
   })
   ```
   这个监听器触发变更时，只是修改了DOM，但并不影响别的字段
 
-所以实际的digest流程是
+实际Regular的脏检查流程是
 
-- 检查所有不稳定监听器
+- 检查不稳定监听器直到稳定
 - 检查 **一次** 稳定的监听器
 
 

@@ -182,7 +182,7 @@ __例外__：在这里 `show={true}` 比较特殊，因为表达式是一个静�
 
 #### 其它特殊属性
 
-特殊属性如`ref`和`isolate` 会有特殊的功能。请参考 [获取内部节点和组件](./ref.md) 和 [组件隔离](./isolate.md)
+特殊属性如`ref`和`isolate` 会有特殊的功能。请参考 [获取内部节点和组件](#ref) 和 [组件隔离](#isolate)
 
 ### 禁止在extend中定义缺省data参数 {#default} 
 
@@ -261,7 +261,7 @@ Regular.extend({
 
 __参考__
 
-- [获取子节点和子组件](./ref.md)
+- [获取子节点和子组件](#ref)
 
 
 
@@ -299,6 +299,7 @@ __实例化时__
 
 __销毁时__
 ![](http://p1.music.126.net/wMn6NWuOolhxXd1Ekfo-ow==/109951163409729417.png)
+
 
 
 ## 动态组件
@@ -347,6 +348,176 @@ __参考__
 
 - 其余属性都会成为指定组件的`data`参数，请参考[组件参数小节](#prop)
 - [数据监听](../data-binding.html#watch)
+
+
+## 父组件 - $parent {#parent}
+
+在 Regular 中，声明式实例化的组件都具有一个`this.$parent`属性，它指向直接父组件
+
+```js
+const Example = Regular.extend({
+  name: 'Example',
+  init(){
+    console.log(this.$parent.name) // log 'App'
+  }
+})
+
+const App = Regular.extend({
+  name: 'App',
+  template: `<Example title={title} />`
+})
+
+const main = new Regular({
+  template: `<App title={title}  />`,
+  data: {
+    title: 'main title'
+  }
+})
+```
+
+直接父组件，决定了子组件执行的数据上下文。比如App接受的`title`实际指的是`main.data.title`，而`Example`的title则指向`app.data.title`(App的实例)。
+
+### 组件隔离 {#isolate}
+
+默认情况下，父子组件之间会建立双向绑定
+
+```js
+<input r-model={total} type=number/>
+<pager total={total}></pager>
+```
+
+
+即我在上层组件修改一份数据会导致pager也进行了脏检查，而pager发生数据变化也会引起上层组件发生脏检查，这在有些时候不是我们想看到的，也会影响到组件的整体性能。我们或许希望pager与上层组件完全隔离，而完全通过事件来通信。
+
+## 组件的isolate属性
+
+
+`isolate`可以实现上述要求，例如上例如果修改为:
+
+```js
+<input r-model={total} type=number/>
+<pager total={total} isolate on-nav='nav'></pager>
+```
+
+那内嵌组件pager与实际就是完全隔离了，完全等同于JS初始化`new Pager().$inject('input', 'after')`。
+
+
+## 获取子节点和子组件 {#ref}
+
+获取到组件内部的子组件和子节点是使用 Regular 的常见需求。
+
+### 常见DOM操作的误区
+
+__组件本身应该是完全数据驱动，dom操作应该交由指令处理__ 在理念上并没有错，但有时直接操作DOM会简单很多。所以经常有人在 init 中写出以下代码(此时内部节点已经产生)
+
+__Bad Case__
+
+```js
+Regular.extend({
+  template: `<div id='xxx'></div>`,
+  init: function(){
+    const elem = document.getElementById('xxx'); 返回null
+  }
+})
+```
+
+这种做法并不会凑效，因为 init 时此组件并没有插入到文档中，游离状态的组件自然无法用`document.getElementById`获取到它。
+
+但我们可以使用 ref 来解决
+
+### ref 属性
+
+__ref__ 是个特殊的属性，你可以使用它来标记一个__节点或组件__.
+
+```html
+
+const component = new Regular({
+  template: "<input ref=input> <component ref=component></component>"
+  init: function(){
+    this.$refs.input.value = 'hahaha'
+    this.$refs.component.show() // 调用子组件的方法
+  }
+})
+
+```
+
+如上例所示，在 compile 之后(比如 init 生命周期里)，就可以使用`this.$refs` 来获取到内部子节点或子组件了。
+
+>还是应尽可能使用数据驱动的方式来构建你的UI
+
+### ref属性是可动态插值
+
+ref属性与其它属性一样可以插值，这样在类似循环渲染的场景中会比较有用
+
+
+<script async src="//jsfiddle.net/leeluolee/tqLew7ou/embed/js,result/"></script>
+
+
+
+## Regular.dom.element 获取组件的子节点。
+
+除了ref，Regular还提供了 [`dom.element(component, needAll)`](../../reference/api.md#dom) 可用于获取组件内部的节点。
+
+```js
+
+const dom = Regular.dom;
+const component = new Regular({
+  template: `<div id='first'></div><p id='last'></p>`
+  init: function(){
+    console.log(dom.element(this)) // => div#first  
+    console.log(dom.element(this, true)) // => [div#first, p#last]
+  }
+})
+```
+
+__说明__
+
+- 如果needAll为`true`，返回子节点数组。
+
+
+### 何时使用`dom.element` 何时使用 `ref`?
+
+
+`ref` 的优点是简单直观而且高效，除此之外还可以 __获取组件__ 。 而 `dom.element` 的优势是不需要做主动的标记，可以提供`ref`无法满足的能力，例如
+
+
+```js
+
+const Component = Regular.extend({
+  template: '<div ref="container">Component</div>'
+  init: function(){
+    this.$refs.container // ...
+  }
+})
+
+// SubComponent 继承自 Component
+const SubComponent = Component.extend({
+  'template': '<div>SubComponent</div>'
+})
+
+```
+
+这就会出现问题，因为`SubComponent`覆盖的模板并没有标记 container 节点。本质其实是因为 __模板的控制权不在当前组件__ 。
+
+这个时候就可以使用`dom.element`就可以完美解决了
+
+```js
+
+const Component = Regular.extend({
+  template: '<div>Component</div>'
+  init: function(){
+    console.log(dom.element(this));
+  }
+})
+
+// SubComponent 继承自 Component
+const SubComponent = Component.extend({
+  'template': '<div>SubComponent</div>'
+})
+
+```
+
+
 
 ## 其它事项
 
