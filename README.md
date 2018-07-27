@@ -1,7 +1,6 @@
 # Regular指南
 
-API接口说明已经移到统一的[Reference]({{api}})，对应的模板语法说明移动到了[Syntax页面](http://regularjs.github.io/reference/?syntax-zh)，此页面只用来作为Guide使用。
-
+API文档已经与本文档合并，可在[索引章节](./reference/api.md)查看
 
 ## 安装
 
@@ -19,7 +18,6 @@ API接口说明已经移到统一的[Reference]({{api}})，对应的模板语法
 ## 关于模板管理
 
 本文档的模板是使用[多行模板字符串](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)管理的，如果你需要在低版本的浏览器中使用，请使用 Webpack等构建工具 或 `'\'` 转义折行书写。
-
 
 
 ## 贡献文档

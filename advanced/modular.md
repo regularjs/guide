@@ -1,8 +1,10 @@
 # 模块化 - 基于原型继承
 
-大型工程里，封装隔离性会提到较高的要求。
+大型工程里，封装隔离性会提到较高的要求。Regular 提供了基于原型继承的工程化隔离方案。在文章开头，会先介绍下 Regular 的继承体系。
 
-## 继承体系
+## Regular的继承体系
+
+> Regular.extend
 
 Regular 的类式继承简化自 __[&#x261E;ded/klass](https://github.com/ded/klass)__, 只保留了其中两个接口。
 

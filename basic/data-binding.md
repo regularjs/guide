@@ -86,10 +86,6 @@ Regular.extend({
 
 
 
-
-
-
-
 ## 数据监听的秘密 - 脏检查 {#dirty-check}
 
 
@@ -108,7 +104,7 @@ Regular.extend({
 > 统一使用 Angular 生态圈的术语，方便开发者理解
 
 
-## 什么是脏检查 {#what}
+### 什么是脏检查 {#what}
 
 以[文本插值](./interpolation.html#text) `{post.title}`为例，在compile阶段，Regular 内部的处理逻辑如下。
 
@@ -135,7 +131,7 @@ __说明__
 __那么问题来了，怎么判断值发生改变了？__
 
 
-## 脏检查如何进行 - digest流程 {#digest}
+### 脏检查如何进行 - digest流程 {#digest}
 
 首先，上例通过`$watch`接口产生的watcher对象看起来是这样的
 
@@ -218,7 +214,7 @@ function checkWatchers( isStable ){
 好，现在我们了解数据检查的内部流程了，但是__何时进入digest阶段__
 
 
-## 何时进行脏检查 {#when}
+### 何时进行脏检查 {#when}
 
 由于脏检查没有任何数据劫持逻辑(比如Vue)，数据模型本身是无状态的，所以是无法得知数据的变更时机的，可以猜测 digest 阶段必然是 __主动进入的__ 。
 
@@ -248,7 +244,7 @@ component.$update();
 
 
 
-##  为什么使用脏检查 {#why}
+###  为什么使用脏检查 {#why}
 
 1. 脏检查完全不关心你改变数据的方式，而常规的set, get的方式则会强加许多限制
 2. 脏检查可以实现批处理完数据之后，再去统一更新view.
