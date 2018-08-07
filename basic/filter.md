@@ -342,7 +342,7 @@ Regular.filter('join', {
     return origin.join( split || "-" );
   },
   // **Important **
-  // "1"-"2"-"3" - > ["1","2","3"]
+  // '1-2-3' - > ["1","2","3"]
   set: function(dest, split ){
     return dest.split( split || "-" );
   }
@@ -379,7 +379,7 @@ __说明__
 ### 内置过滤器
 
 
-为了控制框架体积，Regular 只有少量内置过滤器，其中 __不包含format!__ ，你参考上例实现，或直接使用更详细的包，例如 [moment.js](http://momentjs.com/)
+为了控制框架体积，Regular 只有少量内置过滤器，其中 __不包含format!__ ，你参考上例实现，或直接使用更详细的包，例如 [moment.js](https://momentjs.com/)
 
 - `json`: _这是一个双向过滤器_
   - get: `JSON.parse`

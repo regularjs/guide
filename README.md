@@ -24,5 +24,5 @@ API文档已经与本文档合并，可在[索引章节](./reference/api.md)查�
 
 除了直接fork此项目，发起 Pull Request，你也可以通过在线编辑来帮助修复细小的错误。
 
-![](http://p1.music.126.net/ks_E7wNXKmUOwCarLMv0iQ==/109951163399005147.png)
+![](https://p1.music.126.net/ks_E7wNXKmUOwCarLMv0iQ==/109951163399005147.png)
 

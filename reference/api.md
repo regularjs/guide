@@ -343,7 +343,7 @@ Regular.filter('join', {
 
 ```
 
-[【 DEMO : two-way filter】](http://codepen.io/leeluolee/pen/jEGJmy)
+[【 DEMO : two-way filter】](https://codepen.io/leeluolee/pen/jEGJmy)
 
 
 ####内建过滤器
@@ -409,7 +409,7 @@ __Argument__
 
 
 
-查看 [指南: animation](http://regularjs.github.io/guide/zh/animation/README.html) 了解更多
+查看 [指南: animation](https://regularjs.github.io/guide/zh/animation/README.html) 了解更多
 
 
 
@@ -821,7 +821,7 @@ watchid [Number]: 监听id,用于方法 [$unwatch](#unwatch)
 
 
 - expression 会在每次脏检查时被调用，并比较之前的值
-- 当值与上次求值发生变化的判断依据是严格不相等即`!==`.　一种例外就是当求值为数组时，Regularjs会使用[莱文斯坦距离](http://en.wikipedia.org/wiki/Levenshtein_distance)计算数组差异
+- 当值与上次求值发生变化的判断依据是严格不相等即`!==`.　一种例外就是当求值为数组时，Regularjs会使用[莱文斯坦距离](https://en.wikipedia.org/wiki/Levenshtein_distance)计算数组差异
 
 
 
@@ -1276,7 +1276,7 @@ for(var i = 0; i < 10; i++){
 
 ```
 
-[Demo here](http://jsfiddle.net/leeluolee/7wgUf/light/)
+[Demo here](https://jsfiddle.net/leeluolee/7wgUf/light/)
 
 you may want [the source code of pager ](https://rawgit.com/regularjs/regular/master/example/pager/pager.js)
 

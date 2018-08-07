@@ -90,4 +90,4 @@ modal.$on('confirm', function(data){
 
 ```
 
-[【DEMO】](http://fiddle.jshell.net/leeluolee/Xvp9S/)
+[【DEMO】](https://fiddle.jshell.net/leeluolee/Xvp9S/)

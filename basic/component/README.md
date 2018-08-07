@@ -295,10 +295,10 @@ const Component = Regular.extend({
 
 __实例化时__
 
-![](http://p1.music.126.net/fMaWu1OPgVHz_0aP9Z5SaQ==/109951163409731716.png)
+![](https://p1.music.126.net/fMaWu1OPgVHz_0aP9Z5SaQ==/109951163409731716.png)
 
 __销毁时__
-![](http://p1.music.126.net/wMn6NWuOolhxXd1Ekfo-ow==/109951163409729417.png)
+![](https://p1.music.126.net/wMn6NWuOolhxXd1Ekfo-ow==/109951163409729417.png)
 
 
 

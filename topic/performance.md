@@ -20,7 +20,7 @@
 
 这层是收益最高的方案，因为影响因子是 N·logN.
 
-![](http://p1.music.126.net/1jKdy2gjgJ_-AGih_OJPIQ==/109951163211165405.png)
+![](https://p1.music.126.net/1jKdy2gjgJ_-AGih_OJPIQ==/109951163211165405.png)
 
 以上图为例，叶子节点进行`$update()`时，会首先找到`DigestRoot` （默认情况下，即顶层使用 `new` 创建的组件），再层层向下进行组件的`$digest()`检查，在目前组件抽象较细致的开发习惯下，很容易产生10多层的组件深度，适当控制下digest深度可以得到可观的性能提升。
 
@@ -30,15 +30,15 @@ _注 : 这个digest flow设计是为了避免产生网状更新链_
 ### 方案1. 使用isolate 控制digest深度 
 
 第一个方式即使用`isolate`属性控制组件的数据流向，如`<b isoalte />` 这样,在第一次初始化后，b组件就不再与a组件有任何数据绑定关系
-![](http://p1.music.126.net/eooSITVC5hT4s47XqGGl1g==/109951163211169623.png)
+![](https://p1.music.126.net/eooSITVC5hT4s47XqGGl1g==/109951163211169623.png)
 
 如图所示，`b`组件此时就会成为`g`组件的实际`DigestRoot`。`b`组件内部的`$update`不会再会冒泡到外层
 
 但这种方式同时让a的数据变更无法传达到b组件极其内部，如下图所示
-![enter image description here](http://p1.music.126.net/Q7rxGKxnvSDEAg_TIvR5vA==/109951163211175332.png) 
+![enter image description here](https://p1.music.126.net/Q7rxGKxnvSDEAg_TIvR5vA==/109951163211175332.png) 
 
 如果需要实现`a->b`的单向传导，可以设置`isolate=1`
-![enter image description here](http://p1.music.126.net/XrXdN3qrNOY6oERisrJjLQ==/109951163211192124.png) 
+![enter image description here](https://p1.music.126.net/XrXdN3qrNOY6oERisrJjLQ==/109951163211192124.png) 
 
 > isolate = 1 实际就形成了组件的单向数据流
 

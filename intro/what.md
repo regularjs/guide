@@ -11,7 +11,7 @@ Regular 是 MDV(数据驱动视图技术) 的一种实现， 它...
 - 数据绑定,局部刷新
 - 深度的组件化能力
 - 服务端渲染
-- 单页系统：[regular-state](http://regularjs.github.io/regular-state/)提供完整的单页系统解决方案，包括服务端渲染支持
+- 单页系统：[regular-state](https://regularjs.github.io/regular-state/)提供完整的单页系统解决方案，包括服务端渲染支持
 - 编译到小程序: 感谢考拉团队精彩的 [mpregular](https://github.com/kaola-fed/mpregular)
 
 

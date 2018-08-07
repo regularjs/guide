@@ -83,7 +83,7 @@ __Example__
 ## 使用 track语句 加速你的列表渲染
 
 
-默认条件下，Regular会使用[莱文斯坦编辑距离算法](http://en.wikipedia.org/wiki/Levenshtein_distance)来计算最小变更DOM。
+默认条件下，Regular会使用[莱文斯坦编辑距离算法](https://en.wikipedia.org/wiki/Levenshtein_distance)来计算最小变更DOM。
 
 但这个算法的时间复杂度是 <strong>O(n<sup>2</sup>)</strong> ，在列表超过一定数量时(比如 __>100__ )，它的逻辑开销就会明显超过DOM的开销。
 

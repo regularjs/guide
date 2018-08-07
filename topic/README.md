@@ -7,9 +7,9 @@
 
     除了指南中的ES6多行模板字符串，你还可以有其他选择，包括有些同学需要的单文件组件`.rgl`
 
-- [单页系统](http://regularjs.github.io/regular-state/): 
+- [单页系统](https://regularjs.github.io/regular-state/): 
 
-    大部分应用场景都是单页系统，由于篇幅过长，此章节直接独立为外部[《单页系统指南》](http://regularjs.github.io/regular-state/)
+    大部分应用场景都是单页系统，由于篇幅过长，此章节直接独立为外部[《单页系统指南》](https://regularjs.github.io/regular-state/)
 
 - [服务端渲染](./ssr.md): 
 

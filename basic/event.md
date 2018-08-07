@@ -218,5 +218,5 @@ regularjs会在初始化时的关键阶段抛出事件
 
 ## 完整的事件绑定流程
 
-![](http://p1.music.126.net/eHVTTZYK5El8xqv8Z5RcSg==/109951163389106097.png)
+![](https://p1.music.126.net/eHVTTZYK5El8xqv8Z5RcSg==/109951163389106097.png)
 

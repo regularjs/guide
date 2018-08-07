@@ -4,7 +4,7 @@
 
 下图是个简单的例子（ 为了方便起见，我把每个组件的模板都放在了一张图进行描述 ）
 
-<img width = 80%  src='http://p1.music.126.net/h1WXEc1SuukxJxLWjKPK3Q==/109951163238805807.png' />
+<img width = 80%  src='https://p1.music.126.net/h1WXEc1SuukxJxLWjKPK3Q==/109951163238805807.png' />
 
 这里包含「事件通信」和「数据通信」两个维度。
 

@@ -9,7 +9,7 @@
   "scripts": {
     "install": "gitbook install",
     "start": "gitbook serve .",
-    "build": "gitbook build ."
+    "build": "gitbook install && gitbook build . public"
   },
   "author": "leeluolee <oe.zheng@gmail.com>",
   "dependencies": {

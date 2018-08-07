@@ -147,7 +147,7 @@ __Answer__: 因为指令的销毁并不一定伴随着组件销毁，指令的�
 
 ## 属性解析的流程示意图 {#process}
 
-![](http://p1.music.126.net/IGxzgyNNymUfatbAGuIH-A==/109951163413158092.png)
+![](https://p1.music.126.net/IGxzgyNNymUfatbAGuIH-A==/109951163413158092.png)
 
 
 __参考__

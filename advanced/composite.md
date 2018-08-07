@@ -68,7 +68,7 @@ new Regular({
 
 ## 局部模板复用 {#partial}
 
-类似于[Handlebars的Partials](http://handlebarsjs.com/partials.html), Regular 中可以使用 include 语句来实现局部模板引入
+类似于[Handlebars的Partials](https://handlebarsjs.com/partials.html), Regular 中可以使用 include 语句来实现局部模板引入
 
 __Example__
 
@@ -134,7 +134,7 @@ const App = Regular.extend({
       partialContent={partialContent} />
   `,
   config( data ){
-  	data.partialTitle = '标题'
+    data.partialTitle = '标题'
     data.partialContent = '<p on-click={this.clickContent()} >内容:{content}</p>'
   },
   clickContent(){

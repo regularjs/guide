@@ -114,8 +114,8 @@ Regularjs本身已经提供了尽可能多的方式来方便你在不同的场�
 
 - [webpack](): ES6 或 Commonjs 或 AMD (一统浆糊)
 - [broswerify](): Commonjs
-- [NEJ](http://nej.netease.com): 类AMD规范( 网易杭州的前端模块规范 )
-- [requirejs](http://requirejs.org): AMD
+- [NEJ](https://nej.netease.com): 类AMD规范( 网易杭州的前端模块规范 )
+- [requirejs](https://requirejs.org): AMD
 
 > 本文只是介绍如何将Regular集成进这些系统中，而不是普及这些模块系统的使用方法，请大家自行学习。
 

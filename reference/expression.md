@@ -192,7 +192,7 @@ new Regular({
 
 * __set(context, value)__  *此函数不一定存在
 
-  如果表达式是一个合法的[LeftHandSideExpression](http://es5.github.io/#x11.2)，Regular会提取set函数，用来赋值，set函数通常用于实现双向绑定。
+  如果表达式是一个合法的[LeftHandSideExpression](https://es5.github.io/#x11.2)，Regular会提取set函数，用来赋值，set函数通常用于实现双向绑定。
 
   ```javascript
 
