@@ -39,7 +39,7 @@ new Component().$inject(document.body) //可以重复使用
 ```
 
 
-<script async src="//jsfiddle.net/leeluolee/3qt2g0mo/embed/result,js/"></script>
+<script async src="http://jsfiddle.net/leeluolee/3qt2g0mo/embed/result,js/"></script>
 
 __参考__
 
