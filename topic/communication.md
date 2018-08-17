@@ -227,7 +227,3 @@ Broadcastor.config -> Broadcastor.compile
 
 ```
 
-
-
-
-> 下一篇，应该会以redux(rgl-redux)为例，介绍一种基于modifyBodyComponent来解决跨组件的数据通信的方式
