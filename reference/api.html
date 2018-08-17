@@ -1,0 +1,1957 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>API · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="styleguide.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/component/">
+            
+                <a href="../basic/component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/interpolation.html">
+            
+                <a href="../basic/interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic/statement/">
+            
+                <a href="../basic/statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../basic/statement/list.html">
+            
+                <a href="../basic/statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../basic/statement/if.html">
+            
+                <a href="../basic/statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../basic/statement/include.html">
+            
+                <a href="../basic/statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="expression.html">
+            
+                <a href="expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic/data-binding.html">
+            
+                <a href="../basic/data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../advanced/composite.html">
+            
+                <a href="../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../advanced/modify.html">
+            
+                <a href="../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../topic/">
+            
+                <a href="../topic/">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../topic/template.html">
+            
+                <a href="../topic/template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../topic/ssr.html">
+            
+                <a href="../topic/ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../topic/mpregular">
+            
+                <span>
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../topic/performance.html">
+            
+                <a href="../topic/performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../topic/communication.html">
+            
+                <a href="../topic/communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../topic/redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../topic/rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../topic/todomvc.html">
+            
+                <a href="../topic/todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="styleguide.html">
+            
+                <a href="styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#api-reference"><b> </b>API Reference</a></li><ul><li><span class="title-icon "></span><a href="#&#x9759;&#x6001;&#x63A5;&#x53E3;"><b>1. </b>&#x9759;&#x6001;&#x63A5;&#x53E3;</a></li><ul><li><span class="title-icon "></span><a href="#extend"><b>1.1. </b>Component.extend( options ) </a></li><li><span class="title-icon "></span><a href="#implement"><b>1.2. </b>Component.implement(options) </a></li><li><span class="title-icon "></span><a href="#new-componentoptions"><b>1.3. </b>new Component(options)</a></li><li><span class="title-icon "></span><a href="#directive"><b>1.4. </b>Component.directive(name, definition) </a></li><li><span class="title-icon "></span><a href="#componentfilter"><b>1.5. </b>Component.filter</a></li><li><span class="title-icon "></span><a href="#componentevent"><b>1.6. </b>Component.event</a></li><li><span class="title-icon "></span><a href="#componentanimation"><b>1.7. </b>Component.animation</a></li><li><span class="title-icon "></span><a href="#componentcomponent"><b>1.8. </b>Component.component</a></li><li><span class="title-icon "></span><a href="#componentuse"><b>1.9. </b>Component.use</a></li></ul><li><span class="title-icon "></span><a href="#options"><b>2. </b>options </a></li><ul><li><span class="title-icon "></span><a href="#template"><b>2.1. </b>template</a></li><li><span class="title-icon "></span><a href="#name"><b>2.2. </b>name</a></li><li><span class="title-icon "></span><a href="#events"><b>2.3. </b>events</a></li><li><span class="title-icon "></span><a href="#data"><b>2.4. </b>data</a></li><li><span class="title-icon "></span><a href="#computed"><b>2.5. </b>computed</a></li></ul><li><span class="title-icon "></span><a href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;"><b>3. </b>&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</a></li><ul><li><span class="title-icon "></span><a href="#config-data-"><b>3.1. </b>config( data )</a></li><li><span class="title-icon "></span><a href="#init"><b>3.2. </b>init()</a></li><li><span class="title-icon "></span><a href="#destory"><b>3.3. </b>destory()</a></li><li><span class="title-icon "></span><a href="#modify"><b>3.4. </b>modifyBodyComponent( component, next ) </a></li></ul><li><span class="title-icon "></span><a href="#instance"><b>4. </b>&#x5B9E;&#x4F8B;&#x63A5;&#x53E3; </a></li><ul><li><span class="title-icon "></span><a href="#inject"><b>4.1. </b>component.$inject </a></li><li><span class="title-icon "></span><a href="#componentwatch"><b>4.2. </b>component.$watch</a></li><li><span class="title-icon "></span><a href="#componentunwatch"><b>4.3. </b>component.$unwatch</a></li><li><span class="title-icon "></span><a href="#componentupdate"><b>4.4. </b>component.$update</a></li><li><span class="title-icon "></span><a href="#componentget"><b>4.5. </b>component.$get</a></li><li><span class="title-icon "></span><a href="#componentrefs"><b>4.6. </b>component.$refs</a></li><li><span class="title-icon "></span><a href="#componenton"><b>4.7. </b>component.$on</a></li><li><span class="title-icon "></span><a href="#componentoff"><b>4.8. </b>component.$off</a></li><li><span class="title-icon "></span><a href="#componentemit"><b>4.9. </b>component.$emit</a></li><li><span class="title-icon "></span><a href="#componentmute"><b>4.10. </b>component.$mute</a></li><li><span class="title-icon "></span><a href="#componentbind"><b>4.11. </b>component.$bind</a></li></ul><li><span class="title-icon "></span><a href="#&#x5176;&#x5B83;"><b>5. </b>&#x5176;&#x5B83;</a></li><ul><li><span class="title-icon "></span><a href="#regulardom"><b>5.1. </b>Regular.dom</a></li><li><span class="title-icon "></span><a href="#regularconfig"><b>5.2. </b>Regular.config</a></li><li><span class="title-icon "></span><a href="#parse"><b>5.3. </b>Regular.parse </a></li></ul><li><span class="title-icon "></span><a href="#&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;"><b>6. </b>&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;</a></li></ul></ul></div><a href="#api-reference" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="api-reference"><a name="api-reference" class="anchor-navigation-ex-anchor" href="#api-reference"><i class="fa fa-link" aria-hidden="true"></i></a> API Reference</h1>
+<p><strong> &#x547D;&#x540D;&#x7EA6;&#x5B9A; </strong></p>
+<ul>
+<li><code>Component</code> &#x6B64;&#x63A5;&#x53E3;&#x540C;&#x65F6;&#x5C5E;&#x4E8E;<code>Regular</code>&#x53CA;&#x5176;&#x5B50;&#x7C7B;. </li>
+<li><code>Regular</code>&#x3000;&#x6B64;&#x63A5;&#x53E3;&#x53EA;&#x5C5E;&#x4E8E;Regular&#x672C;&#x8EAB;</li>
+<li><code>component</code>: &#x4EE3;&#x8868;Regular&#x53CA;&#x5176;&#x5B50;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;</li>
+</ul>
+<h2 id="&#x9759;&#x6001;&#x63A5;&#x53E3;"><a name="&#x9759;&#x6001;&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#&#x9759;&#x6001;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x9759;&#x6001;&#x63A5;&#x53E3;</h2>
+<h3 id="extend"><a name="extend" class="anchor-navigation-ex-anchor" href="#extend"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. Component.extend( options ) </h3>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EE7;&#x627F;&#x81EA;<code>Component</code>&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x53C2;&#x6570; <a href="#options">options</a> &#x4E2D;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6210;&#x4E3A; <strong>&#x539F;&#x578B;&#x5C5E;&#x6027;</strong>. </p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Component = Regular.extend({
+  template: <span class="hljs-string">`
+  &lt;div&gt;
+    &lt;h2 &gt;{count}&lt;/h2&gt;
+    &lt;button on-click={this.tick( &apos;a&apos; )} &gt;&#x70B9;&#x51FB;&#x52A0;a&lt;/button&gt;
+  &lt;/div&gt;
+  `</span>,
+  tick: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">posfix</span>) </span>{
+    <span class="hljs-keyword">this</span>.data.count += posfix;
+  }
+})
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/sega921w/11/embed/js,result/"></script>
+
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>Object</td>
+<td>&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x548C;&#x914D;&#x7F6E;,&#x89C1; <a href="#options"><strong>options</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return</strong> </p>
+<p>Component</p>
+<blockquote>
+<p>&#x6CE8;&#x610F; extend &#x662F;&#x539F;&#x578B;&#x7EE7;&#x627F;&#x7684;&#x4E00;&#x4E2A;&#x8BED;&#x6CD5;&#x7CD6;&#xFF0C;options&#x662F;&#x5B9E;&#x4F8B;&#x5171;&#x4EAB;&#x7684;</p>
+</blockquote>
+<h3 id="implement"><a name="implement" class="anchor-navigation-ex-anchor" href="#implement"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. Component.implement(options) </h3>
+<p>&#x6269;&#x5C55;Component&#x7684;<strong>&#x539F;&#x578B;&#x5C5E;&#x6027;&#x4E0E;&#x65B9;&#x6CD5;</strong>&#x3002; <a href="#options">options</a> &#x4E0E;<code>Component.extend</code>&#x4E00;&#x81F4;.&#x3000;</p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>Object</td>
+<td>&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x548C;&#x914D;&#x7F6E;,&#x89C1; <a href="#options"><strong>options</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return</strong> </p>
+<p>Component</p>
+<p><strong>&#x5C0F;&#x6280;&#x5DE7;</strong>: &#x901A;&#x8FC7; <strong>implement</strong> &#x4E0E; <strong>extend</strong> &#x6269;&#x5C55;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>this.supr(arg1, arg2..)</code>&#x8C03;&#x7528;&#x7236;&#x7C7B;&#x540C;&#x540D;&#x51FD;&#x6570;</p>
+<blockquote>
+<p>&quot;Regular&#x7684;&#x7C7B;&#x5F0F;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;&#x6765;&#x6E90;&#x4E8E;&#x8457;&#x540D;&#x7684;<a href="https://github.com/ded/klass" target="_blank">ded/klass</a>.&quot;</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<pre><code class="lang-js">Component.extend({
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.supr() <span class="hljs-comment">// call the super init</span>
+  }
+}).implement({
+  hello: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> msg </span>)</span>{
+    <span class="hljs-keyword">this</span>.supr( msg ) <span class="hljs-comment">// call the super hello</span>
+  }
+})
+</code></pre>
+<h3 id="new-componentoptions"><a name="new-componentoptions" class="anchor-navigation-ex-anchor" href="#new-componentoptions"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. new Component(options)</h3>
+<p><strong>Example</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Component({
+  <span class="hljs-comment">// ...other options </span>
+  data: {
+    username: <span class="hljs-string">&quot;leeluolee&quot;</span>
+  }
+})
+
+component.$inject(<span class="hljs-string">&apos;#container&apos;</span>);
+</code></pre>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td>Object</td>
+<td>&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x548C;&#x914D;&#x7F6E;,&#x89C1; <a href="#options"><strong>options</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p> Component&#x7684;&#x5B9E;&#x4F8B;: <a href="#instance">&#x67E5;&#x770B;&#x5B9E;&#x4F8B;&#x63A5;&#x53E3;</a></p>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x5316;&#x4F20;&#x5165;&#x7684; <a href="#options">options</a> &#x5C06;&#x6210;&#x4E3A;<strong>&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;</strong>, &#x610F;&#x5473;&#x5B83;&#x5C06;&#x8986;&#x76D6; extend &#x4E0E; implement &#x7684;&#x5B9A;&#x4E49;.&#x5E76;&#x4E14;&#x65B9;&#x6CD5;&#x4E2D;&#x65E0;&#x6CD5;&#x4F7F;&#x7528; <code>this.supr()</code></p>
+</blockquote>
+<p><a id="directive"></a></p>
+<h3 id="directive"><a name="directive" class="anchor-navigation-ex-anchor" href="#directive"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. Component.directive(name, definition) </h3>
+<p>&#x5B9A;&#x4E49;&#x6307;&#x4EE4;</p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>&#x6307;&#x4EE4;&#x540D;</td>
+</tr>
+<tr>
+<td>definition.link</td>
+<td>Function[required]</td>
+<td>&#x94FE;&#x63A5;&#x51FD;&#x6570;,&#x6307;&#x4EE4;&#x7F16;&#x8BD1;&#x65F6;&#x4F1A;&#x88AB;&#x8C03;&#x7528;</td>
+</tr>
+<tr>
+<td>definition.update</td>
+<td>Function[optional]</td>
+<td>&#x66F4;&#x65B0;&#x51FD;&#x6570;,&#x6307;&#x4EE4;&#x7ED1;&#x5B9A;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x53D8;&#x66F4;&#x65F6;&#x4F1A;&#x88AB;&#x8C03;&#x7528;</td>
+</tr>
+<tr>
+<td>definition.params</td>
+<td>Array[optional]</td>
+<td>&#x6307;&#x4EE4;&#x53C2;&#x6570;,&#x6307;&#x5B9A;&#x6307;&#x4EE4;&#x53C2;&#x6570;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x5982;&#x679C; definition &#x662F;&#x4E00;&#x4E2A; Function&#xFF0C;&#x5219;&#x89C6;&#x4E3A;&#x6210;&#x4E3A;link&#x51FD;&#x6570;</p>
+</blockquote>
+<p><strong>definition.link(elem, value)</strong></p>
+<ul>
+<li>elem &#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;</li>
+<li>value &#x5C5E;&#x6027;&#x503C;(&#x53EF;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x662F;&#x4E00;&#x4E2A;[Expression];</li>
+<li>this &#x8FD9;&#x91CC;&#x7684;this&#x6307;&#x5411;component&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;</li>
+</ul>
+<p><strong>definition.update(elem, value)</strong></p>
+<ul>
+<li>elem &#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;</li>
+<li>value &#x5C5E;&#x6027;&#x503C;(&#x53EF;&#x80FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x662F;&#x4E00;&#x4E2A;[Expression];</li>
+<li>this &#x8FD9;&#x91CC;&#x7684;this&#x6307;&#x5411;component&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;</li>
+</ul>
+<p><strong>definition.params</strong></p>
+<p><strong>Example</strong> (source code of builtin <code>r-html</code> )</p>
+<pre><code class="lang-javascript">
+Regular.directive(<span class="hljs-string">&apos;r-html&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">elem, value</span>)</span>{
+  <span class="hljs-keyword">this</span>.$watch(value, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newValue</span>)</span>{
+    elem.innerHTML = newValue
+  })
+})
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x7531;&#x4E8E;<a href="../core/binding.md">$watch</a>&#x540C;&#x65F6;&#x63A5;&#x53D7;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x8005;Expression, &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x6A21;&#x677F;&#x91CC;&#x4F20;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x63D2;&#x503C;, &#x6700;&#x7EC8;r-html&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;</p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;preview&apos;</span> <span class="hljs-attr">r-html</span>=<span class="hljs-string">&apos;content&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- or --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;preview&apos;</span> <span class="hljs-attr">r-html</span>=<span class="hljs-string">{content}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x5FC5;&#x8981;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;destroy&#x51FD;&#x6570;&#x505A;&#x6307;&#x4EE4;&#x7684;&#x9500;&#x6BC1;&#x5DE5;&#x4F5C;(&#x6BD4;&#x5982;&#x7ED1;&#x5B9A;&#x4E86;&#x8282;&#x70B9;&#x4E8B;&#x4EF6;). &#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;, regular&#x4E2D;watch&#x6570;&#x636E;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x9500;&#x6BC1;&#x7684;, regular&#x4F1A;&#x81EA;&#x52A8;&#x6E05;&#x7406;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-javascript">
+Regular.directive(<span class="hljs-string">&apos;some-directive&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">elem, value</span>)</span>{
+
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">destroy</span>(<span class="hljs-params"></span>)</span>{
+    ... destroy logic
+  }
+})
+</code></pre>
+<p><a id="filter"></a></p>
+<h3 id="componentfilter"><a name="componentfilter" class="anchor-navigation-ex-anchor" href="#componentfilter"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. Component.filter</h3>
+<p>regularjs &#x5F53;&#x7136;&#x4E5F;&#x652F;&#x6301;&#x666E;&#x904D;&#x5B58;&#x5728;&#x4E8E;&#x6A21;&#x677F;&#x4E2D;&#x7684;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x8FC7;&#x6EE4;&#x5668;&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x7684;&#x591A;&#x91CD;&#x8C03;&#x7528;. </p>
+<p>regularjs&#x4E5F;&#x652F;&#x6301;<a href="#two-way-filter"><strong>&#x53CC;&#x5411;&#x8FC7;&#x6EE4;</strong></a>, &#x6765;&#x5E2E;&#x52A9;&#x4F60;&#x89E3;&#x51B3;&#x53CC;&#x5411;&#x6570;&#x636E;&#x6D41;&#x7684;&#x9700;&#x6C42;</p>
+<p><strong>Usage</strong></p>
+<p><code>Component.filter(name, factory)</code></p>
+<p><strong>Syntax</strong></p>
+<p><code>{Expression|filter1: args.. | filter2: args...}</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>type</th>
+<th>detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>&#x8FC7;&#x6EE4;&#x5668;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>factory</td>
+<td>function object</td>
+<td>&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>factory</strong></p>
+<ul>
+<li><p><code>factory.get(origin, args...)</code> [Function]: </p>
+<p>&#x6570;&#x636E;&#x4ECE;&#x7EC8;&#x70B9;&#x5230;&#x6E90;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;. </p>
+</li>
+<li><p><code>factory.set(dest, args...)</code> [Function]: </p>
+<p>&#x4ECE;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x53CD;&#x63A8;&#x5230;&#x6E90;&#x5934;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;.
+.</p>
+</li>
+</ul>
+<p><em>&#x5982;&#x679C;&#x4F20;&#x5165;&#x7684;factory&#x662F;&#x51FD;&#x6570;&#x7C7B;&#x578B;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x6210;&#x4E3A;factory.get</em></p>
+<p><strong>Example1 &gt;</strong> </p>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// simplest date format</span>
+<span class="hljs-keyword">var</span> filter = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fix</span>(<span class="hljs-params">str</span>)</span>{
+    str = <span class="hljs-string">&quot;&quot;</span> + (str || <span class="hljs-string">&quot;&quot;</span>);
+    <span class="hljs-keyword">return</span> str.length &lt;= <span class="hljs-number">1</span>? <span class="hljs-string">&quot;0&quot;</span> + str : str;
+  }
+  <span class="hljs-keyword">var</span> maps = {
+    <span class="hljs-string">&apos;yyyy&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>)</span>{<span class="hljs-keyword">return</span> date.getFullYear()},
+    <span class="hljs-string">&apos;MM&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>)</span>{<span class="hljs-keyword">return</span> fix(date.getMonth() + <span class="hljs-number">1</span>); },
+    <span class="hljs-string">&apos;dd&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>)</span>{ <span class="hljs-keyword">return</span> fix(date.getDate()) },
+    <span class="hljs-string">&apos;HH&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>)</span>{ <span class="hljs-keyword">return</span> fix(date.getHours()) },
+    <span class="hljs-string">&apos;mm&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>)</span>{ <span class="hljs-keyword">return</span> fix(date.getMinutes())}
+  }
+
+  <span class="hljs-keyword">var</span> trunk = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-built_in">Object</span>.keys(maps).join(<span class="hljs-string">&apos;|&apos;</span>),<span class="hljs-string">&apos;g&apos;</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, format</span>)</span>{
+    format = format || <span class="hljs-string">&quot;yyyy-MM-dd HH:mm&quot;</span>;
+    value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(value);
+
+    <span class="hljs-keyword">return</span> format.replace(trunk, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">capture</span>)</span>{
+      <span class="hljs-keyword">return</span> maps[capture]? maps[capture](value): <span class="hljs-string">&quot;&quot;</span>;
+    });
+  }
+}();
+Regular.filter(<span class="hljs-string">&quot;format&quot;</span>, filter)
+</code></pre>
+<p>&#x7136;&#x540E;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{time| format: &apos;yyyy-MM-dd HH:mm&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>&#x8F93;&#x51FA;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>2014-12-31 12:30<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p><a href="#" id="two-way-filter"></a></p>
+<h4 id="&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;"><a name="&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;</h4>
+<p>&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;&#x4E3B;&#x8981;&#x662F;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x7684;&#x5BF9;&#x6D41;, &#x5BF9;&#x4EFB;&#x610F;&#x6570;&#x636E;&#x8BFB;&#x6216;&#x5199;&#x64CD;&#x4F5C;&#x65F6;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#x64CD;&#x4F5C;, &#x4E0E;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;&#x5B9A;&#x4E49;&#x662F;&#x4E0D;&#x4E0E;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;,&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x590D;&#x7528;&#x7684;&#x62BD;&#x8C61;.</p>
+<p>&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;&#x5982;&#x5176;&#x540D;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x7528;&#x5728;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x4E0A;&#xFF0C; &#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#xFF0C; r-model &#x5F97;&#x4EE5;&#x4E0E;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x3002; &#x5F53;&#x7136;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x5728;&#x5176;&#x5B83;&#x53EF;&#x80FD;&#x6709;&#x201C;&#x6570;&#x636E;&#x56DE;&#x6D41;&#x201D;&#x573A;&#x5408;&#xFF0C;&#x6BD4;&#x5982;<a href="#composite">&#x5185;&#x5D4C;&#x7EC4;&#x4EF6;</a></p>
+<p>take <code>{[1,2,3]|join: &apos;-&apos;}</code> for example</p>
+<p> &#x8FC7;&#x6EE4;&#x5668;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-js">Regular.filter(<span class="hljs-string">&apos;join&apos;</span>, {
+  <span class="hljs-comment">//[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;] - &gt; &apos;1-2-3&apos;</span>
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">origin, split </span>)</span>{
+    <span class="hljs-keyword">return</span> origin.join( split || <span class="hljs-string">&quot;-&quot;</span> );
+  },
+  <span class="hljs-comment">// **Important **</span>
+  <span class="hljs-comment">// &quot;1&quot;-&quot;2&quot;-&quot;3&quot; - &gt; [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]</span>
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">dest, split </span>)</span>{
+    <span class="hljs-keyword">return</span> dest.split( split || <span class="hljs-string">&quot;-&quot;</span> );
+  }
+})
+</code></pre>
+<pre><code class="lang-html">
+{array|json}
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{array|join:&apos;-&apos;}</span> &gt;</span>
+</code></pre>
+<p><a href="https://codepen.io/leeluolee/pen/jEGJmy" target="_blank">&#x3010; DEMO : two-way filter&#x3011;</a></p>
+<h4 id="&#x5185;&#x5EFA;&#x8FC7;&#x6EE4;&#x5668;"><a name="&#x5185;&#x5EFA;&#x8FC7;&#x6EE4;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x5EFA;&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5EFA;&#x8FC7;&#x6EE4;&#x5668;</h4>
+<h5 id="json"><a name="json" class="anchor-navigation-ex-anchor" href="#json"><i class="fa fa-link" aria-hidden="true"></i></a>json</h5>
+<p> &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;</p>
+<p><strong>example</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">&quot;&lt;h2&gt;{user|json}&lt;/h2&gt;&quot;</span>
+})
+
+component.$update(<span class="hljs-string">&quot;user|json&quot;</span>, <span class="hljs-string">&quot;{&apos;name&apos;: &apos;leeluolee&apos;, &apos;age&apos;: 10}&quot;</span>)
+<span class="hljs-comment">//console.log(user) --&gt; {&apos;user&apos;:&apos;leeluolee&apos;, &apos;age&apos;: 10}</span>
+</code></pre>
+<p><strong>Only Browser that support JSON API can get the json filter</strong></p>
+<h5 id="last"><a name="last" class="anchor-navigation-ex-anchor" href="#last"><i class="fa fa-link" aria-hidden="true"></i></a>last</h5>
+<p> &#x83B7;&#x5F97;&#x6570;&#x7EC4;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;, &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x5411;&#x8FC7;&#x6EE4;&#x5668;</p>
+<pre><code class="lang-html">{[1,2,3]|last}  ===&gt;  3
+</code></pre>
+<p><a href="##" id="event"></a></p>
+<h3 id="componentevent"><a name="componentevent" class="anchor-navigation-ex-anchor" href="#componentevent"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. Component.event</h3>
+<p><strong>Usage</strong></p>
+<p><code>Component.event(name, factory)</code></p>
+<p>&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;dom&#x4E8B;&#x4EF6;</p>
+<p><strong>Argument</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>the custom event name</td>
+</tr>
+<tr>
+<td>factory</td>
+<td>Function</td>
+<td>Factory function for creating event type</td>
+</tr>
+</tbody>
+</table>
+<p><a href="##" name="animation"></a></p>
+<h3 id="componentanimation"><a name="componentanimation" class="anchor-navigation-ex-anchor" href="#componentanimation"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. Component.animation</h3>
+<p>&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x52A8;&#x753B;command. animation&#x63A5;&#x53E3;&#x5B8C;&#x5168;&#x662F;&#x4E3A;<code>r-animation</code>&#x6307;&#x4EE4;&#x670D;&#x52A1;&#x7684;.</p>
+<p>&#x67E5;&#x770B; <a href="https://regularjs.github.io/guide/zh/animation/README.html" target="_blank">&#x6307;&#x5357;: animation</a> &#x4E86;&#x89E3;&#x66F4;&#x591A;</p>
+<p><strong>Usage</strong></p>
+<p>Component.animation(name, factory)</p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>the custom animation name</td>
+</tr>
+<tr>
+<td>factory</td>
+<td>Function</td>
+<td>Factory function for creating command</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<p><a href="##" name="component"></a></p>
+<h3 id="componentcomponent"><a name="componentcomponent" class="anchor-navigation-ex-anchor" href="#componentcomponent"><i class="fa fa-link" aria-hidden="true"></i></a>1.8. Component.component</h3>
+<p>&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x4F7F;&#x5176;&#x53EF;&#x4EE5;&#x88AB;,&#x3000;&#x8FD9;&#x91CC;&#x7C7B;&#x4F3C;&#x4E0E;&#x5728;<a href="#options">options</a>&#x4E2D;&#x58F0;&#x660E;<code>name</code></p>
+<p><strong>Usage</strong></p>
+<p><code>Component.component(name, factory)</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>the name used to insert Component in template</td>
+</tr>
+<tr>
+<td>factory</td>
+<td>Component</td>
+<td>A Component to be register</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> Pager = Regular.extend({
+  <span class="hljs-comment">// other options</span>
+})
+
+Component.component(<span class="hljs-string">&apos;pager&apos;</span>, Pager)
+
+<span class="hljs-comment">// you can use pager as nested component</span>
+Component2 = Component.extend({
+  template: <span class="hljs-string">&quot;&lt;pager&gt;&lt;/pager&gt;&quot;</span>
+})
+</code></pre>
+<h3 id="componentuse"><a name="componentuse" class="anchor-navigation-ex-anchor" href="#componentuse"><i class="fa fa-link" aria-hidden="true"></i></a>1.9. Component.use</h3>
+<p><strong>Usage</strong></p>
+<p><code>Component.use(factory)</code></p>
+<p>&#x8457;&#x540D;&#x7684;angular&#x4E2D;&#x6A21;&#x5757;&#x5316;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;<code>angular.module()</code>&#x548C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;, &#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x6709;factory&#x53EF;&#x4EE5;&#x6709;filter&#x53EF;&#x4EE5;&#x6709;directive&#x7B49;&#x7B49;.</p>
+<p>&#x5728;regular&#x4E2D;&#x4E0D;&#x53EF;&#x80FD;&#x7167;&#x642C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;, &#x8FD9;&#x662F;&#x56E0;&#x4E3A;</p>
+<ul>
+<li><p>regular&#x4E2D;&#x6CA1;&#x6709;<code>$rootScope.$digest()</code>&#x8FD9;&#x79CD;&#x5168;&#x5C40;&#x6027;&#x7684;<strong>&#x89E3;&#x836F;</strong>&#x65E0;&#x8111;&#x7684;&#x4FC3;&#x4F7F;&#x6240;&#x6709;&#x7ED1;&#x5B9A;&#x8FDB;&#x5165;&#x6570;&#x636E;&#x68C0;&#x67E5;&#x9636;&#x6BB5;&#xFF0C;regular&#x7EC4;&#x4EF6;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x90FD;&#x662F;&#x72EC;&#x7ACB;&#x7684;, &#x8FD9;&#x5C31;&#x51B3;&#x5B9A;&#x4E86;&#x5FC5;&#x987B;&#x8BA9;&#x6269;&#x5C55;&#x5EFA;&#x7ACB;&#x4E0E;&#x7EC4;&#x4EF6;&#x7684;&#x5173;&#x7CFB;.</p>
+<blockquote>
+<p>&#x6BD4;&#x5982;angular&#x7684;<code>$timeout</code>&#x4E4B;&#x7C7B;&#x7684;&#x5B9E;&#x73B0;&#x53EA;&#x9700;&#x5728;&#x5B9A;&#x65F6;&#x5668;&#x5B8C;&#x6210;&#x540E;<code>$rootScope.$digest()</code>&#x5373;&#x53EF;&#x8FDB;&#x5165;&#x5168;&#x5C40;&#x7684;&#x6570;&#x636E;&#x68C0;&#x67E5;, &#x800C;regular&#x4E2D;<a href="#timeout">timeout</a>&#x4E4B;&#x540E;&#x5FC5;&#x987B;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;<code>$update()</code>&#x624D;&#x8FDB;&#x5165;&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x7684;&#x6570;&#x636E;&#x68C0;&#x67E5;&#x9636;&#x6BB5;,&#x5373;&#x9700;&#x5EFA;&#x7ACB;&#x4E0E;&#x7EC4;&#x4EF6;&#x7684;&#x5173;&#x7CFB;.</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>&#x6A21;&#x5757;&#x63D2;&#x4EF6;&#x5E94;&#x8BE5;&#x662F;&#x4E0E;&#x7EC4;&#x4EF6;&#x65E0;&#x5173;&#x7684;, &#x7ED1;&#x5B9A;&#x53EA;&#x5E94;&#x8BE5;&#x5728;&#x88AB;&#x4F7F;&#x7528;&#x65F6;&#x53D1;&#x751F;, &#x8FD9;&#x6837;&#x624D;&#x662F;&#x53EF;&#x590D;&#x7528;&#x7684;&#x6A21;&#x5757;&#x63D2;&#x4EF6;.</li>
+</ul>
+<p>&#x6240;&#x4EE5;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x63D2;&#x4EF6;&#x7684;&#x5199;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;&#x8FD9;&#x6837;&#x7684;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">FooPlugin</span>(<span class="hljs-params">Componenet</span>)</span>{
+  Component.implement()<span class="hljs-comment">// implement method</span>
+    .filter()          <span class="hljs-comment">// define filter</span>
+    .directive()       <span class="hljs-comment">// define directive</span>
+    .event()           <span class="hljs-comment">// define custom event</span>
+}
+
+<span class="hljs-keyword">var</span> YourComponent = Regular.extend();
+
+FooPlugin(YourComponent);   <span class="hljs-comment">// lazy bind</span>
+FooPlugin(Regular);         <span class="hljs-comment">// lazy bind to globals</span>
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x66F4;&#x7EDF;&#x4E00;, &#x6240;&#x6709;Component&#x90FD;&#x6709;&#x4E00;&#x4E2A;<code>use</code>&#x51FD;&#x6570;&#x6765;&#x7EDF;&#x4E00;&apos;&#x4F7F;&#x7528;&apos;&#x63D2;&#x4EF6;, &#x5982;&#x4E0A;&#x4F8B;&#x53EF;&#x4EE5;&#x5199;&#x6210;</p>
+<pre><code class="lang-javascript">
+YourComponent.use(FooPlugin);
+
+<span class="hljs-comment">// global</span>
+Regular.use(FooPlugin);
+</code></pre>
+<h2 id="options"><a name="options" class="anchor-navigation-ex-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a>2. options </h2>
+<p><code>new Component</code>&#xFF0C;<code>Component.extend</code>, <code>Component.implement</code>&#x3000;&#x90FD;&#x63A5;&#x53D7;&#x540C;&#x4E00;&#x79CD; <strong>options</strong> &#x53C2;&#x6570;</p>
+<blockquote>
+<p>&#x6CA1;&#x6709;&#x63D0;&#x53CA;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x90FD;&#x4F1A;&#x81EA;&#x52A8;&#x6210;&#x4E3A;Component&#x7684;&#x539F;&#x578B;&#x5C5E;&#x6027;( &#x6216;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027; )</p>
+</blockquote>
+<h3 id="template"><a name="template" class="anchor-navigation-ex-anchor" href="#template"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. template</h3>
+<ul>
+<li>type: String | AST</li>
+</ul>
+<p>&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x9700;&#x8981;&#x9075;&#x5FAA;<a href="syntax.html">&#x6A21;&#x677F;&#x8BED;&#x6CD5;</a>&#xFF0C;&#x6A21;&#x677F;&#x53EA;&#x4F1A;&#x5728;&#x9996;&#x6B21;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x88AB;&#x7F16;&#x8BD1;&#x4E00;&#x6B21;</p>
+<blockquote>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5728;&#x6784;&#x5EFA;&#x65F6;&#x901A;&#x8FC7; <code>Regular.parse</code> &#x5C06;&#x6A21;&#x677F;&#x5148;&#x5904;&#x7406;&#x6210; <code>AST</code> &#x3002;</p>
+</blockquote>
+<h3 id="name"><a name="name" class="anchor-navigation-ex-anchor" href="#name"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. name</h3>
+<p>&#x6CE8;&#x518C;&#x7EC4;&#x4EF6;&#x5230;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5185;&#xFF0C;&#x4F7F;&#x5176;&#x53EF;&#x4EE5;&#x88AB;&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;&#x3002;</p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#x901A;&#x8FC7;name&#x6CE8;&#x518C;&#xFF0C;&#x662F;&#x5168;&#x5C40;&#x7684;</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Component = SuperComponent.extend({
+  <span class="hljs-comment">//other options</span>
+  name: <span class="hljs-string">&apos;foo1&apos;</span>
+})
+
+<span class="hljs-keyword">const</span> Component2 = SuperComponent.extend({
+  template: <span class="hljs-string">&quot;&lt;foo1&gt;&lt;/foo1&gt;&quot;</span>
+})
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4F7F;&#x7528;<a href="#component">Component.component</a> &#x6CE8;&#x518C;,&#x3000;&#x4E0A;&#x4F8B;&#x5B9E;&#x9645;&#x4E0A;&#x7B49;&#x540C;&#x4E8E;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Component = SuperComponent.extend({});
+
+Regular.component(<span class="hljs-string">&apos;foo1&apos;</span>, Component)
+</code></pre>
+<h3 id="events"><a name="events" class="anchor-navigation-ex-anchor" href="#events"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. events</h3>
+<ul>
+<li>type: Object</li>
+</ul>
+<p>&#x6279;&#x91CF;&#x5B9A;&#x4E49;&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;&#xFF0C;__&#x8FD9;&#x4E2A;&#x5728;&#x9700;&#x8981;&#x7ED1;&#x5B9A;&#x4E00;&#x4E9B;<a href="../basic/event.html">&#x5185;&#x7F6E;&#x4E8B;&#x4EF6;</a>&#x65F6;&#x683C;&#x5916;&#x6709;&#x7528;&#x3002;</p>
+<pre><code class="lang-javascript">
+Regular.extend({
+  events: {
+    <span class="hljs-string">&quot;$init&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+      <span class="hljs-comment">// same in component.init</span>
+    },
+    <span class="hljs-string">&quot;$destroy&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+      <span class="hljs-comment">// same in component.destroy</span>
+    }
+  }
+})
+</code></pre>
+<h3 id="data"><a name="data" class="anchor-navigation-ex-anchor" href="#data"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. data</h3>
+<ul>
+<li>type: Object</li>
+</ul>
+<p><strong>&#x26A0;&#xFE0F;&#x4E0D;&#x8981;&#x5728; extend &#x6216; implement &#x65F6;&#x5B9A;&#x4E49;data&#x5C5E;&#x6027; !!!</strong> &#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x6240;&#x6709;&#x5B9E;&#x4F8B;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;</p>
+<blockquote>
+<p>&#x6C38;&#x8FDC;&#x53EA;&#x5728; <code>new Component</code> &#x6216;  <code>config</code> &#x4E2D;&#x5B9A;&#x4E49;&#x521D;&#x59CB;&#x5316;&#x51FD;&#x6570;</p>
+</blockquote>
+<h3 id="computed"><a name="computed" class="anchor-navigation-ex-anchor" href="#computed"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. computed</h3>
+<ul>
+<li>Type: Object</li>
+</ul>
+<p>&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x4E3A;&#x952E;&#x503C;&#x5BF9;</p>
+<ul>
+<li>key: &#x8868;&#x8FBE;&#x5F0F;&#x540D;</li>
+<li>value: &#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="lang-js">comuted: {
+  title: 
+}
+</code></pre>
+<p>&#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;&#x652F;&#x6301;&#x51E0;&#x79CD;&#x7C7B;&#x578B;</p>
+<h2 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</h2>
+<p><a href="#options">options</a> &#x4E2D;&#x8FD8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</p>
+<h3 id="config-data-"><a name="config-data-" class="anchor-navigation-ex-anchor" href="#config-data-"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. config( data )</h3>
+<ul>
+<li>type: Function</li>
+</ul>
+<p>&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1; <strong>&#x4E4B;&#x524D;</strong> &#x88AB;&#x8C03;&#x7528;&#xFF0C;<strong>config&#x4E00;&#x822C;&#x662F;&#x7528;&#x6765;&#x521D;&#x59CB;&#x5316;&#x53C2;&#x6570;</strong>&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x7684; <code>data</code> &#x5373;&#x4F60;&#x5728;new Component() &#x65F6;&#x4F20;&#x5165;&#x7684; <code>data</code>&#x5C5E;&#x6027;&#x3002;</p>
+<h3 id="init"><a name="init" class="anchor-navigation-ex-anchor" href="#init"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. init()</h3>
+<ul>
+<li>type: Function</li>
+</ul>
+<p>&#x4F1A;&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1; <strong>&#x4E4B;&#x540E;</strong>( &#x5373;DOM&#x7ED3;&#x6784;&#x5DF2;&#x4EA7;&#x751F; )&#x88AB;&#x8C03;&#x7528;. &#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x4E0E;DOM&#x76F8;&#x5173;&#x7684;&#x903B;&#x8F91;&#x3000;</p>
+<h3 id="destory"><a name="destory" class="anchor-navigation-ex-anchor" href="#destory"><i class="fa fa-link" aria-hidden="true"></i></a>3.3. destory()</h3>
+<ul>
+<li>type: Function</li>
+</ul>
+<p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x6709;&#x989D;&#x5916;&#x7684;&#x56DE;&#x6536;&#x903B;&#x8F91;, &#x4F60;&#x53EF;&#x4EE5;&#x91CD;&#x5199;destroy&#x65B9;&#x6CD5; </p>
+<p><strong>&#x8BB0;&#x5F97;&#x8C03;&#x7528;<code>this.supr()</code>&#x6765;&#x8FD0;&#x884C;&#x9ED8;&#x8BA4;&#x7684;&#x56DE;&#x6536;&#x903B;&#x8F91; !!!!</strong>, &#x5426;&#x5219;&#x4F1A;&#x56DE;&#x6536;&#x5931;&#x8D25;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Component = Regular.extend({
+<span class="hljs-comment">//.....</span>
+  destroy: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.supr(); <span class="hljs-comment">// call the super destroy </span>
+    ...other logic
+  }
+})
+
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Component();
+
+component.destory();
+</code></pre>
+<h3 id="modify"><a name="modify" class="anchor-navigation-ex-anchor" href="#modify"><i class="fa fa-link" aria-hidden="true"></i></a>3.4. modifyBodyComponent( component, next ) </h3>
+<h2 id="instance"><a name="instance" class="anchor-navigation-ex-anchor" href="#instance"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5B9E;&#x4F8B;&#x63A5;&#x53E3; </h2>
+<p>component&#x5373;&#x4EE3;&#x8868;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;, &#x6CE8;&#x610F;&#x8FD9;&#x4E9B;&#x516C;&#x6709;&#x90FD;&#x6709;<code>$</code>&#x524D;&#x7F00; &#x610F;&#x5473;&#x4E0D;&#x5EFA;&#x8BAE;&#x8FDB;&#x884C;&#x91CD;&#x5199;</p>
+<h3 id="inject"><a name="inject" class="anchor-navigation-ex-anchor" href="#inject"><i class="fa fa-link" aria-hidden="true"></i></a>4.1. component.$inject </h3>
+<p>&#x63D2;&#x5165;&#x7EC4;&#x4EF6;&#x5230;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$inject(element[, direction])</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element</td>
+<td><code>Node</code> <code>false</code></td>
+<td>&#x88AB;&#x63D2;&#x5165;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x5165;<strong>false</strong>&#x5219;&#x4EE3;&#x8868;&#x5C06;&#x6B64;&#x7EC4;&#x4EF6;&#x4ECE;dom&#x4E2D;&#x79FB;&#x9664;</td>
+</tr>
+<tr>
+<td>direction<em>(optional default:&apos;bottom&apos;)</em></td>
+<td>String</td>
+<td>&#x7EC4;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x76EE;&#x6807;&#x7684;&#x4F4D;&#x7F6E;.&#x3000;&#x53EF;&#x4EE5;&#x662F; &apos;top&apos;, &apos;bottom&apos;, &apos;after&apos;, or &apos;before&apos;.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example &gt;</strong></p>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x5DF2;&#x7ECF;&#x6709;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Component({
+  template: <span class="hljs-string">&quot;&lt;h2&gt;{title}&lt;/h2&gt;&quot;</span>,
+  data: { title : <span class="hljs-string">&quot;Example&quot;</span> }
+})
+<span class="hljs-keyword">var</span> div = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;#div&quot;</span>);
+</code></pre>
+<p> &#x548C;&#x4E00;&#x6BB5;html&#x7247;&#x6BB5;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;child&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<ul>
+<li><p><code>compnent.$inject( div )</code> or <code>component.$inject( div, &apos;bottom&apos; )</code></p>
+<p><strong>resulting html</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;child&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li><p><code>compnent.$inject( div, &apos;top&apos; )</code> </p>
+<p><strong>resulting html</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;child&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li><p><code>compnent.$inject( div, &apos;after&apos; )</code></p>
+<p><strong>resulting html</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;child&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>or <code>component.$inject( div, &apos;before&apos; )</code></p>
+<p><strong>resulting html</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&apos;child&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li><p><strong><code>component.$inject( false )</code></strong>(&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x8C03;&#x7528;&#x4E86;&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x63D2;&#x5165;&#x4E86;&#x672C;&#x7EC4;&#x4EF6;)</p>
+<p><strong> &#x5B8C;&#x5168;&#x4ECE;&#x539F;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x79FB;&#x9664;&#x5B83;(&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x9500;&#x6BC1;&#xFF0C;&#x4F60;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x518D;&#x6B21;$inject&#x5B83;)</strong></p>
+<p><strong>resulting html</strong></p>
+<pre><code class="lang-javascript">&lt;div id=&quot;div&quot;&gt;
+  &lt;div class=&apos;child&apos;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+<p><strong>Tips</strong></p>
+<p>&#x4F60;&#x901A;&#x8FC7;&#x591A;&#x6B21;&#x8C03;&#x7528;<code>$inject</code> &#x5C06;&#x7EC4;&#x4EF6;&#x6709;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x79FB;&#x52A8;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;</p>
+<p><a id="watch"></a></p>
+<h3 id="componentwatch"><a name="componentwatch" class="anchor-navigation-ex-anchor" href="#componentwatch"><i class="fa fa-link" aria-hidden="true"></i></a>4.2. component.$watch</h3>
+<p>&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x76D1;&#x542C;&#x56DE;&#x8C03;&#xFF0C;&#x4E00;&#x65E6;&#x7ED1;&#x5B9A;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x5B83;&#x5C06;&#x4F1A;&#x88AB;&#x8C03;&#x7528;</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$watch(expression, callback [, options])</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expression</td>
+<td>Expression</td>
+<td>&#x4E00;&#x65E6;&#x8868;&#x8FBE;&#x5F0F;&#x6C42;&#x503C;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x56DE;&#x8C03;&#x4F1A;&#x88AB;&#x89E6;&#x53D1;</td>
+</tr>
+<tr>
+<td>callback(newValue, oldValue)</td>
+<td>Function</td>
+<td>&#x56DE;&#x8C03;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;. <br>1. newValue: &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x65B0;&#x503C;. <br>2.oldValue: &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x539F;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Return</strong></p>
+<p>watchid [Number]: &#x76D1;&#x542C;id,&#x7528;&#x4E8E;&#x65B9;&#x6CD5; <a href="#unwatch">$unwatch</a></p>
+<ul>
+<li>expression &#x4F1A;&#x5728;&#x6BCF;&#x6B21;&#x810F;&#x68C0;&#x67E5;&#x65F6;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x5E76;&#x6BD4;&#x8F83;&#x4E4B;&#x524D;&#x7684;&#x503C;</li>
+<li>&#x5F53;&#x503C;&#x4E0E;&#x4E0A;&#x6B21;&#x6C42;&#x503C;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x5224;&#x65AD;&#x4F9D;&#x636E;&#x662F;&#x4E25;&#x683C;&#x4E0D;&#x76F8;&#x7B49;&#x5373;<code>!==</code>.&#x3000;&#x4E00;&#x79CD;&#x4F8B;&#x5916;&#x5C31;&#x662F;&#x5F53;&#x6C42;&#x503C;&#x4E3A;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;Regularjs&#x4F1A;&#x4F7F;&#x7528;<a href="https://en.wikipedia.org/wiki/Levenshtein_distance" target="_blank">&#x83B1;&#x6587;&#x65AF;&#x5766;&#x8DDD;&#x79BB;</a>&#x8BA1;&#x7B97;&#x6570;&#x7EC4;&#x5DEE;&#x5F02;</li>
+</ul>
+<pre><code class="lang-js">component.$watch(<span class="hljs-string">&quot;user.name&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">newValue, oldValue</span>)</span>{
+  alert(<span class="hljs-string">&quot;user.name changed from &quot;</span> + oldValue + <span class="hljs-string">&quot; to &quot;</span> + newValue) ; 
+})
+</code></pre>
+<p><a name="unwatch"></a></p>
+<h3 id="componentunwatch"><a name="componentunwatch" class="anchor-navigation-ex-anchor" href="#componentunwatch"><i class="fa fa-link" aria-hidden="true"></i></a>4.3. component.$unwatch</h3>
+<p>&#x5229;&#x7528;watchid&#x89E3;&#x7ED1;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x76D1;&#x542C;,&#x3000;&#x4E00;&#x822C;&#x6765;&#x8BB2;&#x4F60;&#x5F88;&#x5C11;&#x4F1A;&#x7528;&#x5230;&#x5B83;&#xFF0C;&#x56E0;&#x4E3A;&#x6240;&#x6709;regularjs&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x56DE;&#x6536;&#xFF0C;&#x9664;&#x975E;&#x4F60;&#x60F3;&#x5728;&#x6A21;&#x677F;&#x56DE;&#x6536;&#x4E4B;&#x524D;&#x6E05;&#x9664;&#x67D0;&#x4E2A;&#x7ED1;&#x5B9A;.</p>
+<p><strong>Usage</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular();
+
+component.$watch(<span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">b</span>)</span>{
+  alert(<span class="hljs-string">&apos;b watcher 1&apos;</span>);
+})
+
+<span class="hljs-keyword">var</span> id = component.$watch(<span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  alert(<span class="hljs-string">&apos;b watcher 2&apos;</span>);
+})
+
+component.$unwatch(id);
+component.$update(<span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-number">100</span>); <span class="hljs-comment">// only alert &apos;watcher 1&apos;</span>
+</code></pre>
+<p><a href="##" id="update"></a></p>
+<h3 id="componentupdate"><a name="componentupdate" class="anchor-navigation-ex-anchor" href="#componentupdate"><i class="fa fa-link" aria-hidden="true"></i></a>4.4. component.$update</h3>
+<p><code>component.$update</code> is used to synchronize data and view</p>
+<p>&#x7531;&#x4E8E;regularjs&#x662F;&#x57FA;&#x4E8E;&#x810F;&#x68C0;&#x67E5;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x4E0D;&#x662F;&#x7531;regularjs&#x672C;&#x8EAB;&#x63A7;&#x5236;&#x7684;&#x64CD;&#x4F5C;(&#x5982;&#x4E8B;&#x4EF6;&#x3001;&#x6307;&#x4EE4;)&#x5F15;&#x8D77;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x4F60;&#x624B;&#x52A8;&#x7684;&#x53BB;&#x540C;&#x6B65;data&#x4E0E;view&#x7684;&#x6570;&#x636E;.
+$update&#x65B9;&#x6CD5;&#x5373;&#x5E2E;&#x52A9;&#x5C06;&#x4F60;&#x7684;data&#x540C;&#x6B65;&#x5230;view&#x5C42;.</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$update([expr] [, value])</code></p>
+<p>&#x66F4;&#x65B0;&#x67D0;&#x4E2A;&#x503C;&#xFF0C;&#x5E76;&#x5F3A;&#x5236;&#x8FDB;&#x5165;digest&#x9636;&#x6BB5;&#xFF0C;&#x5373;&#x810F;&#x68C0;&#x67E5;.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><p>expr(Optional) [Expression| Function | String] - expression&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x79CD;&#x53C2;&#x6570;&#x7C7B;&#x578B;</p>
+<ul>
+<li>String: &#x6B64;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x5148;&#x88AB;Regular.expression&#x5904;&#x7406;&#x4E3A;Expression</li>
+<li>Expression: &#x6B64;expression&#x9700;&#x8981;&#x6709;set&#x51FD;&#x6570;, <a href="../syntax/expression.md">&#x67E5;&#x770B;Expression</a></li>
+<li>Object: &#x591A;&#x91CD;&#x8BBE;&#x503C;</li>
+</ul>
+</li>
+<li><p>value - &#x8BBE;&#x7F6E;&#x7684;&#x503C;</p>
+</li>
+</ul>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">&quot;&lt;h2 ref=&apos;h2&apos; on-click={title=title.toLowerCase()}&gt;{title}&lt;/h2&gt;&quot;</span>,
+  data: {
+    title: <span class="hljs-string">&quot;REGULARJS&quot;</span>
+  }
+});
+
+<span class="hljs-comment">//=&gt; log &apos;REGULARJS&apos; , with no doubt</span>
+<span class="hljs-built_in">console</span>.log( component.$refs.h2.innerHTML ) 
+
+component.data.title = <span class="hljs-string">&quot;LEELUOLEE&quot;</span>;
+
+<span class="hljs-comment">//=&gt; also log &apos;REGULARJS&apos;, regularjs don&apos;t know the value is changed.</span>
+<span class="hljs-built_in">console</span>.log( component.$refs.h2.innerHTML ) <span class="hljs-comment">//</span>
+
+<span class="hljs-comment">// force synchronizing data and view </span>
+component.$update()
+
+<span class="hljs-comment">//=&gt; also &apos;REGULARJS&apos;. synchronize now.</span>
+<span class="hljs-built_in">console</span>.log( component.$refs.h2.innerHTML ) <span class="hljs-comment">//</span>
+
+
+<span class="hljs-comment">// trigger on-click event  </span>
+component.$refs.h2.click();
+
+
+<span class="hljs-comment">// should log leeluolee.</span>
+<span class="hljs-comment">// the Expression `title=title.toLowerCase()` is actived.</span>
+<span class="hljs-comment">// when listener is done, regularjs will enter digest phase</span>
+<span class="hljs-built_in">console</span>.log( component.$refs.h2.innerHTML ) <span class="hljs-comment">//</span>
+</code></pre>
+<p>you may need check <a href="#refs">$refs</a> first</p>
+<p>Beacuse you may need to set a complex Expression, $update also accept optional params to set the property easily, for Example</p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// 1. simple</span>
+component.$update(<span class="hljs-string">&quot;user.name&quot;</span>, <span class="hljs-string">&apos;leeluolee&apos;</span>)
+
+<span class="hljs-comment">// is equals to</span>
+
+component.data.user.name = <span class="hljs-string">&apos;leeluolee&apos;</span>
+component.$update()
+
+
+<span class="hljs-comment">// 2. multiple</span>
+component.$update({
+  <span class="hljs-string">&quot;user.name&quot;</span>: <span class="hljs-string">&quot;leeluolee&quot;</span>,
+  <span class="hljs-string">&quot;user.age&quot;</span>: <span class="hljs-number">20</span>
+})
+<span class="hljs-comment">// is equlas to</span>
+component.data.user.name = <span class="hljs-string">&apos;leeluolee&apos;</span>
+component.data.user.age = <span class="hljs-number">20</span>
+component.$update()
+</code></pre>
+<p>&#x4F60;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x66F4;&#x590D;&#x6742;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E0D;&#x8FC7;&#x4F60;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x4F60;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x53EF;&#x8BBE;&#x503C;&#x7684;, &#x4E0D;&#x8FC7;&#x7531;&#x4E8E;&#x4F1A;&#x521B;&#x5EFA;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x8FD9;&#x663E;&#x7136;&#x662F;&#x4E0D;&#x9AD8;&#x6548;&#x7684;&#xFF0C;&#x4F5C;&#x8005;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4E0D;&#x600E;&#x4E48;&#x505A;&#xFF0C;&#x3000;&#x9664;&#x975E;&#x4F60;&#x9700;&#x8981;&#x901A;&#x8FC7;<a href="#two-way-filter">&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;</a>&#x6765;&#x8BBE;&#x503C;.</p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// JSON.parse the title first.</span>
+component.$update(<span class="hljs-string">&apos;title|json&apos;</span>, <span class="hljs-string">&quot;{&apos;title&apos;: 1}&quot;</span>);
+
+<span class="hljs-built_in">console</span>.log(component.data.title) <span class="hljs-comment">// =&gt; {title:1};</span>
+</code></pre>
+<blockquote>
+<p>Warning:
+&#x65E0;&#x8BBA;&#x4F20;&#x5165;&#x4EC0;&#x4E48;&#x53C2;&#x6570;&#xFF0C;&#x8FD0;&#x884C;$update&#x4E4B;&#x540E;&#x90FD;&#x4F1A;&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x7684;dirty-check</p>
+</blockquote>
+<h3 id="componentget"><a name="componentget" class="anchor-navigation-ex-anchor" href="#componentget"><i class="fa fa-link" aria-hidden="true"></i></a>4.5. component.$get</h3>
+<p><strong>Usage</strong></p>
+<p><code>component.$get(Expression|String)</code></p>
+<p>&#x83B7;&#x5F97;&#x4E00;&#x4E2A;Expression&#x7684;&#x503C;,&#x7C7B;&#x4F3C;&#x4E8E;angular&#x7684;$eval&#x51FD;&#x6570; </p>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-js">component.data.username = <span class="hljs-string">&quot;leeluolee&quot;</span>
+component.data.job = <span class="hljs-string">&quot;developer&quot;</span>
+
+component.$get(<span class="hljs-string">&apos;username + &quot;:&quot; + job&apos;</span>) <span class="hljs-comment">// =&gt; leeluolee:developer</span>
+</code></pre>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expression</td>
+<td>Expression</td>
+<td>String</td>
+<td>&#x8868;&#x8FBE;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<p><a id="refs"></a></p>
+<h3 id="componentrefs"><a name="componentrefs" class="anchor-navigation-ex-anchor" href="#componentrefs"><i class="fa fa-link" aria-hidden="true"></i></a>4.6. component.$refs</h3>
+<ul>
+<li>type: Object</li>
+</ul>
+<p>&#x5728;&#x6A21;&#x677F;&#x4E2D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>ref</code>&#x5C5E;&#x6027;&#x6765;&#x6807;&#x8BB0;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x6216;&#x7EC4;&#x4EF6;.&#x3000;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;component.$refs &#x6765;&#x83B7;&#x53D6;&#x4F60;&#x6807;&#x8BB0;&#x7684;&#x8282;&#x70B9;</p>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-html">
+component = new Regular({
+  template: &quot;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">input</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">pager</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">pager</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pager</span>&gt;</span>&quot;,
+  init: function(){
+    this.$refs.input // -&gt; the input tag
+    this.$refs.pager // -&gt; the pager component
+  }
+})
+</code></pre>
+<blockquote>
+<p>The  less reference the better</p>
+</blockquote>
+<h3 id="componenton"><a name="componenton" class="anchor-navigation-ex-anchor" href="#componenton"><i class="fa fa-link" aria-hidden="true"></i></a>4.7. component.$on</h3>
+<p>Register an <code>event</code> handler <code>fn</code>.</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$on(event, fn])</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>Object String</td>
+<td>&#x4E8B;&#x4EF6;&#x540D;</td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>&#x76D1;&#x542C;&#x5668;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5982;&#x679C;&#x4F60;&#x4F20;&#x5165;&#x4E00;&#x4E2A;Object, &#x4F1A;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x591A;&#x91CD;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;</p>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-js">component.$on(<span class="hljs-string">&quot;hello&quot;</span>, fn1)
+
+<span class="hljs-comment">// multiple</span>
+component.$on({
+  notify: fn2,
+  message: fn3
+})
+</code></pre>
+<h3 id="componentoff"><a name="componentoff" class="anchor-navigation-ex-anchor" href="#componentoff"><i class="fa fa-link" aria-hidden="true"></i></a>4.8. component.$off</h3>
+<p><strong>Usage</strong></p>
+<p><code>component.$off([event] [,fn])</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>Object String</td>
+<td>&#x4E8B;&#x4EF6;&#x540D;</td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>&#x76D1;&#x542C;&#x5668;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>&#x5982;&#x679C;&#x540C;&#x65F6;&#x4F20;&#x5165; event&#x548C;fn,&#x3000;&#x5219;&#x79FB;&#x9664;&#x6307;&#x5B9A;event&#x7C7B;&#x578B;&#x4E0B;&#x7684;fn&#x51FD;&#x6570;</li>
+<li>&#x53EA;&#x4F20;&#x5165;event, &#x79FB;&#x9664;&#x6240;&#x6709;event&#x5BF9;&#x5E94;&#x7684;&#x76D1;&#x542C;&#x5668;</li>
+<li>&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x4F20;&#xFF0C;&#x79FB;&#x9664;&#x6240;&#x6709;</li>
+</ul>
+<h3 id="componentemit"><a name="componentemit" class="anchor-navigation-ex-anchor" href="#componentemit"><i class="fa fa-link" aria-hidden="true"></i></a>4.9. component.$emit</h3>
+<p>&#x89E6;&#x53D1;&#x6307;&#x5B9A;&#x4E8B;&#x4EF6;</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$emit(eventName [, args...])</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eventName</td>
+<td>Object String</td>
+<td>&#x4E8B;&#x4EF6;&#x540D;</td>
+</tr>
+<tr>
+<td>args</td>
+<td>Function</td>
+<td>&#x5269;&#x4F59;&#x7684;&#x53C2;&#x6570;&#x90FD;&#x4F1A;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x5230;&#x76D1;&#x542C;&#x5668;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular();
+
+<span class="hljs-keyword">var</span> clickhandler1 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg1</span>)</span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;clickhandler1:&apos;</span> + arg1)}
+<span class="hljs-keyword">var</span> clickhandler2 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg1</span>)</span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;clickhandler2:&apos;</span> + arg1)}
+<span class="hljs-keyword">var</span> clickhandler3 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">arg1</span>)</span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;clickhandler3:&apos;</span> + arg1)}
+
+component.$on(<span class="hljs-string">&apos;hello&apos;</span>, clickhandler1);
+component.$on(<span class="hljs-string">&apos;hello&apos;</span>, clickhandler2);
+component.$on({ 
+  <span class="hljs-string">&apos;other&apos;</span>: clickhandler3 
+});
+
+
+component.$emit(<span class="hljs-string">&apos;hello&apos;</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// handler1 handler2 trigger</span>
+
+component.$off(<span class="hljs-string">&apos;hello&apos;</span>, clickhandler1) <span class="hljs-comment">// hello: handler1 removed</span>
+
+component.$emit(<span class="hljs-string">&apos;hello&apos;</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// handler1 handler2 trigger</span>
+
+component.$off(<span class="hljs-string">&apos;hello&apos;</span>) <span class="hljs-comment">// all hello handler removed</span>
+
+component.$off() <span class="hljs-comment">// all component&apos;s handler removed</span>
+
+component.$emit(<span class="hljs-string">&apos;other&apos;</span>);
+</code></pre>
+<h3 id="componentmute"><a name="componentmute" class="anchor-navigation-ex-anchor" href="#componentmute"><i class="fa fa-link" aria-hidden="true"></i></a>4.10. component.$mute</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>$mute(true)</code>&#x8BA9;&#x7EC4;&#x4EF6;&#x5931;&#x6548;&#xFF0C;&#x4F7F;&#x5176;&#x4E0D;&#x53C2;&#x4E0E;&#x5230;&#x810F;&#x68C0;&#x67E5;&#x4E2D;. &#x540E;&#x7EED;&#x4F7F;&#x7528; $mute(false)&#x3000;&#x6765;&#x91CD;&#x65B0;&#x6FC0;&#x6D3B;&#x4E00;&#x4E2A;&#x88AB;&#x5931;&#x6548;&#x7684;&#x7EC4;&#x4EF6;,&#x3000;&#x6FC0;&#x6D3B;&#x7684;&#x540C;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x6570;&#x636E;&#x4E0E;ui&#x540C;&#x6B65;.</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$mute( isMute )</code></p>
+<p><strong>Argument</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mute</td>
+<td>Boolean</td>
+<td>&#x662F;&#x5426;disable&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;(&#x53EF;&#x4EE5;&#x540E;&#x7EED;&#x91CD;&#x542F;&#x5B83;)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-js">
+var component = new Regular({
+  template: &apos;&lt;h2&gt;{title}&lt;/h2&gt;&apos;,
+  data: {
+    title: &quot;hello&quot;
+  }
+})
+
+//resulting html
+
+&lt;h2&gt;hello&lt;/h2&gt;
+
+component.$mute(true) // disable it
+
+component.data.hello = &apos;title changed&apos;
+component.$update();
+
+// resulting html
+
+&lt;h2&gt;hello&lt;/h2&gt;
+</code></pre>
+<h3 id="componentbind"><a name="componentbind" class="anchor-navigation-ex-anchor" href="#componentbind"><i class="fa fa-link" aria-hidden="true"></i></a>4.11. component.$bind</h3>
+<p>&#x521B;&#x5EFA;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;.</p>
+<p><strong>&#x8FD9;&#x5DF2;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x63A8;&#x8350;&#x7684;&#x65B9;&#x6CD5;</strong>. &#x7531;&#x4E8E;$bind&#x8FC7;&#x4E8E;&#x7075;&#x6D3B;&#x7684;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#xFF0C;&#x6781;&#x53EF;&#x80FD;&#x4E0D;&#x5F53;&#x4F7F;&#x7528;&#x5E26;&#x6765;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x7684;&#x5BF9;&#x8C61;&#x95F4;&#x5173;&#x7CFB;. &#x8BF7;&#x4F7F;&#x7528;&#x4E8B;&#x4EF6;&#x901A;&#x8BAF;&#x6765;&#x5904;&#x7406;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x6D88;&#x606F;&#x540C;&#x6B65;&#x3002;</p>
+<p><strong>Usage</strong></p>
+<p><code>component.$bind(component2, expr1[, expr2])</code></p>
+<p><strong>Arguments</strong></p>
+<ol>
+<li>component2<component>: &#x8981;&#x7ED1;&#x5B9A;&#x7684;&#x7EC4;&#x4EF6;</component></li>
+<li>expr1 <expression|string|object|array>: &#x6B64;&#x53C2;&#x6570;&#x6709;&#x591A;&#x79CD;&#x53C2;&#x6570;&#x7C7B;&#x578B;<ul>
+<li>Expression|String: &#x672C;&#x7EC4;&#x4EF6;&#x8981;&#x7ED1;&#x5B9A;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</li>
+<li>Object: &#x540C;&#x65F6;&#x7ED1;&#x5B9A;&#x591A;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;</li>
+<li>Array: &#x8868;&#x8FBE;&#x5F0F;&#x5217;&#x8868;,&#x540C;&#x65F6;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x540C;&#x540D;&#x8868;&#x8FBE;&#x5F0F;(&#x5373;&#x53EA;&#x4F20;&#x5165;expr1)</li>
+</ul>
+</expression|string|object|array></li>
+<li>expr2 <expression|string>: &#x76EE;&#x6807;&#x7EC4;&#x4EF6;&#x8981;&#x7ED1;&#x5B9A;&#x7684;&#x8868;&#x8FBE;&#x5F0F;, &#x7F3A;&#x7701;&#x4E3A;expr1</expression|string></li>
+</ol>
+<blockquote>
+<p></p><h5 id="warn"><a name="warn" class="anchor-navigation-ex-anchor" href="#warn"><i class="fa fa-link" aria-hidden="true"></i></a>WARN</h5><p></p>
+<ol>
+<li>&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x662F;setable&#x7684;&#xFF0C;&#x53EF;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#xFF0C;&#x5426;&#x5219;&#x53EA;&#x80FD;&#x5B9E;&#x73B0;&#x5355;&#x5411;&#x7ED1;&#x5B9A;</li>
+<li>&#x5982;&#x679C;&#x8FDE;&#x4E2A;&#x7EC4;&#x4EF6;&#x5728;bind&#x65F6;&#x662F;&#x4E0D;&#x540C;&#x6B65;&#x7684;&#xFF0C;component2&#x6570;&#x636E;&#x4F1A;&#x5148;&#x540C;&#x6B65;&#x5230;component</li>
+</ol>
+</blockquote>
+<p>create binding between pager components.</p>
+<pre><code class="lang-javascript">
+ <span class="hljs-comment">// insert</span>
+<span class="hljs-keyword">var</span> pager = <span class="hljs-keyword">new</span> Pager( {data: {total: <span class="hljs-number">100</span>, current:<span class="hljs-number">20</span>}} ).$inject(<span class="hljs-string">&apos;#bind1&apos;</span>);
+<span class="hljs-keyword">var</span> pager2 = <span class="hljs-keyword">new</span> Pager( {data: {total: <span class="hljs-number">50</span>, current:<span class="hljs-number">2</span>}} ).$inject(<span class="hljs-string">&apos;#bind1&apos;</span>);
+
+<span class="hljs-keyword">var</span> pager3 = <span class="hljs-keyword">new</span> Pager({data: {total: <span class="hljs-number">100</span>, current:<span class="hljs-number">20</span>} }).$inject(<span class="hljs-string">&apos;#bind2&apos;</span>);
+<span class="hljs-keyword">var</span> pager4 = <span class="hljs-keyword">new</span> Pager({data: {total: <span class="hljs-number">50</span>, current:<span class="hljs-number">2</span>}}).$inject(<span class="hljs-string">&apos;#bind2&apos;</span>);
+
+<span class="hljs-keyword">var</span> pager5 = <span class="hljs-keyword">new</span> Pager({data: {total: <span class="hljs-number">100</span>, current:<span class="hljs-number">2</span>}}).$inject(<span class="hljs-string">&apos;#bind3&apos;</span>);
+<span class="hljs-keyword">var</span> pager6 = <span class="hljs-keyword">new</span> Pager({data: {total: <span class="hljs-number">50</span>, current:<span class="hljs-number">20</span>}}).$inject(<span class="hljs-string">&apos;#bind3&apos;</span>);
+
+
+<span class="hljs-comment">// style 1</span>
+pager.$bind(pager2, [<span class="hljs-string">&apos;current&apos;</span>, <span class="hljs-string">&apos;total&apos;</span>]);
+
+
+<span class="hljs-comment">// style 2</span>
+pager3.$bind(pager4, <span class="hljs-string">&apos;current&apos;</span>, <span class="hljs-string">&apos;current&apos;</span>)
+pager3.$bind(pager4, <span class="hljs-string">&apos;total&apos;</span>) <span class="hljs-comment">// the same as pager3.$bind(pager4, &apos;total&apos;, &apos;total&apos;)</span>
+
+<span class="hljs-comment">// style 3</span>
+pager5.$bind(pager6, {current: <span class="hljs-string">&quot;current&quot;</span>, total: <span class="hljs-string">&quot;total&quot;</span>});
+
+
+<span class="hljs-comment">// bind chain</span>
+<span class="hljs-keyword">var</span> pager = <span class="hljs-keyword">new</span> Pager({data:{total: <span class="hljs-number">1000</span>, current:<span class="hljs-number">1</span>}}).$inject(<span class="hljs-string">&apos;#bind_chain&apos;</span>);
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++){
+  <span class="hljs-keyword">var</span> pager = <span class="hljs-keyword">new</span> Pager({data:{total: <span class="hljs-number">1000</span>, current:<span class="hljs-number">1</span>}})
+    .$bind(pager, [<span class="hljs-string">&apos;total&apos;</span>, <span class="hljs-string">&apos;current&apos;</span>])
+    .$inject(<span class="hljs-string">&apos;#bind_chain&apos;</span>);
+}
+</code></pre>
+<p><a href="https://jsfiddle.net/leeluolee/7wgUf/light/" target="_blank">Demo here</a></p>
+<p>you may want <a href="https://rawgit.com/regularjs/regular/master/example/pager/pager.js" target="_blank">the source code of pager </a></p>
+<h2 id="&#x5176;&#x5B83;"><a name="&#x5176;&#x5B83;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x5B83;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5176;&#x5B83;</h2>
+<h3 id="regulardom"><a name="regulardom" class="anchor-navigation-ex-anchor" href="#regulardom"><i class="fa fa-link" aria-hidden="true"></i></a>5.1. Regular.dom</h3>
+<p>&#x7531;&#x4E8E;&#x5185;&#x90E8;&#x5B9E;&#x73B0;&#x9700;&#x8981;&#xFF0C;Regular&#x5B9E;&#x73B0;&#x4E86;&#x90E8;&#x5206;&#x5E38;&#x7528;&#x7684;&#x8DE8;&#x6D4F;&#x89C8;&#x5668;&#x7684;dom&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;dom&#x5904;&#x7406;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;Regular.dom.</p>
+<p><a id="dom-inject"></a></p>
+<h4 id="regulardominjectelement-refer-direction"><a name="regulardominjectelement-refer-direction" class="anchor-navigation-ex-anchor" href="#regulardominjectelement-refer-direction"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.inject(element, refer, direction)</h4>
+<p><code>component.$inject</code> &#x4F9D;&#x8D56;&#x4E8E;&#x6B64;&#x65B9;&#x6CD5;</p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element</td>
+<td><code>Node</code> <code>false</code></td>
+<td>&#x8981;&#x88AB;&#x63D2;&#x5165;&#x7684;&#x8282;&#x70B9;</td>
+</tr>
+<tr>
+<td>refer</td>
+<td><code>Node</code> <code>false</code></td>
+<td>&#x53C2;&#x8003;&#x8282;&#x70B9;</td>
+</tr>
+<tr>
+<td>direction<em>(optional default:&apos;bottom&apos;)</em></td>
+<td>String</td>
+<td>&#x7EC4;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;&#x63D2;&#x5165;&#x76EE;&#x6807;&#x7684;&#x4F4D;&#x7F6E;.&#x3000;&#x53EF;&#x4EE5;&#x662F; &apos;top&apos;, &apos;bottom&apos;, &apos;after&apos;, or &apos;before&apos;.</td>
+</tr>
+</tbody>
+</table>
+<p><a id="dom-on"></a></p>
+<h4 id="regulardomonelement-event-handle"><a name="regulardomonelement-event-handle" class="anchor-navigation-ex-anchor" href="#regulardomonelement-event-handle"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.on(element, event, handle)</h4>
+<p>&#x7ED1;&#x5B9A;&#x8282;&#x70B9;&#x4E8B;&#x4EF6;,&#x3000;&#x4E0B;&#x5217;&#x4E8B;&#x4EF6;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x5DF2;&#x7ECF;&#x88AB;&#x4FEE;&#x6B63;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;IE6-8&#x4F7F;&#x7528;&#x5B83;&#x4EEC;. &#x56DE;&#x8C03;&#x7684;this&#x5BF9;&#x8C61;&#x4E5F;&#x4FEE;&#x6B63;&#x4E3A;element&#x672C;&#x8EAB;.</p>
+<ul>
+<li>event.target</li>
+<li>event.which </li>
+<li>event.pageX</li>
+<li>event.pageY</li>
+<li>event.stopPropagation();</li>
+<li>event.preventDefault();</li>
+</ul>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> dom = Regular.dom;
+
+dom.on(element, <span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">ev</span>)</span>{
+  ev.preventDefault();
+})
+</code></pre>
+<h4 id="regulardomoffnode-event-handle"><a name="regulardomoffnode-event-handle" class="anchor-navigation-ex-anchor" href="#regulardomoffnode-event-handle"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.off(node, event, handle)</h4>
+<p>&#x79FB;&#x9664;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;</p>
+<h4 id="regulardomaddclasselement-classname"><a name="regulardomaddclasselement-classname" class="anchor-navigation-ex-anchor" href="#regulardomaddclasselement-classname"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.addClass(element, className)</h4>
+<p>&#x6DFB;&#x52A0;&#x8282;&#x70B9;className</p>
+<h4 id="regulardomdelclasselement-classname"><a name="regulardomdelclasselement-classname" class="anchor-navigation-ex-anchor" href="#regulardomdelclasselement-classname"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.delClass(element, className)</h4>
+<p>&#x79FB;&#x9664;&#x8282;&#x70B9;&#x7684;&#x67D0;&#x6BB5;className</p>
+<h4 id="regulardomhasclasselement-classname"><a name="regulardomhasclasselement-classname" class="anchor-navigation-ex-anchor" href="#regulardomhasclasselement-classname"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.hasClass(element, className)</h4>
+<p>&#x5224;&#x65AD;&#x8282;&#x70B9;&#x662F;&#x5426;&#x62E5;&#x6709;&#x67D0;&#x4E2A;className</p>
+<pre><code class="lang-javascript">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&apos;class1 class2&apos;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+dom.hasClass(element, <span class="hljs-string">&apos;class1&apos;</span>) <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<h4 id="regulardomtextelement-value"><a name="regulardomtextelement-value" class="anchor-navigation-ex-anchor" href="#regulardomtextelement-value"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.text(element[, value])</h4>
+<p>&#x6839;&#x636E;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x8282;&#x70B9;, &#x8BBE;&#x7F6E;&#x8282;&#x70B9;&#x7684;textContent&#x3000;&#x6216;&#x3000;innerText</p>
+<h4 id="regulardomhtmlelement-value"><a name="regulardomhtmlelement-value" class="anchor-navigation-ex-anchor" href="#regulardomhtmlelement-value"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.html(element[, value])</h4>
+<p>&#x8BBE;&#x7F6E;&#x6216;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;innerHTML&#x503C;</p>
+<h4 id="regulardomattrelement-name---value"><a name="regulardomattrelement-name---value" class="anchor-navigation-ex-anchor" href="#regulardomattrelement-name---value"><i class="fa fa-link" aria-hidden="true"></i></a>Regular.dom.attr(element, name [ , value])</h4>
+<p>&#x8BBE;&#x7F6E;&#x6216;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x6307;&#x5B9A;&#x5C5E;&#x6027;</p>
+<h3 id="regularconfig"><a name="regularconfig" class="anchor-navigation-ex-anchor" href="#regularconfig"><i class="fa fa-link" aria-hidden="true"></i></a>5.2. Regular.config</h3>
+<p>&#x914D;&#x7F6E;&#x4E00;&#x4E9B;&#x5168;&#x5C40;&#x5C5E;&#x6027;, &#x76EE;&#x524D;&#x4E3B;&#x8981;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x914D;&#x7F6E;&#x6A21;&#x677F;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x5F00;&#x5173;&#x7B26;&#x53F7;</p>
+<p><strong>Usage</strong> </p>
+<p><code>Regular.config( settings )</code></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>settings.BEGIN</td>
+<td>String</td>
+<td>OPEN_TAG (default: &apos;{&apos;)</td>
+</tr>
+<tr>
+<td>settings.END</td>
+<td>String</td>
+<td>END_TAG (default: &apos;}&apos;)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example &gt;</strong></p>
+<p>&#x5C06;&#x9ED8;&#x8BA4;&#x7B26;&#x53F7;<code>{}</code>&#x4FEE;&#x6539;&#x4E3A; <code>{{}}</code>.</p>
+<pre><code class="lang-javascript">
+Regular.config({
+  BEGIN: <span class="hljs-string">&quot;{{&quot;</span>, 
+  END: <span class="hljs-string">&quot;}}&quot;</span> 
+})
+</code></pre>
+<h3 id="parse"><a name="parse" class="anchor-navigation-ex-anchor" href="#parse"><i class="fa fa-link" aria-hidden="true"></i></a>5.3. Regular.parse </h3>
+<p><strong>Usage</strong></p>
+<p><code>Regular.parse(templateString, setting)</code></p>
+<p>&#x89E3;&#x6790;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;AST, &#x57FA;&#x672C;&#x4E0A;&#x4F60;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;, &#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x6765;&#x9884;&#x89E3;&#x6790;&#x4F60;&#x5F97;regularjs&#x6A21;&#x677F; </p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>templateString</td>
+<td>String</td>
+<td>&#x8981;&#x89E3;&#x6790;&#x7684;&#x6A21;&#x677F;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td>settings.BEGIN</td>
+<td>String</td>
+<td>&#x5F00;&#x7B26;&#x53F7; (default: &apos;{&apos;</td>
+</tr>
+<tr>
+<td>settings.END</td>
+<td>String</td>
+<td>&#x5173;&#x7B26;&#x53F7; (default: &apos;}&apos;)</td>
+</tr>
+<tr>
+<td>settings.stringify</td>
+<td>Boolean</td>
+<td>&#x662F;&#x5426;stringify &#x8F93;&#x51FA;&#x7684;AST (default: false)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage</strong></p>
+<p><strong>Example &gt;</strong></p>
+<pre><code class="lang-javascript">Regular.parse(<span class="hljs-string">&quot;&lt;h2&gt;{{page.title + page.desc}}&lt;/h2&gt;&quot;</span>, {
+  BEGIN: <span class="hljs-string">&apos;{{&apos;</span>,
+  END: <span class="hljs-string">&apos;}}&apos;</span>
+})
+<span class="hljs-comment">// output</span>
+[
+  {
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;element&quot;</span>,
+    <span class="hljs-string">&quot;tag&quot;</span>: <span class="hljs-string">&quot;h2&quot;</span>,
+    <span class="hljs-string">&quot;attrs&quot;</span>: [],
+    <span class="hljs-string">&quot;children&quot;</span>: [
+      {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;expression&quot;</span>,
+        <span class="hljs-string">&quot;body&quot;</span>: <span class="hljs-string">&quot;_d_[&apos;page&apos;][&apos;title&apos;]+&apos;-&apos;+_d_[&apos;page&apos;][&apos;desc&apos;]&quot;</span>,
+        <span class="hljs-string">&quot;constant&quot;</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">&quot;setbody&quot;</span>: <span class="hljs-literal">false</span>
+      }
+    ]
+  }
+]
+</code></pre>
+<h2 id="&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;"><a name="&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;" class="anchor-navigation-ex-anchor" href="#&#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x670D;&#x52A1;&#x7AEF;&#x6E32;&#x67D3;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 索引手册">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="styleguide.html" class="navigation navigation-next " aria-label="Next page: 风格指南">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API","level":"1.5.1","depth":2,"next":{"title":"风格指南","level":"1.5.2","depth":2,"path":"reference/styleguide.md","ref":"reference/styleguide.md","articles":[]},"previous":{"title":"索引手册","level":"1.5","depth":1,"path":"reference/README.md","ref":"reference/README.md","articles":[{"title":"API","level":"1.5.1","depth":2,"path":"reference/api.md","ref":"reference/api.md","articles":[]},{"title":"风格指南","level":"1.5.2","depth":2,"path":"reference/styleguide.md","ref":"reference/styleguide.md","articles":[]},{"title":"✔内建指令","level":"1.5.3","depth":2,"path":"reference/directive.md","ref":"reference/directive.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":false,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"reference/api.md","mtime":"2018-08-07T01:33:30.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-17T09:41:33.936Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,870 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>️动态注入 · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../topic/" />
+    
+    
+    <link rel="prev" href="composite.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/component/">
+            
+                <a href="../basic/component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/interpolation.html">
+            
+                <a href="../basic/interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic/statement/">
+            
+                <a href="../basic/statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../basic/statement/list.html">
+            
+                <a href="../basic/statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../basic/statement/if.html">
+            
+                <a href="../basic/statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../basic/statement/include.html">
+            
+                <a href="../basic/statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../reference/expression.html">
+            
+                <a href="../reference/expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic/data-binding.html">
+            
+                <a href="../basic/data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="modular.html">
+            
+                <a href="modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="composite.html">
+            
+                <a href="composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="modify.html">
+            
+                <a href="modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../topic/">
+            
+                <a href="../topic/">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../topic/template.html">
+            
+                <a href="../topic/template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../topic/ssr.html">
+            
+                <a href="../topic/ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../topic/mpregular">
+            
+                <span>
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../topic/performance.html">
+            
+                <a href="../topic/performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../topic/communication.html">
+            
+                <a href="../topic/communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../topic/redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../topic/rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../topic/todomvc.html">
+            
+                <a href="../topic/todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../reference/">
+            
+                <a href="../reference/">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../reference/api.html">
+            
+                <a href="../reference/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../reference/styleguide.html">
+            
+                <a href="../reference/styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../reference/directive.html">
+            
+                <a href="../reference/directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >️动态注入</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;"><b> </b>&#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8D77;&#x6B65;"><b>1. </b>&#x8D77;&#x6B65;</a></li><li><span class="title-icon "></span><a href="#&#x6761;&#x4EF6;&#x63A7;&#x5236;"><b>2. </b>&#x6761;&#x4EF6;&#x63A7;&#x5236;</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;next&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5D4C;&#x5957;&#x7684;modifybodycomponent"><b>3. </b>&#x4F7F;&#x7528;next&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5D4C;&#x5957;&#x7684;modifyBodyComponent</a></li><li><span class="title-icon "></span><a href="#&#x4E0B;&#x4E00;&#x6B65;&#x9605;&#x8BFB;"><b>4. </b>&#x4E0B;&#x4E00;&#x6B65;&#x9605;&#x8BFB;</a></li></ul></ul></div><a href="#&#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;"><a name="&#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;"><i class="fa fa-link" aria-hidden="true"></i></a> &#x5B9E;&#x4F8B;&#x5316;&#x52AB;&#x6301;</h1>
+<p>Regular&#x5728;<code>v0.6</code>&#x7248;&#x672C;&#x5F15;&#x5165;&#x4E86;&#x65B0;&#x751F;&#x547D;&#x5468;&#x671F;hook<code>modifyBodyComponent</code>&#xFF0C;&#x8FD9;&#x4E2A;hook&#x7528;&#x6765;&#x52AB;&#x6301;&#x5230;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x52A8;&#x4F5C;&#x3002;</p>
+<blockquote>
+<p><strong><code>modifyBodyComponent( component, next )</code></strong></p>
+</blockquote>
+<ul>
+<li><code>component</code>: &#x5185;&#x90E8;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7EC4;&#x4EF6;</li>
+<li><code>next( component )</code>: &#x51B3;&#x5B9A;&#x662F;&#x5426;&#x8C03;&#x7528;&#x4E0A;&#x5C42;&#x5D4C;&#x5957;&#x7684;modifyBodyComponent</li>
+</ul>
+<h2 id="&#x8D77;&#x6B65;"><a name="&#x8D77;&#x6B65;" class="anchor-navigation-ex-anchor" href="#&#x8D77;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x8D77;&#x6B65;</h2>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> EventBusProvider = Regular.extend({
+    name: <span class="hljs-string">&apos;EventBusProvider&apos;</span>,
+    config(){
+        <span class="hljs-keyword">const</span> emitter = <span class="hljs-keyword">new</span> Regular;
+        <span class="hljs-keyword">this</span>.$broadcast = emitter.$emit.bind(emitter)
+        <span class="hljs-keyword">this</span>.$subscribe = emitter.$on.bind(emitter)
+    },
+    modifyBodyComponent( component ){
+        <span class="hljs-comment">// &#x4E3A;&#x7EC4;&#x4EF6;&#x6CE8;&#x5165;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x4ECB;&#x8005;</span>
+        component.$broadcast = <span class="hljs-keyword">this</span>.$broadcast; 
+        component.$subscribe = <span class="hljs-keyword">this</span>.$subscribe;
+    }
+
+})
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5185;&#x90E8;&#x5305;&#x88F9;&#x7684;&#x6240;&#x6709;&#x7EC4;&#x4EF6;&#xFF08;&#x5305;&#x62EC;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#xFF09;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5230;EventBus</p>
+<p><strong>&#x26A0;&#xFE0F; &#x8FD9;&#x4E2A;hook&#x5728;compile &#x4E4B;&#x540E;&#xFF0C;&#x4F46;&#x5728;init&#x4E4B;&#x524D;&#x89E6;&#x53D1;</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Button = Regular.extend({
+    name: <span class="hljs-string">&apos;Button&apos;</span>,
+    template: <span class="hljs-string">`
+        &lt;button&gt;JUST Button&lt;/button&gt;
+    `</span>,
+    config(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;before compile: &apos;</span> + <span class="hljs-keyword">this</span>.$broadcast) <span class="hljs-comment">// undefined</span>
+    },
+    init(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;after compile: &apos;</span> + <span class="hljs-keyword">this</span>.$broadcast) <span class="hljs-comment">// Function</span>
+    }
+})
+
+
+
+<span class="hljs-keyword">new</span> Regular({
+    template: <span class="hljs-string">`
+        &lt;EventBusProvider&gt;
+            &lt;Button /&gt;
+        &lt;/EventBusProvider&gt;
+    `</span>
+}).$inject(<span class="hljs-string">&apos;body&apos;</span>)
+</code></pre>
+<h2 id="&#x6761;&#x4EF6;&#x63A7;&#x5236;"><a name="&#x6761;&#x4EF6;&#x63A7;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x6761;&#x4EF6;&#x63A7;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x6761;&#x4EF6;&#x63A7;&#x5236;</h2>
+<p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x8FD9;&#x6837;&#x6240;&#x6709;&#x7684;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x90FD;&#x4F1A;&#x88AB;&#x52AB;&#x6301;&#x4FEE;&#x6539;&#xFF0C;&#x5982;&#x4F55;&#x9650;&#x5236;&#x5728;&#x67D0;&#x4E9B;&#x6761;&#x4EF6;&#x4E0B;&#x624D;&#x6CE8;&#x5165;&#x5462;&#xFF1F;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <strong>&#x6807;&#x8BB0;</strong> &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x9009;&#x62E9;&#x88AB;&#x6CE8;&#x5165;&#x7684;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js">
+modifyBodyComponent( component ){
+
+    <span class="hljs-comment">// &#x53EA;&#x6709;&#x88AB;marked&#x6807;&#x8BB0;&#x7684;&#x7EC4;&#x4EF6;&#x4F1A;&#x88AB;&#x52AB;&#x6301;&#x6CE8;&#x5165;</span>
+    <span class="hljs-keyword">if</span>( component.data.marked ){
+        component.$broadcast = <span class="hljs-keyword">this</span>.$broadcast;
+    }
+
+}
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;</strong></p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">EventBusProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">marked</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">EventBusProvider</span>&gt;</span>
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x53EA;&#x6709;<code>&lt;Button marked /&gt;</code>&#x4F1A;&#x88AB;&#x6CE8;&#x5165;&#x4E86;</p>
+<h2 id="&#x4F7F;&#x7528;next&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5D4C;&#x5957;&#x7684;modifybodycomponent"><a name="&#x4F7F;&#x7528;next&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5D4C;&#x5957;&#x7684;modifybodycomponent" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;next&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5D4C;&#x5957;&#x7684;modifybodycomponent"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x4F7F;&#x7528;next&#x53C2;&#x6570;&#x63A7;&#x5236;&#x5D4C;&#x5957;&#x7684;modifyBodyComponent</h2>
+<p>&#x5F88;&#x591A;&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x6709;&#x5D4C;&#x5957;&#x7684;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">OtherProvider</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">EventBusProvider</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">EventBusProvider</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">OtherProvider</span>&gt;</span>
+</code></pre>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;Button&#x4E0D;&#x4F1A;&#x88AB;<code>&lt;OtherProvider&gt;</code>&#x5904;&#x7406;&#xFF0C;
+&#x4F46;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>modifyBodyComponent</code>&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x63A7;&#x5236;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> EventBusProvider = Regular.extend({
+    name: <span class="hljs-string">&apos;EventBusProvider&apos;</span>,
+    config(){
+        <span class="hljs-keyword">const</span> emitter = <span class="hljs-keyword">new</span> Regular;
+        <span class="hljs-keyword">this</span>.$broadcast = emitter.$emit.bind(emitter)
+        <span class="hljs-keyword">this</span>.$subscribe = emitter.$on.bind(emitter)
+    },
+    modifyBodyComponent( component, next ){
+        <span class="hljs-comment">// &#x4E3A;&#x7EC4;&#x4EF6;&#x6CE8;&#x5165;&#x8FD9;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x4E8B;&#x4EF6;&#x4E2D;&#x4ECB;&#x8005;</span>
+        component.$broadcast = <span class="hljs-keyword">this</span>.$broadcast; 
+        component.$subscribe = <span class="hljs-keyword">this</span>.$subscribe;
+
+        <span class="hljs-comment">// &#x26A0;&#xFE0F;&#x901A;&#x8FC7;next&#x8C03;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5373;&#x8C03;&#x7528;OtherProvider#modifyBodyComponent&#x7684;&#x4F4D;&#x7F6E;</span>
+        next(component)
+    }
+
+})
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ul>
+<li>&#x901A;&#x8FC7;<code>next</code>&#x6765;&#x8C03;&#x7528;&#x4E0A;&#x5C42;&#x7684;modifyBodyComponent&#x903B;&#x8F91;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x63A7;&#x5236;<code>next</code>&#x7684;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x6765;&#x63A7;&#x5236;&#x5916;&#x5C42;&#x4FEE;&#x9970;&#x5668;&#x7684;&#x6267;&#x884C;&#x4F4D;&#x7F6E;&#xFF08;&#x4E4B;&#x524D;&#x3001;&#x4E4B;&#x540E;&#xFF09;</li>
+</ul>
+<h2 id="&#x4E0B;&#x4E00;&#x6B65;&#x9605;&#x8BFB;"><a name="&#x4E0B;&#x4E00;&#x6B65;&#x9605;&#x8BFB;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x4E00;&#x6B65;&#x9605;&#x8BFB;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x4E0B;&#x4E00;&#x6B65;&#x9605;&#x8BFB;</h2>
+<p>&#x5982;&#x679C;&#x4F60;&#x6682;&#x65F6;&#x4E0D;&#x77E5;&#x9053;&#x5982;&#x4F55;&#x5E94;&#x7528;<code>modifyBodyComponent</code>&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="../topic/communication.html">&#x4E13;&#x9898;&#xFF1A;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="composite.html" class="navigation navigation-prev " aria-label="Previous page: ️组合 - 结构复用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../topic/" class="navigation navigation-next " aria-label="Next page: 专题">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"️动态注入","level":"1.3.3","depth":2,"next":{"title":"专题","level":"1.4","depth":1,"path":"topic/README.md","ref":"./topic/README.md","articles":[{"title":"模板管理","level":"1.4.1","depth":2,"path":"topic/template.md","ref":"./topic/template.md","articles":[{"title":"单文件组件 - regular-loader","level":"1.4.1.1","depth":3,"url":"https://github.com/regularjs/regular-loader","ref":"https://github.com/regularjs/regular-loader","articles":[]}]},{"title":"️单页系统","level":"1.4.2","depth":2,"url":"https://regularjs.github.io/regular-state/","ref":"https://regularjs.github.io/regular-state/","articles":[]},{"title":"服务端渲染","level":"1.4.3","depth":2,"path":"topic/ssr.md","ref":"./topic/ssr.md","articles":[]},{"title":"微信小程序","level":"1.4.4","depth":2,"path":"topic/mpregular","ref":"./topic/mpregular","articles":[]},{"title":"性能指引","level":"1.4.5","depth":2,"path":"topic/performance.md","ref":"./topic/performance.md","articles":[]},{"title":"️\b跨组件通信","level":"1.4.6","depth":2,"path":"topic/communication.md","ref":"./topic/communication.md","articles":[{"title":"与redux结合","level":"1.4.6.1","depth":3,"path":"topic/redux.md","ref":"./topic/redux.md","articles":[]},{"title":"与Rx结合(ing...)","level":"1.4.6.2","depth":3,"path":"topic/rx.md","ref":"./topic/rx.md","articles":[]}]},{"title":"50行代码的todomvc","level":"1.4.7","depth":2,"path":"topic/todomvc.md","ref":"./topic/todomvc.md","articles":[]}]},"previous":{"title":"️组合 - 结构复用","level":"1.3.2","depth":2,"path":"advanced/composite.md","ref":"./advanced/composite.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":false,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"advanced/modify.md","mtime":"2018-08-17T07:33:19.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-17T09:41:33.936Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

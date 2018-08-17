@@ -1,0 +1,935 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>表达式 · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../basic/data-binding.html" />
+    
+    
+    <link rel="prev" href="../basic/statement/include.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/component/">
+            
+                <a href="../basic/component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/interpolation.html">
+            
+                <a href="../basic/interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic/statement/">
+            
+                <a href="../basic/statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../basic/statement/list.html">
+            
+                <a href="../basic/statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../basic/statement/if.html">
+            
+                <a href="../basic/statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../basic/statement/include.html">
+            
+                <a href="../basic/statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="expression.html">
+            
+                <a href="expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic/data-binding.html">
+            
+                <a href="../basic/data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../advanced/composite.html">
+            
+                <a href="../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../advanced/modify.html">
+            
+                <a href="../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../topic/">
+            
+                <a href="../topic/">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../topic/template.html">
+            
+                <a href="../topic/template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../topic/ssr.html">
+            
+                <a href="../topic/ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../topic/mpregular">
+            
+                <span>
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../topic/performance.html">
+            
+                <a href="../topic/performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../topic/communication.html">
+            
+                <a href="../topic/communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../topic/redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../topic/rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../topic/todomvc.html">
+            
+                <a href="../topic/todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="styleguide.html">
+            
+                <a href="styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >表达式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x8868;&#x8FBE;&#x5F0F;"><b> </b>&#x8868;&#x8FBE;&#x5F0F;</a></li><ul><li><span class="title-icon "></span><a href="#es5-&#x8868;&#x8FBE;&#x5F0F;"><b>1. </b>ES5 &#x8868;&#x8FBE;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x89C4;&#x8303;&#x5916;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;"><b>2. </b>&#x89C4;&#x8303;&#x5916;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;</a></li><ul><li><span class="title-icon "></span><a href="#bind-once"><b>2.1. </b>&#x4E00;&#x6B21;&#x6027;&#x7ED1;&#x5B9A; </a></li><li><span class="title-icon "></span><a href="#filter"><b>2.2. </b>&#x8FC7;&#x6EE4;&#x5668;Filter </a></li><li><span class="title-icon "></span><a href="#range"><b>2.3. </b>Range </a></li></ul><li><span class="title-icon "></span><a href="#&#x9519;&#x8BEF;&#x6291;&#x5236;"><b>3. </b>&#x9519;&#x8BEF;&#x6291;&#x5236;</a></li><li><span class="title-icon "></span><a href="#setable"><b>4. </b>&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61; </a></li><li><span class="title-icon "></span><a href="#case"><b>5. </b>&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x53EF;&#x7528;&#x573A;&#x666F; </a></li></ul></ul></div><a href="#&#x8868;&#x8FBE;&#x5F0F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8868;&#x8FBE;&#x5F0F;"><a name="&#x8868;&#x8FBE;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x8868;&#x8FBE;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a> &#x8868;&#x8FBE;&#x5F0F;</h1>
+<p>Regular&#x91CC;&#x6240;&#x6709;&#x7684;&#x7ED1;&#x5B9A;&#x90FD;&#x4E0E;&#x8868;&#x8FBE;&#x5F0F;&#x6709;&#x5173;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A;<a href="#setable">&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61;</a>, &#x719F;&#x6089;&#x672C;&#x7AE0;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x66F4;&#x597D;&#x7684;&#x7406;&#x89E3;Regular&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x76D1;&#x542C;&#x539F;&#x7406;&#x3002;</p>
+<h2 id="es5-&#x8868;&#x8FBE;&#x5F0F;"><a name="es5-&#x8868;&#x8FBE;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#es5-&#x8868;&#x8FBE;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1. ES5 &#x8868;&#x8FBE;&#x5F0F;</h2>
+<p>Regular &#x652F;&#x6301;&#x51E0;&#x4E4E;&#x6240;&#x6709; ES5 &#x8868;&#x8FBE;&#x5F0F;&#x8BED;&#x6CD5;&#xFF0C;&#x4E0B;&#x5217;&#x90FD;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</p>
+<ul>
+<li><code>100 + &apos;b&apos;</code>.</li>
+<li><code>user? &apos;login&apos;: &apos;logout&apos;</code></li>
+<li><code>title = title + &apos;1&apos;</code></li>
+<li><code>!isLogin &amp;&amp; this.login()</code></li>
+<li><code>items[index][this.nav(item.index)].method1()</code></li>
+</ul>
+<p><strong>&#x51E0;&#x4E2A;&#x6CE8;&#x610F;&#x70B9;</strong></p>
+<ol>
+<li><strong>&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;<code>this</code>&#x6307;&#x5411;&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;</strong></li>
+<li><strong>&#x6570;&#x636E;&#x6839;&#x8DEF;&#x5F84;&#x4ECE; <code>component.data</code> &#x5F00;&#x59CB;, &#x5373;<code>user</code> &#x5176;&#x5B9E;&#x83B7;&#x53D6;&#x7684;&#x662F;<code>component.data.user</code></strong></li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x81EA;&#x589E;&#x3001;&#x81EA;&#x51CF;(<code>++</code>,<code>--</code>)&#x4EE5;&#x53CA;&#x4F4D;&#x64CD;&#x4F5C;&#x7B26;<code>&amp;</code> <code>|</code>&#x7B49;</li>
+<li>&#x4E0D;&#x652F;&#x6301;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5B57;&#x9762;&#x91CF;</li>
+<li>&#x5F00;&#x653E;&#x4E86;&#x90E8;&#x5206;JS&#x5185;&#x5EFA;&#x5BF9;&#x8C61;:<ul>
+<li>Array Date JSON Math NaN RegExp Object String</li>
+<li>decodeURI decodeURIComponent encodeURI encodeURIComponent </li>
+<li>parseFloat parseInt </li>
+</ul>
+</li>
+</ol>
+<p>&#x9664;&#x4E86; ES5 &#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;Regular &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;</p>
+<h2 id="&#x89C4;&#x8303;&#x5916;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;"><a name="&#x89C4;&#x8303;&#x5916;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x89C4;&#x8303;&#x5916;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x89C4;&#x8303;&#x5916;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;</h2>
+<h3 id="bind-once"><a name="bind-once" class="anchor-navigation-ex-anchor" href="#bind-once"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x4E00;&#x6B21;&#x6027;&#x7ED1;&#x5B9A; </h3>
+<p>&#x810F;&#x68C0;&#x67E5;&#x6027;&#x80FD;&#x4F9D;&#x8D56;&#x4E8E;&#x76D1;&#x542C;&#x5668;&#x7684;&#x6570;&#x91CF;&#xFF0C;Regular&#x5F15;&#x5165;&#x4E86;<code>@()</code>&#x9884;&#x53D1;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x6B21;&#x7ED1;&#x5B9A;&#x529F;&#x80FD;&#xFF1A; &#x76D1;&#x542C;&#x5668;&#x5728;&#x4E00;&#x6B21;&#x53D8;&#x66F4;&#x540E;&#x5C31;&#x4F1A;&#x88AB;&#x79FB;&#x9664;&#x3002; </p>
+<p><strong>syntax</strong></p>
+<p><code>@(Expression)</code></p>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x73AF;&#x5883;&#x4F7F;&#x7528;<code>@()</code>(<code>list</code>, <code>if</code>... etc)</p>
+</blockquote>
+<p><strong>Example</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{ @(title) }<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> // the interpolation only trigger once
+
+{#if @(test)}  // only test once
+//...
+{/if}
+
+{#list @(items) as item}  // only trigger once
+//...
+{/list}
+</code></pre>
+<ul>
+<li>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;<code>$watch</code> &#x4F7F;&#x7528; <code>@()</code></li>
+</ul>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+  data: {
+    user: {}
+  }
+});
+
+<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+component.$watch(<span class="hljs-string">&quot;@(user.name)&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    i++  <span class="hljs-comment">// only trigger once</span>
+});
+component.$update(<span class="hljs-string">&quot;user.name&quot;</span>, <span class="hljs-number">1</span>);
+component.$update(<span class="hljs-string">&quot;user.name&quot;</span>, <span class="hljs-number">2</span>);
+
+<span class="hljs-comment">// update twice  but trigger once</span>
+alert(i === <span class="hljs-number">1</span>);
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x4F8B;&#x6240;&#x793A;&#xFF0C;&#x7531;&#x4E8E;&#x300E;&#x810F;&#x4E86;&#x4E00;&#x6B21;&#x5C31;&#x88AB;&#x88AB;&#x629B;&#x5F03;&#x300F;, &#x5982;&#x679C;&#x503C;&#x540E;&#x7EED;&#x7EE7;&#x7EED;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;UI&#x4E0E;&#x6570;&#x636E;&#x4E0D;&#x540C;&#x6B65;&#x3002;</p>
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><a href="api.html#update">API: $update</a></li>
+</ul>
+<h3 id="filter"><a name="filter" class="anchor-navigation-ex-anchor" href="#filter"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x8FC7;&#x6EE4;&#x5668;Filter </h3>
+<p><strong>syntax</strong></p>
+<p><code>Expression| fitlerName: arg1, arg2,... argN</code></p>
+<p><strong>Example</strong></p>
+<p>&#x5047;&#x8BBE;&#x5DF2;&#x6CE8;&#x518C; <code>format</code> &#x8FC7;&#x6EE4;&#x5668;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{list|format: &apos;yy-MM-dd&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p><strong>&#x53C2;&#x8003;&#x6307;&#x5357;</strong></p>
+<ul>
+<li><a href="../basic/filter.html">&#x8FC7;&#x6EE4;&#x5668;</a></li>
+</ul>
+<h3 id="range"><a name="range" class="anchor-navigation-ex-anchor" href="#range"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. Range </h3>
+<p>Range &#x5373;&#x6570;&#x7EC4;&#x7684;&#x7B80;&#x5199;&#x6A21;&#x5F0F;</p>
+<p><strong>Syntax</strong>: </p>
+<p><code>start..end</code></p>
+<p><strong>Example</strong></p>
+<p><code>1..3 === [1,2,3]</code></p>
+<h2 id="&#x9519;&#x8BEF;&#x6291;&#x5236;"><a name="&#x9519;&#x8BEF;&#x6291;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x9519;&#x8BEF;&#x6291;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x9519;&#x8BEF;&#x6291;&#x5236;</h2>
+<p>&#x5728;&#x52A8;&#x6001;&#x6A21;&#x677F;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x629B;&#x51FA;&#x6240;&#x6709;JS&#x4E2D;&#x5E38;&#x89C1;&#x7684; <code>xx of undefined</code> &#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x4F1A;&#x53D8;&#x5F97;&#x76F8;&#x5F53;&#x8106;&#x5F31;&#x3002;Regular &#x6291;&#x5236;&#x4E86;&#x8FD9;&#x7C7B;&#x9519;&#x8BEF;&#x4E2D;&#x5B89;&#x5168;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;undefined&#x4EE3;&#x66FF;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">&quot;&lt;div&gt;{blog.user.name}&lt;/div&gt;&quot;</span>
+})
+
+<span class="hljs-comment">// =&gt; &lt;div&gt;&lt;/div&gt;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x662F;&#x65B9;&#x6CD5;&#x4E0D;&#x5B58;&#x5728;&#x4EA7;&#x751F;&#x7684;&#x9519;&#x8BEF;&#xFF0C;Regular &#x4ECD;&#x7136;&#x4F1A;&#x629B;&#x51FA;&#xFF0C;&#x8FD9;&#x5C5E;&#x4E8E;&#x300C;&#x975E;&#x5B89;&#x5168;&#x300D;&#x7684;&#x9519;&#x8BEF;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">&quot;&lt;div&gt;{this.methodNoFound(blog.user.name)}&lt;/div&gt;&quot;</span>
+})
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/xb1Lovc9/embed/js,result/"></script>
+
+<p>&#x5176;&#x4E2D;<code>blog.user.name</code>&#x9519;&#x8BEF;&#x88AB;&#x6291;&#x5236;&#xFF0C;&#x800C;<code>this.methodNoFound</code>&#x7684;&#x672A;&#x5B9A;&#x4E49;&#x9519;&#x8BEF;&#x4F1A;&#x88AB;&#x629B;&#x51FA;</p>
+<h2 id="setable"><a name="setable" class="anchor-navigation-ex-anchor" href="#setable"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61; </h2>
+<blockquote>
+<p>&#x7406;&#x89E3;&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;</p>
+</blockquote>
+<p>&#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x7F16;&#x8BD1;&#x540E;&#x4F1A;&#x901A;&#x8FC7;<code>new Function</code>&#x7F16;&#x8BD1;&#x4E3A;&#x4E00;&#x4E2A; <strong>&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61;</strong> &#xFF0C;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x5173;&#x952E;&#x65B9;&#x6CD5;</p>
+<ul>
+<li><p><strong>get(context)</strong></p>
+<p>&#x5373;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6C42;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;context(Component&#x5B9E;&#x4F8B;)&#x53C2;&#x6570;</p>
+<blockquote>
+<p>Regular&#x7684;&#x810F;&#x68C0;&#x67E5;&#x5373;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;get&#x4E24;&#x6B21;&#x8FD4;&#x56DE;&#x662F;&#x5426;&#x4E0D;&#x540C;&#x6765;&#x5224;&#x65AD;&#x6570;&#x636E;&#x662F;&#x5426;&#x53D8;&#x52A8;&#x3002;</p>
+</blockquote>
+<p><em>example:</em></p>
+<pre><code class="lang-js"><span class="hljs-comment">// create expression</span>
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+  data: {
+    user: <span class="hljs-string">&apos;leeluolee&apos;</span>,
+    age: <span class="hljs-number">20</span> 
+  }
+});
+
+<span class="hljs-keyword">var</span> expr = component.$expression(<span class="hljs-string">&quot;user + &apos;:&apos; + (age - 10)&quot;</span>)
+
+alert(expr.get(component) === <span class="hljs-string">&quot;leeluolee:10&quot;</span> ) <span class="hljs-comment">//true</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p><strong>set(context, value)</strong>  *&#x6B64;&#x51FD;&#x6570;&#x4E0D;&#x4E00;&#x5B9A;&#x5B58;&#x5728;</p>
+<p>&#x5982;&#x679C;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x4E00;&#x4E2A;&#x5408;&#x6CD5;&#x7684;<a href="https://es5.github.io/#x11.2" target="_blank">LeftHandSideExpression</a>&#xFF0C;Regular&#x4F1A;&#x63D0;&#x53D6;set&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6765;&#x8D4B;&#x503C;&#xFF0C;set&#x51FD;&#x6570;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x3002;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// component as context</span>
+<span class="hljs-keyword">var</span> component = <span class="hljs-keyword">new</span> Regular({
+  data: {
+    users: [
+      {name: <span class="hljs-string">&apos;leeluolee&apos;</span>},
+      {name: <span class="hljs-string">&apos;luobo&apos;</span>}
+    ],
+    index:<span class="hljs-number">0</span>
+  }
+});
+
+<span class="hljs-keyword">var</span> expr = component.$expression(<span class="hljs-string">&apos;users[index].name&apos;</span>)
+
+expr.set(component, <span class="hljs-string">&apos;daluobo&apos;</span>);
+
+alert(component.data.users[<span class="hljs-number">0</span>].name === <span class="hljs-string">&apos;daluobo&apos;</span>) <span class="hljs-comment">// true</span>
+</code></pre>
+</li>
+</ul>
+<p>  &#x53EF;&#x4EE5;&#x63D0;&#x53D6;&#x51FA;<code>set</code>&#x51FD;&#x6570;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x79F0;&#x6B64;&#x8868;&#x8FBE;&#x5F0F;&#x662F; <strong>setable</strong> &#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4E0D;&#x662F;<strong>setable</strong>&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x5E94;&#x7528;&#x4E0E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;(&#x5982; <a href="../basic/directive.html#">r-model</a>)&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x5C06;&#x4E0D;&#x80FD;&#x5F97;&#x5230;&#x5E94;&#x6709;&#x6548;&#x679C;&#x3002;</p>
+<blockquote>
+<p>&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x53EF;&#x4EE5;&#x63D0;&#x53D6;&#x51FA;set&#xFF0C;&#x5373;&#x4EE3;&#x8868;&#x4E86;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x8868;&#x8FBE;&#x5F0F;&#x90FD;&#x80FD;&#x5B8C;&#x6210;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#xFF0C;&#x6BD4;&#x5982;&#x8868;&#x8FBE;&#x5F0F;<code>&#x300C;a+b&#x300D;</code>&#xFF0C;&#x663E;&#x7136;&#x867D;&#x7136;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5B83;&#x7684;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x65E0;&#x4ECE;&#x77E5;&#x6653;&#x5982;&#x4F55;&#x53BB;&#x8BBE;&#x7F6E;a&#x548C;b&#x7684;&#x503C;&#x3002;</p>
+</blockquote>
+<h2 id="case"><a name="case" class="anchor-navigation-ex-anchor" href="#case"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x53EF;&#x7528;&#x573A;&#x666F; </h2>
+<p>&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A;<code>Expression</code>&#x7C7B;&#x578B;&#x7684;&#x573A;&#x666F;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<ul>
+<li><a href="../basic/interpolation.html">&#x63D2;&#x503C;</a></li>
+<li><a href="../basic/statement.md">&#x8BED;&#x53E5;</a><ul>
+<li><a href="../basic/statement/if.html">if</a></li>
+<li><a href="../basic/statement/list.html">list</a></li>
+<li><a href="../basic/statement/include.html">include</a></li>
+</ul>
+</li>
+<li>&#x5141;&#x8BB8;&#x4F20;&#x5165;<code>Expression</code>&#x7684;&#x67D0;&#x4E9B;API&#x5982;<ul>
+<li><a href="api.html#watch">$watch</a></li>
+<li><a href="api.html#update">$update</a></li>
+<li><a href="api.html#expression">$expression</a></li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../basic/statement/include.html" class="navigation navigation-prev " aria-label="Previous page: ️结构引入 - include">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../basic/data-binding.html" class="navigation navigation-next " aria-label="Next page: 数据监听">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"表达式","level":"1.2.5","depth":2,"next":{"title":"数据监听","level":"1.2.6","depth":2,"path":"basic/data-binding.md","ref":"basic/data-binding.md","articles":[]},"previous":{"title":"️结构引入 - include","level":"1.2.4.3","depth":3,"path":"basic/statement/include.md","ref":"basic/statement/include.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":false,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"reference/expression.md","mtime":"2018-08-07T01:33:30.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-17T09:41:33.936Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

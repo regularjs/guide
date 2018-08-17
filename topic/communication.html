@@ -1,0 +1,911 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>️跨组件通信 · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="redux.md" />
+    
+    
+    <link rel="prev" href="performance.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/component/">
+            
+                <a href="../basic/component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/interpolation.html">
+            
+                <a href="../basic/interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic/statement/">
+            
+                <a href="../basic/statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../basic/statement/list.html">
+            
+                <a href="../basic/statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../basic/statement/if.html">
+            
+                <a href="../basic/statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../basic/statement/include.html">
+            
+                <a href="../basic/statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../reference/expression.html">
+            
+                <a href="../reference/expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic/data-binding.html">
+            
+                <a href="../basic/data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../advanced/composite.html">
+            
+                <a href="../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../advanced/modify.html">
+            
+                <a href="../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="template.html">
+            
+                <a href="template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="ssr.html">
+            
+                <a href="ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mpregular">
+            
+                <span>
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="communication.html">
+            
+                <a href="communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="todomvc.html">
+            
+                <a href="todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../reference/">
+            
+                <a href="../reference/">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../reference/api.html">
+            
+                <a href="../reference/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../reference/styleguide.html">
+            
+                <a href="../reference/styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../reference/directive.html">
+            
+                <a href="../reference/directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >️跨组件通信</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x80CC;&#x666F;"><a name="&#x80CC;&#x666F;" class="anchor-navigation-ex-anchor" href="#&#x80CC;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x80CC;&#x666F;</h3>
+<p>&#x5728;&#x7EC4;&#x4EF6;&#x5316;&#x4E0D;&#x65AD;&#x6DF1;&#x5165;&#x7684;&#x5927;&#x73AF;&#x5883;&#x4E0B;&#xFF0C;&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x54EA;&#x79CD; MDV &#x6846;&#x67B6;&#x90FD;&#x6700;&#x7EC8;&#x4F1A;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x5934;&#x75BC;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x300C;&#x8DE8;&#x7EC4;&#x4EF6;&#x901A;&#x4FE1;&#x300D;&#x3002;</p>
+<p>&#x4E0B;&#x56FE;&#x662F;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#xFF08; &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8D77;&#x89C1;&#xFF0C;&#x6211;&#x628A;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x6A21;&#x677F;&#x90FD;&#x653E;&#x5728;&#x4E86;&#x4E00;&#x5F20;&#x56FE;&#x8FDB;&#x884C;&#x63CF;&#x8FF0; &#xFF09;</p>
+<p><img width="80%" src="https://p1.music.126.net/h1WXEc1SuukxJxLWjKPK3Q==/109951163238805807.png"></p>
+<p>&#x8FD9;&#x91CC;&#x5305;&#x542B;&#x300C;&#x4E8B;&#x4EF6;&#x901A;&#x4FE1;&#x300D;&#x548C;&#x300C;&#x6570;&#x636E;&#x901A;&#x4FE1;&#x300D;&#x4E24;&#x4E2A;&#x7EF4;&#x5EA6;&#x3002;</p>
+<p><strong>&#x4E8B;&#x4EF6;&#x4F20;&#x9012;</strong></p>
+<p>&#x4E3A;&#x4E86;&#x5C06;&#x4E8B;&#x4EF6; <code>click</code> &#x4ECE; <code>&lt;LeafNode /&gt;</code> &#x4F20;&#x9012;&#x5230;&#x6700;&#x5916;&#x5C42;&#x7EC4;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x4F9D;&#x6B21;&#x901A;&#x8FC7; <code>&lt;SubNode /&gt;</code> &#x548C; <code>&lt;Sub /&gt;</code> &#x7B49;&#x53EF;&#x80FD;&#x672C;&#x4E0D;&#x5173;&#x5FC3;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x7EC4;&#x4EF6;&#xFF08;&#x5373;&#x4F7F;&#x4F8B;&#x5B50;&#x91CC;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;proxy&#x7684;&#x7B80;&#x5316;&#x8BED;&#x6CD5;&#xFF09;</p>
+<p><strong>&#x6570;&#x636E;&#x4F20;&#x9012;</strong></p>
+<p>&#x4E3A;&#x4E86;&#x4ECE; <code>&lt;Top /&gt;</code> &#x4F20;&#x9012; <code>title</code> &#x8FD9;&#x4E2A; prop &#x5230; <code>&lt;LeafNode /&gt;</code> , &#x9700;&#x8981;&#x5C42;&#x5C42;&#x8DE8;&#x8D8A; <code>&lt;Sub /&gt;</code>&#x3001;<code>&lt;SubNode /&gt;</code> &#x8FD9;&#x4E9B;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3; <code>title</code>&#x5C5E;&#x6027; &#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x9664;&#x4E86;&#x5E26;&#x6765;&#x6027;&#x80FD;&#x4E0A;&#x7684;&#x635F;&#x8017;&#x4E4B;&#x5916;&#xFF0C;&#x66F4;&#x9EBB;&#x70E6;&#x7684;&#x5C31;&#x662F;&#x9020;&#x6210;&#x4E86;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#x7684;&#x6025;&#x901F;&#x4E0B;&#x964D;&#x3002; </p>
+<h3 id="&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x4FE1;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x4FE1;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x4FE1;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x4FE1;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<p> &#x6700;&#x76F4;&#x63A5;&#x7684;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x5F15;&#x5165;&#x4E00;&#x4E2A;&#x300C;&#x4E2D;&#x4ECB;&#x8005;&#x300D;&#xFF0C;&#x7B80;&#x800C;&#x8A00;&#x4E4B;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x300C;&#x8DF3;&#x677F;&#x300D;&#xFF0C;&#x4E0B;&#x4F8B;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x4ECB;&#x8005;</p>
+<p><strong>mediator.js</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Regular = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;regularjs&apos;</span>);
+<span class="hljs-keyword">const</span> emitter = <span class="hljs-keyword">new</span> Regular;<span class="hljs-comment">//&#x6BCF;&#x4E2A;Regular&#x7EC4;&#x4EF6;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#x53D1;&#x5C04;&#x5668;</span>
+
+<span class="hljs-built_in">module</span>.exports = {
+    broadcast: emiter.$emit.bind(emiter),
+    subscribe: emiter.$on.bind(emiter)
+}
+</code></pre>
+<p><strong>Top.js</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> { broadcast, subscribe } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./mediator&apos;</span>)
+<span class="hljs-keyword">const</span> Regular = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;regularjs&apos;</span>);
+
+<span class="hljs-keyword">const</span> Top = Regular.extend({
+
+    name: <span class="hljs-string">&apos;Top&apos;</span>,
+
+    init(){
+        subscribe(<span class="hljs-string">&apos;check&apos;</span>, ev =&gt;{
+            <span class="hljs-comment">// &#x901A;&#x8FC7;emitter&#x5E7F;&#x64AD;&#x4E8B;&#x4EF6;</span>
+        })
+    }
+})
+</code></pre>
+<p><strong>LeafNode.js</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> { broadcast, subscribe } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;path/to/mediator&apos;</span>)
+<span class="hljs-keyword">const</span> Regular = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;regularjs&apos;</span>);
+
+<span class="hljs-keyword">const</span> LeafNode = Regular.extend({
+
+    template: <span class="hljs-string">`&lt;div on-click={ this.onClick() } &gt;&lt;/div&gt;`</span>,
+
+    name: <span class="hljs-string">&apos;LeafNode&apos;</span>,
+
+    onClick(){
+        broadcast( <span class="hljs-string">&apos;check&apos;</span>, { type: <span class="hljs-string">&apos;leafnode&apos;</span> } )
+    }
+})
+</code></pre>
+<p><strong><code>mediator</code></strong> &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x5355;&#x4F8B;&#x76F4;&#x63A5;&#x88AB; <code>LeafNode</code> &#x548C; <code>Top</code> &#x5F15;&#x7528;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;&#x76F4;&#x63A5;&#x901A;&#x4FE1;.</p>
+<p><em>&#x66F4;&#x9EBB;&#x70E6;&#x7684;&#x5144;&#x5F1F;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x6765;&#x89E3;&#x51B3;&#x3002;</em></p>
+<h3 id="&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5F15;&#x51FA;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x95EE;&#x9898;"><a name="&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5F15;&#x51FA;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5F15;&#x51FA;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5F15;&#x51FA;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x95EE;&#x9898;</h3>
+<p>&#x4E0A;&#x8FF0;&#x4E2D;&#x4ECB;&#x8005;&#x7684;&#x5F15;&#x5165;&#x7684;&#x6700;&#x5927;&#x95EE;&#x9898;&#x5C31;&#x662F;&#xFF0C;&#x6240;&#x6709;&#x76F8;&#x5173;&#x7EC4;&#x4EF6;&#x90FD;&#x5728; <strong>&#x5B9A;&#x4E49;&#x65F6;</strong> &#x5F15;&#x5165;&#x4E86;&#x5BF9;<code>emitter</code>&#x7684; <strong>&#x5168;&#x5C40;&#x8026;&#x5408;</strong>&#xFF0C; &#x8FD9;&#x4E2A;&#x5C06;&#x5BFC;&#x81F4;&#x7EC4;&#x4EF6;&#x65E0;&#x6CD5;&#x5728;&#x591A;&#x5DE5;&#x7A0B;&#x95F4;&#x88AB;&#x590D;&#x7528;&#x3002;</p>
+<p><strong>&#x4E00;&#x79CD;&#x5408;&#x7406;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5C31;&#x662F;&#x5C06;&#x5BF9;<code>emitter</code>&#x7684;&#x8026;&#x5408;, &#x5EF6;&#x8FDF;&#x5230;&#x5B9E;&#x4F8B;&#x5316;&#x9636;&#x6BB5;&#x3002; </strong></p>
+<p>&#x5728;Regular&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x91CC;&#xFF0C;&#x5F88;&#x591A;&#x670B;&#x53CB;&#x4F1A;&#x901A;&#x8FC7;<code>this.$parent</code>&#x6216;<code>this.$outer</code>&#x7B49;&#x53EF;&#x63A7;&#x6027;&#x5F88;&#x5DEE;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x5728;<code>v0.6</code>&#x6709;&#x4E86;&#x4E00;&#x79CD;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<h3 id="modifybodycomponent-&#x65B0;&#x751F;&#x547D;&#x5468;&#x671F;"><a name="modifybodycomponent-&#x65B0;&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#modifybodycomponent-&#x65B0;&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a><code>modifyBodyComponent</code> &#x65B0;&#x751F;&#x547D;&#x5468;&#x671F;</h3>
+<p>&#x5728; Regular &#x7684; <code>v0.6</code> &#x5F15;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x53EB; <code>modifyBodyComponent</code> &#xFF0C;&#x5B83;&#x7528;&#x6765;&#x52AB;&#x6301;&#x5230;&#x7EC4;&#x4EF6;&#x5305;&#x88F9;&#x7684;&#x6240;&#x6709;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5468;&#x671F;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4F8B;&#x5B50;&#x6765;&#x5B9E;&#x73B0;&#x4E0B;<code>emitter</code>&#x7684;&#x52A8;&#x6001;&#x6CE8;&#x5165;</p>
+<p><strong>Broadcastor.js</strong></p>
+<pre><code class="lang-js">
+
+<span class="hljs-keyword">const</span> Regular = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;regularjs&apos;</span>);
+
+<span class="hljs-keyword">const</span> Broadcastor = Regular.extend({
+
+    name: <span class="hljs-string">&apos;Broadcastor&apos;</span>,
+
+    config( data ){
+        <span class="hljs-keyword">const</span> emitter = data.emitter;
+        <span class="hljs-keyword">this</span>._broadcast = emitter.$emit.bind(emitter),
+        <span class="hljs-keyword">this</span>._subscribe =  emitter.$on.bind(emitter)
+
+
+    },
+
+    modifyBodyComponent( component, next ){
+
+        component.$broadcast = <span class="hljs-keyword">this</span>._broadcast;
+        component.$subscribe = <span class="hljs-keyword">this</span>._subscribe;
+
+        next(component) <span class="hljs-comment">// &#x4EA4;&#x7ED9;&#x5916;&#x5C42;&#x7684;&#x5305;&#x88C5;&#x5668;</span>
+    }
+})
+</code></pre>
+<p><strong>Top.js</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// const { broadcast, subscribe } = require(&apos;./mediator&apos;)</span>
+<span class="hljs-keyword">const</span> Regular = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;regularjs&apos;</span>);
+
+<span class="hljs-keyword">const</span> Top = Regular.extend({
+
+    name: <span class="hljs-string">&apos;Top&apos;</span>,
+
+    template: <span class="hljs-string">&apos;&#x7565;...&apos;</span>,
+
+    init(){
+        <span class="hljs-keyword">this</span>.$subscribe(<span class="hljs-string">&apos;check&apos;</span>, ev =&gt;{
+            <span class="hljs-comment">// &#x901A;&#x8FC7;emitter&#x5E7F;&#x64AD;&#x4E8B;&#x4EF6;</span>
+        })
+    }
+})
+</code></pre>
+<p><strong>LeafNode.js</strong></p>
+<pre><code class="lang-js">
+<span class="hljs-comment">// const { broadcast, subscribe } = require(&apos;path/to/mediator&apos;)</span>
+<span class="hljs-keyword">const</span> Regular = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;regularjs&apos;</span>);
+
+<span class="hljs-keyword">const</span> LeafNode = Regular.extend({
+
+    template: <span class="hljs-string">`&lt;div on-click={ this.onClick() } &gt;&lt;/div&gt;`</span>,
+
+    name: <span class="hljs-string">&apos;LeafNode&apos;</span>,
+
+    onClick(){
+        <span class="hljs-keyword">this</span>.$broadcast( <span class="hljs-string">&apos;check&apos;</span>, { type: <span class="hljs-string">&apos;leafnode&apos;</span> } )
+    }
+})
+</code></pre>
+<p><strong>main.js</strong> (&#x5165;&#x53E3;)</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">new</span> Regular({
+    template:<span class="hljs-string">`
+        &lt;Broadcastor emitter={emitter}&gt;
+            &lt;!-- &#x5176;&#x4E2D;LeafNode &#x5728;Top&#x5185;&#x90E8; --&gt;
+            &lt;Top /&gt;
+        &lt;/Broadcastor&gt;
+    `</span>,
+    data: {
+        emitter: <span class="hljs-keyword">new</span> Regular
+    }
+})
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;&#x58F0;&#x660E;&#x90FD;&#x53D6;&#x6D88;&#x4E86;&#x5BF9;&#x5168;&#x5C40; <code>emitter</code> &#x7684;&#x76F4;&#x63A5;&#x4F9D;&#x8D56;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x5165;&#x53E3;(<code>main.js</code>) &#x52A8;&#x6001;&#x4F20;&#x5165;&#x4E86;&#x4E00;&#x4E2A;<code>emitter</code>&#x3002;</p>
+<h4 id="&#x751F;&#x547D;&#x5468;&#x671F;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x751F;&#x547D;&#x5468;&#x671F;</h4>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;<code>modifyBodyComponent</code> &#x4F1A;&#x5728; component&#x672C;&#x8EAB;<code>compile</code>&#x4E4B;&#x540E;&#x8FD0;&#x884C;, &#x4F46;&#x5728;<code>init</code>&#x4E4B;&#x524D;&#x8FD0;&#x884C;&#x3002;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E3A;&#x4EE3;&#x8868;, &#x5B8C;&#x6574;&#x751F;&#x547D;&#x5468;&#x671F;&#x5982;&#x4E0B;.</p>
+<pre><code class="lang-shell">
+Broadcastor.config -&gt; Broadcastor.compile
+    - Top.config -&gt; Top.compile
+        - LeafNode.config -&gt; LeafNode.compile
+            - Broadcastor.modifyBodyComponent(LeafNode)
+        - LeafNode.init
+        - Broadcastor.modifyBodyComponent(Top)
+    - Top.init
+- Broadcastor.init
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="performance.html" class="navigation navigation-prev " aria-label="Previous page: 性能指引">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="redux.md" class="navigation navigation-next " aria-label="Next page: 与redux结合">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"️\b跨组件通信","level":"1.4.6","depth":2,"next":{"title":"与redux结合","level":"1.4.6.1","depth":3,"path":"topic/redux.md","ref":"./topic/redux.md","articles":[]},"previous":{"title":"性能指引","level":"1.4.5","depth":2,"path":"topic/performance.md","ref":"./topic/performance.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":false,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"topic/communication.md","mtime":"2018-08-17T06:41:42.128Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-17T09:41:33.936Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
