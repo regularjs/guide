@@ -1,13 +1,12 @@
 # 片段渲染 - include
 
-include语句可用来引入动态的渲染片段
+`include`语句可用来引入动态的渲染片段
 
 __Syntax__
 
 `{#include template} `
 
 * __template__`<Experssion>` : 求值结果是 String 或 AST
-
 
 
 ## 基本使用

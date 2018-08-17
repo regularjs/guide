@@ -9,6 +9,8 @@ Regular的组件满足以下等式
 > 组件 = 模板 + 数据 + 业务逻辑
 
 
+
+
 __提示__
 
 - 本节会简单涉及到 [DOM事件](../event.md#dom)
@@ -39,7 +41,7 @@ new Component().$inject(document.body) //可以重复使用
 ```
 
 
-<script async src="http://jsfiddle.net/leeluolee/3qt2g0mo/embed/result,js/"></script>
+<script async src="//jsfiddle.net/leeluolee/3qt2g0mo/embed/result,js/"></script>
 
 __参考__
 

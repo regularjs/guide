@@ -7,7 +7,8 @@
     "plugins": [
         "edit-link", "splitter", "-lunr", "-search", "-sharing",
         "search-plus", "expandable-chapters-small",
-        "anchor-navigation-ex"
+        "anchor-navigation-ex",
+        "force-http"
     ],
     "structure": {
           "readme": "README.md"
