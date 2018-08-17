@@ -37,17 +37,17 @@ View 和 AppService 分别跑在两个线程中，通过 JSBridge 进行数据�
 举个例子（伪代码）：
 
 ```html
-<view
+<component
   bindtap="eventHandler"
   data-cid="component-id"
   data-eid="event-id"
 >
   Hello {{ _holders[ 'some-id' ] }}
-</view>
+</component>
 ```
 
 ```js
-Regular.extend( {
+const Component = Regular.extend( {
   config() {
     this.data.name = 'world'
   },
@@ -55,6 +55,8 @@ Regular.extend( {
     console.log( 'clicked' )
   }
 } )
+
+const vm = new Component()
 ```
 
 1. 数据填充
@@ -63,7 +65,7 @@ Regular.extend( {
 
 2. 事件处理
 
-  当 tap 触发的时候会执行 `eventHandler`，在 `eventHandler` 中通过 `component-id` 找到对应的 `Regular 实例`，再通过event-id找到对应的真实事件处理函数
+  当 tap 触发的时候会执行 eventHandler，先在 eventHandler 中通过 `component-id` 找到对应的 vm（ Regular 实例 ），再通过 `event-id` 找到对应的真实事件处理函数 onClick
 
 ### 为什么设计 holders，而不传递真正的数据呢？
 
