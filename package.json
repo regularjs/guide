@@ -9,6 +9,7 @@
   "scripts": {
     "install": "gitbook install",
     "start": "gitbook serve .",
+    "deploy": "gulp deploy",
     "build": "gitbook install && gitbook build . public"
   },
   "author": "leeluolee <oe.zheng@gmail.com>",
