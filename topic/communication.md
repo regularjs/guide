@@ -105,7 +105,7 @@ __一种合理的解决方案就是将对`emitter`的耦合, 延迟到实例化�
 Regular 在 `v0.6` 版本引入了一个新的生命周期 `modifyBodyComponent` ，可以用它来劫持组件包裹的所有内部组件的初始化过程。
 
 
-让我们用一个简单的例子来说明下modifyBodyComponent的具体使用，实现`emitter`的动态注入
+让我们用一个简单的例子来说明下modifyBodyComponent的具体使用，以及实现`emitter`的动态注入
 
 __Broadcastor.js__
 
