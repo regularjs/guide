@@ -31,6 +31,7 @@
     + [✔性能指引](./topic/performance.md)
     + [跨组件通信](./topic/communication.md)
         + [与redux结合](./topic/redux.md)
+        + [与Rx结合(ing...)](./topic/rx.md)
 - [索引手册](reference/README.md)
     - [API](reference/api.md)
     - [风格指南](reference/styleguide.md)

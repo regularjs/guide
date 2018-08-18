@@ -206,3 +206,69 @@ __理由__
 - __未来可能会移除这个Feature__
 
 
+### 事件与双向绑定
+
+
+
+__Bad__
+
+```js
+
+const Input2 = Regular.extend({
+    name: 'Input2',
+    template: `<input on-change={this.changeValue($event)} />`
+    changeValue(ev){
+        this.data.value = ev.target.value;
+        this.$emit('change'); // emit change event
+    }
+})
+
+```
+
+```js
+
+new Regular({
+    template: `
+        <Input2 value={value} on-change={this.handleValue()} />
+    `,
+
+    handleValue(){
+        console.log(this.data.value) // 返回的仍然是上一个值
+    }
+
+}).$inject('body')
+
+```
+
+这里你会发现返回的仍然是上一个值
+
+__为什么?__
+
+因为触发事件的时候，并没有进入脏检查，外层的数据其实还未被同步。
+
+__Not So Bad__
+
+
+```js
+const Input2 = Regular.extend({
+    name: 'Input2',
+    template: `<input on-change={this.changeValue($event)} />`
+    changeValue(ev){
+        this.data.value = ev.target.value;
+        setTimeout(()=>{
+            this.$emit('change'); //emit 
+        },0)
+    }
+})
+```
+
+当通过类似`setTimeout`将其延迟到脏检查之后的时机触发，此时的结果就如预期了。
+
+
+__Good__
+
+> @TODO: new feature required
+
+
+
+
