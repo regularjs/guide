@@ -55,15 +55,15 @@ const vm = new Component()
 
 1. 数据填充
 
-  我们只要通过一定规则拿到 `holder-id` 标识，就可以将 `name` 填充到模板的对应位置上
+  只要通过一定规则拿到 `holder-id` 标识，就可以将 `name` 填充到模板的对应位置
 
 2. 事件处理
 
-  当 tap 触发的时候会执行 proxyEvent，先在 proxyEvent 中通过 `component-id` 找到对应的 vm（ Regular 实例 ），再通过 `event-id` 找到对应的真实事件处理函数 onClick，这里的 proxyEvent 相当于做了一次转发
+  当 tap 触发时，会先执行 proxyEvent，mpregular 会在 proxyEvent 中通过 `component-id` 找到对应的 vm（ Regular 实例 ），再通过 `event-id` 找到真正的事件处理函数 onClick，然后执行
 
 ### 为什么设计 holders，而不传递真正的数据呢？
 
-先来看下 holders 是长什么样子的
+我们先来看下 holders 是长什么样子的
 
 ```js
 {
@@ -76,7 +76,7 @@ const vm = new Component()
 
 是一种扁平的结构
 
-虽然这么看 holders 感觉平平无奇，但其实这是 mpregular 中最重要的一个设计
+虽然这么看 holders 感觉平平无奇，但这其实是 mpregular 中最重要的一个设计
 
 - 全量的复杂表达式支持
 
@@ -88,21 +88,21 @@ const vm = new Component()
 
 ### 总结
 
-通过静态分析 Regular 模板，提前将 __数据坑位查找规则__ 和 __事件处理函数查找规则__ 在构建阶段生成到 wxml 中，到了运行时阶段，小程序的视图层和逻辑层就可以无缝衔接起来了
+通过静态分析 Regular 模板，提前将 __数据坑位查找规则__ 和 __事件处理函数查找规则__ 在构建阶段生成到 wxml 中，到了运行时阶段，小程序的视图层和逻辑层就可以无缝衔接起来
 
 ## 和业界框架的对比
 
-| 特性        | 小程序    |  mpvue  |   mpregular  |
-| --------   | -----:   | :----: | :----: |
-| 模板语法规范        | 原生小程序     |    Vue 规范   |  Regular 规范  |
-| 组件化支持        | 小程序组件规范     |    Vue组件   | Regular组件   |
-| computed 计算属性  |    x   |   o    |   o |
-| model 双向绑定        |   x   |  o     |  o  |
-| slot 插槽        |    x   |    x   |  o  |
-| filter 过滤器        |   x    |   x    |  o  |
-| html 富文本        |     x  |     x  |  o  |
-| 复杂表达式插值        |   x    |    x   |  o  |
-| 小程序分包        |   o    |    x   |  o  |
+| 特性              |         小程序 |    mpvue     |    mpregular     |
+| ----------------- | --------------:|:------------:|:----------------:|
+| 模板语法规范      |     原生小程序 | Vue 模板语法 | Regular 模板语法 |
+| 组件化支持        | 小程序组件规范 |   Vue 组件   |   Regular 组件   |
+| computed 计算属性 |              x |      o       |        o         |
+| model 双向绑定    |              x |      o       |        o         |
+| slot 插槽         |              x |      x       |        o         |
+| filter 过滤器     |              x |      x       |        o         |
+| html 富文本       |              x |      x       |        o         |
+| 复杂表达式插值    |              x |      x       |        o         |
+| 小程序分包        |              o |      x       |        o         |
 
 > 目前 mpvue 的 slot 支持还存在一定问题
 
