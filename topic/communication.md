@@ -102,7 +102,7 @@ __一种合理的解决方案就是将对`emitter`的耦合, 延迟到实例化�
 
 ### `modifyBodyComponent` 新的生命周期
 
-在 Regular 的 `v0.6` 版本引入了一个新的生命周期叫 `modifyBodyComponent` ，它用来劫持到组件包裹的所有内部组件的初始化过程。
+Regular 在 `v0.6` 版本引入了一个新的生命周期 `modifyBodyComponent` ，可以用它来劫持组件包裹的所有内部组件的初始化过程。
 
 
 让我们用一个简单的例子来说明下modifyBodyComponent的具体使用，实现`emitter`的动态注入
