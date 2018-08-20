@@ -5,11 +5,11 @@ Regular 中事件分为两类
 - DOM事件
 - 组件事件
 
-在大部分情况下，它们的使用和表现都一致。
+在大部分情况下，它们的使用方式和表现一致。
 
 ##  DOM 事件 {#dom}
 
-> 所有 __DOM节点上__ 以`on-`开头的属性都会被当做DOM事件处理
+> __DOM节点上__ 所有以 `on-` 开头的属性都会被当做DOM事件处理
 
 
 
@@ -50,11 +50,11 @@ __Arguments__
   - elem:  被绑定节点
   - fire:  触发事件函数
 
-注意如果需要做 __销毁工作__ ，与指令一样，你需要返回一个销毁函数
+注意如果需要做 __销毁工作__ ，与指令一样，你需要在 fn 中返回一个函数用来做销毁工作
 
 __Example__
 
-定义`on-enter`事件处理回车逻辑
+定义 `on-enter` 事件处理回车逻辑
 
 
 ```js
@@ -69,30 +69,28 @@ Regular.event('enter', function(elem, fire){
   }
   dom.on(elem, "keypress", update);
 });
-
-// use in template
-
 ```
 
 ```html
+<!-- use in template -->
 <textarea on-enter={this.submit($event)}></textarea>
 ```
 
-__Tip:__ 模板 `this` 指向组件本身，回车后实际会运行组件的submit方法
+__Tip:__ 模板中出现的 `this` 指向组件实例本身，回车后会运行实例的submit方法
 
 <script async src="//jsfiddle.net/leeluolee/3ac62L4g/embed/js,result/"></script>
 
 查看 [$event](#$event)了解更多
 
-> 注意除非是自定义事件，其它事件无论浏览器支持，都会通过addEventListener进行绑定
+> 注意：除非是自定义事件，其它事件无论浏览器是否支持，都会通过addEventListener进行绑定
 
 
 ### 事件代理支持
 
 
-`on-*`会直接在当前节点绑定事件，在某些情况下（比如大列表），这种方式不是很高效。
+`on-*`会在当前节点绑定事件，在某些情况下（比如大列表），这种方式不是很高效。
 
-可以使用 `delegate-` 代替 `on-`，来避免一些场景下的性能问题，它只会绑定一次事件到 父节点 上
+在这种情况下，我们可以尝试使用 `delegate-` 代替 `on-`，来避免潜在的性能问题，`delegate-` 只会绑定一次事件到 父节点 上
 
 
 __Example__
@@ -103,12 +101,12 @@ __Example__
 ```
 
 
-但是，需要注意的是，`delegate-`并非是「银弹」
+但是，需要注意的是，`delegate-` 并非是「银弹」
 
-1. 避免使用在高频触发的事件( `mouseover` )，这样反而会产生性能问题
+1. 避免在高频触发的事件中使用( 比如 `mouseover` )，这样反而会产生性能问题
 2. 事件必须可冒泡
-  - [自定义事件](#custom-event)请参考zepto's tap-event的[实现](https://github.com/madrobby/zepto/blob/master/src/event.jsL274).
-  - 部分事件天生没法冒泡，比如IE低版下的`change`，`select`等
+  - [自定义事件](#custom-event)请参考 zepto tap-event 的[实现](https://github.com/madrobby/zepto/blob/master/src/event.jsL274).
+  - 部分事件天生没法冒泡，比如 IE 低版下的 `change`，`select` 等
 
 ### $event 对象 {#event}
 
@@ -151,9 +149,9 @@ __Example__
 ### 模板里声明组件事件绑定
 
 
-与DOM事件绑定类似，声明式组件以`on-`开头的属性都会被视作事件绑定
+与DOM事件绑定类似，声明式组件以 `on-` 开头的属性都会被视作事件绑定
 
-假设已经注册了一个名为`Pager`的翻页器组件
+假设已经注册了一个名为 `Pager` 的翻页器组件
 
 ```html
 <Pager on-nav={ this.refresh($event) } />
@@ -161,9 +159,9 @@ __Example__
 
 <script async src="//jsfiddle.net/leeluolee/8pfa43ms/embed/js,result/"></script>
 
-每当`Pager`组件通过 `$emit` 抛出`nav`事件，对应的 `this.refresh($event)` 就会被调用，即执行组件上的 refresh 方法
+每当 `Pager` 组件通过 `$emit` 抛出`nav`事件，对应的 `this.refresh($event)` 就会被调用，执行组件上的 refresh 方法
 
-是的，和DOM事件并无二样。但其中的`$event`代表$emit传入的__第一个__参数
+是的，整个过程和 DOM 事件并无二样。但其中的 `$event` 代表 $emit 传入的__第一个__参数
 
 
 
@@ -172,10 +170,10 @@ __Example__
 Regular 会在组件实例初始化过程的关键阶段抛出事件
 
 1. `$config`: 会在 compile 之前触发
-2. `$init` : 会在 compile 之后触发，此时，dom结构已经生成，你可以通过ref来获取了
+2. `$init` : 会在 compile 之后触发，此时，dom 结构已经生成，你可以通过 this.$refs 来获取了
 3. `$destroy`: 会在组件被 destroy 时触发
 
-> `$`前缀是为了标示内建事件
+> `$`前缀是为了标识内建事件
 
 
 ## 事件的共性
