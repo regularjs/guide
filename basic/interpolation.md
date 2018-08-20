@@ -6,6 +6,7 @@
 - [文本插值](#text) - 针对文本节点
 - [属性插值](#attr) - 针对DOM节点
 - [参数插值](#prop) - 针对声明式组件
+  - [Fragment参数](#fragment) - 片段参数
 
 他们语法都是类似，即`{Expression}`，`{}`也称为表达式容器。
 
@@ -101,6 +102,18 @@ __FAQ__
 关于参数插值，请直接看[组件章节](./component#prop)
 
 
+### Fragment片段参数 {#fragment}
+
+Regular还支持一种模板片段的插值，称为，它与组件结构的复用能力直接相关，如
+
+```html
+<Card title={~ <Icon type='user' /> 我是标题 } >
+  <Icon type='user' /> 我是内容区 
+</Card>
+```
+
+
+更多解读请直接参考[组合 - 结构复用](../advanced/composite.md#fragment)
 
 
 
