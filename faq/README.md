@@ -10,21 +10,21 @@
 
 
 
-## Regular的性能
+## Regular的性能(or 脏检查的性能)
 
 Regular 由于脏检查的存在，需要一些额外的 [__注意事项__](../topic/performance.md) 来达到更好的性能表现。
 
 但在某些情况下，比如 __数据全替换场景且页面节点较多__ 时的频繁更新表现是优于一些竞品框架的，
-比如fork自 https://github.com/mathieuancelin/js-repaint-perfs 的这个Case(原repo的Regular版本过低)
+比如fork自 https://github.com/mathieuancelin/js-repaint-perfs 的这个Case
 
-- vue: https://leeluolee.github.io/js-repaint-perfs/vue/
-- regularjs: https://leeluolee.github.io/js-repaint-perfs/regularjs/
-- react: https://leeluolee.github.io/js-repaint-perfs/react/
+- vue2: http://mathieuancelin.github.io/js-repaint-perfs/vue2/
+- react: http://mathieuancelin.github.io/js-repaint-perfs/react/
+- regularjs: http://mathieuancelin.github.io/js-repaint-perfs/regularjs/
  
 在我的电脑上(MacBook Pro 15: 2.2 GHz Intel Core i7、16 GB 1600 MHz DDR3)，三者的fps数据大致是
 
 ```js
-Vue: 55 ~ 65
+Vue2: 55 ~ 65
 React: 80 ~100
 Regular: 130 ~ 140
 ```
