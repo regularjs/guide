@@ -1,0 +1,1062 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>计算字段与过滤器 · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="directive.html" />
+    
+    
+    <link rel="prev" href="data-binding.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="component/">
+            
+                <a href="component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="interpolation.html">
+            
+                <a href="interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="event.html">
+            
+                <a href="event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="statement/">
+            
+                <a href="statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="statement/list.html">
+            
+                <a href="statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="statement/if.html">
+            
+                <a href="statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="statement/include.html">
+            
+                <a href="statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../reference/expression.html">
+            
+                <a href="../reference/expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="data-binding.html">
+            
+                <a href="data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="filter.html">
+            
+                <a href="filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="directive.html">
+            
+                <a href="directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="animation.html">
+            
+                <a href="animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../advanced/composite.html">
+            
+                <a href="../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../advanced/modify.html">
+            
+                <a href="../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../topic/">
+            
+                <a href="../topic/">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../topic/template.html">
+            
+                <a href="../topic/template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../topic/ssr.html">
+            
+                <a href="../topic/ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../topic/mpregular.html">
+            
+                <a href="../topic/mpregular.html">
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../topic/performance.html">
+            
+                <a href="../topic/performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../topic/communication.html">
+            
+                <a href="../topic/communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../topic/redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../topic/rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../topic/todomvc.html">
+            
+                <a href="../topic/todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../reference/">
+            
+                <a href="../reference/">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../reference/api.html">
+            
+                <a href="../reference/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../reference/styleguide.html">
+            
+                <a href="../reference/styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../reference/directive.html">
+            
+                <a href="../reference/directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >计算字段与过滤器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;"><b> </b>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;</a></li><ul><li><span class="title-icon "></span><a href="#computed"><b>1. </b>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5; </a></li><ul><li><span class="title-icon "></span><a href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><b>1.1. </b>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;</a></li><li><span class="title-icon "></span><a href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x5199;"><b>1.2. </b>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x5199;</a></li><li><span class="title-icon "></span><a href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x8303;&#x4F8B;-&#x300C;&#x5168;&#x9009;&#x53CD;&#x9009;&#x300D;"><b>1.3. </b>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x8303;&#x4F8B;: &#x300C;&#x5168;&#x9009;/&#x53CD;&#x9009;&#x300D;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6EE4;&#x5668;---filter"><b>2. </b>&#x8FC7;&#x6EE4;&#x5668; - filter</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;"><b>2.1. </b>&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;"><b>2.2. </b>&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;</a></li><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F18;&#x5148;&#x7EA7;"><b>2.3. </b>&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F18;&#x5148;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;-format"><b>2.4. </b>&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;: format</a></li><li><span class="title-icon "></span><a href="#two-way"><b>2.5. </b>&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668; </a></li><li><span class="title-icon "></span><a href="#&#x8FC7;&#x6EE4;&#x5668;&#x4E0E;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x6BD4;"><b>2.6. </b>&#x8FC7;&#x6EE4;&#x5668;&#x4E0E;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x6BD4;</a></li><li><span class="title-icon "></span><a href="#&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;"><b>2.7. </b>&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;</a></li></ul></ul></ul></div><a href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;"><a name="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a> &#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4E0E;&#x8FC7;&#x6EE4;&#x5668;</h1>
+<p>Regular &#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD;&#x81EA;&#x5B9A;&#x4E49;<a href="../reference/expression.html#setable">&#x8868;&#x8FBE;&#x5F0F;</a>&#x8BFB;&#x5199;&#x7684;&#x65B9;&#x5F0F; &#x2014;&#x2014; <strong>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;</strong> &#x548C; <strong>&#x8FC7;&#x6EE4;&#x5668;</strong></p>
+<h2 id="computed"><a name="computed" class="anchor-navigation-ex-anchor" href="#computed"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x8BA1;&#x7B97;&#x5B57;&#x6BB5; </h2>
+<p>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x5728; <a href="../reference/api.html#options">options</a> &#x901A;&#x8FC7; <code>computed</code> &#x5B57;&#x6BB5;&#x6CE8;&#x518C;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x4E66;&#x5199;&#x5197;&#x4F59;&#x7684;<a href="../reference/expression.html">&#x8868;&#x8FBE;&#x5F0F;</a> </p>
+<h3 id="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><a name="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5B9A;&#x4E49;</h3>
+<p>&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x76F8;&#x5F53;&#x4E8E;&#x624B;&#x52A8;&#x6784;&#x9020; <strong><a href="../reference/expression.html#setable">&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61;</a></strong></p>
+<p><strong>&#x5BF9;&#x8C61;&#x5305;&#x542B;<code>get</code>&#x548C;<code>set</code>(&#x53EF;&#x9009;)&#x65B9;&#x6CD5;</strong>&#xFF0C;</p>
+<ul>
+<li><p><code>get(data)</code>: &#x5C5E;&#x6027;&#x7684; getter &#x51FD;&#x6570;&#xFF0C;&#x5B9A;&#x4E49; <strong>&#x8BFB;</strong> &#x903B;&#x8F91;</p>
+<ul>
+<li>data: <code>data</code> &#x6307;&#x5411; component.data</li>
+<li>this: <code>this</code> &#x6307;&#x5411;&#x7EC4;&#x4EF6; component</li>
+</ul>
+</li>
+<li><p><code>set(value, data)</code>:  &#x5C5E;&#x6027;&#x7684; setter &#x51FD;&#x6570;&#xFF0C;&#x5B9A;&#x4E49; <strong>&#x5199;</strong> &#x903B;&#x8F91;</p>
+<ul>
+<li>value: the value to set</li>
+<li>data: <code>data</code> &#x6307;&#x5411; component.data</li>
+<li>this: <code>this</code> &#x6307;&#x5411;&#x7EC4;&#x4EF6; component</li>
+</ul>
+</li>
+</ul>
+<p><em>&#x5176;&#x4E2D;set&#x662F;&#x53EF;&#x9009;&#x7684;</em></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Component = Regular.extend({
+  computed: {
+    fullname: {
+      get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+        <span class="hljs-keyword">return</span> data.first + <span class="hljs-string">&quot;-&quot;</span> + data.last;
+      },
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, data</span>)</span>{
+        <span class="hljs-keyword">var</span> tmp = value.split(<span class="hljs-string">&quot;-&quot;</span>);
+        data.first = tmp[<span class="hljs-number">0</span>];
+        data.last = tmp[<span class="hljs-number">1</span>];
+      }
+    }
+  }
+})
+</code></pre>
+<p><strong>&#x76F4;&#x63A5;&#x4F20;&#x5165;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x4F1A;&#x4F5C;&#x4E3A;getter&#x51FD;&#x6570;&#x5B58;&#x5728;</strong></p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">const</span> Component = Regular.extend({
+  computed: {
+    fullname: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+        <span class="hljs-keyword">return</span> data.first + <span class="hljs-string">&quot;-&quot;</span> + data.last;
+    }
+  }
+})
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x7B80;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Component = Regular.extend({
+  computed: {
+    fullname: <span class="hljs-string">`first+ &apos;-&apos; + last`</span>
+  }
+})
+</code></pre>
+<p>&#x5B8C;&#x6574;&#x7684;&#x4F7F;&#x7528;&#x8303;&#x4F8B;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Component = Regular.extend({
+  template: <span class="hljs-string">`
+    &lt;div&gt;fullname: &lt;input r-model={fullname}&gt;&lt;/div&gt;
+    &lt;div&gt;first: &lt;input r-model={first}&gt;&lt;/div&gt;
+    &lt;div&gt;last: &lt;input r-model={last}&gt;&lt;/div&gt;
+    &lt;div&gt;{welcome}&lt;/div&gt;
+  `</span>,
+  computed: {
+    welcome: <span class="hljs-string">`&apos;Hello, &apos;+ fullname`</span>,
+    fullname: {
+      get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-keyword">return</span> data.first + <span class="hljs-string">&quot;-&quot;</span> + data.last;
+      },
+      set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, data</span>) </span>{
+        <span class="hljs-keyword">const</span> tmp = value.split(<span class="hljs-string">&quot;-&quot;</span>);
+        data.first = tmp[<span class="hljs-number">0</span>];
+        data.last = tmp[<span class="hljs-number">1</span>]||<span class="hljs-string">&apos;&apos;</span>;
+      }
+    }
+  }
+})
+
+<span class="hljs-keyword">const</span> component = <span class="hljs-keyword">new</span> Component({
+  data: {
+    first: <span class="hljs-string">&apos;1&apos;</span>,
+    last: <span class="hljs-string">&apos;2&apos;</span>
+  }
+}).$inject(<span class="hljs-built_in">document</span>.body);
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/hjkcu9z6/embed/result,js/"></script>
+
+<p><strong>&#x8BF4;&#x660E;</strong></p>
+<ul>
+<li><code>welcome</code>: &#x53EA;&#x8BFB;&#x7684;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;</li>
+<li><code>fullname</code>: &#x7531;&#x4E8E;&#x8BBE;&#x7F6E;&#x4E86;set&#xFF0C;&#x662F;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x7684;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</li>
+</ul>
+<h3 id="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x5199;"><a name="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x5199;" class="anchor-navigation-ex-anchor" href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x5199;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x8BFB;&#x5199;</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5728; javascript &#x5BF9;&#x5B9A;&#x4E49;&#x7684;&#x8BA1;&#x7B97;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x517C;&#x5BB9;&#x4F4E;&#x7248;&#x672C;IE&#xFF0C;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x5E76;&#x975E;&#x901A;&#x8FC7;<code>Object.defineProperty</code>&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x8FC7; Regular &#x63D0;&#x4F9B;&#x4E86;&#x9014;&#x5F84;&#x6765;&#x83B7;&#x53D6;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5; -- <a href="../reference/api.html#get">$get</a></p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Component = Regular.extend({
+  computed:{
+    fullname: <span class="hljs-string">`first + &apos;-&apos; + last`</span>
+  }
+})
+
+<span class="hljs-keyword">const</span> component = <span class="hljs-keyword">new</span> Component({
+  data: {
+    first: <span class="hljs-string">&apos;Zheng&apos;</span>
+    last: <span class="hljs-string">&apos;Haibo&apos;</span>
+  }
+});
+
+<span class="hljs-built_in">console</span>.log(component.data.fullname) <span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.log(component.$get(<span class="hljs-string">&apos;fullname&apos;</span>)) <span class="hljs-comment">// &apos;Zheng-Haibo&apos;</span>
+</code></pre>
+<p>&#x5B9E;&#x9645;&#x4E0A; <code>$get</code> &#x4E5F;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x4E0E;&#x6240;&#x6709;&#x8868;&#x8FBE;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-js">component.$get(<span class="hljs-string">&apos;&quot;Hello, &quot; + fullname&apos;</span>)
+</code></pre>
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><a href="../reference/api.html#">$get</a></li>
+</ul>
+<h3 id="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x8303;&#x4F8B;-&#x300C;&#x5168;&#x9009;&#x53CD;&#x9009;&#x300D;"><a name="&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x8303;&#x4F8B;-&#x300C;&#x5168;&#x9009;&#x53CD;&#x9009;&#x300D;" class="anchor-navigation-ex-anchor" href="#&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x8303;&#x4F8B;-&#x300C;&#x5168;&#x9009;&#x53CD;&#x9009;&#x300D;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x8303;&#x4F8B;: &#x300C;&#x5168;&#x9009;/&#x53CD;&#x9009;&#x300D;</h3>
+<pre><code class="lang-java">
+
+<span class="hljs-keyword">const</span> ListComponent = Regular.extend({
+  computed: {
+    selectAll: {
+      <span class="hljs-comment">// only every item is selected, we return true</span>
+      get: function( data ){
+
+        <span class="hljs-keyword">if</span>(!data.list) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+
+        <span class="hljs-keyword">return</span> data.list.filter(
+
+            function(item){ <span class="hljs-keyword">return</span> !!item.selected}
+
+          ).length === data.list.length;
+      },
+      set: function( value, data ){
+        <span class="hljs-keyword">if</span>(!data.list) <span class="hljs-keyword">return</span>
+        <span class="hljs-comment">// set every item.selected with passed value</span>
+        data.list.forEach(function(item){
+          item.selected = value;
+        })
+      }
+    }
+  }
+
+})
+</code></pre>
+<p><strong>template</strong></p>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+{#list list as item}
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{item.selected}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>{item.text}<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+{/list}
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{selectAll}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Select All<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/739w65xa/embed/result,js/"></script>
+
+
+<h2 id="&#x8FC7;&#x6EE4;&#x5668;---filter"><a name="&#x8FC7;&#x6EE4;&#x5668;---filter" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;---filter"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x8FC7;&#x6EE4;&#x5668; - filter</h2>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x662F; Regular &#x4E2D;&#x7684;&#x4E00;&#x79CD;<a href="../reference/expression.html#filter">&#x6269;&#x5C55;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;</a> , &#x4F60;&#x53EF;&#x4EE5;&#x548C;<code>+</code>&#x3001;<code>-</code>&#x7B26;&#x53F7;&#x4E00;&#x6837;&#x53BB;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+<p><strong>Syntax</strong></p>
+<p><code>Expression| fitlerName: arg1, arg2,... argN</code></p>
+<p><strong>Example</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{list| join: &apos;+&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;"><a name="&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x5B9A;&#x4E49;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<a href="../reference/api.html#filter"><code>Regular.filter</code></a>&#x6765;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#x3002;</p>
+<p>&#x4E0B;&#x4F8B;&#x4F1A;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;join&#x6570;&#x7EC4;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;split&#x53C2;&#x6570;</p>
+<pre><code class="lang-javascript">Regular.filter({
+  <span class="hljs-string">&apos;join&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"> list, split </span>)</span>{
+    <span class="hljs-keyword">return</span> list.join(split||<span class="hljs-string">&apos;-&apos;</span>)
+  }
+})
+
+<span class="hljs-keyword">new</span> Regular({
+  template:<span class="hljs-string">`
+    &lt;div&gt;{list|join:&apos;+&apos;}&lt;/div&gt;
+  `</span>,
+  data: {
+    list: [<span class="hljs-string">&apos;Add&apos;</span>, <span class="hljs-string">&apos;Update&apos;</span>, <span class="hljs-string">&apos;Delete&apos;</span>]
+  }
+})
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/btjfac04/embed/result,js/"></script>
+
+<h3 id="&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;"><a name="&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;</h3>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4EFB;&#x610F;&#x4E2A;&#xFF0C;&#x4ED6;&#x4EEC;&#x4F1A;&#x4F9D;&#x6B21;&#x4F20;&#x5165;&#x5230;&#x8FC7;&#x6EE4;&#x5668;&#x5B9A;&#x4E49;&#x7684;get&#x548C; <a href="#two-way">set</a> &#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x8FC7;&#x6EE4;&#x5668;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x8868;&#x8FBE;&#x5F0F;</p>
+<pre><code class="lang-js">Reuglar.extend({
+  template:<span class="hljs-string">`
+    &lt;div&gt;{list|join:&apos;+&apos;}&lt;/div&gt;
+  `</span>
+})
+</code></pre>
+<h3 id="&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F18;&#x5148;&#x7EA7;"><a name="&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F18;&#x5148;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. &#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x4F18;&#x5148;&#x7EA7;</h3>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x5148;&#x7EA7;&#x5C0F;&#x4E8E;&#x4E09;&#x5143;&#x8868;&#x8FBE;&#x5F0F;(&#x5982; <code>a?b:c</code> )&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x4E0E;&#x6807;&#x51C6;&#x8868;&#x8FBE;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>()</code>&#x6765;&#x63D0;&#x5347;&#x5B83;&#x7684;&#x4F18;&#x5148;&#x7EA7;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{ &apos;add: &apos; + ([1,2,3]|join: &apos;+&apos;)  } = 6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p><strong>&#x8F93;&#x51FA;</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span> add: 1+2+3 = 6<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;-format"><a name="&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;-format" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;-format"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. &#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;: format</h3>
+<p>&#x4EE5;&#x4E0B;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5316;&#x7684; Regular &#x65E5;&#x671F;&#x8FC7;&#x6EE4;&#x5668;</p>
+<p><strong>Example</strong></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x8FC7;&#x6EE4;&#x5668;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// simplest date format</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fix</span>(<span class="hljs-params">str</span>) </span>{
+  str = <span class="hljs-string">&quot;&quot;</span> + (str || <span class="hljs-string">&quot;&quot;</span>);
+  <span class="hljs-keyword">return</span> str.length &lt;= <span class="hljs-number">1</span> ? <span class="hljs-string">&quot;0&quot;</span> + str : str;
+}
+
+<span class="hljs-keyword">const</span> maps = {
+  <span class="hljs-string">&apos;yyyy&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>) </span>{
+    <span class="hljs-keyword">return</span> date.getFullYear()
+  },
+  <span class="hljs-string">&apos;MM&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>) </span>{
+    <span class="hljs-keyword">return</span> fix(date.getMonth() + <span class="hljs-number">1</span>);
+  },
+  <span class="hljs-string">&apos;dd&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>) </span>{
+    <span class="hljs-keyword">return</span> fix(date.getDate())
+  },
+  <span class="hljs-string">&apos;HH&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>) </span>{
+    <span class="hljs-keyword">return</span> fix(date.getHours())
+  },
+  <span class="hljs-string">&apos;mm&apos;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">date</span>) </span>{
+    <span class="hljs-keyword">return</span> fix(date.getMinutes())
+  }
+}
+
+<span class="hljs-keyword">const</span> trunk = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-built_in">Object</span>.keys(maps).join(<span class="hljs-string">&apos;|&apos;</span>), <span class="hljs-string">&apos;g&apos;</span>);
+
+Regular.filter(<span class="hljs-string">&quot;format&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, format</span>) </span>{
+  format = format || <span class="hljs-string">&quot;yyyy-MM-dd HH:mm&quot;</span>;
+  value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(value);
+
+  <span class="hljs-keyword">return</span> format.replace(trunk, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">capture</span>) </span>{
+    <span class="hljs-keyword">return</span> maps[capture] ? maps[capture](value) : <span class="hljs-string">&quot;&quot;</span>;
+  });
+})
+</code></pre>
+<p>&#x7136;&#x540E;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{time| format: &apos;yyyy-MM&apos;}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/q0s1mbvg/embed/result,js/"></script>
+
+
+<h3 id="two-way"><a name="two-way" class="anchor-navigation-ex-anchor" href="#two-way"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. &#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668; </h3>
+<p>Regular &#x652F;&#x6301;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6982;&#x5FF5;: &#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x4F7F;&#x5F97;&#x8FC7;&#x6EE4;&#x5668;&#x53EF;&#x4EE5;&#x4EE3;&#x7406;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x4E0E;<a href="#computed">&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7C7B;&#x4F3C;</a>&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x7406;&#x89E3;&#x4E00;&#x4E2A;<a href="../reference/expression.html#setable">&#x8868;&#x8FBE;&#x5F0F;&#x5BF9;&#x8C61;</a>&#x5B9E;&#x9645;&#x662F;&#x7531; <strong>get</strong>(&#x8BFB;&#x64CD;&#x4F5C;) &#x548C; <strong>set</strong> (&#x5199;&#x64CD;&#x4F5C;) &#x6784;&#x6210;</p>
+<p>&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;&#x5982;&#x5176;&#x540D;&#xFF0C;&#x7ECF;&#x5E38;&#x4F1A;&#x7528;&#x5728;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x4E0A;&#xFF0C;&#x7531;&#x4E8E;&#x8FD9;&#x4E2A;&#x7279;&#x6027;&#xFF0C;<code>r-model</code>&#x53EF;&#x4EE5;&#x53D8;&#x76F8;&#x4E0E;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x3002;</p>
+<p>&#x4EE5; <code>{[1,2,3]|join: &apos;-&apos;}</code> &#x4E3A;&#x4F8B;</p>
+<p> &#x8FC7;&#x6EE4;&#x5668;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-js">Regular.filter(<span class="hljs-string">&apos;join&apos;</span>, {
+  <span class="hljs-comment">//[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;] - &gt; &apos;1-2-3&apos;</span>
+  get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">origin, split </span>)</span>{
+    <span class="hljs-keyword">return</span> origin.join( split || <span class="hljs-string">&quot;-&quot;</span> );
+  },
+  <span class="hljs-comment">// **Important **</span>
+  <span class="hljs-comment">// &apos;1-2-3&apos; - &gt; [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;]</span>
+  set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">dest, split </span>)</span>{
+    <span class="hljs-keyword">return</span> dest.split( split || <span class="hljs-string">&quot;-&quot;</span> );
+  }
+})
+</code></pre>
+<blockquote>
+<p>&#x8BF4;&#x660E;: &#x8FC7;&#x6EE4;&#x5668;&#x5B9A;&#x4E49;&#x4F20;&#x5165;&#x51FD;&#x6570;&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x6210;&#x4E3A; <code>get</code> &#x8BFB;&#x51FD;&#x6570;</p>
+</blockquote>
+<pre><code class="lang-html">{JSON.stringify(array)}
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{array|join:&apos;-&apos;}</span> &gt;</span>
+</code></pre>
+<p><strong>&#x8BF4;&#x660E;</strong></p>
+<p>&#x8FC7;&#x6EE4;&#x5668;&#x52AB;&#x6301;&#x4E86;&#x8BFB;&#x5199;&#xFF0C;&#x4F7F;&#x5F97;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x548C;&#x6570;&#x7EC4;&#x53D8;&#x76F8;&#x5B9E;&#x73B0;&#x4E86;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x3002;</p>
+<ul>
+<li><strong>&#x5199;&#x8FC7;&#x7A0B;</strong>: &#x4ECE;&#x8868;&#x5355;&#x5143;&#x7D20;&#x7684;<code>input.value</code> &#x5230;&#x6570;&#x636E; <code>array</code>&#xFF0C;&#x5148;&#x7ECF;&#x8FC7; <strong>set</strong> &#x51FD;&#x6570;&#xFF0C;&#x4ECE; <strong>&#x5B57;&#x7B26;&#x4E32; &gt; &#x6570;&#x7EC4;</strong></li>
+<li><strong>&#x8BFB;&#x8FC7;&#x7A0B;</strong>: &#x4ECE;&#x6570;&#x636E;<code>array</code>&#x5230;&#x8868;&#x5355;&#x5143;&#x7D20;&#x7684;<code>input.value</code> &#xFF0C;&#x5148;&#x7ECF;&#x8FC7; <strong>get</strong> &#x51FD;&#x6570;&#xFF0C;&#x4ECE; <strong>&#x6570;&#x7EC4; &gt; &#x5B57;&#x7B26;&#x4E32;</strong></li>
+</ul>
+<script async src="//jsfiddle.net/leeluolee/0oh8e6dj/1/embed/result,js/"></script>
+
+<blockquote>
+<p>&#x5982;<a href="../reference/expression.html">&#x8868;&#x8FBE;&#x5F0F;&#x7AE0;&#x8282;</a>&#x6240;&#x8FF0;, &#x90E8;&#x5206;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5982;<code>JSON</code>&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x53EF;&#x7528;</p>
+</blockquote>
+<h3 id="&#x8FC7;&#x6EE4;&#x5668;&#x4E0E;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x6BD4;"><a name="&#x8FC7;&#x6EE4;&#x5668;&#x4E0E;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x6BD4;" class="anchor-navigation-ex-anchor" href="#&#x8FC7;&#x6EE4;&#x5668;&#x4E0E;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>2.6. &#x8FC7;&#x6EE4;&#x5668;&#x4E0E;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x6BD4;</h3>
+<ul>
+<li>&#x8FC7;&#x6EE4;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x590D;&#x7528;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x800C;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x662F;&#x4E00;&#x4E2A;&#x5199;&#x6B7B;&#x7684;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;</li>
+<li>&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;&#x4F7F;&#x7528;&#x66F4;&#x7B80;&#x6D01;</li>
+</ul>
+<h3 id="&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;"><a name="&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>2.7. &#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;</h3>
+<p>&#x4E3A;&#x4E86;&#x63A7;&#x5236;&#x6846;&#x67B6;&#x4F53;&#x79EF;&#xFF0C;Regular &#x53EA;&#x6709;&#x5C11;&#x91CF;&#x5185;&#x7F6E;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x5176;&#x4E2D; <strong>&#x4E0D;&#x5305;&#x542B;format!</strong> &#xFF0C;&#x4F60;&#x53C2;&#x8003;&#x4E0A;&#x4F8B;&#x5B9E;&#x73B0;&#xFF0C;&#x6216;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x5305;&#xFF0C;&#x4F8B;&#x5982; <a href="https://momentjs.com/" target="_blank">moment.js</a></p>
+<ul>
+<li><p><code>json</code>: <em>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x8FC7;&#x6EE4;&#x5668;</em></p>
+<ul>
+<li>get: <code>JSON.parse</code></li>
+<li>set: <code>JSON.stringify</code></li>
+</ul>
+</li>
+<li><p><code>last</code></p>
+<ul>
+<li>get: <code>list[list.length-1]</code></li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="data-binding.html" class="navigation navigation-prev " aria-label="Previous page: 数据监听">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="directive.html" class="navigation navigation-next " aria-label="Next page: ️指令">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"计算字段与过滤器","level":"1.2.7","depth":2,"next":{"title":"️指令","level":"1.2.8","depth":2,"path":"basic/directive.md","ref":"basic/directive.md","articles":[]},"previous":{"title":"数据监听","level":"1.2.6","depth":2,"path":"basic/data-binding.md","ref":"basic/data-binding.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"basic/filter.md","mtime":"2018-08-07T01:33:30.693Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-23T07:37:43.914Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

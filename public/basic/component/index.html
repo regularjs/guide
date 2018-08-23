@@ -1,0 +1,1121 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>️组件 · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../interpolation.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../intro/what.html">
+            
+                <a href="../../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../../intro/hello.html">
+            
+                <a href="../../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../interpolation.html">
+            
+                <a href="../interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../event.html">
+            
+                <a href="../event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../statement/">
+            
+                <a href="../statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../statement/list.html">
+            
+                <a href="../statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../statement/if.html">
+            
+                <a href="../statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../statement/include.html">
+            
+                <a href="../statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../reference/expression.html">
+            
+                <a href="../../reference/expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../data-binding.html">
+            
+                <a href="../data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../filter.html">
+            
+                <a href="../filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../directive.html">
+            
+                <a href="../directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../animation.html">
+            
+                <a href="../animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../advanced/">
+            
+                <a href="../../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../advanced/modular.html">
+            
+                <a href="../../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../advanced/composite.html">
+            
+                <a href="../../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../advanced/modify.html">
+            
+                <a href="../../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../topic/">
+            
+                <a href="../../topic/">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../topic/template.html">
+            
+                <a href="../../topic/template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../topic/ssr.html">
+            
+                <a href="../../topic/ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../topic/mpregular.html">
+            
+                <a href="../../topic/mpregular.html">
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../topic/performance.html">
+            
+                <a href="../../topic/performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../topic/communication.html">
+            
+                <a href="../../topic/communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../../topic/redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../../topic/rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../topic/todomvc.html">
+            
+                <a href="../../topic/todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../reference/">
+            
+                <a href="../../reference/">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../reference/api.html">
+            
+                <a href="../../reference/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../reference/styleguide.html">
+            
+                <a href="../../reference/styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../reference/directive.html">
+            
+                <a href="../../reference/directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../faq/">
+            
+                <a href="../../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >️组件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x7EC4;&#x4EF6;---component"><b> </b>&#x7EC4;&#x4EF6; - component</a></li><ul><li><span class="title-icon "></span><a href="#&#x7EC4;&#x4EF6;&#x57FA;&#x7840;"><b>1. </b>&#x7EC4;&#x4EF6;&#x57FA;&#x7840;</a></li><ul><li><span class="title-icon "></span><a href="#&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;"><b>1.1. </b>&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;</a></li><li><span class="title-icon "></span><a href="#&#x5168;&#x5C40;&#x522B;&#x540D;&#x5FEB;&#x6377;&#x8BBE;&#x7F6E;---name"><b>1.2. </b>&#x5168;&#x5C40;&#x522B;&#x540D;&#x5FEB;&#x6377;&#x8BBE;&#x7F6E; - name</a></li></ul><li><span class="title-icon "></span><a href="#prop"><b>2. </b>&#x7EC4;&#x4EF6;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x4E0E;&#x7ED1;&#x5B9A; </a></li><ul><li><span class="title-icon "></span><a href="#data"><b>2.1. </b>&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7EC6;&#x8282;&#x8BF4;&#x660E; </a></li><li><span class="title-icon "></span><a href="#default"><b>2.2. </b>&#x7981;&#x6B62;&#x5728;extend&#x4E2D;&#x5B9A;&#x4E49;&#x7F3A;&#x7701;data&#x53C2;&#x6570; </a></li></ul><li><span class="title-icon "></span><a href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;"><b>3. </b>&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</a></li><ul><li><span class="title-icon "></span><a href="#config-data----&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x524D;&#x8C03;&#x7528;"><b>3.1. </b>config( data ) - &#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x524D;&#x8C03;&#x7528;</a></li><li><span class="title-icon "></span><a href="#init---&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x540E;&#x8C03;&#x7528;"><b>3.2. </b>init - &#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x540E;&#x8C03;&#x7528;</a></li><li><span class="title-icon "></span><a href="#destroy---&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x524D;&#x8C03;&#x7528;"><b>3.3. </b>destroy - &#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x524D;&#x8C03;&#x7528;</a></li><li><span class="title-icon "></span><a href="#modifybodycomponent"><b>3.4. </b>modifyBodyComponent</a></li><li><span class="title-icon "></span><a href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;"><b>3.5. </b>&#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;</a></li></ul><li><span class="title-icon "></span><a href="#&#x52A8;&#x6001;&#x7EC4;&#x4EF6;"><b>4. </b>&#x52A8;&#x6001;&#x7EC4;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#parent"><b>5. </b>&#x7236;&#x7EC4;&#x4EF6; - $parent </a></li><ul><li><span class="title-icon "></span><a href="#isolate"><b>5.1. </b>&#x7EC4;&#x4EF6;&#x9694;&#x79BB; </a></li></ul><li><span class="title-icon "></span><a href="#&#x7EC4;&#x4EF6;&#x7684;isolate&#x5C5E;&#x6027;"><b>6. </b>&#x7EC4;&#x4EF6;&#x7684;isolate&#x5C5E;&#x6027;</a></li><li><span class="title-icon "></span><a href="#ref"><b>7. </b>&#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;&#x548C;&#x5B50;&#x7EC4;&#x4EF6; </a></li><ul><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C1;dom&#x64CD;&#x4F5C;&#x7684;&#x8BEF;&#x533A;"><b>7.1. </b>&#x5E38;&#x89C1;DOM&#x64CD;&#x4F5C;&#x7684;&#x8BEF;&#x533A;</a></li><li><span class="title-icon "></span><a href="#ref-&#x5C5E;&#x6027;"><b>7.2. </b>ref &#x5C5E;&#x6027;</a></li><li><span class="title-icon "></span><a href="#ref&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x52A8;&#x6001;&#x63D2;&#x503C;"><b>7.3. </b>ref&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x52A8;&#x6001;&#x63D2;&#x503C;</a></li></ul><li><span class="title-icon "></span><a href="#regulardomelement-&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;"><b>8. </b>Regular.dom.element &#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F55;&#x65F6;&#x4F7F;&#x7528;domelement-&#x4F55;&#x65F6;&#x4F7F;&#x7528;-ref"><b>8.1. </b>&#x4F55;&#x65F6;&#x4F7F;&#x7528;dom.element &#x4F55;&#x65F6;&#x4F7F;&#x7528; ref?</a></li></ul><li><span class="title-icon "></span><a href="#&#x5176;&#x5B83;&#x4E8B;&#x9879;"><b>9. </b>&#x5176;&#x5B83;&#x4E8B;&#x9879;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6CA1;&#x6709;&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;"><b>9.1. </b>&#x6CA1;&#x6709;&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;</a></li></ul></ul></ul></div><a href="#&#x7EC4;&#x4EF6;---component" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7EC4;&#x4EF6;---component"><a name="&#x7EC4;&#x4EF6;---component" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;---component"><i class="fa fa-link" aria-hidden="true"></i></a> &#x7EC4;&#x4EF6; - component</h1>
+<p>&#x300C;&#x7EC4;&#x4EF6;&#x5316;&#x300D;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x6807;&#x7B7E;&#x5316;&#x8FD9;&#x79CD;&#x8868;&#x73B0;&#x5C42;&#x9762;&#x7684;&#x63CF;&#x8FF0;</p>
+<blockquote>
+<p>&#x5728;&#x7528;&#x6237;&#x7AEF;&#x5F00;&#x53D1;&#x9886;&#x57DF;&#xFF0C;&#x7EC4;&#x4EF6;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x79CD;&#x72EC;&#x7ACB;&#x7684;&#x3001;&#x53EF;&#x590D;&#x7528;&#x7684;&#x4EA4;&#x4E92;&#x5143;&#x7D20;&#x7684;&#x5C01;&#x88C5;&#x3002;</p>
+</blockquote>
+<p>Regular&#x7684;&#x7EC4;&#x4EF6;&#x6EE1;&#x8DB3;&#x4EE5;&#x4E0B;&#x7B49;&#x5F0F;</p>
+<blockquote>
+<p>&#x7EC4;&#x4EF6; = &#x6A21;&#x677F; + &#x6570;&#x636E; + &#x4E1A;&#x52A1;&#x903B;&#x8F91;</p>
+</blockquote>
+<p><strong>&#x63D0;&#x793A;</strong></p>
+<ul>
+<li>&#x672C;&#x8282;&#x4F1A;&#x7B80;&#x5355;&#x6D89;&#x53CA;&#x5230; <a href="../event.html#dom">DOM&#x4E8B;&#x4EF6;</a></li>
+</ul>
+<h2 id="&#x7EC4;&#x4EF6;&#x57FA;&#x7840;"><a name="&#x7EC4;&#x4EF6;&#x57FA;&#x7840;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;&#x57FA;&#x7840;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7EC4;&#x4EF6;&#x57FA;&#x7840;</h2>
+<p>&#x4F7F;&#x7528; <strong><a href="../../reference/api.html#extend">Component.extend</a></strong> &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x53EF;&#x590D;&#x7528;&#x7684;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Component = Regular.extend( {
+  template: <span class="hljs-string">`&lt;button on-click={count+=1}&gt; &#x4F60;&#x70B9;&#x4E86;{count}&#x6B21;&#x6309;&#x94AE; &lt;/button&gt;`</span>,
+  config( data ){
+    data.count = <span class="hljs-number">0</span>;
+  }
+});
+</code></pre>
+<p><code>extend</code> &#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>new</code> &#x5173;&#x952E;&#x5B57;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">new</span> Component().$inject(<span class="hljs-built_in">document</span>.body)
+<span class="hljs-keyword">new</span> Component().$inject(<span class="hljs-built_in">document</span>.body) <span class="hljs-comment">//&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x4F7F;&#x7528;</span>
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/3qt2g0mo/embed/result,js/"></script>
+
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><strong><a href="../../reference/api.html#inject">api - $inject</a></strong>: &#x63D2;&#x5165;&#x7EC4;&#x4EF6;&#x5230;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;,&#x6216;&#x6062;&#x590D;&#x7EC4;&#x4EF6;&#x5230;&#x6E38;&#x79BB;&#x72B6;&#x6001;&#xFF08;&#x8131;&#x79BB;&#x6587;&#x6863;&#xFF09;</li>
+</ul>
+<h3 id="&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;"><a name="&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;</h3>
+<p>&#x9664;&#x4E86;&#x901A;&#x8FC7;<code>new</code>&#x5B9E;&#x73B0;&#x547D;&#x4EE4;&#x5F0F;&#x521D;&#x59CB;&#x5316;&#xFF0C;Regular &#x652F;&#x6301;&#x5728;&#x522B;&#x7684;&#x7EC4;&#x4EF6;&#x6A21;&#x677F;&#x4E2D;&#x4F7F;&#x7528;&#x58F0;&#x660E;&#x5F0F;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x662F;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x6CE8;&#x518C;&#x540D;&#x4E3A;Component&#x7684;&#x5168;&#x5C40;&#x7EC4;&#x4EF6;</span>
+Regular.component(<span class="hljs-string">&apos;Component&apos;</span>, Component)
+
+<span class="hljs-keyword">new</span> Regular({
+  template:<span class="hljs-string">`
+    &lt;Component &gt;&lt;/Component&gt;
+    &lt;Component/&gt; &lt;!-- &#x81EA;&#x95ED;&#x5408; --&gt;
+  `</span>
+})
+</code></pre>
+<p>&#x6548;&#x679C;&#x4E0E;&#x4E0A;&#x4F8B;&#x5B8C;&#x5168;&#x4E00;&#x81F4;</p>
+<script async src="//jsfiddle.net/leeluolee/nwds9g6c/embed/result,js/"></script>
+
+
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><strong><a href="../reference/api.md#component">api - Component.component</a></strong>: &#x7EC4;&#x4EF6;&#x6CE8;&#x518C;</li>
+</ul>
+<h3 id="&#x5168;&#x5C40;&#x522B;&#x540D;&#x5FEB;&#x6377;&#x8BBE;&#x7F6E;---name"><a name="&#x5168;&#x5C40;&#x522B;&#x540D;&#x5FEB;&#x6377;&#x8BBE;&#x7F6E;---name" class="anchor-navigation-ex-anchor" href="#&#x5168;&#x5C40;&#x522B;&#x540D;&#x5FEB;&#x6377;&#x8BBE;&#x7F6E;---name"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x5168;&#x5C40;&#x522B;&#x540D;&#x5FEB;&#x6377;&#x8BBE;&#x7F6E; - name</h3>
+<p>&#x56E0;&#x4E3A;&#x4E0A;&#x4F8B;&#x8FD9;&#x79CD;&#x6CE8;&#x518C;&#x5230;&#x5168;&#x5C40;&#x7684;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x666E;&#x904D;, <strong>Regular &#x652F;&#x6301;&#x5728; extend &#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x522B;&#x540D;</strong></p>
+<pre><code class="lang-js">Regular.extend({
+  name: <span class="hljs-string">&apos;Component&apos;</span> <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5168;&#x5C40;&#x522B;&#x540D;</span>
+  <span class="hljs-comment">//...</span>
+})
+</code></pre>
+<h2 id="prop"><a name="prop" class="anchor-navigation-ex-anchor" href="#prop"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x7EC4;&#x4EF6;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x4E0E;&#x7ED1;&#x5B9A; </h2>
+<p><strong>data</strong> &#x5728; Regular &#x4E2D;&#x662F;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x5B9E;&#x4F8B;&#x5C5E;&#x6027;&#xFF0C;&#x6839;&#x636E; <a href="../../reference/expression.html">&#x7D22;&#x5F15;&#xFF1A;&#x8868;&#x8FBE;&#x5F0F;</a> &#x6240;&#x8FF0;</p>
+<blockquote>
+<p>&#x6570;&#x636E;&#x6839;&#x8DEF;&#x5F84;&#x4ECE; component.data &#x5F00;&#x59CB;,&#x5373; {user} &#x5176;&#x5B9E;&#x83B7;&#x53D6;&#x7684;&#x662F; component.data.user</p>
+</blockquote>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x5728;&#x6A21;&#x677F;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;&#x5176;&#x5B83;&#x5C5E;&#x6027;&#xFF0C;&#x6BD4;&#x5982; <code>{this.nickName}</code> &#x62FF;&#x5230;&#x7684;&#x5C31;&#x662F;&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;nickName&#x5B57;&#x6BB5;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">new</span> Regular({
+  template:<span class="hljs-string">`
+    &lt;div&gt;{this.nickName}&lt;/div&gt;
+    &lt;!-- &#x76F8;&#x5F53;&#x4E8E; this.data.userName --&gt;
+    &lt;div&gt;{userName}&lt;/div&gt;
+  `</span>,
+  nickName: <span class="hljs-string">&apos;leeluolee&apos;</span>,
+  data: {
+    userName: <span class="hljs-string">&apos;hzzhenghaibo&apos;</span>
+  }
+})
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x770B;&#x8D77;&#x6765;&#xFF0C;&#x4F3C;&#x4E4E; <strong>data</strong> &#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x4E2A;&#x77ED;&#x5199;&#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x800C;&#x5DF2;&#x3002; &#x5176;&#x5B9E;&#x4E0D;&#x5C3D;&#x7136;&#xFF0C;&#x56E0;&#x4E3A;</p>
+<blockquote>
+<p><strong>&#x53EA;&#x6709;data&#x4E0A;&#x7684;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x58F0;&#x660E;&#x5F0F;&#x5C5E;&#x6027;&#x4F20;&#x5165;</strong></p>
+</blockquote>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-name">Component</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&apos;hello&apos;</span> /&gt;</span>
+</code></pre>
+<p>&#x5C31;&#x76F8;&#x5F53;&#x4E8E;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">new</span> Component({
+  data: {
+    title: <span class="hljs-string">&apos;hello&apos;</span>
+  }
+})
+</code></pre>
+<p>&#x8282;&#x70B9;&#x5C5E;&#x6027;&#x4F1A;&#x81EA;&#x52A8;&#x6210;&#x4E3A;<code>data</code>&#x5BF9;&#x8C61;&#x4E0A;&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<h3 id="data"><a name="data" class="anchor-navigation-ex-anchor" href="#data"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x53C2;&#x6570;&#x4F20;&#x9012;&#x7EC6;&#x8282;&#x8BF4;&#x660E; </h3>
+<h4 id="&#x4F20;&#x5165;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6210;&#x4E3A;data&#x7684;&#x6210;&#x5458;"><a name="&#x4F20;&#x5165;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6210;&#x4E3A;data&#x7684;&#x6210;&#x5458;" class="anchor-navigation-ex-anchor" href="#&#x4F20;&#x5165;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6210;&#x4E3A;data&#x7684;&#x6210;&#x5458;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F20;&#x5165;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6210;&#x4E3A;data&#x7684;&#x6210;&#x5458;</h4>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">Component</span> <span class="hljs-attr">total</span>=<span class="hljs-string">100</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&apos;Hello&apos;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Component</span>&gt;</span>
+</code></pre>
+<p>&#x76F8;&#x5F53;&#x4E8E;<code>data.total=&apos;100&apos;</code>, <code>data.title=&apos;Hello&apos;</code></p>
+<blockquote>
+<p>&#x6CE8;&#x610F;&#x975E;&#x5C5E;&#x6027;&#x63D2;&#x503C;&#xFF0C;&#x5219;&#x4F20;&#x5165;&#x7C7B;&#x578B;&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;</p>
+</blockquote>
+<h4 id="&#x63D2;&#x503C;&#x521B;&#x5EFA;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;"><a name="&#x63D2;&#x503C;&#x521B;&#x5EFA;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;" class="anchor-navigation-ex-anchor" href="#&#x63D2;&#x503C;&#x521B;&#x5EFA;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63D2;&#x503C;&#x521B;&#x5EFA;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</h4>
+<p>&#x5982;&#x679C;&#x5B58;&#x5728;&#x63D2;&#x503C;&#x5219;&#x4F1A;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x7684;title&#x4E0E;&#x5916;&#x5C42;&#x7684;<code>title</code>&#x5B57;&#x6BB5;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Component</span>   <span class="hljs-attr">title</span>=<span class="hljs-string">{title}</span> <span class="hljs-attr">show</span>=<span class="hljs-string">{true}</span> /&gt;</span>
+</code></pre>
+<p><strong>&#x4F8B;&#x5916;</strong>&#xFF1A;&#x5728;&#x8FD9;&#x91CC; <code>show={true}</code> &#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x56E0;&#x4E3A;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;&#x3002;</p>
+<h4 id="value-&#x7F3A;&#x7701;&#x5219;&#x9ED8;&#x8BA4;&#x6210;&#x4E3A;boolean&#x503C;true"><a name="value-&#x7F3A;&#x7701;&#x5219;&#x9ED8;&#x8BA4;&#x6210;&#x4E3A;boolean&#x503C;true" class="anchor-navigation-ex-anchor" href="#value-&#x7F3A;&#x7701;&#x5219;&#x9ED8;&#x8BA4;&#x6210;&#x4E3A;boolean&#x503C;true"><i class="fa fa-link" aria-hidden="true"></i></a>value &#x7F3A;&#x7701;,&#x5219;&#x9ED8;&#x8BA4;&#x6210;&#x4E3A;Boolean&#x503C;<code>true</code></h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Component</span> <span class="hljs-attr">show</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Component</span>&gt;</span>
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x76F8;&#x5F53;&#x4E8E; <code>&lt;Component show = {true} /&gt;</code></p>
+<h4 id="&#x8FDE;&#x7F00;&#x683C;&#x5F0F;&#x8F6C;&#x9A7C;&#x5CF0;"><a name="&#x8FDE;&#x7F00;&#x683C;&#x5F0F;&#x8F6C;&#x9A7C;&#x5CF0;" class="anchor-navigation-ex-anchor" href="#&#x8FDE;&#x7F00;&#x683C;&#x5F0F;&#x8F6C;&#x9A7C;&#x5CF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDE;&#x7F00;&#x683C;&#x5F0F;&#x8F6C;&#x9A7C;&#x5CF0;</h4>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">Component</span> <span class="hljs-attr">show-modal</span>=<span class="hljs-string">{true}</span> <span class="hljs-attr">isHide</span>=<span class="hljs-string">{hide}</span>/&gt;</span>
+</code></pre>
+<p>&#x5219; <code>show-modal</code> &#x4F1A;&#x8F6C;&#x6362;&#x4E3A; <code>showModal</code>&#xFF0C; &#x4F46;&#x662F; <code>isHide</code> &#x8FD9;&#x79CD;&#x9A7C;&#x5CF0;&#x5F0F;&#x7684;&#x5199;&#x6CD5;&#x4ECD;&#x7136;&#x652F;&#x6301;&#xFF0C;&#x5E76;&#x4E0D;&#x505A;&#x53D8;&#x6362;</p>
+<h4 id="&#x4E8B;&#x4EF6;&#x6307;&#x4EE4;"><a name="&#x4E8B;&#x4EF6;&#x6307;&#x4EE4;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x4EF6;&#x6307;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x4EF6;&#x6307;&#x4EE4;</h4>
+<p>&#x6EE1;&#x8DB3;<code>on-[eventName]</code>&#x7684;&#x5C5E;&#x6027;&#x4F1A;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x4E3A;<a href="../event.html">&#x7EC4;&#x4EF6;&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;</a></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">Component</span> <span class="hljs-attr">on-nav</span>=<span class="hljs-string">{this.nav($event)}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Component</span>&gt;</span>
+</code></pre>
+<h4 id="&#x5176;&#x5B83;&#x7279;&#x6B8A;&#x5C5E;&#x6027;"><a name="&#x5176;&#x5B83;&#x7279;&#x6B8A;&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x5B83;&#x7279;&#x6B8A;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x5B83;&#x7279;&#x6B8A;&#x5C5E;&#x6027;</h4>
+<p>&#x7279;&#x6B8A;&#x5C5E;&#x6027;&#x5982;<code>ref</code>&#x548C;<code>isolate</code> &#x4F1A;&#x6709;&#x7279;&#x6B8A;&#x7684;&#x529F;&#x80FD;&#x3002;&#x8BF7;&#x53C2;&#x8003; <a href="#ref">&#x83B7;&#x53D6;&#x5185;&#x90E8;&#x8282;&#x70B9;&#x548C;&#x7EC4;&#x4EF6;</a> &#x548C; <a href="#isolate">&#x7EC4;&#x4EF6;&#x9694;&#x79BB;</a></p>
+<h3 id="default"><a name="default" class="anchor-navigation-ex-anchor" href="#default"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x7981;&#x6B62;&#x5728;extend&#x4E2D;&#x5B9A;&#x4E49;&#x7F3A;&#x7701;data&#x53C2;&#x6570; </h3>
+<p><strong>&#x26A0;&#xFE0F;&#x4E0D;&#x8981;&#x5728; extend &#x6216; implement &#x65F6;&#x5B9A;&#x4E49;data&#x5C5E;&#x6027; !!!</strong> &#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x6240;&#x6709;&#x5B9E;&#x4F8B;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Component = Regular.extend({
+  name: <span class="hljs-string">&apos;Component&apos;</span>,
+  template: <span class="hljs-string">`
+    &lt;h2&gt;{title}&lt;/h2&gt;
+    &lt;button on-click={shared.count+=1}&gt;&#x70B9;&#x51FB;shared.count+1: {shared.count}&lt;/button&gt;
+    &lt;button on-click={instance.count+=1}&gt;&#x70B9;&#x51FB;instance.count+1: {instance.count}&lt;/button&gt;
+  `</span>,
+  data: {
+    shared:{
+      count:<span class="hljs-number">1</span>  <span class="hljs-comment">// &#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x6240;&#x6709;&#x5B9E;&#x4F8B;</span>
+    }
+  },
+  config(data){
+    data.instance = {count: <span class="hljs-number">1</span>} <span class="hljs-comment">// &#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x72EC;&#x6709;</span>
+  }
+}) <span class="hljs-comment">// &#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x72EC;&#x6709;</span>
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/do4m1erf/embed/result,js/"></script>
+
+
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><a href="../../reference/styleguide.html#">&#x98CE;&#x683C;&#x6307;&#x5357;&#xFF1A;&#x7981;&#x6B62;&#x5728; extend &#x4E2D;&#x5B9A;&#x4E49;&#x7F3A;&#x7701; data &#x53C2;&#x6570;</a></li>
+</ul>
+<h2 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;</h2>
+<p>Regular &#x63D0;&#x4F9B;&#x4E86;&#x51E0;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x94A9;&#x5B50;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;&#x6765;&#x5904;&#x7406;&#x81EA;&#x5B9A;&#x4E49;&#x903B;&#x8F91;</p>
+<h3 id="config-data----&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x524D;&#x8C03;&#x7528;"><a name="config-data----&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x524D;&#x8C03;&#x7528;" class="anchor-navigation-ex-anchor" href="#config-data----&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x524D;&#x8C03;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. config( data ) - &#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x524D;&#x8C03;&#x7528;</h3>
+<pre><code class="lang-js">Regular.extend({
+  config( data ){
+    data.title = data.title || <span class="hljs-string">&apos;&#x9ED8;&#x8BA4;&#x6807;&#x9898;&apos;</span>
+  }
+})
+</code></pre>
+<ul>
+<li>data: <strong>&#x5408;&#x5E76;&#x4F20;&#x5165;&#x53C2;&#x6570;</strong>&#x540E;&#x7684;data&#x5BF9;&#x8C61;</li>
+</ul>
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><a href="#prop">&#x53C2;&#x6570;&#x4F20;&#x9012;</a></li>
+</ul>
+<h3 id="init---&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x540E;&#x8C03;&#x7528;"><a name="init---&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x540E;&#x8C03;&#x7528;" class="anchor-navigation-ex-anchor" href="#init---&#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x540E;&#x8C03;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. init - &#x5728;&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x540E;&#x8C03;&#x7528;</h3>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x751F;&#x6210;&#x7684;&#x8282;&#x70B9;&#xFF0C;<strong>&#x4F46;&#x662F;&#x4ECD;&#x7136;&#x662F;&#x6E38;&#x79BB;&#x72B6;&#x6001;&#x7684;&#xFF0C;&#x672A;&#x63D2;&#x5165;&#x5230;&#x5B9E;&#x9645;DOM&#x8282;&#x70B9;&#x4E2D;</strong></p>
+<pre><code class="lang-js">Regular.extend({
+  template: <span class="hljs-string">`&lt;div ref=container&gt;Hello&lt;/div&gt;`</span>,
+  init(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.$refs.container.innerHTML === <span class="hljs-string">&apos;Hello&apos;</span>); <span class="hljs-comment">//true</span>
+  }
+})
+</code></pre>
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li><a href="#ref">&#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;&#x548C;&#x5B50;&#x7EC4;&#x4EF6;</a></li>
+</ul>
+<h3 id="destroy---&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x524D;&#x8C03;&#x7528;"><a name="destroy---&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x524D;&#x8C03;&#x7528;" class="anchor-navigation-ex-anchor" href="#destroy---&#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x524D;&#x8C03;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3. destroy - &#x5728;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x524D;&#x8C03;&#x7528;</h3>
+<p>&#x9500;&#x6BC1;&#x51FD;&#x6570; , <strong>&#x6CE8;&#x610F;</strong> &#x5982;&#x679C;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x56DE;&#x6536;&#x51FD;&#x6570;&#xFF0C;&#x52A1;&#x5FC5;&#x8C03;&#x7528;&#x7236;&#x7C7B; destroy(<code>this.supr</code>)&#x6765;&#x9500;&#x6BC1;&#x6389;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x90E8;&#x5206;(&#x5982;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#xFF0C;&#x6570;&#x636E;&#x76D1;&#x542C;)</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Component = Regular.extend({
+    init(){
+      <span class="hljs-keyword">this</span>.onScroll =  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{};
+      <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">&apos;scroll&apos;</span>, <span class="hljs-keyword">this</span>.onScroll)
+    },
+    destory(){
+        <span class="hljs-keyword">this</span>.supr(); <span class="hljs-comment">// &#x5343;&#x4E07;&#x522B;&#x5FD8;&#x8BB0;</span>
+        <span class="hljs-built_in">window</span>.removeEventListener(<span class="hljs-string">&apos;scroll&apos;</span>, <span class="hljs-keyword">this</span>.onScroll)
+    }    
+})
+</code></pre>
+<h3 id="modifybodycomponent"><a name="modifybodycomponent" class="anchor-navigation-ex-anchor" href="#modifybodycomponent"><i class="fa fa-link" aria-hidden="true"></i></a>3.4. modifyBodyComponent</h3>
+<p>&#x8BF7;&#x53C2;&#x8003; @TODO</p>
+<h3 id="&#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;"><a name="&#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;" class="anchor-navigation-ex-anchor" href="#&#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>3.5. &#x751F;&#x547D;&#x5468;&#x671F;&#x56FE;&#x793A;</h3>
+<p><strong>&#x5B9E;&#x4F8B;&#x5316;&#x65F6;</strong></p>
+<p><img src="https://p1.music.126.net/fMaWu1OPgVHz_0aP9Z5SaQ==/109951163409731716.png" alt=""></p>
+<p><strong>&#x9500;&#x6BC1;&#x65F6;</strong>
+<img src="https://p1.music.126.net/wMn6NWuOolhxXd1Ekfo-ow==/109951163409729417.png" alt=""></p>
+<h2 id="&#x52A8;&#x6001;&#x7EC4;&#x4EF6;"><a name="&#x52A8;&#x6001;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x52A8;&#x6001;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x52A8;&#x6001;&#x7EC4;&#x4EF6;</h2>
+<p>Regular &#x63D0;&#x4F9B;&#x4E86; <code>r-component</code> &#x7528;&#x4E8E;&#x5904;&#x7406;&#x52A8;&#x6001;&#x7EC4;&#x4EF6;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;is&#x5C5E;&#x6027;&#x6765;&#x51B3;&#x5B9A;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x7EC4;&#x4EF6;&#x6765;&#x6E32;&#x67D3;</p>
+<ul>
+<li>is: &#x7EC4;&#x4EF6;&#x540D;</li>
+</ul>
+<p>&#x5982;&#x4E0B;&#x4F8B;&#xFF0C;&#x6211;&#x4EEC;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x4E86;<code>MarkdownRender</code> &#x4E0E; <code>HtmlRender</code>&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js">
+Regular.extend({
+  name: <span class="hljs-string">&apos;MarkdownRender&apos;</span>,
+  template: <span class="hljs-string">`&lt;div r-html={mdcontent} &gt;&lt;/div&gt;`</span>,
+  config(data){
+    <span class="hljs-keyword">this</span>.$watch(<span class="hljs-string">&apos;content&apos;</span>, (content)=&gt;{
+      data.mdcontent = marked(content)
+    })
+  }
+})
+
+Regular.extend({
+  template: <span class="hljs-string">`&lt;div r-html={content}&lt;/div&gt;`</span>,
+  name: <span class="hljs-string">&apos;HtmlRender&apos;</span>
+})
+</code></pre>
+<p>&#x4F7F;&#x7528;<code>r-component</code>&#x6765;&#x52A8;&#x6001;&#x5B9E;&#x4F8B;&#x5316;&#x7EC4;&#x4EF6;&#xFF0C;&#x6CE8;&#x610F;is&#x5C5E;&#x6027;&#x662F;&#x4E2A;&#x52A8;&#x6001;&#x63D2;&#x503C;</p>
+<pre><code class="lang-js">
+&lt;input type=<span class="hljs-string">&quot;radio&quot;</span> value=<span class="hljs-string">&apos;MarkdownRender&apos;</span> r-model={type} /&gt; &#x4F7F;&#x7528;markdown
+&lt;input type=<span class="hljs-string">&quot;radio&quot;</span> value=<span class="hljs-string">&apos;HtmlRender&apos;</span> r-model={type} /&gt; &#x662F;&#x5426;&#x4F7F;&#x7528;mdrender
+&lt;r-component is={type} content={content} /&gt;
+</code></pre>
+<script async src="//jsfiddle.net/leeluolee/a50rbLfh/embed/result,js/"></script>
+
+
+<p><strong>&#x53C2;&#x8003;</strong></p>
+<ul>
+<li>&#x5176;&#x4F59;&#x5C5E;&#x6027;&#x90FD;&#x4F1A;&#x6210;&#x4E3A;&#x6307;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;<code>data</code>&#x53C2;&#x6570;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="#prop">&#x7EC4;&#x4EF6;&#x53C2;&#x6570;&#x5C0F;&#x8282;</a></li>
+<li><a href="../data-binding.html#watch">&#x6570;&#x636E;&#x76D1;&#x542C;</a></li>
+</ul>
+<h2 id="parent"><a name="parent" class="anchor-navigation-ex-anchor" href="#parent"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x7236;&#x7EC4;&#x4EF6; - $parent </h2>
+<p>&#x5728; Regular &#x4E2D;&#xFF0C;&#x58F0;&#x660E;&#x5F0F;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x5177;&#x6709;&#x4E00;&#x4E2A;<code>this.$parent</code>&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x76F4;&#x63A5;&#x7236;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Example = Regular.extend({
+  name: <span class="hljs-string">&apos;Example&apos;</span>,
+  init(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.$parent.name) <span class="hljs-comment">// log &apos;App&apos;</span>
+  }
+})
+
+<span class="hljs-keyword">const</span> App = Regular.extend({
+  name: <span class="hljs-string">&apos;App&apos;</span>,
+  template: <span class="hljs-string">`&lt;Example title={title} /&gt;`</span>
+})
+
+<span class="hljs-keyword">const</span> main = <span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">`&lt;App title={title}  /&gt;`</span>,
+  data: {
+    title: <span class="hljs-string">&apos;main title&apos;</span>
+  }
+})
+</code></pre>
+<p>&#x76F4;&#x63A5;&#x7236;&#x7EC4;&#x4EF6;&#xFF0C;&#x51B3;&#x5B9A;&#x4E86;&#x5B50;&#x7EC4;&#x4EF6;&#x6267;&#x884C;&#x7684;&#x6570;&#x636E;&#x4E0A;&#x4E0B;&#x6587;&#x3002;&#x6BD4;&#x5982;App&#x63A5;&#x53D7;&#x7684;<code>title</code>&#x5B9E;&#x9645;&#x6307;&#x7684;&#x662F;<code>main.data.title</code>&#xFF0C;&#x800C;<code>Example</code>&#x7684;title&#x5219;&#x6307;&#x5411;<code>app.data.title</code>(App&#x7684;&#x5B9E;&#x4F8B;)&#x3002;</p>
+<h3 id="isolate"><a name="isolate" class="anchor-navigation-ex-anchor" href="#isolate"><i class="fa fa-link" aria-hidden="true"></i></a>5.1. &#x7EC4;&#x4EF6;&#x9694;&#x79BB; </h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7236;&#x5B50;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x4F1A;&#x5EFA;&#x7ACB;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</p>
+<pre><code class="lang-js">&lt;input r-model={total} type=number/&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">pager</span> <span class="hljs-attr">total</span>=<span class="hljs-string">{total}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pager</span>&gt;</span></span>
+</code></pre>
+<p>&#x5373;&#x6211;&#x5728;&#x4E0A;&#x5C42;&#x7EC4;&#x4EF6;&#x4FEE;&#x6539;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#x4F1A;&#x5BFC;&#x81F4;pager&#x4E5F;&#x8FDB;&#x884C;&#x4E86;&#x810F;&#x68C0;&#x67E5;&#xFF0C;&#x800C;pager&#x53D1;&#x751F;&#x6570;&#x636E;&#x53D8;&#x5316;&#x4E5F;&#x4F1A;&#x5F15;&#x8D77;&#x4E0A;&#x5C42;&#x7EC4;&#x4EF6;&#x53D1;&#x751F;&#x810F;&#x68C0;&#x67E5;&#xFF0C;&#x8FD9;&#x5728;&#x6709;&#x4E9B;&#x65F6;&#x5019;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x4E5F;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x7EC4;&#x4EF6;&#x7684;&#x6574;&#x4F53;&#x6027;&#x80FD;&#x3002;&#x6211;&#x4EEC;&#x6216;&#x8BB8;&#x5E0C;&#x671B;pager&#x4E0E;&#x4E0A;&#x5C42;&#x7EC4;&#x4EF6;&#x5B8C;&#x5168;&#x9694;&#x79BB;&#xFF0C;&#x800C;&#x5B8C;&#x5168;&#x901A;&#x8FC7;&#x4E8B;&#x4EF6;&#x6765;&#x901A;&#x4FE1;&#x3002;</p>
+<h2 id="&#x7EC4;&#x4EF6;&#x7684;isolate&#x5C5E;&#x6027;"><a name="&#x7EC4;&#x4EF6;&#x7684;isolate&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;&#x7684;isolate&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x7EC4;&#x4EF6;&#x7684;isolate&#x5C5E;&#x6027;</h2>
+<p><code>isolate</code>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E0A;&#x8FF0;&#x8981;&#x6C42;&#xFF0C;&#x4F8B;&#x5982;&#x4E0A;&#x4F8B;&#x5982;&#x679C;&#x4FEE;&#x6539;&#x4E3A;:</p>
+<pre><code class="lang-js">&lt;input r-model={total} type=number/&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">pager</span> <span class="hljs-attr">total</span>=<span class="hljs-string">{total}</span> <span class="hljs-attr">isolate</span> <span class="hljs-attr">on-nav</span>=<span class="hljs-string">&apos;nav&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pager</span>&gt;</span></span>
+</code></pre>
+<p>&#x90A3;&#x5185;&#x5D4C;&#x7EC4;&#x4EF6;pager&#x4E0E;&#x5B9E;&#x9645;&#x5C31;&#x662F;&#x5B8C;&#x5168;&#x9694;&#x79BB;&#x4E86;&#xFF0C;&#x5B8C;&#x5168;&#x7B49;&#x540C;&#x4E8E;JS&#x521D;&#x59CB;&#x5316;<code>new Pager().$inject(&apos;input&apos;, &apos;after&apos;)</code>&#x3002;</p>
+<h2 id="ref"><a name="ref" class="anchor-navigation-ex-anchor" href="#ref"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;&#x548C;&#x5B50;&#x7EC4;&#x4EF6; </h2>
+<p>&#x83B7;&#x53D6;&#x5230;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x7684;&#x5B50;&#x7EC4;&#x4EF6;&#x548C;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x4F7F;&#x7528; Regular &#x7684;&#x5E38;&#x89C1;&#x9700;&#x6C42;&#x3002;</p>
+<h3 id="&#x5E38;&#x89C1;dom&#x64CD;&#x4F5C;&#x7684;&#x8BEF;&#x533A;"><a name="&#x5E38;&#x89C1;dom&#x64CD;&#x4F5C;&#x7684;&#x8BEF;&#x533A;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C1;dom&#x64CD;&#x4F5C;&#x7684;&#x8BEF;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>7.1. &#x5E38;&#x89C1;DOM&#x64CD;&#x4F5C;&#x7684;&#x8BEF;&#x533A;</h3>
+<p><strong>&#x7EC4;&#x4EF6;&#x672C;&#x8EAB;&#x5E94;&#x8BE5;&#x662F;&#x5B8C;&#x5168;&#x6570;&#x636E;&#x9A71;&#x52A8;&#xFF0C;dom&#x64CD;&#x4F5C;&#x5E94;&#x8BE5;&#x4EA4;&#x7531;&#x6307;&#x4EE4;&#x5904;&#x7406;</strong> &#x5728;&#x7406;&#x5FF5;&#x4E0A;&#x5E76;&#x6CA1;&#x6709;&#x9519;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;DOM&#x4F1A;&#x7B80;&#x5355;&#x5F88;&#x591A;&#x3002;&#x6240;&#x4EE5;&#x7ECF;&#x5E38;&#x6709;&#x4EBA;&#x5728; init &#x4E2D;&#x5199;&#x51FA;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;(&#x6B64;&#x65F6;&#x5185;&#x90E8;&#x8282;&#x70B9;&#x5DF2;&#x7ECF;&#x4EA7;&#x751F;)</p>
+<p><strong>Bad Case</strong></p>
+<pre><code class="lang-js">Regular.extend({
+  template: <span class="hljs-string">`&lt;div id=&apos;xxx&apos;&gt;&lt;/div&gt;`</span>,
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">const</span> elem = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;xxx&apos;</span>); &#x8FD4;&#x56DE;<span class="hljs-literal">null</span>
+  }
+})
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x5E76;&#x4E0D;&#x4F1A;&#x51D1;&#x6548;&#xFF0C;&#x56E0;&#x4E3A; init &#x65F6;&#x6B64;&#x7EC4;&#x4EF6;&#x5E76;&#x6CA1;&#x6709;&#x63D2;&#x5165;&#x5230;&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x6E38;&#x79BB;&#x72B6;&#x6001;&#x7684;&#x7EC4;&#x4EF6;&#x81EA;&#x7136;&#x65E0;&#x6CD5;&#x7528;<code>document.getElementById</code>&#x83B7;&#x53D6;&#x5230;&#x5B83;&#x3002;</p>
+<p>&#x4F46;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; ref &#x6765;&#x89E3;&#x51B3;</p>
+<h3 id="ref-&#x5C5E;&#x6027;"><a name="ref-&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#ref-&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>7.2. ref &#x5C5E;&#x6027;</h3>
+<p><strong>ref</strong> &#x662F;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x6807;&#x8BB0;&#x4E00;&#x4E2A;<strong>&#x8282;&#x70B9;&#x6216;&#x7EC4;&#x4EF6;</strong>.</p>
+<pre><code class="lang-html">
+const component = new Regular({
+  template: &quot;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">input</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">component</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>&quot;
+  init: function(){
+    this.$refs.input.value = &apos;hahaha&apos;
+    this.$refs.component.show() // &#x8C03;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;
+  }
+})
+</code></pre>
+<p>&#x5982;&#x4E0A;&#x4F8B;&#x6240;&#x793A;&#xFF0C;&#x5728; compile &#x4E4B;&#x540E;(&#x6BD4;&#x5982; init &#x751F;&#x547D;&#x5468;&#x671F;&#x91CC;)&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>this.$refs</code> &#x6765;&#x83B7;&#x53D6;&#x5230;&#x5185;&#x90E8;&#x5B50;&#x8282;&#x70B9;&#x6216;&#x5B50;&#x7EC4;&#x4EF6;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x8FD8;&#x662F;&#x5E94;&#x5C3D;&#x53EF;&#x80FD;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x6784;&#x5EFA;&#x4F60;&#x7684;UI</p>
+</blockquote>
+<h3 id="ref&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x52A8;&#x6001;&#x63D2;&#x503C;"><a name="ref&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x52A8;&#x6001;&#x63D2;&#x503C;" class="anchor-navigation-ex-anchor" href="#ref&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x52A8;&#x6001;&#x63D2;&#x503C;"><i class="fa fa-link" aria-hidden="true"></i></a>7.3. ref&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x52A8;&#x6001;&#x63D2;&#x503C;</h3>
+<p>ref&#x5C5E;&#x6027;&#x4E0E;&#x5176;&#x5B83;&#x5C5E;&#x6027;&#x4E00;&#x6837;&#x53EF;&#x4EE5;&#x63D2;&#x503C;&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x7C7B;&#x4F3C;&#x5FAA;&#x73AF;&#x6E32;&#x67D3;&#x7684;&#x573A;&#x666F;&#x4E2D;&#x4F1A;&#x6BD4;&#x8F83;&#x6709;&#x7528;</p>
+<script async src="//jsfiddle.net/leeluolee/tqLew7ou/embed/js,result/"></script>
+
+
+
+<h2 id="regulardomelement-&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;"><a name="regulardomelement-&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;" class="anchor-navigation-ex-anchor" href="#regulardomelement-&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>8. Regular.dom.element &#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;</h2>
+<p>&#x9664;&#x4E86;ref&#xFF0C;Regular&#x8FD8;&#x63D0;&#x4F9B;&#x4E86; <a href="../../reference/api.html#dom"><code>dom.element(component, needAll)</code></a> &#x53EF;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> dom = Regular.dom;
+<span class="hljs-keyword">const</span> component = <span class="hljs-keyword">new</span> Regular({
+  template: <span class="hljs-string">`&lt;div id=&apos;first&apos;&gt;&lt;/div&gt;&lt;p id=&apos;last&apos;&gt;&lt;/p&gt;`</span>
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(dom.element(<span class="hljs-keyword">this</span>)) <span class="hljs-comment">// =&gt; div#first  </span>
+    <span class="hljs-built_in">console</span>.log(dom.element(<span class="hljs-keyword">this</span>, <span class="hljs-literal">true</span>)) <span class="hljs-comment">// =&gt; [div#first, p#last]</span>
+  }
+})
+</code></pre>
+<p><strong>&#x8BF4;&#x660E;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;needAll&#x4E3A;<code>true</code>&#xFF0C;&#x8FD4;&#x56DE;&#x5B50;&#x8282;&#x70B9;&#x6570;&#x7EC4;&#x3002;</li>
+</ul>
+<h3 id="&#x4F55;&#x65F6;&#x4F7F;&#x7528;domelement-&#x4F55;&#x65F6;&#x4F7F;&#x7528;-ref"><a name="&#x4F55;&#x65F6;&#x4F7F;&#x7528;domelement-&#x4F55;&#x65F6;&#x4F7F;&#x7528;-ref" class="anchor-navigation-ex-anchor" href="#&#x4F55;&#x65F6;&#x4F7F;&#x7528;domelement-&#x4F55;&#x65F6;&#x4F7F;&#x7528;-ref"><i class="fa fa-link" aria-hidden="true"></i></a>8.1. &#x4F55;&#x65F6;&#x4F7F;&#x7528;dom.element &#x4F55;&#x65F6;&#x4F7F;&#x7528; ref?</h3>
+<p><code>ref</code> &#x7684;&#x4F18;&#x70B9;&#x662F;&#x7B80;&#x5355;&#x76F4;&#x89C2;&#x800C;&#x4E14;&#x9AD8;&#x6548;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x8FD8;&#x53EF;&#x4EE5; <strong>&#x83B7;&#x53D6;&#x7EC4;&#x4EF6;</strong> &#x3002; &#x800C; <code>dom.element</code> &#x7684;&#x4F18;&#x52BF;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x505A;&#x4E3B;&#x52A8;&#x7684;&#x6807;&#x8BB0;&#xFF0C;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;<code>ref</code>&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Component = Regular.extend({
+  template: <span class="hljs-string">&apos;&lt;div ref=&quot;container&quot;&gt;Component&lt;/div&gt;&apos;</span>
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.$refs.container <span class="hljs-comment">// ...</span>
+  }
+})
+
+<span class="hljs-comment">// SubComponent &#x7EE7;&#x627F;&#x81EA; Component</span>
+<span class="hljs-keyword">const</span> SubComponent = Component.extend({
+  <span class="hljs-string">&apos;template&apos;</span>: <span class="hljs-string">&apos;&lt;div&gt;SubComponent&lt;/div&gt;&apos;</span>
+})
+</code></pre>
+<p>&#x8FD9;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x56E0;&#x4E3A;<code>SubComponent</code>&#x8986;&#x76D6;&#x7684;&#x6A21;&#x677F;&#x5E76;&#x6CA1;&#x6709;&#x6807;&#x8BB0; container &#x8282;&#x70B9;&#x3002;&#x672C;&#x8D28;&#x5176;&#x5B9E;&#x662F;&#x56E0;&#x4E3A; <strong>&#x6A21;&#x677F;&#x7684;&#x63A7;&#x5236;&#x6743;&#x4E0D;&#x5728;&#x5F53;&#x524D;&#x7EC4;&#x4EF6;</strong> &#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>dom.element</code>&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x7F8E;&#x89E3;&#x51B3;&#x4E86;</p>
+<pre><code class="lang-js">
+<span class="hljs-keyword">const</span> Component = Regular.extend({
+  template: <span class="hljs-string">&apos;&lt;div&gt;Component&lt;/div&gt;&apos;</span>
+  init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(dom.element(<span class="hljs-keyword">this</span>));
+  }
+})
+
+<span class="hljs-comment">// SubComponent &#x7EE7;&#x627F;&#x81EA; Component</span>
+<span class="hljs-keyword">const</span> SubComponent = Component.extend({
+  <span class="hljs-string">&apos;template&apos;</span>: <span class="hljs-string">&apos;&lt;div&gt;SubComponent&lt;/div&gt;&apos;</span>
+})
+</code></pre>
+<h2 id="&#x5176;&#x5B83;&#x4E8B;&#x9879;"><a name="&#x5176;&#x5B83;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x5B83;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>9. &#x5176;&#x5B83;&#x4E8B;&#x9879;</h2>
+<h3 id="&#x6CA1;&#x6709;&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;"><a name="&#x6CA1;&#x6709;&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x6CA1;&#x6709;&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>9.1. &#x6CA1;&#x6709;&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;</h3>
+<p>Regular &#x7684;&#x6A21;&#x677F;&#x548C;&#x4E00;&#x4E9B;&#x6846;&#x67B6;&#x4E0D;&#x540C;&#xFF0C;&#x5B83;&#x6CA1;&#x6709;<a href="../statement#wrap-limit">&#x5355;&#x8282;&#x70B9;&#x9650;&#x5236;</a>&#xFF0C;&#x5728;&#x63CF;&#x8FF0;&#x7ED3;&#x6784;&#x65F6;&#x53EF;&#x4EE5;&#x66F4;&#x52A0;&#x81EA;&#x7531;</p>
+<pre><code class="lang-javascript">
+Regular.extend({
+  template: <span class="hljs-string">`
+    &lt;strong&gt;Hello, &lt;/strong&gt;
+    {username}
+    &lt;em&gt;Nice to meet you&lt;/em&gt;
+  `</span>
+})
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528; <a href="../../reference/api.html#dom">Regular.dom.element</a> &#x5C06;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x7B2C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x5230;&#x6240;&#x6709;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x6B64;&#x65F6;&#x5C06;&#x8FD4;&#x56DE;&#x5305;&#x542B;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x6570;&#x7EC4;</p>
+<pre><code class="lang-js">Regular.dom.element(component, <span class="hljs-literal">true</span>);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../interpolation.html" class="navigation navigation-next " aria-label="Next page: ️插值">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"️组件","level":"1.2.1","depth":2,"next":{"title":"️插值","level":"1.2.2","depth":2,"path":"basic/interpolation.md","ref":"basic/interpolation.md","articles":[]},"previous":{"title":"基础","level":"1.2","depth":1,"path":"basic/README.md","ref":"basic/README.md","articles":[{"title":"️组件","level":"1.2.1","depth":2,"path":"basic/component/README.md","ref":"basic/component/README.md","articles":[]},{"title":"️插值","level":"1.2.2","depth":2,"path":"basic/interpolation.md","ref":"basic/interpolation.md","articles":[]},{"title":"️事件","level":"1.2.3","depth":2,"path":"basic/event.md","ref":"basic/event.md","articles":[]},{"title":"️语句","level":"1.2.4","depth":2,"path":"basic/statement/README.md","ref":"basic/statement/README.md","articles":[{"title":"️列表渲染 - list","level":"1.2.4.1","depth":3,"path":"basic/statement/list.md","ref":"basic/statement/list.md","articles":[]},{"title":"️条件渲染 - if","level":"1.2.4.2","depth":3,"path":"basic/statement/if.md","ref":"basic/statement/if.md","articles":[]},{"title":"️结构引入 - include","level":"1.2.4.3","depth":3,"path":"basic/statement/include.md","ref":"basic/statement/include.md","articles":[]}]},{"title":"表达式","level":"1.2.5","depth":2,"path":"reference/expression.md","ref":"reference/expression.md","articles":[]},{"title":"数据监听","level":"1.2.6","depth":2,"path":"basic/data-binding.md","ref":"basic/data-binding.md","articles":[]},{"title":"计算字段与过滤器","level":"1.2.7","depth":2,"path":"basic/filter.md","ref":"basic/filter.md","articles":[]},{"title":"️指令","level":"1.2.8","depth":2,"path":"basic/directive.md","ref":"basic/directive.md","articles":[]},{"title":"️动画","level":"1.2.9","depth":2,"path":"basic/animation.md","ref":"basic/animation.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"basic/component/README.md","mtime":"2018-08-17T02:08:00.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-23T07:37:43.914Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1149 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>50行代码的todomvc · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../reference/" />
+    
+    
+    <link rel="prev" href="rx.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/component/">
+            
+                <a href="../basic/component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/interpolation.html">
+            
+                <a href="../basic/interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic/statement/">
+            
+                <a href="../basic/statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../basic/statement/list.html">
+            
+                <a href="../basic/statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../basic/statement/if.html">
+            
+                <a href="../basic/statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../basic/statement/include.html">
+            
+                <a href="../basic/statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../reference/expression.html">
+            
+                <a href="../reference/expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic/data-binding.html">
+            
+                <a href="../basic/data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../advanced/composite.html">
+            
+                <a href="../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../advanced/modify.html">
+            
+                <a href="../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="template.html">
+            
+                <a href="template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="ssr.html">
+            
+                <a href="ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="mpregular.html">
+            
+                <a href="mpregular.html">
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="communication.html">
+            
+                <a href="communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.7" data-path="todomvc.html">
+            
+                <a href="todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../reference/">
+            
+                <a href="../reference/">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../reference/api.html">
+            
+                <a href="../reference/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../reference/styleguide.html">
+            
+                <a href="../reference/styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../reference/directive.html">
+            
+                <a href="../reference/directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >50行代码的todomvc</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x524D;&#x8A00;"><a name="&#x524D;&#x8A00;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x8A00;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x8A00;</h2>
+<p>&#x73B0;&#x5728;&#x5E02;&#x9762;&#x4E0A;&#x5145;&#x65A5;&#x4E86;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;javascript&#x6846;&#x67B6;&#xFF0C;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x6280;&#x672F;&#x9009;&#x578B;&#x5E26;&#x6765;&#x6781;&#x5927;&#x7684;&#x9009;&#x62E9;&#x6210;&#x672C;&#xFF0C;<a href="http://todomvc.com/" target="_blank">todomvc</a>&#x5728;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x4E0B;&#x5E94;&#x8FD0;&#x800C;&#x751F;&#x3002;</p>
+<p>&#x7531;&#x4E8E;todomvc&#x6709;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5B9E;&#x73B0;&#x5B9A;&#x4E49;&#xFF0C;&#x5B83;&#x590D;&#x6742;&#x5EA6;&#x9002;&#x4E2D;&#xFF0C;&#x5927;&#x6982;&#x5C31;&#x662F;&#x5E73;&#x65F6;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5BF9;&#x5404;&#x4E2A;&#x6846;&#x67B6;&#x7684;&#x4EE3;&#x7801;&#x505A;&#x5BF9;&#x6BD4;&#xFF0C;&#x540C;&#x65F6;&#x7531;&#x4E8E;&#x529F;&#x80FD;&#x4E00;&#x81F4;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5404;&#x6846;&#x67B6;&#x4E4B;&#x95F4;&#x7684;<a href="http://regularjs.github.io/perf/todomvc-benchmark/index.html" target="_blank">&#x6027;&#x80FD;&#x5BF9;&#x6BD4;(&#x5F53;&#x7136;&#x8FD9;&#x4E2A;&#x6D4B;&#x8BD5;&#x6848;&#x4F8B;&#x5176;&#x5B9E;&#x5E76;&#x6CA1;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5B9E;&#x9645;&#x610F;&#x4E49;)</a>&#x3002;</p>
+<p><img src="http://todomvc.com/site-assets/screenshot.png" alt="todomvc"></p>
+<!-- more-->
+<p>&#x63A5;&#x4E0B;&#x6765;&#x8FD9;&#x7BC7;&#x6307;&#x5357;&#x4F1A;&#x4E00;&#x6B65;&#x6B65;&#x7684;&#x5E26;&#x5927;&#x5BB6;&#x4F7F;&#x7528;<a href="http://regularjs.github.io/" target="_blank">Regularjs</a>&#x6309;&#x7167;&#x89C4;&#x8303;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;todomvc&#x7684;app&#x3002;</p>
+<h2 id="&#x7B2C;&#x4E00;&#x6B65;-&#x9759;&#x6001;&#x9875;&#x9762;"><a name="&#x7B2C;&#x4E00;&#x6B65;-&#x9759;&#x6001;&#x9875;&#x9762;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E00;&#x6B65;-&#x9759;&#x6001;&#x9875;&#x9762;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E00;&#x6B65;: &#x9759;&#x6001;&#x9875;&#x9762;</h2>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;&#x4F5C;&#x4E3A;&#x540E;&#x7EED;&#x903B;&#x8F91;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E0D;&#x518D;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x9875;&#x9762;&#xFF0C;&#x76F4;&#x63A5;&#x4ECE;todomvc&#x7684;&#x5B98;&#x7F51;copy&#x4E00;&#x4EFD;&#x9759;&#x6001;&#x9875;&#x9762;&#x4E0B;&#x6765;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!--&#x5F15;&#x5165;todomvc.css--&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://rawgit.com/tastejs/todomvc-app-css/master/index.css&quot;</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todoapp&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>TODOMVC<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;new-todo&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;What needs to be done?&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-all&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;toggle-all&quot;</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-list&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;completed&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>sleep<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>work<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-count&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+      item left
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;filters&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clear-completed&quot;</span>&gt;</span>Clear completed (1)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Double-click to edit a todo<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Created by @leeluolee<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    Part of
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://todomvc.com&quot;</span>&gt;</span>TodoMVC<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- &#x5F15;&#x5165;regularjs --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://rawgit.com/regularjs/regular/master/dist/regular.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4FDD;&#x5B58;&#x6210;index.html&#x6765;&#x67E5;&#x770B;&#x6548;&#x679C;&#xFF0C;&#x4E5F;&#x76F4;&#x63A5;&#x5728;<a href="http://codepen.io/leeluolee/pen/EuHcd" target="_blank">codepen&#x4E2D;&#x67E5;&#x770B;</a></p>
+<h2 id="&#x7B2C;&#x4E8C;&#x6B65;-&#x89C6;&#x56FE;&#x6A21;&#x677F;&#x4E0E;&#x6570;&#x636E;model&#x5206;&#x79BB;"><a name="&#x7B2C;&#x4E8C;&#x6B65;-&#x89C6;&#x56FE;&#x6A21;&#x677F;&#x4E0E;&#x6570;&#x636E;model&#x5206;&#x79BB;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E8C;&#x6B65;-&#x89C6;&#x56FE;&#x6A21;&#x677F;&#x4E0E;&#x6570;&#x636E;model&#x5206;&#x79BB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E8C;&#x6B65;: &#x89C6;&#x56FE;(&#x6A21;&#x677F;)&#x4E0E;&#x6570;&#x636E;model&#x5206;&#x79BB;</h2>
+<p>&#x6309;&#x4EE5;&#x5F80;&#x7684;&#x7ECF;&#x9A8C;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;jQuery&#x7B49;&#x6846;&#x67B6;&#x6765;&#x4E00;&#x4E2A;&#x4E2A;&#x7ED1;&#x5B9A;&#x8282;&#x70B9;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E86;&#x3002;&#x8FD9;&#x6837;&#x4F1A;&#x5E26;&#x6765;&#x5F88;&#x591A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x65E6;&#x4F60;&#x53BB;&#x7ED1;&#x5B9A;&#x4E86;&#x5927;&#x91CF;&#x7684;dom&#x4E8B;&#x4EF6;&#x548C;&#x8FDB;&#x884C;&#x4E86;&#x8FC7;&#x591A;&#x7684;dom&#x64CD;&#x4F5C;&#xFF0C;&#x5F80;&#x5F80;&#x4F1A;&#x5E26;&#x4F60;&#x8FDB;&#x5165;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x7684;&#x6DF1;&#x6E0A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x6765;&#x5F3A;&#x5236;&#x5C06;model(&#x6A21;&#x578B;)&#x4E0E;&#x89C6;&#x56FE;(view)&#x5206;&#x5F00;&#x3002;</p>
+<p>&#x6240;&#x4EE5;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x4EC0;&#x4E48;&#x90FD;&#x4E0D;&#x505A;&#xFF0C;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x5C06;&#x4E0A;&#x9762;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;&#x8F6C;&#x7531;regularjs&#x6A21;&#x677F;&#x751F;&#x6210;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todoapp&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&apos;template/regular&apos;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&apos;todomvc&apos;</span>&gt;</span><span class="handlebars"><span class="xml">
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>TODOMVC<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;new-todo&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;What needs to be done?&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-all&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;toggle-all&quot;</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-list&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;completed&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">checked</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>sleep<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>work<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-count&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+      item left
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;filters&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;selected&quot;</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clear-completed&quot;</span>&gt;</span>Clear completed (1)<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+
+</span></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5229;&#x7528;regularjs&#x6765;compile&#x8FD9;&#x4E2A;&#x6A21;&#x677F;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> TodoMVC = Regular.extend({
+    template: <span class="hljs-string">&quot;#todomvc&quot;</span>
+})
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> TodoMVC({
+  data: {}
+}).$inject(<span class="hljs-string">&apos;#todoapp&apos;</span>);
+</code></pre>
+<p>&#x5728;codepen&#x4E2D;&#x67E5;&#x770B;&#x7ED3;&#x679C;</p>
+<p>&#x5176;&#x4E2D;<code>Regular.extend</code>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x6700;&#x57FA;&#x672C;&#x7684;&#x60C5;&#x51B5;&#x5C31;&#x662F;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#xFF08;template&#x5B57;&#x6BB5;&#xFF09;&#xFF0C;&#x800C;<code>new TodoMVC</code>&#x76F8;&#x5F53;&#x4E8E;&#x662F;compile&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x8FD9;&#x91CC;&#x4F20;&#x5165;<code>data</code>&#x6A21;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x540C;&#x65F6;&#x5C06;compile&#x540E;&#x7684;&#x7EC4;&#x4EF6;&#x63D2;&#x5165;&#x5230;&#x8282;&#x70B9;<code>#todoapp</code>&#x4E2D;&#x3002;</p>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#x5927;&#x5BB6;&#x90FD;&#x53D1;&#x73B0;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x505A;&#x989D;&#x5916;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x662F;&#x5C06;view&#x4E0E;model&#x5206;&#x5F00;&#x7684;&#x5173;&#x952E;&#x4E00;&#x6B65;&#x3002;</p>
+<p><a href="http://codepen.io/leeluolee/pen/xvCjm" target="_blank">DEMO2</a></p>
+<h2 id="&#x7B2C;&#x4E09;&#x6B65;-&#x4F7F;&#x7528;list&#x6307;&#x4EE4;&#x6765;&#x5904;&#x7406;&#x5217;&#x8868;"><a name="&#x7B2C;&#x4E09;&#x6B65;-&#x4F7F;&#x7528;list&#x6307;&#x4EE4;&#x6765;&#x5904;&#x7406;&#x5217;&#x8868;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E09;&#x6B65;-&#x4F7F;&#x7528;list&#x6307;&#x4EE4;&#x6765;&#x5904;&#x7406;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E09;&#x6B65;: &#x4F7F;&#x7528;#list&#x6307;&#x4EE4;&#x6765;&#x5904;&#x7406;&#x5217;&#x8868;</h2>
+<p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x5F88;&#x660E;&#x663E;&#x7684;model&#x53EF;&#x4EE5;&#x62BD;&#x8C61;&#x6210;&#x4E00;&#x4EFD;todos&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7684;&#x7B2C;&#x4E00;&#x6B65;&#x662F;&#x4F7F;&#x7528;list&#x6765;&#x5904;&#x7406;&#x5217;&#x8868;&#x903B;&#x8F91;&#xFF08;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7701;&#x7565;&#x4E86;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x7684;&#x6A21;&#x677F;&#xFF0C;&#x53EA;&#x5217;&#x51FA;&#x4E86;li&#x90E8;&#x5206;&#x7684;&#x903B;&#x8F91;&#xFF09;</p>
+<pre><code class="lang-html">....
+{#list todos as todo}
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>  <span class="hljs-attr">r-class</span>=<span class="hljs-string">{</span> {&apos;<span class="hljs-attr">completed</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.completed</span>, &apos;<span class="hljs-attr">editing</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.editing</span>} }&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todo.completed</span> }&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">on-dblclick</span>=<span class="hljs-string">{todo.editing</span> = <span class="hljs-attr">true</span>}&gt;</span>{ todo.description }<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todos.splice</span>(<span class="hljs-attr">todo_index</span>,<span class="hljs-attr">1</span>) } <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">on-enter</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todo.editing</span> = <span class="hljs-attr">false</span> } <span class="hljs-attr">r-model</span>=<span class="hljs-string">{todo.description}</span> <span class="hljs-attr">autofocus</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+{/list}
+
+.....
+</code></pre>
+<p>list&#x89C4;&#x5219;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x903B;&#x8F91;&#xFF0C;&#x5B8C;&#x6574;&#x63CF;&#x8FF0;&#x53EF;&#x4EE5;&#x67E5;&#x770B;<a href="http://regularjs.github.io/guide/zh/syntax/list.html" target="_blank">Regularjs&#x6307;&#x5357;&#x7684;list&#x90E8;&#x5206;</a>&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4E5F;&#x5E94;&#x7528;&#x5230;&#x4E86;&#x6700;&#x57FA;&#x7840;&#x7684;<a href="http://regularjs.github.io/guide/zh/syntax/inteplation.html" target="_blank">&#x63D2;&#x503C;</a>(<code>{}</code>)</p>
+<p>&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x4E00;&#x4E2A;todos&#x7684;&#x5047;&#x6570;&#x636E;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> todos = [
+    {completed: <span class="hljs-literal">true</span>, description: <span class="hljs-string">&quot;sleep&quot;</span> },
+    {completed: <span class="hljs-literal">false</span>, description: <span class="hljs-string">&quot;work&quot;</span> }
+]
+<span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> TodoMVC({
+    data: {todos: todos}
+}).$inject(<span class="hljs-string">&quot;#todoapp&quot;</span>)
+</code></pre>
+<p><a href="http://codepen.io/leeluolee/pen/krzjc" target="_blank">DEMO3</a></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x540C;&#x65F6;&#x5229;&#x7528;directive&#x5904;&#x7406;&#x4E86;&#x4E00;&#x4E9B;&#x4E1A;&#x52A1;&#x903B;&#x8F91;</p>
+<ol>
+<li><code>r-class</code>&#xFF1A; &#x5C5E;&#x4E8E;&#x5BF9;&#x8C61;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x6BCF;&#x5F53;&#x503C;&#x4E3A;&#x771F;&#xFF0C;&#x6DFB;&#x52A0;&#x5BF9;&#x5E94;&#x7684;&#x952E;&#x4F5C;&#x4E3A;class</li>
+<li><code>r-model</code>: &#x4F7F;&#x8868;&#x5355;&#x9879;&#x4E0E;&#x67D0;&#x5B57;&#x6BB5;&#x5F62;&#x6210;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;</li>
+<li><code>on-xx</code>: &#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;</li>
+</ol>
+<p>regularjs&#x7684;parse&#x662F;&#x57FA;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#xFF0C;&#x5B83;&#x8F93;&#x51FA;&#x5305;&#x542B;&#x5B8C;&#x6574;&#x4FE1;&#x606F;&#x7684;ast&#x7ED9;&#x57FA;&#x4E8E;dom&#x7684;compiler&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x6837;&#x5176;&#x5B9E;&#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x4E0D;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x5E38;&#x89C4;dom-based&#x6A21;&#x677F;&#x7684;placeholder&#x4FE1;&#x606F;&#x7684;&#xFF08;&#x6BD4;&#x5982;angular&#x7684;<code>ng-xx</code>&#xFF09;&#x3002;</p>
+<p>&#x5230;&#x8FD9;&#x4E00;&#x6B65;&#xFF0C;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4E00;&#x90E8;&#x5206;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E86;&#xFF0C;&#x6BD4;&#x5982;</p>
+<ol>
+<li>&#x53CC;&#x51FB;&#x7F16;&#x8F91;</li>
+<li>&#x56DE;&#x8F66;&#x5B8C;&#x6210;&#x7F16;&#x8F91;</li>
+<li>&#x6807;&#x8BB0;&#x5B8C;&#x6210;</li>
+<li>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;todo&#x9879;(&#x5229;&#x7528;todo_index&#x4E0B;&#x6807;&#xFF0C;&#x5B83;&#x7684;&#x547D;&#x540D;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x5B9A;&#x4E49;&#x7684;&#x5217;&#x8868;&#x9879;&#x7684;&#x540D;&#x79F0;&#x52A0;<code>_index</code>)</li>
+</ol>
+<p>regularjs&#x7684;&#x6570;&#x636E;&#x9A71;&#x52A8;&#x662F;&#x57FA;&#x4E8E;&#x4EE3;&#x7801;&#x810F;&#x68C0;&#x67E5;&#x7684;&#xFF08;&#x4E0E;angular&#x4E00;&#x81F4;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x88F8;&#x6570;&#x636E;&#x6765;&#x5B8C;&#x6210;&#x72B6;&#x6001;&#x53D8;&#x66F4;&#x3002;</p>
+<h2 id="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;-&#x5B8C;&#x5584;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6;&#x4E1A;&#x52A1;&#x903B;&#x8F91;"><a name="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;-&#x5B8C;&#x5584;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6;&#x4E1A;&#x52A1;&#x903B;&#x8F91;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;-&#x5B8C;&#x5584;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6;&#x4E1A;&#x52A1;&#x903B;&#x8F91;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A; &#x5B8C;&#x5584;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6;&#x4E1A;&#x52A1;&#x903B;&#x8F91;</h2>
+<p>&#x76EE;&#x524D;&#xFF0C;&#x9664;&#x4E86;&#x4E2D;&#x95F4;&#x5217;&#x8868;&#x90E8;&#x5206;&#x7684;view&#xFF0C;&#x5176;&#x5B83;&#x90E8;&#x5206;&#x7684;&#x6570;&#x636E;&#x90FD;&#x6CA1;&#x6709;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x8054;&#x52A8;&#x3002;&#x6211;&#x4EEC;&#x9057;&#x7559;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x6709;:</p>
+<ol>
+<li>&#x70B9;&#x51FB;&#x4E0B;&#x65B9;&#x7684;<code>All Active Completed</code>&#x9762;&#x677F;&#x8981;&#x5B8C;&#x6210;todos&#x9762;&#x677F;&#x7684;&#x5207;&#x6362;&#x6765;&#x5206;&#x522B;&#x663E;&#x793A;&#x6240;&#x6709;&#x3001;&#x672A;&#x5B8C;&#x6210;&#x3001;&#x5B8C;&#x6210;&#x7684;todo&#x5217;&#x8868;</li>
+<li>&#x4E0A;&#x9762;&#x7684;input&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x65B0;&#x5EFA;todo</li>
+<li>&#x5207;&#x6362;&#x5DE6;&#x4E0A;&#x89D2;&#x7684;checkbox&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6807;&#x8BB0;&#x5168;&#x90E8;&#x548C;&#x53D6;&#x6D88;&#x7F16;&#x8F91;&#x5168;&#x90E8;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x70B9;&#x51FB;&#x53F3;&#x4E0B;&#x89D2;&#x7684;clearComplete &#x5E94;&#x8BE5;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x6240;&#x6709;&#x5B8C;&#x6210;&#x7684;&#x5217;&#x8868;&#x9879;</li>
+</ol>
+<p>&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF08;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;mvvm&#x6A21;&#x5F0F;&#x7684;&#x7EC4;&#x4EF6;&#x6765;&#x8BB2;&#xFF0C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5E94;&#x8BE5;&#x662F;&#x7EAF;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#xFF09;&#x5E94;&#x8BE5;&#x662F;&#x5728;&#x5B9A;&#x4E49;&#x65F6;&#x5C31;&#x8FDB;&#x884C;&#x786E;&#x5B9A;&#x3002;&#x6211;&#x4EEC;&#x5728;extend&#x65F6;&#x5B9A;&#x4E49;&#x8FD9;&#x4E9B;&#x4E1A;&#x52A1;&#x3002;</p>
+<pre><code class="lang-javascript">
+<span class="hljs-keyword">var</span> TodoMVC = Regular.extend({
+    template: <span class="hljs-string">&apos;#todomvc&apos;</span>,
+    <span class="hljs-comment">// get the list;</span>
+    getList: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">filter</span>)</span>{
+      <span class="hljs-keyword">if</span>(!filter || filter === <span class="hljs-string">&apos;all&apos;</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.data.todos;
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.data.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+        <span class="hljs-keyword">return</span> filter === <span class="hljs-string">&apos;completed&apos;</span>? item.completed : !item.completed;
+      });
+    },
+    <span class="hljs-comment">// toggle all todo&apos;s completed state</span>
+    toggleAll: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sign</span>)</span>{
+      <span class="hljs-keyword">this</span>.data.todos.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+        <span class="hljs-keyword">return</span> item.completed = !sign;
+      });
+    },
+    <span class="hljs-comment">// clear all compleled</span>
+    clearCompleted: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+      <span class="hljs-keyword">this</span>.data.todos = <span class="hljs-keyword">this</span>.data.todos.filter(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+        <span class="hljs-keyword">return</span> !item.completed
+      });
+    },
+    <span class="hljs-comment">// create a new todo</span>
+    newTodo: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">editTodo</span>)</span>{
+      <span class="hljs-keyword">var</span> data = <span class="hljs-keyword">this</span>.data;
+      data.todos.unshift({description: editTodo});
+      data.editTodo = <span class="hljs-string">&quot;&quot;</span>;
+    }
+})
+</code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;TodoMVC&#x5B9E;&#x73B0;&#x4E86;&#x4EE5;&#x4E0B;4&#x4E2A;&#x5BF9;&#x5E94;&#x903B;&#x8F91;</p>
+<ol>
+<li>getList(sign): &#x7528;&#x4E8E;&#x83B7;&#x5F97;&#x4E0D;&#x540C;&#x7684;&#x5217;&#x8868;</li>
+<li>newTodo(editTodo): &#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x65B0;&#x7684;todo</li>
+<li>toggleAll(sign): &#x7528;&#x4E8E;&#x5168;&#x90E8;&#x6807;&#x6CE8;&#x5B8C;&#x6210;&#xFF0C;&#x548C;&#x5168;&#x90E8;&#x53D6;&#x6D88;</li>
+<li>clearCompleted(): &#x7528;&#x4E8E;&#x5220;&#x9664;&#x6240;&#x6709;&#x5B8C;&#x6210;&#x7684;todo</li>
+</ol>
+<p>&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x88F8;&#x6570;&#x636E;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x6CA1;&#x6709;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55;dom&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x5462;&#xFF1F;</p>
+<p>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x9996;&#x5148;extend&#x7684;&#x51FD;&#x6570;&#x662F;&#x5B9A;&#x4E49;&#x5728;&#x7EC4;&#x4EF6;&#x539F;&#x578B;&#x4E0A;&#x7684;&#xFF0C;&#x5176;&#x6B21;&#x6A21;&#x677F;&#x4E2D;&#x7684;this&#x662F;&#x6307;&#x5411;&#x7EC4;&#x4EF6;&#x5B9E;&#x4F8B;&#xFF0C;&#x5373;&#xFF1A;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;this.xx()&#x7B49;&#x65B9;&#x5F0F;&#x5728;&#x6A21;&#x677F;&#x4E2D;&#x8C03;&#x7528;&#x8FD9;&#x4E9B;&#x903B;&#x8F91;&#x5B9A;&#x4E49;&#x3002;&#x5B8C;&#x6574;&#x6A21;&#x677F;&#x6211;&#x4EEC;&#x4FEE;&#x6539;&#x4E3A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>regular-todo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;new-todo&quot;</span> 
+    <span class="hljs-attr">on-enter</span>=<span class="hljs-string">{</span> <span class="hljs-attr">this.newTodo</span>(<span class="hljs-attr">editTodo</span>) } 
+    <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;What needs to be done?&quot;</span> 
+    <span class="hljs-attr">r-model</span>=<span class="hljs-string">{</span> <span class="hljs-attr">editTodo</span> }&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-all&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> 
+    <span class="hljs-attr">on-change</span>=<span class="hljs-string">{this.toggleAll(items.length</span> =<span class="hljs-string">==</span> <span class="hljs-attr">this.getList</span>(&apos;<span class="hljs-attr">completed</span>&apos;)<span class="hljs-attr">.length</span>)} 
+    <span class="hljs-attr">checked</span>=<span class="hljs-string">{items.length</span> =<span class="hljs-string">==</span> <span class="hljs-attr">this.getList</span>(&apos;<span class="hljs-attr">completed</span>&apos;)<span class="hljs-attr">.length</span> }&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;toggle-all&quot;</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-list&quot;</span>&gt;</span>
+    {#list this.getList(filter) as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>  <span class="hljs-attr">r-class</span>=<span class="hljs-string">{</span> {&apos;<span class="hljs-attr">completed</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.completed</span>, &apos;<span class="hljs-attr">editing</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.editing</span>} }&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todo.completed</span> }&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">on-dblclick</span>=<span class="hljs-string">{todo.editing</span> = <span class="hljs-attr">true</span>}&gt;</span>
+            { todo.description }
+        <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> 
+            <span class="hljs-attr">on-click</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todos.splice</span>(<span class="hljs-attr">todo_index</span>,<span class="hljs-attr">1</span>) } <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span> 
+        <span class="hljs-attr">on-enter</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todo.editing</span> = <span class="hljs-attr">false</span> } 
+        <span class="hljs-attr">r-model</span>=<span class="hljs-string">{todo.description}</span> <span class="hljs-attr">autofocus</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    {/list}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-count&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>{ this.getList(&apos;active&apos;).length }<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+    { this.getList(&apos;active&apos;).length === 1 ? &apos;item&apos; : &apos;items&apos; } left
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;filters&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{ filter === &apos;all&apos;? &apos;selected&apos; : &apos;&apos; }&quot;</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{filter=&apos;all&apos;}</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{ filter === &apos;active&apos;? &apos;selected&apos; : &apos;&apos; }&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&apos;javascript:;&apos;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{filter</span> = &apos;<span class="hljs-attr">active</span>&apos;}&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{ filter === &apos;completed&apos;? &apos;selected&apos; : &apos;&apos; }&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{filter</span> = &apos;<span class="hljs-attr">completed</span>&apos;}&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clear-completed&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{this.clearCompleted()}</span>&gt;</span>Clear completed ({ this.getList(&apos;completed&apos;).length })<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+<p><a href="http://codepen.io/leeluolee/pen/mcHxw" target="_blank">DEMO4</a></p>
+<h2 id="&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;-&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x6765;&#x7B80;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x8868;&#x8FBE;&#x5F0F;"><a name="&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;-&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x6765;&#x7B80;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x8868;&#x8FBE;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;-&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x6765;&#x7B80;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x8868;&#x8FBE;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E94;&#x6B65;&#xFF1A; &#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x6765;&#x7B80;&#x5316;&#x6211;&#x4EEC;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</h2>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x76F8;&#x4F3C;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x6A21;&#x677F;&#x91CC;&#xFF0C;&#x6BD4;&#x5982;&#x4E3A;&#x4E86;&#x5904;&#x7406;&#x5168;&#x9009;&#x4E0E;&#x53CD;&#x9009;&#xFF0C;&#x6211;&#x4EEC;&#x5F15;&#x5165;&#x6709;&#x5982;&#x6B64;&#x80AE;&#x810F;&#x7684;&#x6A21;&#x677F;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-html"> <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-all&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> 
+    <span class="hljs-attr">on-change</span>=<span class="hljs-string">{this.toggleAll(items.length</span> =<span class="hljs-string">==</span> <span class="hljs-attr">this.getList</span>(&apos;<span class="hljs-attr">completed</span>&apos;)<span class="hljs-attr">.length</span>)} 
+    <span class="hljs-attr">checked</span>=<span class="hljs-string">{items.length</span> =<span class="hljs-string">==</span> <span class="hljs-attr">this.getList</span>(&apos;<span class="hljs-attr">completed</span>&apos;)<span class="hljs-attr">.length</span> }&gt;</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5F15;&#x5165;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#xFF08;computed-property&#xFF09;&#x5C31;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x6B64;&#x8868;&#x8FBE;&#x5F0F;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;extend&#x65F6;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;&#x7684;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> TodoMVC = Regular.extend({
+    template: <span class="hljs-string">&quot;#todomvc&quot;</span>,
+    computed: {
+      completedLength: <span class="hljs-string">&quot;this.getList(&apos;completed&apos;).length&quot;</span>,
+      activeLength: <span class="hljs-string">&quot;this.getList(&apos;active&apos;).length&quot;</span>,
+      allCompleted: {
+        get: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+          <span class="hljs-keyword">return</span> data.todos.length === <span class="hljs-keyword">this</span>.getList(<span class="hljs-string">&apos;completed&apos;</span>).length
+        },
+        set: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">sign,data</span>)</span>{
+          data.todos.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
+            item.completed = sign;
+          })
+        }
+      }
+    }
+    <span class="hljs-comment">//....other methods...</span>
+})
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E09;&#x4E2A;&#x8BA1;&#x7B97;&#x5C5E;&#x6027;</p>
+<ol>
+<li>completedLength: &#x4EE3;&#x8868;&#x5B8C;&#x6210;&#x7684;todo&#x7684;length</li>
+<li>activeLength&#xFF1A; &#x4EE3;&#x8868;&#x672A;&#x5B8C;&#x6210;&#x7684;Length&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x5230;1&#x548C;2&#x5C5E;&#x6027;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x76F4;&#x63A5;&#x4F20;&#x5165;&#x4E86;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x53EA;&#x9700;&#x8981;&#x5904;&#x7406;&#x8BFB;&#x64CD;&#x4F5C;&#xFF0C;&#x5373;&#x53EA;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x4E00;&#x79CD;&#x7B80;&#x5199;&#x66FF;&#x4EE3;</li>
+<li>allCompleted: &#x6807;&#x8BB0;&#x662F;&#x5426;&#x5168;&#x90E8;&#x5B8C;&#x6210;&#xFF0C;&#x4E3A;&#x771F;&#x5219;&#x5C06;&#x5DE6;&#x4E0A;&#x7684;checkbox&#x6253;&#x94A9;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8FD9;&#x91CC;&#x8FD8;&#x8BBE;&#x7F6E;&#x4E86;setter&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;allCompelted&#x7684;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x505A;&#x7684;&#x662F;&#xFF0C;&#x5C06;&#x6240;&#x6709;todo&#x6807;&#x8BB0;&#x5B8C;&#x6210;&#x6216;&#x672A;&#x5B8C;&#x6210;</li>
+</ol>
+<p>&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6A21;&#x677F;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>regular-todo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;new-todo&quot;</span> <span class="hljs-attr">on-enter</span>=<span class="hljs-string">{</span> <span class="hljs-attr">this.newTodo</span>(<span class="hljs-attr">editTodo</span>) } <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;What needs to be done?&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{</span> <span class="hljs-attr">editTodo</span> }&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggle-all&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&apos;toggle&apos;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">&apos;allCompleted&apos;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;toggle-all&quot;</span>&gt;</span>Mark all as complete<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-list&quot;</span>&gt;</span>
+    {#list this.getList(filter) as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>  <span class="hljs-attr">r-class</span>=<span class="hljs-string">{</span> {&apos;<span class="hljs-attr">completed</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.completed</span>, &apos;<span class="hljs-attr">editing</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.editing</span>} }&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todo.completed</span> }&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">on-dblclick</span>=<span class="hljs-string">{todo.editing</span> = <span class="hljs-attr">true</span>}&gt;</span>{ todo.description }<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todos.splice</span>(<span class="hljs-attr">todo_index</span>,<span class="hljs-attr">1</span>) } <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span><span class="hljs-string">on-enter={</span> <span class="hljs-attr">todo.editing</span> = <span class="hljs-attr">false</span> } <span class="hljs-attr">r-model</span>=<span class="hljs-string">{todo.description}</span> <span class="hljs-attr">autofocus</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    {/list}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;todo-count&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>{ activeLength }<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+    { activeLength === 1 ? &apos;item&apos; : &apos;items&apos; } left
+  <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;filters&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{ filter === &apos;all&apos;? &apos;selected&apos; : &apos;&apos; }&quot;</span>  <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{filter=&apos;all&apos;}</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{ filter === &apos;active&apos;? &apos;selected&apos; : &apos;&apos; }&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&apos;javascript:;&apos;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{filter</span> = &apos;<span class="hljs-attr">active</span>&apos;}&gt;</span>Active<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{ filter === &apos;completed&apos;? &apos;selected&apos; : &apos;&apos; }&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:;&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{filter</span> = &apos;<span class="hljs-attr">completed</span>&apos;}&gt;</span>Completed<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clear-completed&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{this.clearCompleted()}</span> &gt;</span>Clear completed ({ completedLength })<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5229;&#x7528;&#x5927;&#x7EA6;40&#x884C;&#x6A21;&#x677F;+50&#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x4E86;todomv&#x3002;&#x5E76;&#x4E14;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x63BA;&#x5165;dom&#x64CD;&#x4F5C;&#xFF0C;&#x5B8C;&#x5168;&#x662F;&#x6309;&#x7167;&#x4EE5;&#x524D;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x7684;&#x601D;&#x7EF4;&#x3002;</p>
+<h2 id="&#x7B2C;&#x516D;&#x6B65;-&#x4F7F;&#x7528;ifelse&#x6765;&#x63A7;&#x5236;&#x533A;&#x57DF;&#x7684;&#x521B;&#x5EFA;&#x4E0E;&#x56DE;&#x6536;"><a name="&#x7B2C;&#x516D;&#x6B65;-&#x4F7F;&#x7528;ifelse&#x6765;&#x63A7;&#x5236;&#x533A;&#x57DF;&#x7684;&#x521B;&#x5EFA;&#x4E0E;&#x56DE;&#x6536;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x516D;&#x6B65;-&#x4F7F;&#x7528;ifelse&#x6765;&#x63A7;&#x5236;&#x533A;&#x57DF;&#x7684;&#x521B;&#x5EFA;&#x4E0E;&#x56DE;&#x6536;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x516D;&#x6B65;: &#x4F7F;&#x7528;if/else&#x6765;&#x63A7;&#x5236;&#x533A;&#x57DF;&#x7684;&#x521B;&#x5EFA;&#x4E0E;&#x56DE;&#x6536;</h2>
+<p>&#x6309;&#x7167;todomvc&#x7684;&#x89C4;&#x8303;&#x5B9A;&#x4E49;&#xFF0C;&#x6211;&#x4EEC;&#x9057;&#x6F0F;&#x4E86;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x903B;&#x8F91;</p>
+<ol>
+<li>&#x9700;&#x8981;&#x5728;&#x6CA1;&#x6709;todos&#x7684;&#x60C5;&#x51B5;&#x9690;&#x85CF;&#x663E;&#x793A;&#x90E8;&#x5206;&#xFF0C;</li>
+<li>&#x5E76;&#x4E14;&#x5728;&#x6CA1;&#x6709;&#x53EF;&#x6E05;&#x695A;todo&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9690;&#x85CF;</li>
+</ol>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;</p>
+<ol>
+<li><a href="http://regularjs.github.io/guide/zh/syntax/if.html" target="_blank">{#if}</a>: &#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4F1A;&#x5C06;&#x533A;&#x57DF;&#x5B8C;&#x5168;&#x56DE;&#x6536;&#xFF0C;&#x5E76;&#x79FB;&#x9664;&#x6240;&#x6709;&#x7ED1;&#x5B9A;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x8BED;&#x6CD5;&#x5143;&#x7D20;&#x3002;</li>
+<li><a href="http://regularjs.github.io/guide/zh/core/directive.html#4-r-hide-" target="_blank">r-hide</a>: &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6307;&#x4EE4;&#x6765;&#x5207;&#x6362;&#x8282;&#x70B9;&#x7684;&#x53EF;&#x89C1;&#x6027;&#xFF0C;&#x8FD9;&#x53EA;&#x662F;&#x4E00;&#x79CD;&#x6307;&#x4EE4;&#x589E;&#x5F3A;&#x3002;</li>
+</ol>
+<p>1&#x76F8;&#x8F83;&#x4E8E;2&#xFF0C;&#x6700;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x662F;&#x5B8C;&#x6574;&#x56DE;&#x6536;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F5C;&#x7528;&#x4E8E;&#x4EFB;&#x610F;&#x7684;&#x5757;: &#x6BD4;&#x5982;&#x591A;&#x4E2A;&#x5E76;&#x5217;&#x8282;&#x70B9;&#x3002;&#x800C;2&#x53EA;&#x80FD;&#x4EE5;&#x8282;&#x70B9;&#x4E3A;&#x5355;&#x4F4D;&#xFF08;&#x5373;&#x7C7B;&#x4F3C;&#x4E0E;angular&#x7684;ng-show&#xFF09;</p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x91C7;&#x7528;if&#x6765;&#x5B8C;&#x6210;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x6C42;&#x3002;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6A21;&#x677F;&#x5982;&#x4E0B;</p>
+<pre><code class="lang-html">
+{#if !!todos.length}
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;main&quot;</span>&gt;</span>
+...ignored for short...
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+  ...ignored for short...
+  {#if completedLength}
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clear-completed&quot;</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">{this.clearCompleted()}</span> &gt;</span>Clear completed ({ completedLength })<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  {/if}
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+{/if}
+</code></pre>
+<p><a href="http://codepen.io/leeluolee/pen/mcHxw" target="_blank">DEMO5</a></p>
+<h2 id="&#x7B2C;&#x4E03;&#x6B65;-&#x62BD;&#x79BB;&#x5B50;&#x7EC4;&#x4EF6;"><a name="&#x7B2C;&#x4E03;&#x6B65;-&#x62BD;&#x79BB;&#x5B50;&#x7EC4;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E03;&#x6B65;-&#x62BD;&#x79BB;&#x5B50;&#x7EC4;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B2C;&#x4E03;&#x6B65;: &#x62BD;&#x79BB;&#x5B50;&#x7EC4;&#x4EF6;</h2>
+<p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x9664;&#x4E86;&#x8DEF;&#x7531;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5B8C;&#x6574;&#x5B9E;&#x73B0;&#x4E86;&#x6574;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF08;&#x7531;&#x4E8E;regularjs&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x7C7B;&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x63D0;&#x4F9B;&#x6846;&#x67B6;&#x7EA7;&#x7684;&#x8DEF;&#x7531;&#x670D;&#x52A1;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7C7B;&#x4F3C;<a href="http://github.com/leeluolee/stateman" target="_blank">stateman</a>&#x7B49;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x6765;&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#xFF09;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x6240;&#x6709;&#x7684;view&#x90FD;&#x5199;&#x5728;&#x4E86;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x5229;&#x7528;&#x540E;&#x7EED;&#x7684;&#x91CD;&#x6784;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5B50;&#x7EC4;&#x4EF6;&#x6765;&#x63D0;&#x53D6;&#x4E00;&#x4E9B;&#x72EC;&#x7ACB;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x91CC;&#xFF0C;&#x4E00;&#x4E2A;todo&#x9879;&#x76EE;&#x663E;&#x7136;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x51FA;&#x6765;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>  <span class="hljs-attr">r-class</span>=<span class="hljs-string">{</span> {&apos;<span class="hljs-attr">completed</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.completed</span>, &apos;<span class="hljs-attr">editing</span>&apos;<span class="hljs-attr">:</span> <span class="hljs-attr">todo.editing</span>}}&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;view&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;toggle&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">r-model</span>=<span class="hljs-string">{</span> <span class="hljs-attr">todo.completed</span> }&gt;</span>  
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">on-dblclick</span>=<span class="hljs-string">{todo.editing</span> = <span class="hljs-attr">true</span>}&gt;</span>{ todo.description }<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on-click</span>=<span class="hljs-string">&quot;remove&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;destroy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;edit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;edit&quot;</span><span class="hljs-string">on-enter={</span> <span class="hljs-attr">todo.editing</span> = <span class="hljs-attr">false</span> } <span class="hljs-attr">r-model</span>=<span class="hljs-string">{todo.description}</span> <span class="hljs-attr">autofocus</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;<code>on-click=&apos;remove&apos;</code> &#x4EE3;&#x8868;&#x70B9;&#x51FB;&#x540E;&#x629B;&#x51FA;&#x81EA;&#x5B9A;&#x4E49;&#x4E8B;&#x4EF6;<code>remove</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x6355;&#x83B7;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x6765;&#x5904;&#x7406;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF08;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x83B7;&#x5F97;todos&#x6570;&#x636E;&#x4E86;&#xFF09;</p>
+<p>&#x5BF9;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> Todo = Regular.extend({
+  data: {todo: {}},
+  name: <span class="hljs-string">&quot;todo&quot;</span>,
+  template: <span class="hljs-string">&quot;#todo&quot;</span>
+});
+</code></pre>
+<p>&#x6CE8;&#x610F;<code>name</code>&#x53C2;&#x6570;&#x4EE3;&#x8868;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>&lt;todo &gt;&lt;/todo&gt;</code>&#x7684;&#x65B9;&#x5F0F;&#x63D2;&#x5165;&#x5176;&#x5B83;&#x6A21;&#x677F;&#x4E2D;&#x3002;</p>
+<p>&#x91CD;&#x6784;&#x4E4B;&#x524D;&#x7684;list&#x90E8;&#x5206;</p>
+<pre><code class="lang-html">{#list this.getList(filter) as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-name">todo</span> <span class="hljs-attr">todo</span>=<span class="hljs-string">{todo}</span> <span class="hljs-attr">on-remove</span>=<span class="hljs-string">{todos.splice(todo_index,1)}</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">todo</span>&gt;</span>
+{/list}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x901A;&#x8FC7;on-remove&#x6765;&#x6355;&#x83B7;&#x5B50;&#x7EC4;&#x4EF6;&#x629B;&#x51FA;&#x7684;<code>remove</code>&#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#x5F88;&#x660E;&#x663E;&#x7684;&#x770B;&#x5230;&#xFF0C;&#x5229;&#x7528;&#x5B50;&#x7EC4;&#x4EF6;&#x548C;&#x6301;&#x7EED;&#x91CD;&#x6784;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x7EF4;&#x62A4;&#x8D8A;&#x6765;&#x8D8A;&#x590D;&#x6742;&#x7684;&#x7EC4;&#x4EF6;&#x5173;&#x7CFB;&#x3002;</p>
+<p><a href="http://codepen.io/leeluolee/pen/dGxCb" target="_blank">DEMO6</a></p>
+<h2 id="&#x7ED3;&#x5C3E;"><a name="&#x7ED3;&#x5C3E;" class="anchor-navigation-ex-anchor" href="#&#x7ED3;&#x5C3E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7ED3;&#x5C3E;</h2>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4EC5;40&#x884C;&#x6A21;&#x677F;+50&#x884C;js&#x4EE3;&#x7801;(&#x7EAF;&#x6570;&#x636E;&#x7684;&#x4E1A;&#x52A1;&#x64CD;&#x4F5C;)&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x57FA;&#x672C;&#x5B8C;&#x6574;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x6CA1;&#x6709;&#x5F15;&#x5165;&#x4EFB;&#x4F55;dom&#x64CD;&#x4F5C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rx.md" class="navigation navigation-prev " aria-label="Previous page: 与Rx结合(ing...)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../reference/" class="navigation navigation-next " aria-label="Next page: 索引手册">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"50行代码的todomvc","level":"1.4.7","depth":2,"next":{"title":"索引手册","level":"1.5","depth":1,"path":"reference/README.md","ref":"reference/README.md","articles":[{"title":"API","level":"1.5.1","depth":2,"path":"reference/api.md","ref":"reference/api.md","articles":[]},{"title":"风格指南","level":"1.5.2","depth":2,"path":"reference/styleguide.md","ref":"reference/styleguide.md","articles":[]},{"title":"✔内建指令","level":"1.5.3","depth":2,"path":"reference/directive.md","ref":"reference/directive.md","articles":[]}]},"previous":{"title":"与Rx结合(ing...)","level":"1.4.6.2","depth":3,"path":"topic/rx.md","ref":"./topic/rx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"topic/todomvc.md","mtime":"2018-08-17T09:33:46.372Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-23T07:37:43.914Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

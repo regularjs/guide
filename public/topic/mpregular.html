@@ -1,0 +1,897 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>微信小程序 · Regular官方指南</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="leeluolee">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="performance.html" />
+    
+    
+    <link rel="prev" href="ssr.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/regularjs/regular" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    ️介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../intro/what.html">
+            
+                <a href="../intro/what.html">
+            
+                    
+                    Regular是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../intro/hello.html">
+            
+                <a href="../intro/hello.html">
+            
+                    
+                    ️你好，Regular
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/">
+            
+                <a href="../basic/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/component/">
+            
+                <a href="../basic/component/">
+            
+                    
+                    ️组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/interpolation.html">
+            
+                <a href="../basic/interpolation.html">
+            
+                    
+                    ️插值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basic/event.html">
+            
+                <a href="../basic/event.html">
+            
+                    
+                    ️事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basic/statement/">
+            
+                <a href="../basic/statement/">
+            
+                    
+                    ️语句
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../basic/statement/list.html">
+            
+                <a href="../basic/statement/list.html">
+            
+                    
+                    ️列表渲染 - list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../basic/statement/if.html">
+            
+                <a href="../basic/statement/if.html">
+            
+                    
+                    ️条件渲染 - if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.3" data-path="../basic/statement/include.html">
+            
+                <a href="../basic/statement/include.html">
+            
+                    
+                    ️结构引入 - include
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../reference/expression.html">
+            
+                <a href="../reference/expression.html">
+            
+                    
+                    表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../basic/data-binding.html">
+            
+                <a href="../basic/data-binding.html">
+            
+                    
+                    数据监听
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../basic/filter.html">
+            
+                <a href="../basic/filter.html">
+            
+                    
+                    计算字段与过滤器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../basic/directive.html">
+            
+                <a href="../basic/directive.html">
+            
+                    
+                    ️指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../basic/animation.html">
+            
+                <a href="../basic/animation.html">
+            
+                    
+                    ️动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    深入组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../advanced/modular.html">
+            
+                <a href="../advanced/modular.html">
+            
+                    
+                    继承与模块化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../advanced/composite.html">
+            
+                <a href="../advanced/composite.html">
+            
+                    
+                    ️组合 - 结构复用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../advanced/modify.html">
+            
+                <a href="../advanced/modify.html">
+            
+                    
+                    ️动态注入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="template.html">
+            
+                <a href="template.html">
+            
+                    
+                    模板管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <a target="_blank" href="https://github.com/regularjs/regular-loader">
+            
+                    
+                    单文件组件 - regular-loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <a target="_blank" href="https://regularjs.github.io/regular-state/">
+            
+                    
+                    ️单页系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="ssr.html">
+            
+                <a href="ssr.html">
+            
+                    
+                    服务端渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="mpregular.html">
+            
+                <a href="mpregular.html">
+            
+                    
+                    微信小程序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    性能指引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="communication.html">
+            
+                <a href="communication.html">
+            
+                    
+                    ️跨组件通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="redux.md">
+            
+                <span>
+            
+                    
+                    与redux结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="rx.md">
+            
+                <span>
+            
+                    
+                    与Rx结合(ing...)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="todomvc.html">
+            
+                <a href="todomvc.html">
+            
+                    
+                    50行代码的todomvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../reference/">
+            
+                <a href="../reference/">
+            
+                    
+                    索引手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../reference/api.html">
+            
+                <a href="../reference/api.html">
+            
+                    
+                    API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../reference/styleguide.html">
+            
+                <a href="../reference/styleguide.html">
+            
+                    
+                    风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../reference/directive.html">
+            
+                <a href="../reference/directive.html">
+            
+                    
+                    ✔内建指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq/">
+            
+                <a href="../faq/">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >微信小程序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#regular-&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;"><b> </b>Regular &#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7406;&#x8BBA;&#x57FA;&#x7840;"><b>1. </b>&#x7406;&#x8BBA;&#x57FA;&#x7840;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B9E;&#x73B0;&#x601D;&#x8DEF;"><b>1.1. </b>&#x5B9E;&#x73B0;&#x601D;&#x8DEF;</a></li><li><span class="title-icon "></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1;-holders&#xFF0C;&#x800C;&#x4E0D;&#x4F20;&#x9012;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x5462;&#xFF1F;"><b>1.2. </b>&#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1; holders&#xFF0C;&#x800C;&#x4E0D;&#x4F20;&#x9012;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x5462;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x603B;&#x7ED3;"><b>1.3. </b>&#x603B;&#x7ED3;</a></li></ul><li><span class="title-icon "></span><a href="#&#x548C;&#x4E1A;&#x754C;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;"><b>2. </b>&#x548C;&#x4E1A;&#x754C;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;</a></li><li><span class="title-icon "></span><a href="#&#x611F;&#x8C22;"><b>3. </b>&#x611F;&#x8C22;</a></li></ul></ul></div><a href="#regular-&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="regular-&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;"><a name="regular-&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#regular-&#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a> Regular &#x5728;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F7F;&#x7528;</h1>
+<p>&#x968F;&#x7740;&#x6700;&#x8FD1;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x5927;&#x706B;&#xFF0C;&#x5F88;&#x591A;&#x516C;&#x53F8;&#x5F00;&#x59CB;&#x91CD;&#x89C6;&#x8D77;&#x4E86;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x4E0A;&#x9762;&#x7684;&#x5F00;&#x53D1;&#x6295;&#x5165;&#xFF0C;&#x751A;&#x81F3;&#x51FA;&#x73B0;&#x4E86;&#x5F88;&#x591A;&#x7C7B;&#x4F3C;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x6BD4;&#x5982;&#x5FEB;&#x5E94;&#x7528;&#x3001;&#x767E;&#x5EA6;&#x5C0F;&#x7A0B;&#x5E8F;&#x3001;&#x652F;&#x4ED8;&#x5B9D;&#x5C0F;&#x7A0B;&#x5E8F;&#x7B49;&#x7B49;</p>
+<p>&#xFF08;&#x6CE8;&#xFF1A;&#x4E0B;&#x6587;&#x63D0;&#x5230;&#x7684;&#x5C0F;&#x7A0B;&#x5E8F;&#x7686;&#x6307;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#xFF09;</p>
+<h2 id="&#x7406;&#x8BBA;&#x57FA;&#x7840;"><a name="&#x7406;&#x8BBA;&#x57FA;&#x7840;" class="anchor-navigation-ex-anchor" href="#&#x7406;&#x8BBA;&#x57FA;&#x7840;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7406;&#x8BBA;&#x57FA;&#x7840;</h2>
+<p>&#x4E3A;&#x4EC0;&#x4E48; Regular &#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8DD1;&#x5728;&#x5C0F;&#x7A0B;&#x5E8F;&#x5E73;&#x53F0;&#x4E0A;&#xFF1F;</p>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E0B;&#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x6574;&#x4F53;&#x67B6;&#x6784;</p>
+<pre><code>+--------------+    +---------------+
+|     View     |    |  App Service  |
++----^---+-----+    +-----^---------+
+     |   |                |   |
+data |   | event    event |   | data
+     |   |                |   |
++----+---v----------------+---v-----+
+|              JSBridge             |
++-----------------------------------+
+</code></pre><p>View &#x5BF9;&#x5E94;&#x89C6;&#x56FE;&#x5C42;&#xFF0C;App Service &#x5BF9;&#x5E94;&#x6211;&#x4EEC;&#x7684;&#x903B;&#x8F91;&#x5C42;</p>
+<p>View &#x548C; AppService &#x5206;&#x522B;&#x8DD1;&#x5728;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7; JSBridge &#x8FDB;&#x884C;&#x6570;&#x636E;&#x548C;&#x4E8B;&#x4EF6;&#x7684;&#x901A;&#x4FE1;</p>
+<h3 id="&#x5B9E;&#x73B0;&#x601D;&#x8DEF;"><a name="&#x5B9E;&#x73B0;&#x601D;&#x8DEF;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x601D;&#x8DEF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5B9E;&#x73B0;&#x601D;&#x8DEF;</h3>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF08;&#x4F2A;&#x4EE3;&#x7801;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">component</span>
+  <span class="hljs-attr">bindtap</span>=<span class="hljs-string">&quot;proxyEvent&quot;</span>
+  <span class="hljs-attr">data-cid</span>=<span class="hljs-string">&quot;component-id&quot;</span>
+  <span class="hljs-attr">data-eid</span>=<span class="hljs-string">&quot;event-id&quot;</span>
+&gt;</span>
+  Hello {{ __holders[ &apos;holder-id&apos; ] }}
+<span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> Component = Regular.extend( {
+  config() {
+    <span class="hljs-keyword">this</span>.data.name = <span class="hljs-string">&apos;world&apos;</span>
+  },
+  onClick() {
+    <span class="hljs-built_in">console</span>.log( <span class="hljs-string">&apos;clicked&apos;</span> )
+  }
+} )
+
+<span class="hljs-keyword">const</span> vm = <span class="hljs-keyword">new</span> Component()
+</code></pre>
+<ol>
+<li><p>&#x6570;&#x636E;&#x586B;&#x5145;</p>
+<p>&#x53EA;&#x8981;&#x901A;&#x8FC7;&#x4E00;&#x5B9A;&#x89C4;&#x5219;&#x62FF;&#x5230; <code>holder-id</code> &#x6807;&#x8BC6;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5C06; <code>name</code> &#x586B;&#x5145;&#x5230;&#x6A21;&#x677F;&#x7684;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;</p>
+</li>
+<li><p>&#x4E8B;&#x4EF6;&#x5904;&#x7406;</p>
+<p>&#x5F53; tap &#x89E6;&#x53D1;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x6267;&#x884C; proxyEvent&#xFF0C;mpregular &#x4F1A;&#x5728; proxyEvent &#x4E2D;&#x901A;&#x8FC7; <code>component-id</code> &#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684; vm&#xFF08; Regular &#x5B9E;&#x4F8B; &#xFF09;&#xFF0C;&#x518D;&#x901A;&#x8FC7; <code>event-id</code> &#x627E;&#x5230;&#x771F;&#x6B63;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570; onClick&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;</p>
+</li>
+</ol>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1;-holders&#xFF0C;&#x800C;&#x4E0D;&#x4F20;&#x9012;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x5462;&#xFF1F;"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1;-holders&#xFF0C;&#x800C;&#x4E0D;&#x4F20;&#x9012;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x5462;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1;-holders&#xFF0C;&#x800C;&#x4E0D;&#x4F20;&#x9012;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x5462;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x4E3A;&#x4EC0;&#x4E48;&#x8BBE;&#x8BA1; holders&#xFF0C;&#x800C;&#x4E0D;&#x4F20;&#x9012;&#x771F;&#x6B63;&#x7684;&#x6570;&#x636E;&#x5462;&#xFF1F;</h3>
+<p>&#x6211;&#x4EEC;&#x5148;&#x6765;&#x770B;&#x4E0B; holders &#x662F;&#x957F;&#x4EC0;&#x4E48;&#x6837;&#x5B50;&#x7684;</p>
+<pre><code class="lang-js">{
+  <span class="hljs-string">&quot;0&quot;</span>:  ...,
+  <span class="hljs-string">&quot;1&quot;</span>: ...,
+  <span class="hljs-string">&quot;2-0&quot;</span>: ...,
+  <span class="hljs-string">&quot;2-1&quot;</span>: ...
+}
+</code></pre>
+<p>&#x662F;&#x4E00;&#x79CD;&#x6241;&#x5E73;&#x7684;&#x7ED3;&#x6784;</p>
+<p>&#x867D;&#x7136;&#x8FD9;&#x4E48;&#x770B; holders &#x611F;&#x89C9;&#x5E73;&#x5E73;&#x65E0;&#x5947;&#xFF0C;&#x4F46;&#x8FD9;&#x5176;&#x5B9E;&#x662F; mpregular &#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x4E2A;&#x8BBE;&#x8BA1;</p>
+<ul>
+<li><p>&#x5168;&#x91CF;&#x7684;&#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x652F;&#x6301;</p>
+<p>&#x501F;&#x52A9; holders&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x4E86; Regular &#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5168;&#x91CF;&#x652F;&#x6301;&#x3002;&#x7531;&#x4E8E;&#x903B;&#x8F91;&#x5C42;&#x63D0;&#x524D;&#x5C06;&#x6240;&#x6709;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5E76;&#x5265;&#x79BB;&#x51FA;&#x6765;&#xFF0C;&#x653E;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x6241;&#x5E73;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#xFF0C;<strong>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x4E0D;&#x518D;&#x9700;&#x8981; &#x5C0F;&#x7A0B;&#x5E8F;&#x89C6;&#x56FE;&#x5C42; &#x63D0;&#x4F9B;&#x8FD9;&#x4E9B;&#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x7279;&#x6027;&#x7684;&#x652F;&#x6301;&#xFF0C;&#x5B8C;&#x5168;&#x6446;&#x8131;&#x4E86;&#x5C0F;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x7684;&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x9650;&#x5236;</strong>&#xFF0C;&#x73B0;&#x5728;&#x7684; View &#x53EA;&#x4F1A;&#x88AB;&#x7528;&#x6765;&#x505A;&#x7EAF;&#x7CB9;&#x7684;&#x6E32;&#x67D3;</p>
+</li>
+<li><p>&#x66F4;&#x9AD8;&#x6548;&#x7684;&#x89C6;&#x56FE;&#x6E32;&#x67D3;</p>
+<p>&#x6839;&#x636E;&#x6211;&#x4EEC;&#x7684;&#x5B9E;&#x8DF5;&#xFF0C;<strong>&#x5F53;&#x8C03;&#x7528;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684; setData &#x65F6;&#xFF0C;&#x5982;&#x679C; View &#x5C42;&#x63A5;&#x6536;&#x7684;&#x6570;&#x636E;&#x91CF;&#x8FC7;&#x5927;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x6E32;&#x67D3;&#x65F6;&#x7684;&#x660E;&#x663E;&#x5361;&#x987F;</strong>&#xFF0C;&#x539F;&#x56E0;&#x53EF;&#x80FD;&#x662F; View &#x5C42; diff &#x7684;&#x6570;&#x636E;&#x91CF;&#x8FC7;&#x5927;&#x5BFC;&#x81F4;&#xFF0C;&#x5728;&#x4F20;&#x9012;&#x6570;&#x636E;&#x8FC7;&#x7A0B;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x5927;&#x5217;&#x8868;&#x5E26;&#x4E86;&#x5F88;&#x591A;&#x5197;&#x4F59;&#x7684;&#x6570;&#x636E;&#x8FC7;&#x53BB;&#xFF0C;&#x800C;&#x8FD9;&#x70B9;&#x901A;&#x8FC7;&#x8B66;&#x544A;&#x5F00;&#x53D1;&#x8005;&#x4E0D;&#x8981;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x662F;&#x5F88;&#x96BE;&#x4FDD;&#x8BC1;&#x7684;&#xFF0C;&#x540E;&#x7AEF;&#x7ECF;&#x5E38;&#x4F1A;&#x4F20;&#x8F93;&#x4E00;&#x4E9B;&#x5197;&#x4F59;&#x5B57;&#x6BB5;&#x5230;&#x524D;&#x7AEF;&#xFF0C;&#x6BD4;&#x5982;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x771F;&#x6B63;&#x7528;&#x4E8E;&#x6E32;&#x67D3;&#x7684;&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x90E8;&#x5206;&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x679C;&#x6BCF;&#x6B21;&#x90FD;&#x662F;&#x4EBA;&#x5DE5;&#x4EE3;&#x7801;&#x5E72;&#x9884;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x8FC7;&#x6EE4;&#x6A21;&#x677F;&#x771F;&#x6B63;&#x7528;&#x5230;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x5F88;&#x96BE;&#x7EF4;&#x62A4;&#xFF0C;&#x9488;&#x5BF9;&#x8FD9;&#x5757;&#xFF0C;mpregular &#x5185;&#x90E8;&#x4F1A;&#x5728; setData &#x524D;&#x628A;&#x7528;&#x4E8E;&#x6A21;&#x677F;&#x6E32;&#x67D3;&#x7684;&#x6570;&#x636E;&#x5168;&#x90E8;&#x62BD;&#x79BB;&#x5230; holders &#x4E0A;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x636E;&#x5751;&#x4F4D;&#x90FD;&#x80FD;&#x901A;&#x8FC7;&#x67D0;&#x4E2A; id &#x62FF;&#x5230;&#x81EA;&#x5DF1;&#x6570;&#x636E;&#xFF0C;View &#x7684; diff &#x4E5F;&#x53EA;&#x9700;&#x8981;&#x5728;&#x4E00;&#x5C42;&#x6241;&#x5E73;&#x7ED3;&#x6784;&#x4E0A;&#x8FDB;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x66F4;&#x9AD8;&#x6548;&#x7684;&#x66F4;&#x65B0;&#x548C;&#x66F4;&#x597D;&#x7684;&#x6E32;&#x67D3;&#x8868;&#x73B0;&#xFF0C;&#x5728;&#x6846;&#x67B6;&#x5C42;&#x9762;&#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x7528;&#x98DF;&#x5802;&#x5927;&#x53D4;&#x7684;&#x8BDD;&#x8BF4;&#x5C31;&#x662F;<strong>&#x5403;&#x591A;&#x5C11;&#x62FF;&#x591A;&#x5C11;</strong></p>
+</li>
+</ul>
+<h3 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x603B;&#x7ED3;</h3>
+<p>&#x901A;&#x8FC7;&#x9759;&#x6001;&#x5206;&#x6790; Regular &#x6A21;&#x677F;&#xFF0C;&#x63D0;&#x524D;&#x5C06; <strong>&#x6570;&#x636E;&#x5751;&#x4F4D;&#x67E5;&#x627E;&#x89C4;&#x5219;</strong> &#x548C; <strong>&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x51FD;&#x6570;&#x67E5;&#x627E;&#x89C4;&#x5219;</strong> &#x5728;&#x6784;&#x5EFA;&#x9636;&#x6BB5;&#x751F;&#x6210;&#x5230; wxml &#x4E2D;&#xFF0C;&#x5230;&#x4E86;&#x8FD0;&#x884C;&#x65F6;&#x9636;&#x6BB5;&#xFF0C;&#x5C0F;&#x7A0B;&#x5E8F;&#x7684;&#x89C6;&#x56FE;&#x5C42;&#x548C;&#x903B;&#x8F91;&#x5C42;&#x5C31;&#x53EF;&#x4EE5;&#x65E0;&#x7F1D;&#x8854;&#x63A5;&#x8D77;&#x6765;</p>
+<h2 id="&#x548C;&#x4E1A;&#x754C;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;"><a name="&#x548C;&#x4E1A;&#x754C;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;" class="anchor-navigation-ex-anchor" href="#&#x548C;&#x4E1A;&#x754C;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x548C;&#x4E1A;&#x754C;&#x6846;&#x67B6;&#x7684;&#x5BF9;&#x6BD4;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x7279;&#x6027;</th>
+<th style="text-align:right">&#x5C0F;&#x7A0B;&#x5E8F;</th>
+<th style="text-align:center">mpvue</th>
+<th style="text-align:center">mpregular</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x6A21;&#x677F;&#x8BED;&#x6CD5;&#x89C4;&#x8303;</td>
+<td style="text-align:right">&#x539F;&#x751F;&#x5C0F;&#x7A0B;&#x5E8F;</td>
+<td style="text-align:center">Vue &#x6A21;&#x677F;&#x8BED;&#x6CD5;</td>
+<td style="text-align:center">Regular &#x6A21;&#x677F;&#x8BED;&#x6CD5;</td>
+</tr>
+<tr>
+<td>&#x7EC4;&#x4EF6;&#x5316;&#x652F;&#x6301;</td>
+<td style="text-align:right">&#x5C0F;&#x7A0B;&#x5E8F;&#x7EC4;&#x4EF6;&#x89C4;&#x8303;</td>
+<td style="text-align:center">Vue &#x7EC4;&#x4EF6;</td>
+<td style="text-align:center">Regular &#x7EC4;&#x4EF6;</td>
+</tr>
+<tr>
+<td>computed &#x8BA1;&#x7B97;&#x5C5E;&#x6027;</td>
+<td style="text-align:right">x</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td>model &#x53CC;&#x5411;&#x7ED1;&#x5B9A;</td>
+<td style="text-align:right">x</td>
+<td style="text-align:center">o</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td>slot &#x63D2;&#x69FD;</td>
+<td style="text-align:right">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td>filter &#x8FC7;&#x6EE4;&#x5668;</td>
+<td style="text-align:right">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td>html &#x5BCC;&#x6587;&#x672C;</td>
+<td style="text-align:right">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td>&#x590D;&#x6742;&#x8868;&#x8FBE;&#x5F0F;&#x63D2;&#x503C;</td>
+<td style="text-align:right">x</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+</tr>
+<tr>
+<td>&#x5C0F;&#x7A0B;&#x5E8F;&#x5206;&#x5305;</td>
+<td style="text-align:right">o</td>
+<td style="text-align:center">x</td>
+<td style="text-align:center">o</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x76EE;&#x524D; mpvue &#x7684; slot &#x652F;&#x6301;&#x8FD8;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x95EE;&#x9898;</p>
+<p>&#x4E0A;&#x8FF0;&#x8868;&#x683C;&#x7684;&#x7ED3;&#x679C;&#x7EDF;&#x8BA1;&#x4E8E; 2018-8-17&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x8FC7;&#x65F6;&#xFF0C;&#x6B22;&#x8FCE;&#x5728; guide &#x4ED3;&#x5E93;&#x7684; issue &#x4E2D;&#x6307;&#x51FA;</p>
+</blockquote>
+<h2 id="&#x611F;&#x8C22;"><a name="&#x611F;&#x8C22;" class="anchor-navigation-ex-anchor" href="#&#x611F;&#x8C22;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x611F;&#x8C22;</h2>
+<p>mpvue &#x7684;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;&#x7ED9;&#x4E86; mpregular &#x5F88;&#x591A;&#x7684;&#x7075;&#x611F;&#xFF0C;&#x5728;&#x6B64;&#x8868;&#x793A;&#x8BDA;&#x631A;&#x7684;&#x611F;&#x8C22;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ssr.html" class="navigation navigation-prev " aria-label="Previous page: 服务端渲染">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="performance.html" class="navigation navigation-next " aria-label="Next page: 性能指引">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"微信小程序","level":"1.4.4","depth":2,"next":{"title":"性能指引","level":"1.4.5","depth":2,"path":"topic/performance.md","ref":"./topic/performance.md","articles":[]},"previous":{"title":"服务端渲染","level":"1.4.3","depth":2,"path":"topic/ssr.md","ref":"./topic/ssr.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","splitter","-lunr","-search","-sharing","search-plus","expandable-chapters-small","anchor-navigation-ex","force-http"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"force-http":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"edit-link":{"label":"编辑当前页","base":"https://github.com/regularjs/guide/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"leeluolee","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Regular官方指南","language":"zh-hans","links":{"sidebar":{"Github":"https://github.com/regularjs/regular"}},"gitbook":"3.2.3","description":"Regular官方指南"},"file":{"path":"topic/mpregular.md","mtime":"2018-08-20T07:57:49.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-23T07:37:43.914Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-force-http/test.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

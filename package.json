@@ -10,11 +10,11 @@
     "install": "gitbook install",
     "start": "gitbook serve .",
     "deploy": "gulp deploy",
-    "build": "gitbook install && gitbook build . public"
+    "build": "gitbook install && gitbook build . "
   },
   "author": "leeluolee <oe.zheng@gmail.com>",
   "dependencies": {
-    "gitbook-plugin-anchor-navigation-ex": "^1.0.10",
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.11",
     "gitbook-plugin-edit-link": "^2.0.2",
     "gitbook-plugin-expandable-chapters-small": "^0.1.7",
     "gitbook-plugin-force-http": "0.0.4",
