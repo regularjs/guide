@@ -7,15 +7,23 @@
     "url": "https://github.com/regularjs/guide.git"
   },
   "scripts": {
-    "serve": "gitbook serve .",
-    "build": "gitbook build ."
+    "install": "gitbook install",
+    "start": "gitbook serve .",
+    "deploy": "gulp deploy",
+    "build": "gitbook install && gitbook build . "
   },
   "author": "leeluolee <oe.zheng@gmail.com>",
   "dependencies": {
-    "gulp": "3.6.x",
-    "gulp-gh-pages": "^0.3.3"
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.11",
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-force-http": "0.0.4",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-splitter": "0.0.8"
   },
   "devDependencies": {
-    "gitbook": "1.5.0"
+    "gitbook-cli": "^2.3.2",
+    "gulp": "3.6.x",
+    "gulp-gh-pages": "^0.3.3"
   }
 }
